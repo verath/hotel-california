@@ -1253,12 +1253,6 @@
       <element xmi:type="uml:Class" href="model.uml#_5Km6YHZPEeSrX_LICIhx2Q"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KpWoXZPEeSrX_LICIhx2Q" x="1273" y="279" width="147" height="164"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_eYlXcHZREeSbBJzXJgLK5Q" type="2016" element="_zzZGcHZBEeSrX_LICIhx2Q">
-      <children xmi:type="notation:DecorationNode" xmi:id="_eYoawHZREeSbBJzXJgLK5Q" type="0">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_eYoawXZREeSbBJzXJgLK5Q" y="5"/>
-      </children>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eYlXcXZREeSbBJzXJgLK5Q" x="195" y="352"/>
-    </children>
     <children xmi:type="notation:Shape" xmi:id="_WOZSUHZTEeSbBJzXJgLK5Q" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_WOZ5YHZTEeSbBJzXJgLK5Q" type="5029"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_WOZ5YXZTEeSbBJzXJgLK5Q" type="7017">
