@@ -5767,11 +5767,6 @@
           <element xmi:type="uml:Lifeline" href="model.uml#_bbMyoHpqEeSzffN-QECwhA"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bbNZsXpqEeSzffN-QECwhA" x="507" y="10" width="127" height="362"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_czjssHpqEeSzffN-QECwhA" type="3001">
-          <children xmi:type="notation:DecorationNode" xmi:id="_czjssnpqEeSzffN-QECwhA" type="5002"/>
-          <element xmi:type="uml:Lifeline" href="model.uml#_cziekHpqEeSzffN-QECwhA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_czjssXpqEeSzffN-QECwhA" x="850" y="10" width="110"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_Jik5UHpsEeSzffN-QECwhA" type="3001">
           <children xmi:type="notation:DecorationNode" xmi:id="_JilgYHpsEeSzffN-QECwhA" type="5002"/>
           <element xmi:type="uml:Lifeline" href="model.uml#_JijrMHpsEeSzffN-QECwhA"/>
