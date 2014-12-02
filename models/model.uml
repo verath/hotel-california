@@ -161,7 +161,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3WL-I3ZJEeSrX_LICIhx2Q" value="1"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_QwNhcHZKEeSrX_LICIhx2Q" name="Booking" visibility="protected">
+  <packagedElement xmi:type="uml:Class" xmi:id="_QwNhcHZKEeSrX_LICIhx2Q" name="Booking" visibility="private">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_pU2lkHbyEeSbBJzXJgLK5Q" name="id" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
     </ownedAttribute>
@@ -427,6 +427,18 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_so8PcHoGEeSVKdBxhP6Y7A" name="getRoomTypes">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_xrjNsHoGEeSVKdBxhP6Y7A" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QSnHsHo1EeSZQp8F1uHBGQ" name="getActiveBooking">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_f-6ogHo1EeSZQp8F1uHBGQ" name="roomNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_UsHpIHo2EeSZQp8F1uHBGQ" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_tC41IHo1EeSZQp8F1uHBGQ" name="getRelatedLegalEntities" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-bA-kHo1EeSZQp8F1uHBGQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
       </ownedParameter>
     </ownedOperation>
@@ -697,6 +709,19 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_t2QHoHcHEeSbBJzXJgLK5Q" type="_gemc8Hb6EeSbBJzXJgLK5Q" direction="return"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Erqn0Ho3EeSZQp8F1uHBGQ" name="getBookingBill">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQPqkHo4EeSZQp8F1uHBGQ" name="booking" type="_1FAq0Hb7EeSbBJzXJgLK5Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_k5lEUHo4EeSZQp8F1uHBGQ" name="billItem" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_uSTHMHo4EeSZQp8F1uHBGQ" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EAWvEHo5EeSZQp8F1uHBGQ" name="serviceId">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_HzwvQHo5EeSZQp8F1uHBGQ" name="quantity">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_LRCHYHo5EeSZQp8F1uHBGQ" name="getAllServices"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_SHqgsHcHEeSbBJzXJgLK5Q" memberEnd="_SHqgsXcHEeSbBJzXJgLK5Q _SHp5oHcHEeSbBJzXJgLK5Q">
     <name xsi:nil="true"/>
@@ -931,12 +956,14 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zcmSlHocEeSg65290XNrgw" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zcmSlXocEeSg65290XNrgw" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_O3JWoHoyEeSzffN-QECwhA" name="kcm" type="_2jHyEHoxEeSzffN-QECwhA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSlnocEeSg65290XNrgw" name="BookingManager" represents="_zcmSkXocEeSg65290XNrgw" coveredBy="_P1y8wHodEeSg65290XNrgw _lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _pxhssHoiEeSg65290XNrgw _pxhssXoiEeSg65290XNrgw _2e9BlXoiEeSg65290XNrgw _5JqUWXoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _iBV4eHojEeSg65290XNrgw _lfjEsHojEeSg65290XNrgw _lflg8HojEeSg65290XNrgw _puMyQHoqEeSbEI7oy8w_lg _buI7YHorEeSbEI7oy8w_lg _buXk4HorEeSbEI7oy8w_lg _gfGI9XorEeSbEI7oy8w_lg"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSl3ocEeSg65290XNrgw" name="LegalEntityManager" represents="_zcmSknocEeSg65290XNrgw" coveredBy="_Rr7lsHoiEeSg65290XNrgw _lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _pxhssHoiEeSg65290XNrgw _pxhssXoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _DoiG83ojEeSg65290XNrgw _lfjEsHojEeSg65290XNrgw _lflg8HojEeSg65290XNrgw _buI7YHorEeSbEI7oy8w_lg _buXk4HorEeSbEI7oy8w_lg"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSmHocEeSg65290XNrgw" name="RoomManager" represents="_zcmSk3ocEeSg65290XNrgw" coveredBy="_lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _pxhssHoiEeSg65290XNrgw _pxhssXoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _lfjEsHojEeSg65290XNrgw _lflg8HojEeSg65290XNrgw _buI7YHorEeSbEI7oy8w_lg _buXk4HorEeSbEI7oy8w_lg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSl3ocEeSg65290XNrgw" name="LegalEntityManager" represents="_zcmSknocEeSg65290XNrgw" coveredBy="_Rr7lsHoiEeSg65290XNrgw _lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _DoiG83ojEeSg65290XNrgw _lfjEsHojEeSg65290XNrgw _lflg8HojEeSg65290XNrgw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSmHocEeSg65290XNrgw" name="RoomManager" represents="_zcmSk3ocEeSg65290XNrgw" coveredBy="_lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _pxhssHoiEeSg65290XNrgw _pxhssXoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _lfjEsHojEeSg65290XNrgw _lflg8HojEeSg65290XNrgw _Nori8XozEeSzffN-QECwhA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_LsCskHoyEeSzffN-QECwhA" name="KeyCardManager" represents="_O3JWoHoyEeSzffN-QECwhA" coveredBy="_lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _lfjEsHojEeSg65290XNrgw _lflg8HojEeSg65290XNrgw _HjMLYnozEeSzffN-QECwhA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Rr7lsHoiEeSg65290XNrgw" name="findLegalEntity_MessageRecv" covered="_zcmSl3ocEeSg65290XNrgw" message="_Rr5JcHoiEeSg65290XNrgw"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_P1y8wHodEeSg65290XNrgw" name="getBookings_MessageRecv" covered="_zcmSlnocEeSg65290XNrgw" message="_P1xHkHodEeSg65290XNrgw"/>
-    <fragment xmi:type="uml:CombinedFragment" xmi:id="_lgul4HoiEeSg65290XNrgw" name="CombinedFragment" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_lgul4HoiEeSg65290XNrgw" name="CombinedFragment" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw _LsCskHoyEeSzffN-QECwhA" interactionOperator="loop">
       <cfragmentGate xmi:type="uml:Gate" xmi:id="_iBTcMXojEeSg65290XNrgw" name="in_checkIn_Message" message="_iBTcMHojEeSg65290XNrgw">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iBV4cnojEeSg65290XNrgw" source="CombinedFragment.InnerGate">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iBV4c3ojEeSg65290XNrgw" key="insideCF" value="_iBTcMnojEeSg65290XNrgw"/>
@@ -945,16 +972,8 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iBV4dXojEeSg65290XNrgw" key="Gate.name.volatile" value="true"/>
         </eAnnotations>
       </cfragmentGate>
-      <cfragmentGate xmi:type="uml:Gate" xmi:id="_iBTcMnojEeSg65290XNrgw" name="in_checkIn_Message">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iBV4cHojEeSg65290XNrgw" source="CombinedFragment.InnerGate">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iBV4cXojEeSg65290XNrgw" key="outsideCF" value="_iBTcMXojEeSg65290XNrgw"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iBV4dnojEeSg65290XNrgw" source="Gate.name.volatile">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iBV4d3ojEeSg65290XNrgw" key="Gate.name.volatile" value="true"/>
-        </eAnnotations>
-      </cfragmentGate>
-      <operand xmi:type="uml:InteractionOperand" xmi:id="_lgxCIHoiEeSg65290XNrgw" name="InteractionOperand" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
-        <fragment xmi:type="uml:CombinedFragment" xmi:id="_pxhssHoiEeSg65290XNrgw" name="CombinedFragment" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw" interactionOperator="alt">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_lgxCIHoiEeSg65290XNrgw" name="InteractionOperand" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw _LsCskHoyEeSzffN-QECwhA">
+        <fragment xmi:type="uml:CombinedFragment" xmi:id="_pxhssHoiEeSg65290XNrgw" name="CombinedFragment" covered="_zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw" interactionOperator="alt">
           <cfragmentGate xmi:type="uml:Gate" xmi:id="_2e6lUHoiEeSg65290XNrgw" name="in_getAvailableRooms_Message" message="_2e4JEHoiEeSg65290XNrgw">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2e6lVHoiEeSg65290XNrgw" source="CombinedFragment.InnerGate">
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2e9BkHoiEeSg65290XNrgw" key="insideCF" value="_2e6lUXoiEeSg65290XNrgw"/>
@@ -987,10 +1006,11 @@
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5JqUWHoiEeSg65290XNrgw" key="Gate.name.volatile" value="true"/>
             </eAnnotations>
           </cfragmentGate>
-          <operand xmi:type="uml:InteractionOperand" xmi:id="_pxhssXoiEeSg65290XNrgw" name="InteractionOperand" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
+          <operand xmi:type="uml:InteractionOperand" xmi:id="_pxhssXoiEeSg65290XNrgw" name="InteractionOperand" covered="_zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
             <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2e9BlXoiEeSg65290XNrgw" name="getAvailableRooms_MessageRecv" covered="_zcmSlnocEeSg65290XNrgw" message="_2e4JEHoiEeSg65290XNrgw"/>
             <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_puMyQHoqEeSbEI7oy8w_lg" name="getRoomTypes_MessageSend" covered="_zcmSlnocEeSg65290XNrgw" message="_ptvfQHoqEeSbEI7oy8w_lg"/>
-            <fragment xmi:type="uml:CombinedFragment" xmi:id="_buI7YHorEeSbEI7oy8w_lg" name="CombinedFragment" covered="_zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw _zcmSl3ocEeSg65290XNrgw" interactionOperator="alt">
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_puMyQXoqEeSbEI7oy8w_lg" name="getRoomTypes_MessageRecv" message="_ptvfQHoqEeSbEI7oy8w_lg"/>
+            <fragment xmi:type="uml:CombinedFragment" xmi:id="_buI7YHorEeSbEI7oy8w_lg" name="CombinedFragment" covered="_zcmSlnocEeSg65290XNrgw" interactionOperator="alt">
               <cfragmentGate xmi:type="uml:Gate" xmi:id="_gfBQcXorEeSbEI7oy8w_lg" name="in_getAvailableRooms_Message0">
                 <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gfDss3orEeSbEI7oy8w_lg" source="CombinedFragment.InnerGate">
                   <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gfGI8HorEeSbEI7oy8w_lg" key="insideCF" value="_gfDssHorEeSbEI7oy8w_lg"/>
@@ -1007,8 +1027,7 @@
                   <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gfGI9HorEeSbEI7oy8w_lg" key="Gate.name.volatile" value="true"/>
                 </eAnnotations>
               </cfragmentGate>
-              <operand xmi:type="uml:InteractionOperand" xmi:id="_buXk4HorEeSbEI7oy8w_lg" name="InteractionOperand" covered="_zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw _zcmSl3ocEeSg65290XNrgw">
-                <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_puMyQXoqEeSbEI7oy8w_lg" name="getRoomTypes_MessageRecv" message="_ptvfQHoqEeSbEI7oy8w_lg"/>
+              <operand xmi:type="uml:InteractionOperand" xmi:id="_buXk4HorEeSbEI7oy8w_lg" name="InteractionOperand" covered="_zcmSlnocEeSg65290XNrgw">
                 <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_gfGI9XorEeSbEI7oy8w_lg" name="getAvailableRooms_Message0Recv" covered="_zcmSlnocEeSg65290XNrgw" message="_gfBQcHorEeSbEI7oy8w_lg"/>
                 <guard xmi:type="uml:InteractionConstraint" xmi:id="_buXk4XorEeSbEI7oy8w_lg">
                   <specification xmi:type="uml:LiteralString" xmi:id="_d1VRYHorEeSbEI7oy8w_lg" value="no available rooms of room type"/>
@@ -1025,7 +1044,7 @@
             </guard>
           </operand>
         </fragment>
-        <fragment xmi:type="uml:CombinedFragment" xmi:id="_-LIqIHoiEeSg65290XNrgw" name="CombinedFragment0" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
+        <fragment xmi:type="uml:CombinedFragment" xmi:id="_-LIqIHoiEeSg65290XNrgw" name="CombinedFragment0" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw" interactionOperator="loop">
           <cfragmentGate xmi:type="uml:Gate" xmi:id="_DodOcXojEeSg65290XNrgw" name="in_findPerson_Message" message="_DodOcHojEeSg65290XNrgw">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Dofqs3ojEeSg65290XNrgw" source="CombinedFragment.InnerGate">
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DofqtHojEeSg65290XNrgw" key="insideCF" value="_DofqsHojEeSg65290XNrgw"/>
@@ -1046,24 +1065,47 @@
             <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DoiG83ojEeSg65290XNrgw" name="findPerson_MessageRecv" covered="_zcmSl3ocEeSg65290XNrgw" message="_DodOcHojEeSg65290XNrgw"/>
             <guard xmi:type="uml:InteractionConstraint" xmi:id="_-LIqInoiEeSg65290XNrgw">
               <specification xmi:type="uml:LiteralString" xmi:id="_BCU5sHojEeSg65290XNrgw" value="guests for room"/>
-              <maxint xmi:type="uml:LiteralInteger" xmi:id="_-LIqJXoiEeSg65290XNrgw" value="1"/>
               <minint xmi:type="uml:LiteralInteger" xmi:id="_-LIqJHoiEeSg65290XNrgw"/>
             </guard>
           </operand>
         </fragment>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iBV4eHojEeSg65290XNrgw" name="checkIn_MessageRecv" covered="_zcmSlnocEeSg65290XNrgw" message="_iBTcMHojEeSg65290XNrgw"/>
-        <fragment xmi:type="uml:CombinedFragment" xmi:id="_lfjEsHojEeSg65290XNrgw" name="CombinedFragment1" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
-          <operand xmi:type="uml:InteractionOperand" xmi:id="_lflg8HojEeSg65290XNrgw" name="InteractionOperand" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw">
+        <fragment xmi:type="uml:CombinedFragment" xmi:id="_lfjEsHojEeSg65290XNrgw" name="CombinedFragment1" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw _LsCskHoyEeSzffN-QECwhA" interactionOperator="loop">
+          <cfragmentGate xmi:type="uml:Gate" xmi:id="_HjHS4HozEeSzffN-QECwhA" name="in_getAvailableKeyCard_Message" message="_HjE2oHozEeSzffN-QECwhA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HjJvI3ozEeSzffN-QECwhA" source="CombinedFragment.InnerGate">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HjJvJHozEeSzffN-QECwhA" key="insideCF" value="_HjJvIHozEeSzffN-QECwhA"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HjJvJXozEeSzffN-QECwhA" source="Gate.name.volatile">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HjJvJnozEeSzffN-QECwhA" key="Gate.name.volatile" value="true"/>
+            </eAnnotations>
+          </cfragmentGate>
+          <cfragmentGate xmi:type="uml:Gate" xmi:id="_HjJvIHozEeSzffN-QECwhA" name="in_getAvailableKeyCard_Message">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HjJvIXozEeSzffN-QECwhA" source="CombinedFragment.InnerGate">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HjJvInozEeSzffN-QECwhA" key="outsideCF" value="_HjHS4HozEeSzffN-QECwhA"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HjMLYHozEeSzffN-QECwhA" source="Gate.name.volatile">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HjMLYXozEeSzffN-QECwhA" key="Gate.name.volatile" value="true"/>
+            </eAnnotations>
+          </cfragmentGate>
+          <cfragmentGate xmi:type="uml:Gate" xmi:id="_NomqcXozEeSzffN-QECwhA" name="in_registerKeyCard_Message" message="_NomqcHozEeSzffN-QECwhA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NopGsnozEeSzffN-QECwhA" source="CombinedFragment.InnerGate">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NopGs3ozEeSzffN-QECwhA" key="insideCF" value="_NomqcnozEeSzffN-QECwhA"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NopGtHozEeSzffN-QECwhA" source="Gate.name.volatile">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NopGtXozEeSzffN-QECwhA" key="Gate.name.volatile" value="true"/>
+            </eAnnotations>
+          </cfragmentGate>
+          <operand xmi:type="uml:InteractionOperand" xmi:id="_lflg8HojEeSg65290XNrgw" name="InteractionOperand" covered="_zcmSl3ocEeSg65290XNrgw _zcmSmHocEeSg65290XNrgw _zcmSlnocEeSg65290XNrgw _LsCskHoyEeSzffN-QECwhA">
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Nori8XozEeSzffN-QECwhA" name="registerKeyCard_MessageRecv" covered="_zcmSmHocEeSg65290XNrgw" message="_NomqcHozEeSzffN-QECwhA"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_HjMLYnozEeSzffN-QECwhA" name="getAvailableKeyCard_MessageRecv" covered="_LsCskHoyEeSzffN-QECwhA" message="_HjE2oHozEeSzffN-QECwhA"/>
             <guard xmi:type="uml:InteractionConstraint" xmi:id="_lflg8XojEeSg65290XNrgw">
               <specification xmi:type="uml:LiteralString" xmi:id="_nTjY8HojEeSg65290XNrgw" value="number of guests"/>
-              <maxint xmi:type="uml:LiteralInteger" xmi:id="_lflg9HojEeSg65290XNrgw" value="1"/>
               <minint xmi:type="uml:LiteralInteger" xmi:id="_lflg83ojEeSg65290XNrgw"/>
             </guard>
           </operand>
         </fragment>
         <guard xmi:type="uml:InteractionConstraint" xmi:id="_lgxCIXoiEeSg65290XNrgw">
           <specification xmi:type="uml:LiteralString" xmi:id="_nB758HoiEeSg65290XNrgw" value="bookings.size"/>
-          <maxint xmi:type="uml:LiteralInteger" xmi:id="_lgxCJHoiEeSg65290XNrgw" value="1"/>
           <minint xmi:type="uml:LiteralInteger" xmi:id="_lgxCI3oiEeSg65290XNrgw"/>
         </guard>
       </operand>
@@ -1078,6 +1120,8 @@
     <message xmi:type="uml:Message" xmi:id="_iBTcMHojEeSg65290XNrgw" name="checkIn_Message" messageSort="asynchCall" receiveEvent="_iBV4eHojEeSg65290XNrgw" sendEvent="_iBTcMXojEeSg65290XNrgw" signature="_ID9wcHojEeSg65290XNrgw"/>
     <message xmi:type="uml:Message" xmi:id="_ptvfQHoqEeSbEI7oy8w_lg" name="getRoomTypes_Message" messageSort="asynchCall" receiveEvent="_puMyQXoqEeSbEI7oy8w_lg" sendEvent="_puMyQHoqEeSbEI7oy8w_lg" signature="_WT-H0HoiEeSVKdBxhP6Y7A"/>
     <message xmi:type="uml:Message" xmi:id="_gfBQcHorEeSbEI7oy8w_lg" name="getAvailableRooms_Message0" messageSort="asynchCall" receiveEvent="_gfGI9XorEeSbEI7oy8w_lg" sendEvent="_gfDssHorEeSbEI7oy8w_lg" signature="_-tRxIHbxEeSbBJzXJgLK5Q"/>
+    <message xmi:type="uml:Message" xmi:id="_HjE2oHozEeSzffN-QECwhA" name="getAvailableKeyCard_Message" messageSort="asynchCall" receiveEvent="_HjMLYnozEeSzffN-QECwhA" sendEvent="_HjHS4HozEeSzffN-QECwhA" signature="_3jeb0HoxEeSzffN-QECwhA"/>
+    <message xmi:type="uml:Message" xmi:id="_NomqcHozEeSzffN-QECwhA" name="registerKeyCard_Message" messageSort="asynchCall" receiveEvent="_Nori8XozEeSzffN-QECwhA" sendEvent="_NomqcXozEeSzffN-QECwhA" signature="_k3Z-QHoxEeSzffN-QECwhA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_htpnwHogEeSVKdBxhP6Y7A" name="BookRoomTypeInteraction">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_nJxAQHoiEeSVKdBxhP6Y7A" name="roomManager" type="_SzH3QHoiEeSVKdBxhP6Y7A"/>
@@ -1231,6 +1275,52 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_k3Z-QHoxEeSzffN-QECwhA" name="registerKeyCard">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pzk9UHoxEeSzffN-QECwhA" name="keycard" type="_LUQhAHZIEeSrX_LICIhx2Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uCvFYHoxEeSzffN-QECwhA" name="registerKeyCard">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0Ctq0HoxEeSzffN-QECwhA" name="keycardNbr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2jHyEHoxEeSzffN-QECwhA" name="KeyCardManager">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3jeb0HoxEeSzffN-QECwhA" name="getAvailableKeyCard">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8jpxIHoxEeSzffN-QECwhA" type="_LUQhAHZIEeSrX_LICIhx2Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__dSQsHoxEeSzffN-QECwhA" name="getKeyCard">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EhPSwHoyEeSzffN-QECwhA" name="keyCardNbr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_GF15EHoyEeSzffN-QECwhA" type="_LUQhAHZIEeSrX_LICIhx2Q" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_APrhgHozEeSZQp8F1uHBGQ" name="Register Purchase">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FCukUHo0EeSZQp8F1uHBGQ" name="billManager" type="_FIjl8HcHEeSbBJzXJgLK5Q"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_OC7O8HozEeSZQp8F1uHBGQ" name="Booking Manager" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_c9fCYHo2EeSZQp8F1uHBGQ _jY7b0Ho2EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_REaqAHozEeSZQp8F1uHBGQ" name="Billing Manager" represents="_FCukUHo0EeSZQp8F1uHBGQ" coveredBy="_b79zoXo5EeSZQp8F1uHBGQ _q5814Ho5EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c9fCYHo2EeSZQp8F1uHBGQ" name="getActiveBooking_MessageRecv" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_c9dNMHo2EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jY7b0Ho2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_MessageRecv" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_jY5moHo2EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b79zoXo5EeSZQp8F1uHBGQ" name="getAllServices_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_b78lgHo5EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_q5814Ho5EeSZQp8F1uHBGQ" name="getBookingBill_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_EXFXkHo6EeSZQp8F1uHBGQ" name="CombinedFragment" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ" interactionOperator="loop">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_EXHz0Ho6EeSZQp8F1uHBGQ" name="InteractionOperand" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1TomgXo5EeSZQp8F1uHBGQ" name="billItem_MessageRecv" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_EXIa4Ho6EeSZQp8F1uHBGQ" name="Until not done">
+          <specification xmi:type="uml:LiteralString" xmi:id="_EXIa4Xo6EeSZQp8F1uHBGQ" value="through all supplied items"/>
+        </guard>
+      </operand>
+    </fragment>
+    <formalGate xmi:type="uml:Gate" xmi:id="_c9ebUHo2EeSZQp8F1uHBGQ" name="gate0" message="_c9dNMHo2EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_jY60wHo2EeSZQp8F1uHBGQ" name="gate1" message="_jY5moHo2EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_b79zoHo5EeSZQp8F1uHBGQ" name="gate2" message="_b78lgHo5EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_q58O0Ho5EeSZQp8F1uHBGQ" name="gate3" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_1TomgHo5EeSZQp8F1uHBGQ" name="gate4" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_c9dNMHo2EeSZQp8F1uHBGQ" name="getActiveBooking_Message" messageSort="asynchCall" receiveEvent="_c9fCYHo2EeSZQp8F1uHBGQ" sendEvent="_c9ebUHo2EeSZQp8F1uHBGQ" signature="_QSnHsHo1EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_jY5moHo2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_Message" messageSort="asynchCall" receiveEvent="_jY7b0Ho2EeSZQp8F1uHBGQ" sendEvent="_jY60wHo2EeSZQp8F1uHBGQ" signature="_tC41IHo1EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_b78lgHo5EeSZQp8F1uHBGQ" name="getAllServices_Message" messageSort="asynchCall" receiveEvent="_b79zoXo5EeSZQp8F1uHBGQ" sendEvent="_b79zoHo5EeSZQp8F1uHBGQ" signature="_LRCHYHo5EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_q57nwHo5EeSZQp8F1uHBGQ" name="getBookingBill_Message" messageSort="asynchCall" receiveEvent="_q5814Ho5EeSZQp8F1uHBGQ" sendEvent="_q58O0Ho5EeSZQp8F1uHBGQ" signature="_Erqn0Ho3EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_1TnYYHo5EeSZQp8F1uHBGQ" name="billItem_Message" messageSort="asynchCall" receiveEvent="_1TomgXo5EeSZQp8F1uHBGQ" sendEvent="_1TomgHo5EeSZQp8F1uHBGQ" signature="_k5lEUHo4EeSZQp8F1uHBGQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_WCDBoHozEeSnSa4PiV3Jkw" name="SearchForAvailableRoomsInteraction">
     <lifeline xmi:type="uml:Lifeline" xmi:id="_ZKjqsHozEeSnSa4PiV3Jkw" name="Lifeline" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_Lcj0MHo0EeSnSa4PiV3Jkw _b6-HYHo0EeSnSa4PiV3Jkw _b7AjoHo0EeSnSa4PiV3Jkw _6HRt8no0EeSnSa4PiV3Jkw"/>
