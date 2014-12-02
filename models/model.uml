@@ -906,4 +906,59 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UR_YI3lVEeSGW6TbfhvuNQ" value="1"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_htpnwHogEeSVKdBxhP6Y7A" name="BookRoomTypeInteraction">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_nJxAQHoiEeSVKdBxhP6Y7A" name="roomManager" type="_SzH3QHoiEeSVKdBxhP6Y7A"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_n-LKoHogEeSVKdBxhP6Y7A" name="Lifeline" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_xkyfkHogEeSVKdBxhP6Y7A _XFF4MHohEeSVKdBxhP6Y7A _XFHGUHohEeSVKdBxhP6Y7A _GldLEHojEeSVKdBxhP6Y7A _kz3qcHojEeSVKdBxhP6Y7A _kz4RgHojEeSVKdBxhP6Y7A"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_sGbZcHogEeSVKdBxhP6Y7A" name="Lifeline0" represents="_T27pcHl5EeSVKdBxhP6Y7A" coveredBy="_XFF4MHohEeSVKdBxhP6Y7A _XFHGUHohEeSVKdBxhP6Y7A _kz3qcHojEeSVKdBxhP6Y7A _kz4RgHojEeSVKdBxhP6Y7A"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_sKquUHoiEeSVKdBxhP6Y7A" name="Lifeline1" represents="_nJxAQHoiEeSVKdBxhP6Y7A" coveredBy="_03acAHoiEeSVKdBxhP6Y7A"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_03acAHoiEeSVKdBxhP6Y7A" name="getRoomTypes_MessageRecv" covered="_sKquUHoiEeSVKdBxhP6Y7A" message="_03X_wHoiEeSVKdBxhP6Y7A"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xkyfkHogEeSVKdBxhP6Y7A" name="isRoomTypeAvailable_MessageRecv" covered="_n-LKoHogEeSVKdBxhP6Y7A" message="_xkwDUHogEeSVKdBxhP6Y7A"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_XFF4MHohEeSVKdBxhP6Y7A" name="CombinedFragment" covered="_n-LKoHogEeSVKdBxhP6Y7A _sGbZcHogEeSVKdBxhP6Y7A" interactionOperator="alt">
+      <cfragmentGate xmi:type="uml:Gate" xmi:id="_GlaHwHojEeSVKdBxhP6Y7A" name="in_getAvailableRoomTypeAmount_Message" message="_GlYSkHojEeSVKdBxhP6Y7A">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Glb88XojEeSVKdBxhP6Y7A" source="CombinedFragment.InnerGate">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Glb88nojEeSVKdBxhP6Y7A" key="insideCF" value="_Glau0HojEeSVKdBxhP6Y7A"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Glb883ojEeSVKdBxhP6Y7A" source="Gate.name.volatile">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GlckAHojEeSVKdBxhP6Y7A" key="Gate.name.volatile" value="true"/>
+        </eAnnotations>
+      </cfragmentGate>
+      <cfragmentGate xmi:type="uml:Gate" xmi:id="_Glau0HojEeSVKdBxhP6Y7A" name="in_getAvailableRoomTypeAmount_Message">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GlbV4HojEeSVKdBxhP6Y7A" source="CombinedFragment.InnerGate">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Glb88HojEeSVKdBxhP6Y7A" key="outsideCF" value="_GlaHwHojEeSVKdBxhP6Y7A"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GlckAXojEeSVKdBxhP6Y7A" source="Gate.name.volatile">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GlckAnojEeSVKdBxhP6Y7A" key="Gate.name.volatile" value="true"/>
+        </eAnnotations>
+      </cfragmentGate>
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_XFHGUHohEeSVKdBxhP6Y7A" name="InteractionOperand" covered="_n-LKoHogEeSVKdBxhP6Y7A _sGbZcHogEeSVKdBxhP6Y7A">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GldLEHojEeSVKdBxhP6Y7A" name="getAvailableRoomTypeAmount_MessageRecv" covered="_n-LKoHogEeSVKdBxhP6Y7A" message="_GlYSkHojEeSVKdBxhP6Y7A"/>
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_XFHGUXohEeSVKdBxhP6Y7A">
+          <specification xmi:type="uml:LiteralString" xmi:id="_XFHtYHohEeSVKdBxhP6Y7A" value="if room type isn't available"/>
+          <maxint xmi:type="uml:LiteralInteger" xmi:id="_XFHtYnohEeSVKdBxhP6Y7A" value="1"/>
+          <minint xmi:type="uml:LiteralInteger" xmi:id="_XFHtYXohEeSVKdBxhP6Y7A"/>
+        </guard>
+      </operand>
+    </fragment>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_kz3qcHojEeSVKdBxhP6Y7A" name="CombinedFragment0" covered="_sGbZcHogEeSVKdBxhP6Y7A _n-LKoHogEeSVKdBxhP6Y7A" interactionOperator="alt">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_kz4RgHojEeSVKdBxhP6Y7A" name="InteractionOperand" covered="_sGbZcHogEeSVKdBxhP6Y7A _n-LKoHogEeSVKdBxhP6Y7A">
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_kz44kHojEeSVKdBxhP6Y7A">
+          <specification xmi:type="uml:LiteralString" xmi:id="_kz5foHojEeSVKdBxhP6Y7A" value="if customer is an organization"/>
+          <maxint xmi:type="uml:LiteralInteger" xmi:id="_kz6GsHojEeSVKdBxhP6Y7A" value="1"/>
+          <minint xmi:type="uml:LiteralInteger" xmi:id="_kz5foXojEeSVKdBxhP6Y7A"/>
+        </guard>
+      </operand>
+    </fragment>
+    <formalGate xmi:type="uml:Gate" xmi:id="_xkx4gHogEeSVKdBxhP6Y7A" name="gate0" message="_xkwDUHogEeSVKdBxhP6Y7A"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_03ZN4HoiEeSVKdBxhP6Y7A" name="gate1" message="_03X_wHoiEeSVKdBxhP6Y7A"/>
+    <message xmi:type="uml:Message" xmi:id="_xkwDUHogEeSVKdBxhP6Y7A" name="isRoomTypeAvailable_Message" messageSort="asynchCall" receiveEvent="_xkyfkHogEeSVKdBxhP6Y7A" sendEvent="_xkx4gHogEeSVKdBxhP6Y7A" signature="_ZQOHQHoGEeSVKdBxhP6Y7A"/>
+    <message xmi:type="uml:Message" xmi:id="_03X_wHoiEeSVKdBxhP6Y7A" name="getRoomTypes_Message" messageSort="asynchCall" receiveEvent="_03acAHoiEeSVKdBxhP6Y7A" sendEvent="_03ZN4HoiEeSVKdBxhP6Y7A" signature="_WT-H0HoiEeSVKdBxhP6Y7A"/>
+    <message xmi:type="uml:Message" xmi:id="_GlYSkHojEeSVKdBxhP6Y7A" name="getAvailableRoomTypeAmount_Message" messageSort="asynchCall" receiveEvent="_GldLEHojEeSVKdBxhP6Y7A" sendEvent="_GlaHwHojEeSVKdBxhP6Y7A" signature="_TFoU4HbzEeSbBJzXJgLK5Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_SzH3QHoiEeSVKdBxhP6Y7A" name="RoomManager">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WT-H0HoiEeSVKdBxhP6Y7A" name="getRoomTypes">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gt03kHoiEeSVKdBxhP6Y7A" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
 </uml:Model>
