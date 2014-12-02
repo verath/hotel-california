@@ -161,7 +161,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3WL-I3ZJEeSrX_LICIhx2Q" value="1"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_QwNhcHZKEeSrX_LICIhx2Q" name="Booking" visibility="protected">
+  <packagedElement xmi:type="uml:Class" xmi:id="_QwNhcHZKEeSrX_LICIhx2Q" name="Booking" visibility="private">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_pU2lkHbyEeSbBJzXJgLK5Q" name="id" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
     </ownedAttribute>
@@ -427,6 +427,18 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_so8PcHoGEeSVKdBxhP6Y7A" name="getRoomTypes">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_xrjNsHoGEeSVKdBxhP6Y7A" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QSnHsHo1EeSZQp8F1uHBGQ" name="getActiveBooking">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_f-6ogHo1EeSZQp8F1uHBGQ" name="roomNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_UsHpIHo2EeSZQp8F1uHBGQ" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_tC41IHo1EeSZQp8F1uHBGQ" name="getRelatedLegalEntities" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-bA-kHo1EeSZQp8F1uHBGQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
       </ownedParameter>
     </ownedOperation>
@@ -697,6 +709,19 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_t2QHoHcHEeSbBJzXJgLK5Q" type="_gemc8Hb6EeSbBJzXJgLK5Q" direction="return"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Erqn0Ho3EeSZQp8F1uHBGQ" name="getBookingBill">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQPqkHo4EeSZQp8F1uHBGQ" name="booking" type="_1FAq0Hb7EeSbBJzXJgLK5Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_k5lEUHo4EeSZQp8F1uHBGQ" name="billItem" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_uSTHMHo4EeSZQp8F1uHBGQ" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EAWvEHo5EeSZQp8F1uHBGQ" name="serviceId">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_HzwvQHo5EeSZQp8F1uHBGQ" name="quantity">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_LRCHYHo5EeSZQp8F1uHBGQ" name="getAllServices"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_SHqgsHcHEeSbBJzXJgLK5Q" memberEnd="_SHqgsXcHEeSbBJzXJgLK5Q _SHp5oHcHEeSbBJzXJgLK5Q">
     <name xsi:nil="true"/>
@@ -1269,5 +1294,32 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_GF15EHoyEeSzffN-QECwhA" type="_LUQhAHZIEeSrX_LICIhx2Q" direction="return"/>
     </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_APrhgHozEeSZQp8F1uHBGQ" name="Register Purchase">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FCukUHo0EeSZQp8F1uHBGQ" name="billManager" type="_FIjl8HcHEeSbBJzXJgLK5Q"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_OC7O8HozEeSZQp8F1uHBGQ" name="Booking Manager" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_c9fCYHo2EeSZQp8F1uHBGQ _jY7b0Ho2EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_REaqAHozEeSZQp8F1uHBGQ" name="Billing Manager" represents="_FCukUHo0EeSZQp8F1uHBGQ" coveredBy="_b79zoXo5EeSZQp8F1uHBGQ _q5814Ho5EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c9fCYHo2EeSZQp8F1uHBGQ" name="getActiveBooking_MessageRecv" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_c9dNMHo2EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jY7b0Ho2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_MessageRecv" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_jY5moHo2EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b79zoXo5EeSZQp8F1uHBGQ" name="getAllServices_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_b78lgHo5EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_q5814Ho5EeSZQp8F1uHBGQ" name="getBookingBill_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_EXFXkHo6EeSZQp8F1uHBGQ" name="CombinedFragment" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ" interactionOperator="loop">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_EXHz0Ho6EeSZQp8F1uHBGQ" name="InteractionOperand" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1TomgXo5EeSZQp8F1uHBGQ" name="billItem_MessageRecv" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_EXIa4Ho6EeSZQp8F1uHBGQ" name="Until not done">
+          <specification xmi:type="uml:LiteralString" xmi:id="_EXIa4Xo6EeSZQp8F1uHBGQ" value="through all supplied items"/>
+        </guard>
+      </operand>
+    </fragment>
+    <formalGate xmi:type="uml:Gate" xmi:id="_c9ebUHo2EeSZQp8F1uHBGQ" name="gate0" message="_c9dNMHo2EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_jY60wHo2EeSZQp8F1uHBGQ" name="gate1" message="_jY5moHo2EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_b79zoHo5EeSZQp8F1uHBGQ" name="gate2" message="_b78lgHo5EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_q58O0Ho5EeSZQp8F1uHBGQ" name="gate3" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
+    <formalGate xmi:type="uml:Gate" xmi:id="_1TomgHo5EeSZQp8F1uHBGQ" name="gate4" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_c9dNMHo2EeSZQp8F1uHBGQ" name="getActiveBooking_Message" messageSort="asynchCall" receiveEvent="_c9fCYHo2EeSZQp8F1uHBGQ" sendEvent="_c9ebUHo2EeSZQp8F1uHBGQ" signature="_QSnHsHo1EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_jY5moHo2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_Message" messageSort="asynchCall" receiveEvent="_jY7b0Ho2EeSZQp8F1uHBGQ" sendEvent="_jY60wHo2EeSZQp8F1uHBGQ" signature="_tC41IHo1EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_b78lgHo5EeSZQp8F1uHBGQ" name="getAllServices_Message" messageSort="asynchCall" receiveEvent="_b79zoXo5EeSZQp8F1uHBGQ" sendEvent="_b79zoHo5EeSZQp8F1uHBGQ" signature="_LRCHYHo5EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_q57nwHo5EeSZQp8F1uHBGQ" name="getBookingBill_Message" messageSort="asynchCall" receiveEvent="_q5814Ho5EeSZQp8F1uHBGQ" sendEvent="_q58O0Ho5EeSZQp8F1uHBGQ" signature="_Erqn0Ho3EeSZQp8F1uHBGQ"/>
+    <message xmi:type="uml:Message" xmi:id="_1TnYYHo5EeSZQp8F1uHBGQ" name="billItem_Message" messageSort="asynchCall" receiveEvent="_1TomgXo5EeSZQp8F1uHBGQ" sendEvent="_1TomgHo5EeSZQp8F1uHBGQ" signature="_k5lEUHo4EeSZQp8F1uHBGQ"/>
   </packagedElement>
 </uml:Model>
