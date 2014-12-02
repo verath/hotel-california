@@ -1232,4 +1232,37 @@
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_WCDBoHozEeSnSa4PiV3Jkw" name="SearchForAvailableRoomsInteraction">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_ZKjqsHozEeSnSa4PiV3Jkw" name="Lifeline" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_Lcj0MHo0EeSnSa4PiV3Jkw _b6-HYHo0EeSnSa4PiV3Jkw _b7AjoHo0EeSnSa4PiV3Jkw _6HRt8no0EeSnSa4PiV3Jkw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Lcj0MHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_MessageRecv" covered="_ZKjqsHozEeSnSa4PiV3Jkw" message="_LcUjoHo0EeSnSa4PiV3Jkw"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_b6-HYHo0EeSnSa4PiV3Jkw" name="CombinedFragment" covered="_ZKjqsHozEeSnSa4PiV3Jkw" interactionOperator="opt">
+      <cfragmentGate xmi:type="uml:Gate" xmi:id="_6HODkHo0EeSnSa4PiV3Jkw" name="in_getAvailableRooms_Message0" message="_6HMOYHo0EeSnSa4PiV3Jkw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6HQf0Xo0EeSnSa4PiV3Jkw" source="CombinedFragment.InnerGate">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6HQf0no0EeSnSa4PiV3Jkw" key="insideCF" value="_6HOqoHo0EeSnSa4PiV3Jkw"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6HRG4Ho0EeSnSa4PiV3Jkw" source="Gate.name.volatile">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6HRG4Xo0EeSnSa4PiV3Jkw" key="Gate.name.volatile" value="true"/>
+        </eAnnotations>
+      </cfragmentGate>
+      <cfragmentGate xmi:type="uml:Gate" xmi:id="_6HOqoHo0EeSnSa4PiV3Jkw" name="in_getAvailableRooms_Message0">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6HP4wHo0EeSnSa4PiV3Jkw" source="CombinedFragment.InnerGate">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6HQf0Ho0EeSnSa4PiV3Jkw" key="outsideCF" value="_6HODkHo0EeSnSa4PiV3Jkw"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6HRt8Ho0EeSnSa4PiV3Jkw" source="Gate.name.volatile">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6HRt8Xo0EeSnSa4PiV3Jkw" key="Gate.name.volatile" value="true"/>
+        </eAnnotations>
+      </cfragmentGate>
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_b7AjoHo0EeSnSa4PiV3Jkw" name="InteractionOperand" covered="_ZKjqsHozEeSnSa4PiV3Jkw">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6HRt8no0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message0Recv" covered="_ZKjqsHozEeSnSa4PiV3Jkw" message="_6HMOYHo0EeSnSa4PiV3Jkw"/>
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_b7BKsHo0EeSnSa4PiV3Jkw">
+          <specification xmi:type="uml:LiteralString" xmi:id="_b7BKsXo0EeSnSa4PiV3Jkw" value="if filter by room type&#xA;"/>
+          <maxint xmi:type="uml:LiteralInteger" xmi:id="_b7BxwXo0EeSnSa4PiV3Jkw" value="1"/>
+          <minint xmi:type="uml:LiteralInteger" xmi:id="_b7BxwHo0EeSnSa4PiV3Jkw"/>
+        </guard>
+      </operand>
+    </fragment>
+    <formalGate xmi:type="uml:Gate" xmi:id="_LcimEHo0EeSnSa4PiV3Jkw" name="gate0" message="_LcUjoHo0EeSnSa4PiV3Jkw"/>
+    <message xmi:type="uml:Message" xmi:id="_LcUjoHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message" messageSort="asynchCall" receiveEvent="_Lcj0MHo0EeSnSa4PiV3Jkw" sendEvent="_LcimEHo0EeSnSa4PiV3Jkw" signature="_-tRxIHbxEeSbBJzXJgLK5Q"/>
+    <message xmi:type="uml:Message" xmi:id="_6HMOYHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message0" messageSort="asynchCall" receiveEvent="_6HRt8no0EeSnSa4PiV3Jkw" sendEvent="_6HODkHo0EeSnSa4PiV3Jkw" signature="_aJ-W0HbyEeSbBJzXJgLK5Q"/>
+  </packagedElement>
 </uml:Model>
