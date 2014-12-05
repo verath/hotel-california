@@ -1,7 +1,5 @@
 package edu.chalmers.tda593.hotelcalifornia.example;
 
-import edu.chalmers.tda593.hotelcalifornia.example.BillingService;
-import edu.chalmers.tda593.hotelcalifornia.example.CreditCardManager;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,27 +11,27 @@ import static org.mockito.Mockito.*;
  *
  * {@see https://github.com/mockito/mockito/blob/master/README.md}
  */
-public class BillingServiceTest {
+public class BillingServiceImplTest {
 
-    private BillingService billingService;
-    private CreditCardManager creditCardManagerMock;
+    private BillingServiceImpl billingService;
+    private CreditCard creditCardMock;
 
     @Before
     public void setUp() throws Exception {
-        creditCardManagerMock = mock(CreditCardManager.class);
-        billingService = new BillingService(creditCardManagerMock);
+        creditCardMock = mock(CreditCard.class);
+        billingService = new BillingServiceImpl(creditCardMock);
     }
 
     @Test
     public void testBillVerifiesCardBeforePayment() throws Exception {
         billingService.bill("123", 1);
-        verify(creditCardManagerMock).isValid("123");
+        verify(creditCardMock).isValid("123");
     }
 
     @Test
     public void testBillDoesNotContinueOnInvalidCreditCard() throws Exception {
-        when(creditCardManagerMock.isValid("123")).thenReturn(false);
+        when(creditCardMock.isValid("123")).thenReturn(false);
         billingService.bill("123", 2);
-        verify(creditCardManagerMock, never()).doPayment("123", 2);
+        verify(creditCardMock, never()).doPayment("123", 2);
     }
 }

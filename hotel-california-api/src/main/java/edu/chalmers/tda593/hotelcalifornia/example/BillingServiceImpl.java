@@ -7,17 +7,18 @@ import com.google.inject.Inject;
  * that this class can also be created manually, meaning it can
  * be easily tested.
  */
-public class BillingService {
-    private final CreditCardManager creditCardManager;
+class BillingServiceImpl implements BillingService {
+    private final CreditCard creditCard;
 
     @Inject
-    public BillingService(CreditCardManager creditCardManager) {
-        this.creditCardManager = creditCardManager;
+    public BillingServiceImpl(CreditCard creditCard) {
+        this.creditCard = creditCard;
     }
 
+    @Override
     public void bill(String ccNumber, double cost) {
-        if (creditCardManager.isValid(ccNumber)) {
-            creditCardManager.doPayment(ccNumber, cost);
+        if (creditCard.isValid(ccNumber)) {
+            creditCard.doPayment(ccNumber, cost);
         }
     }
 }

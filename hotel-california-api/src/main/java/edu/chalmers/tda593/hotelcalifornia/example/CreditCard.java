@@ -1,9 +1,6 @@
 package edu.chalmers.tda593.hotelcalifornia.example;
 
-/**
- * An interface for some dependency.
- */
-public interface CreditCardManager {
+public interface CreditCard {
 
     public void doPayment(String ccNumber, double sum);
 
