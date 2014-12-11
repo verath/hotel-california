@@ -135,13 +135,13 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_Af2rYHlKEeSxBZTxw5XQdg" name="BookSpecificRoomInteraction">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_pUWiMHlWEeSGW6TbfhvuNQ" name="bookingManager">
-        <type xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_T27pcHl5EeSVKdBxhP6Y7A" name="legalEntityManager">
-        <type xmi:type="uml:Interface" href="Classes.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qcJD4HoKEeSVKdBxhP6Y7A" name="legalEntity">
-        <type xmi:type="uml:Class" href="Classes.uml#_3oahIHZKEeSrX_LICIhx2Q"/>
+        <type xmi:type="uml:Class" href="tda593.uml#_3oahIHZKEeSrX_LICIhx2Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_uPqZwHrDEeS2M9uZ6JBJRQ" name="bankingService" type="_r-78cHpDEeSZQp8F1uHBGQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_0sSq0HlWEeSGW6TbfhvuNQ" name="bookingManagerLifeLine" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_Gxe_gHlgEeSVKdBxhP6Y7A _oFn5sHlgEeSVKdBxhP6Y7A _uyeMMHlgEeSVKdBxhP6Y7A _uyezQHlgEeSVKdBxhP6Y7A _A4R7AnlhEeSVKdBxhP6Y7A _a5bdAHmTEeSVKdBxhP6Y7A _a5crIHmTEeSVKdBxhP6Y7A _Vu41UHmUEeSVKdBxhP6Y7A _E61z4HmVEeSVKdBxhP6Y7A _E63CAHmVEeSVKdBxhP6Y7A _wak_YHmVEeSVKdBxhP6Y7A _T2F1wXmWEeSVKdBxhP6Y7A _CwgnoHrEEeS2M9uZ6JBJRQ _Cwn8YHrEEeS2M9uZ6JBJRQ _Odx1IHrGEeS2M9uZ6JBJRQ _Od04cHrGEeS2M9uZ6JBJRQ"/>
@@ -364,51 +364,51 @@
       <formalGate xmi:type="uml:Gate" xmi:id="_oFmrkHlgEeSVKdBxhP6Y7A" name="gate0" message="_oFldcHlgEeSVKdBxhP6Y7A"/>
       <formalGate xmi:type="uml:Gate" xmi:id="_T2F1wHmWEeSVKdBxhP6Y7A" name="gate11" message="_T2EAkHmWEeSVKdBxhP6Y7A"/>
       <message xmi:type="uml:Message" xmi:id="_oFldcHlgEeSVKdBxhP6Y7A" name="isRoomAvailable_Message" messageSort="asynchCall" receiveEvent="_oFn5sHlgEeSVKdBxhP6Y7A" sendEvent="_oFmrkHlgEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Zk7KMHcMEeSxBZTxw5XQdg"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Zk7KMHcMEeSxBZTxw5XQdg"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_A4NpkHlhEeSVKdBxhP6Y7A" name="getAvailableRooms_Message" messageSort="asynchCall" receiveEvent="_A4R7AnlhEeSVKdBxhP6Y7A" sendEvent="_A4PewHlhEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_uRqAgHmUEeSVKdBxhP6Y7A" name="findOrganization_Message" messageSort="asynchCall" receiveEvent="_uRu5AXmUEeSVKdBxhP6Y7A" sendEvent="_uRr1sHmUEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_DBmTwHb3EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_DBmTwHb3EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_2gZjkHmUEeSVKdBxhP6Y7A" name="findPerson_Message" messageSort="asynchCall" receiveEvent="_2gecEHmUEeSVKdBxhP6Y7A" sendEvent="_2gbYwHmUEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_xwG90Hb2EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_xwG90Hb2EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_r2vAwHmVEeSVKdBxhP6Y7A" name="createOrganization_Message" messageSort="asynchCall" receiveEvent="_r2z5QnmVEeSVKdBxhP6Y7A" sendEvent="_r2w18HmVEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_tVCrQHb3EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_tVCrQHb3EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_9L_cYHmVEeSVKdBxhP6Y7A" name="createPerson_Message" messageSort="asynchCall" receiveEvent="_9ME78nmVEeSVKdBxhP6Y7A" sendEvent="_9MB4oHmVEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_HCmrEHb3EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_HCmrEHb3EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_T2EAkHmWEeSVKdBxhP6Y7A" name="createBooking_Message" messageSort="asynchCall" receiveEvent="_T2F1wXmWEeSVKdBxhP6Y7A" sendEvent="_T2F1wHmWEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_JBf2IHb2EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_JBf2IHb2EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_hYSwoHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="_hYZeUXrBEeS2M9uZ6JBJRQ" sendEvent="_hYXCEHrBEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_s1a7QHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message0" messageSort="asynchCall" receiveEvent="_s1fMsnrBEeS2M9uZ6JBJRQ" sendEvent="_s1cwcHrBEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_MR5MYHrGEeS2M9uZ6JBJRQ" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_MR-r8nrGEeS2M9uZ6JBJRQ" sendEvent="_MR7ooHrGEeS2M9uZ6JBJRQ" signature="_r-78enpDEeSZQp8F1uHBGQ"/>
       <message xmi:type="uml:Message" xmi:id="_eEymQHrGEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message1" messageSort="asynchCall" receiveEvent="_eE23snrGEeS2M9uZ6JBJRQ" sendEvent="_eE0bcHrGEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_zcmSkHocEeSg65290XNrgw" name="Check in">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zcmSkXocEeSg65290XNrgw" name="bm">
-        <type xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zcmSknocEeSg65290XNrgw" name="lem">
-        <type xmi:type="uml:Interface" href="Classes.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zcmSk3ocEeSg65290XNrgw" name="rm" visibility="public">
-        <type xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zcmSlHocEeSg65290XNrgw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zcmSlXocEeSg65290XNrgw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_O3JWoHoyEeSzffN-QECwhA" name="kcm">
-        <type xmi:type="uml:Interface" href="Classes.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
       </ownedAttribute>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSlnocEeSg65290XNrgw" name="BookingManager" represents="_zcmSkXocEeSg65290XNrgw" coveredBy="_P1y8wHodEeSg65290XNrgw _lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _pxhssHoiEeSg65290XNrgw _pxhssXoiEeSg65290XNrgw _2e9BlXoiEeSg65290XNrgw _5JqUWXoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _iBV4eHojEeSg65290XNrgw _puMyQHoqEeSbEI7oy8w_lg _buI7YHorEeSbEI7oy8w_lg _buXk4HorEeSbEI7oy8w_lg _gfGI9XorEeSbEI7oy8w_lg _O_4HIHp6EeSya7Zl_iZNfw _O_4HIXp6EeSya7Zl_iZNfw _TVvpQHp8EeSya7Zl_iZNfw"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_zcmSl3ocEeSg65290XNrgw" name="LegalEntityManager" represents="_zcmSknocEeSg65290XNrgw" coveredBy="_Rr7lsHoiEeSg65290XNrgw _lgul4HoiEeSg65290XNrgw _lgxCIHoiEeSg65290XNrgw _-LIqIHoiEeSg65290XNrgw _-LIqIXoiEeSg65290XNrgw _DoiG83ojEeSg65290XNrgw"/>
@@ -558,39 +558,39 @@
       <formalGate xmi:type="uml:Gate" xmi:id="_P1yVsHodEeSg65290XNrgw" name="gate1" message="_P1xHkHodEeSg65290XNrgw"/>
       <formalGate xmi:type="uml:Gate" xmi:id="_Rr5JcXoiEeSg65290XNrgw" name="gate5" message="_Rr5JcHoiEeSg65290XNrgw"/>
       <message xmi:type="uml:Message" xmi:id="_P1xHkHodEeSg65290XNrgw" name="getBookings_Message" messageSort="asynchCall" receiveEvent="_P1y8wHodEeSg65290XNrgw" sendEvent="_P1yVsHodEeSg65290XNrgw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_ZySsEHbxEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_ZySsEHbxEeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_Rr5JcHoiEeSg65290XNrgw" name="findLegalEntity_Message" messageSort="asynchCall" receiveEvent="_Rr7lsHoiEeSg65290XNrgw" sendEvent="_Rr5JcXoiEeSg65290XNrgw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_ekdMwHohEeSg65290XNrgw"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_ekdMwHohEeSg65290XNrgw"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_2e4JEHoiEeSg65290XNrgw" name="getAvailableRooms_Message" messageSort="asynchCall" receiveEvent="_2e9BlXoiEeSg65290XNrgw" sendEvent="_2e6lUHoiEeSg65290XNrgw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_aJ-W0HbyEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_aJ-W0HbyEeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_5Jn4EHoiEeSg65290XNrgw" name="registerRoom_Message" messageSort="asynchCall" receiveEvent="_5JqUWXoiEeSg65290XNrgw" sendEvent="_5JqUUHoiEeSg65290XNrgw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_t7V-kHoeEeSg65290XNrgw"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_t7V-kHoeEeSg65290XNrgw"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_DodOcHojEeSg65290XNrgw" name="findPerson_Message" messageSort="asynchCall" receiveEvent="_DoiG83ojEeSg65290XNrgw" sendEvent="_DodOcXojEeSg65290XNrgw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_xwG90Hb2EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_xwG90Hb2EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_iBTcMHojEeSg65290XNrgw" name="checkIn_Message" messageSort="asynchCall" receiveEvent="_iBV4eHojEeSg65290XNrgw" sendEvent="_iBTcMXojEeSg65290XNrgw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_ID9wcHojEeSg65290XNrgw"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_ID9wcHojEeSg65290XNrgw"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_ptvfQHoqEeSbEI7oy8w_lg" name="getRoomTypes_Message" messageSort="asynchCall" receiveEvent="_puMyQXoqEeSbEI7oy8w_lg" sendEvent="_puMyQHoqEeSbEI7oy8w_lg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_WT-H0HoiEeSVKdBxhP6Y7A"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_WT-H0HoiEeSVKdBxhP6Y7A"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_gfBQcHorEeSbEI7oy8w_lg" name="getAvailableRooms_Message0" messageSort="asynchCall" receiveEvent="_gfGI9XorEeSbEI7oy8w_lg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_UUFLsHp6EeSya7Zl_iZNfw" name="registerKeyCard_Message" messageSort="asynchCall" receiveEvent="_UUO8unp6EeSya7Zl_iZNfw" sendEvent="_c1ln0Hp8EeSya7Zl_iZNfw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_uCvFYHoxEeSzffN-QECwhA"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_uCvFYHoxEeSzffN-QECwhA"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_TVqwwHp8EeSya7Zl_iZNfw" name="getAvailableRooms_Message1" messageSort="asynchCall" receiveEvent="_TVvpQHp8EeSya7Zl_iZNfw" sendEvent="_TVsl8Hp8EeSya7Zl_iZNfw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_htpnwHogEeSVKdBxhP6Y7A" name="BookRoomTypeInteraction">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_nJxAQHoiEeSVKdBxhP6Y7A" name="roomManager">
-        <type xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
       </ownedAttribute>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_n-LKoHogEeSVKdBxhP6Y7A" name="Lifeline" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_xkyfkHogEeSVKdBxhP6Y7A _XFF4MHohEeSVKdBxhP6Y7A _XFHGUHohEeSVKdBxhP6Y7A _GldLEHojEeSVKdBxhP6Y7A _kz3qcHojEeSVKdBxhP6Y7A _kz4RgHojEeSVKdBxhP6Y7A _sLiXYHoqEeS0T75a12Dkwg _WXg08HorEeS0T75a12Dkwg _WXiDEHorEeS0T75a12Dkwg _NJJLcHosEeS0T75a12Dkwg _mWvcUXosEeS0T75a12Dkwg _Lm4rEHrHEeS2M9uZ6JBJRQ _Lm5SIHrHEeS2M9uZ6JBJRQ _gaQMUHrHEeS2M9uZ6JBJRQ _gaRacHrHEeS2M9uZ6JBJRQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_sGbZcHogEeSVKdBxhP6Y7A" name="Lifeline0" represents="_T27pcHl5EeSVKdBxhP6Y7A" coveredBy="_XFF4MHohEeSVKdBxhP6Y7A _XFHGUHohEeSVKdBxhP6Y7A _kz3qcHojEeSVKdBxhP6Y7A _kz4RgHojEeSVKdBxhP6Y7A _qNdhIXoqEeS0T75a12Dkwg _sLiXYHoqEeS0T75a12Dkwg _0FxDAHoqEeS0T75a12Dkwg _WXg08HorEeS0T75a12Dkwg _WXiDEHorEeS0T75a12Dkwg _dellUnorEeS0T75a12Dkwg _NJJLcHosEeS0T75a12Dkwg _QuwAMXosEeS0T75a12Dkwg __sv0UnrGEeS2M9uZ6JBJRQ _Lm4rEHrHEeS2M9uZ6JBJRQ _Lm5SIHrHEeS2M9uZ6JBJRQ _gaQMUHrHEeS2M9uZ6JBJRQ _gaRacHrHEeS2M9uZ6JBJRQ _nPT_onrHEeS2M9uZ6JBJRQ"/>
@@ -806,43 +806,43 @@
       <formalGate xmi:type="uml:Gate" xmi:id="_03ZN4HoiEeSVKdBxhP6Y7A" name="gate1" message="_03X_wHoiEeSVKdBxhP6Y7A"/>
       <formalGate xmi:type="uml:Gate" xmi:id="_mWvcUHosEeS0T75a12Dkwg" name="gate12" message="_mWtnIHosEeS0T75a12Dkwg"/>
       <message xmi:type="uml:Message" xmi:id="_xkwDUHogEeSVKdBxhP6Y7A" name="isRoomTypeAvailable_Message" messageSort="asynchCall" receiveEvent="_xkyfkHogEeSVKdBxhP6Y7A" sendEvent="_xkx4gHogEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_ZQOHQHoGEeSVKdBxhP6Y7A"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_ZQOHQHoGEeSVKdBxhP6Y7A"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_03X_wHoiEeSVKdBxhP6Y7A" name="getRoomTypes_Message" messageSort="asynchCall" receiveEvent="_03acAHoiEeSVKdBxhP6Y7A" sendEvent="_03ZN4HoiEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_WT-H0HoiEeSVKdBxhP6Y7A"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_WT-H0HoiEeSVKdBxhP6Y7A"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_GlYSkHojEeSVKdBxhP6Y7A" name="getAvailableRoomTypeAmount_Message" messageSort="asynchCall" receiveEvent="_GldLEHojEeSVKdBxhP6Y7A" sendEvent="_GlaHwHojEeSVKdBxhP6Y7A">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_TFoU4HbzEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_TFoU4HbzEeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_qNMbYHoqEeS0T75a12Dkwg" name="findOrganization_Message" messageSort="asynchCall" receiveEvent="_qNdhIXoqEeS0T75a12Dkwg" sendEvent="_qNXagHoqEeS0T75a12Dkwg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_DBmTwHb3EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_DBmTwHb3EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_0FrjcHoqEeS0T75a12Dkwg" name="findPerson_Message" messageSort="asynchCall" receiveEvent="_0FxDAHoqEeS0T75a12Dkwg" sendEvent="_0FtYoHoqEeS0T75a12Dkwg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_xwG90Hb2EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_xwG90Hb2EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_dehT4HorEeS0T75a12Dkwg" name="createOrganization_Message" messageSort="asynchCall" receiveEvent="_dellUnorEeS0T75a12Dkwg" sendEvent="_dejJEHorEeS0T75a12Dkwg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_tVCrQHb3EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_tVCrQHb3EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_QuruwHosEeS0T75a12Dkwg" name="createPerson_Message" messageSort="asynchCall" receiveEvent="_QuwAMXosEeS0T75a12Dkwg" sendEvent="_Qus84HosEeS0T75a12Dkwg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_HCmrEHb3EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_HCmrEHb3EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_mWtnIHosEeS0T75a12Dkwg" name="createBooking_Message" messageSort="asynchCall" receiveEvent="_mWvcUXosEeS0T75a12Dkwg" sendEvent="_mWvcUHosEeS0T75a12Dkwg">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_ZEZj8Hb0EeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_ZEZj8Hb0EeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="__ssJ8HrGEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="__sv0UnrGEeS2M9uZ6JBJRQ" sendEvent="__stYEHrGEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_FTSmEHrHEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message0" messageSort="asynchCall" receiveEvent="_FTW3gXrHEeS2M9uZ6JBJRQ" sendEvent="_FTUbQHrHEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_b0N1UHrHEeS2M9uZ6JBJRQ" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_b0T78HrHEeS2M9uZ6JBJRQ" sendEvent="_b0QRkHrHEeS2M9uZ6JBJRQ" signature="_r-78enpDEeSZQp8F1uHBGQ"/>
       <message xmi:type="uml:Message" xmi:id="_nPPuMHrHEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message1" messageSort="asynchCall" receiveEvent="_nPT_onrHEeS2M9uZ6JBJRQ" sendEvent="_nPRjYHrHEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_APrhgHozEeSZQp8F1uHBGQ" name="Register Purchase">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_FCukUHo0EeSZQp8F1uHBGQ" name="billManager">
-        <type xmi:type="uml:Interface" href="Classes.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_OC7O8HozEeSZQp8F1uHBGQ" name="Booking Manager" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_c9fCYHo2EeSZQp8F1uHBGQ _jY7b0Ho2EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_REaqAHozEeSZQp8F1uHBGQ" name="Billing Manager" represents="_FCukUHo0EeSZQp8F1uHBGQ" coveredBy="_b79zoXo5EeSZQp8F1uHBGQ _q5814Ho5EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
@@ -864,19 +864,19 @@
       <formalGate xmi:type="uml:Gate" xmi:id="_q58O0Ho5EeSZQp8F1uHBGQ" name="gate3" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
       <formalGate xmi:type="uml:Gate" xmi:id="_1TomgHo5EeSZQp8F1uHBGQ" name="gate4" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
       <message xmi:type="uml:Message" xmi:id="_c9dNMHo2EeSZQp8F1uHBGQ" name="getActiveBooking_Message" messageSort="asynchCall" receiveEvent="_c9fCYHo2EeSZQp8F1uHBGQ" sendEvent="_c9ebUHo2EeSZQp8F1uHBGQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_QSnHsHo1EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_QSnHsHo1EeSZQp8F1uHBGQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_jY5moHo2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_Message" messageSort="asynchCall" receiveEvent="_jY7b0Ho2EeSZQp8F1uHBGQ" sendEvent="_jY60wHo2EeSZQp8F1uHBGQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_tC41IHo1EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_tC41IHo1EeSZQp8F1uHBGQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_b78lgHo5EeSZQp8F1uHBGQ" name="getAllServices_Message" messageSort="asynchCall" receiveEvent="_b79zoXo5EeSZQp8F1uHBGQ" sendEvent="_b79zoHo5EeSZQp8F1uHBGQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_LRCHYHo5EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_LRCHYHo5EeSZQp8F1uHBGQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_q57nwHo5EeSZQp8F1uHBGQ" name="getBookingBill_Message" messageSort="asynchCall" receiveEvent="_q5814Ho5EeSZQp8F1uHBGQ" sendEvent="_q58O0Ho5EeSZQp8F1uHBGQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Erqn0Ho3EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Erqn0Ho3EeSZQp8F1uHBGQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_1TnYYHo5EeSZQp8F1uHBGQ" name="billItem_Message" messageSort="asynchCall" receiveEvent="_1TomgXo5EeSZQp8F1uHBGQ" sendEvent="_1TomgHo5EeSZQp8F1uHBGQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_k5lEUHo4EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_k5lEUHo4EeSZQp8F1uHBGQ"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_WCDBoHozEeSnSa4PiV3Jkw" name="SearchForAvailableRoomsInteraction">
@@ -910,10 +910,10 @@
       </fragment>
       <formalGate xmi:type="uml:Gate" xmi:id="_LcimEHo0EeSnSa4PiV3Jkw" name="gate0" message="_LcUjoHo0EeSnSa4PiV3Jkw"/>
       <message xmi:type="uml:Message" xmi:id="_LcUjoHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message" messageSort="asynchCall" receiveEvent="_Lcj0MHo0EeSnSa4PiV3Jkw" sendEvent="_LcimEHo0EeSnSa4PiV3Jkw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_-tRxIHbxEeSbBJzXJgLK5Q"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_6HMOYHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message0" messageSort="asynchCall" receiveEvent="_6HRt8no0EeSnSa4PiV3Jkw" sendEvent="_6HODkHo0EeSnSa4PiV3Jkw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_aJ-W0HbyEeSbBJzXJgLK5Q"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_aJ-W0HbyEeSbBJzXJgLK5Q"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_RYOZAHpCEeSZQp8F1uHBGQ" name="Bank"/>
@@ -924,29 +924,29 @@
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_E1dKEHpEEeSZQp8F1uHBGQ" name="Realization2" client="_RYOZAHpCEeSZQp8F1uHBGQ" supplier="_r-78cHpDEeSZQp8F1uHBGQ" contract="_r-78cHpDEeSZQp8F1uHBGQ"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_H3R8UHpEEeSZQp8F1uHBGQ" name="Usage1" client="_ECaOcHpCEeSZQp8F1uHBGQ" supplier="_r-78cHpDEeSZQp8F1uHBGQ"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_AIsqkHpFEeSZQp8F1uHBGQ" name="Usage2" client="_ECaOcHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_B_cw0HpFEeSZQp8F1uHBGQ" name="Realization3" client="_BzOaEHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_sEzB8HpFEeSZQp8F1uHBGQ" name="Realization4" client="_ECaOcHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_a7z10HpHEeSZQp8F1uHBGQ" name="Realization5" client="_LXe-kHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_UzEV8HpHEeSZQp8F1uHBGQ"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_UzEV8HpHEeSZQp8F1uHBGQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_UzEV8HpHEeSZQp8F1uHBGQ"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_UzEV8HpHEeSZQp8F1uHBGQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_d8UZcHpHEeSZQp8F1uHBGQ" name="Usage3" client="_ECaOcHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_UzEV8HpHEeSZQp8F1uHBGQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_UzEV8HpHEeSZQp8F1uHBGQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_d-bVcHpLEeSZQp8F1uHBGQ" name="Actor: Receptionist"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_nv52kHpLEeSZQp8F1uHBGQ" name="Usage4" client="_d-bVcHpLEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_vu2DEHpLEeSZQp8F1uHBGQ" name="Usage5" client="_d-bVcHpLEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_2NjL4HpLEeSZQp8F1uHBGQ" name="Hotel California">
       <packagedElement xmi:type="uml:Component" xmi:id="_LXe-kHpCEeSZQp8F1uHBGQ" name="Money Rules"/>
@@ -956,13 +956,13 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_UpkpcHpMEeSZQp8F1uHBGQ" name="Actor: Administrator"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_ZikYsHpMEeSZQp8F1uHBGQ" name="Usage6" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_a3lD0HpMEeSZQp8F1uHBGQ" name="Usage7" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_fKcnMHpMEeSZQp8F1uHBGQ" name="Usage8" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_r-78cHpDEeSZQp8F1uHBGQ" name="CustomerProvides">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_r-78cXpDEeSZQp8F1uHBGQ" name="makePayment">
@@ -1016,55 +1016,55 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_vwjx8HpZEeSept0-dI1XSQ" name="Realization6" client="_BzOaEHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_2gOu8HpZEeSept0-dI1XSQ" name="Realization7" client="_LXe-kHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_b7R0IHpaEeSept0-dI1XSQ" name="Realization8" client="_A-_M0HpaEeSept0-dI1XSQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_AGESsHpYEeSept0-dI1XSQ"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_AGESsHpYEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_AGESsHpYEeSept0-dI1XSQ"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_AGESsHpYEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_hboeUHpaEeSept0-dI1XSQ" name="Usage9" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_AGESsHpYEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_AGESsHpYEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_926zMHpaEeSept0-dI1XSQ" name="Usage10" client="_d-bVcHpLEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_Fc7iUHpbEeSept0-dI1XSQ" name="Realization9" client="_A-_M0HpaEeSept0-dI1XSQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
-      <contract xmi:type="uml:Interface" href="Classes.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_OwIzEHpbEeSept0-dI1XSQ" name="Usage101" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_QOiDsHpbEeSept0-dI1XSQ" name="Usage1011" client="_d-bVcHpLEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_XshfQHpbEeSept0-dI1XSQ" name="Usage10111" client="_d-bVcHpLEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_YMuCQHpbEeSept0-dI1XSQ" name="Usage101111" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_Uo0f4HpqEeSzffN-QECwhA" name="Check out">
       <ownedComment xmi:type="uml:Comment" xmi:id="__OJh4HrIEeS2M9uZ6JBJRQ">
         <body>Every parameter needed for the makePayment method can be found in the bill</body>
       </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_l3JNEHpqEeSzffN-QECwhA" name="bm">
-        <type xmi:type="uml:Interface" href="Classes.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_mmLdUHpqEeSzffN-QECwhA" name="kcm">
-        <type xmi:type="uml:Interface" href="Classes.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_0YiNMHpaEeSept0-dI1XSQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_nMLGUHpqEeSzffN-QECwhA" name="billM">
-        <type xmi:type="uml:Interface" href="Classes.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_nqXeMHpqEeSzffN-QECwhA" name="bankM" type="_RYOZAHpCEeSZQp8F1uHBGQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_LDPa0HpsEeSzffN-QECwhA" name="rm">
-        <type xmi:type="uml:Interface" href="Classes.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+        <type xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
       </ownedAttribute>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_Xde_4HpqEeSzffN-QECwhA" name="Booking Manager" represents="_l3JNEHpqEeSzffN-QECwhA" coveredBy="_m9Rx4HpuEeSzffN-QECwhA _rwglcHpwEeSzffN-QECwhA _UpgssHrIEeS2M9uZ6JBJRQ _UphTwHrIEeS2M9uZ6JBJRQ _vlankHrKEeS2M9uZ6JBJRQ _vlbOoHrKEeS2M9uZ6JBJRQ _dE7ScHrLEeS2M9uZ6JBJRQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_bbMyoHpqEeSzffN-QECwhA" name="Billing Manager" represents="_nMLGUHpqEeSzffN-QECwhA" coveredBy="_-rvnwXptEeSzffN-QECwhA _8UltsHpuEeSzffN-QECwhA _UpgssHrIEeS2M9uZ6JBJRQ _UphTwHrIEeS2M9uZ6JBJRQ _vlankHrKEeS2M9uZ6JBJRQ _vlbOoHrKEeS2M9uZ6JBJRQ _dE7ScHrLEeS2M9uZ6JBJRQ _qxcFwnrLEeS2M9uZ6JBJRQ"/>
@@ -1148,33 +1148,32 @@
       <formalGate xmi:type="uml:Gate" xmi:id="_m9RK0HpuEeSzffN-QECwhA" name="gate4" message="_m9PVoHpuEeSzffN-QECwhA"/>
       <formalGate xmi:type="uml:Gate" xmi:id="_8UlGoHpuEeSzffN-QECwhA" name="gate5" message="_8Uj4gHpuEeSzffN-QECwhA"/>
       <message xmi:type="uml:Message" xmi:id="_FEAcQHpsEeSzffN-QECwhA" name="checkOut_Message" messageSort="asynchCall" receiveEvent="_FECRcHpsEeSzffN-QECwhA" sendEvent="_FEBqYHpsEeSzffN-QECwhA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_7EdC4HprEeSzffN-QECwhA"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_7EdC4HprEeSzffN-QECwhA"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_-ruZoHptEeSzffN-QECwhA" name="publishBill_Message" messageSort="asynchCall" receiveEvent="_-rvnwXptEeSzffN-QECwhA" sendEvent="_-rvnwHptEeSzffN-QECwhA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_1MYxYHptEeSzffN-QECwhA"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_1MYxYHptEeSzffN-QECwhA"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_m9PVoHpuEeSzffN-QECwhA" name="getActiveBooking_Message" messageSort="asynchCall" receiveEvent="_m9Rx4HpuEeSzffN-QECwhA" sendEvent="_m9RK0HpuEeSzffN-QECwhA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_QSnHsHo1EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_QSnHsHo1EeSZQp8F1uHBGQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_8Uj4gHpuEeSzffN-QECwhA" name="getBookingBill_Message" messageSort="asynchCall" receiveEvent="_8UltsHpuEeSzffN-QECwhA" sendEvent="_8UlGoHpuEeSzffN-QECwhA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Erqn0Ho3EeSZQp8F1uHBGQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Erqn0Ho3EeSZQp8F1uHBGQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_rwewQHpwEeSzffN-QECwhA" name="unregisterAllKeyCards_Message" messageSort="asynchCall" receiveEvent="_rwhMgHpwEeSzffN-QECwhA" sendEvent="_rwglcHpwEeSzffN-QECwhA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_b1mn8HpwEeSzffN-QECwhA"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_b1mn8HpwEeSzffN-QECwhA"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_HMBsgHrLEeS2M9uZ6JBJRQ" name="makePayment_Message" messageSort="asynchCall" receiveEvent="_HMGlA3rLEeS2M9uZ6JBJRQ" sendEvent="_HMEIwHrLEeS2M9uZ6JBJRQ" signature="_r-78cXpDEeSZQp8F1uHBGQ"/>
       <message xmi:type="uml:Message" xmi:id="_Tq0IcHrLEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="_Tq5oAHrLEeS2M9uZ6JBJRQ" sendEvent="_Tq2ksHrLEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_qxXNQHrLEeS2M9uZ6JBJRQ" name="payBill_Message" messageSort="asynchCall" receiveEvent="_qxcFwnrLEeS2M9uZ6JBJRQ" sendEvent="_qxZCcHrLEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_E32ksHpuEeSzffN-QECwhA"/>
+        <signature xmi:type="uml:Operation" href="tda593.uml#_E32ksHpuEeSzffN-QECwhA"/>
       </message>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" href="Classes.uml#_TDz4gIDOEeSyQrXH1hqv2Q"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_PT_s8IDQEeSyQrXH1hqv2Q" name="RoomTypeAmountMap">
       <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_VqR5kIDQEeSyQrXH1hqv2Q">
         <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_bongQIDQEeSyQrXH1hqv2Q">
-          <actual xmi:type="uml:Class" href="Classes.uml#_MEBmgHZHEeSrX_LICIhx2Q"/>
+          <actual xmi:type="uml:Class" href="tda593.uml#_MEBmgHZHEeSrX_LICIhx2Q"/>
           <formal xmi:type="uml:ClassifierTemplateParameter" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0-_ownedParameter.0"/>
         </parameterSubstitution>
         <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_fwsI4IDQEeSyQrXH1hqv2Q">
@@ -1184,32 +1183,7 @@
         <signature xmi:type="uml:RedefinableTemplateSignature" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0"/>
       </templateBinding>
     </packagedElement>
-    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_vBTZUIEqEeSyQrXH1hqv2Q" name="BookingDataServiceType">
-      <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_1tWakIEqEeSyQrXH1hqv2Q">
-        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_4_2tIIEqEeSyQrXH1hqv2Q">
-          <actual xmi:type="uml:Class" href="Classes.uml#_QwNhcHZKEeSrX_LICIhx2Q"/>
-          <formal xmi:type="uml:ClassifierTemplateParameter" href="Classes.uml#_b1PEsH7HEeS2M9uZ6JBJRQ"/>
-        </parameterSubstitution>
-        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_67DOgIEqEeSyQrXH1hqv2Q">
-          <actual xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
-          <formal xmi:type="uml:ClassifierTemplateParameter" href="Classes.uml#_xY3v0H7IEeS2M9uZ6JBJRQ"/>
-        </parameterSubstitution>
-        <signature xmi:type="uml:RedefinableTemplateSignature" href="Classes.uml#_IPemEH7HEeS2M9uZ6JBJRQ"/>
-      </templateBinding>
-    </packagedElement>
-    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_S9F_UIE4EeSfSN1EgLeI7A" name="BillDataServiceType">
-      <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_U7lFQIE4EeSfSN1EgLeI7A">
-        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_YxsbMIE4EeSfSN1EgLeI7A">
-          <actual xmi:type="uml:Class" href="Classes.uml#_gemc8Hb6EeSbBJzXJgLK5Q"/>
-          <formal xmi:type="uml:ClassifierTemplateParameter" href="Classes.uml#_b1PEsH7HEeS2M9uZ6JBJRQ"/>
-        </parameterSubstitution>
-        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_cRdtsIE4EeSfSN1EgLeI7A">
-          <actual xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
-          <formal xmi:type="uml:ClassifierTemplateParameter" href="Classes.uml#_xY3v0H7IEeS2M9uZ6JBJRQ"/>
-        </parameterSubstitution>
-        <signature xmi:type="uml:RedefinableTemplateSignature" href="Classes.uml#_IPemEH7HEeS2M9uZ6JBJRQ"/>
-      </templateBinding>
-    </packagedElement>
+    <packagedElement xmi:type="uml:Package" href="tda593.uml#_UzrTMIFIEeSFZv45HTbezA"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_HB6skIDREeSyQrXH1hqv2Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HCbC4IDREeSyQrXH1hqv2Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -1219,6 +1193,4 @@
   </uml:Model>
   <Ecore:EDataType xmi:id="_Q3d1YIDREeSyQrXH1hqv2Q" base_PrimitiveType="_PT_s8IDQEeSyQrXH1hqv2Q"/>
   <Ecore:EGenericType xmi:id="_Q4WmMIDREeSyQrXH1hqv2Q" base_DataType="_PT_s8IDQEeSyQrXH1hqv2Q"/>
-  <Ecore:EGenericType xmi:id="_AaPbEIErEeSyQrXH1hqv2Q" base_DataType="_vBTZUIEqEeSyQrXH1hqv2Q"/>
-  <Ecore:EDataType xmi:id="_AbKoIIErEeSyQrXH1hqv2Q" base_PrimitiveType="_vBTZUIEqEeSyQrXH1hqv2Q"/>
 </xmi:XMI>

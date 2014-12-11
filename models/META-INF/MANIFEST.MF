@@ -9,7 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: Classes,
  Classes.impl,
- Classes.util
+ Classes.util,
+ tda593.hotel.california,
+ tda593.hotel.california.impl,
+ tda593.hotel.california.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

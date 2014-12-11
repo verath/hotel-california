@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegenerator -->
       <package
-            uri="http:///Classes.ecore"
-            class="Classes.ClassesPackage"/>
+            uri="http:///tda593/hotel/california.ecore"
+            class="tda593.hotel.california.CaliforniaPackage"/>
    </extension>
 
 </plugin>
