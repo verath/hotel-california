@@ -23,15 +23,15 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegenerator -->
       <package
-            uri="http:///tda593/hotel/california/discount.ecore"
-            class="tda593.hotel.california.discount.DiscountPackage"/>
+            uri="http:///tda593/hotel/california/facilities.ecore"
+            class="tda593.hotel.california.facilities.FacilitiesPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegenerator -->
       <package
-            uri="http:///tda593/hotel/california/facilities.ecore"
-            class="tda593.hotel.california.facilities.FacilitiesPackage"/>
+            uri="http:///tda593/hotel/california/billing.ecore"
+            class="tda593.hotel.california.billing.BillingPackage"/>
    </extension>
 
 </plugin>

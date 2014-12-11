@@ -390,6 +390,70 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.facilities.impl.RoomTypeImpl
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomType()
+	 * @generated
+	 */
+	int ROOM_TYPE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Room Approvals</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__ROOM_APPROVALS = 3;
+
+	/**
+	 * The number of structural features of the '<em>Room Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Room Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomImpl <em>Room</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,7 +461,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 5;
+	int ROOM = 6;
 
 	/**
 	 * The feature id for the '<em><b>Floor</b></em>' attribute.
@@ -542,7 +606,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomManagerImpl()
 	 * @generated
 	 */
-	int ROOM_MANAGER_IMPL = 6;
+	int ROOM_MANAGER_IMPL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Room Data Service</b></em>' reference.
@@ -651,7 +715,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomDataService()
 	 * @generated
 	 */
-	int ROOM_DATA_SERVICE = 7;
+	int ROOM_DATA_SERVICE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Room Data Service</em>' class.
@@ -742,7 +806,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomTypeDataService()
 	 * @generated
 	 */
-	int ROOM_TYPE_DATA_SERVICE = 8;
+	int ROOM_TYPE_DATA_SERVICE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Room Type Data Service</em>' class.
@@ -833,7 +897,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getConferenceRoom()
 	 * @generated
 	 */
-	int CONFERENCE_ROOM = 9;
+	int CONFERENCE_ROOM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Floor</b></em>' attribute.
@@ -996,7 +1060,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getGuestRoom()
 	 * @generated
 	 */
-	int GUEST_ROOM = 10;
+	int GUEST_ROOM = 11;
 
 	/**
 	 * The feature id for the '<em><b>Floor</b></em>' attribute.
@@ -1152,68 +1216,14 @@ public interface FacilitiesPackage extends EPackage {
 	int GUEST_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.facilities.impl.RoomTypeImpl
-	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomType()
+	 * @see tda593.hotel.california.facilities.RoomApproval
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
 	 * @generated
 	 */
-	int ROOM_TYPE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__DESCRIPTION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Room Approvals</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ROOM_APPROVALS = 3;
-
-	/**
-	 * The number of structural features of the '<em>Room Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Room Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_OPERATION_COUNT = 0;
+	int ROOM_APPROVAL = 12;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.DisabilityApproval <em>Disability Approval</em>}' enum.
@@ -1223,17 +1233,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getDisabilityApproval()
 	 * @generated
 	 */
-	int DISABILITY_APPROVAL = 12;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.facilities.RoomApproval
-	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
-	 * @generated
-	 */
-	int ROOM_APPROVAL = 13;
+	int DISABILITY_APPROVAL = 13;
 
 
 	/**
@@ -1416,6 +1416,60 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoomManager__UnregisterAllKeyCards__Room();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Room Type</em>'.
+	 * @see tda593.hotel.california.facilities.RoomType
+	 * @generated
+	 */
+	EClass getRoomType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.facilities.RoomType#getId()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see tda593.hotel.california.facilities.RoomType#getName()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see tda593.hotel.california.facilities.RoomType#getDescription()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Description();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.facilities.RoomType#getRoomApprovals <em>Room Approvals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Room Approvals</em>'.
+	 * @see tda593.hotel.california.facilities.RoomType#getRoomApprovals()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_RoomApprovals();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.Room <em>Room</em>}'.
@@ -1684,58 +1738,14 @@ public interface FacilitiesPackage extends EPackage {
 	EAttribute getGuestRoom_NumberOfExtrabeds();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
+	 * Returns the meta object for enum '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room Type</em>'.
-	 * @see tda593.hotel.california.facilities.RoomType
+	 * @return the meta object for enum '<em>Room Approval</em>'.
+	 * @see tda593.hotel.california.facilities.RoomApproval
 	 * @generated
 	 */
-	EClass getRoomType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tda593.hotel.california.facilities.RoomType#getId()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tda593.hotel.california.facilities.RoomType#getName()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see tda593.hotel.california.facilities.RoomType#getDescription()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Description();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.facilities.RoomType#getRoomApprovals <em>Room Approvals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Room Approvals</em>'.
-	 * @see tda593.hotel.california.facilities.RoomType#getRoomApprovals()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_RoomApprovals();
+	EEnum getRoomApproval();
 
 	/**
 	 * Returns the meta object for enum '{@link tda593.hotel.california.facilities.DisabilityApproval <em>Disability Approval</em>}'.
@@ -1746,16 +1756,6 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDisabilityApproval();
-
-	/**
-	 * Returns the meta object for enum '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Room Approval</em>'.
-	 * @see tda593.hotel.california.facilities.RoomApproval
-	 * @generated
-	 */
-	EEnum getRoomApproval();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1933,6 +1933,48 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = eINSTANCE.getRoomManager__UnregisterAllKeyCards__Room();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.facilities.impl.RoomTypeImpl
+		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomType()
+		 * @generated
+		 */
+		EClass ROOM_TYPE = eINSTANCE.getRoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__ID = eINSTANCE.getRoomType_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__DESCRIPTION = eINSTANCE.getRoomType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Approvals</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__ROOM_APPROVALS = eINSTANCE.getRoomType_RoomApprovals();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomImpl <em>Room</em>}' class.
@@ -2147,46 +2189,14 @@ public interface FacilitiesPackage extends EPackage {
 		EAttribute GUEST_ROOM__NUMBER_OF_EXTRABEDS = eINSTANCE.getGuestRoom_NumberOfExtrabeds();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.facilities.impl.RoomTypeImpl
-		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomType()
+		 * @see tda593.hotel.california.facilities.RoomApproval
+		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
 		 * @generated
 		 */
-		EClass ROOM_TYPE = eINSTANCE.getRoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__ID = eINSTANCE.getRoomType_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__DESCRIPTION = eINSTANCE.getRoomType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Approvals</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__ROOM_APPROVALS = eINSTANCE.getRoomType_RoomApprovals();
+		EEnum ROOM_APPROVAL = eINSTANCE.getRoomApproval();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.DisabilityApproval <em>Disability Approval</em>}' enum.
@@ -2197,16 +2207,6 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DISABILITY_APPROVAL = eINSTANCE.getDisabilityApproval();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.facilities.RoomApproval
-		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
-		 * @generated
-		 */
-		EEnum ROOM_APPROVAL = eINSTANCE.getRoomApproval();
 
 	}
 

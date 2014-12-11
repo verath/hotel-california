@@ -66,74 +66,14 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CaliforniaPackage.BILL_DATA_SERVICE: {
-				BillDataService billDataService = (BillDataService)theEObject;
-				T result = caseBillDataService(billDataService);
-				if (result == null) result = caseDataService(billDataService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CaliforniaPackage.DATA_SERVICE: {
 				DataService<?, ?> dataService = (DataService<?, ?>)theEObject;
 				T result = caseDataService(dataService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CaliforniaPackage.BILL: {
-				Bill bill = (Bill)theEObject;
-				T result = caseBill(bill);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.PURCHASE: {
-				Purchase purchase = (Purchase)theEObject;
-				T result = casePurchase(purchase);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.SERVICE: {
-				Service service = (Service)theEObject;
-				T result = caseService(service);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.BILL_MANAGER_IMPL: {
-				BillManagerImpl billManagerImpl = (BillManagerImpl)theEObject;
-				T result = caseBillManagerImpl(billManagerImpl);
-				if (result == null) result = caseBillManager(billManagerImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.BILL_MANAGER: {
-				BillManager billManager = (BillManager)theEObject;
-				T result = caseBillManager(billManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.BOOKING_BILL: {
-				BookingBill bookingBill = (BookingBill)theEObject;
-				T result = caseBookingBill(bookingBill);
-				if (result == null) result = caseBill(bookingBill);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill Data Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill Data Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBillDataService(BillDataService object) {
-		return null;
 	}
 
 	/**
@@ -148,96 +88,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public <E, ID> T caseDataService(DataService<E, ID> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBill(Bill object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Purchase</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Purchase</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePurchase(Purchase object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseService(Service object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill Manager Impl</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBillManagerImpl(BillManagerImpl object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBillManager(BillManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Booking Bill</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Booking Bill</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBookingBill(BookingBill object) {
 		return null;
 	}
 

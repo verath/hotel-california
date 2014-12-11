@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tda593.hotel.california.CaliforniaPackage;
 
+import tda593.hotel.california.billing.BillingPackage;
+
+import tda593.hotel.california.billing.impl.BillingPackageImpl;
+
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingFactory;
@@ -29,10 +33,6 @@ import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.booking.StayRequest;
 import tda593.hotel.california.booking.TravelInformation;
-
-import tda593.hotel.california.discount.DiscountPackage;
-
-import tda593.hotel.california.discount.impl.DiscountPackageImpl;
 
 import tda593.hotel.california.facilities.FacilitiesPackage;
 
@@ -194,19 +194,19 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		// Obtain or create and register interdependencies
 		CaliforniaPackageImpl theCaliforniaPackage = (CaliforniaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) instanceof CaliforniaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) : CaliforniaPackage.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) : FacilitiesPackage.eINSTANCE);
-		DiscountPackageImpl theDiscountPackage = (DiscountPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) instanceof DiscountPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) : DiscountPackage.eINSTANCE);
+		BillingPackageImpl theBillingPackage = (BillingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) instanceof BillingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) : BillingPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theBookingPackage.createPackageContents();
 		theCaliforniaPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
-		theDiscountPackage.createPackageContents();
+		theBillingPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBookingPackage.initializePackageContents();
 		theCaliforniaPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
-		theDiscountPackage.initializePackageContents();
+		theBillingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBookingPackage.freeze();

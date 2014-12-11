@@ -31,6 +31,15 @@ public interface FacilitiesFactory extends EFactory {
 	KeyCard createKeyCard();
 
 	/**
+	 * Returns a new object of class '<em>Room Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Room Type</em>'.
+	 * @generated
+	 */
+	RoomType createRoomType();
+
+	/**
 	 * Returns a new object of class '<em>Room</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,15 +92,6 @@ public interface FacilitiesFactory extends EFactory {
 	 * @generated
 	 */
 	GuestRoom createGuestRoom();
-
-	/**
-	 * Returns a new object of class '<em>Room Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room Type</em>'.
-	 * @generated
-	 */
-	RoomType createRoomType();
 
 	/**
 	 * Returns the package supported by this factory.

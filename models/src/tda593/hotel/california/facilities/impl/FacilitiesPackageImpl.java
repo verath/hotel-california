@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tda593.hotel.california.CaliforniaPackage;
 
+import tda593.hotel.california.billing.BillingPackage;
+
+import tda593.hotel.california.billing.impl.BillingPackageImpl;
+
 import tda593.hotel.california.booking.BookingPackage;
 
 import tda593.hotel.california.booking.impl.BookingPackageImpl;
-
-import tda593.hotel.california.discount.DiscountPackage;
-
-import tda593.hotel.california.discount.impl.DiscountPackageImpl;
 
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
@@ -88,6 +88,13 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass roomTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass roomEClass = null;
 
 	/**
@@ -130,7 +137,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass roomTypeEClass = null;
+	private EEnum roomApprovalEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,13 +145,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * @generated
 	 */
 	private EEnum disabilityApprovalEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum roomApprovalEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -194,20 +194,20 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		// Obtain or create and register interdependencies
 		CaliforniaPackageImpl theCaliforniaPackage = (CaliforniaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) instanceof CaliforniaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) : CaliforniaPackage.eINSTANCE);
+		BillingPackageImpl theBillingPackage = (BillingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) instanceof BillingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) : BillingPackage.eINSTANCE);
 		BookingPackageImpl theBookingPackage = (BookingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) instanceof BookingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) : BookingPackage.eINSTANCE);
-		DiscountPackageImpl theDiscountPackage = (DiscountPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) instanceof DiscountPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) : DiscountPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theFacilitiesPackage.createPackageContents();
 		theCaliforniaPackage.createPackageContents();
+		theBillingPackage.createPackageContents();
 		theBookingPackage.createPackageContents();
-		theDiscountPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theFacilitiesPackage.initializePackageContents();
 		theCaliforniaPackage.initializePackageContents();
+		theBillingPackage.initializePackageContents();
 		theBookingPackage.initializePackageContents();
-		theDiscountPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theFacilitiesPackage.freeze();
@@ -378,6 +378,51 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 */
 	public EOperation getRoomManager__UnregisterAllKeyCards__Room() {
 		return roomManagerEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRoomType() {
+		return roomTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomType_Id() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomType_Name() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomType_Description() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomType_RoomApprovals() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -610,44 +655,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoomType() {
-		return roomTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Id() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Name() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Description() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_RoomApprovals() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(3);
+	public EEnum getRoomApproval() {
+		return roomApprovalEEnum;
 	}
 
 	/**
@@ -657,15 +666,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 */
 	public EEnum getDisabilityApproval() {
 		return disabilityApprovalEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getRoomApproval() {
-		return roomApprovalEEnum;
 	}
 
 	/**
@@ -719,6 +719,12 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM);
 
+		roomTypeEClass = createEClass(ROOM_TYPE);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__ID);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_APPROVALS);
+
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__FLOOR);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
@@ -750,15 +756,9 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_BEDS);
 		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
 
-		roomTypeEClass = createEClass(ROOM_TYPE);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__ID);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_APPROVALS);
-
 		// Create enums
-		disabilityApprovalEEnum = createEEnum(DISABILITY_APPROVAL);
 		roomApprovalEEnum = createEEnum(ROOM_APPROVAL);
+		disabilityApprovalEEnum = createEEnum(DISABILITY_APPROVAL);
 	}
 
 	/**
@@ -860,6 +860,12 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		op = initEOperation(getRoomManager__UnregisterAllKeyCards__Room(), null, "unregisterAllKeyCards", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomType_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_RoomApprovals(), this.getRoomApproval(), "roomApprovals", null, 0, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -896,16 +902,10 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getGuestRoom_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoomType_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_RoomApprovals(), this.getRoomApproval(), "roomApprovals", null, 0, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		// Initialize enums and add enum literals
-		initEEnum(disabilityApprovalEEnum, DisabilityApproval.class, "DisabilityApproval");
-
 		initEEnum(roomApprovalEEnum, RoomApproval.class, "RoomApproval");
+
+		initEEnum(disabilityApprovalEEnum, DisabilityApproval.class, "DisabilityApproval");
 	}
 
 } //FacilitiesPackageImpl

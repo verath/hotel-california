@@ -69,13 +69,13 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case FacilitiesPackage.KEY_CARD: return createKeyCard();
+			case FacilitiesPackage.ROOM_TYPE: return createRoomType();
 			case FacilitiesPackage.ROOM: return createRoom();
 			case FacilitiesPackage.ROOM_MANAGER_IMPL: return createRoomManagerImpl();
 			case FacilitiesPackage.ROOM_DATA_SERVICE: return createRoomDataService();
 			case FacilitiesPackage.ROOM_TYPE_DATA_SERVICE: return createRoomTypeDataService();
 			case FacilitiesPackage.CONFERENCE_ROOM: return createConferenceRoom();
 			case FacilitiesPackage.GUEST_ROOM: return createGuestRoom();
-			case FacilitiesPackage.ROOM_TYPE: return createRoomType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,10 +89,10 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case FacilitiesPackage.DISABILITY_APPROVAL:
-				return createDisabilityApprovalFromString(eDataType, initialValue);
 			case FacilitiesPackage.ROOM_APPROVAL:
 				return createRoomApprovalFromString(eDataType, initialValue);
+			case FacilitiesPackage.DISABILITY_APPROVAL:
+				return createDisabilityApprovalFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,10 +106,10 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case FacilitiesPackage.DISABILITY_APPROVAL:
-				return convertDisabilityApprovalToString(eDataType, instanceValue);
 			case FacilitiesPackage.ROOM_APPROVAL:
 				return convertRoomApprovalToString(eDataType, instanceValue);
+			case FacilitiesPackage.DISABILITY_APPROVAL:
+				return convertDisabilityApprovalToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -123,6 +123,16 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	public KeyCard createKeyCard() {
 		KeyCardImpl keyCard = new KeyCardImpl();
 		return keyCard;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType createRoomType() {
+		RoomTypeImpl roomType = new RoomTypeImpl();
+		return roomType;
 	}
 
 	/**
@@ -190,9 +200,19 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomType createRoomType() {
-		RoomTypeImpl roomType = new RoomTypeImpl();
-		return roomType;
+	public RoomApproval createRoomApprovalFromString(EDataType eDataType, String initialValue) {
+		RoomApproval result = RoomApproval.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoomApprovalToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -212,26 +232,6 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	 * @generated
 	 */
 	public String convertDisabilityApprovalToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomApproval createRoomApprovalFromString(EDataType eDataType, String initialValue) {
-		RoomApproval result = RoomApproval.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertRoomApprovalToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
