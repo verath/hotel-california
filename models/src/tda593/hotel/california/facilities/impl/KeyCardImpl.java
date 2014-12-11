@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.facilities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.KeyCard;
+import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.KeyCard;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,7 @@ import tda593.hotel.california.KeyCard;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.KeyCardImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.KeyCardImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,7 +62,7 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.KEY_CARD;
+		return FacilitiesPackage.Literals.KEY_CARD;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.KEY_CARD__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.KEY_CARD__ID, oldId, id));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.KEY_CARD__ID:
+			case FacilitiesPackage.KEY_CARD__ID:
 				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.KEY_CARD__ID:
+			case FacilitiesPackage.KEY_CARD__ID:
 				setId((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.KEY_CARD__ID:
+			case FacilitiesPackage.KEY_CARD__ID:
 				setId(ID_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.KEY_CARD__ID:
+			case FacilitiesPackage.KEY_CARD__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);

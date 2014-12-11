@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getAdminRoomManager()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getAdminRoomManager()
  * @model interface="true" abstract="true"
  * @generated
  */

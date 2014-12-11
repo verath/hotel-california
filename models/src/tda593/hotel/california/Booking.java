@@ -6,6 +6,8 @@ import java.util.Date;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.facilities.RoomType;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Booking</b></em>'.

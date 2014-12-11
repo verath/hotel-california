@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.facilities.impl;
 
 import java.util.Collection;
 
@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.RoomApproval;
-import tda593.hotel.california.RoomType;
+import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.RoomApproval;
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,10 +26,10 @@ import tda593.hotel.california.RoomType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.RoomTypeImpl#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomTypeImpl#getRoomApprovals <em>Room Approvals</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getRoomApprovals <em>Room Approvals</em>}</li>
  * </ul>
  * </p>
  *
@@ -122,7 +122,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.ROOM_TYPE;
+		return FacilitiesPackage.Literals.ROOM_TYPE;
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM_TYPE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_TYPE__ID, oldId, id));
 	}
 
 	/**
@@ -164,7 +164,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM_TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -185,7 +185,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM_TYPE__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 */
 	public EList<RoomApproval> getRoomApprovals() {
 		if (roomApprovals == null) {
-			roomApprovals = new EDataTypeUniqueEList<RoomApproval>(RoomApproval.class, this, CaliforniaPackage.ROOM_TYPE__ROOM_APPROVALS);
+			roomApprovals = new EDataTypeUniqueEList<RoomApproval>(RoomApproval.class, this, FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS);
 		}
 		return roomApprovals;
 	}
@@ -208,13 +208,13 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_TYPE__ID:
+			case FacilitiesPackage.ROOM_TYPE__ID:
 				return getId();
-			case CaliforniaPackage.ROOM_TYPE__NAME:
+			case FacilitiesPackage.ROOM_TYPE__NAME:
 				return getName();
-			case CaliforniaPackage.ROOM_TYPE__DESCRIPTION:
+			case FacilitiesPackage.ROOM_TYPE__DESCRIPTION:
 				return getDescription();
-			case CaliforniaPackage.ROOM_TYPE__ROOM_APPROVALS:
+			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				return getRoomApprovals();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -229,16 +229,16 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_TYPE__ID:
+			case FacilitiesPackage.ROOM_TYPE__ID:
 				setId((Integer)newValue);
 				return;
-			case CaliforniaPackage.ROOM_TYPE__NAME:
+			case FacilitiesPackage.ROOM_TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case CaliforniaPackage.ROOM_TYPE__DESCRIPTION:
+			case FacilitiesPackage.ROOM_TYPE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CaliforniaPackage.ROOM_TYPE__ROOM_APPROVALS:
+			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				getRoomApprovals().clear();
 				getRoomApprovals().addAll((Collection<? extends RoomApproval>)newValue);
 				return;
@@ -254,16 +254,16 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_TYPE__ID:
+			case FacilitiesPackage.ROOM_TYPE__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM_TYPE__NAME:
+			case FacilitiesPackage.ROOM_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM_TYPE__DESCRIPTION:
+			case FacilitiesPackage.ROOM_TYPE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM_TYPE__ROOM_APPROVALS:
+			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				getRoomApprovals().clear();
 				return;
 		}
@@ -278,13 +278,13 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_TYPE__ID:
+			case FacilitiesPackage.ROOM_TYPE__ID:
 				return id != ID_EDEFAULT;
-			case CaliforniaPackage.ROOM_TYPE__NAME:
+			case FacilitiesPackage.ROOM_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CaliforniaPackage.ROOM_TYPE__DESCRIPTION:
+			case FacilitiesPackage.ROOM_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CaliforniaPackage.ROOM_TYPE__ROOM_APPROVALS:
+			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				return roomApprovals != null && !roomApprovals.isEmpty();
 		}
 		return super.eIsSet(featureID);

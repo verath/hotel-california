@@ -22,8 +22,9 @@ import tda593.hotel.california.BookingDataService;
 import tda593.hotel.california.BookingManagerImpl;
 import tda593.hotel.california.CaliforniaPackage;
 import tda593.hotel.california.LegalEntity;
-import tda593.hotel.california.Room;
-import tda593.hotel.california.RoomType;
+
+import tda593.hotel.california.facilities.Room;
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->

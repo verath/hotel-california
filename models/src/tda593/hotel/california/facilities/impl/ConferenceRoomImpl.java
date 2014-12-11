@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.facilities.impl;
 
 import java.util.Collection;
 
@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.ConferenceRoom;
+import tda593.hotel.california.facilities.ConferenceRoom;
+import tda593.hotel.california.facilities.FacilitiesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +24,8 @@ import tda593.hotel.california.ConferenceRoom;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.ConferenceRoomImpl#getNumberOfSeats <em>Number Of Seats</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.ConferenceRoomImpl#getEquipment <em>Equipment</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.ConferenceRoomImpl#getNumberOfSeats <em>Number Of Seats</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.ConferenceRoomImpl#getEquipment <em>Equipment</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,7 +78,7 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.CONFERENCE_ROOM;
+		return FacilitiesPackage.Literals.CONFERENCE_ROOM;
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 		int oldNumberOfSeats = numberOfSeats;
 		numberOfSeats = newNumberOfSeats;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS, oldNumberOfSeats, numberOfSeats));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS, oldNumberOfSeats, numberOfSeats));
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	 */
 	public EList<String> getEquipment() {
 		if (equipment == null) {
-			equipment = new EDataTypeUniqueEList<String>(String.class, this, CaliforniaPackage.CONFERENCE_ROOM__EQUIPMENT);
+			equipment = new EDataTypeUniqueEList<String>(String.class, this, FacilitiesPackage.CONFERENCE_ROOM__EQUIPMENT);
 		}
 		return equipment;
 	}
@@ -122,9 +122,9 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
+			case FacilitiesPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
 				return getNumberOfSeats();
-			case CaliforniaPackage.CONFERENCE_ROOM__EQUIPMENT:
+			case FacilitiesPackage.CONFERENCE_ROOM__EQUIPMENT:
 				return getEquipment();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -139,10 +139,10 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
+			case FacilitiesPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
 				setNumberOfSeats((Integer)newValue);
 				return;
-			case CaliforniaPackage.CONFERENCE_ROOM__EQUIPMENT:
+			case FacilitiesPackage.CONFERENCE_ROOM__EQUIPMENT:
 				getEquipment().clear();
 				getEquipment().addAll((Collection<? extends String>)newValue);
 				return;
@@ -158,10 +158,10 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
+			case FacilitiesPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
 				setNumberOfSeats(NUMBER_OF_SEATS_EDEFAULT);
 				return;
-			case CaliforniaPackage.CONFERENCE_ROOM__EQUIPMENT:
+			case FacilitiesPackage.CONFERENCE_ROOM__EQUIPMENT:
 				getEquipment().clear();
 				return;
 		}
@@ -176,9 +176,9 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
+			case FacilitiesPackage.CONFERENCE_ROOM__NUMBER_OF_SEATS:
 				return numberOfSeats != NUMBER_OF_SEATS_EDEFAULT;
-			case CaliforniaPackage.CONFERENCE_ROOM__EQUIPMENT:
+			case FacilitiesPackage.CONFERENCE_ROOM__EQUIPMENT:
 				return equipment != null && !equipment.isEmpty();
 		}
 		return super.eIsSet(featureID);

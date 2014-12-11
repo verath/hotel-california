@@ -4,16 +4,15 @@ package tda593.hotel.california.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import tda593.hotel.california.AdminDiscountManager;
-import tda593.hotel.california.AdminKeyCardManager;
-import tda593.hotel.california.AdminRoomManager;
 import tda593.hotel.california.Bill;
 import tda593.hotel.california.BillDataService;
 import tda593.hotel.california.BillManager;
@@ -25,31 +24,26 @@ import tda593.hotel.california.BookingManager;
 import tda593.hotel.california.BookingManagerImpl;
 import tda593.hotel.california.CaliforniaFactory;
 import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.ConferenceRoom;
 import tda593.hotel.california.CreditCardInformation;
 import tda593.hotel.california.DataService;
-import tda593.hotel.california.DisabilityApproval;
 import tda593.hotel.california.Discount;
 import tda593.hotel.california.DiscountLimit;
 import tda593.hotel.california.DiscountManager;
-import tda593.hotel.california.GuestRoom;
-import tda593.hotel.california.KeyCard;
-import tda593.hotel.california.KeyCardManager;
 import tda593.hotel.california.LegalEntity;
 import tda593.hotel.california.LegalEntityManager;
 import tda593.hotel.california.Organization;
 import tda593.hotel.california.PercentageDiscount;
 import tda593.hotel.california.Person;
 import tda593.hotel.california.Purchase;
-import tda593.hotel.california.Room;
-import tda593.hotel.california.RoomApproval;
-import tda593.hotel.california.RoomManager;
 import tda593.hotel.california.RoomStay;
-import tda593.hotel.california.RoomType;
 import tda593.hotel.california.Service;
 import tda593.hotel.california.StayRequest;
 import tda593.hotel.california.SumDiscount;
 import tda593.hotel.california.TravelInformation;
+
+import tda593.hotel.california.facilities.FacilitiesPackage;
+
+import tda593.hotel.california.facilities.impl.FacilitiesPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,14 +64,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass billManagerImplEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass billManagerEClass = null;
+	private EClass dataServiceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +120,20 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass billManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass billManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass bookingEClass = null;
 
 	/**
@@ -161,13 +162,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass roomTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass travelInformationEClass = null;
 
 	/**
@@ -182,13 +176,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataServiceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass bookingManagerEClass = null;
 
 	/**
@@ -196,49 +183,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass roomEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass keyCardEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass bookingManagerImplEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass roomManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass adminRoomManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass keyCardManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass adminKeyCardManagerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,35 +232,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass guestRoomEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass conferenceRoomEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass percentageDiscountEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum roomApprovalEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum disabilityApprovalEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -363,11 +280,16 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) : FacilitiesPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theCaliforniaPackage.createPackageContents();
+		theFacilitiesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCaliforniaPackage.initializePackageContents();
+		theFacilitiesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCaliforniaPackage.freeze();
@@ -392,8 +314,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBillManagerImpl() {
-		return billManagerImplEClass;
+	public EClass getDataService() {
+		return dataServiceEClass;
 	}
 
 	/**
@@ -401,8 +323,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBillManagerImpl_BillDataService() {
-		return (EReference)billManagerImplEClass.getEStructuralFeatures().get(0);
+	public EOperation getDataService__Get__Object() {
+		return dataServiceEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -410,8 +332,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBillManager() {
-		return billManagerEClass;
+	public EOperation getDataService__GetAll() {
+		return dataServiceEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -419,8 +341,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__GetBill__int() {
-		return billManagerEClass.getEOperations().get(0);
+	public EOperation getDataService__Count() {
+		return dataServiceEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -428,8 +350,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__GetBookingBill__Booking() {
-		return billManagerEClass.getEOperations().get(1);
+	public EOperation getDataService__Set__Object() {
+		return dataServiceEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -437,8 +359,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__BillItem__Bill_int_int() {
-		return billManagerEClass.getEOperations().get(2);
+	public EOperation getDataService__SetAll__EList() {
+		return dataServiceEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -446,8 +368,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__GetAllServices() {
-		return billManagerEClass.getEOperations().get(3);
+	public EOperation getDataService__Delete__Object() {
+		return dataServiceEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -455,35 +377,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__AddSubBill__Bill_Bill() {
-		return billManagerEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBillManager__ApplyDiscount__Discount_Bill() {
-		return billManagerEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBillManager__PublishBill__Bill() {
-		return billManagerEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBillManager__MarkBillAsPaid__Bill_boolean() {
-		return billManagerEClass.getEOperations().get(7);
+	public EOperation getDataService__Exist__Object() {
+		return dataServiceEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -860,6 +755,105 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBillManagerImpl() {
+		return billManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBillManagerImpl_BillDataService() {
+		return (EReference)billManagerImplEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBillManager() {
+		return billManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__GetBill__int() {
+		return billManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__GetBookingBill__Booking() {
+		return billManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__BillItem__Bill_int_int() {
+		return billManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__GetAllServices() {
+		return billManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__AddSubBill__Bill_Bill() {
+		return billManagerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__ApplyDiscount__Discount_Bill() {
+		return billManagerEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__PublishBill__Bill() {
+		return billManagerEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__MarkBillAsPaid__Bill_boolean() {
+		return billManagerEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBooking() {
 		return bookingEClass;
 	}
@@ -1094,51 +1088,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoomType() {
-		return roomTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Id() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Name() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Description() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_RoomApprovals() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTravelInformation() {
 		return travelInformationEClass;
 	}
@@ -1195,78 +1144,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 */
 	public EClass getBookingDataService() {
 		return bookingDataServiceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDataService() {
-		return dataServiceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__Get__Object() {
-		return dataServiceEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__GetAll() {
-		return dataServiceEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__Count() {
-		return dataServiceEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__Set__Object() {
-		return dataServiceEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__SetAll__EList() {
-		return dataServiceEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__Delete__Object() {
-		return dataServiceEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDataService__Exist__Object() {
-		return dataServiceEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -1436,150 +1313,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoom() {
-		return roomEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_Floor() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_RoomNumber() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_IsOperational() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_IsCleaned() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_Description() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_Photos() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRoom_AllowedKeyCards() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRoom_RoomType() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRoom_Room() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_DisabilityApprovals() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoom__RegisterKeyCard__KeyCard() {
-		return roomEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoom__UnregisterKeyCard__KeyCard() {
-		return roomEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoom__UnregisterKeyCards() {
-		return roomEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getKeyCard() {
-		return keyCardEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getKeyCard_Id() {
-		return (EAttribute)keyCardEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBookingManagerImpl() {
 		return bookingManagerImplEClass;
 	}
@@ -1591,150 +1324,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 */
 	public EReference getBookingManagerImpl_BookingDataService() {
 		return (EReference)bookingManagerImplEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRoomManager() {
-		return roomManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__GetRoomTypes() {
-		return roomManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__RegisterKeyCard__KeyCard() {
-		return roomManagerEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__RegisterKeyCard__String() {
-		return roomManagerEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__GetRooms() {
-		return roomManagerEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__UnregisterKeyCard__KeyCard() {
-		return roomManagerEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__UnregisterKeyCard__String() {
-		return roomManagerEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getRoomManager__UnregisterAllKeyCards__Room() {
-		return roomManagerEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAdminRoomManager() {
-		return adminRoomManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminRoomManager__AddRoom__int_int_String_EList_EList() {
-		return adminRoomManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminRoomManager__RemoveRoom__int() {
-		return adminRoomManagerEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getKeyCardManager() {
-		return keyCardManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getKeyCardManager__GetKeyCard__String() {
-		return keyCardManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAdminKeyCardManager() {
-		return adminKeyCardManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminKeyCardManager__AddKeyCard__int() {
-		return adminKeyCardManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminKeyCardManager__RemoveKeyCard__int() {
-		return adminKeyCardManagerEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1958,60 +1547,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGuestRoom() {
-		return guestRoomEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGuestRoom_NumberOfBeds() {
-		return (EAttribute)guestRoomEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGuestRoom_NumberOfExtrabeds() {
-		return (EAttribute)guestRoomEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConferenceRoom() {
-		return conferenceRoomEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConferenceRoom_NumberOfSeats() {
-		return (EAttribute)conferenceRoomEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConferenceRoom_Equipment() {
-		return (EAttribute)conferenceRoomEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPercentageDiscount() {
 		return percentageDiscountEClass;
 	}
@@ -2023,24 +1558,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 */
 	public EAttribute getPercentageDiscount_Percentage() {
 		return (EAttribute)percentageDiscountEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getRoomApproval() {
-		return roomApprovalEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getDisabilityApproval() {
-		return disabilityApprovalEEnum;
 	}
 
 	/**
@@ -2173,12 +1690,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		createEAttribute(personEClass, PERSON__LASTNAME);
 		createEAttribute(personEClass, PERSON__SOCIAL_SECURITY_NUMBER);
 
-		roomTypeEClass = createEClass(ROOM_TYPE);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__ID);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_APPROVALS);
-
 		travelInformationEClass = createEClass(TRAVEL_INFORMATION);
 		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__ID);
 		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__TRACKING_ID);
@@ -2207,46 +1718,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHECK_OUT__BOOKING);
 
-		roomEClass = createEClass(ROOM);
-		createEAttribute(roomEClass, ROOM__FLOOR);
-		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
-		createEAttribute(roomEClass, ROOM__IS_OPERATIONAL);
-		createEAttribute(roomEClass, ROOM__IS_CLEANED);
-		createEAttribute(roomEClass, ROOM__DESCRIPTION);
-		createEAttribute(roomEClass, ROOM__PHOTOS);
-		createEReference(roomEClass, ROOM__ALLOWED_KEY_CARDS);
-		createEReference(roomEClass, ROOM__ROOM_TYPE);
-		createEReference(roomEClass, ROOM__ROOM);
-		createEAttribute(roomEClass, ROOM__DISABILITY_APPROVALS);
-		createEOperation(roomEClass, ROOM___REGISTER_KEY_CARD__KEYCARD);
-		createEOperation(roomEClass, ROOM___UNREGISTER_KEY_CARD__KEYCARD);
-		createEOperation(roomEClass, ROOM___UNREGISTER_KEY_CARDS);
-
-		keyCardEClass = createEClass(KEY_CARD);
-		createEAttribute(keyCardEClass, KEY_CARD__ID);
-
 		bookingManagerImplEClass = createEClass(BOOKING_MANAGER_IMPL);
 		createEReference(bookingManagerImplEClass, BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE);
-
-		roomManagerEClass = createEClass(ROOM_MANAGER);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOM_TYPES);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___REGISTER_KEY_CARD__STRING);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOMS);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING);
-		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM);
-
-		adminRoomManagerEClass = createEClass(ADMIN_ROOM_MANAGER);
-		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST);
-		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT);
-
-		keyCardManagerEClass = createEClass(KEY_CARD_MANAGER);
-		createEOperation(keyCardManagerEClass, KEY_CARD_MANAGER___GET_KEY_CARD__STRING);
-
-		adminKeyCardManagerEClass = createEClass(ADMIN_KEY_CARD_MANAGER);
-		createEOperation(adminKeyCardManagerEClass, ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT);
-		createEOperation(adminKeyCardManagerEClass, ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT);
 
 		legalEntityManagerEClass = createEClass(LEGAL_ENTITY_MANAGER);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___FIND_PERSON__STRING_STRING);
@@ -2278,20 +1751,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		bookingBillEClass = createEClass(BOOKING_BILL);
 		createEReference(bookingBillEClass, BOOKING_BILL__BOOKING);
 
-		guestRoomEClass = createEClass(GUEST_ROOM);
-		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_BEDS);
-		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
-
-		conferenceRoomEClass = createEClass(CONFERENCE_ROOM);
-		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__NUMBER_OF_SEATS);
-		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__EQUIPMENT);
-
 		percentageDiscountEClass = createEClass(PERCENTAGE_DISCOUNT);
 		createEAttribute(percentageDiscountEClass, PERCENTAGE_DISCOUNT__PERCENTAGE);
-
-		// Create enums
-		roomApprovalEEnum = createEEnum(ROOM_APPROVAL);
-		disabilityApprovalEEnum = createEEnum(DISABILITY_APPROVAL);
 	}
 
 	/**
@@ -2317,6 +1778,12 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		FacilitiesPackage theFacilitiesPackage = (FacilitiesPackage)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theFacilitiesPackage);
+
 		// Create type parameters
 		ETypeParameter dataServiceEClass_E = addETypeParameter(dataServiceEClass, "E");
 		ETypeParameter dataServiceEClass_ID = addETypeParameter(dataServiceEClass, "ID");
@@ -2339,14 +1806,10 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		g1.getETypeArguments().add(g2);
 		bookingDataServiceEClass.getEGenericSuperTypes().add(g1);
 		bookingManagerImplEClass.getESuperTypes().add(this.getBookingManager());
-		adminRoomManagerEClass.getESuperTypes().add(this.getRoomManager());
-		adminKeyCardManagerEClass.getESuperTypes().add(this.getKeyCardManager());
 		organizationEClass.getESuperTypes().add(this.getLegalEntity());
 		adminDiscountManagerEClass.getESuperTypes().add(this.getDiscountManager());
 		sumDiscountEClass.getESuperTypes().add(this.getDiscount());
 		bookingBillEClass.getESuperTypes().add(this.getBill());
-		guestRoomEClass.getESuperTypes().add(this.getRoom());
-		conferenceRoomEClass.getESuperTypes().add(this.getRoom());
 		percentageDiscountEClass.getESuperTypes().add(this.getDiscount());
 
 		// Initialize classes, features, and operations; add parameters
@@ -2480,7 +1943,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		initEAttribute(getBooking_SpecialRequest(), ecorePackage.getEString(), "specialRequest", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_RoomStay(), this.getRoomStay(), null, "roomStay", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_RoomType(), this.getRoomType(), null, "roomType", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_RoomType(), theFacilitiesPackage.getRoomType(), null, "roomType", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_TravelInformation(), this.getTravelInformation(), null, "travelInformation", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Responsible(), this.getLegalEntity(), null, "responsible", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_IsCanceled(), ecorePackage.getEBoolean(), "isCanceled", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2509,12 +1972,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		initEAttribute(getPerson_Lastname(), ecorePackage.getEString(), "lastname", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPerson_SocialSecurityNumber(), ecorePackage.getEString(), "socialSecurityNumber", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoomType_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_RoomApprovals(), this.getRoomApproval(), "roomApprovals", null, 0, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(travelInformationEClass, TravelInformation.class, "TravelInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTravelInformation_Id(), ecorePackage.getEInt(), "id", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTravelInformation_TrackingId(), ecorePackage.getEString(), "trackingId", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2540,20 +1997,20 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		op = initEOperation(getBookingManager__GetBookings__LegalEntity(), this.getBooking(), "getBookings", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date(), this.getRoom(), "getAvailableRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date(), theFacilitiesPackage.getRoom(), "getAvailableRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date_RoomType(), this.getRoom(), "getAvailableRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date_RoomType(), theFacilitiesPackage.getRoom(), "getAvailableRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__GetAvailableRoomTypeAmount__Date_Date(), null, "getAvailableRoomTypeAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(this.getRoomType());
+		g2 = createEGenericType(theFacilitiesPackage.getRoomType());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEIntegerObject());
 		g1.getETypeArguments().add(g2);
@@ -2562,19 +2019,19 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		op = initEOperation(getBookingManager__GetAvailableRoomTypeAmount__Date_Date_RoomType(), ecorePackage.getEInt(), "getAvailableRoomTypeAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_RoomType(), null, "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoomType(), "RoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoomType(), "RoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_Room(), null, "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__IsRoomAvailable__Date_Date_int(), ecorePackage.getEBoolean(), "isRoomAvailable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -2583,7 +2040,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 
 		op = initEOperation(getBookingManager__RegisterRoom__Booking_Room(), null, "registerRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__CheckIn__Booking_EList(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -2592,7 +2049,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		op = initEOperation(getBookingManager__IsRoomTypeAvailable__Date_Date_RoomType(), ecorePackage.getEBoolean(), "isRoomTypeAvailable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getBookingManager__GetRoomTypes(), ecorePackage.getEEList(), "getRoomTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -2605,77 +2062,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		op = initEOperation(getBookingManager__CheckOut__Booking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoom_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_IsOperational(), ecorePackage.getEBoolean(), "isOperational", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_IsCleaned(), ecorePackage.getEBoolean(), "isCleaned", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_Description(), ecorePackage.getEString(), "description", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_Photos(), ecorePackage.getEString(), "photos", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoom_AllowedKeyCards(), this.getKeyCard(), null, "allowedKeyCards", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoom_RoomType(), this.getRoomType(), null, "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoom_Room(), this.getRoom(), null, "room", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_DisabilityApprovals(), this.getDisabilityApproval(), "disabilityApprovals", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		op = initEOperation(getRoom__RegisterKeyCard__KeyCard(), null, "registerKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getKeyCard(), "keyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getRoom__UnregisterKeyCard__KeyCard(), null, "unregisterKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getKeyCard(), "keyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getRoom__UnregisterKeyCards(), null, "unregisterKeyCards", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(keyCardEClass, KeyCard.class, "KeyCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKeyCard_Id(), ecorePackage.getEString(), "id", null, 1, 1, KeyCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(bookingManagerImplEClass, BookingManagerImpl.class, "BookingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(roomManagerEClass, RoomManager.class, "RoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getRoomManager__GetRoomTypes(), this.getRoomType(), "getRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getRoomManager__RegisterKeyCard__KeyCard(), null, "registerKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getKeyCard(), "keycard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getRoomManager__RegisterKeyCard__String(), null, "registerKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "keycardNbr", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getRoomManager__GetRooms(), this.getRoom(), "getRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getRoomManager__UnregisterKeyCard__KeyCard(), null, "unregisterKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getKeyCard(), "keyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getRoomManager__UnregisterKeyCard__String(), null, "unregisterKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "keyCardNbr", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getRoomManager__UnregisterAllKeyCards__Room(), null, "unregisterAllKeyCards", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(adminRoomManagerEClass, AdminRoomManager.class, "AdminRoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getAdminRoomManager__AddRoom__int_int_String_EList_EList(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "descriptioin", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDisabilityApproval(), "disabilityApprovals", 1, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "photos", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminRoomManager__RemoveRoom__int(), ecorePackage.getEBoolean(), "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(keyCardManagerEClass, KeyCardManager.class, "KeyCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getKeyCardManager__GetKeyCard__String(), this.getKeyCard(), "getKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "keyCardNbr", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(adminKeyCardManagerEClass, AdminKeyCardManager.class, "AdminKeyCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getAdminKeyCardManager__AddKeyCard__int(), null, "addKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminKeyCardManager__RemoveKeyCard__int(), null, "removeKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(legalEntityManagerEClass, LegalEntityManager.class, "LegalEntityManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2752,21 +2140,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		initEClass(bookingBillEClass, BookingBill.class, "BookingBill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingBill_Booking(), this.getBooking(), null, "booking", null, 1, 1, BookingBill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(guestRoomEClass, GuestRoom.class, "GuestRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGuestRoom_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(conferenceRoomEClass, ConferenceRoom.class, "ConferenceRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConferenceRoom_NumberOfSeats(), ecorePackage.getEInt(), "numberOfSeats", null, 1, 1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConferenceRoom_Equipment(), ecorePackage.getEString(), "equipment", null, 0, -1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(percentageDiscountEClass, PercentageDiscount.class, "PercentageDiscount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPercentageDiscount_Percentage(), ecorePackage.getEFloat(), "percentage", null, 1, 1, PercentageDiscount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(roomApprovalEEnum, RoomApproval.class, "RoomApproval");
-
-		initEEnum(disabilityApprovalEEnum, DisabilityApproval.class, "DisabilityApproval");
 
 		// Create resource
 		createResource(eNS_URI);

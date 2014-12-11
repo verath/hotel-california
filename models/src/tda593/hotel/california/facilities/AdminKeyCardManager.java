@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 
 /**
@@ -9,7 +9,7 @@ package tda593.hotel.california;
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getAdminKeyCardManager()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getAdminKeyCardManager()
  * @model interface="true" abstract="true"
  * @generated
  */

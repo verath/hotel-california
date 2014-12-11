@@ -31,15 +31,6 @@ public interface CaliforniaFactory extends EFactory {
 	BillDataService createBillDataService();
 
 	/**
-	 * Returns a new object of class '<em>Bill Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bill Manager Impl</em>'.
-	 * @generated
-	 */
-	BillManagerImpl createBillManagerImpl();
-
-	/**
 	 * Returns a new object of class '<em>Bill</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,6 +85,15 @@ public interface CaliforniaFactory extends EFactory {
 	DiscountLimit createDiscountLimit();
 
 	/**
+	 * Returns a new object of class '<em>Bill Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bill Manager Impl</em>'.
+	 * @generated
+	 */
+	BillManagerImpl createBillManagerImpl();
+
+	/**
 	 * Returns a new object of class '<em>Booking</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,15 +130,6 @@ public interface CaliforniaFactory extends EFactory {
 	Person createPerson();
 
 	/**
-	 * Returns a new object of class '<em>Room Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room Type</em>'.
-	 * @generated
-	 */
-	RoomType createRoomType();
-
-	/**
 	 * Returns a new object of class '<em>Travel Information</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,24 +146,6 @@ public interface CaliforniaFactory extends EFactory {
 	 * @generated
 	 */
 	BookingDataService createBookingDataService();
-
-	/**
-	 * Returns a new object of class '<em>Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room</em>'.
-	 * @generated
-	 */
-	Room createRoom();
-
-	/**
-	 * Returns a new object of class '<em>Key Card</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Key Card</em>'.
-	 * @generated
-	 */
-	KeyCard createKeyCard();
 
 	/**
 	 * Returns a new object of class '<em>Booking Manager Impl</em>'.
@@ -209,24 +182,6 @@ public interface CaliforniaFactory extends EFactory {
 	 * @generated
 	 */
 	BookingBill createBookingBill();
-
-	/**
-	 * Returns a new object of class '<em>Guest Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Guest Room</em>'.
-	 * @generated
-	 */
-	GuestRoom createGuestRoom();
-
-	/**
-	 * Returns a new object of class '<em>Conference Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conference Room</em>'.
-	 * @generated
-	 */
-	ConferenceRoom createConferenceRoom();
 
 	/**
 	 * Returns a new object of class '<em>Percentage Discount</em>'.

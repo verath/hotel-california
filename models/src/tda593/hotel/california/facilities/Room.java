@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -14,20 +14,20 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.Room#getFloor <em>Floor</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getRoomNumber <em>Room Number</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#isOperational <em>Is Operational</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#isCleaned <em>Is Cleaned</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getDescription <em>Description</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getPhotos <em>Photos</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getRoom <em>Room</em>}</li>
- *   <li>{@link tda593.hotel.california.Room#getDisabilityApprovals <em>Disability Approvals</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getFloor <em>Floor</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getRoomNumber <em>Room Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#isOperational <em>Is Operational</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#isCleaned <em>Is Cleaned</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getDescription <em>Description</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getPhotos <em>Photos</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getRoom <em>Room</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getRoom()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom()
  * @model
  * @generated
  */
@@ -42,14 +42,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Floor</em>' attribute.
 	 * @see #setFloor(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_Floor()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_Floor()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getFloor();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#getFloor <em>Floor</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getFloor <em>Floor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Floor</em>' attribute.
@@ -68,14 +68,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Number</em>' attribute.
 	 * @see #setRoomNumber(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_RoomNumber()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_RoomNumber()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getRoomNumber();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#getRoomNumber <em>Room Number</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getRoomNumber <em>Room Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Room Number</em>' attribute.
@@ -94,14 +94,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Operational</em>' attribute.
 	 * @see #setIsOperational(boolean)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_IsOperational()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_IsOperational()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isOperational();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#isOperational <em>Is Operational</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#isOperational <em>Is Operational</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Operational</em>' attribute.
@@ -120,14 +120,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Cleaned</em>' attribute.
 	 * @see #setIsCleaned(boolean)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_IsCleaned()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_IsCleaned()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isCleaned();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#isCleaned <em>Is Cleaned</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#isCleaned <em>Is Cleaned</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Cleaned</em>' attribute.
@@ -146,14 +146,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_Description()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_Description()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#getDescription <em>Description</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Description</em>' attribute.
@@ -172,7 +172,7 @@ public interface Room extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Photos</em>' attribute list.
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_Photos()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_Photos()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -180,7 +180,7 @@ public interface Room extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Allowed Key Cards</b></em>' reference list.
-	 * The list contents are of type {@link tda593.hotel.california.KeyCard}.
+	 * The list contents are of type {@link tda593.hotel.california.facilities.KeyCard}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allowed Key Cards</em>' reference list isn't clear,
@@ -188,7 +188,7 @@ public interface Room extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allowed Key Cards</em>' reference list.
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_AllowedKeyCards()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_AllowedKeyCards()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -204,14 +204,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Type</em>' reference.
 	 * @see #setRoomType(RoomType)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_RoomType()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_RoomType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	RoomType getRoomType();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#getRoomType <em>Room Type</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getRoomType <em>Room Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Room Type</em>' reference.
@@ -230,14 +230,14 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room</em>' reference.
 	 * @see #setRoom(Room)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_Room()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_Room()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Room getRoom();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#getRoom <em>Room</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getRoom <em>Room</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Room</em>' reference.
@@ -248,7 +248,7 @@ public interface Room extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Disability Approvals</b></em>' attribute.
-	 * The literals are from the enumeration {@link tda593.hotel.california.DisabilityApproval}.
+	 * The literals are from the enumeration {@link tda593.hotel.california.facilities.DisabilityApproval}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Disability Approvals</em>' attribute isn't clear,
@@ -256,20 +256,20 @@ public interface Room extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Disability Approvals</em>' attribute.
-	 * @see tda593.hotel.california.DisabilityApproval
+	 * @see tda593.hotel.california.facilities.DisabilityApproval
 	 * @see #setDisabilityApprovals(DisabilityApproval)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoom_DisabilityApprovals()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_DisabilityApprovals()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	DisabilityApproval getDisabilityApprovals();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Room#getDisabilityApprovals <em>Disability Approvals</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Disability Approvals</em>' attribute.
-	 * @see tda593.hotel.california.DisabilityApproval
+	 * @see tda593.hotel.california.facilities.DisabilityApproval
 	 * @see #getDisabilityApprovals()
 	 * @generated
 	 */

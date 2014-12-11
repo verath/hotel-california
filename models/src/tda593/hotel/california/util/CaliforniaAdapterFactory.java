@@ -128,10 +128,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 				return createPersonAdapter();
 			}
 			@Override
-			public Adapter caseRoomType(RoomType object) {
-				return createRoomTypeAdapter();
-			}
-			@Override
 			public Adapter caseTravelInformation(TravelInformation object) {
 				return createTravelInformationAdapter();
 			}
@@ -144,32 +140,8 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 				return createBookingManagerAdapter();
 			}
 			@Override
-			public Adapter caseRoom(Room object) {
-				return createRoomAdapter();
-			}
-			@Override
-			public Adapter caseKeyCard(KeyCard object) {
-				return createKeyCardAdapter();
-			}
-			@Override
 			public Adapter caseBookingManagerImpl(BookingManagerImpl object) {
 				return createBookingManagerImplAdapter();
-			}
-			@Override
-			public Adapter caseRoomManager(RoomManager object) {
-				return createRoomManagerAdapter();
-			}
-			@Override
-			public Adapter caseAdminRoomManager(AdminRoomManager object) {
-				return createAdminRoomManagerAdapter();
-			}
-			@Override
-			public Adapter caseKeyCardManager(KeyCardManager object) {
-				return createKeyCardManagerAdapter();
-			}
-			@Override
-			public Adapter caseAdminKeyCardManager(AdminKeyCardManager object) {
-				return createAdminKeyCardManagerAdapter();
 			}
 			@Override
 			public Adapter caseLegalEntityManager(LegalEntityManager object) {
@@ -194,14 +166,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBookingBill(BookingBill object) {
 				return createBookingBillAdapter();
-			}
-			@Override
-			public Adapter caseGuestRoom(GuestRoom object) {
-				return createGuestRoomAdapter();
-			}
-			@Override
-			public Adapter caseConferenceRoom(ConferenceRoom object) {
-				return createConferenceRoomAdapter();
 			}
 			@Override
 			public Adapter casePercentageDiscount(PercentageDiscount object) {
@@ -242,30 +206,16 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BillManagerImpl <em>Bill Manager Impl</em>}'.
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.DataService <em>Data Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tda593.hotel.california.BillManagerImpl
+	 * @see tda593.hotel.california.DataService
 	 * @generated
 	 */
-	public Adapter createBillManagerImplAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.BillManager
-	 * @generated
-	 */
-	public Adapter createBillManagerAdapter() {
+	public Adapter createDataServiceAdapter() {
 		return null;
 	}
 
@@ -368,6 +318,34 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BillManagerImpl <em>Bill Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.BillManagerImpl
+	 * @generated
+	 */
+	public Adapter createBillManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.BillManager
+	 * @generated
+	 */
+	public Adapter createBillManagerAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.Booking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -424,20 +402,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.RoomType <em>Room Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.RoomType
-	 * @generated
-	 */
-	public Adapter createRoomTypeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.TravelInformation <em>Travel Information</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -466,20 +430,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.DataService <em>Data Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.DataService
-	 * @generated
-	 */
-	public Adapter createDataServiceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BookingManager <em>Booking Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -494,34 +444,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.Room <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.Room
-	 * @generated
-	 */
-	public Adapter createRoomAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.KeyCard <em>Key Card</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.KeyCard
-	 * @generated
-	 */
-	public Adapter createKeyCardAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BookingManagerImpl <em>Booking Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -532,62 +454,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBookingManagerImplAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.RoomManager <em>Room Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.RoomManager
-	 * @generated
-	 */
-	public Adapter createRoomManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.AdminRoomManager <em>Admin Room Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.AdminRoomManager
-	 * @generated
-	 */
-	public Adapter createAdminRoomManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.KeyCardManager <em>Key Card Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.KeyCardManager
-	 * @generated
-	 */
-	public Adapter createKeyCardManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.AdminKeyCardManager <em>Admin Key Card Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.AdminKeyCardManager
-	 * @generated
-	 */
-	public Adapter createAdminKeyCardManagerAdapter() {
 		return null;
 	}
 
@@ -672,34 +538,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBookingBillAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.GuestRoom <em>Guest Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.GuestRoom
-	 * @generated
-	 */
-	public Adapter createGuestRoomAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.ConferenceRoom <em>Conference Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.ConferenceRoom
-	 * @generated
-	 */
-	public Adapter createConferenceRoomAdapter() {
 		return null;
 	}
 

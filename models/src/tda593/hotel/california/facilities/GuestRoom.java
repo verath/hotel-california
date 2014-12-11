@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 
 /**
@@ -11,12 +11,12 @@ package tda593.hotel.california;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.GuestRoom#getNumberOfBeds <em>Number Of Beds</em>}</li>
- *   <li>{@link tda593.hotel.california.GuestRoom#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.GuestRoom#getNumberOfBeds <em>Number Of Beds</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.GuestRoom#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getGuestRoom()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getGuestRoom()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface GuestRoom extends Room {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number Of Beds</em>' attribute.
 	 * @see #setNumberOfBeds(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getGuestRoom_NumberOfBeds()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getGuestRoom_NumberOfBeds()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getNumberOfBeds();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.GuestRoom#getNumberOfBeds <em>Number Of Beds</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.GuestRoom#getNumberOfBeds <em>Number Of Beds</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Number Of Beds</em>' attribute.
@@ -57,14 +57,14 @@ public interface GuestRoom extends Room {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number Of Extrabeds</em>' attribute.
 	 * @see #setNumberOfExtrabeds(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getGuestRoom_NumberOfExtrabeds()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getGuestRoom_NumberOfExtrabeds()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getNumberOfExtrabeds();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.GuestRoom#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.GuestRoom#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Number Of Extrabeds</em>' attribute.

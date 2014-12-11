@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.facilities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.GuestRoom;
+import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.GuestRoom;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,8 +18,8 @@ import tda593.hotel.california.GuestRoom;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.GuestRoomImpl#getNumberOfBeds <em>Number Of Beds</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.GuestRoomImpl#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.GuestRoomImpl#getNumberOfBeds <em>Number Of Beds</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.GuestRoomImpl#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,7 +82,7 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.GUEST_ROOM;
+		return FacilitiesPackage.Literals.GUEST_ROOM;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 		int oldNumberOfBeds = numberOfBeds;
 		numberOfBeds = newNumberOfBeds;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.GUEST_ROOM__NUMBER_OF_BEDS, oldNumberOfBeds, numberOfBeds));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.GUEST_ROOM__NUMBER_OF_BEDS, oldNumberOfBeds, numberOfBeds));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 		int oldNumberOfExtrabeds = numberOfExtrabeds;
 		numberOfExtrabeds = newNumberOfExtrabeds;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS, oldNumberOfExtrabeds, numberOfExtrabeds));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS, oldNumberOfExtrabeds, numberOfExtrabeds));
 	}
 
 	/**
@@ -135,9 +135,9 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_BEDS:
 				return getNumberOfBeds();
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
 				return getNumberOfExtrabeds();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +151,10 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_BEDS:
 				setNumberOfBeds((Integer)newValue);
 				return;
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
 				setNumberOfExtrabeds((Integer)newValue);
 				return;
 		}
@@ -169,10 +169,10 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_BEDS:
 				setNumberOfBeds(NUMBER_OF_BEDS_EDEFAULT);
 				return;
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
 				setNumberOfExtrabeds(NUMBER_OF_EXTRABEDS_EDEFAULT);
 				return;
 		}
@@ -187,9 +187,9 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_BEDS:
 				return numberOfBeds != NUMBER_OF_BEDS_EDEFAULT;
-			case CaliforniaPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case FacilitiesPackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
 				return numberOfExtrabeds != NUMBER_OF_EXTRABEDS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

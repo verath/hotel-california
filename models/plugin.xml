@@ -13,4 +13,11 @@
             class="tda593.hotel.california.CaliforniaPackage"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated codegenerator -->
+      <package
+            uri="http:///tda593/hotel/california/facilities.ecore"
+            class="tda593.hotel.california.facilities.FacilitiesPackage"/>
+   </extension>
+
 </plugin>

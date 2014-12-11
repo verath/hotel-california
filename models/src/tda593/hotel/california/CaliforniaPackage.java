@@ -4,7 +4,6 @@ package tda593.hotel.california;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -57,166 +56,6 @@ public interface CaliforniaPackage extends EPackage {
 	 * @generated
 	 */
 	CaliforniaPackage eINSTANCE = tda593.hotel.california.impl.CaliforniaPackageImpl.init();
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.BillDataServiceImpl <em>Bill Data Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.BillDataServiceImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillDataService()
-	 * @generated
-	 */
-	int BILL_DATA_SERVICE = 0;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.BillManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManager()
-	 * @generated
-	 */
-	int BILL_MANAGER = 10;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.BillManagerImplImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManagerImpl()
-	 * @generated
-	 */
-	int BILL_MANAGER_IMPL = 9;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.BillImpl <em>Bill</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.BillImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBill()
-	 * @generated
-	 */
-	int BILL = 2;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.LegalEntityImpl <em>Legal Entity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.LegalEntityImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getLegalEntity()
-	 * @generated
-	 */
-	int LEGAL_ENTITY = 3;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.CreditCardInformationImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getCreditCardInformation()
-	 * @generated
-	 */
-	int CREDIT_CARD_INFORMATION = 4;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.PurchaseImpl <em>Purchase</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.PurchaseImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPurchase()
-	 * @generated
-	 */
-	int PURCHASE = 5;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.ServiceImpl <em>Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.ServiceImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getService()
-	 * @generated
-	 */
-	int SERVICE = 6;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.DiscountImpl <em>Discount</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.DiscountImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscount()
-	 * @generated
-	 */
-	int DISCOUNT = 7;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.DiscountLimitImpl <em>Discount Limit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.DiscountLimitImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountLimit()
-	 * @generated
-	 */
-	int DISCOUNT_LIMIT = 8;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.BookingImpl <em>Booking</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.BookingImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBooking()
-	 * @generated
-	 */
-	int BOOKING = 11;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.RoomStayImpl <em>Room Stay</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.RoomStayImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomStay()
-	 * @generated
-	 */
-	int ROOM_STAY = 12;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.StayRequestImpl <em>Stay Request</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.StayRequestImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getStayRequest()
-	 * @generated
-	 */
-	int STAY_REQUEST = 13;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.PersonImpl <em>Person</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.PersonImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPerson()
-	 * @generated
-	 */
-	int PERSON = 14;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.RoomTypeImpl <em>Room Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.RoomTypeImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomType()
-	 * @generated
-	 */
-	int ROOM_TYPE = 15;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.TravelInformationImpl <em>Travel Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.TravelInformationImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getTravelInformation()
-	 * @generated
-	 */
-	int TRAVEL_INFORMATION = 16;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.DataService <em>Data Service</em>}' class.
@@ -310,6 +149,16 @@ public interface CaliforniaPackage extends EPackage {
 	int DATA_SERVICE_OPERATION_COUNT = 7;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.BillDataServiceImpl <em>Bill Data Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.BillDataServiceImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillDataService()
+	 * @generated
+	 */
+	int BILL_DATA_SERVICE = 0;
+
+	/**
 	 * The number of structural features of the '<em>Bill Data Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +238,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_DATA_SERVICE_OPERATION_COUNT = DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.BillImpl <em>Bill</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.BillImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBill()
+	 * @generated
+	 */
+	int BILL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -517,6 +376,16 @@ public interface CaliforniaPackage extends EPackage {
 	int BILL_OPERATION_COUNT = 4;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.LegalEntityImpl <em>Legal Entity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.LegalEntityImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getLegalEntity()
+	 * @generated
+	 */
+	int LEGAL_ENTITY = 3;
+
+	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,6 +440,16 @@ public interface CaliforniaPackage extends EPackage {
 	int LEGAL_ENTITY_OPERATION_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.CreditCardInformationImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getCreditCardInformation()
+	 * @generated
+	 */
+	int CREDIT_CARD_INFORMATION = 4;
+
+	/**
 	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -614,6 +493,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREDIT_CARD_INFORMATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.PurchaseImpl <em>Purchase</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.PurchaseImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPurchase()
+	 * @generated
+	 */
+	int PURCHASE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -670,6 +559,16 @@ public interface CaliforniaPackage extends EPackage {
 	int PURCHASE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.ServiceImpl <em>Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.ServiceImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getService()
+	 * @generated
+	 */
+	int SERVICE = 6;
+
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -713,6 +612,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.DiscountImpl <em>Discount</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.DiscountImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscount()
+	 * @generated
+	 */
+	int DISCOUNT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -769,6 +678,16 @@ public interface CaliforniaPackage extends EPackage {
 	int DISCOUNT_OPERATION_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.DiscountLimitImpl <em>Discount Limit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.DiscountLimitImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountLimit()
+	 * @generated
+	 */
+	int DISCOUNT_LIMIT = 8;
+
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -821,6 +740,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCOUNT_LIMIT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.BillManager
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManager()
+	 * @generated
+	 */
+	int BILL_MANAGER = 10;
 
 	/**
 	 * The number of structural features of the '<em>Bill Manager</em>' class.
@@ -911,6 +840,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_MANAGER_OPERATION_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.BillManagerImplImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManagerImpl()
+	 * @generated
+	 */
+	int BILL_MANAGER_IMPL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Bill Data Service</b></em>' reference.
@@ -1010,6 +949,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_MANAGER_IMPL_OPERATION_COUNT = BILL_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.BookingImpl <em>Booking</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.BookingImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBooking()
+	 * @generated
+	 */
+	int BOOKING = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1156,6 +1105,16 @@ public interface CaliforniaPackage extends EPackage {
 	int BOOKING_OPERATION_COUNT = 4;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.RoomStayImpl <em>Room Stay</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.RoomStayImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomStay()
+	 * @generated
+	 */
+	int ROOM_STAY = 12;
+
+	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1201,6 +1160,16 @@ public interface CaliforniaPackage extends EPackage {
 	int ROOM_STAY_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.StayRequestImpl <em>Stay Request</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.StayRequestImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getStayRequest()
+	 * @generated
+	 */
+	int STAY_REQUEST = 13;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1235,6 +1204,16 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int STAY_REQUEST_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.impl.PersonImpl <em>Person</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.PersonImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPerson()
+	 * @generated
+	 */
+	int PERSON = 14;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -1318,58 +1297,14 @@ public interface CaliforniaPackage extends EPackage {
 	int PERSON_OPERATION_COUNT = LEGAL_ENTITY_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The meta object id for the '{@link tda593.hotel.california.impl.TravelInformationImpl <em>Travel Information</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.impl.TravelInformationImpl
+	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getTravelInformation()
 	 * @generated
-	 * @ordered
 	 */
-	int ROOM_TYPE__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__DESCRIPTION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Room Approvals</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ROOM_APPROVALS = 3;
-
-	/**
-	 * The number of structural features of the '<em>Room Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Room Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_OPERATION_COUNT = 0;
+	int TRAVEL_INFORMATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1442,7 +1377,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingDataService()
 	 * @generated
 	 */
-	int BOOKING_DATA_SERVICE = 17;
+	int BOOKING_DATA_SERVICE = 16;
 
 	/**
 	 * The number of structural features of the '<em>Booking Data Service</em>' class.
@@ -1533,7 +1468,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingManager()
 	 * @generated
 	 */
-	int BOOKING_MANAGER = 18;
+	int BOOKING_MANAGER = 17;
 
 	/**
 	 * The number of structural features of the '<em>Booking Manager</em>' class.
@@ -1707,188 +1642,6 @@ public interface CaliforniaPackage extends EPackage {
 	int BOOKING_MANAGER_OPERATION_COUNT = 17;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.RoomImpl <em>Room</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.RoomImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoom()
-	 * @generated
-	 */
-	int ROOM = 19;
-
-	/**
-	 * The feature id for the '<em><b>Floor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__FLOOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM_NUMBER = 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__IS_OPERATIONAL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__IS_CLEANED = 3;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__DESCRIPTION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__PHOTOS = 5;
-
-	/**
-	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ALLOWED_KEY_CARDS = 6;
-
-	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM_TYPE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM = 8;
-
-	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__DISABILITY_APPROVALS = 9;
-
-	/**
-	 * The number of structural features of the '<em>Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_FEATURE_COUNT = 10;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___REGISTER_KEY_CARD__KEYCARD = 0;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___UNREGISTER_KEY_CARD__KEYCARD = 1;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Cards</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___UNREGISTER_KEY_CARDS = 2;
-
-	/**
-	 * The number of operations of the '<em>Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_OPERATION_COUNT = 3;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.KeyCardImpl <em>Key Card</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.KeyCardImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getKeyCard()
-	 * @generated
-	 */
-	int KEY_CARD = 20;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_CARD__ID = 0;
-
-	/**
-	 * The number of structural features of the '<em>Key Card</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_CARD_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Key Card</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_CARD_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.impl.BookingManagerImplImpl <em>Booking Manager Impl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1896,7 +1649,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingManagerImpl()
 	 * @generated
 	 */
-	int BOOKING_MANAGER_IMPL = 21;
+	int BOOKING_MANAGER_IMPL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Booking Data Service</b></em>' reference.
@@ -2079,298 +1832,6 @@ public interface CaliforniaPackage extends EPackage {
 	int BOOKING_MANAGER_IMPL_OPERATION_COUNT = BOOKING_MANAGER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.RoomManager <em>Room Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.RoomManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomManager()
-	 * @generated
-	 */
-	int ROOM_MANAGER = 22;
-
-	/**
-	 * The number of structural features of the '<em>Room Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Room Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___GET_ROOM_TYPES = 0;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD = 1;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___REGISTER_KEY_CARD__STRING = 2;
-
-	/**
-	 * The operation id for the '<em>Get Rooms</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___GET_ROOMS = 3;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD = 4;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING = 5;
-
-	/**
-	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = 6;
-
-	/**
-	 * The number of operations of the '<em>Room Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_OPERATION_COUNT = 7;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.AdminRoomManager <em>Admin Room Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.AdminRoomManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminRoomManager()
-	 * @generated
-	 */
-	int ADMIN_ROOM_MANAGER = 23;
-
-	/**
-	 * The number of structural features of the '<em>Admin Room Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER_FEATURE_COUNT = ROOM_MANAGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get Room Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPES = ROOM_MANAGER___GET_ROOM_TYPES;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___REGISTER_KEY_CARD__STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Rooms</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___GET_ROOMS = ROOM_MANAGER___GET_ROOMS;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING;
-
-	/**
-	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM;
-
-	/**
-	 * The operation id for the '<em>Add Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST = ROOM_MANAGER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Remove Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT = ROOM_MANAGER_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Admin Room Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.KeyCardManager <em>Key Card Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.KeyCardManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getKeyCardManager()
-	 * @generated
-	 */
-	int KEY_CARD_MANAGER = 24;
-
-	/**
-	 * The number of structural features of the '<em>Key Card Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_CARD_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_CARD_MANAGER___GET_KEY_CARD__STRING = 0;
-
-	/**
-	 * The number of operations of the '<em>Key Card Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_CARD_MANAGER_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.AdminKeyCardManager <em>Admin Key Card Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.AdminKeyCardManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminKeyCardManager()
-	 * @generated
-	 */
-	int ADMIN_KEY_CARD_MANAGER = 25;
-
-	/**
-	 * The number of structural features of the '<em>Admin Key Card Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_KEY_CARD_MANAGER_FEATURE_COUNT = KEY_CARD_MANAGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_KEY_CARD_MANAGER___GET_KEY_CARD__STRING = KEY_CARD_MANAGER___GET_KEY_CARD__STRING;
-
-	/**
-	 * The operation id for the '<em>Add Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT = KEY_CARD_MANAGER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Remove Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT = KEY_CARD_MANAGER_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Admin Key Card Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_KEY_CARD_MANAGER_OPERATION_COUNT = KEY_CARD_MANAGER_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.LegalEntityManager <em>Legal Entity Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2378,7 +1839,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getLegalEntityManager()
 	 * @generated
 	 */
-	int LEGAL_ENTITY_MANAGER = 26;
+	int LEGAL_ENTITY_MANAGER = 19;
 
 	/**
 	 * The number of structural features of the '<em>Legal Entity Manager</em>' class.
@@ -2478,7 +1939,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getOrganization()
 	 * @generated
 	 */
-	int ORGANIZATION = 27;
+	int ORGANIZATION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -2560,7 +2021,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountManager()
 	 * @generated
 	 */
-	int DISCOUNT_MANAGER = 29;
+	int DISCOUNT_MANAGER = 22;
 
 	/**
 	 * The number of structural features of the '<em>Discount Manager</em>' class.
@@ -2597,7 +2058,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminDiscountManager()
 	 * @generated
 	 */
-	int ADMIN_DISCOUNT_MANAGER = 28;
+	int ADMIN_DISCOUNT_MANAGER = 21;
 
 	/**
 	 * The number of structural features of the '<em>Admin Discount Manager</em>' class.
@@ -2679,7 +2140,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getSumDiscount()
 	 * @generated
 	 */
-	int SUM_DISCOUNT = 30;
+	int SUM_DISCOUNT = 23;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -2752,7 +2213,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingBill()
 	 * @generated
 	 */
-	int BOOKING_BILL = 31;
+	int BOOKING_BILL = 24;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2890,332 +2351,6 @@ public interface CaliforniaPackage extends EPackage {
 	int BOOKING_BILL_OPERATION_COUNT = BILL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.GuestRoomImpl <em>Guest Room</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.GuestRoomImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getGuestRoom()
-	 * @generated
-	 */
-	int GUEST_ROOM = 32;
-
-	/**
-	 * The feature id for the '<em><b>Floor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__FLOOR = ROOM__FLOOR;
-
-	/**
-	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ROOM_NUMBER = ROOM__ROOM_NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__IS_OPERATIONAL = ROOM__IS_OPERATIONAL;
-
-	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__IS_CLEANED = ROOM__IS_CLEANED;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__DESCRIPTION = ROOM__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__PHOTOS = ROOM__PHOTOS;
-
-	/**
-	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ALLOWED_KEY_CARDS = ROOM__ALLOWED_KEY_CARDS;
-
-	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ROOM = ROOM__ROOM;
-
-	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__DISABILITY_APPROVALS = ROOM__DISABILITY_APPROVALS;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Beds</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__NUMBER_OF_BEDS = ROOM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Extrabeds</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__NUMBER_OF_EXTRABEDS = ROOM_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Guest Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM_FEATURE_COUNT = ROOM_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM___REGISTER_KEY_CARD__KEYCARD = ROOM___REGISTER_KEY_CARD__KEYCARD;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM___UNREGISTER_KEY_CARD__KEYCARD = ROOM___UNREGISTER_KEY_CARD__KEYCARD;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Cards</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM___UNREGISTER_KEY_CARDS = ROOM___UNREGISTER_KEY_CARDS;
-
-	/**
-	 * The number of operations of the '<em>Guest Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.ConferenceRoomImpl <em>Conference Room</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.ConferenceRoomImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getConferenceRoom()
-	 * @generated
-	 */
-	int CONFERENCE_ROOM = 33;
-
-	/**
-	 * The feature id for the '<em><b>Floor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__FLOOR = ROOM__FLOOR;
-
-	/**
-	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__ROOM_NUMBER = ROOM__ROOM_NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__IS_OPERATIONAL = ROOM__IS_OPERATIONAL;
-
-	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__IS_CLEANED = ROOM__IS_CLEANED;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__DESCRIPTION = ROOM__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__PHOTOS = ROOM__PHOTOS;
-
-	/**
-	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__ALLOWED_KEY_CARDS = ROOM__ALLOWED_KEY_CARDS;
-
-	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__ROOM = ROOM__ROOM;
-
-	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__DISABILITY_APPROVALS = ROOM__DISABILITY_APPROVALS;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Seats</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__NUMBER_OF_SEATS = ROOM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Equipment</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__EQUIPMENT = ROOM_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Conference Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM_FEATURE_COUNT = ROOM_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM___REGISTER_KEY_CARD__KEYCARD = ROOM___REGISTER_KEY_CARD__KEYCARD;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM___UNREGISTER_KEY_CARD__KEYCARD = ROOM___UNREGISTER_KEY_CARD__KEYCARD;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Cards</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM___UNREGISTER_KEY_CARDS = ROOM___UNREGISTER_KEY_CARDS;
-
-	/**
-	 * The number of operations of the '<em>Conference Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.impl.PercentageDiscountImpl <em>Percentage Discount</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3223,7 +2358,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPercentageDiscount()
 	 * @generated
 	 */
-	int PERCENTAGE_DISCOUNT = 34;
+	int PERCENTAGE_DISCOUNT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -3288,25 +2423,6 @@ public interface CaliforniaPackage extends EPackage {
 	 */
 	int PERCENTAGE_DISCOUNT_OPERATION_COUNT = DISCOUNT_OPERATION_COUNT + 0;
 
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.RoomApproval <em>Room Approval</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.RoomApproval
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomApproval()
-	 * @generated
-	 */
-	int ROOM_APPROVAL = 35;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.DisabilityApproval <em>Disability Approval</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.DisabilityApproval
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDisabilityApproval()
-	 * @generated
-	 */
-	int DISABILITY_APPROVAL = 36;
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.BillDataService <em>Bill Data Service</em>}'.
@@ -3319,115 +2435,84 @@ public interface CaliforniaPackage extends EPackage {
 	EClass getBillDataService();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.BillManagerImpl <em>Bill Manager Impl</em>}'.
+	 * Returns the meta object for class '{@link tda593.hotel.california.DataService <em>Data Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bill Manager Impl</em>'.
-	 * @see tda593.hotel.california.BillManagerImpl
+	 * @return the meta object for class '<em>Data Service</em>'.
+	 * @see tda593.hotel.california.DataService
 	 * @generated
 	 */
-	EClass getBillManagerImpl();
+	EClass getDataService();
 
 	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.BillManagerImpl#getBillDataService <em>Bill Data Service</em>}'.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#get(java.lang.Object) <em>Get</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Bill Data Service</em>'.
-	 * @see tda593.hotel.california.BillManagerImpl#getBillDataService()
-	 * @see #getBillManagerImpl()
+	 * @return the meta object for the '<em>Get</em>' operation.
+	 * @see tda593.hotel.california.DataService#get(java.lang.Object)
 	 * @generated
 	 */
-	EReference getBillManagerImpl_BillDataService();
+	EOperation getDataService__Get__Object();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}'.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#getAll() <em>Get All</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bill Manager</em>'.
-	 * @see tda593.hotel.california.BillManager
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.DataService#getAll()
 	 * @generated
 	 */
-	EClass getBillManager();
+	EOperation getDataService__GetAll();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#getBill(int) <em>Get Bill</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#count() <em>Count</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Bill</em>' operation.
-	 * @see tda593.hotel.california.BillManager#getBill(int)
+	 * @return the meta object for the '<em>Count</em>' operation.
+	 * @see tda593.hotel.california.DataService#count()
 	 * @generated
 	 */
-	EOperation getBillManager__GetBill__int();
+	EOperation getDataService__Count();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#getBookingBill(tda593.hotel.california.Booking) <em>Get Booking Bill</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#set(java.lang.Object) <em>Set</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Booking Bill</em>' operation.
-	 * @see tda593.hotel.california.BillManager#getBookingBill(tda593.hotel.california.Booking)
+	 * @return the meta object for the '<em>Set</em>' operation.
+	 * @see tda593.hotel.california.DataService#set(java.lang.Object)
 	 * @generated
 	 */
-	EOperation getBillManager__GetBookingBill__Booking();
+	EOperation getDataService__Set__Object();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#billItem(tda593.hotel.california.Bill, int, int) <em>Bill Item</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#setAll(org.eclipse.emf.common.util.EList) <em>Set All</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Bill Item</em>' operation.
-	 * @see tda593.hotel.california.BillManager#billItem(tda593.hotel.california.Bill, int, int)
+	 * @return the meta object for the '<em>Set All</em>' operation.
+	 * @see tda593.hotel.california.DataService#setAll(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getBillManager__BillItem__Bill_int_int();
+	EOperation getDataService__SetAll__EList();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#getAllServices() <em>Get All Services</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#delete(java.lang.Object) <em>Delete</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All Services</em>' operation.
-	 * @see tda593.hotel.california.BillManager#getAllServices()
+	 * @return the meta object for the '<em>Delete</em>' operation.
+	 * @see tda593.hotel.california.DataService#delete(java.lang.Object)
 	 * @generated
 	 */
-	EOperation getBillManager__GetAllServices();
+	EOperation getDataService__Delete__Object();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#addSubBill(tda593.hotel.california.Bill, tda593.hotel.california.Bill) <em>Add Sub Bill</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#exist(java.lang.Object) <em>Exist</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Sub Bill</em>' operation.
-	 * @see tda593.hotel.california.BillManager#addSubBill(tda593.hotel.california.Bill, tda593.hotel.california.Bill)
+	 * @return the meta object for the '<em>Exist</em>' operation.
+	 * @see tda593.hotel.california.DataService#exist(java.lang.Object)
 	 * @generated
 	 */
-	EOperation getBillManager__AddSubBill__Bill_Bill();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.Discount, tda593.hotel.california.Bill) <em>Apply Discount</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Apply Discount</em>' operation.
-	 * @see tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.Discount, tda593.hotel.california.Bill)
-	 * @generated
-	 */
-	EOperation getBillManager__ApplyDiscount__Discount_Bill();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#publishBill(tda593.hotel.california.Bill) <em>Publish Bill</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Publish Bill</em>' operation.
-	 * @see tda593.hotel.california.BillManager#publishBill(tda593.hotel.california.Bill)
-	 * @generated
-	 */
-	EOperation getBillManager__PublishBill__Bill();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#markBillAsPaid(tda593.hotel.california.Bill, boolean) <em>Mark Bill As Paid</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Mark Bill As Paid</em>' operation.
-	 * @see tda593.hotel.california.BillManager#markBillAsPaid(tda593.hotel.california.Bill, boolean)
-	 * @generated
-	 */
-	EOperation getBillManager__MarkBillAsPaid__Bill_boolean();
+	EOperation getDataService__Exist__Object();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.Bill <em>Bill</em>}'.
@@ -3868,6 +2953,117 @@ public interface CaliforniaPackage extends EPackage {
 	EReference getDiscountLimit_AllowedUsers();
 
 	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.BillManagerImpl <em>Bill Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bill Manager Impl</em>'.
+	 * @see tda593.hotel.california.BillManagerImpl
+	 * @generated
+	 */
+	EClass getBillManagerImpl();
+
+	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.BillManagerImpl#getBillDataService <em>Bill Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Bill Data Service</em>'.
+	 * @see tda593.hotel.california.BillManagerImpl#getBillDataService()
+	 * @see #getBillManagerImpl()
+	 * @generated
+	 */
+	EReference getBillManagerImpl_BillDataService();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bill Manager</em>'.
+	 * @see tda593.hotel.california.BillManager
+	 * @generated
+	 */
+	EClass getBillManager();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#getBill(int) <em>Get Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Bill</em>' operation.
+	 * @see tda593.hotel.california.BillManager#getBill(int)
+	 * @generated
+	 */
+	EOperation getBillManager__GetBill__int();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#getBookingBill(tda593.hotel.california.Booking) <em>Get Booking Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking Bill</em>' operation.
+	 * @see tda593.hotel.california.BillManager#getBookingBill(tda593.hotel.california.Booking)
+	 * @generated
+	 */
+	EOperation getBillManager__GetBookingBill__Booking();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#billItem(tda593.hotel.california.Bill, int, int) <em>Bill Item</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Bill Item</em>' operation.
+	 * @see tda593.hotel.california.BillManager#billItem(tda593.hotel.california.Bill, int, int)
+	 * @generated
+	 */
+	EOperation getBillManager__BillItem__Bill_int_int();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#getAllServices() <em>Get All Services</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Services</em>' operation.
+	 * @see tda593.hotel.california.BillManager#getAllServices()
+	 * @generated
+	 */
+	EOperation getBillManager__GetAllServices();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#addSubBill(tda593.hotel.california.Bill, tda593.hotel.california.Bill) <em>Add Sub Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Sub Bill</em>' operation.
+	 * @see tda593.hotel.california.BillManager#addSubBill(tda593.hotel.california.Bill, tda593.hotel.california.Bill)
+	 * @generated
+	 */
+	EOperation getBillManager__AddSubBill__Bill_Bill();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.Discount, tda593.hotel.california.Bill) <em>Apply Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Apply Discount</em>' operation.
+	 * @see tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.Discount, tda593.hotel.california.Bill)
+	 * @generated
+	 */
+	EOperation getBillManager__ApplyDiscount__Discount_Bill();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#publishBill(tda593.hotel.california.Bill) <em>Publish Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Publish Bill</em>' operation.
+	 * @see tda593.hotel.california.BillManager#publishBill(tda593.hotel.california.Bill)
+	 * @generated
+	 */
+	EOperation getBillManager__PublishBill__Bill();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#markBillAsPaid(tda593.hotel.california.Bill, boolean) <em>Mark Bill As Paid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Mark Bill As Paid</em>' operation.
+	 * @see tda593.hotel.california.BillManager#markBillAsPaid(tda593.hotel.california.Bill, boolean)
+	 * @generated
+	 */
+	EOperation getBillManager__MarkBillAsPaid__Bill_boolean();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.Booking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4146,60 +3342,6 @@ public interface CaliforniaPackage extends EPackage {
 	EAttribute getPerson_SocialSecurityNumber();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.RoomType <em>Room Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room Type</em>'.
-	 * @see tda593.hotel.california.RoomType
-	 * @generated
-	 */
-	EClass getRoomType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.RoomType#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tda593.hotel.california.RoomType#getId()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.RoomType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tda593.hotel.california.RoomType#getName()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.RoomType#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see tda593.hotel.california.RoomType#getDescription()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Description();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.RoomType#getRoomApprovals <em>Room Approvals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Room Approvals</em>'.
-	 * @see tda593.hotel.california.RoomType#getRoomApprovals()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_RoomApprovals();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.TravelInformation <em>Travel Information</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4274,86 +3416,6 @@ public interface CaliforniaPackage extends EPackage {
 	EClass getBookingDataService();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.DataService <em>Data Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Service</em>'.
-	 * @see tda593.hotel.california.DataService
-	 * @generated
-	 */
-	EClass getDataService();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#get(java.lang.Object) <em>Get</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get</em>' operation.
-	 * @see tda593.hotel.california.DataService#get(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getDataService__Get__Object();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#getAll() <em>Get All</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All</em>' operation.
-	 * @see tda593.hotel.california.DataService#getAll()
-	 * @generated
-	 */
-	EOperation getDataService__GetAll();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#count() <em>Count</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Count</em>' operation.
-	 * @see tda593.hotel.california.DataService#count()
-	 * @generated
-	 */
-	EOperation getDataService__Count();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#set(java.lang.Object) <em>Set</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set</em>' operation.
-	 * @see tda593.hotel.california.DataService#set(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getDataService__Set__Object();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#setAll(org.eclipse.emf.common.util.EList) <em>Set All</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set All</em>' operation.
-	 * @see tda593.hotel.california.DataService#setAll(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDataService__SetAll__EList();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#delete(java.lang.Object) <em>Delete</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Delete</em>' operation.
-	 * @see tda593.hotel.california.DataService#delete(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getDataService__Delete__Object();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DataService#exist(java.lang.Object) <em>Exist</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Exist</em>' operation.
-	 * @see tda593.hotel.california.DataService#exist(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getDataService__Exist__Object();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.BookingManager <em>Booking Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4404,11 +3466,11 @@ public interface CaliforniaPackage extends EPackage {
 	EOperation getBookingManager__GetAvailableRooms__Date_Date();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#getAvailableRooms(java.util.Date, java.util.Date, tda593.hotel.california.RoomType) <em>Get Available Rooms</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#getAvailableRooms(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType) <em>Get Available Rooms</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Available Rooms</em>' operation.
-	 * @see tda593.hotel.california.BookingManager#getAvailableRooms(java.util.Date, java.util.Date, tda593.hotel.california.RoomType)
+	 * @see tda593.hotel.california.BookingManager#getAvailableRooms(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType)
 	 * @generated
 	 */
 	EOperation getBookingManager__GetAvailableRooms__Date_Date_RoomType();
@@ -4424,31 +3486,31 @@ public interface CaliforniaPackage extends EPackage {
 	EOperation getBookingManager__GetAvailableRoomTypeAmount__Date_Date();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date, tda593.hotel.california.RoomType) <em>Get Available Room Type Amount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType) <em>Get Available Room Type Amount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Available Room Type Amount</em>' operation.
-	 * @see tda593.hotel.california.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date, tda593.hotel.california.RoomType)
+	 * @see tda593.hotel.california.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType)
 	 * @generated
 	 */
 	EOperation getBookingManager__GetAvailableRoomTypeAmount__Date_Date_RoomType();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.RoomType) <em>Create Booking</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.facilities.RoomType) <em>Create Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Booking</em>' operation.
-	 * @see tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.RoomType)
+	 * @see tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.facilities.RoomType)
 	 * @generated
 	 */
 	EOperation getBookingManager__CreateBooking__Date_Date_LegalEntity_RoomType();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.Room) <em>Create Booking</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.facilities.Room) <em>Create Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Booking</em>' operation.
-	 * @see tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.Room)
+	 * @see tda593.hotel.california.BookingManager#createBooking(java.util.Date, java.util.Date, tda593.hotel.california.LegalEntity, tda593.hotel.california.facilities.Room)
 	 * @generated
 	 */
 	EOperation getBookingManager__CreateBooking__Date_Date_LegalEntity_Room();
@@ -4464,11 +3526,11 @@ public interface CaliforniaPackage extends EPackage {
 	EOperation getBookingManager__IsRoomAvailable__Date_Date_int();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#registerRoom(tda593.hotel.california.Booking, tda593.hotel.california.Room) <em>Register Room</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#registerRoom(tda593.hotel.california.Booking, tda593.hotel.california.facilities.Room) <em>Register Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Register Room</em>' operation.
-	 * @see tda593.hotel.california.BookingManager#registerRoom(tda593.hotel.california.Booking, tda593.hotel.california.Room)
+	 * @see tda593.hotel.california.BookingManager#registerRoom(tda593.hotel.california.Booking, tda593.hotel.california.facilities.Room)
 	 * @generated
 	 */
 	EOperation getBookingManager__RegisterRoom__Booking_Room();
@@ -4484,11 +3546,11 @@ public interface CaliforniaPackage extends EPackage {
 	EOperation getBookingManager__CheckIn__Booking_EList();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#isRoomTypeAvailable(java.util.Date, java.util.Date, tda593.hotel.california.RoomType) <em>Is Room Type Available</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BookingManager#isRoomTypeAvailable(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType) <em>Is Room Type Available</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Room Type Available</em>' operation.
-	 * @see tda593.hotel.california.BookingManager#isRoomTypeAvailable(java.util.Date, java.util.Date, tda593.hotel.california.RoomType)
+	 * @see tda593.hotel.california.BookingManager#isRoomTypeAvailable(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType)
 	 * @generated
 	 */
 	EOperation getBookingManager__IsRoomTypeAvailable__Date_Date_RoomType();
@@ -4534,177 +3596,6 @@ public interface CaliforniaPackage extends EPackage {
 	EOperation getBookingManager__CheckOut__Booking();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.Room <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room</em>'.
-	 * @see tda593.hotel.california.Room
-	 * @generated
-	 */
-	EClass getRoom();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Room#getFloor <em>Floor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Floor</em>'.
-	 * @see tda593.hotel.california.Room#getFloor()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_Floor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Room#getRoomNumber <em>Room Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Room Number</em>'.
-	 * @see tda593.hotel.california.Room#getRoomNumber()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_RoomNumber();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Room#isOperational <em>Is Operational</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Operational</em>'.
-	 * @see tda593.hotel.california.Room#isOperational()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_IsOperational();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Room#isCleaned <em>Is Cleaned</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Cleaned</em>'.
-	 * @see tda593.hotel.california.Room#isCleaned()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_IsCleaned();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Room#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see tda593.hotel.california.Room#getDescription()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_Description();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.Room#getPhotos <em>Photos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Photos</em>'.
-	 * @see tda593.hotel.california.Room#getPhotos()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_Photos();
-
-	/**
-	 * Returns the meta object for the reference list '{@link tda593.hotel.california.Room#getAllowedKeyCards <em>Allowed Key Cards</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Allowed Key Cards</em>'.
-	 * @see tda593.hotel.california.Room#getAllowedKeyCards()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_AllowedKeyCards();
-
-	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.Room#getRoomType <em>Room Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Type</em>'.
-	 * @see tda593.hotel.california.Room#getRoomType()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_RoomType();
-
-	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.Room#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room</em>'.
-	 * @see tda593.hotel.california.Room#getRoom()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_Room();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Room#getDisabilityApprovals <em>Disability Approvals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Disability Approvals</em>'.
-	 * @see tda593.hotel.california.Room#getDisabilityApprovals()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_DisabilityApprovals();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.Room#registerKeyCard(tda593.hotel.california.KeyCard) <em>Register Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Register Key Card</em>' operation.
-	 * @see tda593.hotel.california.Room#registerKeyCard(tda593.hotel.california.KeyCard)
-	 * @generated
-	 */
-	EOperation getRoom__RegisterKeyCard__KeyCard();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.Room#unregisterKeyCard(tda593.hotel.california.KeyCard) <em>Unregister Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Unregister Key Card</em>' operation.
-	 * @see tda593.hotel.california.Room#unregisterKeyCard(tda593.hotel.california.KeyCard)
-	 * @generated
-	 */
-	EOperation getRoom__UnregisterKeyCard__KeyCard();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.Room#unregisterKeyCards() <em>Unregister Key Cards</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Unregister Key Cards</em>' operation.
-	 * @see tda593.hotel.california.Room#unregisterKeyCards()
-	 * @generated
-	 */
-	EOperation getRoom__UnregisterKeyCards();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.KeyCard <em>Key Card</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Key Card</em>'.
-	 * @see tda593.hotel.california.KeyCard
-	 * @generated
-	 */
-	EClass getKeyCard();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.KeyCard#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tda593.hotel.california.KeyCard#getId()
-	 * @see #getKeyCard()
-	 * @generated
-	 */
-	EAttribute getKeyCard_Id();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.BookingManagerImpl <em>Booking Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4724,166 +3615,6 @@ public interface CaliforniaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBookingManagerImpl_BookingDataService();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.RoomManager <em>Room Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room Manager</em>'.
-	 * @see tda593.hotel.california.RoomManager
-	 * @generated
-	 */
-	EClass getRoomManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#getRoomTypes() <em>Get Room Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Room Types</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#getRoomTypes()
-	 * @generated
-	 */
-	EOperation getRoomManager__GetRoomTypes();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#registerKeyCard(tda593.hotel.california.KeyCard) <em>Register Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Register Key Card</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#registerKeyCard(tda593.hotel.california.KeyCard)
-	 * @generated
-	 */
-	EOperation getRoomManager__RegisterKeyCard__KeyCard();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#registerKeyCard(java.lang.String) <em>Register Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Register Key Card</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#registerKeyCard(java.lang.String)
-	 * @generated
-	 */
-	EOperation getRoomManager__RegisterKeyCard__String();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#getRooms() <em>Get Rooms</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Rooms</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#getRooms()
-	 * @generated
-	 */
-	EOperation getRoomManager__GetRooms();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#unregisterKeyCard(tda593.hotel.california.KeyCard) <em>Unregister Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Unregister Key Card</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#unregisterKeyCard(tda593.hotel.california.KeyCard)
-	 * @generated
-	 */
-	EOperation getRoomManager__UnregisterKeyCard__KeyCard();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#unregisterKeyCard(java.lang.String) <em>Unregister Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Unregister Key Card</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#unregisterKeyCard(java.lang.String)
-	 * @generated
-	 */
-	EOperation getRoomManager__UnregisterKeyCard__String();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.RoomManager#unregisterAllKeyCards(tda593.hotel.california.Room) <em>Unregister All Key Cards</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Unregister All Key Cards</em>' operation.
-	 * @see tda593.hotel.california.RoomManager#unregisterAllKeyCards(tda593.hotel.california.Room)
-	 * @generated
-	 */
-	EOperation getRoomManager__UnregisterAllKeyCards__Room();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.AdminRoomManager <em>Admin Room Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Admin Room Manager</em>'.
-	 * @see tda593.hotel.california.AdminRoomManager
-	 * @generated
-	 */
-	EClass getAdminRoomManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminRoomManager#addRoom(int, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList) <em>Add Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Room</em>' operation.
-	 * @see tda593.hotel.california.AdminRoomManager#addRoom(int, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getAdminRoomManager__AddRoom__int_int_String_EList_EList();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminRoomManager#removeRoom(int) <em>Remove Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove Room</em>' operation.
-	 * @see tda593.hotel.california.AdminRoomManager#removeRoom(int)
-	 * @generated
-	 */
-	EOperation getAdminRoomManager__RemoveRoom__int();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.KeyCardManager <em>Key Card Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Key Card Manager</em>'.
-	 * @see tda593.hotel.california.KeyCardManager
-	 * @generated
-	 */
-	EClass getKeyCardManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.KeyCardManager#getKeyCard(java.lang.String) <em>Get Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Key Card</em>' operation.
-	 * @see tda593.hotel.california.KeyCardManager#getKeyCard(java.lang.String)
-	 * @generated
-	 */
-	EOperation getKeyCardManager__GetKeyCard__String();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.AdminKeyCardManager <em>Admin Key Card Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Admin Key Card Manager</em>'.
-	 * @see tda593.hotel.california.AdminKeyCardManager
-	 * @generated
-	 */
-	EClass getAdminKeyCardManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminKeyCardManager#addKeyCard(int) <em>Add Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Key Card</em>' operation.
-	 * @see tda593.hotel.california.AdminKeyCardManager#addKeyCard(int)
-	 * @generated
-	 */
-	EOperation getAdminKeyCardManager__AddKeyCard__int();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminKeyCardManager#removeKeyCard(int) <em>Remove Key Card</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove Key Card</em>' operation.
-	 * @see tda593.hotel.california.AdminKeyCardManager#removeKeyCard(int)
-	 * @generated
-	 */
-	EOperation getAdminKeyCardManager__RemoveKeyCard__int();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.LegalEntityManager <em>Legal Entity Manager</em>}'.
@@ -5130,70 +3861,6 @@ public interface CaliforniaPackage extends EPackage {
 	EReference getBookingBill_Booking();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.GuestRoom <em>Guest Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Guest Room</em>'.
-	 * @see tda593.hotel.california.GuestRoom
-	 * @generated
-	 */
-	EClass getGuestRoom();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.GuestRoom#getNumberOfBeds <em>Number Of Beds</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number Of Beds</em>'.
-	 * @see tda593.hotel.california.GuestRoom#getNumberOfBeds()
-	 * @see #getGuestRoom()
-	 * @generated
-	 */
-	EAttribute getGuestRoom_NumberOfBeds();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.GuestRoom#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number Of Extrabeds</em>'.
-	 * @see tda593.hotel.california.GuestRoom#getNumberOfExtrabeds()
-	 * @see #getGuestRoom()
-	 * @generated
-	 */
-	EAttribute getGuestRoom_NumberOfExtrabeds();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.ConferenceRoom <em>Conference Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conference Room</em>'.
-	 * @see tda593.hotel.california.ConferenceRoom
-	 * @generated
-	 */
-	EClass getConferenceRoom();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.ConferenceRoom#getNumberOfSeats <em>Number Of Seats</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number Of Seats</em>'.
-	 * @see tda593.hotel.california.ConferenceRoom#getNumberOfSeats()
-	 * @see #getConferenceRoom()
-	 * @generated
-	 */
-	EAttribute getConferenceRoom_NumberOfSeats();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.ConferenceRoom#getEquipment <em>Equipment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Equipment</em>'.
-	 * @see tda593.hotel.california.ConferenceRoom#getEquipment()
-	 * @see #getConferenceRoom()
-	 * @generated
-	 */
-	EAttribute getConferenceRoom_Equipment();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.PercentageDiscount <em>Percentage Discount</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5213,26 +3880,6 @@ public interface CaliforniaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPercentageDiscount_Percentage();
-
-	/**
-	 * Returns the meta object for enum '{@link tda593.hotel.california.RoomApproval <em>Room Approval</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Room Approval</em>'.
-	 * @see tda593.hotel.california.RoomApproval
-	 * @generated
-	 */
-	EEnum getRoomApproval();
-
-	/**
-	 * Returns the meta object for enum '{@link tda593.hotel.california.DisabilityApproval <em>Disability Approval</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Disability Approval</em>'.
-	 * @see tda593.hotel.california.DisabilityApproval
-	 * @generated
-	 */
-	EEnum getDisabilityApproval();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5268,96 +3915,70 @@ public interface CaliforniaPackage extends EPackage {
 		EClass BILL_DATA_SERVICE = eINSTANCE.getBillDataService();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
+		 * The meta object literal for the '{@link tda593.hotel.california.DataService <em>Data Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.BillManagerImplImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManagerImpl()
+		 * @see tda593.hotel.california.DataService
+		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDataService()
 		 * @generated
 		 */
-		EClass BILL_MANAGER_IMPL = eINSTANCE.getBillManagerImpl();
+		EClass DATA_SERVICE = eINSTANCE.getDataService();
 
 		/**
-		 * The meta object literal for the '<em><b>Bill Data Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BILL_MANAGER_IMPL__BILL_DATA_SERVICE = eINSTANCE.getBillManagerImpl_BillDataService();
+		EOperation DATA_SERVICE___GET__OBJECT = eINSTANCE.getDataService__Get__Object();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}' class.
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.BillManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManager()
 		 * @generated
 		 */
-		EClass BILL_MANAGER = eINSTANCE.getBillManager();
+		EOperation DATA_SERVICE___GET_ALL = eINSTANCE.getDataService__GetAll();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Bill</b></em>' operation.
+		 * The meta object literal for the '<em><b>Count</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___GET_BILL__INT = eINSTANCE.getBillManager__GetBill__int();
+		EOperation DATA_SERVICE___COUNT = eINSTANCE.getDataService__Count();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Booking Bill</b></em>' operation.
+		 * The meta object literal for the '<em><b>Set</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___GET_BOOKING_BILL__BOOKING = eINSTANCE.getBillManager__GetBookingBill__Booking();
+		EOperation DATA_SERVICE___SET__OBJECT = eINSTANCE.getDataService__Set__Object();
 
 		/**
-		 * The meta object literal for the '<em><b>Bill Item</b></em>' operation.
+		 * The meta object literal for the '<em><b>Set All</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___BILL_ITEM__BILL_INT_INT = eINSTANCE.getBillManager__BillItem__Bill_int_int();
+		EOperation DATA_SERVICE___SET_ALL__ELIST = eINSTANCE.getDataService__SetAll__EList();
 
 		/**
-		 * The meta object literal for the '<em><b>Get All Services</b></em>' operation.
+		 * The meta object literal for the '<em><b>Delete</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___GET_ALL_SERVICES = eINSTANCE.getBillManager__GetAllServices();
+		EOperation DATA_SERVICE___DELETE__OBJECT = eINSTANCE.getDataService__Delete__Object();
 
 		/**
-		 * The meta object literal for the '<em><b>Add Sub Bill</b></em>' operation.
+		 * The meta object literal for the '<em><b>Exist</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___ADD_SUB_BILL__BILL_BILL = eINSTANCE.getBillManager__AddSubBill__Bill_Bill();
-
-		/**
-		 * The meta object literal for the '<em><b>Apply Discount</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL = eINSTANCE.getBillManager__ApplyDiscount__Discount_Bill();
-
-		/**
-		 * The meta object literal for the '<em><b>Publish Bill</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL_MANAGER___PUBLISH_BILL__BILL = eINSTANCE.getBillManager__PublishBill__Bill();
-
-		/**
-		 * The meta object literal for the '<em><b>Mark Bill As Paid</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN = eINSTANCE.getBillManager__MarkBillAsPaid__Bill_boolean();
+		EOperation DATA_SERVICE___EXIST__OBJECT = eINSTANCE.getDataService__Exist__Object();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.BillImpl <em>Bill</em>}' class.
@@ -5702,6 +4323,98 @@ public interface CaliforniaPackage extends EPackage {
 		EReference DISCOUNT_LIMIT__ALLOWED_USERS = eINSTANCE.getDiscountLimit_AllowedUsers();
 
 		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.impl.BillManagerImplImpl
+		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManagerImpl()
+		 * @generated
+		 */
+		EClass BILL_MANAGER_IMPL = eINSTANCE.getBillManagerImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Bill Data Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BILL_MANAGER_IMPL__BILL_DATA_SERVICE = eINSTANCE.getBillManagerImpl_BillDataService();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.BillManager
+		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManager()
+		 * @generated
+		 */
+		EClass BILL_MANAGER = eINSTANCE.getBillManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_BILL__INT = eINSTANCE.getBillManager__GetBill__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booking Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_BOOKING_BILL__BOOKING = eINSTANCE.getBillManager__GetBookingBill__Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Bill Item</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___BILL_ITEM__BILL_INT_INT = eINSTANCE.getBillManager__BillItem__Bill_int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Services</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_ALL_SERVICES = eINSTANCE.getBillManager__GetAllServices();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Sub Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___ADD_SUB_BILL__BILL_BILL = eINSTANCE.getBillManager__AddSubBill__Bill_Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Apply Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL = eINSTANCE.getBillManager__ApplyDiscount__Discount_Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Publish Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___PUBLISH_BILL__BILL = eINSTANCE.getBillManager__PublishBill__Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Mark Bill As Paid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN = eINSTANCE.getBillManager__MarkBillAsPaid__Bill_boolean();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.BookingImpl <em>Booking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5918,48 +4631,6 @@ public interface CaliforniaPackage extends EPackage {
 		EAttribute PERSON__SOCIAL_SECURITY_NUMBER = eINSTANCE.getPerson_SocialSecurityNumber();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.RoomTypeImpl <em>Room Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.RoomTypeImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomType()
-		 * @generated
-		 */
-		EClass ROOM_TYPE = eINSTANCE.getRoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__ID = eINSTANCE.getRoomType_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__DESCRIPTION = eINSTANCE.getRoomType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Approvals</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__ROOM_APPROVALS = eINSTANCE.getRoomType_RoomApprovals();
-
-		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.TravelInformationImpl <em>Travel Information</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6018,72 +4689,6 @@ public interface CaliforniaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BOOKING_DATA_SERVICE = eINSTANCE.getBookingDataService();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.DataService <em>Data Service</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.DataService
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDataService()
-		 * @generated
-		 */
-		EClass DATA_SERVICE = eINSTANCE.getDataService();
-
-		/**
-		 * The meta object literal for the '<em><b>Get</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___GET__OBJECT = eINSTANCE.getDataService__Get__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___GET_ALL = eINSTANCE.getDataService__GetAll();
-
-		/**
-		 * The meta object literal for the '<em><b>Count</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___COUNT = eINSTANCE.getDataService__Count();
-
-		/**
-		 * The meta object literal for the '<em><b>Set</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___SET__OBJECT = eINSTANCE.getDataService__Set__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Set All</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___SET_ALL__ELIST = eINSTANCE.getDataService__SetAll__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Delete</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___DELETE__OBJECT = eINSTANCE.getDataService__Delete__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Exist</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SERVICE___EXIST__OBJECT = eINSTANCE.getDataService__Exist__Object();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.BookingManager <em>Booking Manager</em>}' class.
@@ -6232,138 +4837,6 @@ public interface CaliforniaPackage extends EPackage {
 		EOperation BOOKING_MANAGER___CHECK_OUT__BOOKING = eINSTANCE.getBookingManager__CheckOut__Booking();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.RoomImpl <em>Room</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.RoomImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoom()
-		 * @generated
-		 */
-		EClass ROOM = eINSTANCE.getRoom();
-
-		/**
-		 * The meta object literal for the '<em><b>Floor</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__FLOOR = eINSTANCE.getRoom_Floor();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__ROOM_NUMBER = eINSTANCE.getRoom_RoomNumber();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Operational</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__IS_OPERATIONAL = eINSTANCE.getRoom_IsOperational();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Cleaned</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__IS_CLEANED = eINSTANCE.getRoom_IsCleaned();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__DESCRIPTION = eINSTANCE.getRoom_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Photos</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__PHOTOS = eINSTANCE.getRoom_Photos();
-
-		/**
-		 * The meta object literal for the '<em><b>Allowed Key Cards</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__ALLOWED_KEY_CARDS = eINSTANCE.getRoom_AllowedKeyCards();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__ROOM = eINSTANCE.getRoom_Room();
-
-		/**
-		 * The meta object literal for the '<em><b>Disability Approvals</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__DISABILITY_APPROVALS = eINSTANCE.getRoom_DisabilityApprovals();
-
-		/**
-		 * The meta object literal for the '<em><b>Register Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM___REGISTER_KEY_CARD__KEYCARD = eINSTANCE.getRoom__RegisterKeyCard__KeyCard();
-
-		/**
-		 * The meta object literal for the '<em><b>Unregister Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM___UNREGISTER_KEY_CARD__KEYCARD = eINSTANCE.getRoom__UnregisterKeyCard__KeyCard();
-
-		/**
-		 * The meta object literal for the '<em><b>Unregister Key Cards</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM___UNREGISTER_KEY_CARDS = eINSTANCE.getRoom__UnregisterKeyCards();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.KeyCardImpl <em>Key Card</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.KeyCardImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getKeyCard()
-		 * @generated
-		 */
-		EClass KEY_CARD = eINSTANCE.getKeyCard();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute KEY_CARD__ID = eINSTANCE.getKeyCard_Id();
-
-		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.BookingManagerImplImpl <em>Booking Manager Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6380,142 +4853,6 @@ public interface CaliforniaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE = eINSTANCE.getBookingManagerImpl_BookingDataService();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.RoomManager <em>Room Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.RoomManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomManager()
-		 * @generated
-		 */
-		EClass ROOM_MANAGER = eINSTANCE.getRoomManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Room Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___GET_ROOM_TYPES = eINSTANCE.getRoomManager__GetRoomTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Register Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD = eINSTANCE.getRoomManager__RegisterKeyCard__KeyCard();
-
-		/**
-		 * The meta object literal for the '<em><b>Register Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___REGISTER_KEY_CARD__STRING = eINSTANCE.getRoomManager__RegisterKeyCard__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Rooms</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___GET_ROOMS = eINSTANCE.getRoomManager__GetRooms();
-
-		/**
-		 * The meta object literal for the '<em><b>Unregister Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD = eINSTANCE.getRoomManager__UnregisterKeyCard__KeyCard();
-
-		/**
-		 * The meta object literal for the '<em><b>Unregister Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING = eINSTANCE.getRoomManager__UnregisterKeyCard__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Unregister All Key Cards</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = eINSTANCE.getRoomManager__UnregisterAllKeyCards__Room();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.AdminRoomManager <em>Admin Room Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.AdminRoomManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminRoomManager()
-		 * @generated
-		 */
-		EClass ADMIN_ROOM_MANAGER = eINSTANCE.getAdminRoomManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST = eINSTANCE.getAdminRoomManager__AddRoom__int_int_String_EList_EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT = eINSTANCE.getAdminRoomManager__RemoveRoom__int();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.KeyCardManager <em>Key Card Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.KeyCardManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getKeyCardManager()
-		 * @generated
-		 */
-		EClass KEY_CARD_MANAGER = eINSTANCE.getKeyCardManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation KEY_CARD_MANAGER___GET_KEY_CARD__STRING = eINSTANCE.getKeyCardManager__GetKeyCard__String();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.AdminKeyCardManager <em>Admin Key Card Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.AdminKeyCardManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminKeyCardManager()
-		 * @generated
-		 */
-		EClass ADMIN_KEY_CARD_MANAGER = eINSTANCE.getAdminKeyCardManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT = eINSTANCE.getAdminKeyCardManager__AddKeyCard__int();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove Key Card</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT = eINSTANCE.getAdminKeyCardManager__RemoveKeyCard__int();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.LegalEntityManager <em>Legal Entity Manager</em>}' class.
@@ -6722,58 +5059,6 @@ public interface CaliforniaPackage extends EPackage {
 		EReference BOOKING_BILL__BOOKING = eINSTANCE.getBookingBill_Booking();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.GuestRoomImpl <em>Guest Room</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.GuestRoomImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getGuestRoom()
-		 * @generated
-		 */
-		EClass GUEST_ROOM = eINSTANCE.getGuestRoom();
-
-		/**
-		 * The meta object literal for the '<em><b>Number Of Beds</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GUEST_ROOM__NUMBER_OF_BEDS = eINSTANCE.getGuestRoom_NumberOfBeds();
-
-		/**
-		 * The meta object literal for the '<em><b>Number Of Extrabeds</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GUEST_ROOM__NUMBER_OF_EXTRABEDS = eINSTANCE.getGuestRoom_NumberOfExtrabeds();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.ConferenceRoomImpl <em>Conference Room</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.ConferenceRoomImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getConferenceRoom()
-		 * @generated
-		 */
-		EClass CONFERENCE_ROOM = eINSTANCE.getConferenceRoom();
-
-		/**
-		 * The meta object literal for the '<em><b>Number Of Seats</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFERENCE_ROOM__NUMBER_OF_SEATS = eINSTANCE.getConferenceRoom_NumberOfSeats();
-
-		/**
-		 * The meta object literal for the '<em><b>Equipment</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFERENCE_ROOM__EQUIPMENT = eINSTANCE.getConferenceRoom_Equipment();
-
-		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.PercentageDiscountImpl <em>Percentage Discount</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6790,26 +5075,6 @@ public interface CaliforniaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PERCENTAGE_DISCOUNT__PERCENTAGE = eINSTANCE.getPercentageDiscount_Percentage();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.RoomApproval <em>Room Approval</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.RoomApproval
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomApproval()
-		 * @generated
-		 */
-		EEnum ROOM_APPROVAL = eINSTANCE.getRoomApproval();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.DisabilityApproval <em>Disability Approval</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.DisabilityApproval
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDisabilityApproval()
-		 * @generated
-		 */
-		EEnum DISABILITY_APPROVAL = eINSTANCE.getDisabilityApproval();
 
 	}
 

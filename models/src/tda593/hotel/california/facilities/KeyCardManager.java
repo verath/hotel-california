@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getKeyCardManager()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getKeyCardManager()
  * @model interface="true" abstract="true"
  * @generated
  */

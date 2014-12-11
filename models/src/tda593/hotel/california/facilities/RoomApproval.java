@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Room Approval</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see tda593.hotel.california.CaliforniaPackage#getRoomApproval()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoomApproval()
  * @model
  * @generated
  */

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.DisabilityApproval;
-import tda593.hotel.california.KeyCard;
-import tda593.hotel.california.Room;
-import tda593.hotel.california.RoomType;
+import tda593.hotel.california.facilities.DisabilityApproval;
+import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.KeyCard;
+import tda593.hotel.california.facilities.Room;
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,16 +32,16 @@ import tda593.hotel.california.RoomType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getFloor <em>Floor</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#isOperational <em>Is Operational</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#isCleaned <em>Is Cleaned</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getPhotos <em>Photos</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getRoom <em>Room</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomImpl#getDisabilityApprovals <em>Disability Approvals</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getFloor <em>Floor</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#isOperational <em>Is Operational</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#isCleaned <em>Is Cleaned</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getPhotos <em>Photos</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getDisabilityApprovals <em>Disability Approvals</em>}</li>
  * </ul>
  * </p>
  *
@@ -224,7 +224,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.ROOM;
+		return FacilitiesPackage.Literals.ROOM;
 	}
 
 	/**
@@ -245,7 +245,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		int oldFloor = floor;
 		floor = newFloor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__FLOOR, oldFloor, floor));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__FLOOR, oldFloor, floor));
 	}
 
 	/**
@@ -266,7 +266,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		int oldRoomNumber = roomNumber;
 		roomNumber = newRoomNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__ROOM_NUMBER, oldRoomNumber, roomNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__ROOM_NUMBER, oldRoomNumber, roomNumber));
 	}
 
 	/**
@@ -287,7 +287,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		boolean oldIsOperational = isOperational;
 		isOperational = newIsOperational;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__IS_OPERATIONAL, oldIsOperational, isOperational));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__IS_OPERATIONAL, oldIsOperational, isOperational));
 	}
 
 	/**
@@ -308,7 +308,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		boolean oldIsCleaned = isCleaned;
 		isCleaned = newIsCleaned;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__IS_CLEANED, oldIsCleaned, isCleaned));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__IS_CLEANED, oldIsCleaned, isCleaned));
 	}
 
 	/**
@@ -329,7 +329,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -339,7 +339,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	public EList<String> getPhotos() {
 		if (photos == null) {
-			photos = new EDataTypeUniqueEList<String>(String.class, this, CaliforniaPackage.ROOM__PHOTOS);
+			photos = new EDataTypeUniqueEList<String>(String.class, this, FacilitiesPackage.ROOM__PHOTOS);
 		}
 		return photos;
 	}
@@ -351,7 +351,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	public EList<KeyCard> getAllowedKeyCards() {
 		if (allowedKeyCards == null) {
-			allowedKeyCards = new EObjectResolvingEList<KeyCard>(KeyCard.class, this, CaliforniaPackage.ROOM__ALLOWED_KEY_CARDS);
+			allowedKeyCards = new EObjectResolvingEList<KeyCard>(KeyCard.class, this, FacilitiesPackage.ROOM__ALLOWED_KEY_CARDS);
 		}
 		return allowedKeyCards;
 	}
@@ -367,7 +367,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			roomType = (RoomType)eResolveProxy(oldRoomType);
 			if (roomType != oldRoomType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilitiesPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
 			}
 		}
 		return roomType;
@@ -391,7 +391,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		RoomType oldRoomType = roomType;
 		roomType = newRoomType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
 	}
 
 	/**
@@ -405,7 +405,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			room = (Room)eResolveProxy(oldRoom);
 			if (room != oldRoom) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.ROOM__ROOM, oldRoom, room));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilitiesPackage.ROOM__ROOM, oldRoom, room));
 			}
 		}
 		return room;
@@ -429,7 +429,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		Room oldRoom = room;
 		room = newRoom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__ROOM, oldRoom, room));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__ROOM, oldRoom, room));
 	}
 
 	/**
@@ -450,7 +450,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		DisabilityApproval oldDisabilityApprovals = disabilityApprovals;
 		disabilityApprovals = newDisabilityApprovals == null ? DISABILITY_APPROVALS_EDEFAULT : newDisabilityApprovals;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM__DISABILITY_APPROVALS, oldDisabilityApprovals, disabilityApprovals));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__DISABILITY_APPROVALS, oldDisabilityApprovals, disabilityApprovals));
 	}
 
 	/**
@@ -494,27 +494,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM__FLOOR:
+			case FacilitiesPackage.ROOM__FLOOR:
 				return getFloor();
-			case CaliforniaPackage.ROOM__ROOM_NUMBER:
+			case FacilitiesPackage.ROOM__ROOM_NUMBER:
 				return getRoomNumber();
-			case CaliforniaPackage.ROOM__IS_OPERATIONAL:
+			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				return isOperational();
-			case CaliforniaPackage.ROOM__IS_CLEANED:
+			case FacilitiesPackage.ROOM__IS_CLEANED:
 				return isCleaned();
-			case CaliforniaPackage.ROOM__DESCRIPTION:
+			case FacilitiesPackage.ROOM__DESCRIPTION:
 				return getDescription();
-			case CaliforniaPackage.ROOM__PHOTOS:
+			case FacilitiesPackage.ROOM__PHOTOS:
 				return getPhotos();
-			case CaliforniaPackage.ROOM__ALLOWED_KEY_CARDS:
+			case FacilitiesPackage.ROOM__ALLOWED_KEY_CARDS:
 				return getAllowedKeyCards();
-			case CaliforniaPackage.ROOM__ROOM_TYPE:
+			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
-			case CaliforniaPackage.ROOM__ROOM:
+			case FacilitiesPackage.ROOM__ROOM:
 				if (resolve) return getRoom();
 				return basicGetRoom();
-			case CaliforniaPackage.ROOM__DISABILITY_APPROVALS:
+			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				return getDisabilityApprovals();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -529,36 +529,36 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM__FLOOR:
+			case FacilitiesPackage.ROOM__FLOOR:
 				setFloor((Integer)newValue);
 				return;
-			case CaliforniaPackage.ROOM__ROOM_NUMBER:
+			case FacilitiesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber((Integer)newValue);
 				return;
-			case CaliforniaPackage.ROOM__IS_OPERATIONAL:
+			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				setIsOperational((Boolean)newValue);
 				return;
-			case CaliforniaPackage.ROOM__IS_CLEANED:
+			case FacilitiesPackage.ROOM__IS_CLEANED:
 				setIsCleaned((Boolean)newValue);
 				return;
-			case CaliforniaPackage.ROOM__DESCRIPTION:
+			case FacilitiesPackage.ROOM__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CaliforniaPackage.ROOM__PHOTOS:
+			case FacilitiesPackage.ROOM__PHOTOS:
 				getPhotos().clear();
 				getPhotos().addAll((Collection<? extends String>)newValue);
 				return;
-			case CaliforniaPackage.ROOM__ALLOWED_KEY_CARDS:
+			case FacilitiesPackage.ROOM__ALLOWED_KEY_CARDS:
 				getAllowedKeyCards().clear();
 				getAllowedKeyCards().addAll((Collection<? extends KeyCard>)newValue);
 				return;
-			case CaliforniaPackage.ROOM__ROOM_TYPE:
+			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)newValue);
 				return;
-			case CaliforniaPackage.ROOM__ROOM:
+			case FacilitiesPackage.ROOM__ROOM:
 				setRoom((Room)newValue);
 				return;
-			case CaliforniaPackage.ROOM__DISABILITY_APPROVALS:
+			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				setDisabilityApprovals((DisabilityApproval)newValue);
 				return;
 		}
@@ -573,34 +573,34 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM__FLOOR:
+			case FacilitiesPackage.ROOM__FLOOR:
 				setFloor(FLOOR_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM__ROOM_NUMBER:
+			case FacilitiesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber(ROOM_NUMBER_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM__IS_OPERATIONAL:
+			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				setIsOperational(IS_OPERATIONAL_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM__IS_CLEANED:
+			case FacilitiesPackage.ROOM__IS_CLEANED:
 				setIsCleaned(IS_CLEANED_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM__DESCRIPTION:
+			case FacilitiesPackage.ROOM__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM__PHOTOS:
+			case FacilitiesPackage.ROOM__PHOTOS:
 				getPhotos().clear();
 				return;
-			case CaliforniaPackage.ROOM__ALLOWED_KEY_CARDS:
+			case FacilitiesPackage.ROOM__ALLOWED_KEY_CARDS:
 				getAllowedKeyCards().clear();
 				return;
-			case CaliforniaPackage.ROOM__ROOM_TYPE:
+			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)null);
 				return;
-			case CaliforniaPackage.ROOM__ROOM:
+			case FacilitiesPackage.ROOM__ROOM:
 				setRoom((Room)null);
 				return;
-			case CaliforniaPackage.ROOM__DISABILITY_APPROVALS:
+			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				setDisabilityApprovals(DISABILITY_APPROVALS_EDEFAULT);
 				return;
 		}
@@ -615,25 +615,25 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM__FLOOR:
+			case FacilitiesPackage.ROOM__FLOOR:
 				return floor != FLOOR_EDEFAULT;
-			case CaliforniaPackage.ROOM__ROOM_NUMBER:
+			case FacilitiesPackage.ROOM__ROOM_NUMBER:
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
-			case CaliforniaPackage.ROOM__IS_OPERATIONAL:
+			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				return isOperational != IS_OPERATIONAL_EDEFAULT;
-			case CaliforniaPackage.ROOM__IS_CLEANED:
+			case FacilitiesPackage.ROOM__IS_CLEANED:
 				return isCleaned != IS_CLEANED_EDEFAULT;
-			case CaliforniaPackage.ROOM__DESCRIPTION:
+			case FacilitiesPackage.ROOM__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CaliforniaPackage.ROOM__PHOTOS:
+			case FacilitiesPackage.ROOM__PHOTOS:
 				return photos != null && !photos.isEmpty();
-			case CaliforniaPackage.ROOM__ALLOWED_KEY_CARDS:
+			case FacilitiesPackage.ROOM__ALLOWED_KEY_CARDS:
 				return allowedKeyCards != null && !allowedKeyCards.isEmpty();
-			case CaliforniaPackage.ROOM__ROOM_TYPE:
+			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				return roomType != null;
-			case CaliforniaPackage.ROOM__ROOM:
+			case FacilitiesPackage.ROOM__ROOM:
 				return room != null;
-			case CaliforniaPackage.ROOM__DISABILITY_APPROVALS:
+			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				return disabilityApprovals != DISABILITY_APPROVALS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -647,13 +647,13 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case CaliforniaPackage.ROOM___REGISTER_KEY_CARD__KEYCARD:
+			case FacilitiesPackage.ROOM___REGISTER_KEY_CARD__KEYCARD:
 				registerKeyCard((KeyCard)arguments.get(0));
 				return null;
-			case CaliforniaPackage.ROOM___UNREGISTER_KEY_CARD__KEYCARD:
+			case FacilitiesPackage.ROOM___UNREGISTER_KEY_CARD__KEYCARD:
 				unregisterKeyCard((KeyCard)arguments.get(0));
 				return null;
-			case CaliforniaPackage.ROOM___UNREGISTER_KEY_CARDS:
+			case FacilitiesPackage.ROOM___UNREGISTER_KEY_CARDS:
 				unregisterKeyCards();
 				return null;
 		}

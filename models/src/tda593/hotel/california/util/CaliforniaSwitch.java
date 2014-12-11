@@ -159,12 +159,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CaliforniaPackage.ROOM_TYPE: {
-				RoomType roomType = (RoomType)theEObject;
-				T result = caseRoomType(roomType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CaliforniaPackage.TRAVEL_INFORMATION: {
 				TravelInformation travelInformation = (TravelInformation)theEObject;
 				T result = caseTravelInformation(travelInformation);
@@ -184,48 +178,10 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CaliforniaPackage.ROOM: {
-				Room room = (Room)theEObject;
-				T result = caseRoom(room);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.KEY_CARD: {
-				KeyCard keyCard = (KeyCard)theEObject;
-				T result = caseKeyCard(keyCard);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CaliforniaPackage.BOOKING_MANAGER_IMPL: {
 				BookingManagerImpl bookingManagerImpl = (BookingManagerImpl)theEObject;
 				T result = caseBookingManagerImpl(bookingManagerImpl);
 				if (result == null) result = caseBookingManager(bookingManagerImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.ROOM_MANAGER: {
-				RoomManager roomManager = (RoomManager)theEObject;
-				T result = caseRoomManager(roomManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.ADMIN_ROOM_MANAGER: {
-				AdminRoomManager adminRoomManager = (AdminRoomManager)theEObject;
-				T result = caseAdminRoomManager(adminRoomManager);
-				if (result == null) result = caseRoomManager(adminRoomManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.KEY_CARD_MANAGER: {
-				KeyCardManager keyCardManager = (KeyCardManager)theEObject;
-				T result = caseKeyCardManager(keyCardManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.ADMIN_KEY_CARD_MANAGER: {
-				AdminKeyCardManager adminKeyCardManager = (AdminKeyCardManager)theEObject;
-				T result = caseAdminKeyCardManager(adminKeyCardManager);
-				if (result == null) result = caseKeyCardManager(adminKeyCardManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,20 +225,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CaliforniaPackage.GUEST_ROOM: {
-				GuestRoom guestRoom = (GuestRoom)theEObject;
-				T result = caseGuestRoom(guestRoom);
-				if (result == null) result = caseRoom(guestRoom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.CONFERENCE_ROOM: {
-				ConferenceRoom conferenceRoom = (ConferenceRoom)theEObject;
-				T result = caseConferenceRoom(conferenceRoom);
-				if (result == null) result = caseRoom(conferenceRoom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CaliforniaPackage.PERCENTAGE_DISCOUNT: {
 				PercentageDiscount percentageDiscount = (PercentageDiscount)theEObject;
 				T result = casePercentageDiscount(percentageDiscount);
@@ -310,32 +252,17 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill Manager Impl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill Manager Impl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Service</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBillManagerImpl(BillManagerImpl object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBillManager(BillManager object) {
+	public <E, ID> T caseDataService(DataService<E, ID> object) {
 		return null;
 	}
 
@@ -445,6 +372,36 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bill Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bill Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBillManagerImpl(BillManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bill Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bill Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBillManager(BillManager object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Booking</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -505,21 +462,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Room Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Room Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoomType(RoomType object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Travel Information</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -550,21 +492,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <E, ID> T caseDataService(DataService<E, ID> object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Booking Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -580,36 +507,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Room</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoom(Room object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Key Card</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Key Card</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseKeyCard(KeyCard object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Booking Manager Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -621,66 +518,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBookingManagerImpl(BookingManagerImpl object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Room Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Room Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoomManager(RoomManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Admin Room Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Admin Room Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdminRoomManager(AdminRoomManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Key Card Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Key Card Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseKeyCardManager(KeyCardManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Admin Key Card Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Admin Key Card Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdminKeyCardManager(AdminKeyCardManager object) {
 		return null;
 	}
 
@@ -771,36 +608,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBookingBill(BookingBill object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Guest Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Guest Room</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGuestRoom(GuestRoom object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Conference Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Conference Room</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConferenceRoom(ConferenceRoom object) {
 		return null;
 	}
 

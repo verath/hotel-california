@@ -9,6 +9,9 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.facilities.Room;
+import tda593.hotel.california.facilities.RoomType;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Booking Manager</b></em>'.

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.facilities;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.KeyCard#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.KeyCard#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getKeyCard()
+ * @see tda593.hotel.california.facilities.FacilitiesPackage#getKeyCard()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface KeyCard extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getKeyCard_Id()
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getKeyCard_Id()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getId();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.KeyCard#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.KeyCard#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.

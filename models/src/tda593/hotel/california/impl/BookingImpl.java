@@ -20,8 +20,9 @@ import tda593.hotel.california.Booking;
 import tda593.hotel.california.CaliforniaPackage;
 import tda593.hotel.california.LegalEntity;
 import tda593.hotel.california.RoomStay;
-import tda593.hotel.california.RoomType;
 import tda593.hotel.california.TravelInformation;
+
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
