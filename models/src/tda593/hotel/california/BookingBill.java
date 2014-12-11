@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california;
 
+import tda593.hotel.california.booking.Booking;
 
 /**
  * <!-- begin-user-doc -->

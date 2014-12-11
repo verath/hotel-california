@@ -8,7 +8,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import tda593.hotel.california.LegalEntity;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +110,7 @@ public interface DiscountLimit extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Allowed Users</b></em>' reference list.
-	 * The list contents are of type {@link tda593.hotel.california.LegalEntity}.
+	 * The list contents are of type {@link tda593.hotel.california.booking.LegalEntity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allowed Users</em>' reference list isn't clear,

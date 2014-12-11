@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.util.Date;
 
@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.StayRequest;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.StayRequest;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,8 +21,8 @@ import tda593.hotel.california.StayRequest;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.StayRequestImpl#getText <em>Text</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.StayRequestImpl#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.StayRequestImpl#getText <em>Text</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.StayRequestImpl#getTimeStamp <em>Time Stamp</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,7 +85,7 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.STAY_REQUEST;
+		return BookingPackage.Literals.STAY_REQUEST;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 		String oldText = text;
 		text = newText;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.STAY_REQUEST__TEXT, oldText, text));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.STAY_REQUEST__TEXT, oldText, text));
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 		Date oldTimeStamp = timeStamp;
 		timeStamp = newTimeStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.STAY_REQUEST__TIME_STAMP, oldTimeStamp, timeStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.STAY_REQUEST__TIME_STAMP, oldTimeStamp, timeStamp));
 	}
 
 	/**
@@ -138,9 +138,9 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.STAY_REQUEST__TEXT:
+			case BookingPackage.STAY_REQUEST__TEXT:
 				return getText();
-			case CaliforniaPackage.STAY_REQUEST__TIME_STAMP:
+			case BookingPackage.STAY_REQUEST__TIME_STAMP:
 				return getTimeStamp();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -154,10 +154,10 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.STAY_REQUEST__TEXT:
+			case BookingPackage.STAY_REQUEST__TEXT:
 				setText((String)newValue);
 				return;
-			case CaliforniaPackage.STAY_REQUEST__TIME_STAMP:
+			case BookingPackage.STAY_REQUEST__TIME_STAMP:
 				setTimeStamp((Date)newValue);
 				return;
 		}
@@ -172,10 +172,10 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.STAY_REQUEST__TEXT:
+			case BookingPackage.STAY_REQUEST__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
-			case CaliforniaPackage.STAY_REQUEST__TIME_STAMP:
+			case BookingPackage.STAY_REQUEST__TIME_STAMP:
 				setTimeStamp(TIME_STAMP_EDEFAULT);
 				return;
 		}
@@ -190,9 +190,9 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.STAY_REQUEST__TEXT:
+			case BookingPackage.STAY_REQUEST__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-			case CaliforniaPackage.STAY_REQUEST__TIME_STAMP:
+			case BookingPackage.STAY_REQUEST__TIME_STAMP:
 				return TIME_STAMP_EDEFAULT == null ? timeStamp != null : !TIME_STAMP_EDEFAULT.equals(timeStamp);
 		}
 		return super.eIsSet(featureID);

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import java.util.Date;
 
@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.CreditCardInformation#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link tda593.hotel.california.CreditCardInformation#getCardHolder <em>Card Holder</em>}</li>
- *   <li>{@link tda593.hotel.california.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getCardHolder <em>Card Holder</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getCreditCardInformation()
+ * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation()
  * @model
  * @generated
  */
@@ -35,14 +35,14 @@ public interface CreditCardInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getCreditCardInformation_CardNumber()
+	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_CardNumber()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getCardNumber();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.CreditCardInformation#getCardNumber <em>Card Number</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getCardNumber <em>Card Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Card Number</em>' attribute.
@@ -61,14 +61,14 @@ public interface CreditCardInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Card Holder</em>' attribute.
 	 * @see #setCardHolder(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getCreditCardInformation_CardHolder()
+	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_CardHolder()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getCardHolder();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.CreditCardInformation#getCardHolder <em>Card Holder</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getCardHolder <em>Card Holder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Card Holder</em>' attribute.
@@ -87,14 +87,14 @@ public interface CreditCardInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expiration Date</em>' attribute.
 	 * @see #setExpirationDate(Date)
-	 * @see tda593.hotel.california.CaliforniaPackage#getCreditCardInformation_ExpirationDate()
+	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_ExpirationDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Date getExpirationDate();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Expiration Date</em>' attribute.

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.Organization;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.Organization;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,8 +18,8 @@ import tda593.hotel.california.Organization;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.OrganizationImpl#getName <em>Name</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.OrganizationImpl#getOrganizationNumber <em>Organization Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.OrganizationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.OrganizationImpl#getOrganizationNumber <em>Organization Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,7 +82,7 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.ORGANIZATION;
+		return BookingPackage.Literals.ORGANIZATION;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ORGANIZATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ORGANIZATION__NAME, oldName, name));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 		String oldOrganizationNumber = organizationNumber;
 		organizationNumber = newOrganizationNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ORGANIZATION__ORGANIZATION_NUMBER, oldOrganizationNumber, organizationNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ORGANIZATION__ORGANIZATION_NUMBER, oldOrganizationNumber, organizationNumber));
 	}
 
 	/**
@@ -135,9 +135,9 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.ORGANIZATION__NAME:
+			case BookingPackage.ORGANIZATION__NAME:
 				return getName();
-			case CaliforniaPackage.ORGANIZATION__ORGANIZATION_NUMBER:
+			case BookingPackage.ORGANIZATION__ORGANIZATION_NUMBER:
 				return getOrganizationNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +151,10 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.ORGANIZATION__NAME:
+			case BookingPackage.ORGANIZATION__NAME:
 				setName((String)newValue);
 				return;
-			case CaliforniaPackage.ORGANIZATION__ORGANIZATION_NUMBER:
+			case BookingPackage.ORGANIZATION__ORGANIZATION_NUMBER:
 				setOrganizationNumber((String)newValue);
 				return;
 		}
@@ -169,10 +169,10 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ORGANIZATION__NAME:
+			case BookingPackage.ORGANIZATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CaliforniaPackage.ORGANIZATION__ORGANIZATION_NUMBER:
+			case BookingPackage.ORGANIZATION__ORGANIZATION_NUMBER:
 				setOrganizationNumber(ORGANIZATION_NUMBER_EDEFAULT);
 				return;
 		}
@@ -187,9 +187,9 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ORGANIZATION__NAME:
+			case BookingPackage.ORGANIZATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CaliforniaPackage.ORGANIZATION__ORGANIZATION_NUMBER:
+			case BookingPackage.ORGANIZATION__ORGANIZATION_NUMBER:
 				return ORGANIZATION_NUMBER_EDEFAULT == null ? organizationNumber != null : !ORGANIZATION_NUMBER_EDEFAULT.equals(organizationNumber);
 		}
 		return super.eIsSet(featureID);

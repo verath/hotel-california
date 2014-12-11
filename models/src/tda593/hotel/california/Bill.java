@@ -8,6 +8,9 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.booking.CreditCardInformation;
+import tda593.hotel.california.booking.LegalEntity;
+
 import tda593.hotel.california.discount.Discount;
 
 /**

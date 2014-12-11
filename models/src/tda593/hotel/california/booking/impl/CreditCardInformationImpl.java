@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.util.Date;
 
@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.CreditCardInformation;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.CreditCardInformation;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ import tda593.hotel.california.CreditCardInformation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.CreditCardInformationImpl#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.CreditCardInformationImpl#getCardHolder <em>Card Holder</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.CreditCardInformationImpl#getExpirationDate <em>Expiration Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCardHolder <em>Card Holder</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getExpirationDate <em>Expiration Date</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,7 +106,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.CREDIT_CARD_INFORMATION;
+		return BookingPackage.Literals.CREDIT_CARD_INFORMATION;
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		String oldCardNumber = cardNumber;
 		cardNumber = newCardNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER, oldCardNumber, cardNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER, oldCardNumber, cardNumber));
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		String oldCardHolder = cardHolder;
 		cardHolder = newCardHolder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER, oldCardHolder, cardHolder));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER, oldCardHolder, cardHolder));
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		Date oldExpirationDate = expirationDate;
 		expirationDate = newExpirationDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE, oldExpirationDate, expirationDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE, oldExpirationDate, expirationDate));
 	}
 
 	/**
@@ -180,11 +180,11 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				return getCardNumber();
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
 				return getCardHolder();
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				return getExpirationDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -198,13 +198,13 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				setCardNumber((String)newValue);
 				return;
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
 				setCardHolder((String)newValue);
 				return;
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				setExpirationDate((Date)newValue);
 				return;
 		}
@@ -219,13 +219,13 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				setCardNumber(CARD_NUMBER_EDEFAULT);
 				return;
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
 				setCardHolder(CARD_HOLDER_EDEFAULT);
 				return;
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				setExpirationDate(EXPIRATION_DATE_EDEFAULT);
 				return;
 		}
@@ -240,11 +240,11 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				return CARD_NUMBER_EDEFAULT == null ? cardNumber != null : !CARD_NUMBER_EDEFAULT.equals(cardNumber);
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
+			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
 				return CARD_HOLDER_EDEFAULT == null ? cardHolder != null : !CARD_HOLDER_EDEFAULT.equals(cardHolder);
-			case CaliforniaPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				return EXPIRATION_DATE_EDEFAULT == null ? expirationDate != null : !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
 		}
 		return super.eIsSet(featureID);

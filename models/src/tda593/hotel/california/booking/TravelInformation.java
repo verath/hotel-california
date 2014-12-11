@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -12,14 +12,14 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.TravelInformation#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.TravelInformation#getTrackingId <em>Tracking Id</em>}</li>
- *   <li>{@link tda593.hotel.california.TravelInformation#getComment <em>Comment</em>}</li>
- *   <li>{@link tda593.hotel.california.TravelInformation#getPredecessor <em>Predecessor</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.TravelInformation#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.TravelInformation#getTrackingId <em>Tracking Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.TravelInformation#getComment <em>Comment</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.TravelInformation#getPredecessor <em>Predecessor</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getTravelInformation()
+ * @see tda593.hotel.california.booking.BookingPackage#getTravelInformation()
  * @model
  * @generated
  */
@@ -34,14 +34,14 @@ public interface TravelInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getTravelInformation_Id()
+	 * @see tda593.hotel.california.booking.BookingPackage#getTravelInformation_Id()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getId();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.TravelInformation#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.TravelInformation#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
@@ -60,14 +60,14 @@ public interface TravelInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tracking Id</em>' attribute.
 	 * @see #setTrackingId(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getTravelInformation_TrackingId()
+	 * @see tda593.hotel.california.booking.BookingPackage#getTravelInformation_TrackingId()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getTrackingId();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.TravelInformation#getTrackingId <em>Tracking Id</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.TravelInformation#getTrackingId <em>Tracking Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Tracking Id</em>' attribute.
@@ -86,14 +86,14 @@ public interface TravelInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getTravelInformation_Comment()
+	 * @see tda593.hotel.california.booking.BookingPackage#getTravelInformation_Comment()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getComment();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.TravelInformation#getComment <em>Comment</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.TravelInformation#getComment <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Comment</em>' attribute.
@@ -112,14 +112,14 @@ public interface TravelInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Predecessor</em>' reference.
 	 * @see #setPredecessor(TravelInformation)
-	 * @see tda593.hotel.california.CaliforniaPackage#getTravelInformation_Predecessor()
+	 * @see tda593.hotel.california.booking.BookingPackage#getTravelInformation_Predecessor()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	TravelInformation getPredecessor();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.TravelInformation#getPredecessor <em>Predecessor</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.TravelInformation#getPredecessor <em>Predecessor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Predecessor</em>' reference.

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import java.util.Date;
 
@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.StayRequest#getText <em>Text</em>}</li>
- *   <li>{@link tda593.hotel.california.StayRequest#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.StayRequest#getText <em>Text</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.StayRequest#getTimeStamp <em>Time Stamp</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getStayRequest()
+ * @see tda593.hotel.california.booking.BookingPackage#getStayRequest()
  * @model
  * @generated
  */
@@ -34,14 +34,14 @@ public interface StayRequest extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getStayRequest_Text()
+	 * @see tda593.hotel.california.booking.BookingPackage#getStayRequest_Text()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.StayRequest#getText <em>Text</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.StayRequest#getText <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Text</em>' attribute.
@@ -60,14 +60,14 @@ public interface StayRequest extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time Stamp</em>' attribute.
 	 * @see #setTimeStamp(Date)
-	 * @see tda593.hotel.california.CaliforniaPackage#getStayRequest_TimeStamp()
+	 * @see tda593.hotel.california.booking.BookingPackage#getStayRequest_TimeStamp()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Date getTimeStamp();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.StayRequest#getTimeStamp <em>Time Stamp</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.StayRequest#getTimeStamp <em>Time Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Time Stamp</em>' attribute.

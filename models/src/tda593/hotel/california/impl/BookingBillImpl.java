@@ -9,9 +9,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.Booking;
 import tda593.hotel.california.BookingBill;
 import tda593.hotel.california.CaliforniaPackage;
+
+import tda593.hotel.california.booking.Booking;
 
 /**
  * <!-- begin-user-doc -->

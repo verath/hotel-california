@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import tda593.hotel.california.LegalEntity;
+import tda593.hotel.california.booking.LegalEntity;
 
 import tda593.hotel.california.discount.DiscountLimit;
 import tda593.hotel.california.discount.DiscountPackage;

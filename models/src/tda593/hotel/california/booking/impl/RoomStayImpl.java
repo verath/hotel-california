@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.util.Collection;
 
@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.Person;
-import tda593.hotel.california.RoomStay;
-import tda593.hotel.california.StayRequest;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.Person;
+import tda593.hotel.california.booking.RoomStay;
+import tda593.hotel.california.booking.StayRequest;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,9 +28,9 @@ import tda593.hotel.california.StayRequest;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.RoomStayImpl#isActive <em>Active</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomStayImpl#getStayRequest <em>Stay Request</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.RoomStayImpl#getRegisteredPersons <em>Registered Persons</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#isActive <em>Active</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getStayRequest <em>Stay Request</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getRegisteredPersons <em>Registered Persons</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,7 +93,7 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.ROOM_STAY;
+		return BookingPackage.Literals.ROOM_STAY;
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 		boolean oldActive = active;
 		active = newActive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM_STAY__ACTIVE, oldActive, active));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ROOM_STAY__ACTIVE, oldActive, active));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 */
 	public EList<StayRequest> getStayRequest() {
 		if (stayRequest == null) {
-			stayRequest = new EObjectResolvingEList<StayRequest>(StayRequest.class, this, CaliforniaPackage.ROOM_STAY__STAY_REQUEST);
+			stayRequest = new EObjectResolvingEList<StayRequest>(StayRequest.class, this, BookingPackage.ROOM_STAY__STAY_REQUEST);
 		}
 		return stayRequest;
 	}
@@ -140,7 +140,7 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 			registeredPersons = (Person)eResolveProxy(oldRegisteredPersons);
 			if (registeredPersons != oldRegisteredPersons) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.ROOM_STAY__REGISTERED_PERSONS, oldRegisteredPersons, registeredPersons));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.ROOM_STAY__REGISTERED_PERSONS, oldRegisteredPersons, registeredPersons));
 			}
 		}
 		return registeredPersons;
@@ -164,7 +164,7 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 		Person oldRegisteredPersons = registeredPersons;
 		registeredPersons = newRegisteredPersons;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.ROOM_STAY__REGISTERED_PERSONS, oldRegisteredPersons, registeredPersons));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ROOM_STAY__REGISTERED_PERSONS, oldRegisteredPersons, registeredPersons));
 	}
 
 	/**
@@ -175,11 +175,11 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_STAY__ACTIVE:
+			case BookingPackage.ROOM_STAY__ACTIVE:
 				return isActive();
-			case CaliforniaPackage.ROOM_STAY__STAY_REQUEST:
+			case BookingPackage.ROOM_STAY__STAY_REQUEST:
 				return getStayRequest();
-			case CaliforniaPackage.ROOM_STAY__REGISTERED_PERSONS:
+			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
 				if (resolve) return getRegisteredPersons();
 				return basicGetRegisteredPersons();
 		}
@@ -195,14 +195,14 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_STAY__ACTIVE:
+			case BookingPackage.ROOM_STAY__ACTIVE:
 				setActive((Boolean)newValue);
 				return;
-			case CaliforniaPackage.ROOM_STAY__STAY_REQUEST:
+			case BookingPackage.ROOM_STAY__STAY_REQUEST:
 				getStayRequest().clear();
 				getStayRequest().addAll((Collection<? extends StayRequest>)newValue);
 				return;
-			case CaliforniaPackage.ROOM_STAY__REGISTERED_PERSONS:
+			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
 				setRegisteredPersons((Person)newValue);
 				return;
 		}
@@ -217,13 +217,13 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_STAY__ACTIVE:
+			case BookingPackage.ROOM_STAY__ACTIVE:
 				setActive(ACTIVE_EDEFAULT);
 				return;
-			case CaliforniaPackage.ROOM_STAY__STAY_REQUEST:
+			case BookingPackage.ROOM_STAY__STAY_REQUEST:
 				getStayRequest().clear();
 				return;
-			case CaliforniaPackage.ROOM_STAY__REGISTERED_PERSONS:
+			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
 				setRegisteredPersons((Person)null);
 				return;
 		}
@@ -238,11 +238,11 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.ROOM_STAY__ACTIVE:
+			case BookingPackage.ROOM_STAY__ACTIVE:
 				return active != ACTIVE_EDEFAULT;
-			case CaliforniaPackage.ROOM_STAY__STAY_REQUEST:
+			case BookingPackage.ROOM_STAY__STAY_REQUEST:
 				return stayRequest != null && !stayRequest.isEmpty();
-			case CaliforniaPackage.ROOM_STAY__REGISTERED_PERSONS:
+			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
 				return registeredPersons != null;
 		}
 		return super.eIsSet(featureID);

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 
 /**
@@ -11,12 +11,12 @@ package tda593.hotel.california;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.Organization#getName <em>Name</em>}</li>
- *   <li>{@link tda593.hotel.california.Organization#getOrganizationNumber <em>Organization Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Organization#getName <em>Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Organization#getOrganizationNumber <em>Organization Number</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getOrganization()
+ * @see tda593.hotel.california.booking.BookingPackage#getOrganization()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface Organization extends LegalEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getOrganization_Name()
+	 * @see tda593.hotel.california.booking.BookingPackage#getOrganization_Name()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Organization#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Organization#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -57,14 +57,14 @@ public interface Organization extends LegalEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Organization Number</em>' attribute.
 	 * @see #setOrganizationNumber(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getOrganization_OrganizationNumber()
+	 * @see tda593.hotel.california.booking.BookingPackage#getOrganization_OrganizationNumber()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getOrganizationNumber();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Organization#getOrganizationNumber <em>Organization Number</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Organization#getOrganizationNumber <em>Organization Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Organization Number</em>' attribute.

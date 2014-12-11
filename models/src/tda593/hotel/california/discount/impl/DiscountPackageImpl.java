@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tda593.hotel.california.CaliforniaPackage;
 
+import tda593.hotel.california.booking.BookingPackage;
+
+import tda593.hotel.california.booking.impl.BookingPackageImpl;
+
 import tda593.hotel.california.discount.AdminDiscountManager;
 import tda593.hotel.california.discount.Discount;
 import tda593.hotel.california.discount.DiscountDataService;
@@ -141,16 +145,19 @@ public class DiscountPackageImpl extends EPackageImpl implements DiscountPackage
 
 		// Obtain or create and register interdependencies
 		CaliforniaPackageImpl theCaliforniaPackage = (CaliforniaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) instanceof CaliforniaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) : CaliforniaPackage.eINSTANCE);
+		BookingPackageImpl theBookingPackage = (BookingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) instanceof BookingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) : BookingPackage.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) : FacilitiesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDiscountPackage.createPackageContents();
 		theCaliforniaPackage.createPackageContents();
+		theBookingPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theDiscountPackage.initializePackageContents();
 		theCaliforniaPackage.initializePackageContents();
+		theBookingPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -473,6 +480,7 @@ public class DiscountPackageImpl extends EPackageImpl implements DiscountPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		BookingPackage theBookingPackage = (BookingPackage)EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI);
 		CaliforniaPackage theCaliforniaPackage = (CaliforniaPackage)EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI);
 
 		// Create type parameters
@@ -511,7 +519,7 @@ public class DiscountPackageImpl extends EPackageImpl implements DiscountPackage
 
 		op = initEOperation(getAdminDiscountManager__AddAllowedUsers__Discount_EList(), null, "addAllowedUsers", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theCaliforniaPackage.getLegalEntity(), "allowedUsers", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "allowedUsers", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date(), null, "setDateRangeLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -528,7 +536,7 @@ public class DiscountPackageImpl extends EPackageImpl implements DiscountPackage
 		initEAttribute(getDiscountLimit_Id(), ecorePackage.getEInt(), "id", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDiscountLimit_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDiscountLimit_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDiscountLimit_AllowedUsers(), theCaliforniaPackage.getLegalEntity(), null, "allowedUsers", null, 0, -1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDiscountLimit_AllowedUsers(), theBookingPackage.getLegalEntity(), null, "allowedUsers", null, 0, -1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(discountDataServiceEClass, DiscountDataService.class, "DiscountDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

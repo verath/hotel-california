@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import java.util.Date;
 import java.util.Map;
@@ -14,11 +14,11 @@ import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Booking Manager</b></em>'.
+ * A representation of the model object '<em><b>Manager</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getBookingManager()
+ * @see tda593.hotel.california.booking.BookingPackage#getBookingManager()
  * @model interface="true" abstract="true"
  * @generated
  */

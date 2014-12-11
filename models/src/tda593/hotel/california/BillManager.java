@@ -4,6 +4,8 @@ package tda593.hotel.california;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.booking.Booking;
+
 import tda593.hotel.california.discount.Discount;
 
 /**

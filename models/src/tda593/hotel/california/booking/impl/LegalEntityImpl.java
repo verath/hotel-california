@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.CreditCardInformation;
-import tda593.hotel.california.LegalEntity;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.CreditCardInformation;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +25,9 @@ import tda593.hotel.california.LegalEntity;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.LegalEntityImpl#getPhone <em>Phone</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.LegalEntityImpl#getEmail <em>Email</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.LegalEntityImpl#getCreditCardInformation <em>Credit Card Information</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getPhone <em>Phone</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getCreditCardInformation <em>Credit Card Information</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,7 +100,7 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.LEGAL_ENTITY;
+		return BookingPackage.Literals.LEGAL_ENTITY;
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 		String oldPhone = phone;
 		phone = newPhone;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.LEGAL_ENTITY__PHONE, oldPhone, phone));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.LEGAL_ENTITY__PHONE, oldPhone, phone));
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 		String oldEmail = email;
 		email = newEmail;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.LEGAL_ENTITY__EMAIL, oldEmail, email));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.LEGAL_ENTITY__EMAIL, oldEmail, email));
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 			creditCardInformation = (CreditCardInformation)eResolveProxy(oldCreditCardInformation);
 			if (creditCardInformation != oldCreditCardInformation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
 			}
 		}
 		return creditCardInformation;
@@ -180,7 +180,7 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 		CreditCardInformation oldCreditCardInformation = creditCardInformation;
 		creditCardInformation = newCreditCardInformation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
 	}
 
 	/**
@@ -202,11 +202,11 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.LEGAL_ENTITY__PHONE:
+			case BookingPackage.LEGAL_ENTITY__PHONE:
 				return getPhone();
-			case CaliforniaPackage.LEGAL_ENTITY__EMAIL:
+			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				return getEmail();
-			case CaliforniaPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
+			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				if (resolve) return getCreditCardInformation();
 				return basicGetCreditCardInformation();
 		}
@@ -221,13 +221,13 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.LEGAL_ENTITY__PHONE:
+			case BookingPackage.LEGAL_ENTITY__PHONE:
 				setPhone((String)newValue);
 				return;
-			case CaliforniaPackage.LEGAL_ENTITY__EMAIL:
+			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				setEmail((String)newValue);
 				return;
-			case CaliforniaPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
+			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				setCreditCardInformation((CreditCardInformation)newValue);
 				return;
 		}
@@ -242,13 +242,13 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.LEGAL_ENTITY__PHONE:
+			case BookingPackage.LEGAL_ENTITY__PHONE:
 				setPhone(PHONE_EDEFAULT);
 				return;
-			case CaliforniaPackage.LEGAL_ENTITY__EMAIL:
+			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				setEmail(EMAIL_EDEFAULT);
 				return;
-			case CaliforniaPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
+			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				setCreditCardInformation((CreditCardInformation)null);
 				return;
 		}
@@ -263,11 +263,11 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.LEGAL_ENTITY__PHONE:
+			case BookingPackage.LEGAL_ENTITY__PHONE:
 				return PHONE_EDEFAULT == null ? phone != null : !PHONE_EDEFAULT.equals(phone);
-			case CaliforniaPackage.LEGAL_ENTITY__EMAIL:
+			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-			case CaliforniaPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
+			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				return creditCardInformation != null;
 		}
 		return super.eIsSet(featureID);
@@ -281,7 +281,7 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case CaliforniaPackage.LEGAL_ENTITY___OPERATION1:
+			case BookingPackage.LEGAL_ENTITY___OPERATION1:
 				Operation1();
 				return null;
 		}

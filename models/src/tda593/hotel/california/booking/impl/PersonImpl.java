@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.Person;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.Person;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +18,9 @@ import tda593.hotel.california.Person;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.PersonImpl#getFirstname <em>Firstname</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.PersonImpl#getLastname <em>Lastname</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.PersonImpl#getSocialSecurityNumber <em>Social Security Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.PersonImpl#getFirstname <em>Firstname</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.PersonImpl#getLastname <em>Lastname</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.PersonImpl#getSocialSecurityNumber <em>Social Security Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,7 +103,7 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.PERSON;
+		return BookingPackage.Literals.PERSON;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 		String oldFirstname = firstname;
 		firstname = newFirstname;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.PERSON__FIRSTNAME, oldFirstname, firstname));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.PERSON__FIRSTNAME, oldFirstname, firstname));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 		String oldLastname = lastname;
 		lastname = newLastname;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.PERSON__LASTNAME, oldLastname, lastname));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.PERSON__LASTNAME, oldLastname, lastname));
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 		String oldSocialSecurityNumber = socialSecurityNumber;
 		socialSecurityNumber = newSocialSecurityNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.PERSON__SOCIAL_SECURITY_NUMBER, oldSocialSecurityNumber, socialSecurityNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.PERSON__SOCIAL_SECURITY_NUMBER, oldSocialSecurityNumber, socialSecurityNumber));
 	}
 
 	/**
@@ -177,11 +177,11 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.PERSON__FIRSTNAME:
+			case BookingPackage.PERSON__FIRSTNAME:
 				return getFirstname();
-			case CaliforniaPackage.PERSON__LASTNAME:
+			case BookingPackage.PERSON__LASTNAME:
 				return getLastname();
-			case CaliforniaPackage.PERSON__SOCIAL_SECURITY_NUMBER:
+			case BookingPackage.PERSON__SOCIAL_SECURITY_NUMBER:
 				return getSocialSecurityNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -195,13 +195,13 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.PERSON__FIRSTNAME:
+			case BookingPackage.PERSON__FIRSTNAME:
 				setFirstname((String)newValue);
 				return;
-			case CaliforniaPackage.PERSON__LASTNAME:
+			case BookingPackage.PERSON__LASTNAME:
 				setLastname((String)newValue);
 				return;
-			case CaliforniaPackage.PERSON__SOCIAL_SECURITY_NUMBER:
+			case BookingPackage.PERSON__SOCIAL_SECURITY_NUMBER:
 				setSocialSecurityNumber((String)newValue);
 				return;
 		}
@@ -216,13 +216,13 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.PERSON__FIRSTNAME:
+			case BookingPackage.PERSON__FIRSTNAME:
 				setFirstname(FIRSTNAME_EDEFAULT);
 				return;
-			case CaliforniaPackage.PERSON__LASTNAME:
+			case BookingPackage.PERSON__LASTNAME:
 				setLastname(LASTNAME_EDEFAULT);
 				return;
-			case CaliforniaPackage.PERSON__SOCIAL_SECURITY_NUMBER:
+			case BookingPackage.PERSON__SOCIAL_SECURITY_NUMBER:
 				setSocialSecurityNumber(SOCIAL_SECURITY_NUMBER_EDEFAULT);
 				return;
 		}
@@ -237,11 +237,11 @@ public class PersonImpl extends LegalEntityImpl implements Person {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.PERSON__FIRSTNAME:
+			case BookingPackage.PERSON__FIRSTNAME:
 				return FIRSTNAME_EDEFAULT == null ? firstname != null : !FIRSTNAME_EDEFAULT.equals(firstname);
-			case CaliforniaPackage.PERSON__LASTNAME:
+			case BookingPackage.PERSON__LASTNAME:
 				return LASTNAME_EDEFAULT == null ? lastname != null : !LASTNAME_EDEFAULT.equals(lastname);
-			case CaliforniaPackage.PERSON__SOCIAL_SECURITY_NUMBER:
+			case BookingPackage.PERSON__SOCIAL_SECURITY_NUMBER:
 				return SOCIAL_SECURITY_NUMBER_EDEFAULT == null ? socialSecurityNumber != null : !SOCIAL_SECURITY_NUMBER_EDEFAULT.equals(socialSecurityNumber);
 		}
 		return super.eIsSet(featureID);

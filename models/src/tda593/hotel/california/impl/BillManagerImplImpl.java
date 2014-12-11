@@ -17,8 +17,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import tda593.hotel.california.Bill;
 import tda593.hotel.california.BillDataService;
 import tda593.hotel.california.BillManagerImpl;
-import tda593.hotel.california.Booking;
 import tda593.hotel.california.CaliforniaPackage;
+
+import tda593.hotel.california.booking.Booking;
 
 import tda593.hotel.california.discount.Discount;
 

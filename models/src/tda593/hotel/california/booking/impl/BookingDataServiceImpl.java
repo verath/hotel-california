@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -10,13 +10,13 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.Booking;
-import tda593.hotel.california.BookingDataService;
-import tda593.hotel.california.CaliforniaPackage;
+import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.BookingDataService;
+import tda593.hotel.california.booking.BookingPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Booking Data Service</b></em>'.
+ * An implementation of the model object '<em><b>Data Service</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
@@ -40,7 +40,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.BOOKING_DATA_SERVICE;
+		return BookingPackage.Literals.BOOKING_DATA_SERVICE;
 	}
 
 	/**
@@ -128,22 +128,22 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___GET__OBJECT:
+			case BookingPackage.BOOKING_DATA_SERVICE___GET__OBJECT:
 				return get((Integer)arguments.get(0));
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___GET_ALL:
+			case BookingPackage.BOOKING_DATA_SERVICE___GET_ALL:
 				return getAll();
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___COUNT:
+			case BookingPackage.BOOKING_DATA_SERVICE___COUNT:
 				return count();
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___SET__OBJECT:
+			case BookingPackage.BOOKING_DATA_SERVICE___SET__OBJECT:
 				set((Booking)arguments.get(0));
 				return null;
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___SET_ALL__ELIST:
+			case BookingPackage.BOOKING_DATA_SERVICE___SET_ALL__ELIST:
 				setAll((EList<Booking>)arguments.get(0));
 				return null;
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___DELETE__OBJECT:
+			case BookingPackage.BOOKING_DATA_SERVICE___DELETE__OBJECT:
 				delete((Booking)arguments.get(0));
 				return null;
-			case CaliforniaPackage.BOOKING_DATA_SERVICE___EXIST__OBJECT:
+			case BookingPackage.BOOKING_DATA_SERVICE___EXIST__OBJECT:
 				exist((Integer)arguments.get(0));
 				return null;
 		}

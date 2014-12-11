@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.LegalEntity#getPhone <em>Phone</em>}</li>
- *   <li>{@link tda593.hotel.california.LegalEntity#getEmail <em>Email</em>}</li>
- *   <li>{@link tda593.hotel.california.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.LegalEntity#getPhone <em>Phone</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.LegalEntity#getEmail <em>Email</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getLegalEntity()
+ * @see tda593.hotel.california.booking.BookingPackage#getLegalEntity()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface LegalEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Phone</em>' attribute.
 	 * @see #setPhone(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getLegalEntity_Phone()
+	 * @see tda593.hotel.california.booking.BookingPackage#getLegalEntity_Phone()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getPhone();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.LegalEntity#getPhone <em>Phone</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.LegalEntity#getPhone <em>Phone</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Phone</em>' attribute.
@@ -59,14 +59,14 @@ public interface LegalEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Email</em>' attribute.
 	 * @see #setEmail(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getLegalEntity_Email()
+	 * @see tda593.hotel.california.booking.BookingPackage#getLegalEntity_Email()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getEmail();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.LegalEntity#getEmail <em>Email</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.LegalEntity#getEmail <em>Email</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Email</em>' attribute.
@@ -85,14 +85,14 @@ public interface LegalEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Credit Card Information</em>' reference.
 	 * @see #setCreditCardInformation(CreditCardInformation)
-	 * @see tda593.hotel.california.CaliforniaPackage#getLegalEntity_CreditCardInformation()
+	 * @see tda593.hotel.california.booking.BookingPackage#getLegalEntity_CreditCardInformation()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	CreditCardInformation getCreditCardInformation();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Credit Card Information</em>' reference.

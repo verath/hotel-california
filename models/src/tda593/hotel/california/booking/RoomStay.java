@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.RoomStay#isActive <em>Active</em>}</li>
- *   <li>{@link tda593.hotel.california.RoomStay#getStayRequest <em>Stay Request</em>}</li>
- *   <li>{@link tda593.hotel.california.RoomStay#getRegisteredPersons <em>Registered Persons</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.RoomStay#isActive <em>Active</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.RoomStay#getStayRequest <em>Stay Request</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.RoomStay#getRegisteredPersons <em>Registered Persons</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getRoomStay()
+ * @see tda593.hotel.california.booking.BookingPackage#getRoomStay()
  * @model
  * @generated
  */
@@ -35,14 +35,14 @@ public interface RoomStay extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Active</em>' attribute.
 	 * @see #setActive(boolean)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoomStay_Active()
+	 * @see tda593.hotel.california.booking.BookingPackage#getRoomStay_Active()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isActive();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.RoomStay#isActive <em>Active</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.RoomStay#isActive <em>Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Active</em>' attribute.
@@ -53,7 +53,7 @@ public interface RoomStay extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stay Request</b></em>' reference list.
-	 * The list contents are of type {@link tda593.hotel.california.StayRequest}.
+	 * The list contents are of type {@link tda593.hotel.california.booking.StayRequest}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stay Request</em>' reference list isn't clear,
@@ -61,7 +61,7 @@ public interface RoomStay extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Stay Request</em>' reference list.
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoomStay_StayRequest()
+	 * @see tda593.hotel.california.booking.BookingPackage#getRoomStay_StayRequest()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -77,14 +77,14 @@ public interface RoomStay extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registered Persons</em>' reference.
 	 * @see #setRegisteredPersons(Person)
-	 * @see tda593.hotel.california.CaliforniaPackage#getRoomStay_RegisteredPersons()
+	 * @see tda593.hotel.california.booking.BookingPackage#getRoomStay_RegisteredPersons()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Person getRegisteredPersons();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.RoomStay#getRegisteredPersons <em>Registered Persons</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.RoomStay#getRegisteredPersons <em>Registered Persons</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Registered Persons</em>' reference.

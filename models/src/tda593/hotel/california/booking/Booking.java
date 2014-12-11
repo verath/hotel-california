@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import java.util.Date;
 
@@ -16,20 +16,20 @@ import tda593.hotel.california.facilities.RoomType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.Booking#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getStartDate <em>Start Date</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getEndDate <em>End Date</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getSpecialRequest <em>Special Request</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getPrice <em>Price</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getRoomStay <em>Room Stay</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getTravelInformation <em>Travel Information</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#getResponsible <em>Responsible</em>}</li>
- *   <li>{@link tda593.hotel.california.Booking#isCanceled <em>Is Canceled</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getStartDate <em>Start Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getEndDate <em>End Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getSpecialRequest <em>Special Request</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getPrice <em>Price</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getRoomStay <em>Room Stay</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getTravelInformation <em>Travel Information</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getResponsible <em>Responsible</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#isCanceled <em>Is Canceled</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getBooking()
+ * @see tda593.hotel.california.booking.BookingPackage#getBooking()
  * @model
  * @generated
  */
@@ -44,14 +44,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_Id()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_Id()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getId();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
@@ -70,14 +70,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Date</em>' attribute.
 	 * @see #setStartDate(Date)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_StartDate()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_StartDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Date getStartDate();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getStartDate <em>Start Date</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getStartDate <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start Date</em>' attribute.
@@ -96,14 +96,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Date</em>' attribute.
 	 * @see #setEndDate(Date)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_EndDate()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_EndDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Date getEndDate();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getEndDate <em>End Date</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getEndDate <em>End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>End Date</em>' attribute.
@@ -122,14 +122,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Special Request</em>' attribute.
 	 * @see #setSpecialRequest(String)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_SpecialRequest()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_SpecialRequest()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getSpecialRequest();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getSpecialRequest <em>Special Request</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getSpecialRequest <em>Special Request</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Special Request</em>' attribute.
@@ -148,14 +148,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Price</em>' attribute.
 	 * @see #setPrice(double)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_Price()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_Price()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	double getPrice();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getPrice <em>Price</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getPrice <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Price</em>' attribute.
@@ -174,14 +174,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Stay</em>' reference.
 	 * @see #setRoomStay(RoomStay)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_RoomStay()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_RoomStay()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	RoomStay getRoomStay();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getRoomStay <em>Room Stay</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getRoomStay <em>Room Stay</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Room Stay</em>' reference.
@@ -200,14 +200,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Type</em>' reference.
 	 * @see #setRoomType(RoomType)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_RoomType()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_RoomType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	RoomType getRoomType();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getRoomType <em>Room Type</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getRoomType <em>Room Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Room Type</em>' reference.
@@ -226,14 +226,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Travel Information</em>' reference.
 	 * @see #setTravelInformation(TravelInformation)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_TravelInformation()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_TravelInformation()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	TravelInformation getTravelInformation();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getTravelInformation <em>Travel Information</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getTravelInformation <em>Travel Information</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Travel Information</em>' reference.
@@ -252,14 +252,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Responsible</em>' reference.
 	 * @see #setResponsible(LegalEntity)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_Responsible()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_Responsible()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	LegalEntity getResponsible();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#getResponsible <em>Responsible</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#getResponsible <em>Responsible</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Responsible</em>' reference.
@@ -278,14 +278,14 @@ public interface Booking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Canceled</em>' attribute.
 	 * @see #setIsCanceled(boolean)
-	 * @see tda593.hotel.california.CaliforniaPackage#getBooking_IsCanceled()
+	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_IsCanceled()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isCanceled();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.Booking#isCanceled <em>Is Canceled</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.Booking#isCanceled <em>Is Canceled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Canceled</em>' attribute.

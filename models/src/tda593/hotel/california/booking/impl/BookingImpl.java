@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.Booking;
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.LegalEntity;
-import tda593.hotel.california.RoomStay;
-import tda593.hotel.california.TravelInformation;
+import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.LegalEntity;
+import tda593.hotel.california.booking.RoomStay;
+import tda593.hotel.california.booking.TravelInformation;
 
 import tda593.hotel.california.facilities.RoomType;
 
@@ -31,16 +31,16 @@ import tda593.hotel.california.facilities.RoomType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getStartDate <em>Start Date</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getSpecialRequest <em>Special Request</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getPrice <em>Price</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getRoomStay <em>Room Stay</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getTravelInformation <em>Travel Information</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#getResponsible <em>Responsible</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.BookingImpl#isCanceled <em>Is Canceled</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getStartDate <em>Start Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getSpecialRequest <em>Special Request</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getRoomStay <em>Room Stay</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getTravelInformation <em>Travel Information</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getResponsible <em>Responsible</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#isCanceled <em>Is Canceled</em>}</li>
  * </ul>
  * </p>
  *
@@ -223,7 +223,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.BOOKING;
+		return BookingPackage.Literals.BOOKING;
 	}
 
 	/**
@@ -244,7 +244,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__ID, oldId, id));
 	}
 
 	/**
@@ -265,7 +265,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		Date oldStartDate = startDate;
 		startDate = newStartDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__START_DATE, oldStartDate, startDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__START_DATE, oldStartDate, startDate));
 	}
 
 	/**
@@ -286,7 +286,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		Date oldEndDate = endDate;
 		endDate = newEndDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__END_DATE, oldEndDate, endDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__END_DATE, oldEndDate, endDate));
 	}
 
 	/**
@@ -307,7 +307,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		String oldSpecialRequest = specialRequest;
 		specialRequest = newSpecialRequest;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__SPECIAL_REQUEST, oldSpecialRequest, specialRequest));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__SPECIAL_REQUEST, oldSpecialRequest, specialRequest));
 	}
 
 	/**
@@ -328,7 +328,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		double oldPrice = price;
 		price = newPrice;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__PRICE, oldPrice, price));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__PRICE, oldPrice, price));
 	}
 
 	/**
@@ -342,7 +342,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			roomStay = (RoomStay)eResolveProxy(oldRoomStay);
 			if (roomStay != oldRoomStay) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.BOOKING__ROOM_STAY, oldRoomStay, roomStay));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.BOOKING__ROOM_STAY, oldRoomStay, roomStay));
 			}
 		}
 		return roomStay;
@@ -366,7 +366,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		RoomStay oldRoomStay = roomStay;
 		roomStay = newRoomStay;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__ROOM_STAY, oldRoomStay, roomStay));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__ROOM_STAY, oldRoomStay, roomStay));
 	}
 
 	/**
@@ -380,7 +380,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			roomType = (RoomType)eResolveProxy(oldRoomType);
 			if (roomType != oldRoomType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.BOOKING__ROOM_TYPE, oldRoomType, roomType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.BOOKING__ROOM_TYPE, oldRoomType, roomType));
 			}
 		}
 		return roomType;
@@ -404,7 +404,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		RoomType oldRoomType = roomType;
 		roomType = newRoomType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__ROOM_TYPE, oldRoomType, roomType));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__ROOM_TYPE, oldRoomType, roomType));
 	}
 
 	/**
@@ -418,7 +418,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			travelInformation = (TravelInformation)eResolveProxy(oldTravelInformation);
 			if (travelInformation != oldTravelInformation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.BOOKING__TRAVEL_INFORMATION, oldTravelInformation, travelInformation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.BOOKING__TRAVEL_INFORMATION, oldTravelInformation, travelInformation));
 			}
 		}
 		return travelInformation;
@@ -442,7 +442,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		TravelInformation oldTravelInformation = travelInformation;
 		travelInformation = newTravelInformation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__TRAVEL_INFORMATION, oldTravelInformation, travelInformation));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__TRAVEL_INFORMATION, oldTravelInformation, travelInformation));
 	}
 
 	/**
@@ -456,7 +456,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			responsible = (LegalEntity)eResolveProxy(oldResponsible);
 			if (responsible != oldResponsible) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.BOOKING__RESPONSIBLE, oldResponsible, responsible));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.BOOKING__RESPONSIBLE, oldResponsible, responsible));
 			}
 		}
 		return responsible;
@@ -480,7 +480,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		LegalEntity oldResponsible = responsible;
 		responsible = newResponsible;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__RESPONSIBLE, oldResponsible, responsible));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__RESPONSIBLE, oldResponsible, responsible));
 	}
 
 	/**
@@ -501,7 +501,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		boolean oldIsCanceled = isCanceled;
 		isCanceled = newIsCanceled;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.BOOKING__IS_CANCELED, oldIsCanceled, isCanceled));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING__IS_CANCELED, oldIsCanceled, isCanceled));
 	}
 
 	/**
@@ -556,29 +556,29 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.BOOKING__ID:
+			case BookingPackage.BOOKING__ID:
 				return getId();
-			case CaliforniaPackage.BOOKING__START_DATE:
+			case BookingPackage.BOOKING__START_DATE:
 				return getStartDate();
-			case CaliforniaPackage.BOOKING__END_DATE:
+			case BookingPackage.BOOKING__END_DATE:
 				return getEndDate();
-			case CaliforniaPackage.BOOKING__SPECIAL_REQUEST:
+			case BookingPackage.BOOKING__SPECIAL_REQUEST:
 				return getSpecialRequest();
-			case CaliforniaPackage.BOOKING__PRICE:
+			case BookingPackage.BOOKING__PRICE:
 				return getPrice();
-			case CaliforniaPackage.BOOKING__ROOM_STAY:
+			case BookingPackage.BOOKING__ROOM_STAY:
 				if (resolve) return getRoomStay();
 				return basicGetRoomStay();
-			case CaliforniaPackage.BOOKING__ROOM_TYPE:
+			case BookingPackage.BOOKING__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
-			case CaliforniaPackage.BOOKING__TRAVEL_INFORMATION:
+			case BookingPackage.BOOKING__TRAVEL_INFORMATION:
 				if (resolve) return getTravelInformation();
 				return basicGetTravelInformation();
-			case CaliforniaPackage.BOOKING__RESPONSIBLE:
+			case BookingPackage.BOOKING__RESPONSIBLE:
 				if (resolve) return getResponsible();
 				return basicGetResponsible();
-			case CaliforniaPackage.BOOKING__IS_CANCELED:
+			case BookingPackage.BOOKING__IS_CANCELED:
 				return isCanceled();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -592,34 +592,34 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.BOOKING__ID:
+			case BookingPackage.BOOKING__ID:
 				setId((Integer)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__START_DATE:
+			case BookingPackage.BOOKING__START_DATE:
 				setStartDate((Date)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__END_DATE:
+			case BookingPackage.BOOKING__END_DATE:
 				setEndDate((Date)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__SPECIAL_REQUEST:
+			case BookingPackage.BOOKING__SPECIAL_REQUEST:
 				setSpecialRequest((String)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__PRICE:
+			case BookingPackage.BOOKING__PRICE:
 				setPrice((Double)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__ROOM_STAY:
+			case BookingPackage.BOOKING__ROOM_STAY:
 				setRoomStay((RoomStay)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__ROOM_TYPE:
+			case BookingPackage.BOOKING__ROOM_TYPE:
 				setRoomType((RoomType)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__TRAVEL_INFORMATION:
+			case BookingPackage.BOOKING__TRAVEL_INFORMATION:
 				setTravelInformation((TravelInformation)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__RESPONSIBLE:
+			case BookingPackage.BOOKING__RESPONSIBLE:
 				setResponsible((LegalEntity)newValue);
 				return;
-			case CaliforniaPackage.BOOKING__IS_CANCELED:
+			case BookingPackage.BOOKING__IS_CANCELED:
 				setIsCanceled((Boolean)newValue);
 				return;
 		}
@@ -634,34 +634,34 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.BOOKING__ID:
+			case BookingPackage.BOOKING__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case CaliforniaPackage.BOOKING__START_DATE:
+			case BookingPackage.BOOKING__START_DATE:
 				setStartDate(START_DATE_EDEFAULT);
 				return;
-			case CaliforniaPackage.BOOKING__END_DATE:
+			case BookingPackage.BOOKING__END_DATE:
 				setEndDate(END_DATE_EDEFAULT);
 				return;
-			case CaliforniaPackage.BOOKING__SPECIAL_REQUEST:
+			case BookingPackage.BOOKING__SPECIAL_REQUEST:
 				setSpecialRequest(SPECIAL_REQUEST_EDEFAULT);
 				return;
-			case CaliforniaPackage.BOOKING__PRICE:
+			case BookingPackage.BOOKING__PRICE:
 				setPrice(PRICE_EDEFAULT);
 				return;
-			case CaliforniaPackage.BOOKING__ROOM_STAY:
+			case BookingPackage.BOOKING__ROOM_STAY:
 				setRoomStay((RoomStay)null);
 				return;
-			case CaliforniaPackage.BOOKING__ROOM_TYPE:
+			case BookingPackage.BOOKING__ROOM_TYPE:
 				setRoomType((RoomType)null);
 				return;
-			case CaliforniaPackage.BOOKING__TRAVEL_INFORMATION:
+			case BookingPackage.BOOKING__TRAVEL_INFORMATION:
 				setTravelInformation((TravelInformation)null);
 				return;
-			case CaliforniaPackage.BOOKING__RESPONSIBLE:
+			case BookingPackage.BOOKING__RESPONSIBLE:
 				setResponsible((LegalEntity)null);
 				return;
-			case CaliforniaPackage.BOOKING__IS_CANCELED:
+			case BookingPackage.BOOKING__IS_CANCELED:
 				setIsCanceled(IS_CANCELED_EDEFAULT);
 				return;
 		}
@@ -676,25 +676,25 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.BOOKING__ID:
+			case BookingPackage.BOOKING__ID:
 				return id != ID_EDEFAULT;
-			case CaliforniaPackage.BOOKING__START_DATE:
+			case BookingPackage.BOOKING__START_DATE:
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
-			case CaliforniaPackage.BOOKING__END_DATE:
+			case BookingPackage.BOOKING__END_DATE:
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
-			case CaliforniaPackage.BOOKING__SPECIAL_REQUEST:
+			case BookingPackage.BOOKING__SPECIAL_REQUEST:
 				return SPECIAL_REQUEST_EDEFAULT == null ? specialRequest != null : !SPECIAL_REQUEST_EDEFAULT.equals(specialRequest);
-			case CaliforniaPackage.BOOKING__PRICE:
+			case BookingPackage.BOOKING__PRICE:
 				return price != PRICE_EDEFAULT;
-			case CaliforniaPackage.BOOKING__ROOM_STAY:
+			case BookingPackage.BOOKING__ROOM_STAY:
 				return roomStay != null;
-			case CaliforniaPackage.BOOKING__ROOM_TYPE:
+			case BookingPackage.BOOKING__ROOM_TYPE:
 				return roomType != null;
-			case CaliforniaPackage.BOOKING__TRAVEL_INFORMATION:
+			case BookingPackage.BOOKING__TRAVEL_INFORMATION:
 				return travelInformation != null;
-			case CaliforniaPackage.BOOKING__RESPONSIBLE:
+			case BookingPackage.BOOKING__RESPONSIBLE:
 				return responsible != null;
-			case CaliforniaPackage.BOOKING__IS_CANCELED:
+			case BookingPackage.BOOKING__IS_CANCELED:
 				return isCanceled != IS_CANCELED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -708,16 +708,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case CaliforniaPackage.BOOKING___CHECK_IN:
+			case BookingPackage.BOOKING___CHECK_IN:
 				checkIn();
 				return null;
-			case CaliforniaPackage.BOOKING___CHECK_OUT:
+			case BookingPackage.BOOKING___CHECK_OUT:
 				checkOut();
 				return null;
-			case CaliforniaPackage.BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION:
+			case BookingPackage.BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION:
 				registerTravelInformation((TravelInformation)arguments.get(0));
 				return null;
-			case CaliforniaPackage.BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION:
+			case BookingPackage.BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION:
 				unregisterTravelInformation((TravelInformation)arguments.get(0));
 				return null;
 		}

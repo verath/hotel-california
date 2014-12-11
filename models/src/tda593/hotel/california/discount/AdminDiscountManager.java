@@ -6,7 +6,7 @@ import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
 
-import tda593.hotel.california.LegalEntity;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->

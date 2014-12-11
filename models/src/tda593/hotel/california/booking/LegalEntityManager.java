@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.booking;
 
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getLegalEntityManager()
+ * @see tda593.hotel.california.booking.BookingPackage#getLegalEntityManager()
  * @model interface="true" abstract="true"
  * @generated
  */

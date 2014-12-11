@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.TravelInformation;
+import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.TravelInformation;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,10 +24,10 @@ import tda593.hotel.california.TravelInformation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.TravelInformationImpl#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.TravelInformationImpl#getTrackingId <em>Tracking Id</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.TravelInformationImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.TravelInformationImpl#getPredecessor <em>Predecessor</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.TravelInformationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.TravelInformationImpl#getTrackingId <em>Tracking Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.TravelInformationImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.TravelInformationImpl#getPredecessor <em>Predecessor</em>}</li>
  * </ul>
  * </p>
  *
@@ -120,7 +120,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.TRAVEL_INFORMATION;
+		return BookingPackage.Literals.TRAVEL_INFORMATION;
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.TRAVEL_INFORMATION__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.TRAVEL_INFORMATION__ID, oldId, id));
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 		String oldTrackingId = trackingId;
 		trackingId = newTrackingId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.TRAVEL_INFORMATION__TRACKING_ID, oldTrackingId, trackingId));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.TRAVEL_INFORMATION__TRACKING_ID, oldTrackingId, trackingId));
 	}
 
 	/**
@@ -183,7 +183,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.TRAVEL_INFORMATION__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.TRAVEL_INFORMATION__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -197,7 +197,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 			predecessor = (TravelInformation)eResolveProxy(oldPredecessor);
 			if (predecessor != oldPredecessor) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaliforniaPackage.TRAVEL_INFORMATION__PREDECESSOR, oldPredecessor, predecessor));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.TRAVEL_INFORMATION__PREDECESSOR, oldPredecessor, predecessor));
 			}
 		}
 		return predecessor;
@@ -221,7 +221,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 		TravelInformation oldPredecessor = predecessor;
 		predecessor = newPredecessor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.TRAVEL_INFORMATION__PREDECESSOR, oldPredecessor, predecessor));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.TRAVEL_INFORMATION__PREDECESSOR, oldPredecessor, predecessor));
 	}
 
 	/**
@@ -243,13 +243,13 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.TRAVEL_INFORMATION__ID:
+			case BookingPackage.TRAVEL_INFORMATION__ID:
 				return getId();
-			case CaliforniaPackage.TRAVEL_INFORMATION__TRACKING_ID:
+			case BookingPackage.TRAVEL_INFORMATION__TRACKING_ID:
 				return getTrackingId();
-			case CaliforniaPackage.TRAVEL_INFORMATION__COMMENT:
+			case BookingPackage.TRAVEL_INFORMATION__COMMENT:
 				return getComment();
-			case CaliforniaPackage.TRAVEL_INFORMATION__PREDECESSOR:
+			case BookingPackage.TRAVEL_INFORMATION__PREDECESSOR:
 				if (resolve) return getPredecessor();
 				return basicGetPredecessor();
 		}
@@ -264,16 +264,16 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.TRAVEL_INFORMATION__ID:
+			case BookingPackage.TRAVEL_INFORMATION__ID:
 				setId((Integer)newValue);
 				return;
-			case CaliforniaPackage.TRAVEL_INFORMATION__TRACKING_ID:
+			case BookingPackage.TRAVEL_INFORMATION__TRACKING_ID:
 				setTrackingId((String)newValue);
 				return;
-			case CaliforniaPackage.TRAVEL_INFORMATION__COMMENT:
+			case BookingPackage.TRAVEL_INFORMATION__COMMENT:
 				setComment((String)newValue);
 				return;
-			case CaliforniaPackage.TRAVEL_INFORMATION__PREDECESSOR:
+			case BookingPackage.TRAVEL_INFORMATION__PREDECESSOR:
 				setPredecessor((TravelInformation)newValue);
 				return;
 		}
@@ -288,16 +288,16 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.TRAVEL_INFORMATION__ID:
+			case BookingPackage.TRAVEL_INFORMATION__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case CaliforniaPackage.TRAVEL_INFORMATION__TRACKING_ID:
+			case BookingPackage.TRAVEL_INFORMATION__TRACKING_ID:
 				setTrackingId(TRACKING_ID_EDEFAULT);
 				return;
-			case CaliforniaPackage.TRAVEL_INFORMATION__COMMENT:
+			case BookingPackage.TRAVEL_INFORMATION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case CaliforniaPackage.TRAVEL_INFORMATION__PREDECESSOR:
+			case BookingPackage.TRAVEL_INFORMATION__PREDECESSOR:
 				setPredecessor((TravelInformation)null);
 				return;
 		}
@@ -312,13 +312,13 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.TRAVEL_INFORMATION__ID:
+			case BookingPackage.TRAVEL_INFORMATION__ID:
 				return id != ID_EDEFAULT;
-			case CaliforniaPackage.TRAVEL_INFORMATION__TRACKING_ID:
+			case BookingPackage.TRAVEL_INFORMATION__TRACKING_ID:
 				return TRACKING_ID_EDEFAULT == null ? trackingId != null : !TRACKING_ID_EDEFAULT.equals(trackingId);
-			case CaliforniaPackage.TRAVEL_INFORMATION__COMMENT:
+			case BookingPackage.TRAVEL_INFORMATION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case CaliforniaPackage.TRAVEL_INFORMATION__PREDECESSOR:
+			case BookingPackage.TRAVEL_INFORMATION__PREDECESSOR:
 				return predecessor != null;
 		}
 		return super.eIsSet(featureID);
@@ -332,7 +332,7 @@ public class TravelInformationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case CaliforniaPackage.TRAVEL_INFORMATION___ADD_PREDECESSOR__TRAVELINFORMATION:
+			case BookingPackage.TRAVEL_INFORMATION___ADD_PREDECESSOR__TRAVELINFORMATION:
 				addPredecessor((TravelInformation)arguments.get(0));
 				return null;
 		}

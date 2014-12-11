@@ -16,6 +16,13 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegenerator -->
       <package
+            uri="http:///tda593/hotel/california/booking.ecore"
+            class="tda593.hotel.california.booking.BookingPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated codegenerator -->
+      <package
             uri="http:///tda593/hotel/california/discount.ecore"
             class="tda593.hotel.california.discount.DiscountPackage"/>
    </extension>
