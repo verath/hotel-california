@@ -1,4 +1,4 @@
-package edu.chalmers.tda593.hotelcalifornia.example;
+package edu.chalmers.tda593.hotelcalifornia.example.guice;
 
 /**
  * An implementation of the CreditCardManager interface. This is the

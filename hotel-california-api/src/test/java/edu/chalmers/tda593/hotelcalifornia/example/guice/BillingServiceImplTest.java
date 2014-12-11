@@ -1,5 +1,7 @@
-package edu.chalmers.tda593.hotelcalifornia.example;
+package edu.chalmers.tda593.hotelcalifornia.example.guice;
 
+import edu.chalmers.tda593.hotelcalifornia.example.guice.BillingServiceImpl;
+import edu.chalmers.tda593.hotelcalifornia.example.guice.CreditCard;
 import org.junit.Before;
 import org.junit.Test;
 
