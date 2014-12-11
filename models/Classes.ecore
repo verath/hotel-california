@@ -406,4 +406,97 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountSum" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BillManagerImpl" eSuperTypes="#//BillManager">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="billDataService" ordered="false"
+        lowerBound="1" eType="#//BillDataService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BillManager" abstract="true" interface="true">
+    <eOperations name="getBill" ordered="false" lowerBound="1" eType="#//Bill">
+      <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="getBookingBill" ordered="false" lowerBound="1">
+      <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
+    </eOperations>
+    <eOperations name="billItem" ordered="false" lowerBound="1">
+      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
+      <eParameters name="serviceId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="quantity" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="getAllServices" ordered="false" lowerBound="1"/>
+    <eOperations name="addSubBill" ordered="false" lowerBound="1">
+      <eParameters name="subBill" ordered="false" lowerBound="1" eType="#//Bill"/>
+      <eParameters name="toBill" ordered="false" lowerBound="1" eType="#//Bill"/>
+    </eOperations>
+    <eOperations name="applyDiscount" ordered="false" lowerBound="1">
+      <eParameters name="discount" ordered="false" lowerBound="1" eType="#//Discount"/>
+      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
+    </eOperations>
+    <eOperations name="publishBill" ordered="false" lowerBound="1">
+      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
+    </eOperations>
+    <eOperations name="markBillAsPaid" ordered="false" lowerBound="1">
+      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
+      <eParameters name="isPaid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BillDataService">
+    <eGenericSuperTypes eClassifier="#//DataService">
+      <eTypeArguments eClassifier="#//Bill"/>
+      <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdminKeyCardManager" abstract="true"
+      interface="true" eSuperTypes="#//KeyCardManager">
+    <eOperations name="addKeyCard" ordered="false" lowerBound="1">
+      <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="removeKeyCard" ordered="false" lowerBound="1">
+      <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyCardManager" abstract="true" interface="true">
+    <eOperations name="getKeyCard" ordered="false" lowerBound="1" eType="#//KeyCard">
+      <eParameters name="keyCardNbr" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LegalEntityManager" abstract="true"
+      interface="true">
+    <eOperations name="findPerson" ordered="false" upperBound="-1" eType="#//Person">
+      <eParameters name="firstname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="lastname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="findOrganization" ordered="false" upperBound="-1" eType="#//Organization">
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getOrganization" ordered="false" lowerBound="1" eType="#//Organization">
+      <eParameters name="organizationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getPerson" ordered="false" lowerBound="1" eType="#//Person">
+      <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createPerson" ordered="false" lowerBound="1">
+      <eParameters name="firstname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="lastname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="phone" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createOrganization" ordered="false" lowerBound="1">
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="organizationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="phone" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="findLegalEntity" ordered="false" upperBound="-1" eType="#//LegalEntity">
+      <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="setCreditCardInformation" ordered="false" lowerBound="1">
+      <eParameters name="legalEntity" ordered="false" lowerBound="1" eType="#//LegalEntity"/>
+      <eParameters name="firstname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="lastname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="expirationDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eOperations>
+  </eClassifiers>
 </ecore:EPackage>

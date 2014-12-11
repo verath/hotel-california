@@ -3,6 +3,8 @@
 package Classes.impl;
 
 import Classes.Bill;
+import Classes.BillDataService;
+import Classes.BillManagerImpl;
 import Classes.Booking;
 import Classes.BookingBill;
 import Classes.BookingDataService;
@@ -104,6 +106,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.BOOKING_BILL: return createBookingBill();
 			case ClassesPackage.PERCENTAGE_DISCOUNT: return createPercentageDiscount();
 			case ClassesPackage.SUM_DISCOUNT: return createSumDiscount();
+			case ClassesPackage.BILL_MANAGER_IMPL: return createBillManagerImpl();
+			case ClassesPackage.BILL_DATA_SERVICE: return createBillDataService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -361,6 +365,26 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public SumDiscount createSumDiscount() {
 		SumDiscountImpl sumDiscount = new SumDiscountImpl();
 		return sumDiscount;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillManagerImpl createBillManagerImpl() {
+		BillManagerImplImpl billManagerImpl = new BillManagerImplImpl();
+		return billManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillDataService createBillDataService() {
+		BillDataServiceImpl billDataService = new BillDataServiceImpl();
+		return billDataService;
 	}
 
 	/**

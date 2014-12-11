@@ -220,6 +220,24 @@ public interface ClassesFactory extends EFactory {
 	SumDiscount createSumDiscount();
 
 	/**
+	 * Returns a new object of class '<em>Bill Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bill Manager Impl</em>'.
+	 * @generated
+	 */
+	BillManagerImpl createBillManagerImpl();
+
+	/**
+	 * Returns a new object of class '<em>Bill Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bill Data Service</em>'.
+	 * @generated
+	 */
+	BillDataService createBillDataService();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

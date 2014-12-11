@@ -2797,6 +2797,498 @@ public interface ClassesPackage extends EPackage {
 	int SUM_DISCOUNT_OPERATION_COUNT = DISCOUNT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link Classes.BillManager <em>Bill Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.BillManager
+	 * @see Classes.impl.ClassesPackageImpl#getBillManager()
+	 * @generated
+	 */
+	int BILL_MANAGER = 30;
+
+	/**
+	 * The number of structural features of the '<em>Bill Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___GET_BILL__INT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Booking Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___GET_BOOKING_BILL__BOOKING = 1;
+
+	/**
+	 * The operation id for the '<em>Bill Item</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___BILL_ITEM__BILL_INT_INT = 2;
+
+	/**
+	 * The operation id for the '<em>Get All Services</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___GET_ALL_SERVICES = 3;
+
+	/**
+	 * The operation id for the '<em>Add Sub Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___ADD_SUB_BILL__BILL_BILL = 4;
+
+	/**
+	 * The operation id for the '<em>Apply Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL = 5;
+
+	/**
+	 * The operation id for the '<em>Publish Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___PUBLISH_BILL__BILL = 6;
+
+	/**
+	 * The operation id for the '<em>Mark Bill As Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN = 7;
+
+	/**
+	 * The number of operations of the '<em>Bill Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_OPERATION_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link Classes.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.impl.BillManagerImplImpl
+	 * @see Classes.impl.ClassesPackageImpl#getBillManagerImpl()
+	 * @generated
+	 */
+	int BILL_MANAGER_IMPL = 29;
+
+	/**
+	 * The feature id for the '<em><b>Bill Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL__BILL_DATA_SERVICE = BILL_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Bill Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL_FEATURE_COUNT = BILL_MANAGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___GET_BILL__INT = BILL_MANAGER___GET_BILL__INT;
+
+	/**
+	 * The operation id for the '<em>Get Booking Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___GET_BOOKING_BILL__BOOKING = BILL_MANAGER___GET_BOOKING_BILL__BOOKING;
+
+	/**
+	 * The operation id for the '<em>Bill Item</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_INT = BILL_MANAGER___BILL_ITEM__BILL_INT_INT;
+
+	/**
+	 * The operation id for the '<em>Get All Services</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___GET_ALL_SERVICES = BILL_MANAGER___GET_ALL_SERVICES;
+
+	/**
+	 * The operation id for the '<em>Add Sub Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___ADD_SUB_BILL__BILL_BILL = BILL_MANAGER___ADD_SUB_BILL__BILL_BILL;
+
+	/**
+	 * The operation id for the '<em>Apply Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___APPLY_DISCOUNT__DISCOUNT_BILL = BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL;
+
+	/**
+	 * The operation id for the '<em>Publish Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___PUBLISH_BILL__BILL = BILL_MANAGER___PUBLISH_BILL__BILL;
+
+	/**
+	 * The operation id for the '<em>Mark Bill As Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN = BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN;
+
+	/**
+	 * The number of operations of the '<em>Bill Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL_OPERATION_COUNT = BILL_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Classes.impl.BillDataServiceImpl <em>Bill Data Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.impl.BillDataServiceImpl
+	 * @see Classes.impl.ClassesPackageImpl#getBillDataService()
+	 * @generated
+	 */
+	int BILL_DATA_SERVICE = 31;
+
+	/**
+	 * The number of structural features of the '<em>Bill Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE_FEATURE_COUNT = DATA_SERVICE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___GET__OBJECT = DATA_SERVICE___GET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___GET_ALL = DATA_SERVICE___GET_ALL;
+
+	/**
+	 * The operation id for the '<em>Count</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___COUNT = DATA_SERVICE___COUNT;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___SET__OBJECT = DATA_SERVICE___SET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Set All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___SET_ALL__ELIST = DATA_SERVICE___SET_ALL__ELIST;
+
+	/**
+	 * The operation id for the '<em>Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___DELETE__OBJECT = DATA_SERVICE___DELETE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Exist</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE___EXIST__OBJECT = DATA_SERVICE___EXIST__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>Bill Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_DATA_SERVICE_OPERATION_COUNT = DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Classes.KeyCardManager <em>Key Card Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.KeyCardManager
+	 * @see Classes.impl.ClassesPackageImpl#getKeyCardManager()
+	 * @generated
+	 */
+	int KEY_CARD_MANAGER = 33;
+
+	/**
+	 * The number of structural features of the '<em>Key Card Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER___GET_KEY_CARD__STRING = 0;
+
+	/**
+	 * The number of operations of the '<em>Key Card Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link Classes.AdminKeyCardManager <em>Admin Key Card Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.AdminKeyCardManager
+	 * @see Classes.impl.ClassesPackageImpl#getAdminKeyCardManager()
+	 * @generated
+	 */
+	int ADMIN_KEY_CARD_MANAGER = 32;
+
+	/**
+	 * The number of structural features of the '<em>Admin Key Card Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_FEATURE_COUNT = KEY_CARD_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER___GET_KEY_CARD__STRING = KEY_CARD_MANAGER___GET_KEY_CARD__STRING;
+
+	/**
+	 * The operation id for the '<em>Add Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT = KEY_CARD_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Remove Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT = KEY_CARD_MANAGER_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Admin Key Card Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_OPERATION_COUNT = KEY_CARD_MANAGER_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link Classes.LegalEntityManager <em>Legal Entity Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.LegalEntityManager
+	 * @see Classes.impl.ClassesPackageImpl#getLegalEntityManager()
+	 * @generated
+	 */
+	int LEGAL_ENTITY_MANAGER = 34;
+
+	/**
+	 * The number of structural features of the '<em>Legal Entity Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Find Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___FIND_PERSON__STRING_STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Find Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___FIND_ORGANIZATION__STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Get Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___GET_ORGANIZATION__STRING = 2;
+
+	/**
+	 * The operation id for the '<em>Get Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___GET_PERSON__STRING = 3;
+
+	/**
+	 * The operation id for the '<em>Create Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING = 4;
+
+	/**
+	 * The operation id for the '<em>Create Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING = 5;
+
+	/**
+	 * The operation id for the '<em>Find Legal Entity</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING = 6;
+
+	/**
+	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = 7;
+
+	/**
+	 * The number of operations of the '<em>Legal Entity Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER_OPERATION_COUNT = 8;
+
+	/**
 	 * The meta object id for the '{@link Classes.RoomApproval <em>Room Approval</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2804,7 +3296,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getRoomApproval()
 	 * @generated
 	 */
-	int ROOM_APPROVAL = 29;
+	int ROOM_APPROVAL = 35;
 
 	/**
 	 * The meta object id for the '{@link Classes.DisabilityApproval <em>Disability Approval</em>}' enum.
@@ -2814,7 +3306,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getDisabilityApproval()
 	 * @generated
 	 */
-	int DISABILITY_APPROVAL = 30;
+	int DISABILITY_APPROVAL = 36;
 
 
 	/**
@@ -4463,6 +4955,267 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getSumDiscount_DiscountSum();
 
 	/**
+	 * Returns the meta object for class '{@link Classes.BillManagerImpl <em>Bill Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bill Manager Impl</em>'.
+	 * @see Classes.BillManagerImpl
+	 * @generated
+	 */
+	EClass getBillManagerImpl();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.BillManagerImpl#getBillDataService <em>Bill Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Bill Data Service</em>'.
+	 * @see Classes.BillManagerImpl#getBillDataService()
+	 * @see #getBillManagerImpl()
+	 * @generated
+	 */
+	EReference getBillManagerImpl_BillDataService();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.BillManager <em>Bill Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bill Manager</em>'.
+	 * @see Classes.BillManager
+	 * @generated
+	 */
+	EClass getBillManager();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#getBill(int) <em>Get Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Bill</em>' operation.
+	 * @see Classes.BillManager#getBill(int)
+	 * @generated
+	 */
+	EOperation getBillManager__GetBill__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#getBookingBill(Classes.Booking) <em>Get Booking Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking Bill</em>' operation.
+	 * @see Classes.BillManager#getBookingBill(Classes.Booking)
+	 * @generated
+	 */
+	EOperation getBillManager__GetBookingBill__Booking();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#billItem(Classes.Bill, int, int) <em>Bill Item</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Bill Item</em>' operation.
+	 * @see Classes.BillManager#billItem(Classes.Bill, int, int)
+	 * @generated
+	 */
+	EOperation getBillManager__BillItem__Bill_int_int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#getAllServices() <em>Get All Services</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Services</em>' operation.
+	 * @see Classes.BillManager#getAllServices()
+	 * @generated
+	 */
+	EOperation getBillManager__GetAllServices();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#addSubBill(Classes.Bill, Classes.Bill) <em>Add Sub Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Sub Bill</em>' operation.
+	 * @see Classes.BillManager#addSubBill(Classes.Bill, Classes.Bill)
+	 * @generated
+	 */
+	EOperation getBillManager__AddSubBill__Bill_Bill();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#applyDiscount(Classes.Discount, Classes.Bill) <em>Apply Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Apply Discount</em>' operation.
+	 * @see Classes.BillManager#applyDiscount(Classes.Discount, Classes.Bill)
+	 * @generated
+	 */
+	EOperation getBillManager__ApplyDiscount__Discount_Bill();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#publishBill(Classes.Bill) <em>Publish Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Publish Bill</em>' operation.
+	 * @see Classes.BillManager#publishBill(Classes.Bill)
+	 * @generated
+	 */
+	EOperation getBillManager__PublishBill__Bill();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.BillManager#markBillAsPaid(Classes.Bill, boolean) <em>Mark Bill As Paid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Mark Bill As Paid</em>' operation.
+	 * @see Classes.BillManager#markBillAsPaid(Classes.Bill, boolean)
+	 * @generated
+	 */
+	EOperation getBillManager__MarkBillAsPaid__Bill_boolean();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.BillDataService <em>Bill Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bill Data Service</em>'.
+	 * @see Classes.BillDataService
+	 * @generated
+	 */
+	EClass getBillDataService();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.AdminKeyCardManager <em>Admin Key Card Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Key Card Manager</em>'.
+	 * @see Classes.AdminKeyCardManager
+	 * @generated
+	 */
+	EClass getAdminKeyCardManager();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.AdminKeyCardManager#addKeyCard(int) <em>Add Key Card</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Key Card</em>' operation.
+	 * @see Classes.AdminKeyCardManager#addKeyCard(int)
+	 * @generated
+	 */
+	EOperation getAdminKeyCardManager__AddKeyCard__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.AdminKeyCardManager#removeKeyCard(int) <em>Remove Key Card</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Key Card</em>' operation.
+	 * @see Classes.AdminKeyCardManager#removeKeyCard(int)
+	 * @generated
+	 */
+	EOperation getAdminKeyCardManager__RemoveKeyCard__int();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.KeyCardManager <em>Key Card Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Key Card Manager</em>'.
+	 * @see Classes.KeyCardManager
+	 * @generated
+	 */
+	EClass getKeyCardManager();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.KeyCardManager#getKeyCard(java.lang.String) <em>Get Key Card</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Key Card</em>' operation.
+	 * @see Classes.KeyCardManager#getKeyCard(java.lang.String)
+	 * @generated
+	 */
+	EOperation getKeyCardManager__GetKeyCard__String();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.LegalEntityManager <em>Legal Entity Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Legal Entity Manager</em>'.
+	 * @see Classes.LegalEntityManager
+	 * @generated
+	 */
+	EClass getLegalEntityManager();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#findPerson(java.lang.String, java.lang.String) <em>Find Person</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Person</em>' operation.
+	 * @see Classes.LegalEntityManager#findPerson(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__FindPerson__String_String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#findOrganization(java.lang.String) <em>Find Organization</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Organization</em>' operation.
+	 * @see Classes.LegalEntityManager#findOrganization(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__FindOrganization__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#getOrganization(java.lang.String) <em>Get Organization</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Organization</em>' operation.
+	 * @see Classes.LegalEntityManager#getOrganization(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__GetOrganization__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#getPerson(java.lang.String) <em>Get Person</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Person</em>' operation.
+	 * @see Classes.LegalEntityManager#getPerson(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__GetPerson__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#createPerson(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Create Person</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Person</em>' operation.
+	 * @see Classes.LegalEntityManager#createPerson(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__CreatePerson__String_String_String_String_String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#createOrganization(java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Create Organization</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Organization</em>' operation.
+	 * @see Classes.LegalEntityManager#createOrganization(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__CreateOrganization__String_String_String_String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#findLegalEntity(java.lang.String) <em>Find Legal Entity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Legal Entity</em>' operation.
+	 * @see Classes.LegalEntityManager#findLegalEntity(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__FindLegalEntity__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.LegalEntityManager#setCreditCardInformation(Classes.LegalEntity, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Date) <em>Set Credit Card Information</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Credit Card Information</em>' operation.
+	 * @see Classes.LegalEntityManager#setCreditCardInformation(Classes.LegalEntity, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Date)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date();
+
+	/**
 	 * Returns the meta object for enum '{@link Classes.RoomApproval <em>Room Approval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5818,6 +6571,226 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SUM_DISCOUNT__DISCOUNT_SUM = eINSTANCE.getSumDiscount_DiscountSum();
+
+		/**
+		 * The meta object literal for the '{@link Classes.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.impl.BillManagerImplImpl
+		 * @see Classes.impl.ClassesPackageImpl#getBillManagerImpl()
+		 * @generated
+		 */
+		EClass BILL_MANAGER_IMPL = eINSTANCE.getBillManagerImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Bill Data Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BILL_MANAGER_IMPL__BILL_DATA_SERVICE = eINSTANCE.getBillManagerImpl_BillDataService();
+
+		/**
+		 * The meta object literal for the '{@link Classes.BillManager <em>Bill Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.BillManager
+		 * @see Classes.impl.ClassesPackageImpl#getBillManager()
+		 * @generated
+		 */
+		EClass BILL_MANAGER = eINSTANCE.getBillManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_BILL__INT = eINSTANCE.getBillManager__GetBill__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booking Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_BOOKING_BILL__BOOKING = eINSTANCE.getBillManager__GetBookingBill__Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Bill Item</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___BILL_ITEM__BILL_INT_INT = eINSTANCE.getBillManager__BillItem__Bill_int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Services</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_ALL_SERVICES = eINSTANCE.getBillManager__GetAllServices();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Sub Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___ADD_SUB_BILL__BILL_BILL = eINSTANCE.getBillManager__AddSubBill__Bill_Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Apply Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL = eINSTANCE.getBillManager__ApplyDiscount__Discount_Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Publish Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___PUBLISH_BILL__BILL = eINSTANCE.getBillManager__PublishBill__Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Mark Bill As Paid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN = eINSTANCE.getBillManager__MarkBillAsPaid__Bill_boolean();
+
+		/**
+		 * The meta object literal for the '{@link Classes.impl.BillDataServiceImpl <em>Bill Data Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.impl.BillDataServiceImpl
+		 * @see Classes.impl.ClassesPackageImpl#getBillDataService()
+		 * @generated
+		 */
+		EClass BILL_DATA_SERVICE = eINSTANCE.getBillDataService();
+
+		/**
+		 * The meta object literal for the '{@link Classes.AdminKeyCardManager <em>Admin Key Card Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.AdminKeyCardManager
+		 * @see Classes.impl.ClassesPackageImpl#getAdminKeyCardManager()
+		 * @generated
+		 */
+		EClass ADMIN_KEY_CARD_MANAGER = eINSTANCE.getAdminKeyCardManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Key Card</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT = eINSTANCE.getAdminKeyCardManager__AddKeyCard__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Key Card</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT = eINSTANCE.getAdminKeyCardManager__RemoveKeyCard__int();
+
+		/**
+		 * The meta object literal for the '{@link Classes.KeyCardManager <em>Key Card Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.KeyCardManager
+		 * @see Classes.impl.ClassesPackageImpl#getKeyCardManager()
+		 * @generated
+		 */
+		EClass KEY_CARD_MANAGER = eINSTANCE.getKeyCardManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Key Card</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KEY_CARD_MANAGER___GET_KEY_CARD__STRING = eINSTANCE.getKeyCardManager__GetKeyCard__String();
+
+		/**
+		 * The meta object literal for the '{@link Classes.LegalEntityManager <em>Legal Entity Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.LegalEntityManager
+		 * @see Classes.impl.ClassesPackageImpl#getLegalEntityManager()
+		 * @generated
+		 */
+		EClass LEGAL_ENTITY_MANAGER = eINSTANCE.getLegalEntityManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Person</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___FIND_PERSON__STRING_STRING = eINSTANCE.getLegalEntityManager__FindPerson__String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Organization</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___FIND_ORGANIZATION__STRING = eINSTANCE.getLegalEntityManager__FindOrganization__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Organization</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___GET_ORGANIZATION__STRING = eINSTANCE.getLegalEntityManager__GetOrganization__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Person</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___GET_PERSON__STRING = eINSTANCE.getLegalEntityManager__GetPerson__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Person</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING = eINSTANCE.getLegalEntityManager__CreatePerson__String_String_String_String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Organization</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING = eINSTANCE.getLegalEntityManager__CreateOrganization__String_String_String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Legal Entity</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING = eINSTANCE.getLegalEntityManager__FindLegalEntity__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Credit Card Information</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = eINSTANCE.getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomApproval <em>Room Approval</em>}' enum.

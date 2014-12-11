@@ -184,6 +184,30 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createSumDiscountAdapter();
 			}
 			@Override
+			public Adapter caseBillManagerImpl(BillManagerImpl object) {
+				return createBillManagerImplAdapter();
+			}
+			@Override
+			public Adapter caseBillManager(BillManager object) {
+				return createBillManagerAdapter();
+			}
+			@Override
+			public Adapter caseBillDataService(BillDataService object) {
+				return createBillDataServiceAdapter();
+			}
+			@Override
+			public Adapter caseAdminKeyCardManager(AdminKeyCardManager object) {
+				return createAdminKeyCardManagerAdapter();
+			}
+			@Override
+			public Adapter caseKeyCardManager(KeyCardManager object) {
+				return createKeyCardManagerAdapter();
+			}
+			@Override
+			public Adapter caseLegalEntityManager(LegalEntityManager object) {
+				return createLegalEntityManagerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -606,6 +630,90 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSumDiscountAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.BillManagerImpl <em>Bill Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.BillManagerImpl
+	 * @generated
+	 */
+	public Adapter createBillManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.BillManager <em>Bill Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.BillManager
+	 * @generated
+	 */
+	public Adapter createBillManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.BillDataService <em>Bill Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.BillDataService
+	 * @generated
+	 */
+	public Adapter createBillDataServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.AdminKeyCardManager <em>Admin Key Card Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.AdminKeyCardManager
+	 * @generated
+	 */
+	public Adapter createAdminKeyCardManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.KeyCardManager <em>Key Card Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.KeyCardManager
+	 * @generated
+	 */
+	public Adapter createKeyCardManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.LegalEntityManager <em>Legal Entity Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.LegalEntityManager
+	 * @generated
+	 */
+	public Adapter createLegalEntityManagerAdapter() {
 		return null;
 	}
 

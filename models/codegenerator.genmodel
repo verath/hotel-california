@@ -356,5 +356,91 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//SumDiscount">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//SumDiscount/discountSum"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//BillManagerImpl">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//BillManagerImpl/billDataService"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//BillManager">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/getBill">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/getBill/id"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/getBookingBill">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/getBookingBill/booking"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/billItem">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/billItem/bill"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/billItem/serviceId"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/billItem/quantity"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/getAllServices"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/addSubBill">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/addSubBill/subBill"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/addSubBill/toBill"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/applyDiscount">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/applyDiscount/discount"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/applyDiscount/bill"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/publishBill">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/publishBill/bill"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//BillManager/markBillAsPaid">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/markBillAsPaid/bill"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//BillManager/markBillAsPaid/isPaid"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//BillDataService"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//AdminKeyCardManager">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//AdminKeyCardManager/addKeyCard">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//AdminKeyCardManager/addKeyCard/cardNumber"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//AdminKeyCardManager/removeKeyCard">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//AdminKeyCardManager/removeKeyCard/cardNumber"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//KeyCardManager">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//KeyCardManager/getKeyCard">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//KeyCardManager/getKeyCard/keyCardNbr"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//LegalEntityManager">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/findPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/findPerson/firstname"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/findPerson/lastname"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/findOrganization">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/findOrganization/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/getOrganization">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/getOrganization/organizationNumber"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/getPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/getPerson/SSN"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/createPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createPerson/firstname"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createPerson/lastname"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createPerson/SSN"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createPerson/phone"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createPerson/email"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/createOrganization">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createOrganization/name"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createOrganization/organizationNumber"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createOrganization/phone"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/createOrganization/email"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/findLegalEntity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/findLegalEntity/email"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//LegalEntityManager/setCreditCardInformation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/setCreditCardInformation/legalEntity"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/setCreditCardInformation/firstname"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/setCreditCardInformation/lastname"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/setCreditCardInformation/cardNumber"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/setCreditCardInformation/ccv"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//LegalEntityManager/setCreditCardInformation/expirationDate"/>
+      </genOperations>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
