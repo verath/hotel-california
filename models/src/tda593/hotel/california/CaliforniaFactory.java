@@ -76,15 +76,6 @@ public interface CaliforniaFactory extends EFactory {
 	Service createService();
 
 	/**
-	 * Returns a new object of class '<em>Discount Limit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Discount Limit</em>'.
-	 * @generated
-	 */
-	DiscountLimit createDiscountLimit();
-
-	/**
 	 * Returns a new object of class '<em>Bill Manager Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,15 +157,6 @@ public interface CaliforniaFactory extends EFactory {
 	Organization createOrganization();
 
 	/**
-	 * Returns a new object of class '<em>Sum Discount</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sum Discount</em>'.
-	 * @generated
-	 */
-	SumDiscount createSumDiscount();
-
-	/**
 	 * Returns a new object of class '<em>Booking Bill</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,15 +164,6 @@ public interface CaliforniaFactory extends EFactory {
 	 * @generated
 	 */
 	BookingBill createBookingBill();
-
-	/**
-	 * Returns a new object of class '<em>Percentage Discount</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Percentage Discount</em>'.
-	 * @generated
-	 */
-	PercentageDiscount createPercentageDiscount();
 
 	/**
 	 * Returns the package supported by this factory.

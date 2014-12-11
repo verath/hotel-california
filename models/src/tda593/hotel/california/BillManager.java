@@ -4,6 +4,8 @@ package tda593.hotel.california;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.discount.Discount;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Bill Manager</b></em>'.

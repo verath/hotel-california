@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.discount.impl;
 
 import java.util.Collection;
 import java.util.Date;
@@ -16,21 +16,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.DiscountLimit;
 import tda593.hotel.california.LegalEntity;
+
+import tda593.hotel.california.discount.DiscountLimit;
+import tda593.hotel.california.discount.DiscountPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Discount Limit</b></em>'.
+ * An implementation of the model object '<em><b>Limit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.DiscountLimitImpl#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.DiscountLimitImpl#getStartDate <em>Start Date</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.DiscountLimitImpl#getEndDate <em>End Date</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.DiscountLimitImpl#getAllowedUsers <em>Allowed Users</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountLimitImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountLimitImpl#getStartDate <em>Start Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountLimitImpl#getEndDate <em>End Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountLimitImpl#getAllowedUsers <em>Allowed Users</em>}</li>
  * </ul>
  * </p>
  *
@@ -123,7 +124,7 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.DISCOUNT_LIMIT;
+		return DiscountPackage.Literals.DISCOUNT_LIMIT;
 	}
 
 	/**
@@ -144,7 +145,7 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.DISCOUNT_LIMIT__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.DISCOUNT_LIMIT__ID, oldId, id));
 	}
 
 	/**
@@ -165,7 +166,7 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 		Date oldStartDate = startDate;
 		startDate = newStartDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.DISCOUNT_LIMIT__START_DATE, oldStartDate, startDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.DISCOUNT_LIMIT__START_DATE, oldStartDate, startDate));
 	}
 
 	/**
@@ -186,7 +187,7 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 		Date oldEndDate = endDate;
 		endDate = newEndDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.DISCOUNT_LIMIT__END_DATE, oldEndDate, endDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.DISCOUNT_LIMIT__END_DATE, oldEndDate, endDate));
 	}
 
 	/**
@@ -196,7 +197,7 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	 */
 	public EList<LegalEntity> getAllowedUsers() {
 		if (allowedUsers == null) {
-			allowedUsers = new EObjectResolvingEList<LegalEntity>(LegalEntity.class, this, CaliforniaPackage.DISCOUNT_LIMIT__ALLOWED_USERS);
+			allowedUsers = new EObjectResolvingEList<LegalEntity>(LegalEntity.class, this, DiscountPackage.DISCOUNT_LIMIT__ALLOWED_USERS);
 		}
 		return allowedUsers;
 	}
@@ -209,13 +210,13 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT_LIMIT__ID:
+			case DiscountPackage.DISCOUNT_LIMIT__ID:
 				return getId();
-			case CaliforniaPackage.DISCOUNT_LIMIT__START_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__START_DATE:
 				return getStartDate();
-			case CaliforniaPackage.DISCOUNT_LIMIT__END_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__END_DATE:
 				return getEndDate();
-			case CaliforniaPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
+			case DiscountPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				return getAllowedUsers();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -230,16 +231,16 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT_LIMIT__ID:
+			case DiscountPackage.DISCOUNT_LIMIT__ID:
 				setId((Integer)newValue);
 				return;
-			case CaliforniaPackage.DISCOUNT_LIMIT__START_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__START_DATE:
 				setStartDate((Date)newValue);
 				return;
-			case CaliforniaPackage.DISCOUNT_LIMIT__END_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__END_DATE:
 				setEndDate((Date)newValue);
 				return;
-			case CaliforniaPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
+			case DiscountPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				getAllowedUsers().clear();
 				getAllowedUsers().addAll((Collection<? extends LegalEntity>)newValue);
 				return;
@@ -255,16 +256,16 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT_LIMIT__ID:
+			case DiscountPackage.DISCOUNT_LIMIT__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case CaliforniaPackage.DISCOUNT_LIMIT__START_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__START_DATE:
 				setStartDate(START_DATE_EDEFAULT);
 				return;
-			case CaliforniaPackage.DISCOUNT_LIMIT__END_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__END_DATE:
 				setEndDate(END_DATE_EDEFAULT);
 				return;
-			case CaliforniaPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
+			case DiscountPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				getAllowedUsers().clear();
 				return;
 		}
@@ -279,13 +280,13 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT_LIMIT__ID:
+			case DiscountPackage.DISCOUNT_LIMIT__ID:
 				return id != ID_EDEFAULT;
-			case CaliforniaPackage.DISCOUNT_LIMIT__START_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__START_DATE:
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
-			case CaliforniaPackage.DISCOUNT_LIMIT__END_DATE:
+			case DiscountPackage.DISCOUNT_LIMIT__END_DATE:
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
-			case CaliforniaPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
+			case DiscountPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				return allowedUsers != null && !allowedUsers.isEmpty();
 		}
 		return super.eIsSet(featureID);

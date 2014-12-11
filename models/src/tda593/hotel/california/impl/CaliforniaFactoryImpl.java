@@ -20,16 +20,13 @@ import tda593.hotel.california.BookingManagerImpl;
 import tda593.hotel.california.CaliforniaFactory;
 import tda593.hotel.california.CaliforniaPackage;
 import tda593.hotel.california.CreditCardInformation;
-import tda593.hotel.california.DiscountLimit;
 import tda593.hotel.california.LegalEntity;
 import tda593.hotel.california.Organization;
-import tda593.hotel.california.PercentageDiscount;
 import tda593.hotel.california.Person;
 import tda593.hotel.california.Purchase;
 import tda593.hotel.california.RoomStay;
 import tda593.hotel.california.Service;
 import tda593.hotel.california.StayRequest;
-import tda593.hotel.california.SumDiscount;
 import tda593.hotel.california.TravelInformation;
 
 /**
@@ -82,7 +79,6 @@ public class CaliforniaFactoryImpl extends EFactoryImpl implements CaliforniaFac
 			case CaliforniaPackage.CREDIT_CARD_INFORMATION: return createCreditCardInformation();
 			case CaliforniaPackage.PURCHASE: return createPurchase();
 			case CaliforniaPackage.SERVICE: return createService();
-			case CaliforniaPackage.DISCOUNT_LIMIT: return createDiscountLimit();
 			case CaliforniaPackage.BILL_MANAGER_IMPL: return createBillManagerImpl();
 			case CaliforniaPackage.BOOKING: return createBooking();
 			case CaliforniaPackage.ROOM_STAY: return createRoomStay();
@@ -92,9 +88,7 @@ public class CaliforniaFactoryImpl extends EFactoryImpl implements CaliforniaFac
 			case CaliforniaPackage.BOOKING_DATA_SERVICE: return createBookingDataService();
 			case CaliforniaPackage.BOOKING_MANAGER_IMPL: return createBookingManagerImpl();
 			case CaliforniaPackage.ORGANIZATION: return createOrganization();
-			case CaliforniaPackage.SUM_DISCOUNT: return createSumDiscount();
 			case CaliforniaPackage.BOOKING_BILL: return createBookingBill();
-			case CaliforniaPackage.PERCENTAGE_DISCOUNT: return createPercentageDiscount();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,16 +152,6 @@ public class CaliforniaFactoryImpl extends EFactoryImpl implements CaliforniaFac
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DiscountLimit createDiscountLimit() {
-		DiscountLimitImpl discountLimit = new DiscountLimitImpl();
-		return discountLimit;
 	}
 
 	/**
@@ -265,29 +249,9 @@ public class CaliforniaFactoryImpl extends EFactoryImpl implements CaliforniaFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SumDiscount createSumDiscount() {
-		SumDiscountImpl sumDiscount = new SumDiscountImpl();
-		return sumDiscount;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BookingBill createBookingBill() {
 		BookingBillImpl bookingBill = new BookingBillImpl();
 		return bookingBill;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PercentageDiscount createPercentageDiscount() {
-		PercentageDiscountImpl percentageDiscount = new PercentageDiscountImpl();
-		return percentageDiscount;
 	}
 
 	/**

@@ -22,9 +22,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import tda593.hotel.california.Bill;
 import tda593.hotel.california.CaliforniaPackage;
 import tda593.hotel.california.CreditCardInformation;
-import tda593.hotel.california.Discount;
 import tda593.hotel.california.LegalEntity;
 import tda593.hotel.california.Purchase;
+
+import tda593.hotel.california.discount.Discount;
 
 /**
  * <!-- begin-user-doc -->

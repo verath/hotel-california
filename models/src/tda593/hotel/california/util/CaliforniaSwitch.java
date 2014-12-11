@@ -109,18 +109,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CaliforniaPackage.DISCOUNT: {
-				Discount discount = (Discount)theEObject;
-				T result = caseDiscount(discount);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.DISCOUNT_LIMIT: {
-				DiscountLimit discountLimit = (DiscountLimit)theEObject;
-				T result = caseDiscountLimit(discountLimit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CaliforniaPackage.BILL_MANAGER_IMPL: {
 				BillManagerImpl billManagerImpl = (BillManagerImpl)theEObject;
 				T result = caseBillManagerImpl(billManagerImpl);
@@ -198,37 +186,10 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CaliforniaPackage.ADMIN_DISCOUNT_MANAGER: {
-				AdminDiscountManager adminDiscountManager = (AdminDiscountManager)theEObject;
-				T result = caseAdminDiscountManager(adminDiscountManager);
-				if (result == null) result = caseDiscountManager(adminDiscountManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.DISCOUNT_MANAGER: {
-				DiscountManager discountManager = (DiscountManager)theEObject;
-				T result = caseDiscountManager(discountManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.SUM_DISCOUNT: {
-				SumDiscount sumDiscount = (SumDiscount)theEObject;
-				T result = caseSumDiscount(sumDiscount);
-				if (result == null) result = caseDiscount(sumDiscount);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CaliforniaPackage.BOOKING_BILL: {
 				BookingBill bookingBill = (BookingBill)theEObject;
 				T result = caseBookingBill(bookingBill);
 				if (result == null) result = caseBill(bookingBill);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CaliforniaPackage.PERCENTAGE_DISCOUNT: {
-				PercentageDiscount percentageDiscount = (PercentageDiscount)theEObject;
-				T result = casePercentageDiscount(percentageDiscount);
-				if (result == null) result = caseDiscount(percentageDiscount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -338,36 +299,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseService(Service object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discount</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discount</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDiscount(Discount object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discount Limit</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discount Limit</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDiscountLimit(DiscountLimit object) {
 		return null;
 	}
 
@@ -552,51 +483,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Admin Discount Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Admin Discount Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdminDiscountManager(AdminDiscountManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discount Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discount Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDiscountManager(DiscountManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sum Discount</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sum Discount</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSumDiscount(SumDiscount object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Booking Bill</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -608,21 +494,6 @@ public class CaliforniaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBookingBill(BookingBill object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Percentage Discount</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Percentage Discount</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePercentageDiscount(PercentageDiscount object) {
 		return null;
 	}
 

@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.discount;
 
 import java.util.Date;
 
@@ -8,22 +8,24 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.LegalEntity;
+
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Discount Limit</b></em>'.
+ * A representation of the model object '<em><b>Limit</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.DiscountLimit#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.DiscountLimit#getStartDate <em>Start Date</em>}</li>
- *   <li>{@link tda593.hotel.california.DiscountLimit#getEndDate <em>End Date</em>}</li>
- *   <li>{@link tda593.hotel.california.DiscountLimit#getAllowedUsers <em>Allowed Users</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.DiscountLimit#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.DiscountLimit#getStartDate <em>Start Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.DiscountLimit#getEndDate <em>End Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.DiscountLimit#getAllowedUsers <em>Allowed Users</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getDiscountLimit()
+ * @see tda593.hotel.california.discount.DiscountPackage#getDiscountLimit()
  * @model
  * @generated
  */
@@ -38,14 +40,14 @@ public interface DiscountLimit extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
-	 * @see tda593.hotel.california.CaliforniaPackage#getDiscountLimit_Id()
+	 * @see tda593.hotel.california.discount.DiscountPackage#getDiscountLimit_Id()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getId();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.DiscountLimit#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.discount.DiscountLimit#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
@@ -64,14 +66,14 @@ public interface DiscountLimit extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Date</em>' attribute.
 	 * @see #setStartDate(Date)
-	 * @see tda593.hotel.california.CaliforniaPackage#getDiscountLimit_StartDate()
+	 * @see tda593.hotel.california.discount.DiscountPackage#getDiscountLimit_StartDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Date getStartDate();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.DiscountLimit#getStartDate <em>Start Date</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.discount.DiscountLimit#getStartDate <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start Date</em>' attribute.
@@ -90,14 +92,14 @@ public interface DiscountLimit extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Date</em>' attribute.
 	 * @see #setEndDate(Date)
-	 * @see tda593.hotel.california.CaliforniaPackage#getDiscountLimit_EndDate()
+	 * @see tda593.hotel.california.discount.DiscountPackage#getDiscountLimit_EndDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Date getEndDate();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.DiscountLimit#getEndDate <em>End Date</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.discount.DiscountLimit#getEndDate <em>End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>End Date</em>' attribute.
@@ -116,7 +118,7 @@ public interface DiscountLimit extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allowed Users</em>' reference list.
-	 * @see tda593.hotel.california.CaliforniaPackage#getDiscountLimit_AllowedUsers()
+	 * @see tda593.hotel.california.discount.DiscountPackage#getDiscountLimit_AllowedUsers()
 	 * @model ordered="false"
 	 * @generated
 	 */

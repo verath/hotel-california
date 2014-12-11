@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.discount.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.PercentageDiscount;
+import tda593.hotel.california.discount.DiscountPackage;
+import tda593.hotel.california.discount.PercentageDiscount;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import tda593.hotel.california.PercentageDiscount;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.PercentageDiscountImpl#getPercentage <em>Percentage</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.PercentageDiscountImpl#getPercentage <em>Percentage</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,7 +61,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.PERCENTAGE_DISCOUNT;
+		return DiscountPackage.Literals.PERCENTAGE_DISCOUNT;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 		float oldPercentage = percentage;
 		percentage = newPercentage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.PERCENTAGE_DISCOUNT__PERCENTAGE, oldPercentage, percentage));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.PERCENTAGE_DISCOUNT__PERCENTAGE, oldPercentage, percentage));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
+			case DiscountPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
 				return getPercentage();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
+			case DiscountPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
 				setPercentage((Float)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
+			case DiscountPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
 				setPercentage(PERCENTAGE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
+			case DiscountPackage.PERCENTAGE_DISCOUNT__PERCENTAGE:
 				return percentage != PERCENTAGE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -19,7 +19,8 @@ import tda593.hotel.california.BillDataService;
 import tda593.hotel.california.BillManagerImpl;
 import tda593.hotel.california.Booking;
 import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.Discount;
+
+import tda593.hotel.california.discount.Discount;
 
 /**
  * <!-- begin-user-doc -->

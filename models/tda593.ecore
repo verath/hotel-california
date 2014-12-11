@@ -46,7 +46,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Bill">
         <eOperations name="applyDiscount" ordered="false" lowerBound="1">
-          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount"/>
+          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount"/>
         </eOperations>
         <eOperations name="addSubBill" ordered="false" lowerBound="1">
           <eParameters name="bill" ordered="false" lowerBound="1" eType="#//hotel/california/Bill"/>
@@ -70,7 +70,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformation"
             ordered="false" lowerBound="1" eType="#//hotel/california/CreditCardInformation"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="usedDiscounts" ordered="false"
-            upperBound="-1" eType="#//hotel/california/Discount"/>
+            upperBound="-1" eType="#//hotel/california/discount/Discount"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="LegalEntity">
         <eOperations name="Operation1" ordered="false" lowerBound="1"/>
@@ -107,27 +107,6 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Discount" abstract="true">
-        <eOperations name="getPriceWithDiscount" ordered="false" lowerBound="1">
-          <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-        </eOperations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="discountLimit" ordered="false"
-            upperBound="-1" eType="#//hotel/california/DiscountLimit"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscountLimit">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="allowedUsers" ordered="false"
-            upperBound="-1" eType="#//hotel/california/LegalEntity"/>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BillManagerImpl" eSuperTypes="#//hotel/california/BillManager">
         <eStructuralFeatures xsi:type="ecore:EReference" name="billDataService" ordered="false"
             lowerBound="1" eType="#//hotel/california/BillDataService"/>
@@ -150,7 +129,7 @@
           <eParameters name="toBill" ordered="false" lowerBound="1" eType="#//hotel/california/Bill"/>
         </eOperations>
         <eOperations name="applyDiscount" ordered="false" lowerBound="1">
-          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount"/>
+          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount"/>
           <eParameters name="bill" ordered="false" lowerBound="1" eType="#//hotel/california/Bill"/>
         </eOperations>
         <eOperations name="publishBill" ordered="false" lowerBound="1">
@@ -361,46 +340,81 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="organizationNumber"
             ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AdminDiscountManager" abstract="true"
-          interface="true" eSuperTypes="#//hotel/california/DiscountManager">
-        <eOperations name="addSumDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount">
-          <eParameters name="sum" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-        </eOperations>
-        <eOperations name="addPercentageDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount">
-          <eParameters name="_" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-        </eOperations>
-        <eOperations name="setAmountLimit" ordered="false" lowerBound="1">
-          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount"/>
-          <eParameters name="amount" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        </eOperations>
-        <eOperations name="addAllowedUsers" ordered="false" lowerBound="1">
-          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount"/>
-          <eParameters name="allowedUsers" ordered="false" upperBound="-1" eType="#//hotel/california/LegalEntity"/>
-        </eOperations>
-        <eOperations name="setDateRangeLimit" ordered="false" lowerBound="1">
-          <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount"/>
-          <eParameters name="validFrom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-          <eParameters name="validTo" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        </eOperations>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscountManager" abstract="true"
-          interface="true">
-        <eOperations name="getDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/Discount">
-          <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        </eOperations>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SumDiscount" eSuperTypes="#//hotel/california/Discount">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountSum" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BookingBill" eSuperTypes="#//hotel/california/Bill">
         <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
             lowerBound="1" eType="#//hotel/california/Booking"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PercentageDiscount" eSuperTypes="#//hotel/california/Discount">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-      </eClassifiers>
+      <eSubpackages name="discount" nsURI="http:///tda593/hotel/california/discount.ecore"
+          nsPrefix="tda593.hotel.california.discount">
+        <eClassifiers xsi:type="ecore:EClass" name="DiscountManager" abstract="true"
+            interface="true">
+          <eOperations name="getDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount">
+            <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eOperations>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="AdminDiscountManager" abstract="true"
+            interface="true" eSuperTypes="#//hotel/california/discount/DiscountManager">
+          <eOperations name="addSumDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount">
+            <eParameters name="sum" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+          </eOperations>
+          <eOperations name="addPercentageDiscount" ordered="false" lowerBound="1"
+              eType="#//hotel/california/discount/Discount">
+            <eParameters name="_" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+          </eOperations>
+          <eOperations name="setAmountLimit" ordered="false" lowerBound="1">
+            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount"/>
+            <eParameters name="amount" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eOperations>
+          <eOperations name="addAllowedUsers" ordered="false" lowerBound="1">
+            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount"/>
+            <eParameters name="allowedUsers" ordered="false" upperBound="-1" eType="#//hotel/california/LegalEntity"/>
+          </eOperations>
+          <eOperations name="setDateRangeLimit" ordered="false" lowerBound="1">
+            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/discount/Discount"/>
+            <eParameters name="validFrom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="validTo" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          </eOperations>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="SumDiscount" eSuperTypes="#//hotel/california/discount/Discount">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountSum" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="PercentageDiscount" eSuperTypes="#//hotel/california/discount/Discount">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="DiscountLimit">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="allowedUsers" ordered="false"
+              upperBound="-1" eType="#//hotel/california/LegalEntity"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="DiscountDataService">
+          <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
+            <eTypeArguments eClassifier="#//hotel/california/discount/Discount"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eGenericSuperTypes>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="DiscountManagerImpl" eSuperTypes="#//hotel/california/discount/DiscountManager">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="discountDataService"
+              ordered="false" lowerBound="1" eType="#//hotel/california/discount/DiscountDataService"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Discount" abstract="true">
+          <eOperations name="getPriceWithDiscount" ordered="false" lowerBound="1">
+            <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+          </eOperations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="discountLimit" ordered="false"
+              upperBound="-1" eType="#//hotel/california/discount/DiscountLimit"/>
+        </eClassifiers>
+      </eSubpackages>
       <eSubpackages name="facilities" nsURI="http:///tda593/hotel/california/facilities.ecore"
           nsPrefix="tda593.hotel.california.facilities">
         <eClassifiers xsi:type="ecore:EClass" name="AdminKeyCardManager" abstract="true"

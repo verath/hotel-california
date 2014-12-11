@@ -8,6 +8,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.discount.Discount;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Bill</b></em>'.
@@ -206,7 +208,7 @@ public interface Bill extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Used Discounts</b></em>' reference list.
-	 * The list contents are of type {@link tda593.hotel.california.Discount}.
+	 * The list contents are of type {@link tda593.hotel.california.discount.Discount}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Used Discounts</em>' reference list isn't clear,

@@ -614,134 +614,6 @@ public interface CaliforniaPackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.DiscountImpl <em>Discount</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.DiscountImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscount()
-	 * @generated
-	 */
-	int DISCOUNT = 7;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__CODE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Discount Limit</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__DISCOUNT_LIMIT = 2;
-
-	/**
-	 * The number of structural features of the '<em>Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_FEATURE_COUNT = 3;
-
-	/**
-	 * The operation id for the '<em>Get Price With Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE = 0;
-
-	/**
-	 * The number of operations of the '<em>Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.DiscountLimitImpl <em>Discount Limit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.DiscountLimitImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountLimit()
-	 * @generated
-	 */
-	int DISCOUNT_LIMIT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_LIMIT__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_LIMIT__START_DATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>End Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_LIMIT__END_DATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Allowed Users</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_LIMIT__ALLOWED_USERS = 3;
-
-	/**
-	 * The number of structural features of the '<em>Discount Limit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_LIMIT_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Discount Limit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_LIMIT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.BillManager <em>Bill Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -749,7 +621,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManager()
 	 * @generated
 	 */
-	int BILL_MANAGER = 10;
+	int BILL_MANAGER = 8;
 
 	/**
 	 * The number of structural features of the '<em>Bill Manager</em>' class.
@@ -849,7 +721,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBillManagerImpl()
 	 * @generated
 	 */
-	int BILL_MANAGER_IMPL = 9;
+	int BILL_MANAGER_IMPL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Bill Data Service</b></em>' reference.
@@ -958,7 +830,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 11;
+	int BOOKING = 9;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1112,7 +984,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getRoomStay()
 	 * @generated
 	 */
-	int ROOM_STAY = 12;
+	int ROOM_STAY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1167,7 +1039,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getStayRequest()
 	 * @generated
 	 */
-	int STAY_REQUEST = 13;
+	int STAY_REQUEST = 11;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -1213,7 +1085,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPerson()
 	 * @generated
 	 */
-	int PERSON = 14;
+	int PERSON = 12;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -1304,7 +1176,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getTravelInformation()
 	 * @generated
 	 */
-	int TRAVEL_INFORMATION = 15;
+	int TRAVEL_INFORMATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1377,7 +1249,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingDataService()
 	 * @generated
 	 */
-	int BOOKING_DATA_SERVICE = 16;
+	int BOOKING_DATA_SERVICE = 14;
 
 	/**
 	 * The number of structural features of the '<em>Booking Data Service</em>' class.
@@ -1468,7 +1340,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingManager()
 	 * @generated
 	 */
-	int BOOKING_MANAGER = 17;
+	int BOOKING_MANAGER = 15;
 
 	/**
 	 * The number of structural features of the '<em>Booking Manager</em>' class.
@@ -1649,7 +1521,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingManagerImpl()
 	 * @generated
 	 */
-	int BOOKING_MANAGER_IMPL = 18;
+	int BOOKING_MANAGER_IMPL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Booking Data Service</b></em>' reference.
@@ -1839,7 +1711,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getLegalEntityManager()
 	 * @generated
 	 */
-	int LEGAL_ENTITY_MANAGER = 19;
+	int LEGAL_ENTITY_MANAGER = 17;
 
 	/**
 	 * The number of structural features of the '<em>Legal Entity Manager</em>' class.
@@ -1939,7 +1811,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getOrganization()
 	 * @generated
 	 */
-	int ORGANIZATION = 20;
+	int ORGANIZATION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -2014,198 +1886,6 @@ public interface CaliforniaPackage extends EPackage {
 	int ORGANIZATION_OPERATION_COUNT = LEGAL_ENTITY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.DiscountManager <em>Discount Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.DiscountManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountManager()
-	 * @generated
-	 */
-	int DISCOUNT_MANAGER = 22;
-
-	/**
-	 * The number of structural features of the '<em>Discount Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_MANAGER___GET_DISCOUNT__INT = 0;
-
-	/**
-	 * The number of operations of the '<em>Discount Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_MANAGER_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.AdminDiscountManager <em>Admin Discount Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.AdminDiscountManager
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminDiscountManager()
-	 * @generated
-	 */
-	int ADMIN_DISCOUNT_MANAGER = 21;
-
-	/**
-	 * The number of structural features of the '<em>Admin Discount Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER_FEATURE_COUNT = DISCOUNT_MANAGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER___GET_DISCOUNT__INT = DISCOUNT_MANAGER___GET_DISCOUNT__INT;
-
-	/**
-	 * The operation id for the '<em>Add Sum Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__DOUBLE = DISCOUNT_MANAGER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Add Percentage Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__FLOAT = DISCOUNT_MANAGER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Set Amount Limit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER___SET_AMOUNT_LIMIT__DISCOUNT_INT = DISCOUNT_MANAGER_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Add Allowed Users</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER___ADD_ALLOWED_USERS__DISCOUNT_ELIST = DISCOUNT_MANAGER_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Set Date Range Limit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE = DISCOUNT_MANAGER_OPERATION_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Admin Discount Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_DISCOUNT_MANAGER_OPERATION_COUNT = DISCOUNT_MANAGER_OPERATION_COUNT + 5;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.SumDiscountImpl <em>Sum Discount</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.SumDiscountImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getSumDiscount()
-	 * @generated
-	 */
-	int SUM_DISCOUNT = 23;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT__CODE = DISCOUNT__CODE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT__NAME = DISCOUNT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Discount Limit</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT__DISCOUNT_LIMIT = DISCOUNT__DISCOUNT_LIMIT;
-
-	/**
-	 * The feature id for the '<em><b>Discount Sum</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT__DISCOUNT_SUM = DISCOUNT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Sum Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT_FEATURE_COUNT = DISCOUNT_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Price With Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE = DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE;
-
-	/**
-	 * The number of operations of the '<em>Sum Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUM_DISCOUNT_OPERATION_COUNT = DISCOUNT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.impl.BookingBillImpl <em>Booking Bill</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2213,7 +1893,7 @@ public interface CaliforniaPackage extends EPackage {
 	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getBookingBill()
 	 * @generated
 	 */
-	int BOOKING_BILL = 24;
+	int BOOKING_BILL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2349,79 +2029,6 @@ public interface CaliforniaPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_BILL_OPERATION_COUNT = BILL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.impl.PercentageDiscountImpl <em>Percentage Discount</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.impl.PercentageDiscountImpl
-	 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPercentageDiscount()
-	 * @generated
-	 */
-	int PERCENTAGE_DISCOUNT = 25;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT__CODE = DISCOUNT__CODE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT__NAME = DISCOUNT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Discount Limit</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT__DISCOUNT_LIMIT = DISCOUNT__DISCOUNT_LIMIT;
-
-	/**
-	 * The feature id for the '<em><b>Percentage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT__PERCENTAGE = DISCOUNT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Percentage Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT_FEATURE_COUNT = DISCOUNT_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Price With Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE = DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE;
-
-	/**
-	 * The number of operations of the '<em>Percentage Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERCENTAGE_DISCOUNT_OPERATION_COUNT = DISCOUNT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -2613,11 +2220,11 @@ public interface CaliforniaPackage extends EPackage {
 	EReference getBill_UsedDiscounts();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.Bill#applyDiscount(tda593.hotel.california.Discount) <em>Apply Discount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.Bill#applyDiscount(tda593.hotel.california.discount.Discount) <em>Apply Discount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Apply Discount</em>' operation.
-	 * @see tda593.hotel.california.Bill#applyDiscount(tda593.hotel.california.Discount)
+	 * @see tda593.hotel.california.Bill#applyDiscount(tda593.hotel.california.discount.Discount)
 	 * @generated
 	 */
 	EOperation getBill__ApplyDiscount__Discount();
@@ -2846,113 +2453,6 @@ public interface CaliforniaPackage extends EPackage {
 	EAttribute getService_Name();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.Discount <em>Discount</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Discount</em>'.
-	 * @see tda593.hotel.california.Discount
-	 * @generated
-	 */
-	EClass getDiscount();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Discount#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see tda593.hotel.california.Discount#getCode()
-	 * @see #getDiscount()
-	 * @generated
-	 */
-	EAttribute getDiscount_Code();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.Discount#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tda593.hotel.california.Discount#getName()
-	 * @see #getDiscount()
-	 * @generated
-	 */
-	EAttribute getDiscount_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link tda593.hotel.california.Discount#getDiscountLimit <em>Discount Limit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Discount Limit</em>'.
-	 * @see tda593.hotel.california.Discount#getDiscountLimit()
-	 * @see #getDiscount()
-	 * @generated
-	 */
-	EReference getDiscount_DiscountLimit();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.Discount#getPriceWithDiscount(double) <em>Get Price With Discount</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Price With Discount</em>' operation.
-	 * @see tda593.hotel.california.Discount#getPriceWithDiscount(double)
-	 * @generated
-	 */
-	EOperation getDiscount__GetPriceWithDiscount__double();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.DiscountLimit <em>Discount Limit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Discount Limit</em>'.
-	 * @see tda593.hotel.california.DiscountLimit
-	 * @generated
-	 */
-	EClass getDiscountLimit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.DiscountLimit#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tda593.hotel.california.DiscountLimit#getId()
-	 * @see #getDiscountLimit()
-	 * @generated
-	 */
-	EAttribute getDiscountLimit_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.DiscountLimit#getStartDate <em>Start Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start Date</em>'.
-	 * @see tda593.hotel.california.DiscountLimit#getStartDate()
-	 * @see #getDiscountLimit()
-	 * @generated
-	 */
-	EAttribute getDiscountLimit_StartDate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.DiscountLimit#getEndDate <em>End Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>End Date</em>'.
-	 * @see tda593.hotel.california.DiscountLimit#getEndDate()
-	 * @see #getDiscountLimit()
-	 * @generated
-	 */
-	EAttribute getDiscountLimit_EndDate();
-
-	/**
-	 * Returns the meta object for the reference list '{@link tda593.hotel.california.DiscountLimit#getAllowedUsers <em>Allowed Users</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Allowed Users</em>'.
-	 * @see tda593.hotel.california.DiscountLimit#getAllowedUsers()
-	 * @see #getDiscountLimit()
-	 * @generated
-	 */
-	EReference getDiscountLimit_AllowedUsers();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.BillManagerImpl <em>Bill Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3034,11 +2534,11 @@ public interface CaliforniaPackage extends EPackage {
 	EOperation getBillManager__AddSubBill__Bill_Bill();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.Discount, tda593.hotel.california.Bill) <em>Apply Discount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.discount.Discount, tda593.hotel.california.Bill) <em>Apply Discount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Apply Discount</em>' operation.
-	 * @see tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.Discount, tda593.hotel.california.Bill)
+	 * @see tda593.hotel.california.BillManager#applyDiscount(tda593.hotel.california.discount.Discount, tda593.hotel.california.Bill)
 	 * @generated
 	 */
 	EOperation getBillManager__ApplyDiscount__Discount_Bill();
@@ -3739,107 +3239,6 @@ public interface CaliforniaPackage extends EPackage {
 	EAttribute getOrganization_OrganizationNumber();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.AdminDiscountManager <em>Admin Discount Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Admin Discount Manager</em>'.
-	 * @see tda593.hotel.california.AdminDiscountManager
-	 * @generated
-	 */
-	EClass getAdminDiscountManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminDiscountManager#addSumDiscount(double) <em>Add Sum Discount</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Sum Discount</em>' operation.
-	 * @see tda593.hotel.california.AdminDiscountManager#addSumDiscount(double)
-	 * @generated
-	 */
-	EOperation getAdminDiscountManager__AddSumDiscount__double();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminDiscountManager#addPercentageDiscount(float) <em>Add Percentage Discount</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Percentage Discount</em>' operation.
-	 * @see tda593.hotel.california.AdminDiscountManager#addPercentageDiscount(float)
-	 * @generated
-	 */
-	EOperation getAdminDiscountManager__AddPercentageDiscount__float();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminDiscountManager#setAmountLimit(tda593.hotel.california.Discount, int) <em>Set Amount Limit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Amount Limit</em>' operation.
-	 * @see tda593.hotel.california.AdminDiscountManager#setAmountLimit(tda593.hotel.california.Discount, int)
-	 * @generated
-	 */
-	EOperation getAdminDiscountManager__SetAmountLimit__Discount_int();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminDiscountManager#addAllowedUsers(tda593.hotel.california.Discount, org.eclipse.emf.common.util.EList) <em>Add Allowed Users</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Allowed Users</em>' operation.
-	 * @see tda593.hotel.california.AdminDiscountManager#addAllowedUsers(tda593.hotel.california.Discount, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getAdminDiscountManager__AddAllowedUsers__Discount_EList();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.AdminDiscountManager#setDateRangeLimit(tda593.hotel.california.Discount, java.util.Date, java.util.Date) <em>Set Date Range Limit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Date Range Limit</em>' operation.
-	 * @see tda593.hotel.california.AdminDiscountManager#setDateRangeLimit(tda593.hotel.california.Discount, java.util.Date, java.util.Date)
-	 * @generated
-	 */
-	EOperation getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.DiscountManager <em>Discount Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Discount Manager</em>'.
-	 * @see tda593.hotel.california.DiscountManager
-	 * @generated
-	 */
-	EClass getDiscountManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.DiscountManager#getDiscount(int) <em>Get Discount</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Discount</em>' operation.
-	 * @see tda593.hotel.california.DiscountManager#getDiscount(int)
-	 * @generated
-	 */
-	EOperation getDiscountManager__GetDiscount__int();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.SumDiscount <em>Sum Discount</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sum Discount</em>'.
-	 * @see tda593.hotel.california.SumDiscount
-	 * @generated
-	 */
-	EClass getSumDiscount();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.SumDiscount#getDiscountSum <em>Discount Sum</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Discount Sum</em>'.
-	 * @see tda593.hotel.california.SumDiscount#getDiscountSum()
-	 * @see #getSumDiscount()
-	 * @generated
-	 */
-	EAttribute getSumDiscount_DiscountSum();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.BookingBill <em>Booking Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3859,27 +3258,6 @@ public interface CaliforniaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBookingBill_Booking();
-
-	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.PercentageDiscount <em>Percentage Discount</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Percentage Discount</em>'.
-	 * @see tda593.hotel.california.PercentageDiscount
-	 * @generated
-	 */
-	EClass getPercentageDiscount();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.PercentageDiscount#getPercentage <em>Percentage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Percentage</em>'.
-	 * @see tda593.hotel.california.PercentageDiscount#getPercentage()
-	 * @see #getPercentageDiscount()
-	 * @generated
-	 */
-	EAttribute getPercentageDiscount_Percentage();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4237,90 +3615,6 @@ public interface CaliforniaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE__NAME = eINSTANCE.getService_Name();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.DiscountImpl <em>Discount</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.DiscountImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscount()
-		 * @generated
-		 */
-		EClass DISCOUNT = eINSTANCE.getDiscount();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISCOUNT__CODE = eINSTANCE.getDiscount_Code();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISCOUNT__NAME = eINSTANCE.getDiscount_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Discount Limit</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCOUNT__DISCOUNT_LIMIT = eINSTANCE.getDiscount_DiscountLimit();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Price With Discount</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE = eINSTANCE.getDiscount__GetPriceWithDiscount__double();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.DiscountLimitImpl <em>Discount Limit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.DiscountLimitImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountLimit()
-		 * @generated
-		 */
-		EClass DISCOUNT_LIMIT = eINSTANCE.getDiscountLimit();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISCOUNT_LIMIT__ID = eINSTANCE.getDiscountLimit_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISCOUNT_LIMIT__START_DATE = eINSTANCE.getDiscountLimit_StartDate();
-
-		/**
-		 * The meta object literal for the '<em><b>End Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISCOUNT_LIMIT__END_DATE = eINSTANCE.getDiscountLimit_EndDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Allowed Users</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCOUNT_LIMIT__ALLOWED_USERS = eINSTANCE.getDiscountLimit_AllowedUsers();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
@@ -4955,92 +4249,6 @@ public interface CaliforniaPackage extends EPackage {
 		EAttribute ORGANIZATION__ORGANIZATION_NUMBER = eINSTANCE.getOrganization_OrganizationNumber();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.AdminDiscountManager <em>Admin Discount Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.AdminDiscountManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getAdminDiscountManager()
-		 * @generated
-		 */
-		EClass ADMIN_DISCOUNT_MANAGER = eINSTANCE.getAdminDiscountManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Sum Discount</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__DOUBLE = eINSTANCE.getAdminDiscountManager__AddSumDiscount__double();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Percentage Discount</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__FLOAT = eINSTANCE.getAdminDiscountManager__AddPercentageDiscount__float();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Amount Limit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___SET_AMOUNT_LIMIT__DISCOUNT_INT = eINSTANCE.getAdminDiscountManager__SetAmountLimit__Discount_int();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Allowed Users</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___ADD_ALLOWED_USERS__DISCOUNT_ELIST = eINSTANCE.getAdminDiscountManager__AddAllowedUsers__Discount_EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Date Range Limit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE = eINSTANCE.getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.DiscountManager <em>Discount Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.DiscountManager
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getDiscountManager()
-		 * @generated
-		 */
-		EClass DISCOUNT_MANAGER = eINSTANCE.getDiscountManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Discount</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DISCOUNT_MANAGER___GET_DISCOUNT__INT = eINSTANCE.getDiscountManager__GetDiscount__int();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.SumDiscountImpl <em>Sum Discount</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.SumDiscountImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getSumDiscount()
-		 * @generated
-		 */
-		EClass SUM_DISCOUNT = eINSTANCE.getSumDiscount();
-
-		/**
-		 * The meta object literal for the '<em><b>Discount Sum</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SUM_DISCOUNT__DISCOUNT_SUM = eINSTANCE.getSumDiscount_DiscountSum();
-
-		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.impl.BookingBillImpl <em>Booking Bill</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5057,24 +4265,6 @@ public interface CaliforniaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING_BILL__BOOKING = eINSTANCE.getBookingBill_Booking();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.impl.PercentageDiscountImpl <em>Percentage Discount</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.impl.PercentageDiscountImpl
-		 * @see tda593.hotel.california.impl.CaliforniaPackageImpl#getPercentageDiscount()
-		 * @generated
-		 */
-		EClass PERCENTAGE_DISCOUNT = eINSTANCE.getPercentageDiscount();
-
-		/**
-		 * The meta object literal for the '<em><b>Percentage</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERCENTAGE_DISCOUNT__PERCENTAGE = eINSTANCE.getPercentageDiscount_Percentage();
 
 	}
 

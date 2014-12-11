@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.discount.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.SumDiscount;
+import tda593.hotel.california.discount.DiscountPackage;
+import tda593.hotel.california.discount.SumDiscount;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import tda593.hotel.california.SumDiscount;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.SumDiscountImpl#getDiscountSum <em>Discount Sum</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.SumDiscountImpl#getDiscountSum <em>Discount Sum</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,7 +61,7 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.SUM_DISCOUNT;
+		return DiscountPackage.Literals.SUM_DISCOUNT;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 		double oldDiscountSum = discountSum;
 		discountSum = newDiscountSum;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.SUM_DISCOUNT__DISCOUNT_SUM, oldDiscountSum, discountSum));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.SUM_DISCOUNT__DISCOUNT_SUM, oldDiscountSum, discountSum));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case DiscountPackage.SUM_DISCOUNT__DISCOUNT_SUM:
 				return getDiscountSum();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case DiscountPackage.SUM_DISCOUNT__DISCOUNT_SUM:
 				setDiscountSum((Double)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case DiscountPackage.SUM_DISCOUNT__DISCOUNT_SUM:
 				setDiscountSum(DISCOUNT_SUM_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case DiscountPackage.SUM_DISCOUNT__DISCOUNT_SUM:
 				return discountSum != DISCOUNT_SUM_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

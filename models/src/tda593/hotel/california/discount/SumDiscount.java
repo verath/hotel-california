@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.discount;
 
 
 /**
@@ -11,11 +11,11 @@ package tda593.hotel.california;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.SumDiscount#getDiscountSum <em>Discount Sum</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.SumDiscount#getDiscountSum <em>Discount Sum</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getSumDiscount()
+ * @see tda593.hotel.california.discount.DiscountPackage#getSumDiscount()
  * @model
  * @generated
  */
@@ -30,14 +30,14 @@ public interface SumDiscount extends Discount {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Discount Sum</em>' attribute.
 	 * @see #setDiscountSum(double)
-	 * @see tda593.hotel.california.CaliforniaPackage#getSumDiscount_DiscountSum()
+	 * @see tda593.hotel.california.discount.DiscountPackage#getSumDiscount_DiscountSum()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	double getDiscountSum();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.SumDiscount#getDiscountSum <em>Discount Sum</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.discount.SumDiscount#getDiscountSum <em>Discount Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Discount Sum</em>' attribute.

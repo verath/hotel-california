@@ -1,16 +1,16 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.discount;
 
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Discount Manager</b></em>'.
+ * A representation of the model object '<em><b>Manager</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getDiscountManager()
+ * @see tda593.hotel.california.discount.DiscountPackage#getDiscountManager()
  * @model interface="true" abstract="true"
  * @generated
  */

@@ -96,14 +96,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAdapter();
 			}
 			@Override
-			public Adapter caseDiscount(Discount object) {
-				return createDiscountAdapter();
-			}
-			@Override
-			public Adapter caseDiscountLimit(DiscountLimit object) {
-				return createDiscountLimitAdapter();
-			}
-			@Override
 			public Adapter caseBillManagerImpl(BillManagerImpl object) {
 				return createBillManagerImplAdapter();
 			}
@@ -152,24 +144,8 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 				return createOrganizationAdapter();
 			}
 			@Override
-			public Adapter caseAdminDiscountManager(AdminDiscountManager object) {
-				return createAdminDiscountManagerAdapter();
-			}
-			@Override
-			public Adapter caseDiscountManager(DiscountManager object) {
-				return createDiscountManagerAdapter();
-			}
-			@Override
-			public Adapter caseSumDiscount(SumDiscount object) {
-				return createSumDiscountAdapter();
-			}
-			@Override
 			public Adapter caseBookingBill(BookingBill object) {
 				return createBookingBillAdapter();
-			}
-			@Override
-			public Adapter casePercentageDiscount(PercentageDiscount object) {
-				return createPercentageDiscountAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -286,34 +262,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.Discount <em>Discount</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.Discount
-	 * @generated
-	 */
-	public Adapter createDiscountAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.DiscountLimit <em>Discount Limit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.DiscountLimit
-	 * @generated
-	 */
-	public Adapter createDiscountLimitAdapter() {
 		return null;
 	}
 
@@ -486,48 +434,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.AdminDiscountManager <em>Admin Discount Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.AdminDiscountManager
-	 * @generated
-	 */
-	public Adapter createAdminDiscountManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.DiscountManager <em>Discount Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.DiscountManager
-	 * @generated
-	 */
-	public Adapter createDiscountManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.SumDiscount <em>Sum Discount</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.SumDiscount
-	 * @generated
-	 */
-	public Adapter createSumDiscountAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.BookingBill <em>Booking Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -538,20 +444,6 @@ public class CaliforniaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBookingBillAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.PercentageDiscount <em>Percentage Discount</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.PercentageDiscount
-	 * @generated
-	 */
-	public Adapter createPercentageDiscountAdapter() {
 		return null;
 	}
 

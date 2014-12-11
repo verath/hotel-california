@@ -14,6 +14,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tda593.hotel.california.CaliforniaPackage;
 
+import tda593.hotel.california.discount.DiscountPackage;
+
+import tda593.hotel.california.discount.impl.DiscountPackageImpl;
+
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.ConferenceRoom;
@@ -186,14 +190,17 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		// Obtain or create and register interdependencies
 		CaliforniaPackageImpl theCaliforniaPackage = (CaliforniaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) instanceof CaliforniaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) : CaliforniaPackage.eINSTANCE);
+		DiscountPackageImpl theDiscountPackage = (DiscountPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) instanceof DiscountPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) : DiscountPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theFacilitiesPackage.createPackageContents();
 		theCaliforniaPackage.createPackageContents();
+		theDiscountPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theFacilitiesPackage.initializePackageContents();
 		theCaliforniaPackage.initializePackageContents();
+		theDiscountPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theFacilitiesPackage.freeze();

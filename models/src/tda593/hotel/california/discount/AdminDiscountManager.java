@@ -1,10 +1,12 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.discount;
 
 import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
+
+import tda593.hotel.california.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  *
- * @see tda593.hotel.california.CaliforniaPackage#getAdminDiscountManager()
+ * @see tda593.hotel.california.discount.DiscountPackage#getAdminDiscountManager()
  * @model interface="true" abstract="true"
  * @generated
  */

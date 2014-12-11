@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california.impl;
+package tda593.hotel.california.discount.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.Discount;
-import tda593.hotel.california.DiscountLimit;
+import tda593.hotel.california.discount.Discount;
+import tda593.hotel.california.discount.DiscountLimit;
+import tda593.hotel.california.discount.DiscountPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,9 +28,9 @@ import tda593.hotel.california.DiscountLimit;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.impl.DiscountImpl#getCode <em>Code</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.DiscountImpl#getName <em>Name</em>}</li>
- *   <li>{@link tda593.hotel.california.impl.DiscountImpl#getDiscountLimit <em>Discount Limit</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.impl.DiscountImpl#getDiscountLimit <em>Discount Limit</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,7 +103,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CaliforniaPackage.Literals.DISCOUNT;
+		return DiscountPackage.Literals.DISCOUNT;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 		int oldCode = code;
 		code = newCode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.DISCOUNT__CODE, oldCode, code));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.DISCOUNT__CODE, oldCode, code));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaliforniaPackage.DISCOUNT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiscountPackage.DISCOUNT__NAME, oldName, name));
 	}
 
 	/**
@@ -155,7 +155,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public EList<DiscountLimit> getDiscountLimit() {
 		if (discountLimit == null) {
-			discountLimit = new EObjectResolvingEList<DiscountLimit>(DiscountLimit.class, this, CaliforniaPackage.DISCOUNT__DISCOUNT_LIMIT);
+			discountLimit = new EObjectResolvingEList<DiscountLimit>(DiscountLimit.class, this, DiscountPackage.DISCOUNT__DISCOUNT_LIMIT);
 		}
 		return discountLimit;
 	}
@@ -179,11 +179,11 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT__CODE:
+			case DiscountPackage.DISCOUNT__CODE:
 				return getCode();
-			case CaliforniaPackage.DISCOUNT__NAME:
+			case DiscountPackage.DISCOUNT__NAME:
 				return getName();
-			case CaliforniaPackage.DISCOUNT__DISCOUNT_LIMIT:
+			case DiscountPackage.DISCOUNT__DISCOUNT_LIMIT:
 				return getDiscountLimit();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -198,13 +198,13 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT__CODE:
+			case DiscountPackage.DISCOUNT__CODE:
 				setCode((Integer)newValue);
 				return;
-			case CaliforniaPackage.DISCOUNT__NAME:
+			case DiscountPackage.DISCOUNT__NAME:
 				setName((String)newValue);
 				return;
-			case CaliforniaPackage.DISCOUNT__DISCOUNT_LIMIT:
+			case DiscountPackage.DISCOUNT__DISCOUNT_LIMIT:
 				getDiscountLimit().clear();
 				getDiscountLimit().addAll((Collection<? extends DiscountLimit>)newValue);
 				return;
@@ -220,13 +220,13 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT__CODE:
+			case DiscountPackage.DISCOUNT__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
-			case CaliforniaPackage.DISCOUNT__NAME:
+			case DiscountPackage.DISCOUNT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CaliforniaPackage.DISCOUNT__DISCOUNT_LIMIT:
+			case DiscountPackage.DISCOUNT__DISCOUNT_LIMIT:
 				getDiscountLimit().clear();
 				return;
 		}
@@ -241,11 +241,11 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CaliforniaPackage.DISCOUNT__CODE:
+			case DiscountPackage.DISCOUNT__CODE:
 				return code != CODE_EDEFAULT;
-			case CaliforniaPackage.DISCOUNT__NAME:
+			case DiscountPackage.DISCOUNT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CaliforniaPackage.DISCOUNT__DISCOUNT_LIMIT:
+			case DiscountPackage.DISCOUNT__DISCOUNT_LIMIT:
 				return discountLimit != null && !discountLimit.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -259,7 +259,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case CaliforniaPackage.DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE:
+			case DiscountPackage.DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE:
 				getPriceWithDiscount((Double)arguments.get(0));
 				return null;
 		}

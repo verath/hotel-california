@@ -1,6 +1,6 @@
 /**
  */
-package tda593.hotel.california;
+package tda593.hotel.california.discount;
 
 
 /**
@@ -11,11 +11,11 @@ package tda593.hotel.california;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.PercentageDiscount#getPercentage <em>Percentage</em>}</li>
+ *   <li>{@link tda593.hotel.california.discount.PercentageDiscount#getPercentage <em>Percentage</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.CaliforniaPackage#getPercentageDiscount()
+ * @see tda593.hotel.california.discount.DiscountPackage#getPercentageDiscount()
  * @model
  * @generated
  */
@@ -30,14 +30,14 @@ public interface PercentageDiscount extends Discount {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Percentage</em>' attribute.
 	 * @see #setPercentage(float)
-	 * @see tda593.hotel.california.CaliforniaPackage#getPercentageDiscount_Percentage()
+	 * @see tda593.hotel.california.discount.DiscountPackage#getPercentageDiscount_Percentage()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	float getPercentage();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.PercentageDiscount#getPercentage <em>Percentage</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.discount.PercentageDiscount#getPercentage <em>Percentage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Percentage</em>' attribute.

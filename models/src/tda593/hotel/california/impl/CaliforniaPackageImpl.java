@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import tda593.hotel.california.AdminDiscountManager;
 import tda593.hotel.california.Bill;
 import tda593.hotel.california.BillDataService;
 import tda593.hotel.california.BillManager;
@@ -26,20 +25,19 @@ import tda593.hotel.california.CaliforniaFactory;
 import tda593.hotel.california.CaliforniaPackage;
 import tda593.hotel.california.CreditCardInformation;
 import tda593.hotel.california.DataService;
-import tda593.hotel.california.Discount;
-import tda593.hotel.california.DiscountLimit;
-import tda593.hotel.california.DiscountManager;
 import tda593.hotel.california.LegalEntity;
 import tda593.hotel.california.LegalEntityManager;
 import tda593.hotel.california.Organization;
-import tda593.hotel.california.PercentageDiscount;
 import tda593.hotel.california.Person;
 import tda593.hotel.california.Purchase;
 import tda593.hotel.california.RoomStay;
 import tda593.hotel.california.Service;
 import tda593.hotel.california.StayRequest;
-import tda593.hotel.california.SumDiscount;
 import tda593.hotel.california.TravelInformation;
+
+import tda593.hotel.california.discount.DiscountPackage;
+
+import tda593.hotel.california.discount.impl.DiscountPackageImpl;
 
 import tda593.hotel.california.facilities.FacilitiesPackage;
 
@@ -100,20 +98,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * @generated
 	 */
 	private EClass serviceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass discountEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass discountLimitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,35 +188,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass adminDiscountManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass discountManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sumDiscountEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass bookingBillEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass percentageDiscountEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -281,14 +237,17 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		isInited = true;
 
 		// Obtain or create and register interdependencies
+		DiscountPackageImpl theDiscountPackage = (DiscountPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) instanceof DiscountPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI) : DiscountPackage.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) : FacilitiesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCaliforniaPackage.createPackageContents();
+		theDiscountPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCaliforniaPackage.initializePackageContents();
+		theDiscountPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -658,96 +617,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 */
 	public EAttribute getService_Name() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDiscount() {
-		return discountEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscount_Code() {
-		return (EAttribute)discountEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscount_Name() {
-		return (EAttribute)discountEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDiscount_DiscountLimit() {
-		return (EReference)discountEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDiscount__GetPriceWithDiscount__double() {
-		return discountEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDiscountLimit() {
-		return discountLimitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscountLimit_Id() {
-		return (EAttribute)discountLimitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscountLimit_StartDate() {
-		return (EAttribute)discountLimitEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscountLimit_EndDate() {
-		return (EAttribute)discountLimitEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDiscountLimit_AllowedUsers() {
-		return (EReference)discountLimitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1439,96 +1308,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAdminDiscountManager() {
-		return adminDiscountManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__AddSumDiscount__double() {
-		return adminDiscountManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__AddPercentageDiscount__float() {
-		return adminDiscountManagerEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__SetAmountLimit__Discount_int() {
-		return adminDiscountManagerEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__AddAllowedUsers__Discount_EList() {
-		return adminDiscountManagerEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date() {
-		return adminDiscountManagerEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDiscountManager() {
-		return discountManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDiscountManager__GetDiscount__int() {
-		return discountManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSumDiscount() {
-		return sumDiscountEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSumDiscount_DiscountSum() {
-		return (EAttribute)sumDiscountEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBookingBill() {
 		return bookingBillEClass;
 	}
@@ -1540,24 +1319,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 	 */
 	public EReference getBookingBill_Booking() {
 		return (EReference)bookingBillEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPercentageDiscount() {
-		return percentageDiscountEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPercentageDiscount_Percentage() {
-		return (EAttribute)percentageDiscountEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1634,18 +1395,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		createEAttribute(serviceEClass, SERVICE__ID);
 		createEAttribute(serviceEClass, SERVICE__PRICE);
 		createEAttribute(serviceEClass, SERVICE__NAME);
-
-		discountEClass = createEClass(DISCOUNT);
-		createEAttribute(discountEClass, DISCOUNT__CODE);
-		createEAttribute(discountEClass, DISCOUNT__NAME);
-		createEReference(discountEClass, DISCOUNT__DISCOUNT_LIMIT);
-		createEOperation(discountEClass, DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE);
-
-		discountLimitEClass = createEClass(DISCOUNT_LIMIT);
-		createEAttribute(discountLimitEClass, DISCOUNT_LIMIT__ID);
-		createEAttribute(discountLimitEClass, DISCOUNT_LIMIT__START_DATE);
-		createEAttribute(discountLimitEClass, DISCOUNT_LIMIT__END_DATE);
-		createEReference(discountLimitEClass, DISCOUNT_LIMIT__ALLOWED_USERS);
 
 		billManagerImplEClass = createEClass(BILL_MANAGER_IMPL);
 		createEReference(billManagerImplEClass, BILL_MANAGER_IMPL__BILL_DATA_SERVICE);
@@ -1735,24 +1484,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		createEAttribute(organizationEClass, ORGANIZATION__NAME);
 		createEAttribute(organizationEClass, ORGANIZATION__ORGANIZATION_NUMBER);
 
-		adminDiscountManagerEClass = createEClass(ADMIN_DISCOUNT_MANAGER);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__DOUBLE);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__FLOAT);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_AMOUNT_LIMIT__DISCOUNT_INT);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_ALLOWED_USERS__DISCOUNT_ELIST);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE);
-
-		discountManagerEClass = createEClass(DISCOUNT_MANAGER);
-		createEOperation(discountManagerEClass, DISCOUNT_MANAGER___GET_DISCOUNT__INT);
-
-		sumDiscountEClass = createEClass(SUM_DISCOUNT);
-		createEAttribute(sumDiscountEClass, SUM_DISCOUNT__DISCOUNT_SUM);
-
 		bookingBillEClass = createEClass(BOOKING_BILL);
 		createEReference(bookingBillEClass, BOOKING_BILL__BOOKING);
-
-		percentageDiscountEClass = createEClass(PERCENTAGE_DISCOUNT);
-		createEAttribute(percentageDiscountEClass, PERCENTAGE_DISCOUNT__PERCENTAGE);
 	}
 
 	/**
@@ -1779,9 +1512,11 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DiscountPackage theDiscountPackage = (DiscountPackage)EPackage.Registry.INSTANCE.getEPackage(DiscountPackage.eNS_URI);
 		FacilitiesPackage theFacilitiesPackage = (FacilitiesPackage)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI);
 
 		// Add subpackages
+		getESubpackages().add(theDiscountPackage);
 		getESubpackages().add(theFacilitiesPackage);
 
 		// Create type parameters
@@ -1807,10 +1542,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		bookingDataServiceEClass.getEGenericSuperTypes().add(g1);
 		bookingManagerImplEClass.getESuperTypes().add(this.getBookingManager());
 		organizationEClass.getESuperTypes().add(this.getLegalEntity());
-		adminDiscountManagerEClass.getESuperTypes().add(this.getDiscountManager());
-		sumDiscountEClass.getESuperTypes().add(this.getDiscount());
 		bookingBillEClass.getESuperTypes().add(this.getBill());
-		percentageDiscountEClass.getESuperTypes().add(this.getDiscount());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(billDataServiceEClass, BillDataService.class, "BillDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1853,10 +1585,10 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		initEAttribute(getBill_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_Purchase(), this.getPurchase(), null, "purchase", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_CreditCardInformation(), this.getCreditCardInformation(), null, "creditCardInformation", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_UsedDiscounts(), this.getDiscount(), null, "usedDiscounts", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBill_UsedDiscounts(), theDiscountPackage.getDiscount(), null, "usedDiscounts", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getBill__ApplyDiscount__Discount(), null, "applyDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDiscountPackage.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBill__AddSubBill__Bill(), null, "addSubBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBill(), "bill", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1889,20 +1621,6 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		initEAttribute(getService_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_Name(), ecorePackage.getEString(), "name", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(discountEClass, Discount.class, "Discount", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiscount_Code(), ecorePackage.getEInt(), "code", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDiscount_Name(), ecorePackage.getEString(), "name", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDiscount_DiscountLimit(), this.getDiscountLimit(), null, "discountLimit", null, 0, -1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		op = initEOperation(getDiscount__GetPriceWithDiscount__double(), null, "getPriceWithDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(discountLimitEClass, DiscountLimit.class, "DiscountLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiscountLimit_Id(), ecorePackage.getEInt(), "id", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDiscountLimit_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDiscountLimit_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDiscountLimit_AllowedUsers(), this.getLegalEntity(), null, "allowedUsers", null, 0, -1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(billManagerImplEClass, BillManagerImpl.class, "BillManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBillManagerImpl_BillDataService(), this.getBillDataService(), null, "billDataService", null, 1, 1, BillManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1926,7 +1644,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		addEParameter(op, this.getBill(), "toBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBillManager__ApplyDiscount__Discount_Bill(), null, "applyDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDiscountPackage.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBill(), "bill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBillManager__PublishBill__Bill(), null, "publishBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -2108,40 +1826,8 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		initEAttribute(getOrganization_Name(), ecorePackage.getEString(), "name", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getOrganization_OrganizationNumber(), ecorePackage.getEString(), "organizationNumber", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(adminDiscountManagerEClass, AdminDiscountManager.class, "AdminDiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getAdminDiscountManager__AddSumDiscount__double(), this.getDiscount(), "addSumDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__AddPercentageDiscount__float(), this.getDiscount(), "addPercentageDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEFloat(), "_", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__SetAmountLimit__Discount_int(), null, "setAmountLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "amount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__AddAllowedUsers__Discount_EList(), null, "addAllowedUsers", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getLegalEntity(), "allowedUsers", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date(), null, "setDateRangeLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "validFrom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "validTo", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(discountManagerEClass, DiscountManager.class, "DiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getDiscountManager__GetDiscount__int(), this.getDiscount(), "getDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(sumDiscountEClass, SumDiscount.class, "SumDiscount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSumDiscount_DiscountSum(), ecorePackage.getEDouble(), "discountSum", null, 1, 1, SumDiscount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(bookingBillEClass, BookingBill.class, "BookingBill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingBill_Booking(), this.getBooking(), null, "booking", null, 1, 1, BookingBill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(percentageDiscountEClass, PercentageDiscount.class, "PercentageDiscount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPercentageDiscount_Percentage(), ecorePackage.getEFloat(), "percentage", null, 1, 1, PercentageDiscount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
