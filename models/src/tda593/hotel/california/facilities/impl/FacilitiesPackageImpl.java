@@ -511,17 +511,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoom_Room() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRoom_DisabilityApprovals() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -734,7 +725,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(roomEClass, ROOM__PHOTOS);
 		createEReference(roomEClass, ROOM__ALLOWED_KEY_CARDS);
 		createEReference(roomEClass, ROOM__ROOM_TYPE);
-		createEReference(roomEClass, ROOM__ROOM);
 		createEAttribute(roomEClass, ROOM__DISABILITY_APPROVALS);
 		createEOperation(roomEClass, ROOM___REGISTER_KEY_CARD__KEYCARD);
 		createEOperation(roomEClass, ROOM___UNREGISTER_KEY_CARD__KEYCARD);
@@ -875,7 +865,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getRoom_Photos(), ecorePackage.getEString(), "photos", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_AllowedKeyCards(), this.getKeyCard(), null, "allowedKeyCards", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_RoomType(), this.getRoomType(), null, "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoom_Room(), this.getRoom(), null, "room", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_DisabilityApprovals(), this.getDisabilityApproval(), "disabilityApprovals", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getRoom__RegisterKeyCard__KeyCard(), null, "registerKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);

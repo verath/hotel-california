@@ -50,18 +50,18 @@ public interface BookingManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false"
+	 * @model ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false"
 	 * @generated
 	 */
-	Room getAvailableRooms(Date from, Date to);
+	EList<Room> getAvailableRooms(Date from, Date to);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	Room getAvailableRooms(Date from, Date to, RoomType roomType);
+	EList<Room> getAvailableRooms(Date from, Date to, RoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public interface BookingManager extends EObject {
 	 * @model required="true" ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false"
 	 * @generated
 	 */
-	Map<RoomType, Integer> getAvailableRoomTypeAmount(Date from, Date to);
+	Map<RoomType, Integer> getAvailableRoomTypeAmounts(Date from, Date to);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +117,7 @@ public interface BookingManager extends EObject {
 	 * @model bookingRequired="true" bookingOrdered="false" guestsMany="true" guestsOrdered="false"
 	 * @generated
 	 */
-	void checkIn(Booking booking, EList<LegalEntity> guests);
+	void checkIn(Booking booking, EList<Person> guests);
 
 	/**
 	 * <!-- begin-user-doc -->

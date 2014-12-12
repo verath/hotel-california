@@ -536,22 +536,13 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM__ROOM_TYPE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM = 8;
-
-	/**
 	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__DISABILITY_APPROVALS = 9;
+	int ROOM__DISABILITY_APPROVALS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -560,7 +551,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 10;
+	int ROOM_FEATURE_COUNT = 9;
 
 	/**
 	 * The operation id for the '<em>Register Key Card</em>' operation.
@@ -972,15 +963,6 @@ public interface FacilitiesPackage extends EPackage {
 	int CONFERENCE_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFERENCE_ROOM__ROOM = ROOM__ROOM;
-
-	/**
 	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1133,15 +1115,6 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int GUEST_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ROOM = ROOM__ROOM;
 
 	/**
 	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
@@ -1568,17 +1541,6 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoom_RoomType();
-
-	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.facilities.Room#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room</em>'.
-	 * @see tda593.hotel.california.facilities.Room#getRoom()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_Room();
 
 	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}'.
@@ -2049,14 +2011,6 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__ROOM = eINSTANCE.getRoom_Room();
 
 		/**
 		 * The meta object literal for the '<em><b>Disability Approvals</b></em>' attribute feature.

@@ -456,6 +456,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoomStay_Room() {
+		return (EReference)roomStayEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStayRequest() {
 		return stayRequestEClass;
 	}
@@ -627,7 +636,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingManager__GetAvailableRoomTypeAmount__Date_Date() {
+	public EOperation getBookingManager__GetAvailableRoomTypeAmounts__Date_Date() {
 		return bookingManagerEClass.getEOperations().get(5);
 	}
 
@@ -746,6 +755,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 */
 	public EReference getBookingManagerImpl_BookingDataService() {
 		return (EReference)bookingManagerImplEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBookingManagerImpl_RoomManager() {
+		return (EReference)bookingManagerImplEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -967,6 +985,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEAttribute(roomStayEClass, ROOM_STAY__ACTIVE);
 		createEReference(roomStayEClass, ROOM_STAY__STAY_REQUEST);
 		createEReference(roomStayEClass, ROOM_STAY__REGISTERED_PERSONS);
+		createEReference(roomStayEClass, ROOM_STAY__ROOM);
 
 		stayRequestEClass = createEClass(STAY_REQUEST);
 		createEAttribute(stayRequestEClass, STAY_REQUEST__TEXT);
@@ -990,7 +1009,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_BOOKINGS__LEGALENTITY);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_AVAILABLE_ROOMS__DATE_DATE);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_AVAILABLE_ROOMS__DATE_DATE_ROOMTYPE);
-		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE);
+		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNTS__DATE_DATE);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE_ROOMTYPE);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOMTYPE);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOM);
@@ -1005,6 +1024,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 
 		bookingManagerImplEClass = createEClass(BOOKING_MANAGER_IMPL);
 		createEReference(bookingManagerImplEClass, BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE);
+		createEReference(bookingManagerImplEClass, BOOKING_MANAGER_IMPL__ROOM_MANAGER);
 
 		bookingDataServiceEClass = createEClass(BOOKING_DATA_SERVICE);
 
@@ -1114,7 +1134,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEClass(roomStayEClass, RoomStay.class, "RoomStay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomStay_Active(), ecorePackage.getEBoolean(), "active", null, 1, 1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomStay_StayRequest(), this.getStayRequest(), null, "stayRequest", null, 0, -1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoomStay_RegisteredPersons(), this.getPerson(), null, "registeredPersons", null, 1, 1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomStay_RegisteredPersons(), this.getPerson(), null, "registeredPersons", null, 0, -1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomStay_Room(), theFacilitiesPackage.getRoom(), null, "room", null, 1, 1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(stayRequestEClass, StayRequest.class, "StayRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStayRequest_Text(), ecorePackage.getEString(), "text", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1148,16 +1169,16 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getBookingManager__GetBookings__LegalEntity(), this.getBooking(), "getBookings", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date(), theFacilitiesPackage.getRoom(), "getAvailableRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date(), theFacilitiesPackage.getRoom(), "getAvailableRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date_RoomType(), theFacilitiesPackage.getRoom(), "getAvailableRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetAvailableRooms__Date_Date_RoomType(), theFacilitiesPackage.getRoom(), "getAvailableRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetAvailableRoomTypeAmount__Date_Date(), null, "getAvailableRoomTypeAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetAvailableRoomTypeAmounts__Date_Date(), null, "getAvailableRoomTypeAmounts", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -1195,7 +1216,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 
 		op = initEOperation(getBookingManager__CheckIn__Booking_EList(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getLegalEntity(), "guests", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPerson(), "guests", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__IsRoomTypeAvailable__Date_Date_RoomType(), ecorePackage.getEBoolean(), "isRoomTypeAvailable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1215,6 +1236,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 
 		initEClass(bookingManagerImplEClass, BookingManagerImpl.class, "BookingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBookingManagerImpl_RoomManager(), theFacilitiesPackage.getRoomManager(), null, "roomManager", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bookingDataServiceEClass, BookingDataService.class, "BookingDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

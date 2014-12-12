@@ -21,6 +21,7 @@ import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.Discount;
 
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.BookingManager;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,7 @@ import tda593.hotel.california.booking.Booking;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tda593.hotel.california.billing.impl.BillManagerImplImpl#getBillDataService <em>Bill Data Service</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.BillManagerImplImpl#getBookingManager <em>Booking Manager</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +47,16 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected BillDataService billDataService;
+
+	/**
+	 * The cached value of the '{@link #getBookingManager() <em>Booking Manager</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookingManager()
+	 * @generated
+	 * @ordered
+	 */
+	protected BookingManager bookingManager;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,6 +113,44 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		billDataService = newBillDataService;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE, oldBillDataService, billDataService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BookingManager getBookingManager() {
+		if (bookingManager != null && bookingManager.eIsProxy()) {
+			InternalEObject oldBookingManager = (InternalEObject)bookingManager;
+			bookingManager = (BookingManager)eResolveProxy(oldBookingManager);
+			if (bookingManager != oldBookingManager) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER, oldBookingManager, bookingManager));
+			}
+		}
+		return bookingManager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BookingManager basicGetBookingManager() {
+		return bookingManager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBookingManager(BookingManager newBookingManager) {
+		BookingManager oldBookingManager = bookingManager;
+		bookingManager = newBookingManager;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER, oldBookingManager, bookingManager));
 	}
 
 	/**
@@ -202,6 +252,9 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE:
 				if (resolve) return getBillDataService();
 				return basicGetBillDataService();
+			case BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER:
+				if (resolve) return getBookingManager();
+				return basicGetBookingManager();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +269,9 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE:
 				setBillDataService((BillDataService)newValue);
+				return;
+			case BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER:
+				setBookingManager((BookingManager)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,6 +288,9 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE:
 				setBillDataService((BillDataService)null);
 				return;
+			case BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER:
+				setBookingManager((BookingManager)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,6 +305,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE:
 				return billDataService != null;
+			case BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER:
+				return bookingManager != null;
 		}
 		return super.eIsSet(featureID);
 	}

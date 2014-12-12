@@ -20,6 +20,7 @@ import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.booking.StayRequest;
+import tda593.hotel.california.facilities.Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +32,7 @@ import tda593.hotel.california.booking.StayRequest;
  *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#isActive <em>Active</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getStayRequest <em>Stay Request</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getRegisteredPersons <em>Registered Persons</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getRoom <em>Room</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,14 +70,24 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	protected EList<StayRequest> stayRequest;
 
 	/**
-	 * The cached value of the '{@link #getRegisteredPersons() <em>Registered Persons</em>}' reference.
+	 * The cached value of the '{@link #getRegisteredPersons() <em>Registered Persons</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRegisteredPersons()
 	 * @generated
 	 * @ordered
 	 */
-	protected Person registeredPersons;
+	protected EList<Person> registeredPersons;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Room room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,14 +146,9 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Person getRegisteredPersons() {
-		if (registeredPersons != null && registeredPersons.eIsProxy()) {
-			InternalEObject oldRegisteredPersons = (InternalEObject)registeredPersons;
-			registeredPersons = (Person)eResolveProxy(oldRegisteredPersons);
-			if (registeredPersons != oldRegisteredPersons) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.ROOM_STAY__REGISTERED_PERSONS, oldRegisteredPersons, registeredPersons));
-			}
+	public EList<Person> getRegisteredPersons() {
+		if (registeredPersons == null) {
+			registeredPersons = new EObjectResolvingEList<Person>(Person.class, this, BookingPackage.ROOM_STAY__REGISTERED_PERSONS);
 		}
 		return registeredPersons;
 	}
@@ -151,8 +158,16 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Person basicGetRegisteredPersons() {
-		return registeredPersons;
+	public Room getRoom() {
+		if (room != null && room.eIsProxy()) {
+			InternalEObject oldRoom = (InternalEObject)room;
+			room = (Room)eResolveProxy(oldRoom);
+			if (room != oldRoom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.ROOM_STAY__ROOM, oldRoom, room));
+			}
+		}
+		return room;
 	}
 
 	/**
@@ -160,11 +175,20 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRegisteredPersons(Person newRegisteredPersons) {
-		Person oldRegisteredPersons = registeredPersons;
-		registeredPersons = newRegisteredPersons;
+	public Room basicGetRoom() {
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoom(Room newRoom) {
+		Room oldRoom = room;
+		room = newRoom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ROOM_STAY__REGISTERED_PERSONS, oldRegisteredPersons, registeredPersons));
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ROOM_STAY__ROOM, oldRoom, room));
 	}
 
 	/**
@@ -180,8 +204,10 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 			case BookingPackage.ROOM_STAY__STAY_REQUEST:
 				return getStayRequest();
 			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
-				if (resolve) return getRegisteredPersons();
-				return basicGetRegisteredPersons();
+				return getRegisteredPersons();
+			case BookingPackage.ROOM_STAY__ROOM:
+				if (resolve) return getRoom();
+				return basicGetRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,7 +229,11 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 				getStayRequest().addAll((Collection<? extends StayRequest>)newValue);
 				return;
 			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
-				setRegisteredPersons((Person)newValue);
+				getRegisteredPersons().clear();
+				getRegisteredPersons().addAll((Collection<? extends Person>)newValue);
+				return;
+			case BookingPackage.ROOM_STAY__ROOM:
+				setRoom((Room)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,7 +254,10 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 				getStayRequest().clear();
 				return;
 			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
-				setRegisteredPersons((Person)null);
+				getRegisteredPersons().clear();
+				return;
+			case BookingPackage.ROOM_STAY__ROOM:
+				setRoom((Room)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,7 +276,9 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 			case BookingPackage.ROOM_STAY__STAY_REQUEST:
 				return stayRequest != null && !stayRequest.isEmpty();
 			case BookingPackage.ROOM_STAY__REGISTERED_PERSONS:
-				return registeredPersons != null;
+				return registeredPersons != null && !registeredPersons.isEmpty();
+			case BookingPackage.ROOM_STAY__ROOM:
+				return room != null;
 		}
 		return super.eIsSet(featureID);
 	}

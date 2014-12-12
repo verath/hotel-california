@@ -1109,13 +1109,22 @@ public interface BillingPackage extends EPackage {
 	int BILL_MANAGER_IMPL__BILL_DATA_SERVICE = BILL_MANAGER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Booking Manager</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL__BOOKING_MANAGER = BILL_MANAGER_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Bill Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_IMPL_FEATURE_COUNT = BILL_MANAGER_FEATURE_COUNT + 1;
+	int BILL_MANAGER_IMPL_FEATURE_COUNT = BILL_MANAGER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Bill</em>' operation.
@@ -1918,6 +1927,17 @@ public interface BillingPackage extends EPackage {
 	EReference getBillManagerImpl_BillDataService();
 
 	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.billing.BillManagerImpl#getBookingManager <em>Booking Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Booking Manager</em>'.
+	 * @see tda593.hotel.california.billing.BillManagerImpl#getBookingManager()
+	 * @see #getBillManagerImpl()
+	 * @generated
+	 */
+	EReference getBillManagerImpl_BookingManager();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BillDataService <em>Bill Data Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2457,6 +2477,14 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BILL_MANAGER_IMPL__BILL_DATA_SERVICE = eINSTANCE.getBillManagerImpl_BillDataService();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking Manager</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BILL_MANAGER_IMPL__BOOKING_MANAGER = eINSTANCE.getBillManagerImpl_BookingManager();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.BillDataServiceImpl <em>Bill Data Service</em>}' class.

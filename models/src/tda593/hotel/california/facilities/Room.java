@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tda593.hotel.california.facilities.Room#getPhotos <em>Photos</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.Room#getRoom <em>Room</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}</li>
  * </ul>
  * </p>
@@ -219,32 +218,6 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	void setRoomType(RoomType value);
-
-	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference.
-	 * @see #setRoom(Room)
-	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_Room()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	Room getRoom();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getRoom <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room</em>' reference.
-	 * @see #getRoom()
-	 * @generated
-	 */
-	void setRoom(Room value);
 
 	/**
 	 * Returns the value of the '<em><b>Disability Approvals</b></em>' attribute.

@@ -3,17 +3,16 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -22,8 +21,10 @@ import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManagerImpl;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.LegalEntity;
-
+import tda593.hotel.california.booking.Person;
+import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.facilities.Room;
+import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
 
 /**
@@ -34,6 +35,7 @@ import tda593.hotel.california.facilities.RoomType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl#getBookingDataService <em>Booking Data Service</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl#getRoomManager <em>Room Manager</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,12 +53,26 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	protected BookingDataService bookingDataService;
 
 	/**
+	 * The cached value of the '{@link #getRoomManager() <em>Room Manager</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomManager()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomManager roomManager;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected BookingManagerImplImpl() {
 		super();
+	}
+	
+	public BookingManagerImplImpl(RoomManager roomManager) {
+		this.roomManager = roomManager;
 	}
 
 	/**
@@ -112,6 +128,44 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomManager getRoomManager() {
+		if (roomManager != null && roomManager.eIsProxy()) {
+			InternalEObject oldRoomManager = (InternalEObject)roomManager;
+			roomManager = (RoomManager)eResolveProxy(oldRoomManager);
+			if (roomManager != oldRoomManager) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER, oldRoomManager, roomManager));
+			}
+		}
+		return roomManager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomManager basicGetRoomManager() {
+		return roomManager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomManager(RoomManager newRoomManager) {
+		RoomManager oldRoomManager = roomManager;
+		roomManager = newRoomManager;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER, oldRoomManager, roomManager));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Booking> getBookings(Date from, Date to) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -145,7 +199,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room getAvailableRooms(Date from, Date to) {
+	public EList<Room> getAvailableRooms(Date from, Date to) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -156,7 +210,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room getAvailableRooms(Date from, Date to, RoomType roomType) {
+	public EList<Room> getAvailableRooms(Date from, Date to, RoomType roomType) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -167,7 +221,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map<RoomType, Integer> getAvailableRoomTypeAmount(Date from, Date to) {
+	public Map<RoomType, Integer> getAvailableRoomTypeAmounts(Date from, Date to) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -231,12 +285,40 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void checkIn(Booking booking, EList<LegalEntity> guests) {
+	public void checkIn(Booking booking, EList<Person> guests) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		RoomType roomType = booking.getRoomType();
+		
+		Map<RoomType, Integer> roomTypeMap = getAvailableRoomTypeAmounts(booking.getStartDate(), booking.getEndDate());
+		
+		int nbrAvailableOfRoomType = roomTypeMap.get(roomType);
+		
+		// If none of room type that was booked was available
+		if(nbrAvailableOfRoomType == 0) {
+			throw new IllegalStateException("No room of that room type available.");
+		}
+		
+		List<Room> availableRooms = getAvailableRooms(booking.getStartDate(), booking.getEndDate(), roomType);
+		
+		Random random = new Random();
+		Room selectedRoom = availableRooms.get(random.nextInt(availableRooms.size()));
+		
+		// Register room stay
+		RoomStay roomStay = new RoomStayImpl();
+		roomStay.setActive(true);
+		roomStay.setRoom(selectedRoom);
+		
+		List<Person> roomStayGuests = roomStay.getRegisteredPersons();
+		if(roomStayGuests == null) {
+			roomStayGuests = new ArrayList<Person>();
+		}
+		
+		roomStayGuests.addAll(guests);
+		
+		booking.setRoomStay(roomStay);
 	}
 
 	/**
@@ -305,6 +387,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE:
 				if (resolve) return getBookingDataService();
 				return basicGetBookingDataService();
+			case BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER:
+				if (resolve) return getRoomManager();
+				return basicGetRoomManager();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,6 +404,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE:
 				setBookingDataService((BookingDataService)newValue);
+				return;
+			case BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER:
+				setRoomManager((RoomManager)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,6 +423,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE:
 				setBookingDataService((BookingDataService)null);
 				return;
+			case BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER:
+				setRoomManager((RoomManager)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -349,6 +440,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE:
 				return bookingDataService != null;
+			case BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER:
+				return roomManager != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,8 +465,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return getAvailableRooms((Date)arguments.get(0), (Date)arguments.get(1));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOMS__DATE_DATE_ROOMTYPE:
 				return getAvailableRooms((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE:
-				return getAvailableRoomTypeAmount((Date)arguments.get(0), (Date)arguments.get(1));
+			case BookingPackage.BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNTS__DATE_DATE:
+				return getAvailableRoomTypeAmounts((Date)arguments.get(0), (Date)arguments.get(1));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE_ROOMTYPE:
 				return getAvailableRoomTypeAmount((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOMTYPE:
@@ -388,7 +481,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				registerRoom((Booking)arguments.get(0), (Room)arguments.get(1));
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___CHECK_IN__BOOKING_ELIST:
-				checkIn((Booking)arguments.get(0), (EList<LegalEntity>)arguments.get(1));
+				checkIn((Booking)arguments.get(0), (EList<Person>)arguments.get(1));
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE:
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));

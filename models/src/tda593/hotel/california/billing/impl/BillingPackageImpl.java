@@ -770,6 +770,15 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBillManagerImpl_BookingManager() {
+		return (EReference)billManagerImplEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBillDataService() {
 		return billDataServiceEClass;
 	}
@@ -875,6 +884,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		billManagerImplEClass = createEClass(BILL_MANAGER_IMPL);
 		createEReference(billManagerImplEClass, BILL_MANAGER_IMPL__BILL_DATA_SERVICE);
+		createEReference(billManagerImplEClass, BILL_MANAGER_IMPL__BOOKING_MANAGER);
 
 		billDataServiceEClass = createEClass(BILL_DATA_SERVICE);
 	}
@@ -1049,6 +1059,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		initEClass(billManagerImplEClass, BillManagerImpl.class, "BillManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBillManagerImpl_BillDataService(), this.getBillDataService(), null, "billDataService", null, 1, 1, BillManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBillManagerImpl_BookingManager(), theBookingPackage.getBookingManager(), null, "bookingManager", null, 1, 1, BillManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(billDataServiceEClass, BillDataService.class, "BillDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}

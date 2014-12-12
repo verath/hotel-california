@@ -5,6 +5,7 @@ package tda593.hotel.california.booking;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import tda593.hotel.california.facilities.Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tda593.hotel.california.booking.RoomStay#isActive <em>Active</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.RoomStay#getStayRequest <em>Stay Request</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.RoomStay#getRegisteredPersons <em>Registered Persons</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.RoomStay#getRoom <em>Room</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,29 +70,45 @@ public interface RoomStay extends EObject {
 	EList<StayRequest> getStayRequest();
 
 	/**
-	 * Returns the value of the '<em><b>Registered Persons</b></em>' reference.
+	 * Returns the value of the '<em><b>Registered Persons</b></em>' reference list.
+	 * The list contents are of type {@link tda593.hotel.california.booking.Person}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Registered Persons</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Registered Persons</em>' reference.
-	 * @see #setRegisteredPersons(Person)
+	 * @return the value of the '<em>Registered Persons</em>' reference list.
 	 * @see tda593.hotel.california.booking.BookingPackage#getRoomStay_RegisteredPersons()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Person> getRegisteredPersons();
+
+	/**
+	 * Returns the value of the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Room</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room</em>' reference.
+	 * @see #setRoom(Room)
+	 * @see tda593.hotel.california.booking.BookingPackage#getRoomStay_Room()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Person getRegisteredPersons();
+	Room getRoom();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.RoomStay#getRegisteredPersons <em>Registered Persons</em>}' reference.
+	 * Sets the value of the '{@link tda593.hotel.california.booking.RoomStay#getRoom <em>Room</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Registered Persons</em>' reference.
-	 * @see #getRegisteredPersons()
+	 * @param value the new value of the '<em>Room</em>' reference.
+	 * @see #getRoom()
 	 * @generated
 	 */
-	void setRegisteredPersons(Person value);
+	void setRoom(Room value);
 
 } // RoomStay

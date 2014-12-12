@@ -479,7 +479,7 @@ public interface BookingPackage extends EPackage {
 	int ROOM_STAY__STAY_REQUEST = 1;
 
 	/**
-	 * The feature id for the '<em><b>Registered Persons</b></em>' reference.
+	 * The feature id for the '<em><b>Registered Persons</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -488,13 +488,22 @@ public interface BookingPackage extends EPackage {
 	int ROOM_STAY__REGISTERED_PERSONS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_STAY__ROOM = 3;
+
+	/**
 	 * The number of structural features of the '<em>Room Stay</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_STAY_FEATURE_COUNT = 3;
+	int ROOM_STAY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Room Stay</em>' class.
@@ -744,13 +753,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___GET_AVAILABLE_ROOMS__DATE_DATE_ROOMTYPE = 4;
 
 	/**
-	 * The operation id for the '<em>Get Available Room Type Amount</em>' operation.
+	 * The operation id for the '<em>Get Available Room Type Amounts</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE = 5;
+	int BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNTS__DATE_DATE = 5;
 
 	/**
 	 * The operation id for the '<em>Get Available Room Type Amount</em>' operation.
@@ -880,13 +889,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE = BOOKING_MANAGER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Room Manager</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL__ROOM_MANAGER = BOOKING_MANAGER_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_IMPL_FEATURE_COUNT = BOOKING_MANAGER_FEATURE_COUNT + 1;
+	int BOOKING_MANAGER_IMPL_FEATURE_COUNT = BOOKING_MANAGER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Bookings</em>' operation.
@@ -934,13 +952,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOMS__DATE_DATE_ROOMTYPE = BOOKING_MANAGER___GET_AVAILABLE_ROOMS__DATE_DATE_ROOMTYPE;
 
 	/**
-	 * The operation id for the '<em>Get Available Room Type Amount</em>' operation.
+	 * The operation id for the '<em>Get Available Room Type Amounts</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE = BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE;
+	int BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNTS__DATE_DATE = BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNTS__DATE_DATE;
 
 	/**
 	 * The operation id for the '<em>Get Available Room Type Amount</em>' operation.
@@ -1710,15 +1728,26 @@ public interface BookingPackage extends EPackage {
 	EReference getRoomStay_StayRequest();
 
 	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.booking.RoomStay#getRegisteredPersons <em>Registered Persons</em>}'.
+	 * Returns the meta object for the reference list '{@link tda593.hotel.california.booking.RoomStay#getRegisteredPersons <em>Registered Persons</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Registered Persons</em>'.
+	 * @return the meta object for the reference list '<em>Registered Persons</em>'.
 	 * @see tda593.hotel.california.booking.RoomStay#getRegisteredPersons()
 	 * @see #getRoomStay()
 	 * @generated
 	 */
 	EReference getRoomStay_RegisteredPersons();
+
+	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.booking.RoomStay#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room</em>'.
+	 * @see tda593.hotel.california.booking.RoomStay#getRoom()
+	 * @see #getRoomStay()
+	 * @generated
+	 */
+	EReference getRoomStay_Room();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.StayRequest <em>Stay Request</em>}'.
@@ -1920,14 +1949,14 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__GetAvailableRooms__Date_Date_RoomType();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date) <em>Get Available Room Type Amount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getAvailableRoomTypeAmounts(java.util.Date, java.util.Date) <em>Get Available Room Type Amounts</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Available Room Type Amount</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date)
+	 * @return the meta object for the '<em>Get Available Room Type Amounts</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#getAvailableRoomTypeAmounts(java.util.Date, java.util.Date)
 	 * @generated
 	 */
-	EOperation getBookingManager__GetAvailableRoomTypeAmount__Date_Date();
+	EOperation getBookingManager__GetAvailableRoomTypeAmounts__Date_Date();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getAvailableRoomTypeAmount(java.util.Date, java.util.Date, tda593.hotel.california.facilities.RoomType) <em>Get Available Room Type Amount</em>}' operation.
@@ -2059,6 +2088,17 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBookingManagerImpl_BookingDataService();
+
+	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.booking.BookingManagerImpl#getRoomManager <em>Room Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room Manager</em>'.
+	 * @see tda593.hotel.california.booking.BookingManagerImpl#getRoomManager()
+	 * @see #getBookingManagerImpl()
+	 * @generated
+	 */
+	EReference getBookingManagerImpl_RoomManager();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingDataService <em>Data Service</em>}'.
@@ -2476,12 +2516,20 @@ public interface BookingPackage extends EPackage {
 		EReference ROOM_STAY__STAY_REQUEST = eINSTANCE.getRoomStay_StayRequest();
 
 		/**
-		 * The meta object literal for the '<em><b>Registered Persons</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Registered Persons</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ROOM_STAY__REGISTERED_PERSONS = eINSTANCE.getRoomStay_RegisteredPersons();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_STAY__ROOM = eINSTANCE.getRoomStay_Room();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.StayRequestImpl <em>Stay Request</em>}' class.
@@ -2644,12 +2692,12 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING_MANAGER___GET_AVAILABLE_ROOMS__DATE_DATE_ROOMTYPE = eINSTANCE.getBookingManager__GetAvailableRooms__Date_Date_RoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Available Room Type Amount</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get Available Room Type Amounts</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE = eINSTANCE.getBookingManager__GetAvailableRoomTypeAmount__Date_Date();
+		EOperation BOOKING_MANAGER___GET_AVAILABLE_ROOM_TYPE_AMOUNTS__DATE_DATE = eINSTANCE.getBookingManager__GetAvailableRoomTypeAmounts__Date_Date();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Available Room Type Amount</b></em>' operation.
@@ -2756,6 +2804,14 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE = eINSTANCE.getBookingManagerImpl_BookingDataService();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Manager</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING_MANAGER_IMPL__ROOM_MANAGER = eINSTANCE.getBookingManagerImpl_RoomManager();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingDataServiceImpl <em>Data Service</em>}' class.

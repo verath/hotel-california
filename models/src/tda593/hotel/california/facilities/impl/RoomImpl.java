@@ -40,7 +40,6 @@ import tda593.hotel.california.facilities.RoomType;
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getPhotos <em>Photos</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getDisabilityApprovals <em>Disability Approvals</em>}</li>
  * </ul>
  * </p>
@@ -177,16 +176,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected RoomType roomType;
-
-	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoom()
-	 * @generated
-	 * @ordered
-	 */
-	protected Room room;
 
 	/**
 	 * The default value of the '{@link #getDisabilityApprovals() <em>Disability Approvals</em>}' attribute.
@@ -399,44 +388,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room getRoom() {
-		if (room != null && room.eIsProxy()) {
-			InternalEObject oldRoom = (InternalEObject)room;
-			room = (Room)eResolveProxy(oldRoom);
-			if (room != oldRoom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilitiesPackage.ROOM__ROOM, oldRoom, room));
-			}
-		}
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room basicGetRoom() {
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoom(Room newRoom) {
-		Room oldRoom = room;
-		room = newRoom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__ROOM, oldRoom, room));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DisabilityApproval getDisabilityApprovals() {
 		return disabilityApprovals;
 	}
@@ -511,9 +462,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
-			case FacilitiesPackage.ROOM__ROOM:
-				if (resolve) return getRoom();
-				return basicGetRoom();
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				return getDisabilityApprovals();
 		}
@@ -555,9 +503,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)newValue);
 				return;
-			case FacilitiesPackage.ROOM__ROOM:
-				setRoom((Room)newValue);
-				return;
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				setDisabilityApprovals((DisabilityApproval)newValue);
 				return;
@@ -597,9 +542,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)null);
 				return;
-			case FacilitiesPackage.ROOM__ROOM:
-				setRoom((Room)null);
-				return;
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				setDisabilityApprovals(DISABILITY_APPROVALS_EDEFAULT);
 				return;
@@ -631,8 +573,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return allowedKeyCards != null && !allowedKeyCards.isEmpty();
 			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				return roomType != null;
-			case FacilitiesPackage.ROOM__ROOM:
-				return room != null;
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
 				return disabilityApprovals != DISABILITY_APPROVALS_EDEFAULT;
 		}
