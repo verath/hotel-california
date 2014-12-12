@@ -4,8 +4,6 @@ package tda593.hotel.california.booking;
 
 import tda593.hotel.california.facilities.RoomManager;
 
-
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Manager Impl</b></em>'.

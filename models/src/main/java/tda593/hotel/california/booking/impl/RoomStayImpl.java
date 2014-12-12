@@ -20,6 +20,7 @@ import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.booking.StayRequest;
+
 import tda593.hotel.california.facilities.Room;
 
 /**

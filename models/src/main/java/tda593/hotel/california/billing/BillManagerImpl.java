@@ -4,7 +4,6 @@ package tda593.hotel.california.billing;
 
 import tda593.hotel.california.booking.BookingManager;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Bill Manager Impl</b></em>'.

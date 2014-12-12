@@ -5,6 +5,7 @@ package tda593.hotel.california.booking;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
 import tda593.hotel.california.facilities.Room;
 
 /**
@@ -74,7 +75,7 @@ public interface RoomStay extends EObject {
 	 * The list contents are of type {@link tda593.hotel.california.booking.Person}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Registered Persons</em>' reference isn't clear,
+	 * If the meaning of the '<em>Registered Persons</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

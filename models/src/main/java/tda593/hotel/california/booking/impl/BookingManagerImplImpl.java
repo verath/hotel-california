@@ -70,10 +70,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	protected BookingManagerImplImpl() {
 		super();
 	}
-	
-	public BookingManagerImplImpl(RoomManager roomManager) {
-		this.roomManager = roomManager;
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
