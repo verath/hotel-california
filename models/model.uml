@@ -922,7 +922,7 @@
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_b5jpwHpCEeSZQp8F1uHBGQ" name="Realization1" client="_RYOZAHpCEeSZQp8F1uHBGQ" supplier="_V65S8HpCEeSZQp8F1uHBGQ" contract="_V65S8HpCEeSZQp8F1uHBGQ"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_eqHF0HpCEeSZQp8F1uHBGQ" name="Usage0" client="_ECaOcHpCEeSZQp8F1uHBGQ" supplier="_V65S8HpCEeSZQp8F1uHBGQ"/>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_E1dKEHpEEeSZQp8F1uHBGQ" name="Realization2" client="_RYOZAHpCEeSZQp8F1uHBGQ" supplier="_r-78cHpDEeSZQp8F1uHBGQ" contract="_r-78cHpDEeSZQp8F1uHBGQ"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_H3R8UHpEEeSZQp8F1uHBGQ" name="Usage1" client="_ECaOcHpCEeSZQp8F1uHBGQ" supplier="_r-78cHpDEeSZQp8F1uHBGQ"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_H3R8UHpEEeSZQp8F1uHBGQ" name="Usage1" client="_LXe-kHpCEeSZQp8F1uHBGQ" supplier="_r-78cHpDEeSZQp8F1uHBGQ"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_AIsqkHpFEeSZQp8F1uHBGQ" name="Usage2" client="_ECaOcHpCEeSZQp8F1uHBGQ">
       <supplier xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
     </packagedElement>
@@ -949,8 +949,8 @@
       <supplier xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_2NjL4HpLEeSZQp8F1uHBGQ" name="Hotel California">
-      <packagedElement xmi:type="uml:Component" xmi:id="_LXe-kHpCEeSZQp8F1uHBGQ" name="Money Rules"/>
-      <packagedElement xmi:type="uml:Component" xmi:id="_ECaOcHpCEeSZQp8F1uHBGQ" name="Customer, Booking &amp; Billing"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_LXe-kHpCEeSZQp8F1uHBGQ" name="Billing"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_ECaOcHpCEeSZQp8F1uHBGQ" name="Booking"/>
       <packagedElement xmi:type="uml:Component" xmi:id="_BzOaEHpCEeSZQp8F1uHBGQ" name="Facilities"/>
       <packagedElement xmi:type="uml:Component" xmi:id="_A-_M0HpaEeSept0-dI1XSQ" name="Key Card"/>
     </packagedElement>
@@ -1184,6 +1184,17 @@
       </templateBinding>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" href="tda593.uml#_UzrTMIFIEeSFZv45HTbezA"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_G-56gIHyEeSOTKU47AJ7gA" name="Realization10" client="_LXe-kHpCEeSZQp8F1uHBGQ">
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_a1dOMIHyEeSOTKU47AJ7gA" name="Realization101" client="_ECaOcHpCEeSZQp8F1uHBGQ">
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
+      <contract xmi:type="uml:Interface" href="tda593.uml#_tuIWIHb2EeSbBJzXJgLK5Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_L8x30IH0EeSOTKU47AJ7gA" name="Usage1011111" client="_ECaOcHpCEeSZQp8F1uHBGQ">
+      <supplier xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_HB6skIDREeSyQrXH1hqv2Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HCbC4IDREeSyQrXH1hqv2Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
