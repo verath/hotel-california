@@ -17,3 +17,6 @@ build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
+
+#Derby log file
+derby.log
