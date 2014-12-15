@@ -3,13 +3,14 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -163,7 +164,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<Booking> getBookings(Date from, Date to) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -174,7 +175,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<Booking> getBookings(Date from, Date to, LegalEntity customer) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -185,7 +186,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Booking getBookings(LegalEntity customer) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -193,45 +194,77 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> rooms = new BasicEList<Room>(roomManager.getRooms());
+		EList<Booking> bookings = getBookings(from, to);
+		EList<Room> bookedRooms = new BasicEList<Room>();
+		
+		for(Booking booking : bookings) {
+			bookedRooms.add(booking.getRoomStay().getRoom());
+		}
+		
+		rooms.removeAll(bookedRooms);
+		
+		return rooms;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to, RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> rooms = new BasicEList<Room>(roomManager.getRooms());
+		EList<Booking> bookings = getBookings(from, to);
+		EList<Room> bookedRooms = new BasicEList<Room>();
+		
+		for(Booking booking : bookings) {
+			if(booking.getRoomType().equals(roomType)) {
+				bookedRooms.add(booking.getRoomStay().getRoom());
+			}
+		}
+		
+		rooms.removeAll(bookedRooms);
+		
+		return rooms;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Map<RoomType, Integer> getAvailableRoomTypeAmounts(Date from, Date to) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();
+		
+		List<RoomType> roomTypes = roomManager.getRoomTypes();
+		List<Booking> bookings = getBookings(from, to);
+		
+		for(RoomType roomType : roomTypes) {
+			int amountOfRoomTypeTotal = roomTypeAmounts.get(roomType);
+			int amountOfRoomTypeAvailable = amountOfRoomTypeTotal;
+			
+			for(Booking booking : bookings) {
+				if(booking.getRoomType().equals(roomType)) {
+					amountOfRoomTypeAvailable -= 1;		// TODO: verify that this doesn't go below 0?
+				}
+			}
+			
+			roomTypeAmounts.put(roomType, amountOfRoomTypeAvailable);
+		}
+		
+		return roomTypeAmounts;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getAvailableRoomTypeAmount(Date from, Date to, RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return getAvailableRoomTypeAmounts(from, to).get(roomType);
 	}
 
 	/**
@@ -240,7 +273,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, RoomType RoomType) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -251,7 +284,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -259,12 +292,18 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isRoomAvailable(Date from, Date to, int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> availableRooms = getAvailableRooms(from, to);
+		
+		for(Room room : availableRooms) {
+			if(room.getRoomNumber() == roomNumber) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	/**
@@ -273,7 +312,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void registerRoom(Booking booking, Room room) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -284,8 +323,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public void checkIn(Booking booking, EList<Person> guests) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		RoomType roomType = booking.getRoomType();
 		
 		Map<RoomType, Integer> roomTypeMap = getAvailableRoomTypeAmounts(booking.getStartDate(), booking.getEndDate());
@@ -308,10 +345,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		roomStay.setRoom(selectedRoom);
 		
 		List<Person> roomStayGuests = roomStay.getRegisteredPersons();
-		if(roomStayGuests == null) {
-			roomStayGuests = new ArrayList<Person>();
-		}
-		
 		roomStayGuests.addAll(guests);
 		
 		booking.setRoomStay(roomStay);
@@ -320,12 +353,12 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isRoomTypeAvailable(Date from, Date to, RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Map<RoomType, Integer> roomTypeAmounts = getAvailableRoomTypeAmounts(from, to);
+		
+		return roomTypeAmounts.get(roomType) > 0 ? true : false;
 	}
 
 	/**
@@ -334,7 +367,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<RoomType> getRoomTypes() {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -345,7 +378,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Booking getActiveBooking(int roomNumber) {
-		// TODO: implement this method
+		// TODO: needs service implementations first
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -364,12 +397,16 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void checkOut(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		RoomStay roomStay = booking.getRoomStay();
+		roomStay.setActive(false);
+		
+		roomStay.getRegisteredPersons().clear();
+		
+		Room room = roomStay.getRoom();
+		room.unregisterKeyCards();
 	}
 
 	/**
