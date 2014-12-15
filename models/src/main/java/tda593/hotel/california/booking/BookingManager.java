@@ -130,10 +130,10 @@ public interface BookingManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" many="false" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getRoomTypes();
+	EList<RoomType> getRoomTypes();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1223,7 +1223,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getBookingManager__GetRoomTypes(), ecorePackage.getEEList(), "getRoomTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getBookingManager__GetRoomTypes(), theFacilitiesPackage.getRoomType(), "getRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__GetActiveBooking__int(), this.getBooking(), "getActiveBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);

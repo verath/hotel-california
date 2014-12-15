@@ -474,7 +474,7 @@
             <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/RoomType"/>
           </eOperations>
-          <eOperations name="getRoomTypes" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+          <eOperations name="getRoomTypes" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/RoomType"/>
           <eOperations name="getActiveBooking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eOperations>
