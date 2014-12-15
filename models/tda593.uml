@@ -915,8 +915,9 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_ok6ZUHoGEeSVKdBxhP6Y7A" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_so8PcHoGEeSVKdBxhP6Y7A" name="getRoomTypes">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xrjNsHoGEeSVKdBxhP6Y7A" direction="return">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xrjNsHoGEeSVKdBxhP6Y7A" type="_MEBmgHZHEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yYBKUIRHEeSukffvaVOsTw"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yYBKUYRHEeSukffvaVOsTw" value="*"/>
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_QSnHsHo1EeSZQp8F1uHBGQ" name="getActiveBooking">
