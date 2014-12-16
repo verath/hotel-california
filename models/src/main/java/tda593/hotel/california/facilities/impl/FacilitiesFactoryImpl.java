@@ -17,6 +17,8 @@ import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.KeyCard;
+import tda593.hotel.california.facilities.KeyCardDataService;
+import tda593.hotel.california.facilities.KeyCardManagerImpl;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomApproval;
 import tda593.hotel.california.facilities.RoomDataService;
@@ -76,6 +78,8 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 			case FacilitiesPackage.ROOM_TYPE_DATA_SERVICE: return createRoomTypeDataService();
 			case FacilitiesPackage.CONFERENCE_ROOM: return createConferenceRoom();
 			case FacilitiesPackage.GUEST_ROOM: return createGuestRoom();
+			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL: return createKeyCardManagerImpl();
+			case FacilitiesPackage.KEY_CARD_DATA_SERVICE: return createKeyCardDataService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -193,6 +197,26 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	public GuestRoom createGuestRoom() {
 		GuestRoomImpl guestRoom = new GuestRoomImpl();
 		return guestRoom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public KeyCardManagerImpl createKeyCardManagerImpl() {
+		KeyCardManagerImplImpl keyCardManagerImpl = new KeyCardManagerImplImpl();
+		return keyCardManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public KeyCardDataService createKeyCardDataService() {
+		KeyCardDataServiceImpl keyCardDataService = new KeyCardDataServiceImpl();
+		return keyCardDataService;
 	}
 
 	/**

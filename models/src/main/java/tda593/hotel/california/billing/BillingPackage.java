@@ -627,22 +627,13 @@ public interface BillingPackage extends EPackage {
 	int BILL__IS_PUBLISHED = 2;
 
 	/**
-	 * The feature id for the '<em><b>Customer</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__CUSTOMER = 3;
-
-	/**
 	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__IS_PAID = 4;
+	int BILL__IS_PAID = 3;
 
 	/**
 	 * The feature id for the '<em><b>Purchase</b></em>' reference list.
@@ -651,7 +642,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__PURCHASE = 5;
+	int BILL__PURCHASE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Credit Card Information</b></em>' reference.
@@ -660,7 +651,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__CREDIT_CARD_INFORMATION = 6;
+	int BILL__CREDIT_CARD_INFORMATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Used Discounts</b></em>' reference list.
@@ -669,7 +660,16 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__USED_DISCOUNTS = 7;
+	int BILL__USED_DISCOUNTS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Customer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__CUSTOMER = 7;
 
 	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
@@ -882,15 +882,6 @@ public interface BillingPackage extends EPackage {
 	int BOOKING_BILL__IS_PUBLISHED = BILL__IS_PUBLISHED;
 
 	/**
-	 * The feature id for the '<em><b>Customer</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_BILL__CUSTOMER = BILL__CUSTOMER;
-
-	/**
 	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -925,6 +916,15 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_BILL__USED_DISCOUNTS = BILL__USED_DISCOUNTS;
+
+	/**
+	 * The feature id for the '<em><b>Customer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL__CUSTOMER = BILL__CUSTOMER;
 
 	/**
 	 * The feature id for the '<em><b>Booking</b></em>' reference.

@@ -616,22 +616,13 @@ public interface BookingPackage extends EPackage {
 	int TRAVEL_INFORMATION_FEATURE_COUNT = 4;
 
 	/**
-	 * The operation id for the '<em>Add Predecessor</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION___ADD_PREDECESSOR__TRAVELINFORMATION = 0;
-
-	/**
 	 * The number of operations of the '<em>Travel Information</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAVEL_INFORMATION_OPERATION_COUNT = 1;
+	int TRAVEL_INFORMATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
@@ -1836,16 +1827,6 @@ public interface BookingPackage extends EPackage {
 	EReference getTravelInformation_Predecessor();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.TravelInformation#addPredecessor(tda593.hotel.california.booking.TravelInformation) <em>Add Predecessor</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Predecessor</em>' operation.
-	 * @see tda593.hotel.california.booking.TravelInformation#addPredecessor(tda593.hotel.california.booking.TravelInformation)
-	 * @generated
-	 */
-	EOperation getTravelInformation__AddPredecessor__TravelInformation();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.CreditCardInformation <em>Credit Card Information</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2598,14 +2579,6 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRAVEL_INFORMATION__PREDECESSOR = eINSTANCE.getTravelInformation_Predecessor();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Predecessor</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TRAVEL_INFORMATION___ADD_PREDECESSOR__TRAVELINFORMATION = eINSTANCE.getTravelInformation__AddPredecessor__TravelInformation();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.

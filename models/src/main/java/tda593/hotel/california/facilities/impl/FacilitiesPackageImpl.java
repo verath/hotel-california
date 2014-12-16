@@ -30,7 +30,9 @@ import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.KeyCard;
+import tda593.hotel.california.facilities.KeyCardDataService;
 import tda593.hotel.california.facilities.KeyCardManager;
+import tda593.hotel.california.facilities.KeyCardManagerImpl;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomApproval;
 import tda593.hotel.california.facilities.RoomDataService;
@@ -39,6 +41,8 @@ import tda593.hotel.california.facilities.RoomManagerImpl;
 import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.facilities.RoomTypeDataService;
 
+import tda593.hotel.california.facilities.persistence.PersistencePackage;
+import tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl;
 import tda593.hotel.california.impl.CaliforniaPackageImpl;
 
 /**
@@ -137,6 +141,20 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass keyCardManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass keyCardDataServiceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum roomApprovalEEnum = null;
 
 	/**
@@ -194,20 +212,29 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		// Obtain or create and register interdependencies
 		CaliforniaPackageImpl theCaliforniaPackage = (CaliforniaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) instanceof CaliforniaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) : CaliforniaPackage.eINSTANCE);
+		PersistencePackageImpl thePersistencePackage = (PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) instanceof PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) : PersistencePackage.eINSTANCE);
 		BillingPackageImpl theBillingPackage = (BillingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) instanceof BillingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) : BillingPackage.eINSTANCE);
+		tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl thePersistencePackage_1 = (tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.billing.persistence.PersistencePackage.eNS_URI) instanceof tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.billing.persistence.PersistencePackage.eNS_URI) : tda593.hotel.california.billing.persistence.PersistencePackage.eINSTANCE);
 		BookingPackageImpl theBookingPackage = (BookingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) instanceof BookingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) : BookingPackage.eINSTANCE);
+		tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl thePersistencePackage_2 = (tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI) instanceof tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI) : tda593.hotel.california.booking.persistence.PersistencePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theFacilitiesPackage.createPackageContents();
 		theCaliforniaPackage.createPackageContents();
+		thePersistencePackage.createPackageContents();
 		theBillingPackage.createPackageContents();
+		thePersistencePackage_1.createPackageContents();
 		theBookingPackage.createPackageContents();
+		thePersistencePackage_2.createPackageContents();
 
 		// Initialize created meta-data
 		theFacilitiesPackage.initializePackageContents();
 		theCaliforniaPackage.initializePackageContents();
+		thePersistencePackage.initializePackageContents();
 		theBillingPackage.initializePackageContents();
+		thePersistencePackage_1.initializePackageContents();
 		theBookingPackage.initializePackageContents();
+		thePersistencePackage_2.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theFacilitiesPackage.freeze();
@@ -378,6 +405,24 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 */
 	public EOperation getRoomManager__UnregisterAllKeyCards__Room() {
 		return roomManagerEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomManager__GetRoomTypeAmounts() {
+		return roomManagerEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomManager__GetRoomTypeAmount() {
+		return roomManagerEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -646,6 +691,42 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getKeyCardManagerImpl() {
+		return keyCardManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getKeyCardManagerImpl_KeyCard() {
+		return (EReference)keyCardManagerImplEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getKeyCardManagerImpl_KeyCardDataService() {
+		return (EReference)keyCardManagerImplEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getKeyCardDataService() {
+		return keyCardDataServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getRoomApproval() {
 		return roomApprovalEEnum;
 	}
@@ -709,6 +790,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM);
+		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS);
+		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT);
 
 		roomTypeEClass = createEClass(ROOM_TYPE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__ID);
@@ -746,6 +829,12 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_BEDS);
 		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
 
+		keyCardManagerImplEClass = createEClass(KEY_CARD_MANAGER_IMPL);
+		createEReference(keyCardManagerImplEClass, KEY_CARD_MANAGER_IMPL__KEY_CARD);
+		createEReference(keyCardManagerImplEClass, KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE);
+
+		keyCardDataServiceEClass = createEClass(KEY_CARD_DATA_SERVICE);
+
 		// Create enums
 		roomApprovalEEnum = createEEnum(ROOM_APPROVAL);
 		disabilityApprovalEEnum = createEEnum(DISABILITY_APPROVAL);
@@ -775,7 +864,11 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 		CaliforniaPackage theCaliforniaPackage = (CaliforniaPackage)EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(thePersistencePackage);
 
 		// Create type parameters
 
@@ -799,6 +892,13 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		roomTypeDataServiceEClass.getEGenericSuperTypes().add(g1);
 		conferenceRoomEClass.getESuperTypes().add(this.getRoom());
 		guestRoomEClass.getESuperTypes().add(this.getRoom());
+		keyCardManagerImplEClass.getESuperTypes().add(this.getKeyCardManager());
+		g1 = createEGenericType(theCaliforniaPackage.getDataService());
+		g2 = createEGenericType(this.getKeyCard());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		keyCardDataServiceEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(adminKeyCardManagerEClass, AdminKeyCardManager.class, "AdminKeyCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -850,6 +950,16 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		op = initEOperation(getRoomManager__UnregisterAllKeyCards__Room(), null, "unregisterAllKeyCards", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getRoomManager__GetRoomTypeAmounts(), null, "getRoomTypeAmounts", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(this.getRoomType());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEIntegerObject());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		initEOperation(getRoomManager__GetRoomTypeAmount(), ecorePackage.getEInt(), "getRoomTypeAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomType_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -890,6 +1000,12 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEClass(guestRoomEClass, GuestRoom.class, "GuestRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGuestRoom_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(keyCardManagerImplEClass, KeyCardManagerImpl.class, "KeyCardManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getKeyCardManagerImpl_KeyCard(), this.getKeyCard(), null, "keyCard", null, 0, -1, KeyCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getKeyCardManagerImpl_KeyCardDataService(), this.getKeyCardDataService(), null, "keyCardDataService", null, 1, 1, KeyCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(keyCardDataServiceEClass, KeyCardDataService.class, "KeyCardDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(roomApprovalEEnum, RoomApproval.class, "RoomApproval");

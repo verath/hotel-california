@@ -4,6 +4,7 @@ package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -234,6 +235,28 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Map<RoomType, Integer> getRoomTypeAmounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getRoomTypeAmount() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -326,6 +349,10 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case FacilitiesPackage.ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__ROOM:
 				unregisterAllKeyCards((Room)arguments.get(0));
 				return null;
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNTS:
+				return getRoomTypeAmounts();
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT:
+				return getRoomTypeAmount();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

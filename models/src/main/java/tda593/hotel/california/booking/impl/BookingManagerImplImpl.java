@@ -164,7 +164,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<Booking> getBookings(Date from, Date to) {
-		// TODO: needs service implementations first
+		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -175,7 +175,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<Booking> getBookings(Date from, Date to, LegalEntity customer) {
-		// TODO: needs service implementations first
+		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -186,7 +186,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Booking getBookings(LegalEntity customer) {
-		// TODO: needs service implementations first
+		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -288,13 +288,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
-		Booking booking = new BookingImpl();
-		booking.setStartDate(from);
-		booking.setEndDate(to);
-		booking.setResponsible(customer);
-		booking.setRoomType(room.getRoomType());
-		
-		bookingDataService.set(booking);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -381,7 +377,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<RoomType> getRoomTypes() {
-		// TODO: needs service implementations first
+		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -392,7 +388,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Booking getActiveBooking(int roomNumber) {
-		// TODO: needs service implementations first
+		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}

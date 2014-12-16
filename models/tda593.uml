@@ -273,6 +273,16 @@
             <ownedOperation xmi:type="uml:Operation" xmi:id="_b1mn8HpwEeSzffN-QECwhA" name="unregisterAllKeyCards">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_u-x4QHpwEeSzffN-QECwhA" name="room" type="_6SLu0HZBEeSrX_LICIhx2Q"/>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_7m5xIIUKEeSukffvaVOsTw" name="getRoomTypeAmounts">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_d-IgAIULEeSukffvaVOsTw" name="roomTypeAmounts" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="model.uml#_PT_s8IDQEeSyQrXH1hqv2Q"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Ad8YkIULEeSukffvaVOsTw" name="getRoomTypeAmount">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_hcFNkIULEeSukffvaVOsTw" name="roomTypeAmount" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Wg-MYIFREeSZuOQR5MrPYg" name="RoomManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_EcmykIFSEeSZuOQR5MrPYg" general="_SzH3QHoiEeSVKdBxhP6Y7A"/>
@@ -508,6 +518,32 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xP8tA4RdEeSPhYI_rVU2Ew" value="1"/>
               </ownedEnd>
             </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_JFBtsIUMEeSukffvaVOsTw" name="KeyCardManagerImpl">
+            <generalization xmi:type="uml:Generalization" xmi:id="_ZpatEIUMEeSukffvaVOsTw" general="_0YiNMHpaEeSept0-dI1XSQ"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_gfsBUIUMEeSukffvaVOsTw" name="keyCard" visibility="private" type="_LUQhAHZIEeSrX_LICIhx2Q" association="_gf1LQIUMEeSukffvaVOsTw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gfsBUYUMEeSukffvaVOsTw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gfsBUoUMEeSukffvaVOsTw" value="*"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_7K44oIUMEeSukffvaVOsTw" name="keyCardDataService" type="_3B8GQIUMEeSukffvaVOsTw" association="_7K44o4UMEeSukffvaVOsTw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7K44oYUMEeSukffvaVOsTw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7K44ooUMEeSukffvaVOsTw" value="1"/>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gf1LQIUMEeSukffvaVOsTw" memberEnd="_gf1LQYUMEeSukffvaVOsTw _gfsBUIUMEeSukffvaVOsTw">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_gf1LQYUMEeSukffvaVOsTw" name="keyCardManagerImpl" type="_JFBtsIUMEeSukffvaVOsTw" association="_gf1LQIUMEeSukffvaVOsTw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gf1LQoUMEeSukffvaVOsTw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gf1LQ4UMEeSukffvaVOsTw" value="1"/>
+            </ownedEnd>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_3B8GQIUMEeSukffvaVOsTw" name="KeyCardDataService">
+            <generalization xmi:type="uml:Generalization" xmi:id="_mHT7sIUNEeSukffvaVOsTw" general="_W5BzoIUNEeSukffvaVOsTw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_7K44o4UMEeSukffvaVOsTw" memberEnd="_7K44pIUMEeSukffvaVOsTw _7K44oIUMEeSukffvaVOsTw">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_7K44pIUMEeSukffvaVOsTw" name="keyCardManagerImpl" type="_JFBtsIUMEeSukffvaVOsTw" association="_7K44o4UMEeSukffvaVOsTw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7K44pYUMEeSukffvaVOsTw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7K44poUMEeSukffvaVOsTw" value="*"/>
+            </ownedEnd>
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_GTgCwIFSEeSZuOQR5MrPYg" name="RoomDataServiceType">
@@ -1563,6 +1599,17 @@
             </parameterSubstitution>
           </templateBinding>
         </packagedElement>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W5BzoIUNEeSukffvaVOsTw" name="KeyCardDataServiceType">
+          <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_ZbRG4IUNEeSukffvaVOsTw" signature="_IPemEH7HEeS2M9uZ6JBJRQ">
+            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_fbgyEIUNEeSukffvaVOsTw" actual="_LUQhAHZIEeSrX_LICIhx2Q">
+              <formal xmi:type="uml:ClassifierTemplateParameter" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0-_ownedParameter.0"/>
+            </parameterSubstitution>
+            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_jhnEwIUNEeSukffvaVOsTw">
+              <actual xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              <formal xmi:type="uml:ClassifierTemplateParameter" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0-_ownedParameter.1"/>
+            </parameterSubstitution>
+          </templateBinding>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iY15oIFOEeSZuOQR5MrPYg">
@@ -1585,4 +1632,6 @@
   <Ecore:EDataType xmi:id="_7dQ00IFYEeSZuOQR5MrPYg" base_PrimitiveType="_hzV0UIFYEeSZuOQR5MrPYg"/>
   <Ecore:EGenericType xmi:id="_cjkKgIFdEeSZuOQR5MrPYg" base_DataType="_LxJ9QIFdEeSZuOQR5MrPYg"/>
   <Ecore:EDataType xmi:id="_cj_BQIFdEeSZuOQR5MrPYg" base_PrimitiveType="_LxJ9QIFdEeSZuOQR5MrPYg"/>
+  <Ecore:EGenericType xmi:id="_houQgIUNEeSukffvaVOsTw" base_DataType="_W5BzoIUNEeSukffvaVOsTw"/>
+  <Ecore:EDataType xmi:id="_hpK8cIUNEeSukffvaVOsTw" base_PrimitiveType="_W5BzoIUNEeSukffvaVOsTw"/>
 </xmi:XMI>

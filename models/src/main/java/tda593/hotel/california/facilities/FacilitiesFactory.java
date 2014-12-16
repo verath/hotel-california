@@ -94,6 +94,24 @@ public interface FacilitiesFactory extends EFactory {
 	GuestRoom createGuestRoom();
 
 	/**
+	 * Returns a new object of class '<em>Key Card Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Card Manager Impl</em>'.
+	 * @generated
+	 */
+	KeyCardManagerImpl createKeyCardManagerImpl();
+
+	/**
+	 * Returns a new object of class '<em>Key Card Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Card Data Service</em>'.
+	 * @generated
+	 */
+	KeyCardDataService createKeyCardDataService();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

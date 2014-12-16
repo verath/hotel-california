@@ -147,6 +147,20 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL: {
+				KeyCardManagerImpl keyCardManagerImpl = (KeyCardManagerImpl)theEObject;
+				T result = caseKeyCardManagerImpl(keyCardManagerImpl);
+				if (result == null) result = caseKeyCardManager(keyCardManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FacilitiesPackage.KEY_CARD_DATA_SERVICE: {
+				KeyCardDataService keyCardDataService = (KeyCardDataService)theEObject;
+				T result = caseKeyCardDataService(keyCardDataService);
+				if (result == null) result = caseDataService(keyCardDataService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -328,6 +342,36 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGuestRoom(GuestRoom object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Key Card Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Key Card Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseKeyCardManagerImpl(KeyCardManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Key Card Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Key Card Data Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseKeyCardDataService(KeyCardDataService object) {
 		return null;
 	}
 
