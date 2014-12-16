@@ -302,6 +302,15 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLegalEntityEntity_Id() {
+		return (EAttribute)legalEntityEntityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCreditCardInformationEntity() {
 		return creditCardInformationEntityEClass;
 	}
@@ -574,6 +583,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(legalEntityEntityEClass, LEGAL_ENTITY_ENTITY__PHONE);
 		createEAttribute(legalEntityEntityEClass, LEGAL_ENTITY_ENTITY__EMAIL);
 		createEReference(legalEntityEntityEClass, LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY);
+		createEAttribute(legalEntityEntityEClass, LEGAL_ENTITY_ENTITY__ID);
 
 		creditCardInformationEntityEClass = createEClass(CREDIT_CARD_INFORMATION_ENTITY);
 		createEAttribute(creditCardInformationEntityEClass, CREDIT_CARD_INFORMATION_ENTITY__CARD_NUMBER);
@@ -657,6 +667,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getLegalEntityEntity_Phone(), ecorePackage.getEString(), "phone", null, 1, 1, LegalEntityEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLegalEntityEntity_Email(), ecorePackage.getEString(), "email", null, 1, 1, LegalEntityEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLegalEntityEntity_CreditCardInformationEntity(), this.getCreditCardInformationEntity(), null, "creditCardInformationEntity", null, 1, 1, LegalEntityEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getLegalEntityEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, LegalEntityEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(creditCardInformationEntityEClass, CreditCardInformationEntity.class, "CreditCardInformationEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreditCardInformationEntity_CardNumber(), ecorePackage.getEString(), "cardNumber", null, 1, 1, CreditCardInformationEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

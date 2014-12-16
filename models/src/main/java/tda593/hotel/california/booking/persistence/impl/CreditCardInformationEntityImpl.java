@@ -4,10 +4,11 @@ package tda593.hotel.california.booking.persistence.impl;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -29,6 +30,7 @@ import tda593.hotel.california.booking.persistence.PersistencePackage;
  *
  * @generated
  */
+@Entity
 public class CreditCardInformationEntityImpl extends MinimalEObjectImpl.Container implements CreditCardInformationEntity {
 	/**
 	 * The default value of the '{@link #getCardNumber() <em>Card Number</em>}' attribute.
@@ -48,6 +50,7 @@ public class CreditCardInformationEntityImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 * @ordered
 	 */
+	@Id
 	protected String cardNumber = CARD_NUMBER_EDEFAULT;
 
 	/**

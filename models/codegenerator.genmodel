@@ -575,7 +575,7 @@
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/LegalEntity/email"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/booking/LegalEntity/creditCardInformation"/>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntity/Operation1"/>
+            <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/LegalEntity/id"/>
           </genClasses>
           <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Persistence" basePackage="tda593.hotel.california.booking"
               disposableProviderFactory="true" ecorePackage="tda593.ecore#//hotel/california/booking/persistence">
@@ -598,6 +598,7 @@
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/persistence/LegalEntityEntity/email"/>
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                   propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/booking/persistence/LegalEntityEntity/creditCardInformationEntity"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/persistence/LegalEntityEntity/id"/>
             </genClasses>
             <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/booking/persistence/CreditCardInformationEntity">
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/persistence/CreditCardInformationEntity/cardNumber"/>

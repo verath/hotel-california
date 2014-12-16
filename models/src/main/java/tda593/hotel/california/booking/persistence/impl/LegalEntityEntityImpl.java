@@ -2,11 +2,13 @@
  */
 package tda593.hotel.california.booking.persistence.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -24,11 +26,13 @@ import tda593.hotel.california.booking.persistence.PersistencePackage;
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl#getPhone <em>Phone</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl#getCreditCardInformationEntity <em>Credit Card Information Entity</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
+@Entity
 public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implements LegalEntityEntity {
 	/**
 	 * The default value of the '{@link #getPhone() <em>Phone</em>}' attribute.
@@ -79,6 +83,28 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected CreditCardInformationEntity creditCardInformationEntity;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	@Id
+	@GeneratedValue
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,6 +210,27 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.LEGAL_ENTITY_ENTITY__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -194,6 +241,8 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 			case PersistencePackage.LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				if (resolve) return getCreditCardInformationEntity();
 				return basicGetCreditCardInformationEntity();
+			case PersistencePackage.LEGAL_ENTITY_ENTITY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +263,9 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case PersistencePackage.LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				setCreditCardInformationEntity((CreditCardInformationEntity)newValue);
+				return;
+			case PersistencePackage.LEGAL_ENTITY_ENTITY__ID:
+				setId((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,6 +288,9 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 			case PersistencePackage.LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				setCreditCardInformationEntity((CreditCardInformationEntity)null);
 				return;
+			case PersistencePackage.LEGAL_ENTITY_ENTITY__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +309,8 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case PersistencePackage.LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				return creditCardInformationEntity != null;
+			case PersistencePackage.LEGAL_ENTITY_ENTITY__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,6 +329,8 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 		result.append(phone);
 		result.append(", email: ");
 		result.append(email);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

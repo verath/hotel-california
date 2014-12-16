@@ -697,13 +697,14 @@
           </eGenericSuperTypes>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="LegalEntity">
-          <eOperations name="Operation1" ordered="false" lowerBound="1"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="phone" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformation"
               ordered="false" eType="#//hotel/california/booking/CreditCardInformation"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>
         <eSubpackages name="persistence" nsURI="http:///tda593/hotel/california/booking/persistence.ecore"
             nsPrefix="tda593.hotel.california.booking.persistence">
@@ -732,6 +733,8 @@
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformationEntity"
                 ordered="false" lowerBound="1" eType="#//hotel/california/booking/persistence/CreditCardInformationEntity"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformationEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"

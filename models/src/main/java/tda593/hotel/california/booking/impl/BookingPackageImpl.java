@@ -926,8 +926,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLegalEntity__Operation1() {
-		return legalEntityEClass.getEOperations().get(0);
+	public EAttribute getLegalEntity_Id() {
+		return (EAttribute)legalEntityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1048,7 +1048,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__PHONE);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__EMAIL);
 		createEReference(legalEntityEClass, LEGAL_ENTITY__CREDIT_CARD_INFORMATION);
-		createEOperation(legalEntityEClass, LEGAL_ENTITY___OPERATION1);
+		createEAttribute(legalEntityEClass, LEGAL_ENTITY__ID);
 	}
 
 	/**
@@ -1290,8 +1290,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEAttribute(getLegalEntity_Phone(), ecorePackage.getEString(), "phone", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLegalEntity_Email(), ecorePackage.getEString(), "email", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLegalEntity_CreditCardInformation(), this.getCreditCardInformation(), null, "creditCardInformation", null, 0, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getLegalEntity__Operation1(), null, "Operation1", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEAttribute(getLegalEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 } //BookingPackageImpl

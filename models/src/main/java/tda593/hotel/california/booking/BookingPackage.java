@@ -97,22 +97,22 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY__CREDIT_CARD_INFORMATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY__ID = 3;
+
+	/**
 	 * The number of structural features of the '<em>Legal Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_FEATURE_COUNT = 3;
-
-	/**
-	 * The operation id for the '<em>Operation1</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY___OPERATION1 = 0;
+	int LEGAL_ENTITY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Legal Entity</em>' class.
@@ -121,7 +121,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_OPERATION_COUNT = 1;
+	int LEGAL_ENTITY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.OrganizationImpl <em>Organization</em>}' class.
@@ -161,6 +161,15 @@ public interface BookingPackage extends EPackage {
 	int ORGANIZATION__CREDIT_CARD_INFORMATION = LEGAL_ENTITY__CREDIT_CARD_INFORMATION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__ID = LEGAL_ENTITY__ID;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,15 +195,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION_FEATURE_COUNT = LEGAL_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Operation1</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORGANIZATION___OPERATION1 = LEGAL_ENTITY___OPERATION1;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -243,6 +243,15 @@ public interface BookingPackage extends EPackage {
 	int PERSON__CREDIT_CARD_INFORMATION = LEGAL_ENTITY__CREDIT_CARD_INFORMATION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__ID = LEGAL_ENTITY__ID;
+
+	/**
 	 * The feature id for the '<em><b>Firstname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,15 +286,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSON_FEATURE_COUNT = LEGAL_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Operation1</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON___OPERATION1 = LEGAL_ENTITY___OPERATION1;
 
 	/**
 	 * The number of operations of the '<em>Person</em>' class.
@@ -2256,14 +2256,15 @@ public interface BookingPackage extends EPackage {
 	EReference getLegalEntity_CreditCardInformation();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntity#Operation1() <em>Operation1</em>}' operation.
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.LegalEntity#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Operation1</em>' operation.
-	 * @see tda593.hotel.california.booking.LegalEntity#Operation1()
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.booking.LegalEntity#getId()
+	 * @see #getLegalEntity()
 	 * @generated
 	 */
-	EOperation getLegalEntity__Operation1();
+	EAttribute getLegalEntity_Id();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2933,12 +2934,12 @@ public interface BookingPackage extends EPackage {
 		EReference LEGAL_ENTITY__CREDIT_CARD_INFORMATION = eINSTANCE.getLegalEntity_CreditCardInformation();
 
 		/**
-		 * The meta object literal for the '<em><b>Operation1</b></em>' operation.
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LEGAL_ENTITY___OPERATION1 = eINSTANCE.getLegalEntity__Operation1();
+		EAttribute LEGAL_ENTITY__ID = eINSTANCE.getLegalEntity_Id();
 
 	}
 

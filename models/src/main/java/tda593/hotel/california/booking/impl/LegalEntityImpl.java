@@ -2,18 +2,11 @@
  */
 package tda593.hotel.california.booking.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
@@ -28,6 +21,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getPhone <em>Phone</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getCreditCardInformation <em>Credit Card Information</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,6 +77,26 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	 * @ordered
 	 */
 	protected CreditCardInformation creditCardInformation;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,10 +202,20 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void Operation1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.LEGAL_ENTITY__ID, oldId, id));
 	}
 
 	/**
@@ -209,6 +233,8 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				if (resolve) return getCreditCardInformation();
 				return basicGetCreditCardInformation();
+			case BookingPackage.LEGAL_ENTITY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,6 +255,9 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 				return;
 			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				setCreditCardInformation((CreditCardInformation)newValue);
+				return;
+			case BookingPackage.LEGAL_ENTITY__ID:
+				setId((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,6 +280,9 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				setCreditCardInformation((CreditCardInformation)null);
 				return;
+			case BookingPackage.LEGAL_ENTITY__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,23 +301,10 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
 				return creditCardInformation != null;
+			case BookingPackage.LEGAL_ENTITY__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BookingPackage.LEGAL_ENTITY___OPERATION1:
-				Operation1();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -302,6 +321,8 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 		result.append(phone);
 		result.append(", email: ");
 		result.append(email);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

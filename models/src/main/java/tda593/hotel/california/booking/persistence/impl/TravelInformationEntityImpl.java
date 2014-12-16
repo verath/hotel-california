@@ -2,11 +2,14 @@
  */
 package tda593.hotel.california.booking.persistence.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -29,6 +32,7 @@ import tda593.hotel.california.booking.persistence.TravelInformationEntity;
  *
  * @generated
  */
+@Entity
 public class TravelInformationEntityImpl extends MinimalEObjectImpl.Container implements TravelInformationEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -48,6 +52,8 @@ public class TravelInformationEntityImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
+	@Id
+	@GeneratedValue
 	protected int id = ID_EDEFAULT;
 
 	/**
@@ -98,6 +104,7 @@ public class TravelInformationEntityImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne(targetEntity = TravelInformationEntityImpl.class)
 	protected TravelInformationEntity travelInformationEntity;
 
 	/**

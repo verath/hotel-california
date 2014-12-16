@@ -158,13 +158,22 @@ public interface PersistencePackage extends EPackage {
 	int LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY = 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_ENTITY__ID = 3;
+
+	/**
 	 * The number of structural features of the '<em>Legal Entity Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_ENTITY_FEATURE_COUNT = 3;
+	int LEGAL_ENTITY_ENTITY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Legal Entity Entity</em>' class.
@@ -211,6 +220,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSON_ENTITY__CREDIT_CARD_INFORMATION_ENTITY = LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ENTITY__ID = LEGAL_ENTITY_ENTITY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Firstname</b></em>' attribute.
@@ -394,6 +412,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION_ENTITY__CREDIT_CARD_INFORMATION_ENTITY = LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION_ENTITY__ID = LEGAL_ENTITY_ENTITY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -753,6 +780,17 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLegalEntityEntity_CreditCardInformationEntity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.persistence.LegalEntityEntity#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.booking.persistence.LegalEntityEntity#getId()
+	 * @see #getLegalEntityEntity()
+	 * @generated
+	 */
+	EAttribute getLegalEntityEntity_Id();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity <em>Credit Card Information Entity</em>}'.
@@ -1167,6 +1205,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference LEGAL_ENTITY_ENTITY__CREDIT_CARD_INFORMATION_ENTITY = eINSTANCE.getLegalEntityEntity_CreditCardInformationEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEGAL_ENTITY_ENTITY__ID = eINSTANCE.getLegalEntityEntity_Id();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl <em>Credit Card Information Entity</em>}' class.
