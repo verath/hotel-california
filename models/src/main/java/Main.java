@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 		ServiceEntityImpl bill = (ServiceEntityImpl) PersistenceFactory.eINSTANCE.createServiceEntity();
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("edu.chalmers.tda593.hotelcalifornia");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tda593.hotel.california");
 		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 		entityManager.persist(bill);
