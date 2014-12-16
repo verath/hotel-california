@@ -4,11 +4,14 @@ package tda593.hotel.california.booking.persistence.impl;
 
 import java.util.Date;
 
-import org.eclipse.emf.common.notify.Notification;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -17,7 +20,6 @@ import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 import tda593.hotel.california.booking.persistence.PersistencePackage;
 import tda593.hotel.california.booking.persistence.RoomStayEntity;
 import tda593.hotel.california.booking.persistence.TravelInformationEntity;
-
 import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
 
 /**
@@ -42,6 +44,7 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
  *
  * @generated
  */
+@Entity
 public class BookingEntityImpl extends MinimalEObjectImpl.Container implements BookingEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -61,6 +64,8 @@ public class BookingEntityImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 * @ordered
 	 */
+	@Id
+	@GeneratedValue
 	protected int id = ID_EDEFAULT;
 
 	/**
@@ -171,6 +176,7 @@ public class BookingEntityImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne (targetEntity = RoomStayEntityImpl.class)
 	protected RoomStayEntity roomStayEntity;
 
 	/**
@@ -181,6 +187,7 @@ public class BookingEntityImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne(targetEntity = LegalEntityEntityImpl.class)
 	protected LegalEntityEntity legalEntityEntity;
 
 	/**
@@ -201,6 +208,7 @@ public class BookingEntityImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne(targetEntity = TravelInformationEntityImpl.class)
 	protected TravelInformationEntity travelInformationEntity;
 
 	/**

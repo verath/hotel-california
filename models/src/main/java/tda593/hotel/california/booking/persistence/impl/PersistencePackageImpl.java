@@ -230,6 +230,15 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoomStayEntity_Id() {
+		return (EAttribute)roomStayEntityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPersonEntity() {
 		return personEntityEClass;
 	}
@@ -367,6 +376,15 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 */
 	public EAttribute getStayRequestEntity_TimeStamp() {
 		return (EAttribute)stayRequestEntityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStayRequestEntity_Id() {
+		return (EAttribute)stayRequestEntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -573,6 +591,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEReference(roomStayEntityEClass, ROOM_STAY_ENTITY__ROOM_ENTITY);
 		createEReference(roomStayEntityEClass, ROOM_STAY_ENTITY__PERSON_ENTITY);
 		createEReference(roomStayEntityEClass, ROOM_STAY_ENTITY__STAY_REQUEST_ENTITY);
+		createEAttribute(roomStayEntityEClass, ROOM_STAY_ENTITY__ID);
 
 		personEntityEClass = createEClass(PERSON_ENTITY);
 		createEAttribute(personEntityEClass, PERSON_ENTITY__FIRSTNAME);
@@ -593,6 +612,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		stayRequestEntityEClass = createEClass(STAY_REQUEST_ENTITY);
 		createEAttribute(stayRequestEntityEClass, STAY_REQUEST_ENTITY__TEXT);
 		createEAttribute(stayRequestEntityEClass, STAY_REQUEST_ENTITY__TIME_STAMP);
+		createEAttribute(stayRequestEntityEClass, STAY_REQUEST_ENTITY__ID);
 
 		organizationEntityEClass = createEClass(ORGANIZATION_ENTITY);
 		createEAttribute(organizationEntityEClass, ORGANIZATION_ENTITY__NAME);
@@ -657,6 +677,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEReference(getRoomStayEntity_RoomEntity(), thePersistencePackage_1.getRoomEntity(), null, "roomEntity", null, 1, 1, RoomStayEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomStayEntity_PersonEntity(), this.getPersonEntity(), null, "personEntity", null, 0, -1, RoomStayEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomStayEntity_StayRequestEntity(), this.getStayRequestEntity(), null, "stayRequestEntity", null, 0, -1, RoomStayEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomStayEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomStayEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(personEntityEClass, PersonEntity.class, "PersonEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPersonEntity_Firstname(), ecorePackage.getEString(), "firstname", null, 1, 1, PersonEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -677,6 +698,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEClass(stayRequestEntityEClass, StayRequestEntity.class, "StayRequestEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStayRequestEntity_Text(), ecorePackage.getEString(), "text", null, 1, 1, StayRequestEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStayRequestEntity_TimeStamp(), ecorePackage.getEDate(), "timeStamp", null, 1, 1, StayRequestEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStayRequestEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, StayRequestEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(organizationEntityEClass, OrganizationEntity.class, "OrganizationEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOrganizationEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, OrganizationEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

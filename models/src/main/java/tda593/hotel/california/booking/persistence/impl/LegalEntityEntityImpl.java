@@ -5,7 +5,10 @@ package tda593.hotel.california.booking.persistence.impl;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -34,6 +37,8 @@ import tda593.hotel.california.booking.persistence.PersistencePackage;
  * @generated
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "LegalEntities")
 public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implements LegalEntityEntity {
 	/**
 	 * The default value of the '{@link #getPhone() <em>Phone</em>}' attribute.

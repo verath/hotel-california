@@ -497,13 +497,22 @@ public interface BookingPackage extends EPackage {
 	int ROOM_STAY__ROOM = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_STAY__ID = 4;
+
+	/**
 	 * The number of structural features of the '<em>Room Stay</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_STAY_FEATURE_COUNT = 4;
+	int ROOM_STAY_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Room Stay</em>' class.
@@ -543,13 +552,22 @@ public interface BookingPackage extends EPackage {
 	int STAY_REQUEST__TIME_STAMP = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAY_REQUEST__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Stay Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAY_REQUEST_FEATURE_COUNT = 2;
+	int STAY_REQUEST_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Stay Request</em>' class.
@@ -1741,6 +1759,17 @@ public interface BookingPackage extends EPackage {
 	EReference getRoomStay_Room();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.RoomStay#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.booking.RoomStay#getId()
+	 * @see #getRoomStay()
+	 * @generated
+	 */
+	EAttribute getRoomStay_Id();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.StayRequest <em>Stay Request</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1771,6 +1800,17 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStayRequest_TimeStamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.StayRequest#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.booking.StayRequest#getId()
+	 * @see #getStayRequest()
+	 * @generated
+	 */
+	EAttribute getStayRequest_Id();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.TravelInformation <em>Travel Information</em>}'.
@@ -2514,6 +2554,14 @@ public interface BookingPackage extends EPackage {
 		EReference ROOM_STAY__ROOM = eINSTANCE.getRoomStay_Room();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_STAY__ID = eINSTANCE.getRoomStay_Id();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.StayRequestImpl <em>Stay Request</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2538,6 +2586,14 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STAY_REQUEST__TIME_STAMP = eINSTANCE.getStayRequest_TimeStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAY_REQUEST__ID = eINSTANCE.getStayRequest_Id();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.TravelInformationImpl <em>Travel Information</em>}' class.

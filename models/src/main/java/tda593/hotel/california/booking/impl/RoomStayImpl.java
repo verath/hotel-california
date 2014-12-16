@@ -34,6 +34,7 @@ import tda593.hotel.california.facilities.Room;
  *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getStayRequest <em>Stay Request</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getRegisteredPersons <em>Registered Persons</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.RoomStayImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -89,6 +90,26 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 * @ordered
 	 */
 	protected Room room;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,6 +218,27 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.ROOM_STAY__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -209,6 +251,8 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 			case BookingPackage.ROOM_STAY__ROOM:
 				if (resolve) return getRoom();
 				return basicGetRoom();
+			case BookingPackage.ROOM_STAY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,6 +280,9 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 			case BookingPackage.ROOM_STAY__ROOM:
 				setRoom((Room)newValue);
 				return;
+			case BookingPackage.ROOM_STAY__ID:
+				setId((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -260,6 +307,9 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 			case BookingPackage.ROOM_STAY__ROOM:
 				setRoom((Room)null);
 				return;
+			case BookingPackage.ROOM_STAY__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,6 +330,8 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 				return registeredPersons != null && !registeredPersons.isEmpty();
 			case BookingPackage.ROOM_STAY__ROOM:
 				return room != null;
+			case BookingPackage.ROOM_STAY__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -296,6 +348,8 @@ public class RoomStayImpl extends MinimalEObjectImpl.Container implements RoomSt
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (active: ");
 		result.append(active);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

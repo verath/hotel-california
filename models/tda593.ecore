@@ -528,12 +528,16 @@
               ordered="false" upperBound="-1" eType="#//hotel/california/booking/Person"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false"
               lowerBound="1" eType="#//hotel/california/facilities/Room"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="StayRequest">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="TravelInformation">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
@@ -717,6 +721,8 @@
                 upperBound="-1" eType="#//hotel/california/booking/persistence/PersonEntity"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="stayRequestEntity"
                 ordered="false" upperBound="-1" eType="#//hotel/california/booking/persistence/StayRequestEntity"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="PersonEntity" eSuperTypes="#//hotel/california/booking/persistence/LegalEntityEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstname" ordered="false"
@@ -749,6 +755,8 @@
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="OrganizationEntity" eSuperTypes="#//hotel/california/booking/persistence/LegalEntityEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"

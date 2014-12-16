@@ -4,10 +4,12 @@ package tda593.hotel.california.booking.persistence.impl;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -23,11 +25,13 @@ import tda593.hotel.california.booking.persistence.StayRequestEntity;
  * <ul>
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.StayRequestEntityImpl#getText <em>Text</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.StayRequestEntityImpl#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.persistence.impl.StayRequestEntityImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
+@Entity
 public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implements StayRequestEntity {
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -68,6 +72,28 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected Date timeStamp = TIME_STAMP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	@Id
+	@GeneratedValue
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,6 +161,27 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.STAY_REQUEST_ENTITY__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -142,6 +189,8 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 				return getText();
 			case PersistencePackage.STAY_REQUEST_ENTITY__TIME_STAMP:
 				return getTimeStamp();
+			case PersistencePackage.STAY_REQUEST_ENTITY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,6 +208,9 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case PersistencePackage.STAY_REQUEST_ENTITY__TIME_STAMP:
 				setTimeStamp((Date)newValue);
+				return;
+			case PersistencePackage.STAY_REQUEST_ENTITY__ID:
+				setId((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,6 +230,9 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 			case PersistencePackage.STAY_REQUEST_ENTITY__TIME_STAMP:
 				setTimeStamp(TIME_STAMP_EDEFAULT);
 				return;
+			case PersistencePackage.STAY_REQUEST_ENTITY__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -194,6 +249,8 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case PersistencePackage.STAY_REQUEST_ENTITY__TIME_STAMP:
 				return TIME_STAMP_EDEFAULT == null ? timeStamp != null : !TIME_STAMP_EDEFAULT.equals(timeStamp);
+			case PersistencePackage.STAY_REQUEST_ENTITY__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,6 +269,8 @@ public class StayRequestEntityImpl extends MinimalEObjectImpl.Container implemen
 		result.append(text);
 		result.append(", timeStamp: ");
 		result.append(timeStamp);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

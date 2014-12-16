@@ -103,13 +103,22 @@ public interface PersistencePackage extends EPackage {
 	int ROOM_STAY_ENTITY__STAY_REQUEST_ENTITY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_STAY_ENTITY__ID = 4;
+
+	/**
 	 * The number of structural features of the '<em>Room Stay Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_STAY_ENTITY_FEATURE_COUNT = 4;
+	int ROOM_STAY_ENTITY_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Room Stay Entity</em>' class.
@@ -359,13 +368,22 @@ public interface PersistencePackage extends EPackage {
 	int STAY_REQUEST_ENTITY__TIME_STAMP = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAY_REQUEST_ENTITY__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Stay Request Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAY_REQUEST_ENTITY_FEATURE_COUNT = 2;
+	int STAY_REQUEST_ENTITY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Stay Request Entity</em>' class.
@@ -696,6 +714,17 @@ public interface PersistencePackage extends EPackage {
 	EReference getRoomStayEntity_StayRequestEntity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.persistence.RoomStayEntity#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.booking.persistence.RoomStayEntity#getId()
+	 * @see #getRoomStayEntity()
+	 * @generated
+	 */
+	EAttribute getRoomStayEntity_Id();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.persistence.PersonEntity <em>Person Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -866,6 +895,17 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStayRequestEntity_TimeStamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.persistence.StayRequestEntity#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tda593.hotel.california.booking.persistence.StayRequestEntity#getId()
+	 * @see #getStayRequestEntity()
+	 * @generated
+	 */
+	EAttribute getStayRequestEntity_Id();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.persistence.OrganizationEntity <em>Organization Entity</em>}'.
@@ -1139,6 +1179,14 @@ public interface PersistencePackage extends EPackage {
 		EReference ROOM_STAY_ENTITY__STAY_REQUEST_ENTITY = eINSTANCE.getRoomStayEntity_StayRequestEntity();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_STAY_ENTITY__ID = eINSTANCE.getRoomStayEntity_Id();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.persistence.impl.PersonEntityImpl <em>Person Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1273,6 +1321,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STAY_REQUEST_ENTITY__TIME_STAMP = eINSTANCE.getStayRequestEntity_TimeStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAY_REQUEST_ENTITY__ID = eINSTANCE.getStayRequestEntity_Id();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.persistence.impl.OrganizationEntityImpl <em>Organization Entity</em>}' class.

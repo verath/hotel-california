@@ -2,10 +2,11 @@
  */
 package tda593.hotel.california.booking.persistence.impl;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.booking.persistence.PersistencePackage;
@@ -26,6 +27,8 @@ import tda593.hotel.california.booking.persistence.PersonEntity;
  *
  * @generated
  */
+@Entity
+@Table(name = "Persons")
 public class PersonEntityImpl extends LegalEntityEntityImpl implements PersonEntity {
 	/**
 	 * The default value of the '{@link #getFirstname() <em>Firstname</em>}' attribute.

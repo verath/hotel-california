@@ -2,10 +2,11 @@
  */
 package tda593.hotel.california.booking.persistence.impl;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.booking.persistence.OrganizationEntity;
@@ -25,6 +26,8 @@ import tda593.hotel.california.booking.persistence.PersistencePackage;
  *
  * @generated
  */
+@Entity
+@Table(name = "Organizations")
 public class OrganizationEntityImpl extends LegalEntityEntityImpl implements OrganizationEntity {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

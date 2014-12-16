@@ -1075,6 +1075,9 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jz2wkYIBEeSOTKU47AJ7gA" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jz2wkoIBEeSOTKU47AJ7gA" value="1"/>
             </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_1fYYcIU6EeSYe4XnLK7_AA" name="id" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_qgItMHZTEeSbBJzXJgLK5Q" name="StayRequest">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_4WNFIHZTEeSbBJzXJgLK5Q" name="text" visibility="private">
@@ -1082,6 +1085,9 @@
             </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_9-rwkHZTEeSbBJzXJgLK5Q" name="timeStamp" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_4JaVwIU6EeSYe4XnLK7_AA" name="id" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_0QuhsHZMEeSrX_LICIhx2Q" name="TravelInformation">
@@ -1425,6 +1431,9 @@
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zt7dEYRxEeSPhYI_rVU2Ew"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zt7dEoRxEeSPhYI_rVU2Ew" value="*"/>
               </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_Epmf4IU7EeSYe4XnLK7_AA" name="id" visibility="private">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Association" xmi:id="_JWowcIRvEeSPhYI_rVU2Ew" memberEnd="_JWowcYRvEeSPhYI_rVU2Ew _JWoJYIRvEeSPhYI_rVU2Ew">
               <name xsi:nil="true"/>
@@ -1455,7 +1464,7 @@
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YZ43wYRwEeSPhYI_rVU2Ew" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YZ43woRwEeSPhYI_rVU2Ew" value="1"/>
               </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_frMiIIU0EeSYe4XnLK7_AA" name="id">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_frMiIIU0EeSYe4XnLK7_AA" name="id" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedAttribute>
             </packagedElement>
@@ -1500,6 +1509,9 @@
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_W1LHQoRxEeSPhYI_rVU2Ew" name="timeStamp" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_FbeowIU7EeSYe4XnLK7_AA" name="id" visibility="private">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Association" xmi:id="_Zt8EIIRxEeSPhYI_rVU2Ew" memberEnd="_Zt8EIYRxEeSPhYI_rVU2Ew _Zt7dEIRxEeSPhYI_rVU2Ew">

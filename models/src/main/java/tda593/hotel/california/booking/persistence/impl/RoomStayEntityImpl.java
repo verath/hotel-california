@@ -4,23 +4,23 @@ package tda593.hotel.california.booking.persistence.impl;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import tda593.hotel.california.booking.persistence.PersistencePackage;
 import tda593.hotel.california.booking.persistence.PersonEntity;
 import tda593.hotel.california.booking.persistence.RoomStayEntity;
 import tda593.hotel.california.booking.persistence.StayRequestEntity;
-
 import tda593.hotel.california.facilities.persistence.RoomEntity;
 
 /**
@@ -34,11 +34,13 @@ import tda593.hotel.california.facilities.persistence.RoomEntity;
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.RoomStayEntityImpl#getRoomEntity <em>Room Entity</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.RoomStayEntityImpl#getPersonEntity <em>Person Entity</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.persistence.impl.RoomStayEntityImpl#getStayRequestEntity <em>Stay Request Entity</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.persistence.impl.RoomStayEntityImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
+@Entity
 public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements RoomStayEntity {
 	/**
 	 * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
@@ -78,6 +80,7 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
+	@OneToMany(targetEntity = PersonEntityImpl.class)
 	protected EList<PersonEntity> personEntity;
 
 	/**
@@ -88,7 +91,30 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
+	@OneToMany(targetEntity = StayRequestEntityImpl.class)
 	protected EList<StayRequestEntity> stayRequestEntity;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	@Id
+	@GeneratedValue
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,6 +223,27 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ROOM_STAY_ENTITY__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -209,6 +256,8 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 				return getPersonEntity();
 			case PersistencePackage.ROOM_STAY_ENTITY__STAY_REQUEST_ENTITY:
 				return getStayRequestEntity();
+			case PersistencePackage.ROOM_STAY_ENTITY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,6 +285,9 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 				getStayRequestEntity().clear();
 				getStayRequestEntity().addAll((Collection<? extends StayRequestEntity>)newValue);
 				return;
+			case PersistencePackage.ROOM_STAY_ENTITY__ID:
+				setId((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -260,6 +312,9 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 			case PersistencePackage.ROOM_STAY_ENTITY__STAY_REQUEST_ENTITY:
 				getStayRequestEntity().clear();
 				return;
+			case PersistencePackage.ROOM_STAY_ENTITY__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,6 +335,8 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 				return personEntity != null && !personEntity.isEmpty();
 			case PersistencePackage.ROOM_STAY_ENTITY__STAY_REQUEST_ENTITY:
 				return stayRequestEntity != null && !stayRequestEntity.isEmpty();
+			case PersistencePackage.ROOM_STAY_ENTITY__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -296,6 +353,8 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (active: ");
 		result.append(active);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}
