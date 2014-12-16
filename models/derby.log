@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Dec 16 12:16:45 CET 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-52d0-85a1-000006e53d98 
+on database directory memory:/Users/sebastianblomberg/Documents/myworkspace/hotel-california/models/hotel-californiaDB with class loader sun.misc.Launcher$AppClassLoader@5ac524dd 
+Loaded from file:/Users/sebastianblomberg/Documents/myworkspace/hotel-california/models/libs/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/sebastianblomberg/Documents/myworkspace/hotel-california/models
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

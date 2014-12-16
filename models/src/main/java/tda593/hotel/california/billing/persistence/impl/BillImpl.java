@@ -5,23 +5,22 @@ package tda593.hotel.california.billing.persistence.impl;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.hibernate.jpa.internal.EntityManagerFactoryImpl;
 
 import tda593.hotel.california.billing.persistence.Bill;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.PersistencePackage;
 import tda593.hotel.california.billing.persistence.PurchaseEntity;
-
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
@@ -64,6 +63,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @generated
 	 * @ordered
 	 */
+
+	@Id
 	protected int id = ID_EDEFAULT;
 
 	/**
