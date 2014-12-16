@@ -2,30 +2,31 @@
  */
 package tda593.hotel.california.facilities.persistence.impl;
 
+import javax.persistence.Entity;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tda593.hotel.california.facilities.persistence.GuestRoom;
+import tda593.hotel.california.facilities.persistence.GuestRoomEntity;
 import tda593.hotel.california.facilities.persistence.PersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Guest Room</b></em>'.
+ * An implementation of the model object '<em><b>Guest Room Entity</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomImpl#getNumberOfBeds <em>Number Of Beds</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomImpl#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl#getNumberOfBeds <em>Number Of Beds</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
+@Entity
+public class GuestRoomEntityImpl extends RoomEntityImpl implements GuestRoomEntity {
 	/**
 	 * The default value of the '{@link #getNumberOfBeds() <em>Number Of Beds</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,7 +72,7 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GuestRoomImpl() {
+	protected GuestRoomEntityImpl() {
 		super();
 	}
 
@@ -82,7 +83,7 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.GUEST_ROOM;
+		return PersistencePackage.Literals.GUEST_ROOM_ENTITY;
 	}
 
 	/**
@@ -103,7 +104,7 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 		int oldNumberOfBeds = numberOfBeds;
 		numberOfBeds = newNumberOfBeds;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.GUEST_ROOM__NUMBER_OF_BEDS, oldNumberOfBeds, numberOfBeds));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_BEDS, oldNumberOfBeds, numberOfBeds));
 	}
 
 	/**
@@ -124,7 +125,7 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 		int oldNumberOfExtrabeds = numberOfExtrabeds;
 		numberOfExtrabeds = newNumberOfExtrabeds;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS, oldNumberOfExtrabeds, numberOfExtrabeds));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS, oldNumberOfExtrabeds, numberOfExtrabeds));
 	}
 
 	/**
@@ -135,9 +136,9 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_BEDS:
 				return getNumberOfBeds();
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS:
 				return getNumberOfExtrabeds();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +152,10 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_BEDS:
 				setNumberOfBeds((Integer)newValue);
 				return;
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS:
 				setNumberOfExtrabeds((Integer)newValue);
 				return;
 		}
@@ -169,10 +170,10 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_BEDS:
 				setNumberOfBeds(NUMBER_OF_BEDS_EDEFAULT);
 				return;
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS:
 				setNumberOfExtrabeds(NUMBER_OF_EXTRABEDS_EDEFAULT);
 				return;
 		}
@@ -187,9 +188,9 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_BEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_BEDS:
 				return numberOfBeds != NUMBER_OF_BEDS_EDEFAULT;
-			case PersistencePackage.GUEST_ROOM__NUMBER_OF_EXTRABEDS:
+			case PersistencePackage.GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS:
 				return numberOfExtrabeds != NUMBER_OF_EXTRABEDS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -213,4 +214,4 @@ public class GuestRoomImpl extends RoomEntityImpl implements GuestRoom {
 		return result.toString();
 	}
 
-} //GuestRoomImpl
+} //GuestRoomEntityImpl

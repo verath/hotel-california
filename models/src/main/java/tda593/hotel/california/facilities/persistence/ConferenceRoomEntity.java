@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Conference Room</b></em>'.
+ * A representation of the model object '<em><b>Conference Room Entity</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.facilities.persistence.ConferenceRoom#getNumberOfSeats <em>Number Of Seats</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.persistence.ConferenceRoom#getEquipment <em>Equipment</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getNumberOfSeats <em>Number Of Seats</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getEquipment <em>Equipment</em>}</li>
  * </ul>
  * </p>
  *
- * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getConferenceRoom()
+ * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getConferenceRoomEntity()
  * @model
  * @generated
  */
-public interface ConferenceRoom extends RoomEntity {
+public interface ConferenceRoomEntity extends RoomEntity {
 	/**
 	 * Returns the value of the '<em><b>Number Of Seats</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface ConferenceRoom extends RoomEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number Of Seats</em>' attribute.
 	 * @see #setNumberOfSeats(int)
-	 * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getConferenceRoom_NumberOfSeats()
+	 * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getConferenceRoomEntity_NumberOfSeats()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getNumberOfSeats();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.facilities.persistence.ConferenceRoom#getNumberOfSeats <em>Number Of Seats</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getNumberOfSeats <em>Number Of Seats</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Number Of Seats</em>' attribute.
@@ -58,10 +58,10 @@ public interface ConferenceRoom extends RoomEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Equipment</em>' attribute list.
-	 * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getConferenceRoom_Equipment()
+	 * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getConferenceRoomEntity_Equipment()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getEquipment();
 
-} // ConferenceRoom
+} // ConferenceRoomEntity

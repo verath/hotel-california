@@ -194,7 +194,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="roomApprovals"
-                ordered="false" lowerBound="1" eType="#//hotel/california/facilities/persistence/RoomApprovalEntity"/>
+                ordered="false" lowerBound="2" upperBound="2" eType="#//hotel/california/facilities/persistence/RoomApprovalEntity"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="RoomApprovalEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
@@ -208,7 +208,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="ConferenceRoom" eSuperTypes="#//hotel/california/facilities/persistence/RoomEntity">
+          <eClassifiers xsi:type="ecore:EClass" name="ConferenceRoomEntity" eSuperTypes="#//hotel/california/facilities/persistence/RoomEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfSeats"
                 ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="equipment" ordered="false"
@@ -234,7 +234,7 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="disabilityApprovals"
                 ordered="false" upperBound="-1" eType="#//hotel/california/facilities/persistence/DisabilityApprovalEntity"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="GuestRoom" eSuperTypes="#//hotel/california/facilities/persistence/RoomEntity">
+          <eClassifiers xsi:type="ecore:EClass" name="GuestRoomEntity" eSuperTypes="#//hotel/california/facilities/persistence/RoomEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfBeds" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfExtrabeds"

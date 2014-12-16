@@ -58,13 +58,13 @@ public interface PersistenceFactory extends EFactory {
 	DisabilityApprovalEntity createDisabilityApprovalEntity();
 
 	/**
-	 * Returns a new object of class '<em>Conference Room</em>'.
+	 * Returns a new object of class '<em>Conference Room Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conference Room</em>'.
+	 * @return a new object of class '<em>Conference Room Entity</em>'.
 	 * @generated
 	 */
-	ConferenceRoom createConferenceRoom();
+	ConferenceRoomEntity createConferenceRoomEntity();
 
 	/**
 	 * Returns a new object of class '<em>Room Entity</em>'.
@@ -76,13 +76,13 @@ public interface PersistenceFactory extends EFactory {
 	RoomEntity createRoomEntity();
 
 	/**
-	 * Returns a new object of class '<em>Guest Room</em>'.
+	 * Returns a new object of class '<em>Guest Room Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Guest Room</em>'.
+	 * @return a new object of class '<em>Guest Room Entity</em>'.
 	 * @generated
 	 */
-	GuestRoom createGuestRoom();
+	GuestRoomEntity createGuestRoomEntity();
 
 	/**
 	 * Returns the package supported by this factory.

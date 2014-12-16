@@ -2,10 +2,12 @@
  */
 package tda593.hotel.california.facilities.persistence.impl;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -26,6 +28,7 @@ import tda593.hotel.california.facilities.persistence.RoomApprovalEntity;
  *
  * @generated
  */
+@Entity
 public class RoomApprovalEntityImpl extends MinimalEObjectImpl.Container implements RoomApprovalEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -45,6 +48,8 @@ public class RoomApprovalEntityImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
+	@Id
+	@GeneratedValue
 	protected int id = ID_EDEFAULT;
 
 	/**

@@ -3461,7 +3461,7 @@
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XQ8dT4RxEeSPhYI_rVU2Ew"/>
                       </children>
                       <element xmi:type="uml:Class" href="tda593.uml#_W1LHQIRxEeSPhYI_rVU2Ew"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XQ72MYRxEeSPhYI_rVU2Ew" x="21" y="278" height="119"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XQ72MYRxEeSPhYI_rVU2Ew" x="21" y="278"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_b91NsIRyEeSPhYI_rVU2Ew" type="3010">
                       <children xmi:type="notation:DecorationNode" xmi:id="_b910wIRyEeSPhYI_rVU2Ew" type="5014"/>

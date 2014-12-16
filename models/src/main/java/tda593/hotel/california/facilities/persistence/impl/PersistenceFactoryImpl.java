@@ -60,9 +60,9 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 			case PersistencePackage.ROOM_TYPE_ENTITY: return createRoomTypeEntity();
 			case PersistencePackage.ROOM_APPROVAL_ENTITY: return createRoomApprovalEntity();
 			case PersistencePackage.DISABILITY_APPROVAL_ENTITY: return createDisabilityApprovalEntity();
-			case PersistencePackage.CONFERENCE_ROOM: return createConferenceRoom();
+			case PersistencePackage.CONFERENCE_ROOM_ENTITY: return createConferenceRoomEntity();
 			case PersistencePackage.ROOM_ENTITY: return createRoomEntity();
-			case PersistencePackage.GUEST_ROOM: return createGuestRoom();
+			case PersistencePackage.GUEST_ROOM_ENTITY: return createGuestRoomEntity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -113,9 +113,9 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConferenceRoom createConferenceRoom() {
-		ConferenceRoomImpl conferenceRoom = new ConferenceRoomImpl();
-		return conferenceRoom;
+	public ConferenceRoomEntity createConferenceRoomEntity() {
+		ConferenceRoomEntityImpl conferenceRoomEntity = new ConferenceRoomEntityImpl();
+		return conferenceRoomEntity;
 	}
 
 	/**
@@ -133,9 +133,9 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GuestRoom createGuestRoom() {
-		GuestRoomImpl guestRoom = new GuestRoomImpl();
-		return guestRoom;
+	public GuestRoomEntity createGuestRoomEntity() {
+		GuestRoomEntityImpl guestRoomEntity = new GuestRoomEntityImpl();
+		return guestRoomEntity;
 	}
 
 	/**

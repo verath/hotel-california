@@ -413,8 +413,8 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_xP7e4IRdEeSPhYI_rVU2Ew" name="roomApprovals" visibility="private" type="_XPz20IRbEeSPhYI_rVU2Ew" association="_xP8tAIRdEeSPhYI_rVU2Ew">
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xP7e4YRdEeSPhYI_rVU2Ew" value="1"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xP7e4oRdEeSPhYI_rVU2Ew" value="1"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xP7e4YRdEeSPhYI_rVU2Ew" value="2"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xP7e4oRdEeSPhYI_rVU2Ew" value="2"/>
               </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_XPz20IRbEeSPhYI_rVU2Ew" name="RoomApprovalEntity">
@@ -437,7 +437,7 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zudMRIRcEeSPhYI_rVU2Ew" value="1"/>
               </ownedAttribute>
             </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="_8yVAgIRcEeSPhYI_rVU2Ew" name="ConferenceRoom">
+            <packagedElement xmi:type="uml:Class" xmi:id="_8yVAgIRcEeSPhYI_rVU2Ew" name="ConferenceRoomEntity">
               <generalization xmi:type="uml:Generalization" xmi:id="_5S7E8IRdEeSPhYI_rVU2Ew" general="_8yVnkIRcEeSPhYI_rVU2Ew"/>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_8yVAgoRcEeSPhYI_rVU2Ew" name="numberOfSeats" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
@@ -482,7 +482,7 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tD5jUoRdEeSPhYI_rVU2Ew" value="*"/>
               </ownedAttribute>
             </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="_8yW1sIRcEeSPhYI_rVU2Ew" name="GuestRoom">
+            <packagedElement xmi:type="uml:Class" xmi:id="_8yW1sIRcEeSPhYI_rVU2Ew" name="GuestRoomEntity">
               <generalization xmi:type="uml:Generalization" xmi:id="_-Uh9oIRdEeSPhYI_rVU2Ew" general="_8yVnkIRcEeSPhYI_rVU2Ew"/>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_8yW1soRcEeSPhYI_rVU2Ew" name="numberOfBeds" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
@@ -512,7 +512,6 @@
               </ownedEnd>
             </packagedElement>
             <packagedElement xmi:type="uml:Association" xmi:id="_xP8tAIRdEeSPhYI_rVU2Ew" memberEnd="_xP8tAYRdEeSPhYI_rVU2Ew _xP7e4IRdEeSPhYI_rVU2Ew">
-              <name xsi:nil="true"/>
               <ownedEnd xmi:type="uml:Property" xmi:id="_xP8tAYRdEeSPhYI_rVU2Ew" name="roomTypeEntity" type="_IXIIIIRXEeSPhYI_rVU2Ew" association="_xP8tAIRdEeSPhYI_rVU2Ew">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xP8tAoRdEeSPhYI_rVU2Ew" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xP8tA4RdEeSPhYI_rVU2Ew" value="1"/>

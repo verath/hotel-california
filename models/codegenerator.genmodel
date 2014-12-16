@@ -179,9 +179,9 @@
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/DisabilityApprovalEntity/id"/>
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/DisabilityApprovalEntity/name"/>
             </genClasses>
-            <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/persistence/ConferenceRoom">
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/ConferenceRoom/numberOfSeats"/>
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/ConferenceRoom/equipment"/>
+            <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/persistence/ConferenceRoomEntity">
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/ConferenceRoomEntity/numberOfSeats"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/ConferenceRoomEntity/equipment"/>
             </genClasses>
             <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/persistence/RoomEntity">
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/RoomEntity/floor"/>
@@ -197,9 +197,9 @@
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                   propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/facilities/persistence/RoomEntity/disabilityApprovals"/>
             </genClasses>
-            <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/persistence/GuestRoom">
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/GuestRoom/numberOfBeds"/>
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/GuestRoom/numberOfExtrabeds"/>
+            <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/persistence/GuestRoomEntity">
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/GuestRoomEntity/numberOfBeds"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/facilities/persistence/GuestRoomEntity/numberOfExtrabeds"/>
             </genClasses>
           </nestedGenPackages>
         </nestedGenPackages>

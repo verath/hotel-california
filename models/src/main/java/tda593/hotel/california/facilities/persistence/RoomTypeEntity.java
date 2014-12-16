@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california.facilities.persistence;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -103,29 +104,19 @@ public interface RoomTypeEntity extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Room Approvals</b></em>' reference.
+	 * Returns the value of the '<em><b>Room Approvals</b></em>' reference list.
+	 * The list contents are of type {@link tda593.hotel.california.facilities.persistence.RoomApprovalEntity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Room Approvals</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Approvals</em>' reference.
-	 * @see #setRoomApprovals(RoomApprovalEntity)
+	 * @return the value of the '<em>Room Approvals</em>' reference list.
 	 * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getRoomTypeEntity_RoomApprovals()
-	 * @model required="true" ordered="false"
+	 * @model lower="2" upper="2" ordered="false"
 	 * @generated
 	 */
-	RoomApprovalEntity getRoomApprovals();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.facilities.persistence.RoomTypeEntity#getRoomApprovals <em>Room Approvals</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room Approvals</em>' reference.
-	 * @see #getRoomApprovals()
-	 * @generated
-	 */
-	void setRoomApprovals(RoomApprovalEntity value);
+	EList<RoomApprovalEntity> getRoomApprovals();
 
 } // RoomTypeEntity

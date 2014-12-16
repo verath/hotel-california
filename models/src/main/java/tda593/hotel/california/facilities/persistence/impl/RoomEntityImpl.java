@@ -4,16 +4,19 @@ package tda593.hotel.california.facilities.persistence.impl;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -44,6 +47,8 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
  *
  * @generated
  */
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class RoomEntityImpl extends MinimalEObjectImpl.Container implements RoomEntity {
 	/**
 	 * The default value of the '{@link #getFloor() <em>Floor</em>}' attribute.
@@ -83,6 +88,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * @generated
 	 * @ordered
 	 */
+	@Id
 	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
 
 	/**
@@ -163,6 +169,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne(targetEntity = RoomTypeEntityImpl.class)
 	protected RoomTypeEntity roomTypeEntity;
 
 	/**
@@ -173,6 +180,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * @generated
 	 * @ordered
 	 */
+	@OneToMany(targetEntity = KeyCardEntityImpl.class)
 	protected EList<KeyCardEntity> allowedKeyCards;
 
 	/**
@@ -183,6 +191,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * @generated
 	 * @ordered
 	 */
+	@OneToMany(targetEntity = DisabilityApprovalEntityImpl.class)
 	protected EList<DisabilityApprovalEntity> disabilityApprovals;
 
 	/**

@@ -131,7 +131,7 @@ public interface PersistencePackage extends EPackage {
 	int ROOM_TYPE_ENTITY__NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Room Approvals</b></em>' reference.
+	 * The feature id for the '<em><b>Room Approvals</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -359,14 +359,14 @@ public interface PersistencePackage extends EPackage {
 	int ROOM_ENTITY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.facilities.persistence.impl.ConferenceRoomImpl <em>Conference Room</em>}' class.
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.persistence.impl.ConferenceRoomEntityImpl <em>Conference Room Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.facilities.persistence.impl.ConferenceRoomImpl
-	 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getConferenceRoom()
+	 * @see tda593.hotel.california.facilities.persistence.impl.ConferenceRoomEntityImpl
+	 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getConferenceRoomEntity()
 	 * @generated
 	 */
-	int CONFERENCE_ROOM = 4;
+	int CONFERENCE_ROOM_ENTITY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Floor</b></em>' attribute.
@@ -375,7 +375,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__FLOOR = ROOM_ENTITY__FLOOR;
+	int CONFERENCE_ROOM_ENTITY__FLOOR = ROOM_ENTITY__FLOOR;
 
 	/**
 	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
@@ -384,7 +384,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__ROOM_NUMBER = ROOM_ENTITY__ROOM_NUMBER;
+	int CONFERENCE_ROOM_ENTITY__ROOM_NUMBER = ROOM_ENTITY__ROOM_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
@@ -393,7 +393,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__IS_OPERATIONAL = ROOM_ENTITY__IS_OPERATIONAL;
+	int CONFERENCE_ROOM_ENTITY__IS_OPERATIONAL = ROOM_ENTITY__IS_OPERATIONAL;
 
 	/**
 	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
@@ -402,7 +402,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__IS_CLEANED = ROOM_ENTITY__IS_CLEANED;
+	int CONFERENCE_ROOM_ENTITY__IS_CLEANED = ROOM_ENTITY__IS_CLEANED;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -411,7 +411,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__DESCRIPTION = ROOM_ENTITY__DESCRIPTION;
+	int CONFERENCE_ROOM_ENTITY__DESCRIPTION = ROOM_ENTITY__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
@@ -420,7 +420,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__PHOTOS = ROOM_ENTITY__PHOTOS;
+	int CONFERENCE_ROOM_ENTITY__PHOTOS = ROOM_ENTITY__PHOTOS;
 
 	/**
 	 * The feature id for the '<em><b>Room Type Entity</b></em>' reference.
@@ -429,7 +429,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__ROOM_TYPE_ENTITY = ROOM_ENTITY__ROOM_TYPE_ENTITY;
+	int CONFERENCE_ROOM_ENTITY__ROOM_TYPE_ENTITY = ROOM_ENTITY__ROOM_TYPE_ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
@@ -438,7 +438,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__ALLOWED_KEY_CARDS = ROOM_ENTITY__ALLOWED_KEY_CARDS;
+	int CONFERENCE_ROOM_ENTITY__ALLOWED_KEY_CARDS = ROOM_ENTITY__ALLOWED_KEY_CARDS;
 
 	/**
 	 * The feature id for the '<em><b>Disability Approvals</b></em>' reference list.
@@ -447,7 +447,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__DISABILITY_APPROVALS = ROOM_ENTITY__DISABILITY_APPROVALS;
+	int CONFERENCE_ROOM_ENTITY__DISABILITY_APPROVALS = ROOM_ENTITY__DISABILITY_APPROVALS;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Seats</b></em>' attribute.
@@ -456,7 +456,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__NUMBER_OF_SEATS = ROOM_ENTITY_FEATURE_COUNT + 0;
+	int CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS = ROOM_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Equipment</b></em>' attribute list.
@@ -465,35 +465,35 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__EQUIPMENT = ROOM_ENTITY_FEATURE_COUNT + 1;
+	int CONFERENCE_ROOM_ENTITY__EQUIPMENT = ROOM_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Conference Room</em>' class.
+	 * The number of structural features of the '<em>Conference Room Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM_FEATURE_COUNT = ROOM_ENTITY_FEATURE_COUNT + 2;
+	int CONFERENCE_ROOM_ENTITY_FEATURE_COUNT = ROOM_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Conference Room</em>' class.
+	 * The number of operations of the '<em>Conference Room Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM_OPERATION_COUNT = ROOM_ENTITY_OPERATION_COUNT + 0;
+	int CONFERENCE_ROOM_ENTITY_OPERATION_COUNT = ROOM_ENTITY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomImpl <em>Guest Room</em>}' class.
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl <em>Guest Room Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.facilities.persistence.impl.GuestRoomImpl
-	 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getGuestRoom()
+	 * @see tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl
+	 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getGuestRoomEntity()
 	 * @generated
 	 */
-	int GUEST_ROOM = 6;
+	int GUEST_ROOM_ENTITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Floor</b></em>' attribute.
@@ -502,7 +502,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__FLOOR = ROOM_ENTITY__FLOOR;
+	int GUEST_ROOM_ENTITY__FLOOR = ROOM_ENTITY__FLOOR;
 
 	/**
 	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
@@ -511,7 +511,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__ROOM_NUMBER = ROOM_ENTITY__ROOM_NUMBER;
+	int GUEST_ROOM_ENTITY__ROOM_NUMBER = ROOM_ENTITY__ROOM_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
@@ -520,7 +520,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__IS_OPERATIONAL = ROOM_ENTITY__IS_OPERATIONAL;
+	int GUEST_ROOM_ENTITY__IS_OPERATIONAL = ROOM_ENTITY__IS_OPERATIONAL;
 
 	/**
 	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
@@ -529,7 +529,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__IS_CLEANED = ROOM_ENTITY__IS_CLEANED;
+	int GUEST_ROOM_ENTITY__IS_CLEANED = ROOM_ENTITY__IS_CLEANED;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -538,7 +538,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__DESCRIPTION = ROOM_ENTITY__DESCRIPTION;
+	int GUEST_ROOM_ENTITY__DESCRIPTION = ROOM_ENTITY__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
@@ -547,7 +547,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__PHOTOS = ROOM_ENTITY__PHOTOS;
+	int GUEST_ROOM_ENTITY__PHOTOS = ROOM_ENTITY__PHOTOS;
 
 	/**
 	 * The feature id for the '<em><b>Room Type Entity</b></em>' reference.
@@ -556,7 +556,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__ROOM_TYPE_ENTITY = ROOM_ENTITY__ROOM_TYPE_ENTITY;
+	int GUEST_ROOM_ENTITY__ROOM_TYPE_ENTITY = ROOM_ENTITY__ROOM_TYPE_ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
@@ -565,7 +565,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__ALLOWED_KEY_CARDS = ROOM_ENTITY__ALLOWED_KEY_CARDS;
+	int GUEST_ROOM_ENTITY__ALLOWED_KEY_CARDS = ROOM_ENTITY__ALLOWED_KEY_CARDS;
 
 	/**
 	 * The feature id for the '<em><b>Disability Approvals</b></em>' reference list.
@@ -574,7 +574,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__DISABILITY_APPROVALS = ROOM_ENTITY__DISABILITY_APPROVALS;
+	int GUEST_ROOM_ENTITY__DISABILITY_APPROVALS = ROOM_ENTITY__DISABILITY_APPROVALS;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Beds</b></em>' attribute.
@@ -583,7 +583,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__NUMBER_OF_BEDS = ROOM_ENTITY_FEATURE_COUNT + 0;
+	int GUEST_ROOM_ENTITY__NUMBER_OF_BEDS = ROOM_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Extrabeds</b></em>' attribute.
@@ -592,26 +592,25 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__NUMBER_OF_EXTRABEDS = ROOM_ENTITY_FEATURE_COUNT + 1;
+	int GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS = ROOM_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Guest Room</em>' class.
+	 * The number of structural features of the '<em>Guest Room Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM_FEATURE_COUNT = ROOM_ENTITY_FEATURE_COUNT + 2;
+	int GUEST_ROOM_ENTITY_FEATURE_COUNT = ROOM_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Guest Room</em>' class.
+	 * The number of operations of the '<em>Guest Room Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM_OPERATION_COUNT = ROOM_ENTITY_OPERATION_COUNT + 0;
-
+	int GUEST_ROOM_ENTITY_OPERATION_COUNT = ROOM_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.persistence.KeyCardEntity <em>Key Card Entity</em>}'.
@@ -678,10 +677,10 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getRoomTypeEntity_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.facilities.persistence.RoomTypeEntity#getRoomApprovals <em>Room Approvals</em>}'.
+	 * Returns the meta object for the reference list '{@link tda593.hotel.california.facilities.persistence.RoomTypeEntity#getRoomApprovals <em>Room Approvals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Approvals</em>'.
+	 * @return the meta object for the reference list '<em>Room Approvals</em>'.
 	 * @see tda593.hotel.california.facilities.persistence.RoomTypeEntity#getRoomApprovals()
 	 * @see #getRoomTypeEntity()
 	 * @generated
@@ -753,36 +752,36 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getDisabilityApprovalEntity_Name();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.persistence.ConferenceRoom <em>Conference Room</em>}'.
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity <em>Conference Room Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conference Room</em>'.
-	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoom
+	 * @return the meta object for class '<em>Conference Room Entity</em>'.
+	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoomEntity
 	 * @generated
 	 */
-	EClass getConferenceRoom();
+	EClass getConferenceRoomEntity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.persistence.ConferenceRoom#getNumberOfSeats <em>Number Of Seats</em>}'.
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getNumberOfSeats <em>Number Of Seats</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Number Of Seats</em>'.
-	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoom#getNumberOfSeats()
-	 * @see #getConferenceRoom()
+	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getNumberOfSeats()
+	 * @see #getConferenceRoomEntity()
 	 * @generated
 	 */
-	EAttribute getConferenceRoom_NumberOfSeats();
+	EAttribute getConferenceRoomEntity_NumberOfSeats();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.facilities.persistence.ConferenceRoom#getEquipment <em>Equipment</em>}'.
+	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getEquipment <em>Equipment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Equipment</em>'.
-	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoom#getEquipment()
-	 * @see #getConferenceRoom()
+	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoomEntity#getEquipment()
+	 * @see #getConferenceRoomEntity()
 	 * @generated
 	 */
-	EAttribute getConferenceRoom_Equipment();
+	EAttribute getConferenceRoomEntity_Equipment();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.persistence.RoomEntity <em>Room Entity</em>}'.
@@ -894,36 +893,36 @@ public interface PersistencePackage extends EPackage {
 	EReference getRoomEntity_DisabilityApprovals();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.persistence.GuestRoom <em>Guest Room</em>}'.
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.persistence.GuestRoomEntity <em>Guest Room Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Guest Room</em>'.
-	 * @see tda593.hotel.california.facilities.persistence.GuestRoom
+	 * @return the meta object for class '<em>Guest Room Entity</em>'.
+	 * @see tda593.hotel.california.facilities.persistence.GuestRoomEntity
 	 * @generated
 	 */
-	EClass getGuestRoom();
+	EClass getGuestRoomEntity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.persistence.GuestRoom#getNumberOfBeds <em>Number Of Beds</em>}'.
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.persistence.GuestRoomEntity#getNumberOfBeds <em>Number Of Beds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Number Of Beds</em>'.
-	 * @see tda593.hotel.california.facilities.persistence.GuestRoom#getNumberOfBeds()
-	 * @see #getGuestRoom()
+	 * @see tda593.hotel.california.facilities.persistence.GuestRoomEntity#getNumberOfBeds()
+	 * @see #getGuestRoomEntity()
 	 * @generated
 	 */
-	EAttribute getGuestRoom_NumberOfBeds();
+	EAttribute getGuestRoomEntity_NumberOfBeds();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.persistence.GuestRoom#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}'.
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.persistence.GuestRoomEntity#getNumberOfExtrabeds <em>Number Of Extrabeds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Number Of Extrabeds</em>'.
-	 * @see tda593.hotel.california.facilities.persistence.GuestRoom#getNumberOfExtrabeds()
-	 * @see #getGuestRoom()
+	 * @see tda593.hotel.california.facilities.persistence.GuestRoomEntity#getNumberOfExtrabeds()
+	 * @see #getGuestRoomEntity()
 	 * @generated
 	 */
-	EAttribute getGuestRoom_NumberOfExtrabeds();
+	EAttribute getGuestRoomEntity_NumberOfExtrabeds();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1001,7 +1000,7 @@ public interface PersistencePackage extends EPackage {
 		EAttribute ROOM_TYPE_ENTITY__NAME = eINSTANCE.getRoomTypeEntity_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Approvals</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Room Approvals</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1061,14 +1060,14 @@ public interface PersistencePackage extends EPackage {
 		EAttribute DISABILITY_APPROVAL_ENTITY__NAME = eINSTANCE.getDisabilityApprovalEntity_Name();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.facilities.persistence.impl.ConferenceRoomImpl <em>Conference Room</em>}' class.
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.persistence.impl.ConferenceRoomEntityImpl <em>Conference Room Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.facilities.persistence.impl.ConferenceRoomImpl
-		 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getConferenceRoom()
+		 * @see tda593.hotel.california.facilities.persistence.impl.ConferenceRoomEntityImpl
+		 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getConferenceRoomEntity()
 		 * @generated
 		 */
-		EClass CONFERENCE_ROOM = eINSTANCE.getConferenceRoom();
+		EClass CONFERENCE_ROOM_ENTITY = eINSTANCE.getConferenceRoomEntity();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Seats</b></em>' attribute feature.
@@ -1076,7 +1075,7 @@ public interface PersistencePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONFERENCE_ROOM__NUMBER_OF_SEATS = eINSTANCE.getConferenceRoom_NumberOfSeats();
+		EAttribute CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS = eINSTANCE.getConferenceRoomEntity_NumberOfSeats();
 
 		/**
 		 * The meta object literal for the '<em><b>Equipment</b></em>' attribute list feature.
@@ -1084,7 +1083,7 @@ public interface PersistencePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONFERENCE_ROOM__EQUIPMENT = eINSTANCE.getConferenceRoom_Equipment();
+		EAttribute CONFERENCE_ROOM_ENTITY__EQUIPMENT = eINSTANCE.getConferenceRoomEntity_Equipment();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl <em>Room Entity</em>}' class.
@@ -1169,14 +1168,14 @@ public interface PersistencePackage extends EPackage {
 		EReference ROOM_ENTITY__DISABILITY_APPROVALS = eINSTANCE.getRoomEntity_DisabilityApprovals();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomImpl <em>Guest Room</em>}' class.
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl <em>Guest Room Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.facilities.persistence.impl.GuestRoomImpl
-		 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getGuestRoom()
+		 * @see tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl
+		 * @see tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl#getGuestRoomEntity()
 		 * @generated
 		 */
-		EClass GUEST_ROOM = eINSTANCE.getGuestRoom();
+		EClass GUEST_ROOM_ENTITY = eINSTANCE.getGuestRoomEntity();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Beds</b></em>' attribute feature.
@@ -1184,7 +1183,7 @@ public interface PersistencePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUEST_ROOM__NUMBER_OF_BEDS = eINSTANCE.getGuestRoom_NumberOfBeds();
+		EAttribute GUEST_ROOM_ENTITY__NUMBER_OF_BEDS = eINSTANCE.getGuestRoomEntity_NumberOfBeds();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Extrabeds</b></em>' attribute feature.
@@ -1192,7 +1191,7 @@ public interface PersistencePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUEST_ROOM__NUMBER_OF_EXTRABEDS = eINSTANCE.getGuestRoom_NumberOfExtrabeds();
+		EAttribute GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS = eINSTANCE.getGuestRoomEntity_NumberOfExtrabeds();
 
 	}
 

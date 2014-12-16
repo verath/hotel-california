@@ -84,16 +84,16 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 				return createDisabilityApprovalEntityAdapter();
 			}
 			@Override
-			public Adapter caseConferenceRoom(ConferenceRoom object) {
-				return createConferenceRoomAdapter();
+			public Adapter caseConferenceRoomEntity(ConferenceRoomEntity object) {
+				return createConferenceRoomEntityAdapter();
 			}
 			@Override
 			public Adapter caseRoomEntity(RoomEntity object) {
 				return createRoomEntityAdapter();
 			}
 			@Override
-			public Adapter caseGuestRoom(GuestRoom object) {
-				return createGuestRoomAdapter();
+			public Adapter caseGuestRoomEntity(GuestRoomEntity object) {
+				return createGuestRoomEntityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -172,16 +172,16 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.facilities.persistence.ConferenceRoom <em>Conference Room</em>}'.
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.facilities.persistence.ConferenceRoomEntity <em>Conference Room Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoom
+	 * @see tda593.hotel.california.facilities.persistence.ConferenceRoomEntity
 	 * @generated
 	 */
-	public Adapter createConferenceRoomAdapter() {
+	public Adapter createConferenceRoomEntityAdapter() {
 		return null;
 	}
 
@@ -200,16 +200,16 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.facilities.persistence.GuestRoom <em>Guest Room</em>}'.
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.facilities.persistence.GuestRoomEntity <em>Guest Room Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tda593.hotel.california.facilities.persistence.GuestRoom
+	 * @see tda593.hotel.california.facilities.persistence.GuestRoomEntity
 	 * @generated
 	 */
-	public Adapter createGuestRoomAdapter() {
+	public Adapter createGuestRoomEntityAdapter() {
 		return null;
 	}
 

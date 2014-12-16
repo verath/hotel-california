@@ -6,33 +6,23 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import tda593.hotel.california.CaliforniaPackage;
-
 import tda593.hotel.california.billing.BillingPackage;
-
 import tda593.hotel.california.billing.impl.BillingPackageImpl;
-
 import tda593.hotel.california.booking.BookingPackage;
-
 import tda593.hotel.california.booking.impl.BookingPackageImpl;
-
 import tda593.hotel.california.facilities.FacilitiesPackage;
-
 import tda593.hotel.california.facilities.impl.FacilitiesPackageImpl;
-
-import tda593.hotel.california.facilities.persistence.ConferenceRoom;
+import tda593.hotel.california.facilities.persistence.ConferenceRoomEntity;
 import tda593.hotel.california.facilities.persistence.DisabilityApprovalEntity;
-import tda593.hotel.california.facilities.persistence.GuestRoom;
+import tda593.hotel.california.facilities.persistence.GuestRoomEntity;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
 import tda593.hotel.california.facilities.persistence.PersistenceFactory;
 import tda593.hotel.california.facilities.persistence.PersistencePackage;
 import tda593.hotel.california.facilities.persistence.RoomApprovalEntity;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
-
 import tda593.hotel.california.impl.CaliforniaPackageImpl;
 
 /**
@@ -75,7 +65,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass conferenceRoomEClass = null;
+	private EClass conferenceRoomEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +79,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass guestRoomEClass = null;
+	private EClass guestRoomEntityEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -294,8 +284,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConferenceRoom() {
-		return conferenceRoomEClass;
+	public EClass getConferenceRoomEntity() {
+		return conferenceRoomEntityEClass;
 	}
 
 	/**
@@ -303,8 +293,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConferenceRoom_NumberOfSeats() {
-		return (EAttribute)conferenceRoomEClass.getEStructuralFeatures().get(0);
+	public EAttribute getConferenceRoomEntity_NumberOfSeats() {
+		return (EAttribute)conferenceRoomEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -312,8 +302,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConferenceRoom_Equipment() {
-		return (EAttribute)conferenceRoomEClass.getEStructuralFeatures().get(1);
+	public EAttribute getConferenceRoomEntity_Equipment() {
+		return (EAttribute)conferenceRoomEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -411,8 +401,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGuestRoom() {
-		return guestRoomEClass;
+	public EClass getGuestRoomEntity() {
+		return guestRoomEntityEClass;
 	}
 
 	/**
@@ -420,8 +410,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuestRoom_NumberOfBeds() {
-		return (EAttribute)guestRoomEClass.getEStructuralFeatures().get(0);
+	public EAttribute getGuestRoomEntity_NumberOfBeds() {
+		return (EAttribute)guestRoomEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -429,8 +419,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuestRoom_NumberOfExtrabeds() {
-		return (EAttribute)guestRoomEClass.getEStructuralFeatures().get(1);
+	public EAttribute getGuestRoomEntity_NumberOfExtrabeds() {
+		return (EAttribute)guestRoomEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -478,9 +468,9 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(disabilityApprovalEntityEClass, DISABILITY_APPROVAL_ENTITY__ID);
 		createEAttribute(disabilityApprovalEntityEClass, DISABILITY_APPROVAL_ENTITY__NAME);
 
-		conferenceRoomEClass = createEClass(CONFERENCE_ROOM);
-		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__NUMBER_OF_SEATS);
-		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__EQUIPMENT);
+		conferenceRoomEntityEClass = createEClass(CONFERENCE_ROOM_ENTITY);
+		createEAttribute(conferenceRoomEntityEClass, CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS);
+		createEAttribute(conferenceRoomEntityEClass, CONFERENCE_ROOM_ENTITY__EQUIPMENT);
 
 		roomEntityEClass = createEClass(ROOM_ENTITY);
 		createEAttribute(roomEntityEClass, ROOM_ENTITY__FLOOR);
@@ -493,9 +483,9 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEReference(roomEntityEClass, ROOM_ENTITY__ALLOWED_KEY_CARDS);
 		createEReference(roomEntityEClass, ROOM_ENTITY__DISABILITY_APPROVALS);
 
-		guestRoomEClass = createEClass(GUEST_ROOM);
-		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_BEDS);
-		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
+		guestRoomEntityEClass = createEClass(GUEST_ROOM_ENTITY);
+		createEAttribute(guestRoomEntityEClass, GUEST_ROOM_ENTITY__NUMBER_OF_BEDS);
+		createEAttribute(guestRoomEntityEClass, GUEST_ROOM_ENTITY__NUMBER_OF_EXTRABEDS);
 	}
 
 	/**
@@ -526,8 +516,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		conferenceRoomEClass.getESuperTypes().add(this.getRoomEntity());
-		guestRoomEClass.getESuperTypes().add(this.getRoomEntity());
+		conferenceRoomEntityEClass.getESuperTypes().add(this.getRoomEntity());
+		guestRoomEntityEClass.getESuperTypes().add(this.getRoomEntity());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(keyCardEntityEClass, KeyCardEntity.class, "KeyCardEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -537,7 +527,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getRoomTypeEntity_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomTypeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomTypeEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomTypeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomTypeEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomTypeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoomTypeEntity_RoomApprovals(), this.getRoomApprovalEntity(), null, "roomApprovals", null, 1, 1, RoomTypeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomTypeEntity_RoomApprovals(), this.getRoomApprovalEntity(), null, "roomApprovals", null, 2, 2, RoomTypeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomApprovalEntityEClass, RoomApprovalEntity.class, "RoomApprovalEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomApprovalEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomApprovalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -547,9 +537,9 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getDisabilityApprovalEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, DisabilityApprovalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDisabilityApprovalEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, DisabilityApprovalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(conferenceRoomEClass, ConferenceRoom.class, "ConferenceRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConferenceRoom_NumberOfSeats(), ecorePackage.getEInt(), "numberOfSeats", null, 1, 1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConferenceRoom_Equipment(), ecorePackage.getEString(), "equipment", null, 0, -1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(conferenceRoomEntityEClass, ConferenceRoomEntity.class, "ConferenceRoomEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConferenceRoomEntity_NumberOfSeats(), ecorePackage.getEInt(), "numberOfSeats", null, 1, 1, ConferenceRoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConferenceRoomEntity_Equipment(), ecorePackage.getEString(), "equipment", null, 0, -1, ConferenceRoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomEntityEClass, RoomEntity.class, "RoomEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomEntity_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -562,9 +552,9 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEReference(getRoomEntity_AllowedKeyCards(), this.getKeyCardEntity(), null, "allowedKeyCards", null, 0, -1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomEntity_DisabilityApprovals(), this.getDisabilityApprovalEntity(), null, "disabilityApprovals", null, 0, -1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(guestRoomEClass, GuestRoom.class, "GuestRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGuestRoom_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(guestRoomEntityEClass, GuestRoomEntity.class, "GuestRoomEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGuestRoomEntity_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getGuestRoomEntity_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 } //PersistencePackageImpl

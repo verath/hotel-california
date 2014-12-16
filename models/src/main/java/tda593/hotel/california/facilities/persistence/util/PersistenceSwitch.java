@@ -90,10 +90,10 @@ public class PersistenceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PersistencePackage.CONFERENCE_ROOM: {
-				ConferenceRoom conferenceRoom = (ConferenceRoom)theEObject;
-				T result = caseConferenceRoom(conferenceRoom);
-				if (result == null) result = caseRoomEntity(conferenceRoom);
+			case PersistencePackage.CONFERENCE_ROOM_ENTITY: {
+				ConferenceRoomEntity conferenceRoomEntity = (ConferenceRoomEntity)theEObject;
+				T result = caseConferenceRoomEntity(conferenceRoomEntity);
+				if (result == null) result = caseRoomEntity(conferenceRoomEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -103,10 +103,10 @@ public class PersistenceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PersistencePackage.GUEST_ROOM: {
-				GuestRoom guestRoom = (GuestRoom)theEObject;
-				T result = caseGuestRoom(guestRoom);
-				if (result == null) result = caseRoomEntity(guestRoom);
+			case PersistencePackage.GUEST_ROOM_ENTITY: {
+				GuestRoomEntity guestRoomEntity = (GuestRoomEntity)theEObject;
+				T result = caseGuestRoomEntity(guestRoomEntity);
+				if (result == null) result = caseRoomEntity(guestRoomEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -175,17 +175,17 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Conference Room</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Conference Room Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Conference Room</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Conference Room Entity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConferenceRoom(ConferenceRoom object) {
+	public T caseConferenceRoomEntity(ConferenceRoomEntity object) {
 		return null;
 	}
 
@@ -205,17 +205,17 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Guest Room</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Guest Room Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Guest Room</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Guest Room Entity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGuestRoom(GuestRoom object) {
+	public T caseGuestRoomEntity(GuestRoomEntity object) {
 		return null;
 	}
 

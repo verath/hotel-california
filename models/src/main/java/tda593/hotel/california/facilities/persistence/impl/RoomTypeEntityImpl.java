@@ -2,13 +2,19 @@
  */
 package tda593.hotel.california.facilities.persistence.impl;
 
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import tda593.hotel.california.facilities.persistence.PersistencePackage;
 import tda593.hotel.california.facilities.persistence.RoomApprovalEntity;
@@ -30,6 +36,7 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
  *
  * @generated
  */
+@Entity
 public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements RoomTypeEntity {
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -69,6 +76,8 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
+	@Id
+	@GeneratedValue
 	protected int id = ID_EDEFAULT;
 
 	/**
@@ -92,14 +101,15 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoomApprovals() <em>Room Approvals</em>}' reference.
+	 * The cached value of the '{@link #getRoomApprovals() <em>Room Approvals</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomApprovals()
 	 * @generated
 	 * @ordered
 	 */
-	protected RoomApprovalEntity roomApprovals;
+	@OneToMany(targetEntity = RoomApprovalEntityImpl.class)
+	protected EList<RoomApprovalEntity> roomApprovals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,37 +198,11 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomApprovalEntity getRoomApprovals() {
-		if (roomApprovals != null && roomApprovals.eIsProxy()) {
-			InternalEObject oldRoomApprovals = (InternalEObject)roomApprovals;
-			roomApprovals = (RoomApprovalEntity)eResolveProxy(oldRoomApprovals);
-			if (roomApprovals != oldRoomApprovals) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS, oldRoomApprovals, roomApprovals));
-			}
+	public EList<RoomApprovalEntity> getRoomApprovals() {
+		if (roomApprovals == null) {
+			roomApprovals = new EObjectResolvingEList<RoomApprovalEntity>(RoomApprovalEntity.class, this, PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS);
 		}
 		return roomApprovals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomApprovalEntity basicGetRoomApprovals() {
-		return roomApprovals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoomApprovals(RoomApprovalEntity newRoomApprovals) {
-		RoomApprovalEntity oldRoomApprovals = roomApprovals;
-		roomApprovals = newRoomApprovals;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS, oldRoomApprovals, roomApprovals));
 	}
 
 	/**
@@ -236,8 +220,7 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 			case PersistencePackage.ROOM_TYPE_ENTITY__NAME:
 				return getName();
 			case PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS:
-				if (resolve) return getRoomApprovals();
-				return basicGetRoomApprovals();
+				return getRoomApprovals();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,6 +230,7 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -260,7 +244,8 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 				setName((String)newValue);
 				return;
 			case PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS:
-				setRoomApprovals((RoomApprovalEntity)newValue);
+				getRoomApprovals().clear();
+				getRoomApprovals().addAll((Collection<? extends RoomApprovalEntity>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,7 +269,7 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 				setName(NAME_EDEFAULT);
 				return;
 			case PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS:
-				setRoomApprovals((RoomApprovalEntity)null);
+				getRoomApprovals().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,7 +290,7 @@ public class RoomTypeEntityImpl extends MinimalEObjectImpl.Container implements 
 			case PersistencePackage.ROOM_TYPE_ENTITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PersistencePackage.ROOM_TYPE_ENTITY__ROOM_APPROVALS:
-				return roomApprovals != null;
+				return roomApprovals != null && !roomApprovals.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
