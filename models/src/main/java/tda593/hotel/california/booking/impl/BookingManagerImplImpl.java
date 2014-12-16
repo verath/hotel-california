@@ -270,12 +270,16 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void createBooking(Date from, Date to, LegalEntity customer, RoomType RoomType) {
-		// TODO: needs service implementations first
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
+		Booking booking = new BookingImpl();
+		booking.setStartDate(from);
+		booking.setEndDate(to);
+		booking.setResponsible(customer);
+		booking.setRoomType(roomType);
+		
+		bookingDataService.set(booking);
 	}
 
 	/**
@@ -284,9 +288,13 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
-		// TODO: needs service implementations first
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Booking booking = new BookingImpl();
+		booking.setStartDate(from);
+		booking.setEndDate(to);
+		booking.setResponsible(customer);
+		booking.setRoomType(room.getRoomType());
+		
+		bookingDataService.set(booking);
 	}
 
 	/**
@@ -309,12 +317,18 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void registerRoom(Booking booking, Room room) {
-		// TODO: needs service implementations first
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		RoomStay roomStay = booking.getRoomStay();
+		
+		if(roomStay == null) {
+			roomStay = new RoomStayImpl();
+		}
+		
+		roomStay.setRoom(room);
+		
+		bookingDataService.set(booking);
 	}
 
 	/**
