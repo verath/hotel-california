@@ -25,6 +25,8 @@ import tda593.hotel.california.booking.impl.BookingPackageImpl;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 
 import tda593.hotel.california.facilities.impl.FacilitiesPackageImpl;
+import tda593.hotel.california.facilities.persistence.PersistencePackage;
+import tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,20 +90,29 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 
 		// Obtain or create and register interdependencies
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) : FacilitiesPackage.eINSTANCE);
+		PersistencePackageImpl thePersistencePackage = (PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) instanceof PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) : PersistencePackage.eINSTANCE);
 		BillingPackageImpl theBillingPackage = (BillingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) instanceof BillingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) : BillingPackage.eINSTANCE);
+		tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl thePersistencePackage_1 = (tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.billing.persistence.PersistencePackage.eNS_URI) instanceof tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.billing.persistence.PersistencePackage.eNS_URI) : tda593.hotel.california.billing.persistence.PersistencePackage.eINSTANCE);
 		BookingPackageImpl theBookingPackage = (BookingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) instanceof BookingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BookingPackage.eNS_URI) : BookingPackage.eINSTANCE);
+		tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl thePersistencePackage_2 = (tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI) instanceof tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI) : tda593.hotel.california.booking.persistence.PersistencePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCaliforniaPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
+		thePersistencePackage.createPackageContents();
 		theBillingPackage.createPackageContents();
+		thePersistencePackage_1.createPackageContents();
 		theBookingPackage.createPackageContents();
+		thePersistencePackage_2.createPackageContents();
 
 		// Initialize created meta-data
 		theCaliforniaPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
+		thePersistencePackage.initializePackageContents();
 		theBillingPackage.initializePackageContents();
+		thePersistencePackage_1.initializePackageContents();
 		theBookingPackage.initializePackageContents();
+		thePersistencePackage_2.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCaliforniaPackage.freeze();

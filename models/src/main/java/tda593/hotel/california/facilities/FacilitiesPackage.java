@@ -272,13 +272,31 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = 6;
 
 	/**
+	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS = 7;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT = 8;
+
+	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_OPERATION_COUNT = 7;
+	int ROOM_MANAGER_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.AdminRoomManager <em>Admin Room Manager</em>}' class.
@@ -361,6 +379,24 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADMIN_ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -688,6 +724,24 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__ROOM = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNTS = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT;
 
 	/**
 	 * The number of operations of the '<em>Room Manager Impl</em>' class.
@@ -1189,6 +1243,152 @@ public interface FacilitiesPackage extends EPackage {
 	int GUEST_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl <em>Key Card Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getKeyCardManagerImpl()
+	 * @generated
+	 */
+	int KEY_CARD_MANAGER_IMPL = 12;
+
+	/**
+	 * The feature id for the '<em><b>Key Card</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_IMPL__KEY_CARD = KEY_CARD_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Key Card Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE = KEY_CARD_MANAGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Key Card Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_IMPL_FEATURE_COUNT = KEY_CARD_MANAGER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_IMPL___GET_KEY_CARD__STRING = KEY_CARD_MANAGER___GET_KEY_CARD__STRING;
+
+	/**
+	 * The number of operations of the '<em>Key Card Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_MANAGER_IMPL_OPERATION_COUNT = KEY_CARD_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.KeyCardDataServiceImpl <em>Key Card Data Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.facilities.impl.KeyCardDataServiceImpl
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getKeyCardDataService()
+	 * @generated
+	 */
+	int KEY_CARD_DATA_SERVICE = 13;
+
+	/**
+	 * The number of structural features of the '<em>Key Card Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE_FEATURE_COUNT = CaliforniaPackage.DATA_SERVICE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___GET__OBJECT = CaliforniaPackage.DATA_SERVICE___GET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___GET_ALL = CaliforniaPackage.DATA_SERVICE___GET_ALL;
+
+	/**
+	 * The operation id for the '<em>Count</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___COUNT = CaliforniaPackage.DATA_SERVICE___COUNT;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___SET__OBJECT = CaliforniaPackage.DATA_SERVICE___SET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Set All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___SET_ALL__ELIST = CaliforniaPackage.DATA_SERVICE___SET_ALL__ELIST;
+
+	/**
+	 * The operation id for the '<em>Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___DELETE__OBJECT = CaliforniaPackage.DATA_SERVICE___DELETE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Exist</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>Key Card Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_CARD_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1196,7 +1396,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
 	 * @generated
 	 */
-	int ROOM_APPROVAL = 12;
+	int ROOM_APPROVAL = 14;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.DisabilityApproval <em>Disability Approval</em>}' enum.
@@ -1206,7 +1406,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getDisabilityApproval()
 	 * @generated
 	 */
-	int DISABILITY_APPROVAL = 13;
+	int DISABILITY_APPROVAL = 15;
 
 
 	/**
@@ -1389,6 +1589,26 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoomManager__UnregisterAllKeyCards__Room();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoomTypeAmounts() <em>Get Room Type Amounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Room Type Amounts</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#getRoomTypeAmounts()
+	 * @generated
+	 */
+	EOperation getRoomManager__GetRoomTypeAmounts();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoomTypeAmount() <em>Get Room Type Amount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Room Type Amount</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#getRoomTypeAmount()
+	 * @generated
+	 */
+	EOperation getRoomManager__GetRoomTypeAmount();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
@@ -1700,6 +1920,48 @@ public interface FacilitiesPackage extends EPackage {
 	EAttribute getGuestRoom_NumberOfExtrabeds();
 
 	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.KeyCardManagerImpl <em>Key Card Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Key Card Manager Impl</em>'.
+	 * @see tda593.hotel.california.facilities.KeyCardManagerImpl
+	 * @generated
+	 */
+	EClass getKeyCardManagerImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCard <em>Key Card</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Key Card</em>'.
+	 * @see tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCard()
+	 * @see #getKeyCardManagerImpl()
+	 * @generated
+	 */
+	EReference getKeyCardManagerImpl_KeyCard();
+
+	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCardDataService <em>Key Card Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key Card Data Service</em>'.
+	 * @see tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCardDataService()
+	 * @see #getKeyCardManagerImpl()
+	 * @generated
+	 */
+	EReference getKeyCardManagerImpl_KeyCardDataService();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.KeyCardDataService <em>Key Card Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Key Card Data Service</em>'.
+	 * @see tda593.hotel.california.facilities.KeyCardDataService
+	 * @generated
+	 */
+	EClass getKeyCardDataService();
+
+	/**
 	 * Returns the meta object for enum '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1895,6 +2157,22 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = eINSTANCE.getRoomManager__UnregisterAllKeyCards__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Room Type Amounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS = eINSTANCE.getRoomManager__GetRoomTypeAmounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Room Type Amount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT = eINSTANCE.getRoomManager__GetRoomTypeAmount();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
@@ -2141,6 +2419,42 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GUEST_ROOM__NUMBER_OF_EXTRABEDS = eINSTANCE.getGuestRoom_NumberOfExtrabeds();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl <em>Key Card Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl
+		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getKeyCardManagerImpl()
+		 * @generated
+		 */
+		EClass KEY_CARD_MANAGER_IMPL = eINSTANCE.getKeyCardManagerImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Key Card</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KEY_CARD_MANAGER_IMPL__KEY_CARD = eINSTANCE.getKeyCardManagerImpl_KeyCard();
+
+		/**
+		 * The meta object literal for the '<em><b>Key Card Data Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE = eINSTANCE.getKeyCardManagerImpl_KeyCardDataService();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.KeyCardDataServiceImpl <em>Key Card Data Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.facilities.impl.KeyCardDataServiceImpl
+		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getKeyCardDataService()
+		 * @generated
+		 */
+		EClass KEY_CARD_DATA_SERVICE = eINSTANCE.getKeyCardDataService();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.

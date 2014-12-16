@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california.facilities;
 
+import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -72,5 +73,21 @@ public interface RoomManager extends EObject {
 	 * @generated
 	 */
 	void unregisterAllKeyCards(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Map<RoomType, Integer> getRoomTypeAmounts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	int getRoomTypeAmount();
 
 } // RoomManager

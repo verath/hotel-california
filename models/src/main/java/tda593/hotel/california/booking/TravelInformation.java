@@ -128,12 +128,4 @@ public interface TravelInformation extends EObject {
 	 */
 	void setPredecessor(TravelInformation value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model travelInfomationRequired="true" travelInfomationOrdered="false"
-	 * @generated
-	 */
-	void addPredecessor(TravelInformation travelInfomation);
-
 } // TravelInformation

@@ -37,11 +37,11 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getId <em>Id</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getDate <em>Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#isPublished <em>Is Published</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getPurchase <em>Purchase</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCreditCardInformation <em>Credit Card Information</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getUsedDiscounts <em>Used Discounts</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,16 +109,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	protected boolean isPublished = IS_PUBLISHED_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomer()
-	 * @generated
-	 * @ordered
-	 */
-	protected LegalEntity customer;
-
-	/**
 	 * The default value of the '{@link #isPaid() <em>Is Paid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,6 +157,16 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected EList<Discount> usedDiscounts;
+
+	/**
+	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomer()
+	 * @generated
+	 * @ordered
+	 */
+	protected LegalEntity customer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -429,9 +429,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return getDate();
 			case BillingPackage.BILL__IS_PUBLISHED:
 				return isPublished();
-			case BillingPackage.BILL__CUSTOMER:
-				if (resolve) return getCustomer();
-				return basicGetCustomer();
 			case BillingPackage.BILL__IS_PAID:
 				return isPaid();
 			case BillingPackage.BILL__PURCHASE:
@@ -441,6 +438,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return basicGetCreditCardInformation();
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				return getUsedDiscounts();
+			case BillingPackage.BILL__CUSTOMER:
+				if (resolve) return getCustomer();
+				return basicGetCustomer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -463,9 +463,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__IS_PUBLISHED:
 				setIsPublished((Boolean)newValue);
 				return;
-			case BillingPackage.BILL__CUSTOMER:
-				setCustomer((LegalEntity)newValue);
-				return;
 			case BillingPackage.BILL__IS_PAID:
 				setIsPaid((Boolean)newValue);
 				return;
@@ -479,6 +476,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
 				getUsedDiscounts().addAll((Collection<? extends Discount>)newValue);
+				return;
+			case BillingPackage.BILL__CUSTOMER:
+				setCustomer((LegalEntity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -501,9 +501,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__IS_PUBLISHED:
 				setIsPublished(IS_PUBLISHED_EDEFAULT);
 				return;
-			case BillingPackage.BILL__CUSTOMER:
-				setCustomer((LegalEntity)null);
-				return;
 			case BillingPackage.BILL__IS_PAID:
 				setIsPaid(IS_PAID_EDEFAULT);
 				return;
@@ -515,6 +512,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
+				return;
+			case BillingPackage.BILL__CUSTOMER:
+				setCustomer((LegalEntity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -534,8 +534,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
 			case BillingPackage.BILL__IS_PUBLISHED:
 				return isPublished != IS_PUBLISHED_EDEFAULT;
-			case BillingPackage.BILL__CUSTOMER:
-				return customer != null;
 			case BillingPackage.BILL__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
 			case BillingPackage.BILL__PURCHASE:
@@ -544,6 +542,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return creditCardInformation != null;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				return usedDiscounts != null && !usedDiscounts.isEmpty();
+			case BillingPackage.BILL__CUSTOMER:
+				return customer != null;
 		}
 		return super.eIsSet(featureID);
 	}

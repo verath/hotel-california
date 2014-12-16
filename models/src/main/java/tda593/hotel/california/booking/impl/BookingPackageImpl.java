@@ -38,6 +38,8 @@ import tda593.hotel.california.facilities.FacilitiesPackage;
 
 import tda593.hotel.california.facilities.impl.FacilitiesPackageImpl;
 
+import tda593.hotel.california.facilities.persistence.PersistencePackage;
+import tda593.hotel.california.facilities.persistence.impl.PersistencePackageImpl;
 import tda593.hotel.california.impl.CaliforniaPackageImpl;
 
 /**
@@ -194,19 +196,28 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		// Obtain or create and register interdependencies
 		CaliforniaPackageImpl theCaliforniaPackage = (CaliforniaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) instanceof CaliforniaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI) : CaliforniaPackage.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI) : FacilitiesPackage.eINSTANCE);
+		PersistencePackageImpl thePersistencePackage = (PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) instanceof PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) : PersistencePackage.eINSTANCE);
 		BillingPackageImpl theBillingPackage = (BillingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) instanceof BillingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BillingPackage.eNS_URI) : BillingPackage.eINSTANCE);
+		tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl thePersistencePackage_1 = (tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.billing.persistence.PersistencePackage.eNS_URI) instanceof tda593.hotel.california.billing.persistence.impl.PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.billing.persistence.PersistencePackage.eNS_URI) : tda593.hotel.california.billing.persistence.PersistencePackage.eINSTANCE);
+		tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl thePersistencePackage_2 = (tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI) instanceof tda593.hotel.california.booking.persistence.impl.PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI) : tda593.hotel.california.booking.persistence.PersistencePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theBookingPackage.createPackageContents();
 		theCaliforniaPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
+		thePersistencePackage.createPackageContents();
 		theBillingPackage.createPackageContents();
+		thePersistencePackage_1.createPackageContents();
+		thePersistencePackage_2.createPackageContents();
 
 		// Initialize created meta-data
 		theBookingPackage.initializePackageContents();
 		theCaliforniaPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
+		thePersistencePackage.initializePackageContents();
 		theBillingPackage.initializePackageContents();
+		thePersistencePackage_1.initializePackageContents();
+		thePersistencePackage_2.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBookingPackage.freeze();
@@ -530,15 +541,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 */
 	public EReference getTravelInformation_Predecessor() {
 		return (EReference)travelInformationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getTravelInformation__AddPredecessor__TravelInformation() {
-		return travelInformationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -996,7 +998,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__TRACKING_ID);
 		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__COMMENT);
 		createEReference(travelInformationEClass, TRAVEL_INFORMATION__PREDECESSOR);
-		createEOperation(travelInformationEClass, TRAVEL_INFORMATION___ADD_PREDECESSOR__TRAVELINFORMATION);
 
 		creditCardInformationEClass = createEClass(CREDIT_CARD_INFORMATION);
 		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__CARD_NUMBER);
@@ -1074,8 +1075,12 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		tda593.hotel.california.booking.persistence.PersistencePackage thePersistencePackage_2 = (tda593.hotel.california.booking.persistence.PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(tda593.hotel.california.booking.persistence.PersistencePackage.eNS_URI);
 		FacilitiesPackage theFacilitiesPackage = (FacilitiesPackage)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackage.eNS_URI);
 		CaliforniaPackage theCaliforniaPackage = (CaliforniaPackage)EPackage.Registry.INSTANCE.getEPackage(CaliforniaPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(thePersistencePackage_2);
 
 		// Create type parameters
 
@@ -1147,9 +1152,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEAttribute(getTravelInformation_Comment(), ecorePackage.getEString(), "comment", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTravelInformation_Predecessor(), this.getTravelInformation(), null, "predecessor", null, 0, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getTravelInformation__AddPredecessor__TravelInformation(), null, "addPredecessor", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getTravelInformation(), "travelInfomation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEClass(creditCardInformationEClass, CreditCardInformation.class, "CreditCardInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreditCardInformation_CardNumber(), ecorePackage.getEString(), "cardNumber", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCreditCardInformation_CardHolder(), ecorePackage.getEString(), "cardHolder", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1197,7 +1199,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theFacilitiesPackage.getRoomType(), "RoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_Room(), null, "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);

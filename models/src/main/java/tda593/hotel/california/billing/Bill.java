@@ -22,11 +22,11 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.Bill#getId <em>Id</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getDate <em>Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#isPublished <em>Is Published</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.Bill#getCustomer <em>Customer</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getPurchase <em>Purchase</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getCreditCardInformation <em>Credit Card Information</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getUsedDiscounts <em>Used Discounts</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.Bill#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
  *
