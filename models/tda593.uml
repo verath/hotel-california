@@ -1060,9 +1060,6 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J25UsXZUEeSbBJzXJgLK5Q"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J25UsnZUEeSbBJzXJgLK5Q" value="1"/>
             </ownedAttribute>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_V9TfIHZPEeSrX_LICIhx2Q" name="addPredecessor">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_V9TfIXZPEeSrX_LICIhx2Q" name="travelInfomation" type="_0QuhsHZMEeSrX_LICIhx2Q"/>
-            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_28JnEHcFEeSbBJzXJgLK5Q" name="CreditCardInformation">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_Vt-VgHcGEeSbBJzXJgLK5Q" name="cardNumber" visibility="private">

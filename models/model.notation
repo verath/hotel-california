@@ -2879,10 +2879,6 @@
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Qw99XZMEeSrX_LICIhx2Q"/>
                   </children>
                   <children xmi:type="notation:BasicCompartment" xmi:id="_0Qw99nZMEeSrX_LICIhx2Q" type="7018">
-                    <children xmi:type="notation:Shape" xmi:id="_XSAoQHZPEeSrX_LICIhx2Q" type="3013">
-                      <element xmi:type="uml:Operation" href="tda593.uml#_V9TfIHZPEeSrX_LICIhx2Q"/>
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_XSAoQXZPEeSrX_LICIhx2Q"/>
-                    </children>
                     <styles xmi:type="notation:TitleStyle" xmi:id="_0Qw993ZMEeSrX_LICIhx2Q"/>
                     <styles xmi:type="notation:SortingStyle" xmi:id="_0Qw9-HZMEeSrX_LICIhx2Q"/>
                     <styles xmi:type="notation:FilteringStyle" xmi:id="_0Qw9-XZMEeSrX_LICIhx2Q"/>
