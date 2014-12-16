@@ -1,4 +1,0 @@
-dependencies {
-	compile 'org.eclipse.emf:common:2.3.0-v200706262000'
-	compile 'org.eclipse.emf:org.eclipse.emf.ecore:2.10.1-v20140901-1043'
-}
