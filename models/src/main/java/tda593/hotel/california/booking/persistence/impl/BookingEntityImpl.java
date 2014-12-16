@@ -21,6 +21,7 @@ import tda593.hotel.california.booking.persistence.PersistencePackage;
 import tda593.hotel.california.booking.persistence.RoomStayEntity;
 import tda593.hotel.california.booking.persistence.TravelInformationEntity;
 import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
+import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -198,6 +199,7 @@ public class BookingEntityImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne (targetEntity = RoomTypeEntityImpl.class)
 	protected RoomTypeEntity roomTypeEntity;
 
 	/**

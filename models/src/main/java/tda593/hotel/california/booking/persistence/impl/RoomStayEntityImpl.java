@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -22,6 +23,7 @@ import tda593.hotel.california.booking.persistence.PersonEntity;
 import tda593.hotel.california.booking.persistence.RoomStayEntity;
 import tda593.hotel.california.booking.persistence.StayRequestEntity;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
+import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,6 +72,7 @@ public class RoomStayEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne (targetEntity = RoomEntityImpl.class)
 	protected RoomEntity roomEntity;
 
 	/**
