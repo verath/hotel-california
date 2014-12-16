@@ -5,6 +5,7 @@ package tda593.hotel.california.booking.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -220,13 +221,22 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		EList<Booking> bookings = getBookings(from, to);
 		EList<Room> bookedRooms = new BasicEList<Room>();
 		
+		// Remove all rooms that are booked
 		for(Booking booking : bookings) {
 			if(booking.getRoomType().equals(roomType)) {
 				bookedRooms.add(booking.getRoomStay().getRoom());
 			}
 		}
-		
 		rooms.removeAll(bookedRooms);
+		
+		// Remove rooms that are not operational
+		Iterator<Room> roomIter = rooms.iterator();
+		while(roomIter.hasNext()) {
+			Room curRoom = roomIter.next();
+			if(!curRoom.isOperational()) {
+				roomIter.remove();
+			}
+		}
 		
 		return rooms;
 	}
@@ -237,20 +247,15 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public Map<RoomType, Integer> getAvailableRoomTypeAmounts(Date from, Date to) {
-		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();
+		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();  // TODO: replace this
 		
-		List<RoomType> roomTypes = roomManager.getRoomTypes();
-		List<Booking> bookings = getBookings(from, to);
-		
-		for(RoomType roomType : roomTypes) {
-			int amountOfRoomTypeTotal = roomTypeAmounts.get(roomType);
-			int amountOfRoomTypeAvailable = amountOfRoomTypeTotal;
+		// This implementation might be better
+		EList<Room> availableRooms = getAvailableRooms(from, to);
+		for(Room room : availableRooms) {
+			RoomType roomType = room.getRoomType();
 			
-			for(Booking booking : bookings) {
-				if(booking.getRoomType().equals(roomType)) {
-					amountOfRoomTypeAvailable -= 1;		// TODO: verify that this doesn't go below 0?
-				}
-			}
+			int amountOfRoomTypeAvailable = roomTypeAmounts.get(roomType);
+			amountOfRoomTypeAvailable++;
 			
 			roomTypeAmounts.put(roomType, amountOfRoomTypeAvailable);
 		}
