@@ -16,8 +16,8 @@
             <property name="hibernate.connection.password" value=""/>
 
             <!-- Set to true to print all queries executed -->
-            <property name="hibernate.show_sql" value="false"/>
-            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
 
             <!-- Create and drop db each time -->
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />

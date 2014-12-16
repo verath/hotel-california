@@ -2,11 +2,14 @@
  */
 package tda593.hotel.california.billing.persistence.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -30,6 +33,7 @@ import tda593.hotel.california.billing.persistence.ServiceEntity;
  *
  * @generated
  */
+@Entity
 public class PurchaseEntityImpl extends MinimalEObjectImpl.Container implements PurchaseEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -49,6 +53,8 @@ public class PurchaseEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
+	@Id
+	@GeneratedValue
 	protected int id = ID_EDEFAULT;
 
 	/**
@@ -99,6 +105,7 @@ public class PurchaseEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne(targetEntity = ServiceEntityImpl.class)
 	protected ServiceEntity service;
 
 	/**
