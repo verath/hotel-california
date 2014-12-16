@@ -6,17 +6,12 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import tda593.hotel.california.CaliforniaPackage;
-
 import tda593.hotel.california.billing.BillingPackage;
-
 import tda593.hotel.california.billing.impl.BillingPackageImpl;
-
-import tda593.hotel.california.billing.persistence.Bill;
-import tda593.hotel.california.billing.persistence.BookingBill;
+import tda593.hotel.california.billing.persistence.BillEntity;
+import tda593.hotel.california.billing.persistence.BookingBillEntity;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.DiscountLimitEntity;
 import tda593.hotel.california.billing.persistence.PercentageDiscountEntity;
@@ -24,16 +19,11 @@ import tda593.hotel.california.billing.persistence.PersistenceFactory;
 import tda593.hotel.california.billing.persistence.PersistencePackage;
 import tda593.hotel.california.billing.persistence.PurchaseEntity;
 import tda593.hotel.california.billing.persistence.ServiceEntity;
-import tda593.hotel.california.billing.persistence.SumDiscount;
-
+import tda593.hotel.california.billing.persistence.SumDiscountEntity;
 import tda593.hotel.california.booking.BookingPackage;
-
 import tda593.hotel.california.booking.impl.BookingPackageImpl;
-
 import tda593.hotel.california.facilities.FacilitiesPackage;
-
 import tda593.hotel.california.facilities.impl.FacilitiesPackageImpl;
-
 import tda593.hotel.california.impl.CaliforniaPackageImpl;
 
 /**
@@ -69,7 +59,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sumDiscountEClass = null;
+	private EClass sumDiscountEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,14 +80,14 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass billEClass = null;
+	private EClass billEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bookingBillEClass = null;
+	private EClass bookingBillEntityEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -284,8 +274,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSumDiscount() {
-		return sumDiscountEClass;
+	public EClass getSumDiscountEntity() {
+		return sumDiscountEntityEClass;
 	}
 
 	/**
@@ -293,8 +283,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSumDiscount_DiscountSum() {
-		return (EAttribute)sumDiscountEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSumDiscountEntity_DiscountSum() {
+		return (EAttribute)sumDiscountEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -383,8 +373,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBill() {
-		return billEClass;
+	public EClass getBillEntity() {
+		return billEntityEClass;
 	}
 
 	/**
@@ -392,8 +382,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_Id() {
-		return (EAttribute)billEClass.getEStructuralFeatures().get(0);
+	public EAttribute getBillEntity_Id() {
+		return (EAttribute)billEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -401,8 +391,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_Date() {
-		return (EAttribute)billEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBillEntity_Date() {
+		return (EAttribute)billEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -410,8 +400,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_IsPublished() {
-		return (EAttribute)billEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBillEntity_IsPublished() {
+		return (EAttribute)billEntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -419,8 +409,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_IsPaid() {
-		return (EAttribute)billEClass.getEStructuralFeatures().get(3);
+	public EAttribute getBillEntity_IsPaid() {
+		return (EAttribute)billEntityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -428,8 +418,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBill_UsedDiscounts() {
-		return (EReference)billEClass.getEStructuralFeatures().get(4);
+	public EReference getBillEntity_UsedDiscounts() {
+		return (EReference)billEntityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -437,8 +427,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBill_LegalEntityEntity() {
-		return (EReference)billEClass.getEStructuralFeatures().get(5);
+	public EReference getBillEntity_LegalEntityEntity() {
+		return (EReference)billEntityEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -446,8 +436,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBill_PurchaseEntity() {
-		return (EReference)billEClass.getEStructuralFeatures().get(6);
+	public EReference getBillEntity_PurchaseEntity() {
+		return (EReference)billEntityEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -455,8 +445,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBill_CreditCardInformationEntity() {
-		return (EReference)billEClass.getEStructuralFeatures().get(7);
+	public EReference getBillEntity_CreditCardInformationEntity() {
+		return (EReference)billEntityEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -464,8 +454,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBookingBill() {
-		return bookingBillEClass;
+	public EClass getBookingBillEntity() {
+		return bookingBillEntityEClass;
 	}
 
 	/**
@@ -473,8 +463,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBookingBill_BookingEntity() {
-		return (EReference)bookingBillEClass.getEStructuralFeatures().get(0);
+	public EReference getBookingBillEntity_BookingEntity() {
+		return (EReference)bookingBillEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -519,8 +509,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(discountEntityEClass, DISCOUNT_ENTITY__NAME);
 		createEReference(discountEntityEClass, DISCOUNT_ENTITY__DISCOUNT_LIMIT_ENTITY);
 
-		sumDiscountEClass = createEClass(SUM_DISCOUNT);
-		createEAttribute(sumDiscountEClass, SUM_DISCOUNT__DISCOUNT_SUM);
+		sumDiscountEntityEClass = createEClass(SUM_DISCOUNT_ENTITY);
+		createEAttribute(sumDiscountEntityEClass, SUM_DISCOUNT_ENTITY__DISCOUNT_SUM);
 
 		purchaseEntityEClass = createEClass(PURCHASE_ENTITY);
 		createEAttribute(purchaseEntityEClass, PURCHASE_ENTITY__ID);
@@ -533,18 +523,18 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(serviceEntityEClass, SERVICE_ENTITY__PRICE);
 		createEAttribute(serviceEntityEClass, SERVICE_ENTITY__NAME);
 
-		billEClass = createEClass(BILL);
-		createEAttribute(billEClass, BILL__ID);
-		createEAttribute(billEClass, BILL__DATE);
-		createEAttribute(billEClass, BILL__IS_PUBLISHED);
-		createEAttribute(billEClass, BILL__IS_PAID);
-		createEReference(billEClass, BILL__USED_DISCOUNTS);
-		createEReference(billEClass, BILL__LEGAL_ENTITY_ENTITY);
-		createEReference(billEClass, BILL__PURCHASE_ENTITY);
-		createEReference(billEClass, BILL__CREDIT_CARD_INFORMATION_ENTITY);
+		billEntityEClass = createEClass(BILL_ENTITY);
+		createEAttribute(billEntityEClass, BILL_ENTITY__ID);
+		createEAttribute(billEntityEClass, BILL_ENTITY__DATE);
+		createEAttribute(billEntityEClass, BILL_ENTITY__IS_PUBLISHED);
+		createEAttribute(billEntityEClass, BILL_ENTITY__IS_PAID);
+		createEReference(billEntityEClass, BILL_ENTITY__USED_DISCOUNTS);
+		createEReference(billEntityEClass, BILL_ENTITY__LEGAL_ENTITY_ENTITY);
+		createEReference(billEntityEClass, BILL_ENTITY__PURCHASE_ENTITY);
+		createEReference(billEntityEClass, BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY);
 
-		bookingBillEClass = createEClass(BOOKING_BILL);
-		createEReference(bookingBillEClass, BOOKING_BILL__BOOKING_ENTITY);
+		bookingBillEntityEClass = createEClass(BOOKING_BILL_ENTITY);
+		createEReference(bookingBillEntityEClass, BOOKING_BILL_ENTITY__BOOKING_ENTITY);
 	}
 
 	/**
@@ -580,8 +570,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 
 		// Add supertypes to classes
 		percentageDiscountEntityEClass.getESuperTypes().add(this.getDiscountEntity());
-		sumDiscountEClass.getESuperTypes().add(this.getDiscountEntity());
-		bookingBillEClass.getESuperTypes().add(theBillingPackage.getBill());
+		sumDiscountEntityEClass.getESuperTypes().add(this.getDiscountEntity());
+		bookingBillEntityEClass.getESuperTypes().add(theBillingPackage.getBill());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(discountLimitEntityEClass, DiscountLimitEntity.class, "DiscountLimitEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -598,8 +588,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getDiscountEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, DiscountEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDiscountEntity_DiscountLimitEntity(), this.getDiscountLimitEntity(), null, "discountLimitEntity", null, 1, 1, DiscountEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(sumDiscountEClass, SumDiscount.class, "SumDiscount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSumDiscount_DiscountSum(), ecorePackage.getEDouble(), "discountSum", null, 1, 1, SumDiscount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(sumDiscountEntityEClass, SumDiscountEntity.class, "SumDiscountEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSumDiscountEntity_DiscountSum(), ecorePackage.getEDouble(), "discountSum", null, 1, 1, SumDiscountEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(purchaseEntityEClass, PurchaseEntity.class, "PurchaseEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPurchaseEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, PurchaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -612,18 +602,18 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getServiceEntity_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, ServiceEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getServiceEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBill_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBill_Date(), ecorePackage.getEDate(), "date", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBill_IsPublished(), ecorePackage.getEBoolean(), "isPublished", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBill_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_UsedDiscounts(), this.getDiscountEntity(), null, "usedDiscounts", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_LegalEntityEntity(), thePersistencePackage_2.getLegalEntityEntity(), null, "legalEntityEntity", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_PurchaseEntity(), this.getPurchaseEntity(), null, "purchaseEntity", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_CreditCardInformationEntity(), thePersistencePackage_2.getCreditCardInformationEntity(), null, "creditCardInformationEntity", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(billEntityEClass, BillEntity.class, "BillEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBillEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBillEntity_Date(), ecorePackage.getEDate(), "date", null, 1, 1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBillEntity_IsPublished(), ecorePackage.getEBoolean(), "isPublished", null, 1, 1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBillEntity_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBillEntity_UsedDiscounts(), this.getDiscountEntity(), null, "usedDiscounts", null, 0, -1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBillEntity_LegalEntityEntity(), thePersistencePackage_2.getLegalEntityEntity(), null, "legalEntityEntity", null, 1, 1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBillEntity_PurchaseEntity(), this.getPurchaseEntity(), null, "purchaseEntity", null, 0, -1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBillEntity_CreditCardInformationEntity(), thePersistencePackage_2.getCreditCardInformationEntity(), null, "creditCardInformationEntity", null, 1, 1, BillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(bookingBillEClass, BookingBill.class, "BookingBill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBookingBill_BookingEntity(), thePersistencePackage_2.getBookingEntity(), null, "bookingEntity", null, 1, 1, BookingBill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(bookingBillEntityEClass, BookingBillEntity.class, "BookingBillEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBookingBillEntity_BookingEntity(), thePersistencePackage_2.getBookingEntity(), null, "bookingEntity", null, 1, 1, BookingBillEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 } //PersistencePackageImpl

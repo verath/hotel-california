@@ -40,13 +40,13 @@ public interface PersistenceFactory extends EFactory {
 	PercentageDiscountEntity createPercentageDiscountEntity();
 
 	/**
-	 * Returns a new object of class '<em>Sum Discount</em>'.
+	 * Returns a new object of class '<em>Sum Discount Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sum Discount</em>'.
+	 * @return a new object of class '<em>Sum Discount Entity</em>'.
 	 * @generated
 	 */
-	SumDiscount createSumDiscount();
+	SumDiscountEntity createSumDiscountEntity();
 
 	/**
 	 * Returns a new object of class '<em>Purchase Entity</em>'.
@@ -67,22 +67,22 @@ public interface PersistenceFactory extends EFactory {
 	ServiceEntity createServiceEntity();
 
 	/**
-	 * Returns a new object of class '<em>Bill</em>'.
+	 * Returns a new object of class '<em>Bill Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bill</em>'.
+	 * @return a new object of class '<em>Bill Entity</em>'.
 	 * @generated
 	 */
-	Bill createBill();
+	BillEntity createBillEntity();
 
 	/**
-	 * Returns a new object of class '<em>Booking Bill</em>'.
+	 * Returns a new object of class '<em>Booking Bill Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Booking Bill</em>'.
+	 * @return a new object of class '<em>Booking Bill Entity</em>'.
 	 * @generated
 	 */
-	BookingBill createBookingBill();
+	BookingBillEntity createBookingBillEntity();
 
 	/**
 	 * Returns the package supported by this factory.

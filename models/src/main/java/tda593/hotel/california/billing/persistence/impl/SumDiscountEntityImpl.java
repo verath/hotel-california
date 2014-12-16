@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.billing.persistence.PersistencePackage;
-import tda593.hotel.california.billing.persistence.SumDiscount;
+import tda593.hotel.california.billing.persistence.SumDiscountEntity;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sum Discount</b></em>'.
+ * An implementation of the model object '<em><b>Sum Discount Entity</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.SumDiscountImpl#getDiscountSum <em>Discount Sum</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.SumDiscountEntityImpl#getDiscountSum <em>Discount Sum</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
+public class SumDiscountEntityImpl extends DiscountEntityImpl implements SumDiscountEntity {
 	/**
 	 * The default value of the '{@link #getDiscountSum() <em>Discount Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SumDiscountImpl() {
+	protected SumDiscountEntityImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.SUM_DISCOUNT;
+		return PersistencePackage.Literals.SUM_DISCOUNT_ENTITY;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 		double oldDiscountSum = discountSum;
 		discountSum = newDiscountSum;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.SUM_DISCOUNT__DISCOUNT_SUM, oldDiscountSum, discountSum));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.SUM_DISCOUNT_ENTITY__DISCOUNT_SUM, oldDiscountSum, discountSum));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case PersistencePackage.SUM_DISCOUNT_ENTITY__DISCOUNT_SUM:
 				return getDiscountSum();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case PersistencePackage.SUM_DISCOUNT_ENTITY__DISCOUNT_SUM:
 				setDiscountSum((Double)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case PersistencePackage.SUM_DISCOUNT_ENTITY__DISCOUNT_SUM:
 				setDiscountSum(DISCOUNT_SUM_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.SUM_DISCOUNT__DISCOUNT_SUM:
+			case PersistencePackage.SUM_DISCOUNT_ENTITY__DISCOUNT_SUM:
 				return discountSum != DISCOUNT_SUM_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -159,4 +159,4 @@ public class SumDiscountImpl extends DiscountEntityImpl implements SumDiscount {
 		return result.toString();
 	}
 
-} //SumDiscountImpl
+} //SumDiscountEntityImpl

@@ -427,7 +427,7 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="discountLimitEntity"
                 ordered="false" lowerBound="1" eType="#//hotel/california/billing/persistence/DiscountLimitEntity"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="SumDiscount" eSuperTypes="#//hotel/california/billing/persistence/DiscountEntity">
+          <eClassifiers xsi:type="ecore:EClass" name="SumDiscountEntity" eSuperTypes="#//hotel/california/billing/persistence/DiscountEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountSum" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
           </eClassifiers>
@@ -449,7 +449,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="Bill">
+          <eClassifiers xsi:type="ecore:EClass" name="BillEntity">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" ordered="false"
@@ -467,7 +467,7 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformationEntity"
                 ordered="false" lowerBound="1" eType="#//hotel/california/booking/persistence/CreditCardInformationEntity"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="BookingBill" eSuperTypes="#//hotel/california/billing/Bill">
+          <eClassifiers xsi:type="ecore:EClass" name="BookingBillEntity" eSuperTypes="#//hotel/california/billing/Bill">
             <eStructuralFeatures xsi:type="ecore:EReference" name="bookingEntity"
                 ordered="false" lowerBound="1" eType="#//hotel/california/booking/persistence/BookingEntity"/>
           </eClassifiers>

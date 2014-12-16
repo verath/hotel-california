@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.persistence.*;
 
 /**
@@ -85,10 +86,10 @@ public class PersistenceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PersistencePackage.SUM_DISCOUNT: {
-				SumDiscount sumDiscount = (SumDiscount)theEObject;
-				T result = caseSumDiscount(sumDiscount);
-				if (result == null) result = caseDiscountEntity(sumDiscount);
+			case PersistencePackage.SUM_DISCOUNT_ENTITY: {
+				SumDiscountEntity sumDiscountEntity = (SumDiscountEntity)theEObject;
+				T result = caseSumDiscountEntity(sumDiscountEntity);
+				if (result == null) result = caseDiscountEntity(sumDiscountEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -104,16 +105,16 @@ public class PersistenceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PersistencePackage.BILL: {
-				Bill bill = (Bill)theEObject;
-				T result = caseBill(bill);
+			case PersistencePackage.BILL_ENTITY: {
+				BillEntity billEntity = (BillEntity)theEObject;
+				T result = caseBillEntity(billEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PersistencePackage.BOOKING_BILL: {
-				BookingBill bookingBill = (BookingBill)theEObject;
-				T result = caseBookingBill(bookingBill);
-				if (result == null) result = caseBilling_Bill(bookingBill);
+			case PersistencePackage.BOOKING_BILL_ENTITY: {
+				BookingBillEntity bookingBillEntity = (BookingBillEntity)theEObject;
+				T result = caseBookingBillEntity(bookingBillEntity);
+				if (result == null) result = caseBill(bookingBillEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,17 +168,17 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sum Discount</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Sum Discount Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sum Discount</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Sum Discount Entity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSumDiscount(SumDiscount object) {
+	public T caseSumDiscountEntity(SumDiscountEntity object) {
 		return null;
 	}
 
@@ -212,6 +213,36 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bill Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bill Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBillEntity(BillEntity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Booking Bill Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Booking Bill Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBookingBillEntity(BookingBillEntity object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Bill</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -223,36 +254,6 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBill(Bill object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Booking Bill</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Booking Bill</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBookingBill(BookingBill object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bill</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bill</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBilling_Bill(tda593.hotel.california.billing.Bill object) {
 		return null;
 	}
 

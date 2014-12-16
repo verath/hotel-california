@@ -58,11 +58,11 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 		switch (eClass.getClassifierID()) {
 			case PersistencePackage.DISCOUNT_LIMIT_ENTITY: return createDiscountLimitEntity();
 			case PersistencePackage.PERCENTAGE_DISCOUNT_ENTITY: return createPercentageDiscountEntity();
-			case PersistencePackage.SUM_DISCOUNT: return createSumDiscount();
+			case PersistencePackage.SUM_DISCOUNT_ENTITY: return createSumDiscountEntity();
 			case PersistencePackage.PURCHASE_ENTITY: return createPurchaseEntity();
 			case PersistencePackage.SERVICE_ENTITY: return createServiceEntity();
-			case PersistencePackage.BILL: return createBill();
-			case PersistencePackage.BOOKING_BILL: return createBookingBill();
+			case PersistencePackage.BILL_ENTITY: return createBillEntity();
+			case PersistencePackage.BOOKING_BILL_ENTITY: return createBookingBillEntity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,9 +93,9 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SumDiscount createSumDiscount() {
-		SumDiscountImpl sumDiscount = new SumDiscountImpl();
-		return sumDiscount;
+	public SumDiscountEntity createSumDiscountEntity() {
+		SumDiscountEntityImpl sumDiscountEntity = new SumDiscountEntityImpl();
+		return sumDiscountEntity;
 	}
 
 	/**
@@ -123,9 +123,9 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Bill createBill() {
-		BillImpl bill = new BillImpl();
-		return bill;
+	public BillEntity createBillEntity() {
+		BillEntityImpl billEntity = new BillEntityImpl();
+		return billEntity;
 	}
 
 	/**
@@ -133,9 +133,9 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BookingBill createBookingBill() {
-		BookingBillImpl bookingBill = new BookingBillImpl();
-		return bookingBill;
+	public BookingBillEntity createBookingBillEntity() {
+		BookingBillEntityImpl bookingBillEntity = new BookingBillEntityImpl();
+		return bookingBillEntity;
 	}
 
 	/**

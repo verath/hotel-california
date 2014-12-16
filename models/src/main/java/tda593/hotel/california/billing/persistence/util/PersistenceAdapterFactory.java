@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.persistence.*;
 
 /**
@@ -80,8 +81,8 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 				return createDiscountEntityAdapter();
 			}
 			@Override
-			public Adapter caseSumDiscount(SumDiscount object) {
-				return createSumDiscountAdapter();
+			public Adapter caseSumDiscountEntity(SumDiscountEntity object) {
+				return createSumDiscountEntityAdapter();
 			}
 			@Override
 			public Adapter casePurchaseEntity(PurchaseEntity object) {
@@ -92,16 +93,16 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 				return createServiceEntityAdapter();
 			}
 			@Override
+			public Adapter caseBillEntity(BillEntity object) {
+				return createBillEntityAdapter();
+			}
+			@Override
+			public Adapter caseBookingBillEntity(BookingBillEntity object) {
+				return createBookingBillEntityAdapter();
+			}
+			@Override
 			public Adapter caseBill(Bill object) {
 				return createBillAdapter();
-			}
-			@Override
-			public Adapter caseBookingBill(BookingBill object) {
-				return createBookingBillAdapter();
-			}
-			@Override
-			public Adapter caseBilling_Bill(tda593.hotel.california.billing.Bill object) {
-				return createBilling_BillAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -166,16 +167,16 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.persistence.SumDiscount <em>Sum Discount</em>}'.
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.persistence.SumDiscountEntity <em>Sum Discount Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.persistence.SumDiscount
+	 * @see tda593.hotel.california.billing.persistence.SumDiscountEntity
 	 * @generated
 	 */
-	public Adapter createSumDiscountAdapter() {
+	public Adapter createSumDiscountEntityAdapter() {
 		return null;
 	}
 
@@ -208,30 +209,30 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.persistence.Bill <em>Bill</em>}'.
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.persistence.BillEntity <em>Bill Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.persistence.Bill
+	 * @see tda593.hotel.california.billing.persistence.BillEntity
 	 * @generated
 	 */
-	public Adapter createBillAdapter() {
+	public Adapter createBillEntityAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.persistence.BookingBill <em>Booking Bill</em>}'.
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.persistence.BookingBillEntity <em>Booking Bill Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.persistence.BookingBill
+	 * @see tda593.hotel.california.billing.persistence.BookingBillEntity
 	 * @generated
 	 */
-	public Adapter createBookingBillAdapter() {
+	public Adapter createBookingBillEntityAdapter() {
 		return null;
 	}
 
@@ -245,7 +246,7 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	 * @see tda593.hotel.california.billing.Bill
 	 * @generated
 	 */
-	public Adapter createBilling_BillAdapter() {
+	public Adapter createBillAdapter() {
 		return null;
 	}
 

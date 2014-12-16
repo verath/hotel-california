@@ -5,46 +5,47 @@ package tda593.hotel.california.billing.persistence.impl;
 import java.util.Collection;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.hibernate.jpa.internal.EntityManagerFactoryImpl;
 
-import tda593.hotel.california.billing.persistence.Bill;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.PersistencePackage;
 import tda593.hotel.california.billing.persistence.PurchaseEntity;
+
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Bill</b></em>'.
+ * An implementation of the model object '<em><b>Bill Entity</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#getId <em>Id</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#getDate <em>Date</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#isPublished <em>Is Published</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#isPaid <em>Is Paid</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#getUsedDiscounts <em>Used Discounts</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#getLegalEntityEntity <em>Legal Entity Entity</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#getPurchaseEntity <em>Purchase Entity</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillImpl#getCreditCardInformationEntity <em>Credit Card Information Entity</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#isPublished <em>Is Published</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#isPaid <em>Is Paid</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#getUsedDiscounts <em>Used Discounts</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#getLegalEntityEntity <em>Legal Entity Entity</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#getPurchaseEntity <em>Purchase Entity</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.persistence.impl.BillEntityImpl#getCreditCardInformationEntity <em>Credit Card Information Entity</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
+public class BillEntityImpl extends MinimalEObjectImpl.Container implements BillEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,8 +64,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @generated
 	 * @ordered
 	 */
-
-	@Id
 	protected int id = ID_EDEFAULT;
 
 	/**
@@ -172,7 +171,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BillImpl() {
+	protected BillEntityImpl() {
 		super();
 	}
 
@@ -183,7 +182,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.BILL;
+		return PersistencePackage.Literals.BILL_ENTITY;
 	}
 
 	/**
@@ -204,7 +203,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL_ENTITY__ID, oldId, id));
 	}
 
 	/**
@@ -225,7 +224,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		Date oldDate = date;
 		date = newDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL__DATE, oldDate, date));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL_ENTITY__DATE, oldDate, date));
 	}
 
 	/**
@@ -246,7 +245,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		boolean oldIsPublished = isPublished;
 		isPublished = newIsPublished;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL__IS_PUBLISHED, oldIsPublished, isPublished));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL_ENTITY__IS_PUBLISHED, oldIsPublished, isPublished));
 	}
 
 	/**
@@ -267,7 +266,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		boolean oldIsPaid = isPaid;
 		isPaid = newIsPaid;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL__IS_PAID, oldIsPaid, isPaid));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL_ENTITY__IS_PAID, oldIsPaid, isPaid));
 	}
 
 	/**
@@ -277,7 +276,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public EList<DiscountEntity> getUsedDiscounts() {
 		if (usedDiscounts == null) {
-			usedDiscounts = new EObjectResolvingEList<DiscountEntity>(DiscountEntity.class, this, PersistencePackage.BILL__USED_DISCOUNTS);
+			usedDiscounts = new EObjectResolvingEList<DiscountEntity>(DiscountEntity.class, this, PersistencePackage.BILL_ENTITY__USED_DISCOUNTS);
 		}
 		return usedDiscounts;
 	}
@@ -293,7 +292,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			legalEntityEntity = (LegalEntityEntity)eResolveProxy(oldLegalEntityEntity);
 			if (legalEntityEntity != oldLegalEntityEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.BILL__LEGAL_ENTITY_ENTITY, oldLegalEntityEntity, legalEntityEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.BILL_ENTITY__LEGAL_ENTITY_ENTITY, oldLegalEntityEntity, legalEntityEntity));
 			}
 		}
 		return legalEntityEntity;
@@ -317,7 +316,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		LegalEntityEntity oldLegalEntityEntity = legalEntityEntity;
 		legalEntityEntity = newLegalEntityEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL__LEGAL_ENTITY_ENTITY, oldLegalEntityEntity, legalEntityEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL_ENTITY__LEGAL_ENTITY_ENTITY, oldLegalEntityEntity, legalEntityEntity));
 	}
 
 	/**
@@ -327,7 +326,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public EList<PurchaseEntity> getPurchaseEntity() {
 		if (purchaseEntity == null) {
-			purchaseEntity = new EObjectResolvingEList<PurchaseEntity>(PurchaseEntity.class, this, PersistencePackage.BILL__PURCHASE_ENTITY);
+			purchaseEntity = new EObjectResolvingEList<PurchaseEntity>(PurchaseEntity.class, this, PersistencePackage.BILL_ENTITY__PURCHASE_ENTITY);
 		}
 		return purchaseEntity;
 	}
@@ -343,7 +342,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			creditCardInformationEntity = (CreditCardInformationEntity)eResolveProxy(oldCreditCardInformationEntity);
 			if (creditCardInformationEntity != oldCreditCardInformationEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.BILL__CREDIT_CARD_INFORMATION_ENTITY, oldCreditCardInformationEntity, creditCardInformationEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY, oldCreditCardInformationEntity, creditCardInformationEntity));
 			}
 		}
 		return creditCardInformationEntity;
@@ -367,7 +366,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		CreditCardInformationEntity oldCreditCardInformationEntity = creditCardInformationEntity;
 		creditCardInformationEntity = newCreditCardInformationEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL__CREDIT_CARD_INFORMATION_ENTITY, oldCreditCardInformationEntity, creditCardInformationEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY, oldCreditCardInformationEntity, creditCardInformationEntity));
 	}
 
 	/**
@@ -378,22 +377,22 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.BILL__ID:
+			case PersistencePackage.BILL_ENTITY__ID:
 				return getId();
-			case PersistencePackage.BILL__DATE:
+			case PersistencePackage.BILL_ENTITY__DATE:
 				return getDate();
-			case PersistencePackage.BILL__IS_PUBLISHED:
+			case PersistencePackage.BILL_ENTITY__IS_PUBLISHED:
 				return isPublished();
-			case PersistencePackage.BILL__IS_PAID:
+			case PersistencePackage.BILL_ENTITY__IS_PAID:
 				return isPaid();
-			case PersistencePackage.BILL__USED_DISCOUNTS:
+			case PersistencePackage.BILL_ENTITY__USED_DISCOUNTS:
 				return getUsedDiscounts();
-			case PersistencePackage.BILL__LEGAL_ENTITY_ENTITY:
+			case PersistencePackage.BILL_ENTITY__LEGAL_ENTITY_ENTITY:
 				if (resolve) return getLegalEntityEntity();
 				return basicGetLegalEntityEntity();
-			case PersistencePackage.BILL__PURCHASE_ENTITY:
+			case PersistencePackage.BILL_ENTITY__PURCHASE_ENTITY:
 				return getPurchaseEntity();
-			case PersistencePackage.BILL__CREDIT_CARD_INFORMATION_ENTITY:
+			case PersistencePackage.BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				if (resolve) return getCreditCardInformationEntity();
 				return basicGetCreditCardInformationEntity();
 		}
@@ -409,30 +408,30 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.BILL__ID:
+			case PersistencePackage.BILL_ENTITY__ID:
 				setId((Integer)newValue);
 				return;
-			case PersistencePackage.BILL__DATE:
+			case PersistencePackage.BILL_ENTITY__DATE:
 				setDate((Date)newValue);
 				return;
-			case PersistencePackage.BILL__IS_PUBLISHED:
+			case PersistencePackage.BILL_ENTITY__IS_PUBLISHED:
 				setIsPublished((Boolean)newValue);
 				return;
-			case PersistencePackage.BILL__IS_PAID:
+			case PersistencePackage.BILL_ENTITY__IS_PAID:
 				setIsPaid((Boolean)newValue);
 				return;
-			case PersistencePackage.BILL__USED_DISCOUNTS:
+			case PersistencePackage.BILL_ENTITY__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
 				getUsedDiscounts().addAll((Collection<? extends DiscountEntity>)newValue);
 				return;
-			case PersistencePackage.BILL__LEGAL_ENTITY_ENTITY:
+			case PersistencePackage.BILL_ENTITY__LEGAL_ENTITY_ENTITY:
 				setLegalEntityEntity((LegalEntityEntity)newValue);
 				return;
-			case PersistencePackage.BILL__PURCHASE_ENTITY:
+			case PersistencePackage.BILL_ENTITY__PURCHASE_ENTITY:
 				getPurchaseEntity().clear();
 				getPurchaseEntity().addAll((Collection<? extends PurchaseEntity>)newValue);
 				return;
-			case PersistencePackage.BILL__CREDIT_CARD_INFORMATION_ENTITY:
+			case PersistencePackage.BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				setCreditCardInformationEntity((CreditCardInformationEntity)newValue);
 				return;
 		}
@@ -447,28 +446,28 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.BILL__ID:
+			case PersistencePackage.BILL_ENTITY__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case PersistencePackage.BILL__DATE:
+			case PersistencePackage.BILL_ENTITY__DATE:
 				setDate(DATE_EDEFAULT);
 				return;
-			case PersistencePackage.BILL__IS_PUBLISHED:
+			case PersistencePackage.BILL_ENTITY__IS_PUBLISHED:
 				setIsPublished(IS_PUBLISHED_EDEFAULT);
 				return;
-			case PersistencePackage.BILL__IS_PAID:
+			case PersistencePackage.BILL_ENTITY__IS_PAID:
 				setIsPaid(IS_PAID_EDEFAULT);
 				return;
-			case PersistencePackage.BILL__USED_DISCOUNTS:
+			case PersistencePackage.BILL_ENTITY__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
 				return;
-			case PersistencePackage.BILL__LEGAL_ENTITY_ENTITY:
+			case PersistencePackage.BILL_ENTITY__LEGAL_ENTITY_ENTITY:
 				setLegalEntityEntity((LegalEntityEntity)null);
 				return;
-			case PersistencePackage.BILL__PURCHASE_ENTITY:
+			case PersistencePackage.BILL_ENTITY__PURCHASE_ENTITY:
 				getPurchaseEntity().clear();
 				return;
-			case PersistencePackage.BILL__CREDIT_CARD_INFORMATION_ENTITY:
+			case PersistencePackage.BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				setCreditCardInformationEntity((CreditCardInformationEntity)null);
 				return;
 		}
@@ -483,21 +482,21 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.BILL__ID:
+			case PersistencePackage.BILL_ENTITY__ID:
 				return id != ID_EDEFAULT;
-			case PersistencePackage.BILL__DATE:
+			case PersistencePackage.BILL_ENTITY__DATE:
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
-			case PersistencePackage.BILL__IS_PUBLISHED:
+			case PersistencePackage.BILL_ENTITY__IS_PUBLISHED:
 				return isPublished != IS_PUBLISHED_EDEFAULT;
-			case PersistencePackage.BILL__IS_PAID:
+			case PersistencePackage.BILL_ENTITY__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
-			case PersistencePackage.BILL__USED_DISCOUNTS:
+			case PersistencePackage.BILL_ENTITY__USED_DISCOUNTS:
 				return usedDiscounts != null && !usedDiscounts.isEmpty();
-			case PersistencePackage.BILL__LEGAL_ENTITY_ENTITY:
+			case PersistencePackage.BILL_ENTITY__LEGAL_ENTITY_ENTITY:
 				return legalEntityEntity != null;
-			case PersistencePackage.BILL__PURCHASE_ENTITY:
+			case PersistencePackage.BILL_ENTITY__PURCHASE_ENTITY:
 				return purchaseEntity != null && !purchaseEntity.isEmpty();
-			case PersistencePackage.BILL__CREDIT_CARD_INFORMATION_ENTITY:
+			case PersistencePackage.BILL_ENTITY__CREDIT_CARD_INFORMATION_ENTITY:
 				return creditCardInformationEntity != null;
 		}
 		return super.eIsSet(featureID);
@@ -525,4 +524,4 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		return result.toString();
 	}
 
-} //BillImpl
+} //BillEntityImpl
