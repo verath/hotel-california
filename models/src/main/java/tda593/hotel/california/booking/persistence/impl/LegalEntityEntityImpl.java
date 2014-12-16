@@ -5,6 +5,7 @@ package tda593.hotel.california.booking.persistence.impl;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -82,6 +83,7 @@ public class LegalEntityEntityImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
+	@OneToOne(targetEntity = CreditCardInformationEntityImpl.class)
 	protected CreditCardInformationEntity creditCardInformationEntity;
 
 	/**
