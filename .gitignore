@@ -21,7 +21,7 @@ gradle-app.setting
 *~
 
 # Log files
-.log
+*.log
 
 ## MacOS stuff
 .DS_Store
