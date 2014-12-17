@@ -2,11 +2,14 @@
  */
 package tda593.hotel.california.billing.persistence.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -29,6 +32,8 @@ import tda593.hotel.california.billing.persistence.PersistencePackage;
  *
  * @generated
  */
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class DiscountEntityImpl extends MinimalEObjectImpl.Container implements DiscountEntity {
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
@@ -48,6 +53,8 @@ public abstract class DiscountEntityImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
+	@Id
+	// TODO : string!!!!
 	protected int code = CODE_EDEFAULT;
 
 	/**
