@@ -3,6 +3,7 @@
 	<name>Hotel California Integration Test</name>
 	<comment></comment>
 	<projects>
+		<project>Hotel California</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
