@@ -13,6 +13,7 @@ package tda593.hotel.california.facilities;
  * <ul>
  *   <li>{@link tda593.hotel.california.facilities.RoomManagerImpl#getRoomDataService <em>Room Data Service</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.RoomManagerImpl#getRoomTypeDataService <em>Room Type Data Service</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.RoomManagerImpl#getKeyCardManager <em>Key Card Manager</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +73,31 @@ public interface RoomManagerImpl extends RoomManager {
 	 * @generated
 	 */
 	void setRoomTypeDataService(RoomTypeDataService value);
+
+	/**
+	 * Returns the value of the '<em><b>Key Card Manager</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Key Card Manager</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Key Card Manager</em>' reference.
+	 * @see #setKeyCardManager(KeyCardManager)
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoomManagerImpl_KeyCardManager()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	KeyCardManager getKeyCardManager();
+
+	/**
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.RoomManagerImpl#getKeyCardManager <em>Key Card Manager</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Key Card Manager</em>' reference.
+	 * @see #getKeyCardManager()
+	 * @generated
+	 */
+	void setKeyCardManager(KeyCardManager value);
 
 } // RoomManagerImpl

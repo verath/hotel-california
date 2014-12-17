@@ -224,7 +224,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD = 1;
+	int ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING = 1;
 
 	/**
 	 * The operation id for the '<em>Register Key Card</em>' operation.
@@ -233,7 +233,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___REGISTER_KEY_CARD__STRING = 2;
+	int ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING = 2;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -251,7 +251,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD = 4;
+	int ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING = 4;
 
 	/**
 	 * The operation id for the '<em>Unregister Key Card</em>' operation.
@@ -260,7 +260,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING = 5;
+	int ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING = 5;
 
 	/**
 	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
@@ -269,7 +269,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = 6;
+	int ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING = 6;
 
 	/**
 	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
@@ -287,7 +287,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT = 8;
+	int ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = 8;
 
 	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
@@ -333,7 +333,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD;
+	int ADMIN_ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING;
 
 	/**
 	 * The operation id for the '<em>Register Key Card</em>' operation.
@@ -342,7 +342,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___REGISTER_KEY_CARD__STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING;
+	int ADMIN_ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -360,7 +360,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD;
+	int ADMIN_ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING;
 
 	/**
 	 * The operation id for the '<em>Unregister Key Card</em>' operation.
@@ -369,7 +369,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING;
+	int ADMIN_ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING;
 
 	/**
 	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
@@ -378,7 +378,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM;
+	int ADMIN_ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
@@ -396,7 +396,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT;
+	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -654,13 +654,22 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE = ROOM_MANAGER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Key Card Manager</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL__KEY_CARD_MANAGER = ROOM_MANAGER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Room Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL_FEATURE_COUNT = ROOM_MANAGER_FEATURE_COUNT + 2;
+	int ROOM_MANAGER_IMPL_FEATURE_COUNT = ROOM_MANAGER_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -678,7 +687,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__KEYCARD = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD;
+	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING;
 
 	/**
 	 * The operation id for the '<em>Register Key Card</em>' operation.
@@ -687,7 +696,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING;
+	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -705,7 +714,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__KEYCARD = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD;
+	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING;
 
 	/**
 	 * The operation id for the '<em>Unregister Key Card</em>' operation.
@@ -714,7 +723,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING;
+	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING;
 
 	/**
 	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
@@ -723,7 +732,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__ROOM = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM;
+	int ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__STRING = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
@@ -741,7 +750,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT;
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
 
 	/**
 	 * The number of operations of the '<em>Room Manager Impl</em>' class.
@@ -1531,24 +1540,24 @@ public interface FacilitiesPackage extends EPackage {
 	EOperation getRoomManager__GetRoomTypes();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#registerKeyCard(tda593.hotel.california.facilities.KeyCard) <em>Register Key Card</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#registerKeyCard(tda593.hotel.california.facilities.KeyCard, java.lang.String) <em>Register Key Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Register Key Card</em>' operation.
-	 * @see tda593.hotel.california.facilities.RoomManager#registerKeyCard(tda593.hotel.california.facilities.KeyCard)
+	 * @see tda593.hotel.california.facilities.RoomManager#registerKeyCard(tda593.hotel.california.facilities.KeyCard, java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomManager__RegisterKeyCard__KeyCard();
+	EOperation getRoomManager__RegisterKeyCard__KeyCard_String();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#registerKeyCard(java.lang.String) <em>Register Key Card</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#registerKeyCard(java.lang.String, java.lang.String) <em>Register Key Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Register Key Card</em>' operation.
-	 * @see tda593.hotel.california.facilities.RoomManager#registerKeyCard(java.lang.String)
+	 * @see tda593.hotel.california.facilities.RoomManager#registerKeyCard(java.lang.String, java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomManager__RegisterKeyCard__String();
+	EOperation getRoomManager__RegisterKeyCard__String_String();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRooms() <em>Get Rooms</em>}' operation.
@@ -1561,34 +1570,34 @@ public interface FacilitiesPackage extends EPackage {
 	EOperation getRoomManager__GetRooms();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(tda593.hotel.california.facilities.KeyCard) <em>Unregister Key Card</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(tda593.hotel.california.facilities.KeyCard, java.lang.String) <em>Unregister Key Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Unregister Key Card</em>' operation.
-	 * @see tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(tda593.hotel.california.facilities.KeyCard)
+	 * @see tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(tda593.hotel.california.facilities.KeyCard, java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomManager__UnregisterKeyCard__KeyCard();
+	EOperation getRoomManager__UnregisterKeyCard__KeyCard_String();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(java.lang.String) <em>Unregister Key Card</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(java.lang.String, java.lang.String) <em>Unregister Key Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Unregister Key Card</em>' operation.
-	 * @see tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(java.lang.String)
+	 * @see tda593.hotel.california.facilities.RoomManager#unregisterKeyCard(java.lang.String, java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomManager__UnregisterKeyCard__String();
+	EOperation getRoomManager__UnregisterKeyCard__String_String();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#unregisterAllKeyCards(tda593.hotel.california.facilities.Room) <em>Unregister All Key Cards</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#unregisterAllKeyCards(java.lang.String) <em>Unregister All Key Cards</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Unregister All Key Cards</em>' operation.
-	 * @see tda593.hotel.california.facilities.RoomManager#unregisterAllKeyCards(tda593.hotel.california.facilities.Room)
+	 * @see tda593.hotel.california.facilities.RoomManager#unregisterAllKeyCards(java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomManager__UnregisterAllKeyCards__Room();
+	EOperation getRoomManager__UnregisterAllKeyCards__String();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoomTypeAmounts() <em>Get Room Type Amounts</em>}' operation.
@@ -1601,14 +1610,14 @@ public interface FacilitiesPackage extends EPackage {
 	EOperation getRoomManager__GetRoomTypeAmounts();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoomTypeAmount() <em>Get Room Type Amount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoomTypeAmount(tda593.hotel.california.facilities.RoomType) <em>Get Room Type Amount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Room Type Amount</em>' operation.
-	 * @see tda593.hotel.california.facilities.RoomManager#getRoomTypeAmount()
+	 * @see tda593.hotel.california.facilities.RoomManager#getRoomTypeAmount(tda593.hotel.california.facilities.RoomType)
 	 * @generated
 	 */
-	EOperation getRoomManager__GetRoomTypeAmount();
+	EOperation getRoomManager__GetRoomTypeAmount__RoomType();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
@@ -1834,6 +1843,17 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoomManagerImpl_RoomTypeDataService();
+
+	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.facilities.RoomManagerImpl#getKeyCardManager <em>Key Card Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key Card Manager</em>'.
+	 * @see tda593.hotel.california.facilities.RoomManagerImpl#getKeyCardManager()
+	 * @see #getRoomManagerImpl()
+	 * @generated
+	 */
+	EReference getRoomManagerImpl_KeyCardManager();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomDataService <em>Room Data Service</em>}'.
@@ -2116,7 +2136,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD = eINSTANCE.getRoomManager__RegisterKeyCard__KeyCard();
+		EOperation ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING = eINSTANCE.getRoomManager__RegisterKeyCard__KeyCard_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Register Key Card</b></em>' operation.
@@ -2124,7 +2144,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___REGISTER_KEY_CARD__STRING = eINSTANCE.getRoomManager__RegisterKeyCard__String();
+		EOperation ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING = eINSTANCE.getRoomManager__RegisterKeyCard__String_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Rooms</b></em>' operation.
@@ -2140,7 +2160,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD = eINSTANCE.getRoomManager__UnregisterKeyCard__KeyCard();
+		EOperation ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING = eINSTANCE.getRoomManager__UnregisterKeyCard__KeyCard_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Unregister Key Card</b></em>' operation.
@@ -2148,7 +2168,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING = eINSTANCE.getRoomManager__UnregisterKeyCard__String();
+		EOperation ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING = eINSTANCE.getRoomManager__UnregisterKeyCard__String_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Unregister All Key Cards</b></em>' operation.
@@ -2156,7 +2176,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__ROOM = eINSTANCE.getRoomManager__UnregisterAllKeyCards__Room();
+		EOperation ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING = eINSTANCE.getRoomManager__UnregisterAllKeyCards__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Room Type Amounts</b></em>' operation.
@@ -2172,7 +2192,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT = eINSTANCE.getRoomManager__GetRoomTypeAmount();
+		EOperation ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = eINSTANCE.getRoomManager__GetRoomTypeAmount__RoomType();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
@@ -2347,6 +2367,14 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE = eINSTANCE.getRoomManagerImpl_RoomTypeDataService();
+
+		/**
+		 * The meta object literal for the '<em><b>Key Card Manager</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_MANAGER_IMPL__KEY_CARD_MANAGER = eINSTANCE.getRoomManagerImpl_KeyCardManager();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomDataServiceImpl <em>Room Data Service</em>}' class.

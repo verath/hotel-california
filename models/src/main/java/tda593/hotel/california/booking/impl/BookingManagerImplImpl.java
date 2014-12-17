@@ -523,7 +523,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOM:
 				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
 				return null;
-			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_INT:
+			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_STRING:
 				return isRoomAvailable((Date)arguments.get(0), (Date)arguments.get(1), (String)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___REGISTER_ROOM__BOOKING_ROOM:
 				registerRoom((Booking)arguments.get(0), (Room)arguments.get(1));
@@ -535,7 +535,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ROOM_TYPES:
 				return getRoomTypes();
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__INT:
+			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING:
 				return getActiveBooking((String)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_RELATED_LEGAL_ENTITIES__BOOKING:
 				return getRelatedLegalEntities((Booking)arguments.get(0));

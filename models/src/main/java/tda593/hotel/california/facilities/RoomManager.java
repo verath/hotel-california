@@ -29,18 +29,18 @@ public interface RoomManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model keycardRequired="true" keycardOrdered="false"
+	 * @model keycardRequired="true" keycardOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void registerKeyCard(KeyCard keycard);
+	void registerKeyCard(KeyCard keycard, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model keycardNbrRequired="true" keycardNbrOrdered="false"
+	 * @model keycardNbrRequired="true" keycardNbrOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void registerKeyCard(String keycardNbr);
+	void registerKeyCard(String keycardNbr, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,26 +53,26 @@ public interface RoomManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model keyCardRequired="true" keyCardOrdered="false"
+	 * @model keyCardRequired="true" keyCardOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void unregisterKeyCard(KeyCard keyCard);
+	void unregisterKeyCard(KeyCard keyCard, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model keyCardNbrRequired="true" keyCardNbrOrdered="false"
+	 * @model keyCardNbrRequired="true" keyCardNbrOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void unregisterKeyCard(String keyCardNbr);
+	void unregisterKeyCard(String keyCardNbr, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false"
+	 * @model roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void unregisterAllKeyCards(Room room);
+	void unregisterAllKeyCards(String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,9 +85,9 @@ public interface RoomManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model required="true" ordered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	int getRoomTypeAmount();
+	int getRoomTypeAmount(RoomType roomType);
 
 } // RoomManager

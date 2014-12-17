@@ -18,10 +18,10 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptioinRequired="true" descriptioinOrdered="false" disabilityApprovalsRequired="true" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false"
+	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsRequired="true" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false"
 	 * @generated
 	 */
-	void addRoom(int number, int floor, String descriptioin, EList<DisabilityApproval> disabilityApprovals, EList<String> photos);
+	void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos);
 
 	/**
 	 * <!-- begin-user-doc -->

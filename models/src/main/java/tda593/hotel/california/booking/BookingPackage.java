@@ -804,7 +804,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___IS_ROOM_AVAILABLE__DATE_DATE_INT = 9;
+	int BOOKING_MANAGER___IS_ROOM_AVAILABLE__DATE_DATE_STRING = 9;
 
 	/**
 	 * The operation id for the '<em>Register Room</em>' operation.
@@ -849,7 +849,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_ACTIVE_BOOKING__INT = 14;
+	int BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = 14;
 
 	/**
 	 * The operation id for the '<em>Get Related Legal Entities</em>' operation.
@@ -1003,7 +1003,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_INT = BOOKING_MANAGER___IS_ROOM_AVAILABLE__DATE_DATE_INT;
+	int BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_STRING = BOOKING_MANAGER___IS_ROOM_AVAILABLE__DATE_DATE_STRING;
 
 	/**
 	 * The operation id for the '<em>Register Room</em>' operation.
@@ -1048,7 +1048,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__INT = BOOKING_MANAGER___GET_ACTIVE_BOOKING__INT;
+	int BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING = BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Related Legal Entities</em>' operation.
@@ -2017,7 +2017,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.BookingManager#isRoomAvailable(java.util.Date, java.util.Date, java.lang.String)
 	 * @generated
 	 */
-	EOperation getBookingManager__IsRoomAvailable__Date_Date_int();
+	EOperation getBookingManager__IsRoomAvailable__Date_Date_String();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#registerRoom(tda593.hotel.california.booking.Booking, tda593.hotel.california.facilities.Room) <em>Register Room</em>}' operation.
@@ -2067,7 +2067,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.BookingManager#getActiveBooking(java.lang.String)
 	 * @generated
 	 */
-	EOperation getBookingManager__GetActiveBooking__int();
+	EOperation getBookingManager__GetActiveBooking__String();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getRelatedLegalEntities(tda593.hotel.california.booking.Booking) <em>Get Related Legal Entities</em>}' operation.
@@ -2759,7 +2759,7 @@ public interface BookingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_MANAGER___IS_ROOM_AVAILABLE__DATE_DATE_INT = eINSTANCE.getBookingManager__IsRoomAvailable__Date_Date_int();
+		EOperation BOOKING_MANAGER___IS_ROOM_AVAILABLE__DATE_DATE_STRING = eINSTANCE.getBookingManager__IsRoomAvailable__Date_Date_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Register Room</b></em>' operation.
@@ -2799,7 +2799,7 @@ public interface BookingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_MANAGER___GET_ACTIVE_BOOKING__INT = eINSTANCE.getBookingManager__GetActiveBooking__int();
+		EOperation BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = eINSTANCE.getBookingManager__GetActiveBooking__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Related Legal Entities</b></em>' operation.

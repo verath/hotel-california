@@ -165,7 +165,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	public boolean exist(String id) {
 		return get(id) != null;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
