@@ -75,7 +75,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ROOM_NUMBER_EDEFAULT = 0;
+	protected static final String ROOM_NUMBER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRoomNumber() <em>Room Number</em>}' attribute.
@@ -85,7 +85,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
+	protected String roomNumber = ROOM_NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOperational() <em>Is Operational</em>}' attribute.
@@ -232,7 +232,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getRoomNumber() {
+	public String getRoomNumber() {
 		return roomNumber;
 	}
 
@@ -241,8 +241,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoomNumber(int newRoomNumber) {
-		int oldRoomNumber = roomNumber;
+	public void setRoomNumber(String newRoomNumber) {
+		String oldRoomNumber = roomNumber;
 		roomNumber = newRoomNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__ROOM_NUMBER, oldRoomNumber, roomNumber));
@@ -462,7 +462,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setFloor((Integer)newValue);
 				return;
 			case FacilitiesPackage.ROOM__ROOM_NUMBER:
-				setRoomNumber((Integer)newValue);
+				setRoomNumber((String)newValue);
 				return;
 			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				setIsOperational((Boolean)newValue);
@@ -542,7 +542,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackage.ROOM__FLOOR:
 				return floor != FLOOR_EDEFAULT;
 			case FacilitiesPackage.ROOM__ROOM_NUMBER:
-				return roomNumber != ROOM_NUMBER_EDEFAULT;
+				return ROOM_NUMBER_EDEFAULT == null ? roomNumber != null : !ROOM_NUMBER_EDEFAULT.equals(roomNumber);
 			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				return isOperational != IS_OPERATIONAL_EDEFAULT;
 			case FacilitiesPackage.ROOM__IS_CLEANED:

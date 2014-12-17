@@ -66,12 +66,12 @@ public interface RoomEntity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Number</em>' attribute.
-	 * @see #setRoomNumber(int)
+	 * @see #setRoomNumber(String)
 	 * @see tda593.hotel.california.facilities.persistence.PersistencePackage#getRoomEntity_RoomNumber()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getRoomNumber();
+	String getRoomNumber();
 
 	/**
 	 * Sets the value of the '{@link tda593.hotel.california.facilities.persistence.RoomEntity#getRoomNumber <em>Room Number</em>}' attribute.
@@ -81,7 +81,7 @@ public interface RoomEntity extends EObject {
 	 * @see #getRoomNumber()
 	 * @generated
 	 */
-	void setRoomNumber(int value);
+	void setRoomNumber(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Operational</b></em>' attribute.

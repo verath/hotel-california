@@ -2,8 +2,6 @@
  */
 package tda593.hotel.california.billing.persistence;
 
-import javax.persistence.Entity;
-
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.booking.persistence.BookingEntity;
 

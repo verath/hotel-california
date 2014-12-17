@@ -543,7 +543,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 
 		initEClass(roomEntityEClass, RoomEntity.class, "RoomEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomEntity_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomEntity_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomEntity_RoomNumber(), ecorePackage.getEString(), "roomNumber", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomEntity_IsOperational(), ecorePackage.getEBoolean(), "isOperational", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomEntity_IsCleaned(), ecorePackage.getEBoolean(), "isCleaned", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomEntity_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

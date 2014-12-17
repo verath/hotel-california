@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Wed Dec 17 14:42:08 CET 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-587b-fc6e-000006eaf1e8 
+Wed Dec 17 14:56:17 CET 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-5888-efd7-000006ec3018 
 on database directory memory:/Users/sebastianblomberg/Documents/myworkspace/hotel-california/models/hotel-californiaDB with class loader sun.misc.Launcher$AppClassLoader@44f757b9 
 Loaded from file:/Users/sebastianblomberg/Documents/myworkspace/hotel-california/models/libs/derby.jar
 java.vendor=Oracle Corporation

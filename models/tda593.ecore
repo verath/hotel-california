@@ -121,7 +121,7 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="floor" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOperational" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCleaned" ordered="false"
@@ -218,7 +218,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="floor" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
-                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOperational"
                 ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCleaned" ordered="false"
@@ -609,7 +609,7 @@
           <eOperations name="isRoomAvailable" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="from" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
           <eOperations name="registerRoom" ordered="false" lowerBound="1">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
@@ -626,7 +626,7 @@
           </eOperations>
           <eOperations name="getRoomTypes" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/RoomType"/>
           <eOperations name="getActiveBooking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
-            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
           <eOperations name="getRelatedLegalEntities" ordered="false" upperBound="-1"
               eType="#//hotel/california/booking/LegalEntity">

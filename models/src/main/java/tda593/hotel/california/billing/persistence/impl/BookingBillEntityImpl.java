@@ -2,13 +2,10 @@
  */
 package tda593.hotel.california.billing.persistence.impl;
 
-import javax.persistence.Entity;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import tda593.hotel.california.billing.impl.BillImpl;
 import tda593.hotel.california.billing.persistence.BookingBillEntity;
 import tda593.hotel.california.billing.persistence.PersistencePackage;

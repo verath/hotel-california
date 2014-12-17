@@ -14,6 +14,9 @@ import tda593.hotel.california.billing.persistence.PurchaseEntity;
 import tda593.hotel.california.billing.persistence.impl.PurchaseEntityImpl;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.Room;
+import tda593.hotel.california.facilities.RoomDataService;
+import tda593.hotel.california.facilities.impl.RoomDataServiceImpl;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
 import tda593.hotel.california.facilities.persistence.PersistencePackage;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
@@ -44,7 +47,7 @@ public class Main {
 		dataStore.initialize();
 		
 		RoomEntity bill = tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createRoomEntity();
-		bill.setRoomNumber(666);
+		bill.setRoomNumber("666");
 		RoomTypeEntity type =tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createRoomTypeEntity();
 		type.setName("Some room type");
 		type.setDescription("Some desc");
@@ -64,15 +67,8 @@ public class Main {
 		entityManager.persist(bill);
 		entityManager.getTransaction().commit();
 		
-		
-		List<RoomEntity> results = entityManager.createQuery("FROM RoomEntity", RoomEntity.class).getResultList();
-		System.out.println(results.size());
-		for (RoomEntity i : results) {
-			System.out.println(i.getRoomNumber());
-			for (KeyCardEntity k : i.getAllowedKeyCards()) {
-				System.out.println("Key card: " + k.getId());
-			}
-		}
+		RoomDataService ds = new RoomDataServiceImpl(entityManager);
+		ds.getAll();
 	}
 
 }
