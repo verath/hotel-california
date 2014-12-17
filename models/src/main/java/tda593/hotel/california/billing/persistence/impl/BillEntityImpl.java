@@ -4,13 +4,8 @@ package tda593.hotel.california.billing.persistence.impl;
 
 import java.util.Collection;
 import java.util.Date;
-
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -18,7 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.PersistencePackage;

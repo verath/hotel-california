@@ -303,11 +303,11 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isRoomAvailable(Date from, Date to, int roomNumber) {
+	public boolean isRoomAvailable(Date from, Date to, String roomNumber) {
 		EList<Room> availableRooms = getAvailableRooms(from, to);
 		
 		for(Room room : availableRooms) {
-			if(room.getRoomNumber() == roomNumber) {
+			if(room.getRoomNumber().equals(roomNumber)) {
 				return true;
 			}
 		}
@@ -392,7 +392,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking getActiveBooking(int roomNumber) {
+	public Booking getActiveBooking(String roomNumber) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -524,7 +524,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_INT:
-				return isRoomAvailable((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2));
+				return isRoomAvailable((Date)arguments.get(0), (Date)arguments.get(1), (String)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___REGISTER_ROOM__BOOKING_ROOM:
 				registerRoom((Booking)arguments.get(0), (Room)arguments.get(1));
 				return null;
@@ -536,7 +536,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ROOM_TYPES:
 				return getRoomTypes();
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__INT:
-				return getActiveBooking((Integer)arguments.get(0));
+				return getActiveBooking((String)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_RELATED_LEGAL_ENTITIES__BOOKING:
 				return getRelatedLegalEntities((Booking)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CHECK_OUT__BOOKING:

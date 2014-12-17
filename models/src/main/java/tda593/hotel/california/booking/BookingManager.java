@@ -101,7 +101,7 @@ public interface BookingManager extends EObject {
 	 * @model required="true" ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	boolean isRoomAvailable(Date from, Date to, int roomNumber);
+	boolean isRoomAvailable(Date from, Date to, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,7 +141,7 @@ public interface BookingManager extends EObject {
 	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	Booking getActiveBooking(int roomNumber);
+	Booking getActiveBooking(String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->

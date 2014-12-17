@@ -2010,11 +2010,11 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__CreateBooking__Date_Date_LegalEntity_Room();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#isRoomAvailable(java.util.Date, java.util.Date, int) <em>Is Room Available</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#isRoomAvailable(java.util.Date, java.util.Date, java.lang.String) <em>Is Room Available</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Room Available</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingManager#isRoomAvailable(java.util.Date, java.util.Date, int)
+	 * @see tda593.hotel.california.booking.BookingManager#isRoomAvailable(java.util.Date, java.util.Date, java.lang.String)
 	 * @generated
 	 */
 	EOperation getBookingManager__IsRoomAvailable__Date_Date_int();
@@ -2060,11 +2060,11 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__GetRoomTypes();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getActiveBooking(int) <em>Get Active Booking</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getActiveBooking(java.lang.String) <em>Get Active Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Active Booking</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingManager#getActiveBooking(int)
+	 * @see tda593.hotel.california.booking.BookingManager#getActiveBooking(java.lang.String)
 	 * @generated
 	 */
 	EOperation getBookingManager__GetActiveBooking__int();

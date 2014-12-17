@@ -3,15 +3,12 @@
 package tda593.hotel.california.facilities.persistence.impl;
 
 import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -20,7 +17,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import tda593.hotel.california.facilities.persistence.DisabilityApprovalEntity;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
 import tda593.hotel.california.facilities.persistence.PersistencePackage;
@@ -79,7 +75,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ROOM_NUMBER_EDEFAULT = 0;
+	protected static final String ROOM_NUMBER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRoomNumber() <em>Room Number</em>}' attribute.
@@ -90,7 +86,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * @ordered
 	 */
 	@Id
-	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
+	protected String roomNumber = ROOM_NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOperational() <em>Is Operational</em>}' attribute.
@@ -240,7 +236,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getRoomNumber() {
+	public String getRoomNumber() {
 		return roomNumber;
 	}
 
@@ -249,8 +245,8 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoomNumber(int newRoomNumber) {
-		int oldRoomNumber = roomNumber;
+	public void setRoomNumber(String newRoomNumber) {
+		String oldRoomNumber = roomNumber;
 		roomNumber = newRoomNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ROOM_ENTITY__ROOM_NUMBER, oldRoomNumber, roomNumber));
@@ -437,7 +433,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 				setFloor((Integer)newValue);
 				return;
 			case PersistencePackage.ROOM_ENTITY__ROOM_NUMBER:
-				setRoomNumber((Integer)newValue);
+				setRoomNumber((String)newValue);
 				return;
 			case PersistencePackage.ROOM_ENTITY__IS_OPERATIONAL:
 				setIsOperational((Boolean)newValue);
@@ -517,7 +513,7 @@ public class RoomEntityImpl extends MinimalEObjectImpl.Container implements Room
 			case PersistencePackage.ROOM_ENTITY__FLOOR:
 				return floor != FLOOR_EDEFAULT;
 			case PersistencePackage.ROOM_ENTITY__ROOM_NUMBER:
-				return roomNumber != ROOM_NUMBER_EDEFAULT;
+				return ROOM_NUMBER_EDEFAULT == null ? roomNumber != null : !ROOM_NUMBER_EDEFAULT.equals(roomNumber);
 			case PersistencePackage.ROOM_ENTITY__IS_OPERATIONAL:
 				return isOperational != IS_OPERATIONAL_EDEFAULT;
 			case PersistencePackage.ROOM_ENTITY__IS_CLEANED:

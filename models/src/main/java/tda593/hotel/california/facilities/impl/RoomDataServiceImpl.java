@@ -4,17 +4,21 @@ package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.persistence.PersistenceFactory;
+import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
 /**
@@ -66,11 +70,11 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Room get(String id) {
-		RoomEntityImpl roomEntity = entityManager.find(RoomEntityImpl.class, id);
+		RoomEntity roomEntity = entityManager.find(RoomEntity.class, id);
 		return roomEntity == null? null : EntityToRoom(roomEntity);
 	}
 
-	public static Room EntityToRoom(RoomEntityImpl roomEntity) {
+	public static Room EntityToRoom(RoomEntity roomEntity) {
 		Room room = FacilitiesFactory.eINSTANCE.createRoom();
 		room.setRoomNumber(roomEntity.getRoomNumber());
 		room.setDescription(roomEntity.getDescription());
@@ -98,9 +102,9 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public EList<Room> getAll() {
-		List<RoomEntityImpl> results = entityManager.createQuery("FROM Rooms", RoomEntityImpl.class).getResultList();
+		List<RoomEntity> results = entityManager.createQuery("FROM RoomEntity", RoomEntity.class).getResultList();
 		EList<Room> roomResults = new BasicEList<Room>(results.size());
-		for (RoomEntityImpl entity : results) {
+		for (RoomEntity entity : results) {
 			roomResults.add(EntityToRoom(entity));
 		}
 		
