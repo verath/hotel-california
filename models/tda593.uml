@@ -93,7 +93,6 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_75OikH-sEeS2M9uZ6JBJRQ" memberEnd="_75OikX-sEeS2M9uZ6JBJRQ _75LfQH-sEeS2M9uZ6JBJRQ">
-      <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_75OikX-sEeS2M9uZ6JBJRQ" name="room" type="_6SLu0HZBEeSrX_LICIhx2Q" association="_75OikH-sEeS2M9uZ6JBJRQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75Oikn-sEeS2M9uZ6JBJRQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75Oik3-sEeS2M9uZ6JBJRQ" value="1"/>
@@ -186,6 +185,9 @@
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_HU2XkH7MEeS2M9uZ6JBJRQ" name="exist">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_MTVDwH7MEeS2M9uZ6JBJRQ" name="object" type="_ya0VAH7IEeS2M9uZ6JBJRQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_M8VHQIWMEeSYe4XnLK7_AA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_R6zvAIFQEeSZuOQR5MrPYg" name="facilities">
@@ -343,8 +345,8 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3WLXEnZJEeSrX_LICIhx2Q" value="1"/>
             </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_75LfQH-sEeS2M9uZ6JBJRQ" name="disabilityApprovals" visibility="private" type="_1pGBQH-sEeS2M9uZ6JBJRQ" association="_75OikH-sEeS2M9uZ6JBJRQ">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75LfQX-sEeS2M9uZ6JBJRQ" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75LfQn-sEeS2M9uZ6JBJRQ" value="1"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75LfQX-sEeS2M9uZ6JBJRQ"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75LfQn-sEeS2M9uZ6JBJRQ" value="*"/>
             </ownedAttribute>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_6fXc8HZGEeSrX_LICIhx2Q" name="registerKeyCard">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_h6IhsHZIEeSrX_LICIhx2Q" name="keyCard" type="_LUQhAHZIEeSrX_LICIhx2Q"/>

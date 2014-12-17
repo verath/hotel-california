@@ -114,7 +114,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void exist(String object) {
+	public boolean exist(String object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -144,8 +144,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 				delete((LegalEntity)arguments.get(0));
 				return null;
 			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE___EXIST__OBJECT:
-				exist((String)arguments.get(0));
-				return null;
+				return exist((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -178,24 +178,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected RoomType roomType;
 
 	/**
-	 * The default value of the '{@link #getDisabilityApprovals() <em>Disability Approvals</em>}' attribute.
+	 * The cached value of the '{@link #getDisabilityApprovals() <em>Disability Approvals</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDisabilityApprovals()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final DisabilityApproval DISABILITY_APPROVALS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDisabilityApprovals() <em>Disability Approvals</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisabilityApprovals()
-	 * @generated
-	 * @ordered
-	 */
-	protected DisabilityApproval disabilityApprovals = DISABILITY_APPROVALS_EDEFAULT;
+	protected EList<DisabilityApproval> disabilityApprovals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -388,20 +378,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DisabilityApproval getDisabilityApprovals() {
+	public EList<DisabilityApproval> getDisabilityApprovals() {
+		if (disabilityApprovals == null) {
+			disabilityApprovals = new EDataTypeUniqueEList<DisabilityApproval>(DisabilityApproval.class, this, FacilitiesPackage.ROOM__DISABILITY_APPROVALS);
+		}
 		return disabilityApprovals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisabilityApprovals(DisabilityApproval newDisabilityApprovals) {
-		DisabilityApproval oldDisabilityApprovals = disabilityApprovals;
-		disabilityApprovals = newDisabilityApprovals == null ? DISABILITY_APPROVALS_EDEFAULT : newDisabilityApprovals;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__DISABILITY_APPROVALS, oldDisabilityApprovals, disabilityApprovals));
 	}
 
 	/**
@@ -504,7 +485,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setRoomType((RoomType)newValue);
 				return;
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
-				setDisabilityApprovals((DisabilityApproval)newValue);
+				getDisabilityApprovals().clear();
+				getDisabilityApprovals().addAll((Collection<? extends DisabilityApproval>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -543,7 +525,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setRoomType((RoomType)null);
 				return;
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
-				setDisabilityApprovals(DISABILITY_APPROVALS_EDEFAULT);
+				getDisabilityApprovals().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -574,7 +556,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackage.ROOM__ROOM_TYPE:
 				return roomType != null;
 			case FacilitiesPackage.ROOM__DISABILITY_APPROVALS:
-				return disabilityApprovals != DISABILITY_APPROVALS_EDEFAULT;
+				return disabilityApprovals != null && !disabilityApprovals.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

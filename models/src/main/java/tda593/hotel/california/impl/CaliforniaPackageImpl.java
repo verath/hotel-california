@@ -301,7 +301,7 @@ public class CaliforniaPackageImpl extends EPackageImpl implements CaliforniaPac
 		g1 = createEGenericType(dataServiceEClass_E);
 		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getDataService__Exist__Object(), null, "exist", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getDataService__Exist__Object(), ecorePackage.getEBoolean(), "exist", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		g1 = createEGenericType(dataServiceEClass_ID);
 		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

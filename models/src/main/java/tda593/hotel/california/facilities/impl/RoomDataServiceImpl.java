@@ -3,16 +3,19 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomDataService;
+import tda593.hotel.california.facilities.persistence.PersistenceFactory;
+import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +27,7 @@ import tda593.hotel.california.facilities.RoomDataService;
  * @generated
  */
 public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements RoomDataService {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,6 +35,19 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 */
 	protected RoomDataServiceImpl() {
 		super();
+	}
+
+	private EntityManager entityManager;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public RoomDataServiceImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+		
 	}
 
 	/**
@@ -46,78 +63,103 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Room get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		RoomEntityImpl roomEntity = entityManager.find(RoomEntityImpl.class, id);
+		return roomEntity == null? null : EntityToRoom(roomEntity);
 	}
 
+	public static Room EntityToRoom(RoomEntityImpl roomEntity) {
+		Room room = FacilitiesFactory.eINSTANCE.createRoom();
+		room.setRoomNumber(roomEntity.getRoomNumber());
+		room.setDescription(roomEntity.getDescription());
+		room.setFloor(roomEntity.getFloor());
+		room.setIsCleaned(roomEntity.isCleaned());
+		room.setIsOperational(roomEntity.isOperational());
+		room.setRoomType(RoomTypeDataServiceImpl.EntityToRoomType(roomEntity.getRoomTypeEntity()));
+		return room;
+	}
+	
+	public static RoomEntityImpl RoomToEntity(Room room) {
+		RoomEntityImpl roomEntity = (RoomEntityImpl) PersistenceFactory.eINSTANCE.createRoomEntity();
+		roomEntity.setRoomNumber(room.getRoomNumber());
+		roomEntity.setDescription(room.getDescription());
+		roomEntity.setFloor(room.getFloor());
+		roomEntity.setIsCleaned(room.isCleaned());
+		roomEntity.setIsOperational(room.isOperational());
+		roomEntity.setRoomTypeEntity(RoomTypeDataServiceImpl.RoomTypeToEntity(room.getRoomType()));
+		return roomEntity;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<RoomEntityImpl> results = entityManager.createQuery("FROM Rooms", RoomEntityImpl.class).getResultList();
+		EList<Room> roomResults = new BasicEList<Room>(results.size());
+		for (RoomEntityImpl entity : results) {
+			roomResults.add(EntityToRoom(entity));
+		}
+		
+		return roomResults;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long count = entityManager.createQuery("SELECT COUNT(number) FROM Rooms", Long.class).getSingleResult();
+		// TODO : change to long
+		return count.intValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(Room object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		entityManager.persist(RoomToEntity(object));
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<Room> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		for(Room room : objects) {
+			entityManager.persist(RoomToEntity(room));
+		}
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void delete(Room object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void delete(Room room) {
+		entityManager.remove(RoomToEntity(room));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void exist(String object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean exist(String id) {
+		return get(id) != null;
 	}
 
 	/**
@@ -144,8 +186,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 				delete((Room)arguments.get(0));
 				return null;
 			case FacilitiesPackage.ROOM_DATA_SERVICE___EXIST__OBJECT:
-				exist((String)arguments.get(0));
-				return null;
+				return exist((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

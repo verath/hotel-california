@@ -32,7 +32,7 @@
             <eGenericType eTypeParameter="#//hotel/california/DataService/E"/>
           </eParameters>
         </eOperations>
-        <eOperations name="exist" ordered="false" lowerBound="1">
+        <eOperations name="exist" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="object" ordered="false" lowerBound="1">
             <eGenericType eTypeParameter="#//hotel/california/DataService/ID"/>
           </eParameters>
@@ -135,7 +135,7 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
               lowerBound="1" eType="#//hotel/california/facilities/RoomType"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="disabilityApprovals"
-              ordered="false" lowerBound="1" eType="#//hotel/california/facilities/DisabilityApproval"/>
+              ordered="false" upperBound="-1" eType="#//hotel/california/facilities/DisabilityApproval"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EEnum" name="DisabilityApproval"/>
         <eClassifiers xsi:type="ecore:EClass" name="RoomManagerImpl" eSuperTypes="#//hotel/california/facilities/RoomManager">

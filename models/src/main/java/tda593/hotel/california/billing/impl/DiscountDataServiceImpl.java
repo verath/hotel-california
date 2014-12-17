@@ -114,7 +114,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void exist(String object) {
+	public boolean exist(String object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -144,8 +144,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 				delete((Discount)arguments.get(0));
 				return null;
 			case BillingPackage.DISCOUNT_DATA_SERVICE___EXIST__OBJECT:
-				exist((String)arguments.get(0));
-				return null;
+				return exist((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

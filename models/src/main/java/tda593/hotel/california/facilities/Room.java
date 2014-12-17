@@ -220,7 +220,8 @@ public interface Room extends EObject {
 	void setRoomType(RoomType value);
 
 	/**
-	 * Returns the value of the '<em><b>Disability Approvals</b></em>' attribute.
+	 * Returns the value of the '<em><b>Disability Approvals</b></em>' attribute list.
+	 * The list contents are of type {@link tda593.hotel.california.facilities.DisabilityApproval}.
 	 * The literals are from the enumeration {@link tda593.hotel.california.facilities.DisabilityApproval}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -228,25 +229,13 @@ public interface Room extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Disability Approvals</em>' attribute.
+	 * @return the value of the '<em>Disability Approvals</em>' attribute list.
 	 * @see tda593.hotel.california.facilities.DisabilityApproval
-	 * @see #setDisabilityApprovals(DisabilityApproval)
 	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_DisabilityApprovals()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	DisabilityApproval getDisabilityApprovals();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Disability Approvals</em>' attribute.
-	 * @see tda593.hotel.california.facilities.DisabilityApproval
-	 * @see #getDisabilityApprovals()
-	 * @generated
-	 */
-	void setDisabilityApprovals(DisabilityApproval value);
+	EList<DisabilityApproval> getDisabilityApprovals();
 
 	/**
 	 * <!-- begin-user-doc -->

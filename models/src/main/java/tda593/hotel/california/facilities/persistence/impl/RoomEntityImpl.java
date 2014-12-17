@@ -10,6 +10,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -48,6 +49,7 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
  * @generated
  */
 @Entity
+@Table(name = "Rooms")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class RoomEntityImpl extends MinimalEObjectImpl.Container implements RoomEntity {
 	/**

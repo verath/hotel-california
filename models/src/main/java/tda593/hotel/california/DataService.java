@@ -68,9 +68,9 @@ public interface DataService<E, ID> extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model objectRequired="true" objectOrdered="false"
+	 * @model required="true" ordered="false" objectRequired="true" objectOrdered="false"
 	 * @generated
 	 */
-	void exist(ID object);
+	boolean exist(ID object);
 
 } // DataService

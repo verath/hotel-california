@@ -572,7 +572,7 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM__ROOM_TYPE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
+	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1017,7 +1017,7 @@ public interface FacilitiesPackage extends EPackage {
 	int CONFERENCE_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
+	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1171,7 +1171,7 @@ public interface FacilitiesPackage extends EPackage {
 	int GUEST_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute.
+	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1763,10 +1763,10 @@ public interface FacilitiesPackage extends EPackage {
 	EReference getRoom_RoomType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}'.
+	 * Returns the meta object for the attribute list '{@link tda593.hotel.california.facilities.Room#getDisabilityApprovals <em>Disability Approvals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Disability Approvals</em>'.
+	 * @return the meta object for the attribute list '<em>Disability Approvals</em>'.
 	 * @see tda593.hotel.california.facilities.Room#getDisabilityApprovals()
 	 * @see #getRoom()
 	 * @generated
@@ -2291,7 +2291,7 @@ public interface FacilitiesPackage extends EPackage {
 		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Disability Approvals</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Disability Approvals</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

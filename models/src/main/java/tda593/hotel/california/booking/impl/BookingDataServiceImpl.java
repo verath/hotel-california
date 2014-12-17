@@ -114,7 +114,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void exist(Integer object) {
+	public boolean exist(Integer object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -144,8 +144,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				delete((Booking)arguments.get(0));
 				return null;
 			case BookingPackage.BOOKING_DATA_SERVICE___EXIST__OBJECT:
-				exist((Integer)arguments.get(0));
-				return null;
+				return exist((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

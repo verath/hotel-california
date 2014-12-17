@@ -114,7 +114,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void exist(String object) {
+	public boolean exist(String object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -144,8 +144,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				delete((KeyCard)arguments.get(0));
 				return null;
 			case FacilitiesPackage.KEY_CARD_DATA_SERVICE___EXIST__OBJECT:
-				exist((String)arguments.get(0));
-				return null;
+				return exist((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
