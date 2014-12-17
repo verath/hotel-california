@@ -3,16 +3,25 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardDataService;
+import tda593.hotel.california.facilities.RoomType;
+import tda593.hotel.california.facilities.persistence.KeyCardEntity;
+import tda593.hotel.california.facilities.persistence.PersistenceFactory;
+import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
+import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
+import tda593.hotel.california.facilities.persistence.impl.KeyCardEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +33,9 @@ import tda593.hotel.california.facilities.KeyCardDataService;
  * @generated
  */
 public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container implements KeyCardDataService {
+	
+	private EntityManager entityManager;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,6 +43,23 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	protected KeyCardDataServiceImpl() {
 		super();
+	}
+	
+	public KeyCardDataServiceImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+	
+	public static KeyCard EntityToKeyCard(KeyCardEntity entity) {
+		KeyCard keyCard = FacilitiesFactory.eINSTANCE.createKeyCard();
+		keyCard.setId(entity.getId());
+		return keyCard;
+	}
+	
+	public static KeyCardEntity KeyCardToEntity(KeyCard keyCard) {
+		KeyCardEntity keyCardEntity = (KeyCardEntityImpl) PersistenceFactory.eINSTANCE.createKeyCardEntity();
+		keyCardEntity.setId(keyCard.getId());
+		return keyCardEntity;
 	}
 
 	/**
@@ -49,9 +78,8 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public KeyCard get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		KeyCardEntity entity = entityManager.find(KeyCardEntity.class, id);
+		return entity == null ? null : EntityToKeyCard(entity);
 	}
 
 	/**
@@ -60,9 +88,13 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<KeyCard> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<KeyCardEntity> resultList = entityManager.createQuery("FROM KeyCardEntity", KeyCardEntity.class).getResultList();
+		EList<KeyCard> keyCardResults = new BasicEList<KeyCard>(resultList.size());
+		for(KeyCardEntity entity : resultList) {
+			keyCardResults.add(EntityToKeyCard(entity));
+		}
+		
+		return keyCardResults;
 	}
 
 	/**
@@ -71,9 +103,8 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long count = entityManager.createQuery("SELECT COUNT(id) FROM KeyCards", Long.class).getSingleResult();
+		return count.intValue();
 	}
 
 	/**
@@ -82,9 +113,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void set(KeyCard object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.getTransaction().begin();
+		entityManager.persist(KeyCardToEntity(object));
+		entityManager.getTransaction().commit();
 	}
 
 	/**
@@ -93,9 +124,11 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setAll(EList<KeyCard> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.getTransaction().begin();
+		for(KeyCard keyCard : objects) {
+			entityManager.persist(KeyCardToEntity(keyCard));
+		}
+		entityManager.getTransaction().commit();
 	}
 
 	/**
@@ -104,9 +137,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void delete(KeyCard object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.getTransaction().begin();
+		entityManager.remove(KeyCardToEntity(object));
+		entityManager.getTransaction().commit();
 	}
 
 	/**
@@ -114,10 +147,8 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean exist(String object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean exist(String id) {
+		return get(id) == null;
 	}
 
 	/**

@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCard <em>Key Card</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCards <em>Key Cards</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCardDataService <em>Key Card Data Service</em>}</li>
  * </ul>
  * </p>
@@ -23,20 +23,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface KeyCardManagerImpl extends KeyCardManager {
 	/**
-	 * Returns the value of the '<em><b>Key Card</b></em>' reference list.
+	 * Returns the value of the '<em><b>Key Cards</b></em>' reference list.
 	 * The list contents are of type {@link tda593.hotel.california.facilities.KeyCard}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Key Card</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Key Cards</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Key Card</em>' reference list.
-	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getKeyCardManagerImpl_KeyCard()
+	 * @return the value of the '<em>Key Cards</em>' reference list.
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getKeyCardManagerImpl_KeyCards()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<KeyCard> getKeyCard();
+	EList<KeyCard> getKeyCards();
 
 	/**
 	 * Returns the value of the '<em><b>Key Card Data Service</b></em>' reference.
