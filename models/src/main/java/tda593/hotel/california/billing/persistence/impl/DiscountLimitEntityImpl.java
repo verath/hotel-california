@@ -5,20 +5,18 @@ package tda593.hotel.california.billing.persistence.impl;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import tda593.hotel.california.billing.persistence.DiscountLimitEntity;
 import tda593.hotel.california.billing.persistence.PersistencePackage;
-
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
 /**
@@ -37,6 +35,7 @@ import tda593.hotel.california.booking.persistence.LegalEntityEntity;
  *
  * @generated
  */
+@Entity
 public class DiscountLimitEntityImpl extends MinimalEObjectImpl.Container implements DiscountLimitEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -56,6 +55,7 @@ public class DiscountLimitEntityImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
+	@Id
 	protected int id = ID_EDEFAULT;
 
 	/**

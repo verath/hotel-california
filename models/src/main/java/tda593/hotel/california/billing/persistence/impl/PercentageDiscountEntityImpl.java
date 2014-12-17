@@ -2,10 +2,10 @@
  */
 package tda593.hotel.california.billing.persistence.impl;
 
+import javax.persistence.Entity;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.billing.persistence.PercentageDiscountEntity;
@@ -24,6 +24,7 @@ import tda593.hotel.california.billing.persistence.PersistencePackage;
  *
  * @generated
  */
+@Entity
 public class PercentageDiscountEntityImpl extends DiscountEntityImpl implements PercentageDiscountEntity {
 	/**
 	 * The default value of the '{@link #getPercentage() <em>Percentage</em>}' attribute.

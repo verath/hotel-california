@@ -4,8 +4,9 @@ package tda593.hotel.california.billing.persistence;
 
 import java.util.Date;
 
-import org.eclipse.emf.common.util.EList;
+import javax.persistence.Entity;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;

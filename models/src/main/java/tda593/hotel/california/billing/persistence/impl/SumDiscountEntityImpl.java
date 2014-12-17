@@ -2,10 +2,10 @@
  */
 package tda593.hotel.california.billing.persistence.impl;
 
+import javax.persistence.Entity;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.billing.persistence.PersistencePackage;
@@ -24,6 +24,7 @@ import tda593.hotel.california.billing.persistence.SumDiscountEntity;
  *
  * @generated
  */
+@Entity
 public class SumDiscountEntityImpl extends DiscountEntityImpl implements SumDiscountEntity {
 	/**
 	 * The default value of the '{@link #getDiscountSum() <em>Discount Sum</em>}' attribute.

@@ -49,7 +49,6 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
  * @generated
  */
 @Entity
-@Table(name = "Rooms")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class RoomEntityImpl extends MinimalEObjectImpl.Container implements RoomEntity {
 	/**
