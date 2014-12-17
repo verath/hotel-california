@@ -70,7 +70,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Room get(String id) {
-		RoomEntity roomEntity = entityManager.find(RoomEntity.class, id);
+		RoomEntity roomEntity = entityManager.find(RoomEntity.class, Long.parseLong(id));
 		return roomEntity == null? null : EntityToRoom(roomEntity);
 	}
 

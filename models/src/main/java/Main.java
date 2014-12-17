@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.teneo.hibernate.HbEntityDataStore;
+import org.eclipse.emf.teneo.mapping.strategy.EntityNameStrategy;
+import org.eclipse.emf.teneo.mapping.strategy.impl.EntityInterfaceNameStrategy;
 import org.hibernate.cfg.Environment;
 
 import tda593.hotel.california.CaliforniaPackage;
@@ -41,33 +43,35 @@ public class Main {
 				BookingPackage.eINSTANCE,
 				FacilitiesPackage.eINSTANCE,
 				CaliforniaPackage.eINSTANCE});
+		
+		dataStore.getExtensionManager().registerExtension(EntityNameStrategy.class.getName(), EntityInterfaceNameStrategy.class.getName());
 		dataStore.initialize();
 		
-		RoomEntity bill = tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createRoomEntity();
-		bill.setRoomNumber("666");
-		RoomTypeEntity type =tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createRoomTypeEntity();
+		RoomEntity roomEntity = tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createRoomEntity();
+		roomEntity.setRoomNumber("666");
+		RoomTypeEntity type = tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createRoomTypeEntity();
 		type.setName("Some room type");
 		type.setDescription("Some desc");
 		
-		bill.setRoomTypeEntity(type);
-		bill.setDescription("");
+		roomEntity.setRoomTypeEntity(type);
+		roomEntity.setDescription("");
 		
 		KeyCardEntity keyCard = tda593.hotel.california.facilities.persistence.PersistenceFactory.eINSTANCE.createKeyCardEntity();
 		keyCard.setId("KEYCARD01");
 		
-		bill.getAllowedKeyCards().add(keyCard);
+		roomEntity.getAllowedKeyCards().add(keyCard);
 		
 		//EntityManagerFactory emf = Persistence.createEntityManagerFactory("tda593.hotel.california");
 		EntityManager entityManager = dataStore.getEntityManagerFactory().createEntityManager();
 		entityManager.getTransaction().begin();
 		entityManager.persist(type);
-		entityManager.persist(bill);
+		entityManager.persist(roomEntity);
 		entityManager.getTransaction().commit();
 		
 		RoomDataService ds = new RoomDataServiceImpl(entityManager);
-		for(Room r : ds.getAll()) {
-			System.out.println(r);
-		}
+		//for(Room r : ds.getAll()) {
+		//	System.out.println(r);
+		//}
 		ds.get("666");
 	}
 
