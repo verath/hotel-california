@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Properties;
 
 import javax.persistence.EntityManager;
@@ -9,16 +8,12 @@ import org.hibernate.cfg.Environment;
 
 import tda593.hotel.california.CaliforniaPackage;
 import tda593.hotel.california.billing.BillingPackage;
-import tda593.hotel.california.billing.persistence.PersistenceFactory;
-import tda593.hotel.california.billing.persistence.PurchaseEntity;
-import tda593.hotel.california.billing.persistence.impl.PurchaseEntityImpl;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.impl.RoomDataServiceImpl;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
-import tda593.hotel.california.facilities.persistence.PersistencePackage;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
 
@@ -32,6 +27,8 @@ public class Main {
 		hibernateProperties.setProperty(Environment.URL, "jdbc:derby:memory:hotel-californiaDB;create=true");
 		hibernateProperties.setProperty(Environment.PASS, "");
 		hibernateProperties.setProperty(Environment.DIALECT,"org.hibernate.dialect.DerbyTenSevenDialect");
+		hibernateProperties.setProperty(Environment.SHOW_SQL, "true");
+		hibernateProperties.setProperty(Environment.FORMAT_SQL, "true");
 		
 		HbEntityDataStore dataStore = new HbEntityDataStore();
 		dataStore.setName("Testing");
@@ -68,7 +65,10 @@ public class Main {
 		entityManager.getTransaction().commit();
 		
 		RoomDataService ds = new RoomDataServiceImpl(entityManager);
-		ds.getAll();
+		for(Room r : ds.getAll()) {
+			System.out.println(r);
+		}
+		ds.get("666");
 	}
 
 }

@@ -2,8 +2,9 @@
  */
 package tda593.hotel.california.facilities.persistence;
 
-import org.eclipse.emf.common.util.EList;
+import javax.persistence.Entity;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@Entity
 public interface RoomEntity extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Floor</b></em>' attribute.
