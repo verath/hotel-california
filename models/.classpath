@@ -22,5 +22,7 @@
 	<classpathentry kind="lib" path="libs/org.eclipse.emf.teneo.hibernate_2.1.0.v201409190813.jar"/>
 	<classpathentry kind="lib" path="libs/org.eclipse.emf.teneo.hibernate.mapper_2.1.0.v201409190813.jar"/>
 	<classpathentry kind="lib" path="libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.common_2.10.1.v20140901-1043.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.ecore_2.10.1.v20140901-1043.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
