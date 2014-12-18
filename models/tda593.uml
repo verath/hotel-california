@@ -433,20 +433,10 @@
           <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pGBQH-sEeS2M9uZ6JBJRQ" name="DisabilityApproval"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_JFBtsIUMEeSukffvaVOsTw" name="KeyCardManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_ZpatEIUMEeSukffvaVOsTw" general="_0YiNMHpaEeSept0-dI1XSQ"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_gfsBUIUMEeSukffvaVOsTw" name="keyCards" visibility="private" type="_LUQhAHZIEeSrX_LICIhx2Q" association="_gf1LQIUMEeSukffvaVOsTw">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gfsBUYUMEeSukffvaVOsTw"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gfsBUoUMEeSukffvaVOsTw" value="*"/>
-            </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_7K44oIUMEeSukffvaVOsTw" name="keyCardDataService" type="_3B8GQIUMEeSukffvaVOsTw" association="_7K44o4UMEeSukffvaVOsTw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7K44oYUMEeSukffvaVOsTw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7K44ooUMEeSukffvaVOsTw" value="1"/>
             </ownedAttribute>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Association" xmi:id="_gf1LQIUMEeSukffvaVOsTw" memberEnd="_gf1LQYUMEeSukffvaVOsTw _gfsBUIUMEeSukffvaVOsTw">
-            <ownedEnd xmi:type="uml:Property" xmi:id="_gf1LQYUMEeSukffvaVOsTw" name="keyCardManagerImpl" type="_JFBtsIUMEeSukffvaVOsTw" association="_gf1LQIUMEeSukffvaVOsTw">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gf1LQoUMEeSukffvaVOsTw" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gf1LQ4UMEeSukffvaVOsTw" value="1"/>
-            </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_3B8GQIUMEeSukffvaVOsTw" name="KeyCardDataService">
             <generalization xmi:type="uml:Generalization" xmi:id="_mHT7sIUNEeSukffvaVOsTw" general="_W5BzoIUNEeSukffvaVOsTw"/>
