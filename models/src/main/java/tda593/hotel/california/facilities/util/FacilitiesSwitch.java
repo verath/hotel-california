@@ -170,6 +170,15 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL: {
+				AdminKeyCardManagerImpl adminKeyCardManagerImpl = (AdminKeyCardManagerImpl)theEObject;
+				T result = caseAdminKeyCardManagerImpl(adminKeyCardManagerImpl);
+				if (result == null) result = caseKeyCardManagerImpl(adminKeyCardManagerImpl);
+				if (result == null) result = caseAdminKeyCardManager(adminKeyCardManagerImpl);
+				if (result == null) result = caseKeyCardManager(adminKeyCardManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -396,6 +405,21 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAdminRoomManagerImpl(AdminRoomManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Key Card Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Key Card Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminKeyCardManagerImpl(AdminKeyCardManagerImpl object) {
 		return null;
 	}
 

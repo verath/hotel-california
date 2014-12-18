@@ -177,6 +177,7 @@
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/KeyCardDataService"/>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/AdminRoomManagerImpl"/>
+          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/AdminKeyCardManagerImpl"/>
         </nestedGenPackages>
         <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Billing" basePackage="tda593.hotel.california"
             disposableProviderFactory="true" ecorePackage="tda593.ecore#//hotel/california/billing">
@@ -240,8 +241,6 @@
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/Bill/isPaid"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/purchase"/>
-            <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-                propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/creditCardInformation"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/usedDiscounts"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

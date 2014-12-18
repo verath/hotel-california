@@ -5,15 +5,17 @@ package tda593.hotel.california.facilities.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
+import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.DisabilityApproval;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomApproval;
 import tda593.hotel.california.facilities.RoomType;
+import tda593.hotel.california.facilities.RoomTypeDataService;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +32,8 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AdminRoomManagerImplImpl() {
-		super();
+	public AdminRoomManagerImplImpl(RoomTypeDataService roomDataservice) {
+		super(roomDataservice);
 	}
 
 	/**
@@ -47,45 +49,48 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	public void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void addRoom(String number, int floor, String description, DisabilityApproval disabilityApprovals, EList<String> photos, RoomType roomType) {
+		if(number !=null && !number.isEmpty() && floor >= 0 && description !=null && !description.isEmpty() && disabilityApprovals !=null && roomType !=null){
+			Room newRoom = new RoomImpl(number, floor, description, roomType);
+			newRoom.getDisabilityApprovals().add(disabilityApprovals);
+			getRoomDataService().set(newRoom);
+		}
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public boolean removeRoom(String roomNumber) {
+	try{	
+		Room theRoom =	getRoomDataService().get(roomNumber);
+		getRoomDataService().delete(theRoom);
+	}catch(Exception e){
+		return false;
+	}
+		return true;	
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean removeRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void addRoomType(String name, String description, RoomApproval roomApprovals, double price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(name !=null && !name.isEmpty() && description !=null && !description.isEmpty() && roomApprovals !=null && price >= 0){
+			RoomType newRoomType = new RoomTypeImpl(name, description, price);	
+			newRoomType.getRoomApprovals().add(roomApprovals);
+		getRoomTypeDataService().set(newRoomType);
+		}
+		
+		
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void removeRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		getRoomTypeDataService().delete(roomType);
 	}
 
 	/**
@@ -129,6 +134,20 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	@Override
+	public boolean removeRoom(int roomNumber) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void addRoom(int number, int floor, String description,
+			EList<DisabilityApproval> disabilityApprovals,
+			EList<String> photos, RoomType roomType) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //AdminRoomManagerImplImpl

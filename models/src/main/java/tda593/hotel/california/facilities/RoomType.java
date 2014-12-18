@@ -26,6 +26,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+
+
 public interface RoomType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -42,7 +44,7 @@ public interface RoomType extends EObject {
 	 * @generated
 	 */
 	int getId();
-
+	
 	/**
 	 * Sets the value of the '{@link tda593.hotel.california.facilities.RoomType#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->

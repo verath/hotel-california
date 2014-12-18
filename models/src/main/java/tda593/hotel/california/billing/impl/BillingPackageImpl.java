@@ -484,7 +484,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	public EReference getBill_Customer() {
-		return (EReference)billEClass.getEStructuralFeatures().get(7);
+		return (EReference)billEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -510,17 +510,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBill_CreditCardInformation() {
-		return (EReference)billEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getBill_UsedDiscounts() {
-		return (EReference)billEClass.getEStructuralFeatures().get(6);
+		return (EReference)billEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -842,7 +833,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEAttribute(billEClass, BILL__IS_PUBLISHED);
 		createEAttribute(billEClass, BILL__IS_PAID);
 		createEReference(billEClass, BILL__PURCHASE);
-		createEReference(billEClass, BILL__CREDIT_CARD_INFORMATION);
 		createEReference(billEClass, BILL__USED_DISCOUNTS);
 		createEReference(billEClass, BILL__CUSTOMER);
 		createEOperation(billEClass, BILL___APPLY_DISCOUNT__DISCOUNT);
@@ -990,7 +980,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		initEAttribute(getBill_IsPublished(), ecorePackage.getEBoolean(), "isPublished", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_Purchase(), this.getPurchase(), null, "purchase", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_CreditCardInformation(), theBookingPackage.getCreditCardInformation(), null, "creditCardInformation", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_UsedDiscounts(), this.getDiscount(), null, "usedDiscounts", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_Customer(), theBookingPackage.getLegalEntity(), null, "customer", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 

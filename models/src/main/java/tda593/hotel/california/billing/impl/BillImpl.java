@@ -3,28 +3,19 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 import java.util.Date;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.Discount;
 import tda593.hotel.california.billing.Purchase;
-
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 
 /**
@@ -39,7 +30,6 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#isPublished <em>Is Published</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getPurchase <em>Purchase</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCreditCardInformation <em>Credit Card Information</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getUsedDiscounts <em>Used Discounts</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
@@ -137,16 +127,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected EList<Purchase> purchase;
-
-	/**
-	 * The cached value of the '{@link #getCreditCardInformation() <em>Credit Card Information</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected CreditCardInformation creditCardInformation;
 
 	/**
 	 * The cached value of the '{@link #getUsedDiscounts() <em>Used Discounts</em>}' reference list.
@@ -326,44 +306,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CreditCardInformation getCreditCardInformation() {
-		if (creditCardInformation != null && creditCardInformation.eIsProxy()) {
-			InternalEObject oldCreditCardInformation = (InternalEObject)creditCardInformation;
-			creditCardInformation = (CreditCardInformation)eResolveProxy(oldCreditCardInformation);
-			if (creditCardInformation != oldCreditCardInformation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BillingPackage.BILL__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
-			}
-		}
-		return creditCardInformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CreditCardInformation basicGetCreditCardInformation() {
-		return creditCardInformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCreditCardInformation(CreditCardInformation newCreditCardInformation) {
-		CreditCardInformation oldCreditCardInformation = creditCardInformation;
-		creditCardInformation = newCreditCardInformation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.BILL__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Discount> getUsedDiscounts() {
 		if (usedDiscounts == null) {
 			usedDiscounts = new EObjectResolvingEList<Discount>(Discount.class, this, BillingPackage.BILL__USED_DISCOUNTS);
@@ -433,9 +375,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return isPaid();
 			case BillingPackage.BILL__PURCHASE:
 				return getPurchase();
-			case BillingPackage.BILL__CREDIT_CARD_INFORMATION:
-				if (resolve) return getCreditCardInformation();
-				return basicGetCreditCardInformation();
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				return getUsedDiscounts();
 			case BillingPackage.BILL__CUSTOMER:
@@ -469,9 +408,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__PURCHASE:
 				getPurchase().clear();
 				getPurchase().addAll((Collection<? extends Purchase>)newValue);
-				return;
-			case BillingPackage.BILL__CREDIT_CARD_INFORMATION:
-				setCreditCardInformation((CreditCardInformation)newValue);
 				return;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
@@ -507,9 +443,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__PURCHASE:
 				getPurchase().clear();
 				return;
-			case BillingPackage.BILL__CREDIT_CARD_INFORMATION:
-				setCreditCardInformation((CreditCardInformation)null);
-				return;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
 				return;
@@ -538,8 +471,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return isPaid != IS_PAID_EDEFAULT;
 			case BillingPackage.BILL__PURCHASE:
 				return purchase != null && !purchase.isEmpty();
-			case BillingPackage.BILL__CREDIT_CARD_INFORMATION:
-				return creditCardInformation != null;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				return usedDiscounts != null && !usedDiscounts.isEmpty();
 			case BillingPackage.BILL__CUSTOMER:

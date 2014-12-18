@@ -69,7 +69,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public KeyCard get(String id) {
-		return EntityToKeyCard(entityManager.find(KeyCardEntity.class, id));
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
