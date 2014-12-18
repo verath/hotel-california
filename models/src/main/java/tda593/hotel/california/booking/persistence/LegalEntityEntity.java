@@ -2,7 +2,6 @@
  */
 package tda593.hotel.california.booking.persistence;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface LegalEntityEntity extends EObject {
+public interface LegalEntityEntity {
 	/**
 	 * Returns the value of the '<em><b>Phone</b></em>' attribute.
 	 * <!-- begin-user-doc -->
