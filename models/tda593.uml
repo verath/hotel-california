@@ -458,6 +458,10 @@
             <generalization xmi:type="uml:Generalization" xmi:id="_tTZAkIa9EeSnRoNcSCxqkA" general="_m1fbwHpWEeSept0-dI1XSQ"/>
             <generalization xmi:type="uml:Generalization" xmi:id="__y0wUIa9EeSnRoNcSCxqkA" general="_Wg-MYIFREeSZuOQR5MrPYg"/>
           </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RivGoIbJEeSuY-L6cGZoSg" name="AdminKeyCardManagerImpl">
+            <generalization xmi:type="uml:Generalization" xmi:id="_VgqUwIbJEeSuY-L6cGZoSg" general="_AGESsHpYEeSept0-dI1XSQ"/>
+            <generalization xmi:type="uml:Generalization" xmi:id="_XN55sIbJEeSuY-L6cGZoSg" general="_JFBtsIUMEeSukffvaVOsTw"/>
+          </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_GTgCwIFSEeSZuOQR5MrPYg" name="RoomDataServiceType">
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_IxquUIFSEeSZuOQR5MrPYg" signature="_IPemEH7HEeS2M9uZ6JBJRQ">
