@@ -10,13 +10,17 @@ import tda593.hotel.california.billing.BillManager;
 import tda593.hotel.california.billing.DiscountDataService;
 import tda593.hotel.california.billing.DiscountManager;
 import tda593.hotel.california.billing.impl.BillDataServiceImpl;
+import tda593.hotel.california.billing.impl.BillManagerImplImpl;
 import tda593.hotel.california.billing.impl.DiscountDataServiceImpl;
+import tda593.hotel.california.billing.impl.DiscountManagerImplImpl;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntityDataService;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.impl.BookingDataServiceImpl;
+import tda593.hotel.california.booking.impl.BookingManagerImplImpl;
 import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
+import tda593.hotel.california.booking.impl.LegalEntityManagerImplImpl;
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.KeyCardDataService;
@@ -24,8 +28,11 @@ import tda593.hotel.california.facilities.KeyCardManager;
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomTypeDataService;
+import tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl;
 import tda593.hotel.california.facilities.impl.KeyCardDataServiceImpl;
+import tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl;
 import tda593.hotel.california.facilities.impl.RoomDataServiceImpl;
+import tda593.hotel.california.facilities.impl.RoomManagerImplImpl;
 import tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl;
 import tda593.hotel.california.integration.util.PersistenceHelper;
 
@@ -82,18 +89,18 @@ public abstract class AbstractHotelCaliforniaIntegrationTest {
 	private void initializeManagers() {
 		// Facilities
 		adminKeyCardManager = new AdminKeyCardManagerImpl();
-		adminRoomManager = new AdminRoomManagerImpl();
-		keyCardManager = new KeyCardManagerImpl();
-		roomManager = new RoomManagerImpl();
+		adminRoomManager = new AdminRoomManagerImplImpl();
+		keyCardManager = new KeyCardManagerImplImpl();
+		roomManager = new RoomManagerImplImpl();
 
 		// Booking
-		bookingManager = new BookingManagerImpl();
-		legalEntityManager = new LegalEntityManagerImpl();
+		bookingManager = new BookingManagerImplImpl();
+		legalEntityManager = new LegalEntityManagerImplImpl();
 
 		// Billing
 		adminDiscountManager = new AdminDiscountManagerImpl();
-		billManager = new BillManagerImpl();
-		discountManager = new DiscountManagerImpl();
+		billManager = new BillManagerImplImpl();
+		discountManager = new DiscountManagerImplImpl();
 	}
 
 	@BeforeClass
