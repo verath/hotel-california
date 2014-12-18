@@ -2,7 +2,7 @@
  */
 package tda593.hotel.california.facilities.persistence;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +62,6 @@ public interface ConferenceRoomEntity extends RoomEntity {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<String> getEquipment();
+	List<String> getEquipment();
 
 } // ConferenceRoomEntity

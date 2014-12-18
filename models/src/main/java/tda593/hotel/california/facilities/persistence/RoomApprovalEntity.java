@@ -2,7 +2,6 @@
  */
 package tda593.hotel.california.facilities.persistence;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RoomApprovalEntity extends EObject {
+public interface RoomApprovalEntity {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

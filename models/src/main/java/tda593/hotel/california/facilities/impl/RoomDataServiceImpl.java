@@ -17,7 +17,6 @@ import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomDataService;
-import tda593.hotel.california.facilities.persistence.PersistenceFactory;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
@@ -70,7 +69,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Room get(String id) {
-		RoomEntity roomEntity = entityManager.find(RoomEntity.class, id);
+		RoomEntity roomEntity = entityManager.find(RoomEntityImpl.class, id);
 		return roomEntity == null? null : EntityToRoom(roomEntity);
 	}
 
@@ -86,7 +85,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	}
 	
 	public static RoomEntityImpl RoomToEntity(Room room) {
-		RoomEntityImpl roomEntity = (RoomEntityImpl) PersistenceFactory.eINSTANCE.createRoomEntity();
+		RoomEntityImpl roomEntity = new RoomEntityImpl();
 		roomEntity.setRoomNumber(room.getRoomNumber());
 		roomEntity.setDescription(room.getDescription());
 		roomEntity.setFloor(room.getFloor());
@@ -102,7 +101,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public EList<Room> getAll() {
-		List<RoomEntity> results = entityManager.createQuery("FROM RoomEntity", RoomEntity.class).getResultList();
+		List<RoomEntityImpl> results = entityManager.createQuery("FROM RoomEntityImpl", RoomEntityImpl.class).getResultList();
 		EList<Room> roomResults = new BasicEList<Room>(results.size());
 		for (RoomEntity entity : results) {
 			roomResults.add(EntityToRoom(entity));

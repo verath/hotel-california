@@ -2,9 +2,7 @@
  */
 package tda593.hotel.california.booking.persistence;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
 
 import tda593.hotel.california.facilities.persistence.RoomEntity;
 
@@ -28,7 +26,7 @@ import tda593.hotel.california.facilities.persistence.RoomEntity;
  * @model
  * @generated
  */
-public interface RoomStayEntity extends EObject {
+public interface RoomStayEntity {
 	/**
 	 * Returns the value of the '<em><b>Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,7 +93,7 @@ public interface RoomStayEntity extends EObject {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<PersonEntity> getPersonEntity();
+	List<PersonEntity> getPersonEntities();
 
 	/**
 	 * Returns the value of the '<em><b>Stay Request Entity</b></em>' reference list.
@@ -111,7 +109,7 @@ public interface RoomStayEntity extends EObject {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<StayRequestEntity> getStayRequestEntity();
+	List<StayRequestEntity> getStayRequestEntities();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

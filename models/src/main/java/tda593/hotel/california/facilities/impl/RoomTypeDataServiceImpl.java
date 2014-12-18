@@ -12,7 +12,6 @@ import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.facilities.RoomTypeDataService;
-import tda593.hotel.california.facilities.persistence.PersistenceFactory;
 import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
 import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
 
@@ -36,7 +35,7 @@ public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implem
 	}
 	
 	public static RoomTypeEntityImpl RoomTypeToEntity(RoomType roomType) {
-		RoomTypeEntityImpl roomTypeEntity = (RoomTypeEntityImpl) PersistenceFactory.eINSTANCE.createRoomTypeEntity();
+		RoomTypeEntityImpl roomTypeEntity = new RoomTypeEntityImpl();
 		roomTypeEntity.setDescription(roomType.getDescription());
 		roomTypeEntity.setId(roomType.getId());
 		roomTypeEntity.setName(roomType.getName());
