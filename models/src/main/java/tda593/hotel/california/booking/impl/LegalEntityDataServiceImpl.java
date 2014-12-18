@@ -10,14 +10,18 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
+import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
+import tda593.hotel.california.booking.persistence.PersonEntity;
 import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
+import tda593.hotel.california.booking.persistence.impl.PersonEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,8 +49,33 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		this.entityManager = entityManager;
 	}
 	
-	public static LegalEntity EntityToLegalEntity(LegalEntityEntity entity) {
-		LegalEntity le = new LegalEntityImpl();
+	public static Person entityToPerson(PersonEntity personEntity) {
+		Person person = BookingFactory.eINSTANCE.createPerson();
+		entityToLegalEntityHelper(person, personEntity);
+		person.setFirstname(personEntity.getFirstname());
+		person.setLastname(personEntity.getLastname());
+		person.setSocialSecurityNumber(person.getSocialSecurityNumber());
+		return person;
+	}
+	
+	public static PersonEntityImpl personToEntity(Person person) {
+		PersonEntityImpl personEntity = new PersonEntityImpl();
+		entityToLegalEntityHelper(person, personEntity);
+		personEntity.setFirstname(person.getFirstname());
+		personEntity.setLastname(person.getLastname());
+		personEntity.setSocialSecurityNumber(person.getSocialSecurityNumber());
+		return personEntity;
+	}
+	
+	public static LegalEntity entityToLegalEntity(LegalEntityEntity entity) {
+		return entityToLegalEntityHelper(BookingFactory.eINSTANCE.createLegalEntity(), entity);
+	}
+	
+	public static LegalEntityEntityImpl legalEntityToEntity(LegalEntity le) {
+		return legalEntityToEntityHelper(new LegalEntityEntityImpl(), le);
+	}
+	
+	private static LegalEntity entityToLegalEntityHelper(LegalEntity le, LegalEntityEntity entity) {
 		le.setCreditCardInformation(EntityToCreditCardInformation(entity.getCreditCardInformationEntity()));
 		le.setEmail(entity.getEmail());
 		le.setId(entity.getId());
@@ -54,8 +83,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		return le;
 	}
 	
-	public static LegalEntityEntityImpl LegalEntityToEntity(LegalEntity le) {
-		LegalEntityEntityImpl lee = new LegalEntityEntityImpl();
+	public static LegalEntityEntityImpl legalEntityToEntityHelper(LegalEntityEntityImpl lee, LegalEntity le) {
 		lee.setCreditCardInformationEntity(CreditCardInformationToEntity(le.getCreditCardInformation()));
 		lee.setEmail(le.getEmail());
 		lee.setId(le.getId());

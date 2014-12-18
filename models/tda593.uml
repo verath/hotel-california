@@ -1051,7 +1051,10 @@
             <redefinedClassifier xmi:type="uml:Class" href="#_QwNhcHZKEeSrX_LICIhx2Q"/>
             <redefinedClassifier xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_cwG-AIbJEeS3E8vFulBSew" name="getAll">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwG-AYbJEeS3E8vFulBSew" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwG-AYbJEeS3E8vFulBSew" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_81HmEIbeEeSAWZ3JfhZoBQ"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_81KCUIbeEeSAWZ3JfhZoBQ" value="*"/>
+              </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwG-AobJEeS3E8vFulBSew" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_85swoIbJEeS3E8vFulBSew" name="getAll">

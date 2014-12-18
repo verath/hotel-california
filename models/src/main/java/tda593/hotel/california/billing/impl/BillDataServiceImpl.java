@@ -61,7 +61,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	
 	public static Bill EntityToBill(BillEntity billEntity) {
 		Bill bill = BillingFactory.eINSTANCE.createBill();
-		bill.setCustomer(LegalEntityDataServiceImpl.EntityToLegalEntity(billEntity.getLegalEntityEntity()));
+		bill.setCustomer(LegalEntityDataServiceImpl.entityToLegalEntity(billEntity.getLegalEntityEntity()));
 		bill.setDate(billEntity.getDate());
 		bill.setId(billEntity.getId());
 		bill.setIsPublished(billEntity.isPublished());
@@ -70,7 +70,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	
 	public static BillEntityImpl BillToEntity(Bill bill) {
 		BillEntityImpl entity = new BillEntityImpl();
-		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.LegalEntityToEntity(bill.getCustomer()));
+		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.legalEntityToEntity(bill.getCustomer()));
 		entity.setDate(bill.getDate());
 		entity.setId(bill.getId());
 		entity.setIsPublished(bill.isPublished());
