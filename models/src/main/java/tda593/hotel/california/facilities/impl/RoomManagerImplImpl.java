@@ -73,8 +73,9 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RoomManagerImplImpl() {
+	public RoomManagerImplImpl(RoomTypeDataService roomTypeservice) {
 		super();
+		roomTypeservice = roomTypeDataService;
 	}
 
 	/**

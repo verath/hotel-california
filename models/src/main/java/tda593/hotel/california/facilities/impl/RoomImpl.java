@@ -3,19 +3,14 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -55,6 +50,19 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
+	
+	//Constructor for creating Room directly without using setters.
+		public RoomImpl(String number, int floor, String description,
+		RoomType roomType ) {
+			this.roomNumber = number;
+			this.floor = floor;
+			this.description = description;
+			this.roomType = roomType;
+			
+		}
+	
+			
+			
 	protected static final int FLOOR_EDEFAULT = 0;
 
 	/**
