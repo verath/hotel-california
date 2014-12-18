@@ -5,15 +5,16 @@ package tda593.hotel.california.facilities.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.DisabilityApproval;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomApproval;
 import tda593.hotel.california.facilities.RoomType;
+import tda593.hotel.california.facilities.RoomTypeDataService;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +31,8 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AdminRoomManagerImplImpl() {
-		super();
+	public AdminRoomManagerImplImpl(RoomTypeDataService roomDataservice) {
+		super(roomDataservice);
 	}
 
 	/**
@@ -50,8 +51,6 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * @generated
 	 */
 	public void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
@@ -60,10 +59,11 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean removeRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean removeRoom(String roomNumber) {
+		
+		Room theRoom =	getRoomDataService().get(roomNumber);
+		getRoomDataService().delete(theRoom);
+		return false;
 	}
 
 	/**
@@ -80,12 +80,10 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void removeRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		getRoomTypeDataService().delete(roomType);
+	
 	}
 
 	/**
@@ -129,6 +127,12 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	@Override
+	public boolean removeRoom(int roomNumber) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 } //AdminRoomManagerImplImpl
