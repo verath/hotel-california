@@ -70,28 +70,28 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public Room get(String id) {
 		RoomEntity roomEntity = entityManager.find(RoomEntityImpl.class, id);
-		return roomEntity == null? null : EntityToRoom(roomEntity);
+		return roomEntity == null? null : entityToRoom(roomEntity);
 	}
 
-	public static Room EntityToRoom(RoomEntity roomEntity) {
+	public static Room entityToRoom(RoomEntity roomEntity) {
 		Room room = FacilitiesFactory.eINSTANCE.createRoom();
 		room.setRoomNumber(roomEntity.getRoomNumber());
 		room.setDescription(roomEntity.getDescription());
 		room.setFloor(roomEntity.getFloor());
 		room.setIsCleaned(roomEntity.isCleaned());
 		room.setIsOperational(roomEntity.isOperational());
-		room.setRoomType(RoomTypeDataServiceImpl.EntityToRoomType(roomEntity.getRoomTypeEntity()));
+		room.setRoomType(RoomTypeDataServiceImpl.entityToRoomType(roomEntity.getRoomTypeEntity()));
 		return room;
 	}
 	
-	public static RoomEntityImpl RoomToEntity(Room room) {
+	public static RoomEntityImpl roomToEntity(Room room) {
 		RoomEntityImpl roomEntity = new RoomEntityImpl();
 		roomEntity.setRoomNumber(room.getRoomNumber());
 		roomEntity.setDescription(room.getDescription());
 		roomEntity.setFloor(room.getFloor());
 		roomEntity.setIsCleaned(room.isCleaned());
 		roomEntity.setIsOperational(room.isOperational());
-		roomEntity.setRoomTypeEntity(RoomTypeDataServiceImpl.RoomTypeToEntity(room.getRoomType()));
+		roomEntity.setRoomTypeEntity(RoomTypeDataServiceImpl.roomTypeToEntity(room.getRoomType()));
 		return roomEntity;
 	}
 	
@@ -104,7 +104,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		List<RoomEntityImpl> results = entityManager.createQuery("FROM RoomEntityImpl", RoomEntityImpl.class).getResultList();
 		EList<Room> roomResults = new BasicEList<Room>(results.size());
 		for (RoomEntity entity : results) {
-			roomResults.add(EntityToRoom(entity));
+			roomResults.add(entityToRoom(entity));
 		}
 		
 		return roomResults;
@@ -129,7 +129,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	public void set(Room object) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(RoomToEntity(object));
+		entityManager.persist(roomToEntity(object));
 		transaction.commit();
 	}
 
@@ -142,7 +142,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		for(Room room : objects) {
-			entityManager.persist(RoomToEntity(room));
+			entityManager.persist(roomToEntity(room));
 		}
 		transaction.commit();
 	}
@@ -153,7 +153,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void delete(Room room) {
-		entityManager.remove(RoomToEntity(room));
+		entityManager.remove(roomToEntity(room));
 	}
 
 	/**
