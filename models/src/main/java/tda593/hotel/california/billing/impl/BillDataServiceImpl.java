@@ -3,9 +3,12 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -14,9 +17,13 @@ import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
+import tda593.hotel.california.billing.BookingBill;
 import tda593.hotel.california.billing.persistence.BillEntity;
+import tda593.hotel.california.billing.persistence.BookingBillEntity;
 import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
+import tda593.hotel.california.billing.persistence.impl.BookingBillEntityImpl;
 import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
+import tda593.hotel.california.facilities.Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,8 +66,11 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return BillingPackage.Literals.BILL_DATA_SERVICE;
 	}
 	
-	public static Bill EntityToBill(BillEntity billEntity) {
-		Bill bill = BillingFactory.eINSTANCE.createBill();
+	public static Bill entityToBill(BillEntity billEntity) {
+		return entityToBill(billEntity, new BillImpl());
+	}
+	
+	private static Bill entityToBill(BillEntity billEntity, Bill bill) {
 		bill.setCustomer(LegalEntityDataServiceImpl.EntityToLegalEntity(billEntity.getLegalEntityEntity()));
 		bill.setDate(billEntity.getDate());
 		bill.setId(billEntity.getId());
@@ -68,90 +78,112 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return bill;
 	}
 	
-	public static BillEntityImpl BillToEntity(Bill bill) {
-		BillEntityImpl entity = new BillEntityImpl();
+	public static BillEntityImpl billToEntity(Bill bill) {
+		return billToEntity(bill, new BillEntityImpl());
+	}
+	
+	public static BillEntityImpl billToEntity(Bill bill, BillEntityImpl entity) {
 		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.LegalEntityToEntity(bill.getCustomer()));
 		entity.setDate(bill.getDate());
 		entity.setId(bill.getId());
 		entity.setIsPublished(bill.isPublished());
 		return entity;
 	}
+	
+	public static BookingBill entityToBookingBill(BookingBillEntity bbe) {
+		BookingBill bb = new BookingBillImpl();
+		entityToBill(bbe, bb);
+		bb.setIsPaid(bbe.isPaid());
+		bb.setIsPublished(bbe.isPublished());
+		return bb;
+	}
+	
+	public static BookingBillEntityImpl bookingBillToEntity(BookingBill bb) {
+		BookingBillEntityImpl bbe = new BookingBillEntityImpl();
+		billToEntity(bb, bbe);
+		bbe.setIsPaid(bb.isPaid());
+		bb.setIsPublished(bbe.isPublished());
+		return bbe;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Bill get(Integer id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		BillEntity entity = entityManager.find(BillEntityImpl.class, id);
+		return entity == null ? null : entityToBill(entity);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Bill> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<BillEntityImpl> results = entityManager.createQuery("FROM BillEntityImpl", BillEntityImpl.class).getResultList();
+		EList<Bill> billResults = new BasicEList<Bill>(results.size());
+		for(BillEntity entity : results) {
+			billResults.add(entityToBill(entity));
+		}
+		
+		return billResults;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long count = entityManager.createQuery("SELECT COUNT(*) FROM BillEntityImpl", Long.class).getSingleResult();
+		// TODO : change to long
+		return count.intValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(Bill object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		entityManager.persist(billToEntity(object));
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<Bill> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		for(Bill bill : objects) {
+			entityManager.persist(billToEntity(bill));
+		}
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void delete(Bill object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.remove(billToEntity(object));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean exist(Integer object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return get(object) != null;
 	}
 
 	/**

@@ -22,7 +22,7 @@ import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
  *
  * @generated
  */
-public class BookingBillEntityImpl extends BillImpl implements BookingBillEntity {
+public class BookingBillEntityImpl extends BillEntityImpl implements BookingBillEntity {
 	@OneToOne(targetEntity = BookingEntityImpl.class)
 	private BookingEntity bookingEntity;
 

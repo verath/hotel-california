@@ -2,7 +2,6 @@
  */
 package tda593.hotel.california.billing.persistence;
 
-import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.booking.persistence.BookingEntity;
 
 /**
@@ -21,7 +20,7 @@ import tda593.hotel.california.booking.persistence.BookingEntity;
  * @model
  * @generated
  */
-public interface BookingBillEntity extends Bill {
+public interface BookingBillEntity extends BillEntity {
 	/**
 	 * Returns the value of the '<em><b>Booking Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->

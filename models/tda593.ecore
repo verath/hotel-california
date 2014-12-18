@@ -43,10 +43,10 @@
         <eClassifiers xsi:type="ecore:EClass" name="AdminKeyCardManager" abstract="true"
             interface="true" eSuperTypes="#//hotel/california/facilities/KeyCardManager">
           <eOperations name="addKeyCard" ordered="false" lowerBound="1">
-            <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
           <eOperations name="removeKeyCard" ordered="false" lowerBound="1">
-            <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="KeyCardManager" abstract="true"
@@ -199,6 +199,7 @@
           </eGenericSuperTypes>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="AdminRoomManagerImpl" eSuperTypes="#//hotel/california/facilities/RoomManagerImpl #//hotel/california/facilities/AdminRoomManager"/>
+        <eClassifiers xsi:type="ecore:EClass" name="AdminKeyCardManagerImpl" eSuperTypes="#//hotel/california/facilities/KeyCardManagerImpl #//hotel/california/facilities/AdminKeyCardManager"/>
       </eSubpackages>
       <eSubpackages name="billing" nsURI="http:///tda593/hotel/california/billing.ecore"
           nsPrefix="tda593.hotel.california.billing">
@@ -291,8 +292,6 @@
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="purchase" ordered="false"
               upperBound="-1" eType="#//hotel/california/billing/Purchase"/>
-          <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformation"
-              ordered="false" lowerBound="1" eType="#//hotel/california/booking/CreditCardInformation"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="usedDiscounts" ordered="false"
               upperBound="-1" eType="#//hotel/california/billing/Discount"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"

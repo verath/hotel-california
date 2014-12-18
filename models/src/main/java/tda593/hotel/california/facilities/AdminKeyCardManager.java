@@ -20,7 +20,7 @@ public interface AdminKeyCardManager extends KeyCardManager {
 	 * @model cardNumberRequired="true" cardNumberOrdered="false"
 	 * @generated
 	 */
-	void addKeyCard(int cardNumber);
+	void addKeyCard(String cardNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,6 +28,6 @@ public interface AdminKeyCardManager extends KeyCardManager {
 	 * @model cardNumberRequired="true" cardNumberOrdered="false"
 	 * @generated
 	 */
-	void removeKeyCard(int cardNumber);
+	void removeKeyCard(String cardNumber);
 
 } // AdminKeyCardManager

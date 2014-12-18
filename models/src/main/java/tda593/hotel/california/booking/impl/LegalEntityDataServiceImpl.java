@@ -95,9 +95,8 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public LegalEntity get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		LegalEntityEntity entity = entityManager.find(LegalEntityEntityImpl.class, id);
+		return entity == null ? null : EntityToLegalEntity(entity);
 	}
 
 	/**
