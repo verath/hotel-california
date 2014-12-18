@@ -3,16 +3,17 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import javax.persistence.EntityManager;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardDataService;
+import tda593.hotel.california.facilities.persistence.KeyCardEntity;
+import tda593.hotel.california.facilities.persistence.PersistenceFactory;
+import tda593.hotel.california.facilities.persistence.impl.KeyCardEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +25,9 @@ import tda593.hotel.california.facilities.KeyCardDataService;
  * @generated
  */
 public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container implements KeyCardDataService {
+	
+	private EntityManager entityManager;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,6 +35,23 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	protected KeyCardDataServiceImpl() {
 		super();
+	}
+	
+	public KeyCardDataServiceImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+	
+	public static KeyCard EntityToKeyCard(KeyCardEntity entity) {
+		KeyCard keyCard = FacilitiesFactory.eINSTANCE.createKeyCard();
+		keyCard.setId(entity.getId());
+		return keyCard;
+	}
+	
+	public static KeyCardEntity KeyCardToEntity(KeyCard keyCard) {
+		KeyCardEntity keyCardEntity = (KeyCardEntityImpl) PersistenceFactory.eINSTANCE.createKeyCardEntity();
+		keyCardEntity.setId(keyCard.getId());
+		return keyCardEntity;
 	}
 
 	/**

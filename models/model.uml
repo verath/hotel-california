@@ -1195,173 +1195,8 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_L8x30IH0EeSOTKU47AJ7gA" name="Usage1011111" client="_ECaOcHpCEeSZQp8F1uHBGQ">
       <supplier xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_IJURQIaqEeSG39aFv8V2Eg" name="persistencepackages">
-      <packagedElement xmi:type="uml:Package" xmi:id="_NKbrkIUGEeSPhYI_rVU2Ew" name="billingpersistence">
-        <packagedElement xmi:type="uml:Class" xmi:id="_WnbxgIUGEeSPhYI_rVU2Ew" name="DiscountLimitEntity">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_WnbxgYUGEeSPhYI_rVU2Ew" name="id" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_WnbxgoUGEeSPhYI_rVU2Ew" name="startDate" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_Wnbxg4UGEeSPhYI_rVU2Ew" name="endDate" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_jmDkEIUGEeSPhYI_rVU2Ew" name="allowedUsers" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_jmELIIUGEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jmDkEYUGEeSPhYI_rVU2Ew"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jmDkEoUGEeSPhYI_rVU2Ew" value="*"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_jmELIIUGEeSPhYI_rVU2Ew" memberEnd="_jmELIYUGEeSPhYI_rVU2Ew _jmDkEIUGEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_jmELIYUGEeSPhYI_rVU2Ew" name="discountLimit" type="_WnbxgIUGEeSPhYI_rVU2Ew" association="_jmELIIUGEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jmELIoUGEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jmELI4UGEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_rzgGoIUGEeSPhYI_rVU2Ew" name="PercentageDiscountEntity">
-          <generalization xmi:type="uml:Generalization" xmi:id="_rzgGoYUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
-          <generalization xmi:type="uml:Generalization" xmi:id="_5ZhQYIUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgGooUGEeSPhYI_rVU2Ew" name="percentage" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_rzgtsIUGEeSPhYI_rVU2Ew" name="SumDiscountEntity">
-          <generalization xmi:type="uml:Generalization" xmi:id="_rzgtsYUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
-          <generalization xmi:type="uml:Generalization" xmi:id="_5tnREIUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgtsoUGEeSPhYI_rVU2Ew" name="discountSum" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_rzgts4UGEeSPhYI_rVU2Ew" name="DiscountEntity" isAbstract="true">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgttIUGEeSPhYI_rVU2Ew" name="code" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgttYUGEeSPhYI_rVU2Ew" name="name" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_xCVjAIUGEeSPhYI_rVU2Ew" name="discountLimitEntity" visibility="private" type="_WnbxgIUGEeSPhYI_rVU2Ew" association="_xCX_QIUGEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xCVjAYUGEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xCVjAoUGEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_xCX_QIUGEeSPhYI_rVU2Ew" memberEnd="_xCX_QYUGEeSPhYI_rVU2Ew _xCVjAIUGEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_xCX_QYUGEeSPhYI_rVU2Ew" name="discount" type="_rzgts4UGEeSPhYI_rVU2Ew" association="_xCX_QIUGEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xCX_QoUGEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xCX_Q4UGEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_LckmIIUHEeSPhYI_rVU2Ew" name="PurchaseEntity">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_LckmIYUHEeSPhYI_rVU2Ew" name="id" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_LckmIoUHEeSPhYI_rVU2Ew" name="quantity" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_LckmI4UHEeSPhYI_rVU2Ew" name="price" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_WhlywIUHEeSPhYI_rVU2Ew" name="service" visibility="private" type="_QIBBkIUHEeSPhYI_rVU2Ew" association="_WhnA4IUHEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WhlywYUHEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WhlywoUHEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_QIBBkIUHEeSPhYI_rVU2Ew" name="ServiceEntity">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_QIBBkYUHEeSPhYI_rVU2Ew" name="id" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_QIBBkoUHEeSPhYI_rVU2Ew" name="price" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_QIBBk4UHEeSPhYI_rVU2Ew" name="name" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_WhnA4IUHEeSPhYI_rVU2Ew" memberEnd="_WhnA4YUHEeSPhYI_rVU2Ew _WhlywIUHEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_WhnA4YUHEeSPhYI_rVU2Ew" name="purchase" type="_LckmIIUHEeSPhYI_rVU2Ew" association="_WhnA4IUHEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WhnA4oUHEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WhnA44UHEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_cExugIUHEeSPhYI_rVU2Ew" name="BillEntity">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExugYUHEeSPhYI_rVU2Ew" name="id" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExugoUHEeSPhYI_rVU2Ew" name="date" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExug4UHEeSPhYI_rVU2Ew" name="isPublished" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExuhYUHEeSPhYI_rVU2Ew" name="isPaid" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_pDx7kIUHEeSPhYI_rVU2Ew" name="usedDiscounts" visibility="private" type="_rzgts4UGEeSPhYI_rVU2Ew" association="_pD0-4IUHEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pDx7kYUHEeSPhYI_rVU2Ew"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pDx7koUHEeSPhYI_rVU2Ew" value="*"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_4l6MsIUHEeSPhYI_rVU2Ew" name="legalEntityEntity" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4l6MsYUHEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4l6MsoUHEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_Y0zWEIUIEeSPhYI_rVU2Ew" name="purchaseEntity" visibility="private" type="_LckmIIUHEeSPhYI_rVU2Ew" association="_Y00kMIUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y0zWEYUIEeSPhYI_rVU2Ew"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y0zWEoUIEeSPhYI_rVU2Ew" value="*"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rAo0YIUIEeSPhYI_rVU2Ew" name="creditCardInformationEntity" visibility="private" type="_R0HTEIRvEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAo0YYUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAo0YoUIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_pD0-4IUHEeSPhYI_rVU2Ew" memberEnd="_pD0-4YUHEeSPhYI_rVU2Ew _pDx7kIUHEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_pD0-4YUHEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_pD0-4IUHEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pD0-4oUHEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pD0-44UHEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_4l6zwIUHEeSPhYI_rVU2Ew" memberEnd="_4l6zwYUHEeSPhYI_rVU2Ew _4l6MsIUHEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_4l6zwYUHEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4l6zwoUHEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4l6zw4UHEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_BveZQIUIEeSPhYI_rVU2Ew" name="BookingBillEntity">
-          <generalization xmi:type="uml:Generalization" xmi:id="_BveZQYUIEeSPhYI_rVU2Ew">
-            <general xmi:type="uml:Class" href="tda593.uml#_gemc8Hb6EeSbBJzXJgLK5Q"/>
-          </generalization>
-          <generalization xmi:type="uml:Generalization" xmi:id="_UR6ZsIUIEeSPhYI_rVU2Ew" general="_cExugIUHEeSPhYI_rVU2Ew"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_JZBkkIUIEeSPhYI_rVU2Ew" name="bookingEntity" visibility="private" type="_a7V18IRyEeSPhYI_rVU2Ew" association="_JZEn4IUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JZBkkYUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JZBkkoUIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_JZEn4IUIEeSPhYI_rVU2Ew" memberEnd="_JZEn4YUIEeSPhYI_rVU2Ew _JZBkkIUIEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_JZEn4YUIEeSPhYI_rVU2Ew" name="bookingBill" type="_BveZQIUIEeSPhYI_rVU2Ew" association="_JZEn4IUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JZEn4oUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JZEn44UIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_Y00kMIUIEeSPhYI_rVU2Ew" memberEnd="_Y00kMYUIEeSPhYI_rVU2Ew _Y0zWEIUIEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_Y00kMYUIEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_Y00kMIUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y00kMoUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y00kM4UIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_rArQoIUIEeSPhYI_rVU2Ew" memberEnd="_rAr3sIUIEeSPhYI_rVU2Ew _rAo0YIUIEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_rAr3sIUIEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAr3sYUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAr3soUIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_ZwipAIRtEeSPhYI_rVU2Ew" name="bookingpersistence">
+    <packagedElement xmi:type="uml:Package" xmi:id="_rFjXYIa6EeSnRoNcSCxqkA" name="persistence">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ZwipAIRtEeSPhYI_rVU2Ew" name="booking">
         <packagedElement xmi:type="uml:Class" xmi:id="_z5mckIRtEeSPhYI_rVU2Ew" name="RoomStayEntity">
           <ownedAttribute xmi:type="uml:Port" xmi:id="_z5mckYRtEeSPhYI_rVU2Ew" name="active" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
@@ -1554,7 +1389,172 @@
           </ownedEnd>
         </packagedElement>
       </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="__V-ioIRUEeSPhYI_rVU2Ew" name="facilitiespersistence">
+      <packagedElement xmi:type="uml:Package" xmi:id="_NKbrkIUGEeSPhYI_rVU2Ew" name="billing">
+        <packagedElement xmi:type="uml:Class" xmi:id="_WnbxgIUGEeSPhYI_rVU2Ew" name="DiscountLimitEntity">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_WnbxgYUGEeSPhYI_rVU2Ew" name="id" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_WnbxgoUGEeSPhYI_rVU2Ew" name="startDate" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Wnbxg4UGEeSPhYI_rVU2Ew" name="endDate" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jmDkEIUGEeSPhYI_rVU2Ew" name="allowedUsers" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_jmELIIUGEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jmDkEYUGEeSPhYI_rVU2Ew"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jmDkEoUGEeSPhYI_rVU2Ew" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_jmELIIUGEeSPhYI_rVU2Ew" memberEnd="_jmELIYUGEeSPhYI_rVU2Ew _jmDkEIUGEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_jmELIYUGEeSPhYI_rVU2Ew" name="discountLimit" type="_WnbxgIUGEeSPhYI_rVU2Ew" association="_jmELIIUGEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jmELIoUGEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jmELI4UGEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_rzgGoIUGEeSPhYI_rVU2Ew" name="PercentageDiscountEntity">
+          <generalization xmi:type="uml:Generalization" xmi:id="_rzgGoYUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_5ZhQYIUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgGooUGEeSPhYI_rVU2Ew" name="percentage" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_rzgtsIUGEeSPhYI_rVU2Ew" name="SumDiscountEntity">
+          <generalization xmi:type="uml:Generalization" xmi:id="_rzgtsYUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_5tnREIUGEeSPhYI_rVU2Ew" general="_rzgts4UGEeSPhYI_rVU2Ew"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgtsoUGEeSPhYI_rVU2Ew" name="discountSum" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_rzgts4UGEeSPhYI_rVU2Ew" name="DiscountEntity" isAbstract="true">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgttIUGEeSPhYI_rVU2Ew" name="code" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgttYUGEeSPhYI_rVU2Ew" name="name" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_xCVjAIUGEeSPhYI_rVU2Ew" name="discountLimitEntity" visibility="private" type="_WnbxgIUGEeSPhYI_rVU2Ew" association="_xCX_QIUGEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xCVjAYUGEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xCVjAoUGEeSPhYI_rVU2Ew" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_xCX_QIUGEeSPhYI_rVU2Ew" memberEnd="_xCX_QYUGEeSPhYI_rVU2Ew _xCVjAIUGEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_xCX_QYUGEeSPhYI_rVU2Ew" name="discount" type="_rzgts4UGEeSPhYI_rVU2Ew" association="_xCX_QIUGEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xCX_QoUGEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xCX_Q4UGEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_LckmIIUHEeSPhYI_rVU2Ew" name="PurchaseEntity">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_LckmIYUHEeSPhYI_rVU2Ew" name="id" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_LckmIoUHEeSPhYI_rVU2Ew" name="quantity" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_LckmI4UHEeSPhYI_rVU2Ew" name="price" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_WhlywIUHEeSPhYI_rVU2Ew" name="service" visibility="private" type="_QIBBkIUHEeSPhYI_rVU2Ew" association="_WhnA4IUHEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WhlywYUHEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WhlywoUHEeSPhYI_rVU2Ew" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_QIBBkIUHEeSPhYI_rVU2Ew" name="ServiceEntity">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_QIBBkYUHEeSPhYI_rVU2Ew" name="id" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_QIBBkoUHEeSPhYI_rVU2Ew" name="price" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_QIBBk4UHEeSPhYI_rVU2Ew" name="name" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_WhnA4IUHEeSPhYI_rVU2Ew" memberEnd="_WhnA4YUHEeSPhYI_rVU2Ew _WhlywIUHEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_WhnA4YUHEeSPhYI_rVU2Ew" name="purchase" type="_LckmIIUHEeSPhYI_rVU2Ew" association="_WhnA4IUHEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WhnA4oUHEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WhnA44UHEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_cExugIUHEeSPhYI_rVU2Ew" name="BillEntity">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExugYUHEeSPhYI_rVU2Ew" name="id" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExugoUHEeSPhYI_rVU2Ew" name="date" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExug4UHEeSPhYI_rVU2Ew" name="isPublished" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cExuhYUHEeSPhYI_rVU2Ew" name="isPaid" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_pDx7kIUHEeSPhYI_rVU2Ew" name="usedDiscounts" visibility="private" type="_rzgts4UGEeSPhYI_rVU2Ew" association="_pD0-4IUHEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pDx7kYUHEeSPhYI_rVU2Ew"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pDx7koUHEeSPhYI_rVU2Ew" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4l6MsIUHEeSPhYI_rVU2Ew" name="legalEntityEntity" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4l6MsYUHEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4l6MsoUHEeSPhYI_rVU2Ew" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Y0zWEIUIEeSPhYI_rVU2Ew" name="purchaseEntity" visibility="private" type="_LckmIIUHEeSPhYI_rVU2Ew" association="_Y00kMIUIEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y0zWEYUIEeSPhYI_rVU2Ew"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y0zWEoUIEeSPhYI_rVU2Ew" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rAo0YIUIEeSPhYI_rVU2Ew" name="creditCardInformationEntity" visibility="private" type="_R0HTEIRvEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAo0YYUIEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAo0YoUIEeSPhYI_rVU2Ew" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_pD0-4IUHEeSPhYI_rVU2Ew" memberEnd="_pD0-4YUHEeSPhYI_rVU2Ew _pDx7kIUHEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_pD0-4YUHEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_pD0-4IUHEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pD0-4oUHEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pD0-44UHEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_4l6zwIUHEeSPhYI_rVU2Ew" memberEnd="_4l6zwYUHEeSPhYI_rVU2Ew _4l6MsIUHEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_4l6zwYUHEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4l6zwoUHEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4l6zw4UHEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_BveZQIUIEeSPhYI_rVU2Ew" name="BookingBillEntity">
+          <generalization xmi:type="uml:Generalization" xmi:id="_BveZQYUIEeSPhYI_rVU2Ew">
+            <general xmi:type="uml:Class" href="tda593.uml#_gemc8Hb6EeSbBJzXJgLK5Q"/>
+          </generalization>
+          <generalization xmi:type="uml:Generalization" xmi:id="_UR6ZsIUIEeSPhYI_rVU2Ew" general="_cExugIUHEeSPhYI_rVU2Ew"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JZBkkIUIEeSPhYI_rVU2Ew" name="bookingEntity" visibility="private" type="_a7V18IRyEeSPhYI_rVU2Ew" association="_JZEn4IUIEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JZBkkYUIEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JZBkkoUIEeSPhYI_rVU2Ew" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_JZEn4IUIEeSPhYI_rVU2Ew" memberEnd="_JZEn4YUIEeSPhYI_rVU2Ew _JZBkkIUIEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_JZEn4YUIEeSPhYI_rVU2Ew" name="bookingBill" type="_BveZQIUIEeSPhYI_rVU2Ew" association="_JZEn4IUIEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JZEn4oUIEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JZEn44UIEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_Y00kMIUIEeSPhYI_rVU2Ew" memberEnd="_Y00kMYUIEeSPhYI_rVU2Ew _Y0zWEIUIEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_Y00kMYUIEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_Y00kMIUIEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y00kMoUIEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y00kM4UIEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_rArQoIUIEeSPhYI_rVU2Ew" memberEnd="_rAr3sIUIEeSPhYI_rVU2Ew _rAo0YIUIEeSPhYI_rVU2Ew">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_rAr3sIUIEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAr3sYUIEeSPhYI_rVU2Ew" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAr3soUIEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="__V-ioIRUEeSPhYI_rVU2Ew" name="facilities">
         <packagedElement xmi:type="uml:Class" xmi:id="_uiZl0IRWEeSPhYI_rVU2Ew" name="KeyCardEntity">
           <ownedAttribute xmi:type="uml:Property" xmi:id="__cvnEIRWEeSPhYI_rVU2Ew" name="id" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>

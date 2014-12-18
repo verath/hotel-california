@@ -30,7 +30,7 @@ import tda593.hotel.california.facilities.KeyCardManagerImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl#getKeyCard <em>Key Card</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl#getKeyCards <em>Key Cards</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl#getKeyCardDataService <em>Key Card Data Service</em>}</li>
  * </ul>
  * </p>
@@ -39,14 +39,14 @@ import tda593.hotel.california.facilities.KeyCardManagerImpl;
  */
 public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container implements KeyCardManagerImpl {
 	/**
-	 * The cached value of the '{@link #getKeyCard() <em>Key Card</em>}' reference list.
+	 * The cached value of the '{@link #getKeyCards() <em>Key Cards</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKeyCard()
+	 * @see #getKeyCards()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<KeyCard> keyCard;
+	protected EList<KeyCard> keyCards;
 
 	/**
 	 * The cached value of the '{@link #getKeyCardDataService() <em>Key Card Data Service</em>}' reference.
@@ -82,11 +82,11 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<KeyCard> getKeyCard() {
-		if (keyCard == null) {
-			keyCard = new EObjectResolvingEList<KeyCard>(KeyCard.class, this, FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD);
+	public EList<KeyCard> getKeyCards() {
+		if (keyCards == null) {
+			keyCards = new EObjectResolvingEList<KeyCard>(KeyCard.class, this, FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARDS);
 		}
-		return keyCard;
+		return keyCards;
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD:
-				return getKeyCard();
+			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARDS:
+				return getKeyCards();
 			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE:
 				if (resolve) return getKeyCardDataService();
 				return basicGetKeyCardDataService();
@@ -164,9 +164,9 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD:
-				getKeyCard().clear();
-				getKeyCard().addAll((Collection<? extends KeyCard>)newValue);
+			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARDS:
+				getKeyCards().clear();
+				getKeyCards().addAll((Collection<? extends KeyCard>)newValue);
 				return;
 			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE:
 				setKeyCardDataService((KeyCardDataService)newValue);
@@ -183,8 +183,8 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD:
-				getKeyCard().clear();
+			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARDS:
+				getKeyCards().clear();
 				return;
 			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE:
 				setKeyCardDataService((KeyCardDataService)null);
@@ -201,8 +201,8 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD:
-				return keyCard != null && !keyCard.isEmpty();
+			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARDS:
+				return keyCards != null && !keyCards.isEmpty();
 			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE:
 				return keyCardDataService != null;
 		}

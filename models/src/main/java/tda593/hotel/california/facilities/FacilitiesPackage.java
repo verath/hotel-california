@@ -1262,13 +1262,13 @@ public interface FacilitiesPackage extends EPackage {
 	int KEY_CARD_MANAGER_IMPL = 12;
 
 	/**
-	 * The feature id for the '<em><b>Key Card</b></em>' reference list.
+	 * The feature id for the '<em><b>Key Cards</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_CARD_MANAGER_IMPL__KEY_CARD = KEY_CARD_MANAGER_FEATURE_COUNT + 0;
+	int KEY_CARD_MANAGER_IMPL__KEY_CARDS = KEY_CARD_MANAGER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key Card Data Service</b></em>' reference.
@@ -1950,15 +1950,15 @@ public interface FacilitiesPackage extends EPackage {
 	EClass getKeyCardManagerImpl();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCard <em>Key Card</em>}'.
+	 * Returns the meta object for the reference list '{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCards <em>Key Cards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Key Card</em>'.
-	 * @see tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCard()
+	 * @return the meta object for the reference list '<em>Key Cards</em>'.
+	 * @see tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCards()
 	 * @see #getKeyCardManagerImpl()
 	 * @generated
 	 */
-	EReference getKeyCardManagerImpl_KeyCard();
+	EReference getKeyCardManagerImpl_KeyCards();
 
 	/**
 	 * Returns the meta object for the reference '{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCardDataService <em>Key Card Data Service</em>}'.
@@ -2459,12 +2459,12 @@ public interface FacilitiesPackage extends EPackage {
 		EClass KEY_CARD_MANAGER_IMPL = eINSTANCE.getKeyCardManagerImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>Key Card</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Key Cards</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference KEY_CARD_MANAGER_IMPL__KEY_CARD = eINSTANCE.getKeyCardManagerImpl_KeyCard();
+		EReference KEY_CARD_MANAGER_IMPL__KEY_CARDS = eINSTANCE.getKeyCardManagerImpl_KeyCards();
 
 		/**
 		 * The meta object literal for the '<em><b>Key Card Data Service</b></em>' reference feature.

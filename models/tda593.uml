@@ -419,7 +419,7 @@
           <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pGBQH-sEeS2M9uZ6JBJRQ" name="DisabilityApproval"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_JFBtsIUMEeSukffvaVOsTw" name="KeyCardManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_ZpatEIUMEeSukffvaVOsTw" general="_0YiNMHpaEeSept0-dI1XSQ"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_gfsBUIUMEeSukffvaVOsTw" name="keyCard" visibility="private" type="_LUQhAHZIEeSrX_LICIhx2Q" association="_gf1LQIUMEeSukffvaVOsTw">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_gfsBUIUMEeSukffvaVOsTw" name="keyCards" visibility="private" type="_LUQhAHZIEeSrX_LICIhx2Q" association="_gf1LQIUMEeSukffvaVOsTw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gfsBUYUMEeSukffvaVOsTw"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gfsBUoUMEeSukffvaVOsTw" value="*"/>
             </ownedAttribute>

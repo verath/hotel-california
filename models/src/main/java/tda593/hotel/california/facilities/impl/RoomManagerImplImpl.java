@@ -218,6 +218,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	public void registerKeyCard(KeyCard keyCard, String roomNumber) {
 		Room room = roomDataService.get(roomNumber);
 		room.registerKeyCard(keyCard);
+		roomDataService.set(room);
 	}
 
 	/**
@@ -247,6 +248,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	public void unregisterKeyCard(KeyCard keyCard, String roomNumber) {
 		Room room = roomDataService.get(roomNumber);
 		room.unregisterKeyCard(keyCard);
+		roomDataService.set(room);
 	}
 
 	/**
@@ -267,6 +269,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	public void unregisterAllKeyCards(String roomNumber) {
 		Room room = roomDataService.get(roomNumber);
 		room.unregisterKeyCards();
+		roomDataService.set(room);
 	}
 
 	/**

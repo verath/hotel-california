@@ -177,7 +177,7 @@
               ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="KeyCardManagerImpl" eSuperTypes="#//hotel/california/facilities/KeyCardManager">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="keyCard" ordered="false"
+          <eStructuralFeatures xsi:type="ecore:EReference" name="keyCards" ordered="false"
               upperBound="-1" eType="#//hotel/california/facilities/KeyCard"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="keyCardDataService"
               ordered="false" lowerBound="1" eType="#//hotel/california/facilities/KeyCardDataService"/>
