@@ -72,6 +72,14 @@
           <eOperations name="removeRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eOperations>
+          <eOperations name="addRoomType" ordered="false" lowerBound="1">
+            <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eParameters name="roomApprovals" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/RoomApproval"/>
+          </eOperations>
+          <eOperations name="removeRoomType" ordered="false" lowerBound="1">
+            <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="RoomManager" abstract="true" interface="true">
           <eOperations name="getRoomTypes" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/RoomType"/>
@@ -188,6 +196,7 @@
             <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eGenericSuperTypes>
         </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="AdminRoomManagerImpl" eSuperTypes="#//hotel/california/facilities/RoomManagerImpl #//hotel/california/facilities/AdminRoomManager"/>
       </eSubpackages>
       <eSubpackages name="billing" nsURI="http:///tda593/hotel/california/billing.ecore"
           nsPrefix="tda593.hotel.california.billing">

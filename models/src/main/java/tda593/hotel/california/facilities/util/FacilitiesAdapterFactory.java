@@ -126,6 +126,10 @@ public class FacilitiesAdapterFactory extends AdapterFactoryImpl {
 				return createKeyCardDataServiceAdapter();
 			}
 			@Override
+			public Adapter caseAdminRoomManagerImpl(AdminRoomManagerImpl object) {
+				return createAdminRoomManagerImplAdapter();
+			}
+			@Override
 			public <E, ID> Adapter caseDataService(DataService<E, ID> object) {
 				return createDataServiceAdapter();
 			}
@@ -342,6 +346,20 @@ public class FacilitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createKeyCardDataServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.facilities.AdminRoomManagerImpl <em>Admin Room Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.facilities.AdminRoomManagerImpl
+	 * @generated
+	 */
+	public Adapter createAdminRoomManagerImplAdapter() {
 		return null;
 	}
 

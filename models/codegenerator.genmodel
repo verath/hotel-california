@@ -88,6 +88,14 @@
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/facilities/AdminRoomManager/removeRoom">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/facilities/AdminRoomManager/removeRoom/roomNumber"/>
             </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/facilities/AdminRoomManager/addRoomType">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/facilities/AdminRoomManager/addRoomType/name"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/facilities/AdminRoomManager/addRoomType/description"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/facilities/AdminRoomManager/addRoomType/roomApprovals"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/facilities/AdminRoomManager/removeRoomType">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/facilities/AdminRoomManager/removeRoomType/id"/>
+            </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="tda593.ecore#//hotel/california/facilities/RoomManager">
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/facilities/RoomManager/getRoomTypes"/>
@@ -167,6 +175,7 @@
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/facilities/KeyCardManagerImpl/keyCardDataService"/>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/KeyCardDataService"/>
+          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/facilities/AdminRoomManagerImpl"/>
         </nestedGenPackages>
         <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Billing" basePackage="tda593.hotel.california"
             disposableProviderFactory="true" ecorePackage="tda593.ecore#//hotel/california/billing">

@@ -112,6 +112,15 @@ public interface FacilitiesFactory extends EFactory {
 	KeyCardDataService createKeyCardDataService();
 
 	/**
+	 * Returns a new object of class '<em>Admin Room Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admin Room Manager Impl</em>'.
+	 * @generated
+	 */
+	AdminRoomManagerImpl createAdminRoomManagerImpl();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -417,13 +417,31 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT = ROOM_MANAGER_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL = ROOM_MANAGER_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Remove Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__INT = ROOM_MANAGER_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Admin Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 2;
+	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
@@ -1398,6 +1416,178 @@ public interface FacilitiesPackage extends EPackage {
 	int KEY_CARD_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl <em>Admin Room Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getAdminRoomManagerImpl()
+	 * @generated
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL = 14;
+
+	/**
+	 * The feature id for the '<em><b>Room Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE = ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Room Type Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE = ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Key Card Manager</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL__KEY_CARD_MANAGER = ROOM_MANAGER_IMPL__KEY_CARD_MANAGER;
+
+	/**
+	 * The number of structural features of the '<em>Admin Room Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL_FEATURE_COUNT = ROOM_MANAGER_IMPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPES = ROOM_MANAGER_IMPL___GET_ROOM_TYPES;
+
+	/**
+	 * The operation id for the '<em>Register Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__KEYCARD_STRING;
+
+	/**
+	 * The operation id for the '<em>Register Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOMS = ROOM_MANAGER_IMPL___GET_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Unregister Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__KEYCARD_STRING;
+
+	/**
+	 * The operation id for the '<em>Unregister Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__STRING = ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNTS = ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNTS;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
+
+	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__INT_INT_STRING_ELIST_ELIST = ROOM_MANAGER_IMPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Remove Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__INT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL = ROOM_MANAGER_IMPL_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Remove Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__INT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Admin Room Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1405,7 +1595,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
 	 * @generated
 	 */
-	int ROOM_APPROVAL = 14;
+	int ROOM_APPROVAL = 15;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.DisabilityApproval <em>Disability Approval</em>}' enum.
@@ -1415,7 +1605,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getDisabilityApproval()
 	 * @generated
 	 */
-	int DISABILITY_APPROVAL = 15;
+	int DISABILITY_APPROVAL = 16;
 
 
 	/**
@@ -1518,6 +1708,26 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAdminRoomManager__RemoveRoom__int();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addRoomType(java.lang.String, java.lang.String, tda593.hotel.california.facilities.RoomApproval) <em>Add Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room Type</em>' operation.
+	 * @see tda593.hotel.california.facilities.AdminRoomManager#addRoomType(java.lang.String, java.lang.String, tda593.hotel.california.facilities.RoomApproval)
+	 * @generated
+	 */
+	EOperation getAdminRoomManager__AddRoomType__String_String_RoomApproval();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#removeRoomType(int) <em>Remove Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Room Type</em>' operation.
+	 * @see tda593.hotel.california.facilities.AdminRoomManager#removeRoomType(int)
+	 * @generated
+	 */
+	EOperation getAdminRoomManager__RemoveRoomType__int();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomManager <em>Room Manager</em>}'.
@@ -1982,6 +2192,16 @@ public interface FacilitiesPackage extends EPackage {
 	EClass getKeyCardDataService();
 
 	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.AdminRoomManagerImpl <em>Admin Room Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Room Manager Impl</em>'.
+	 * @see tda593.hotel.california.facilities.AdminRoomManagerImpl
+	 * @generated
+	 */
+	EClass getAdminRoomManagerImpl();
+
+	/**
 	 * Returns the meta object for enum '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2111,6 +2331,22 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT = eINSTANCE.getAdminRoomManager__RemoveRoom__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL = eINSTANCE.getAdminRoomManager__AddRoomType__String_String_RoomApproval();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__INT = eINSTANCE.getAdminRoomManager__RemoveRoomType__int();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomManager <em>Room Manager</em>}' class.
@@ -2483,6 +2719,16 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass KEY_CARD_DATA_SERVICE = eINSTANCE.getKeyCardDataService();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl <em>Admin Room Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl
+		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getAdminRoomManagerImpl()
+		 * @generated
+		 */
+		EClass ADMIN_ROOM_MANAGER_IMPL = eINSTANCE.getAdminRoomManagerImpl();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.

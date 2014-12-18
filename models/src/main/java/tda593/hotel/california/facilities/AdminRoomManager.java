@@ -31,4 +31,20 @@ public interface AdminRoomManager extends RoomManager {
 	 */
 	boolean removeRoom(int roomNumber);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsRequired="true" roomApprovalsOrdered="false"
+	 * @generated
+	 */
+	void addRoomType(String name, String description, RoomApproval roomApprovals);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model idRequired="true" idOrdered="false"
+	 * @generated
+	 */
+	void removeRoomType(int id);
+
 } // AdminRoomManager
