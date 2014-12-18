@@ -3,10 +3,9 @@
 package tda593.hotel.california.billing.persistence;
 
 import java.util.Date;
+import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
@@ -29,7 +28,7 @@ import tda593.hotel.california.booking.persistence.LegalEntityEntity;
  * @model
  * @generated
  */
-public interface DiscountLimitEntity extends EObject {
+public interface DiscountLimitEntity {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +121,6 @@ public interface DiscountLimitEntity extends EObject {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<LegalEntityEntity> getAllowedUsers();
+	List<LegalEntityEntity> getAllowedUsers();
 
 } // DiscountLimitEntity
