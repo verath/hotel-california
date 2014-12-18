@@ -3,16 +3,24 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.facilities.RoomTypeDataService;
+import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
+import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
 
 /**
@@ -24,23 +32,7 @@ import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
  *
  * @generated
  */
-public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implements RoomTypeDataService {
-	
-	public static RoomType EntityToRoomType(RoomTypeEntity entity) {
-		RoomType roomType = FacilitiesFactory.eINSTANCE.createRoomType();
-		roomType.setDescription(entity.getDescription());
-		roomType.setId(entity.getId());
-		roomType.setName(entity.getName());
-		return roomType;
-	}
-	
-	public static RoomTypeEntityImpl RoomTypeToEntity(RoomType roomType) {
-		RoomTypeEntityImpl roomTypeEntity = new RoomTypeEntityImpl();
-		roomTypeEntity.setDescription(roomType.getDescription());
-		roomTypeEntity.setId(roomType.getId());
-		roomTypeEntity.setName(roomType.getName());
-		return roomTypeEntity;
-	}
+public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implements RoomTypeDataService {	
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,6 +43,13 @@ public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implem
 		super();
 	}
 
+	private EntityManager entityManager;
+	
+	public RoomTypeDataServiceImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,81 +60,100 @@ public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implem
 		return FacilitiesPackage.Literals.ROOM_TYPE_DATA_SERVICE;
 	}
 
+	public static RoomType entityToRoomType(RoomTypeEntity entity) {
+		RoomType roomType = FacilitiesFactory.eINSTANCE.createRoomType();
+		roomType.setDescription(entity.getDescription());
+		roomType.setId(entity.getId());
+		roomType.setName(entity.getName());
+		return roomType;
+	}
+	
+	public static RoomTypeEntityImpl roomTypeToEntity(RoomType roomType) {
+		RoomTypeEntityImpl roomTypeEntity = new RoomTypeEntityImpl();
+		roomTypeEntity.setDescription(roomType.getDescription());
+		roomTypeEntity.setId(roomType.getId());
+		roomTypeEntity.setName(roomType.getName());
+		return roomTypeEntity;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public RoomType get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		RoomTypeEntity roomTypeEntity = entityManager.find(RoomTypeEntityImpl.class, id);
+		return roomTypeEntity == null? null : entityToRoomType(roomTypeEntity);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomType> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<RoomTypeEntityImpl> results = entityManager.createQuery("FROM RoomTypeEntityImpl", RoomTypeEntityImpl.class).getResultList();
+		EList<RoomType> roomTypeResults = new BasicEList<RoomType>(results.size());
+		for (RoomTypeEntity entity : results) {
+			roomTypeResults.add(entityToRoomType(entity));
+		}
+		
+		return roomTypeResults;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long count = entityManager.createQuery("SELECT COUNT(number) FROM Rooms", Long.class).getSingleResult();
+		// TODO : change to long
+		return count.intValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(RoomType object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		entityManager.persist(roomTypeToEntity(object));
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<RoomType> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		for(RoomType roomType : objects) {
+			entityManager.persist(roomTypeToEntity(roomType));
+		}
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void delete(RoomType object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void delete(RoomType roomType) {
+		entityManager.remove(roomTypeToEntity(roomType));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public boolean exist(String object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean exist(String id) {
+		return get(id) != null;
 	}
 
 	/**
