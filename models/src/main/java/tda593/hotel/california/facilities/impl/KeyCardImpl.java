@@ -160,4 +160,22 @@ public class KeyCardImpl extends MinimalEObjectImpl.Container implements KeyCard
 		return result.toString();
 	}
 
+	@Override
+	public boolean equals(Object other) {
+		if(other == null) {
+			return false;
+		} else if(other == this) {
+			return true;
+		} else if(other.getClass() != this.getClass()) {
+			return false;
+		} else {
+			return this.getId() == ((KeyCardImpl) other).getId();
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getId().hashCode();
+	}
+	
 } //KeyCardImpl

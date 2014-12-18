@@ -1495,7 +1495,7 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pDx7kYUHEeSPhYI_rVU2Ew"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pDx7koUHEeSPhYI_rVU2Ew" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_4l6MsIUHEeSPhYI_rVU2Ew" name="legalEntityEntity" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4l6MsIUHEeSPhYI_rVU2Ew" name="customer" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4l6MsYUHEeSPhYI_rVU2Ew" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4l6MsoUHEeSPhYI_rVU2Ew" value="1"/>
           </ownedAttribute>
@@ -1523,9 +1523,6 @@
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_BveZQIUIEeSPhYI_rVU2Ew" name="BookingBillEntity">
-          <generalization xmi:type="uml:Generalization" xmi:id="_BveZQYUIEeSPhYI_rVU2Ew">
-            <general xmi:type="uml:Class" href="tda593.uml#_gemc8Hb6EeSbBJzXJgLK5Q"/>
-          </generalization>
           <generalization xmi:type="uml:Generalization" xmi:id="_UR6ZsIUIEeSPhYI_rVU2Ew" general="_cExugIUHEeSPhYI_rVU2Ew"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_JZBkkIUIEeSPhYI_rVU2Ew" name="bookingEntity" visibility="private" type="_a7V18IRyEeSPhYI_rVU2Ew" association="_JZEn4IUIEeSPhYI_rVU2Ew">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JZBkkYUIEeSPhYI_rVU2Ew" value="1"/>

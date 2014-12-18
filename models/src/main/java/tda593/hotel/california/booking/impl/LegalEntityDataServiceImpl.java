@@ -4,15 +4,20 @@ package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import javax.persistence.EntityManager;
+
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
+import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
+import tda593.hotel.california.booking.persistence.LegalEntityEntity;
+import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
+import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +37,47 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	protected LegalEntityDataServiceImpl() {
 		super();
 	}
+	
+	private EntityManager entityManager;
+	
+	public LegalEntityDataServiceImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+	
+	public static LegalEntity EntityToLegalEntity(LegalEntityEntity entity) {
+		LegalEntity le = new LegalEntityImpl();
+		le.setCreditCardInformation(EntityToCreditCardInformation(entity.getCreditCardInformationEntity()));
+		le.setEmail(entity.getEmail());
+		le.setId(entity.getId());
+		le.setPhone(entity.getPhone());
+		return le;
+	}
+	
+	public static LegalEntityEntityImpl LegalEntityToEntity(LegalEntity le) {
+		LegalEntityEntityImpl lee = new LegalEntityEntityImpl();
+		lee.setCreditCardInformationEntity(CreditCardInformationToEntity(le.getCreditCardInformation()));
+		lee.setEmail(le.getEmail());
+		lee.setId(le.getId());
+		lee.setPhone(le.getPhone());
+		return lee;
+	}
+	
+	public static CreditCardInformation EntityToCreditCardInformation(CreditCardInformationEntity entity) {
+		CreditCardInformation cc = new CreditCardInformationImpl();
+		cc.setCardHolder(entity.getCardHolder());
+		cc.setCardNumber(entity.getCardNumber());
+		cc.setExpirationDate(entity.getExpirationDate());
+		return cc;
+	}
+	
+	private static CreditCardInformationEntityImpl CreditCardInformationToEntity(CreditCardInformation cc) {
+		CreditCardInformationEntityImpl cce = new CreditCardInformationEntityImpl();
+		cce.setCardHolder(cc.getCardHolder());
+		cce.setCardNumber(cc.getCardNumber());
+		cce.setExpirationDate(cc.getExpirationDate());
+		return cce;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,9 +95,8 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public LegalEntity get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		LegalEntityEntity entity = entityManager.find(LegalEntityEntityImpl.class, id);
+		return entity == null ? null : EntityToLegalEntity(entity);
 	}
 
 	/**
@@ -148,5 +193,6 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+
 
 } //LegalEntityDataServiceImpl

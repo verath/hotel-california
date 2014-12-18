@@ -645,22 +645,13 @@ public interface BillingPackage extends EPackage {
 	int BILL__PURCHASE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__CREDIT_CARD_INFORMATION = 5;
-
-	/**
 	 * The feature id for the '<em><b>Used Discounts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__USED_DISCOUNTS = 6;
+	int BILL__USED_DISCOUNTS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference.
@@ -669,7 +660,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__CUSTOMER = 7;
+	int BILL__CUSTOMER = 6;
 
 	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
@@ -678,7 +669,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 8;
+	int BILL_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Apply Discount</em>' operation.
@@ -898,15 +889,6 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_BILL__PURCHASE = BILL__PURCHASE;
-
-	/**
-	 * The feature id for the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_BILL__CREDIT_CARD_INFORMATION = BILL__CREDIT_CARD_INFORMATION;
 
 	/**
 	 * The feature id for the '<em><b>Used Discounts</b></em>' reference list.
@@ -1636,17 +1618,6 @@ public interface BillingPackage extends EPackage {
 	EReference getBill_Purchase();
 
 	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.billing.Bill#getCreditCardInformation <em>Credit Card Information</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Credit Card Information</em>'.
-	 * @see tda593.hotel.california.billing.Bill#getCreditCardInformation()
-	 * @see #getBill()
-	 * @generated
-	 */
-	EReference getBill_CreditCardInformation();
-
-	/**
 	 * Returns the meta object for the reference list '{@link tda593.hotel.california.billing.Bill#getUsedDiscounts <em>Used Discounts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2243,14 +2214,6 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BILL__PURCHASE = eINSTANCE.getBill_Purchase();
-
-		/**
-		 * The meta object literal for the '<em><b>Credit Card Information</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BILL__CREDIT_CARD_INFORMATION = eINSTANCE.getBill_CreditCardInformation();
 
 		/**
 		 * The meta object literal for the '<em><b>Used Discounts</b></em>' reference list feature.

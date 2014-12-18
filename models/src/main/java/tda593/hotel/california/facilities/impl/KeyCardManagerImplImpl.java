@@ -46,6 +46,11 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	protected KeyCardManagerImplImpl() {
 		super();
 	}
+	
+	public KeyCardManagerImplImpl(KeyCardDataService keyCardDataService) {
+		this();
+		this.keyCardDataService = keyCardDataService;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,12 +103,10 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public KeyCard getKeyCard(String keyCardNbr) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return keyCardDataService.get(keyCardNbr);
 	}
 
 	/**
