@@ -16,6 +16,7 @@ import tda593.hotel.california.billing.impl.BillingPackageImpl;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.impl.BookingPackageImpl;
 import tda593.hotel.california.facilities.AdminKeyCardManager;
+import tda593.hotel.california.facilities.AdminKeyCardManagerImpl;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.ConferenceRoom;
@@ -147,6 +148,13 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * @generated
 	 */
 	private EClass adminRoomManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminKeyCardManagerImplEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,7 +319,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__AddRoom__int_int_String_EList_EList() {
+	public EOperation getAdminRoomManager__AddRoom__int_int_String_EList_EList_RoomType() {
 		return adminRoomManagerEClass.getEOperations().get(0);
 	}
 
@@ -329,7 +337,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__AddRoomType__String_String_RoomApproval() {
+	public EOperation getAdminRoomManager__AddRoomType__String_String_RoomApproval_double() {
 		return adminRoomManagerEClass.getEOperations().get(2);
 	}
 
@@ -338,7 +346,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__RemoveRoomType__int() {
+	public EOperation getAdminRoomManager__RemoveRoomType__RoomType() {
 		return adminRoomManagerEClass.getEOperations().get(3);
 	}
 
@@ -475,6 +483,15 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 */
 	public EAttribute getRoomType_RoomApprovals() {
 		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomType_Price() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -716,17 +733,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getKeyCardManagerImpl_KeyCards() {
-		return (EReference)keyCardManagerImplEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getKeyCardManagerImpl_KeyCardDataService() {
-		return (EReference)keyCardManagerImplEClass.getEStructuralFeatures().get(1);
+		return (EReference)keyCardManagerImplEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -745,6 +753,15 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 */
 	public EClass getAdminRoomManagerImpl() {
 		return adminRoomManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminKeyCardManagerImpl() {
+		return adminKeyCardManagerImplEClass;
 	}
 
 	/**
@@ -804,10 +821,10 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(keyCardEClass, KEY_CARD__ID);
 
 		adminRoomManagerEClass = createEClass(ADMIN_ROOM_MANAGER);
-		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST);
+		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST_ROOMTYPE);
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT);
-		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL);
-		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__INT);
+		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE);
+		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE);
 
 		roomManagerEClass = createEClass(ROOM_MANAGER);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOM_TYPES);
@@ -825,6 +842,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_APPROVALS);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__PRICE);
 
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__FLOOR);
@@ -858,12 +876,13 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
 
 		keyCardManagerImplEClass = createEClass(KEY_CARD_MANAGER_IMPL);
-		createEReference(keyCardManagerImplEClass, KEY_CARD_MANAGER_IMPL__KEY_CARDS);
 		createEReference(keyCardManagerImplEClass, KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE);
 
 		keyCardDataServiceEClass = createEClass(KEY_CARD_DATA_SERVICE);
 
 		adminRoomManagerImplEClass = createEClass(ADMIN_ROOM_MANAGER_IMPL);
+
+		adminKeyCardManagerImplEClass = createEClass(ADMIN_KEY_CARD_MANAGER_IMPL);
 
 		// Create enums
 		roomApprovalEEnum = createEEnum(ROOM_APPROVAL);
@@ -927,6 +946,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		keyCardDataServiceEClass.getEGenericSuperTypes().add(g1);
 		adminRoomManagerImplEClass.getESuperTypes().add(this.getRoomManagerImpl());
 		adminRoomManagerImplEClass.getESuperTypes().add(this.getAdminRoomManager());
+		adminKeyCardManagerImplEClass.getESuperTypes().add(this.getKeyCardManagerImpl());
+		adminKeyCardManagerImplEClass.getESuperTypes().add(this.getAdminKeyCardManager());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(adminKeyCardManagerEClass, AdminKeyCardManager.class, "AdminKeyCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -947,23 +968,25 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		initEClass(adminRoomManagerEClass, AdminRoomManager.class, "AdminRoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getAdminRoomManager__AddRoom__int_int_String_EList_EList(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAdminRoomManager__AddRoom__int_int_String_EList_EList_RoomType(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getDisabilityApproval(), "disabilityApprovals", 1, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "photos", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getAdminRoomManager__RemoveRoom__int(), ecorePackage.getEBoolean(), "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAdminRoomManager__AddRoomType__String_String_RoomApproval(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAdminRoomManager__AddRoomType__String_String_RoomApproval_double(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomApproval(), "roomApprovals", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAdminRoomManager__RemoveRoomType__int(), null, "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAdminRoomManager__RemoveRoomType__RoomType(), null, "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomManagerEClass, RoomManager.class, "RoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1006,6 +1029,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_RoomApprovals(), this.getRoomApproval(), "roomApprovals", null, 0, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1044,12 +1068,13 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(keyCardManagerImplEClass, KeyCardManagerImpl.class, "KeyCardManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getKeyCardManagerImpl_KeyCards(), this.getKeyCard(), null, "keyCards", null, 0, -1, KeyCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getKeyCardManagerImpl_KeyCardDataService(), this.getKeyCardDataService(), null, "keyCardDataService", null, 1, 1, KeyCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(keyCardDataServiceEClass, KeyCardDataService.class, "KeyCardDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(adminRoomManagerImplEClass, AdminRoomManagerImpl.class, "AdminRoomManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(adminKeyCardManagerImplEClass, AdminKeyCardManagerImpl.class, "AdminKeyCardManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(roomApprovalEEnum, RoomApproval.class, "RoomApproval");

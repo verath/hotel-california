@@ -30,6 +30,7 @@ import tda593.hotel.california.facilities.RoomType;
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getRoomApprovals <em>Room Approvals</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getPrice <em>Price</em>}</li>
  * </ul>
  * </p>
  *
@@ -105,6 +106,26 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @ordered
 	 */
 	protected EList<RoomApproval> roomApprovals;
+
+	/**
+	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double PRICE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected double price = PRICE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,6 +226,27 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrice(double newPrice) {
+		double oldPrice = price;
+		price = newPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_TYPE__PRICE, oldPrice, price));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -216,6 +258,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return getDescription();
 			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				return getRoomApprovals();
+			case FacilitiesPackage.ROOM_TYPE__PRICE:
+				return getPrice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,6 +286,9 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				getRoomApprovals().clear();
 				getRoomApprovals().addAll((Collection<? extends RoomApproval>)newValue);
 				return;
+			case FacilitiesPackage.ROOM_TYPE__PRICE:
+				setPrice((Double)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,6 +313,9 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				getRoomApprovals().clear();
 				return;
+			case FacilitiesPackage.ROOM_TYPE__PRICE:
+				setPrice(PRICE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -286,6 +336,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case FacilitiesPackage.ROOM_TYPE__ROOM_APPROVALS:
 				return roomApprovals != null && !roomApprovals.isEmpty();
+			case FacilitiesPackage.ROOM_TYPE__PRICE:
+				return price != PRICE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -308,6 +360,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		result.append(description);
 		result.append(", roomApprovals: ");
 		result.append(roomApprovals);
+		result.append(", price: ");
+		result.append(price);
 		result.append(')');
 		return result.toString();
 	}

@@ -13,6 +13,7 @@ import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.DisabilityApproval;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.RoomApproval;
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +49,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos) {
+	public void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -70,7 +71,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addRoomType(String name, String description, RoomApproval roomApprovals) {
+	public void addRoomType(String name, String description, RoomApproval roomApprovals, double price) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -81,7 +82,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeRoomType(int id) {
+	public void removeRoomType(RoomType roomType) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -96,10 +97,10 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == AdminRoomManager.class) {
 			switch (baseOperationID) {
-				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__INT_INT_STRING_ELIST_ELIST;
+				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST_ROOMTYPE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__INT_INT_STRING_ELIST_ELIST_ROOMTYPE;
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__INT;
-				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL;
-				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__INT: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__INT;
+				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE;
+				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE;
 				default: return -1;
 			}
 		}
@@ -115,16 +116,16 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__INT_INT_STRING_ELIST_ELIST:
-				addRoom((Integer)arguments.get(0), (Integer)arguments.get(1), (String)arguments.get(2), (EList<DisabilityApproval>)arguments.get(3), (EList<String>)arguments.get(4));
+			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__INT_INT_STRING_ELIST_ELIST_ROOMTYPE:
+				addRoom((Integer)arguments.get(0), (Integer)arguments.get(1), (String)arguments.get(2), (EList<DisabilityApproval>)arguments.get(3), (EList<String>)arguments.get(4), (RoomType)arguments.get(5));
 				return null;
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__INT:
 				return removeRoom((Integer)arguments.get(0));
-			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL:
-				addRoomType((String)arguments.get(0), (String)arguments.get(1), (RoomApproval)arguments.get(2));
+			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE:
+				addRoomType((String)arguments.get(0), (String)arguments.get(1), (RoomApproval)arguments.get(2), (Double)arguments.get(3));
 				return null;
-			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__INT:
-				removeRoomType((Integer)arguments.get(0));
+			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE:
+				removeRoomType((RoomType)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
