@@ -67,11 +67,6 @@ public class CreditCardInformationEntityImpl implements
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());

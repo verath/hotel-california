@@ -52,11 +52,6 @@ public class OrganizationEntityImpl extends LegalEntityEntityImpl implements
 		this.organizationNumber = organizationNumber;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());

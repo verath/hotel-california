@@ -52,11 +52,6 @@ public class LegalEntityEntityImpl implements LegalEntityEntity {
 	@GeneratedValue
 	private int id;
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public LegalEntityEntityImpl() {
 	}
 
@@ -93,11 +88,6 @@ public class LegalEntityEntityImpl implements LegalEntityEntity {
 		this.id = id;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());

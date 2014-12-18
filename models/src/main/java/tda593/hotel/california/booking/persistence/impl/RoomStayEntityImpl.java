@@ -115,11 +115,6 @@ public class RoomStayEntityImpl implements RoomStayEntity {
 		return stayRequestEntities;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());

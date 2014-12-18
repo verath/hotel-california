@@ -70,11 +70,6 @@ public class PersonEntityImpl extends LegalEntityEntityImpl implements
 		this.socialSecurityNumber = socialSecurityNumber;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
