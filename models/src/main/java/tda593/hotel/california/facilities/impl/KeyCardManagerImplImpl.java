@@ -133,7 +133,9 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public KeyCard getKeyCard(String keyCardNbr) {
-		return keyCardDataService.get(keyCardNbr);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

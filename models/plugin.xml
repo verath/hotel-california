@@ -23,13 +23,6 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegenerator -->
       <package
-            uri="http:///tda593/hotel/california/booking/persistence.ecore"
-            class="tda593.hotel.california.booking.persistence.PersistencePackage"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated codegenerator -->
-      <package
             uri="http:///tda593/hotel/california/facilities.ecore"
             class="tda593.hotel.california.facilities.FacilitiesPackage"/>
    </extension>
@@ -37,22 +30,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegenerator -->
       <package
-            uri="http:///tda593/hotel/california/facilities/persistence.ecore"
-            class="tda593.hotel.california.facilities.persistence.PersistencePackage"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated codegenerator -->
-      <package
             uri="http:///tda593/hotel/california/billing.ecore"
             class="tda593.hotel.california.billing.BillingPackage"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated codegenerator -->
-      <package
-            uri="http:///tda593/hotel/california/billing/persistence.ecore"
-            class="tda593.hotel.california.billing.persistence.PersistencePackage"/>
    </extension>
 
 </plugin>

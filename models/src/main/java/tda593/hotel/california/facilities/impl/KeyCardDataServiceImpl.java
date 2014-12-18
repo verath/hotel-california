@@ -3,24 +3,16 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-
 import javax.persistence.EntityManager;
-
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardDataService;
-import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
 import tda593.hotel.california.facilities.persistence.PersistenceFactory;
-import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
-import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
 import tda593.hotel.california.facilities.persistence.impl.KeyCardEntityImpl;
 
 /**
@@ -78,8 +70,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public KeyCard get(String id) {
-		KeyCardEntity entity = entityManager.find(KeyCardEntity.class, id);
-		return entity == null ? null : EntityToKeyCard(entity);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -88,13 +81,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<KeyCard> getAll() {
-		List<KeyCardEntity> resultList = entityManager.createQuery("FROM KeyCardEntity", KeyCardEntity.class).getResultList();
-		EList<KeyCard> keyCardResults = new BasicEList<KeyCard>(resultList.size());
-		for(KeyCardEntity entity : resultList) {
-			keyCardResults.add(EntityToKeyCard(entity));
-		}
-		
-		return keyCardResults;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -103,8 +92,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public int count() {
-		Long count = entityManager.createQuery("SELECT COUNT(id) FROM KeyCards", Long.class).getSingleResult();
-		return count.intValue();
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -113,9 +103,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void set(KeyCard object) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(KeyCardToEntity(object));
-		entityManager.getTransaction().commit();
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -124,11 +114,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setAll(EList<KeyCard> objects) {
-		entityManager.getTransaction().begin();
-		for(KeyCard keyCard : objects) {
-			entityManager.persist(KeyCardToEntity(keyCard));
-		}
-		entityManager.getTransaction().commit();
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -137,9 +125,9 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void delete(KeyCard object) {
-		entityManager.getTransaction().begin();
-		entityManager.remove(KeyCardToEntity(object));
-		entityManager.getTransaction().commit();
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -147,8 +135,10 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean exist(String id) {
-		return get(id) == null;
+	public boolean exist(String object) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
