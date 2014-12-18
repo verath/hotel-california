@@ -29,18 +29,18 @@ public interface RoomManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model keyCardRequired="true" keyCardOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
+	 * @model keycardRequired="true" keycardOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void registerKeyCard(KeyCard keyCard, String roomNumber);
+	void registerKeyCard(KeyCard keycard, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model keyCardNbrRequired="true" keyCardNbrOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
+	 * @model keycardNbrRequired="true" keycardNbrOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void registerKeyCard(String keyCardNbr, String roomNumber);
+	void registerKeyCard(String keycardNbr, String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
