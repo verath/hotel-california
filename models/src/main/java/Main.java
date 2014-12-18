@@ -39,7 +39,7 @@ public class Main {
 		entityManager.getTransaction().commit();
 		
 		RoomDataService ds = new RoomDataServiceImpl(entityManager);
-		ds.getAll();
+		System.out.println(ds.get("666"));
 	}
 
 }

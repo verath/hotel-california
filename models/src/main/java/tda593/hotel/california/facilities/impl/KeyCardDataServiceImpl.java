@@ -12,7 +12,6 @@ import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardDataService;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
-import tda593.hotel.california.facilities.persistence.PersistenceFactory;
 import tda593.hotel.california.facilities.persistence.impl.KeyCardEntityImpl;
 
 /**
@@ -49,7 +48,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	public static KeyCardEntity KeyCardToEntity(KeyCard keyCard) {
-		KeyCardEntity keyCardEntity = (KeyCardEntityImpl) PersistenceFactory.eINSTANCE.createKeyCardEntity();
+		KeyCardEntity keyCardEntity = new KeyCardEntityImpl();
 		keyCardEntity.setId(keyCard.getId());
 		return keyCardEntity;
 	}
