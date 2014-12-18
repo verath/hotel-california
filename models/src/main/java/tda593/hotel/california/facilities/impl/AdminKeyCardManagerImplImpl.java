@@ -5,12 +5,13 @@ package tda593.hotel.california.facilities.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminKeyCardManagerImpl;
+import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.KeyCard;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,23 +45,23 @@ public class AdminKeyCardManagerImplImpl extends KeyCardManagerImplImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void addKeyCard(int cardNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void addKeyCard(String cardNumber) {
+		KeyCard keyCard = FacilitiesFactory.eINSTANCE.createKeyCard();
+		keyCard.setId(cardNumber);
+		keyCardDataService.set(keyCard);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void removeKeyCard(int cardNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void removeKeyCard(String cardNumber) {
+		KeyCard keyCard = FacilitiesFactory.eINSTANCE.createKeyCard();
+		keyCard.setId(cardNumber);
+		keyCardDataService.delete(keyCard);
 	}
 
 	/**
@@ -89,10 +90,10 @@ public class AdminKeyCardManagerImplImpl extends KeyCardManagerImplImpl implemen
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__INT:
-				addKeyCard((Integer)arguments.get(0));
+				addKeyCard((String)arguments.get(0));
 				return null;
 			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__INT:
-				removeKeyCard((Integer)arguments.get(0));
+				removeKeyCard((String)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

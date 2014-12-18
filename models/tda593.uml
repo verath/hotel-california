@@ -187,14 +187,14 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_R6zvAIFQEeSZuOQR5MrPYg" name="facilities">
           <packagedElement xmi:type="uml:Interface" xmi:id="_AGESsHpYEeSept0-dI1XSQ" name="AdminKeyCardManager">
             <generalization xmi:type="uml:Generalization" xmi:id="_4cpi4HpaEeSept0-dI1XSQ" general="_0YiNMHpaEeSept0-dI1XSQ"/>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_D2nzMHpYEeSept0-dI1XSQ" name="addKeyCard">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_D2nzMHpYEeSept0-dI1XSQ" name="addKeyCard" concurrency="guarded">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_Gs41sHpYEeSept0-dI1XSQ" name="cardNumber">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
             </ownedOperation>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_HkTl4HpYEeSept0-dI1XSQ" name="removeKeyCard">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_HkTl4HpYEeSept0-dI1XSQ" name="removeKeyCard" visibility="public">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_J7Q2MHpYEeSept0-dI1XSQ" name="cardNumber">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>

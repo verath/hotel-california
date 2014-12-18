@@ -1683,21 +1683,21 @@ public interface FacilitiesPackage extends EPackage {
 	EClass getAdminKeyCardManager();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminKeyCardManager#addKeyCard(int) <em>Add Key Card</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminKeyCardManager#addKeyCard(java.lang.String) <em>Add Key Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Key Card</em>' operation.
-	 * @see tda593.hotel.california.facilities.AdminKeyCardManager#addKeyCard(int)
+	 * @see tda593.hotel.california.facilities.AdminKeyCardManager#addKeyCard(java.lang.String)
 	 * @generated
 	 */
 	EOperation getAdminKeyCardManager__AddKeyCard__int();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminKeyCardManager#removeKeyCard(int) <em>Remove Key Card</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminKeyCardManager#removeKeyCard(java.lang.String) <em>Remove Key Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Remove Key Card</em>' operation.
-	 * @see tda593.hotel.california.facilities.AdminKeyCardManager#removeKeyCard(int)
+	 * @see tda593.hotel.california.facilities.AdminKeyCardManager#removeKeyCard(java.lang.String)
 	 * @generated
 	 */
 	EOperation getAdminKeyCardManager__RemoveKeyCard__int();
