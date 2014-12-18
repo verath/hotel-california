@@ -2,8 +2,7 @@
  */
 package tda593.hotel.california.facilities.persistence;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RoomTypeEntity extends EObject {
+public interface RoomTypeEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +116,6 @@ public interface RoomTypeEntity extends EObject {
 	 * @model lower="2" upper="2" ordered="false"
 	 * @generated
 	 */
-	EList<RoomApprovalEntity> getRoomApprovals();
+	List<RoomApprovalEntity> getRoomApprovals();
 
 } // RoomTypeEntity

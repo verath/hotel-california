@@ -2,18 +2,11 @@
  */
 package tda593.hotel.california.facilities.persistence.impl;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import tda593.hotel.california.facilities.persistence.ConferenceRoomEntity;
-import tda593.hotel.california.facilities.persistence.PersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,53 +24,17 @@ import tda593.hotel.california.facilities.persistence.PersistencePackage;
  */
 @Entity
 public class ConferenceRoomEntityImpl extends RoomEntityImpl implements ConferenceRoomEntity {
-	/**
-	 * The default value of the '{@link #getNumberOfSeats() <em>Number Of Seats</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumberOfSeats()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int NUMBER_OF_SEATS_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getNumberOfSeats() <em>Number Of Seats</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumberOfSeats()
-	 * @generated
-	 * @ordered
-	 */
-	protected int numberOfSeats = NUMBER_OF_SEATS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getEquipment() <em>Equipment</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEquipment()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> equipment;
+	
+	private int numberOfSeats;
+	private List<String> equipment;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConferenceRoomEntityImpl() {
+	public ConferenceRoomEntityImpl() {
 		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.CONFERENCE_ROOM_ENTITY;
 	}
 
 	/**
@@ -95,10 +52,7 @@ public class ConferenceRoomEntityImpl extends RoomEntityImpl implements Conferen
 	 * @generated
 	 */
 	public void setNumberOfSeats(int newNumberOfSeats) {
-		int oldNumberOfSeats = numberOfSeats;
 		numberOfSeats = newNumberOfSeats;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS, oldNumberOfSeats, numberOfSeats));
 	}
 
 	/**
@@ -106,10 +60,7 @@ public class ConferenceRoomEntityImpl extends RoomEntityImpl implements Conferen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getEquipment() {
-		if (equipment == null) {
-			equipment = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.CONFERENCE_ROOM_ENTITY__EQUIPMENT);
-		}
+	public List<String> getEquipment() {
 		return equipment;
 	}
 
@@ -119,79 +70,7 @@ public class ConferenceRoomEntityImpl extends RoomEntityImpl implements Conferen
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS:
-				return getNumberOfSeats();
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__EQUIPMENT:
-				return getEquipment();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS:
-				setNumberOfSeats((Integer)newValue);
-				return;
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__EQUIPMENT:
-				getEquipment().clear();
-				getEquipment().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS:
-				setNumberOfSeats(NUMBER_OF_SEATS_EDEFAULT);
-				return;
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__EQUIPMENT:
-				getEquipment().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__NUMBER_OF_SEATS:
-				return numberOfSeats != NUMBER_OF_SEATS_EDEFAULT;
-			case PersistencePackage.CONFERENCE_ROOM_ENTITY__EQUIPMENT:
-				return equipment != null && !equipment.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (numberOfSeats: ");
 		result.append(numberOfSeats);
