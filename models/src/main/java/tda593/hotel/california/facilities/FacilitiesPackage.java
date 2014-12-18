@@ -1588,6 +1588,70 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl <em>Admin Key Card Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getAdminKeyCardManagerImpl()
+	 * @generated
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL = 15;
+
+	/**
+	 * The feature id for the '<em><b>Key Card Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE = KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE;
+
+	/**
+	 * The number of structural features of the '<em>Admin Key Card Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL_FEATURE_COUNT = KEY_CARD_MANAGER_IMPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL___GET_KEY_CARD__STRING = KEY_CARD_MANAGER_IMPL___GET_KEY_CARD__STRING;
+
+	/**
+	 * The operation id for the '<em>Add Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__INT = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Remove Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__INT = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Admin Key Card Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_KEY_CARD_MANAGER_IMPL_OPERATION_COUNT = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1595,7 +1659,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomApproval()
 	 * @generated
 	 */
-	int ROOM_APPROVAL = 15;
+	int ROOM_APPROVAL = 16;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.DisabilityApproval <em>Disability Approval</em>}' enum.
@@ -1605,7 +1669,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getDisabilityApproval()
 	 * @generated
 	 */
-	int DISABILITY_APPROVAL = 16;
+	int DISABILITY_APPROVAL = 17;
 
 
 	/**
@@ -2202,6 +2266,16 @@ public interface FacilitiesPackage extends EPackage {
 	EClass getAdminRoomManagerImpl();
 
 	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.AdminKeyCardManagerImpl <em>Admin Key Card Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Key Card Manager Impl</em>'.
+	 * @see tda593.hotel.california.facilities.AdminKeyCardManagerImpl
+	 * @generated
+	 */
+	EClass getAdminKeyCardManagerImpl();
+
+	/**
 	 * Returns the meta object for enum '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2729,6 +2803,16 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADMIN_ROOM_MANAGER_IMPL = eINSTANCE.getAdminRoomManagerImpl();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl <em>Admin Key Card Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl
+		 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getAdminKeyCardManagerImpl()
+		 * @generated
+		 */
+		EClass ADMIN_KEY_CARD_MANAGER_IMPL = eINSTANCE.getAdminKeyCardManagerImpl();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomApproval <em>Room Approval</em>}' enum.
