@@ -2,9 +2,6 @@
  */
 package tda593.hotel.california.billing.persistence;
 
-import javax.persistence.Entity;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-@Entity
-public interface ServiceEntity extends EObject {
+public interface ServiceEntity {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

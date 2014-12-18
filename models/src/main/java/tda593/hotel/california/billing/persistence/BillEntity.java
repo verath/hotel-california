@@ -3,8 +3,8 @@
 package tda593.hotel.california.billing.persistence;
 
 import java.util.Date;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
+
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
@@ -31,7 +31,7 @@ import tda593.hotel.california.booking.persistence.LegalEntityEntity;
  * @model
  * @generated
  */
-public interface BillEntity extends EObject {
+public interface BillEntity {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -150,7 +150,7 @@ public interface BillEntity extends EObject {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<DiscountEntity> getUsedDiscounts();
+	List<DiscountEntity> getUsedDiscounts();
 
 	/**
 	 * Returns the value of the '<em><b>Legal Entity Entity</b></em>' reference.
@@ -192,7 +192,7 @@ public interface BillEntity extends EObject {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<PurchaseEntity> getPurchaseEntity();
+	List<PurchaseEntity> getPurchaseEntity();
 
 	/**
 	 * Returns the value of the '<em><b>Credit Card Information Entity</b></em>' reference.
