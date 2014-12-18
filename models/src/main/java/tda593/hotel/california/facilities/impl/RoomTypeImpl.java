@@ -38,10 +38,9 @@ import tda593.hotel.california.facilities.RoomType;
 public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomType {
 	
 		//Constructor for creating RoomType directly without using setters.
-	public RoomTypeImpl(String name, String description, RoomApproval roomApprovals, double price) {
+	public RoomTypeImpl(String name, String description, double price) {
 		this.name = name;
 		this.description = description;
-		this.roomApprovals = roomApprovals;
 		this.price = price;
 	}
 
@@ -116,7 +115,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @generated
 	 * @ordered
 	 */
-	protected RoomApproval roomApprovals;
+	protected EDataTypeUniqueEList<RoomApproval> roomApprovals;
 
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.

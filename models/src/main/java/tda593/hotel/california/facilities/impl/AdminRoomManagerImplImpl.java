@@ -49,11 +49,11 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	public void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
-		if(number >=0 && floor >= 0 && description !=null && !description.isEmpty() && disabilityApprovals !=null && roomType !=null){
-			Room newRoom = new RoomImpl();
+	public void addRoom(String number, int floor, String description, DisabilityApproval disabilityApprovals, EList<String> photos, RoomType roomType) {
+		if(number !=null && !number.isEmpty() && floor >= 0 && description !=null && !description.isEmpty() && disabilityApprovals !=null && roomType !=null){
+			Room newRoom = new RoomImpl(number, floor, description, roomType);
+			newRoom.getDisabilityApprovals().add(disabilityApprovals);
 			getRoomDataService().set(newRoom);
 		}
 	}
@@ -77,7 +77,8 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 */
 	public void addRoomType(String name, String description, RoomApproval roomApprovals, double price) {
 		if(name !=null && !name.isEmpty() && description !=null && !description.isEmpty() && roomApprovals !=null && price >= 0){
-		RoomType newRoomType = new RoomTypeImpl(name, description, roomApprovals, price);	
+			RoomType newRoomType = new RoomTypeImpl(name, description, price);	
+			newRoomType.getRoomApprovals().add(roomApprovals);
 		getRoomTypeDataService().set(newRoomType);
 		}
 		
@@ -139,6 +140,14 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	public boolean removeRoom(int roomNumber) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void addRoom(int number, int floor, String description,
+			EList<DisabilityApproval> disabilityApprovals,
+			EList<String> photos, RoomType roomType) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //AdminRoomManagerImplImpl
