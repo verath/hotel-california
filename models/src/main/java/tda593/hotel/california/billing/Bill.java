@@ -3,12 +3,8 @@
 package tda593.hotel.california.billing;
 
 import java.util.Date;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 
 /**
@@ -24,7 +20,6 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.Bill#isPublished <em>Is Published</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getPurchase <em>Purchase</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.Bill#getCreditCardInformation <em>Credit Card Information</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getUsedDiscounts <em>Used Discounts</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getCustomer <em>Customer</em>}</li>
  * </ul>
@@ -180,32 +175,6 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	EList<Purchase> getPurchase();
-
-	/**
-	 * Returns the value of the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Credit Card Information</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credit Card Information</em>' reference.
-	 * @see #setCreditCardInformation(CreditCardInformation)
-	 * @see tda593.hotel.california.billing.BillingPackage#getBill_CreditCardInformation()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	CreditCardInformation getCreditCardInformation();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.billing.Bill#getCreditCardInformation <em>Credit Card Information</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Credit Card Information</em>' reference.
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	void setCreditCardInformation(CreditCardInformation value);
 
 	/**
 	 * Returns the value of the '<em><b>Used Discounts</b></em>' reference list.

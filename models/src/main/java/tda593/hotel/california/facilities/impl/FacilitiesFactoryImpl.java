@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import tda593.hotel.california.facilities.AdminKeyCardManagerImpl;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.DisabilityApproval;
@@ -82,6 +83,7 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL: return createKeyCardManagerImpl();
 			case FacilitiesPackage.KEY_CARD_DATA_SERVICE: return createKeyCardDataService();
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL: return createAdminRoomManagerImpl();
+			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL: return createAdminKeyCardManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -229,6 +231,16 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	public AdminRoomManagerImpl createAdminRoomManagerImpl() {
 		AdminRoomManagerImplImpl adminRoomManagerImpl = new AdminRoomManagerImplImpl();
 		return adminRoomManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdminKeyCardManagerImpl createAdminKeyCardManagerImpl() {
+		AdminKeyCardManagerImplImpl adminKeyCardManagerImpl = new AdminKeyCardManagerImplImpl();
+		return adminKeyCardManagerImpl;
 	}
 
 	/**
