@@ -18,10 +18,10 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsRequired="true" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false"
+	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsRequired="true" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos);
+	void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -34,17 +34,17 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsRequired="true" roomApprovalsOrdered="false"
+	 * @model nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsRequired="true" roomApprovalsOrdered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	void addRoomType(String name, String description, RoomApproval roomApprovals);
+	void addRoomType(String name, String description, RoomApproval roomApprovals, double price);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model idRequired="true" idOrdered="false"
+	 * @model roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void removeRoomType(int id);
+	void removeRoomType(RoomType roomType);
 
 } // AdminRoomManager
