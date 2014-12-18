@@ -5,14 +5,10 @@ package tda593.hotel.california.facilities.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import tda593.hotel.california.facilities.FacilitiesPackage;
@@ -36,7 +32,21 @@ import tda593.hotel.california.facilities.RoomType;
  *
  * @generated
  */
+
+
+
 public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomType {
+	
+		//Constructor for creating RoomType directly without using setters.
+	public RoomTypeImpl(String name, String description, RoomApproval roomApprovals, double price) {
+		this.name = name;
+		this.description = description;
+		this.roomApprovals = roomApprovals;
+		this.price = price;
+	}
+
+	
+	
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -45,6 +55,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @generated
 	 * @ordered
 	 */
+
 	protected static final int ID_EDEFAULT = 0;
 
 	/**
@@ -105,7 +116,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoomApproval> roomApprovals;
+	protected RoomApproval roomApprovals;
 
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
@@ -135,6 +146,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	protected RoomTypeImpl() {
 		super();
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

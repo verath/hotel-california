@@ -7,6 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.DisabilityApproval;
@@ -51,30 +52,36 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * @generated
 	 */
 	public void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
-		throw new UnsupportedOperationException();
+		if(number >=0 && floor >= 0 && description !=null && !description.isEmpty() && disabilityApprovals !=null && roomType !=null){
+			Room newRoom = new RoomImpl();
+			getRoomDataService().set(newRoom);
+		}
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean removeRoom(String roomNumber) {
-		
+	try{	
 		Room theRoom =	getRoomDataService().get(roomNumber);
 		getRoomDataService().delete(theRoom);
+	}catch(Exception e){
 		return false;
+	}
+		return true;	
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void addRoomType(String name, String description, RoomApproval roomApprovals, double price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(name !=null && !name.isEmpty() && description !=null && !description.isEmpty() && roomApprovals !=null && price >= 0){
+		RoomType newRoomType = new RoomTypeImpl(name, description, roomApprovals, price);	
+		getRoomTypeDataService().set(newRoomType);
+		}
+		
+		
 	}
 
 	/**
@@ -83,7 +90,6 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 */
 	public void removeRoomType(RoomType roomType) {
 		getRoomTypeDataService().delete(roomType);
-	
 	}
 
 	/**
