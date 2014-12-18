@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="_UzrTMIFIEeSFZv45HTbezA" name="tda593">
-    <packagedElement xmi:type="uml:Association" xmi:id="_kl2OkHq9EeS2M9uZ6JBJRQ" memberEnd="_kl2OkXq9EeS2M9uZ6JBJRQ _klykMHq9EeS2M9uZ6JBJRQ">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_kl2OkXq9EeS2M9uZ6JBJRQ" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_kl2OkHq9EeS2M9uZ6JBJRQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kl2Oknq9EeS2M9uZ6JBJRQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kl2Ok3q9EeS2M9uZ6JBJRQ" value="*"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_jQrboHb9EeSbBJzXJgLK5Q" memberEnd="_jQrboXb9EeSbBJzXJgLK5Q _jQqNgHb9EeSbBJzXJgLK5Q">
       <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_jQrboXb9EeSbBJzXJgLK5Q" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_jQrboHb9EeSbBJzXJgLK5Q">
@@ -438,7 +432,7 @@
           <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pGBQH-sEeS2M9uZ6JBJRQ" name="DisabilityApproval"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_JFBtsIUMEeSukffvaVOsTw" name="KeyCardManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_ZpatEIUMEeSukffvaVOsTw" general="_0YiNMHpaEeSept0-dI1XSQ"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_7K44oIUMEeSukffvaVOsTw" name="keyCardDataService" type="_3B8GQIUMEeSukffvaVOsTw" association="_7K44o4UMEeSukffvaVOsTw">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_7K44oIUMEeSukffvaVOsTw" name="keyCardDataService" visibility="private" type="_3B8GQIUMEeSukffvaVOsTw" association="_7K44o4UMEeSukffvaVOsTw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7K44oYUMEeSukffvaVOsTw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7K44ooUMEeSukffvaVOsTw" value="1"/>
             </ownedAttribute>
@@ -462,6 +456,10 @@
           <packagedElement xmi:type="uml:Class" xmi:id="_qwqlIIa9EeSnRoNcSCxqkA" name="AdminRoomManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_tTZAkIa9EeSnRoNcSCxqkA" general="_m1fbwHpWEeSept0-dI1XSQ"/>
             <generalization xmi:type="uml:Generalization" xmi:id="__y0wUIa9EeSnRoNcSCxqkA" general="_Wg-MYIFREeSZuOQR5MrPYg"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RivGoIbJEeSuY-L6cGZoSg" name="AdminKeyCardManagerImpl">
+            <generalization xmi:type="uml:Generalization" xmi:id="_VgqUwIbJEeSuY-L6cGZoSg" general="_AGESsHpYEeSept0-dI1XSQ"/>
+            <generalization xmi:type="uml:Generalization" xmi:id="_XN55sIbJEeSuY-L6cGZoSg" general="_JFBtsIUMEeSukffvaVOsTw"/>
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_GTgCwIFSEeSZuOQR5MrPYg" name="RoomDataServiceType">
@@ -604,10 +602,6 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jQqNgXb9EeSbBJzXJgLK5Q"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jQqNgnb9EeSbBJzXJgLK5Q" value="*"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_klykMHq9EeS2M9uZ6JBJRQ" name="creditCardInformation" visibility="private" type="_28JnEHcFEeSbBJzXJgLK5Q" association="_kl2OkHq9EeS2M9uZ6JBJRQ">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_klykMXq9EeS2M9uZ6JBJRQ" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_klykMnq9EeS2M9uZ6JBJRQ" value="1"/>
-            </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_s9HwoHq_EeS2M9uZ6JBJRQ" name="usedDiscounts" visibility="private" type="_GaHqkHb-EeSbBJzXJgLK5Q" association="_s9IXsHq_EeS2M9uZ6JBJRQ">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s9HwoXq_EeS2M9uZ6JBJRQ"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s9Hwonq_EeS2M9uZ6JBJRQ" value="*"/>
@@ -720,7 +714,6 @@
             </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_zsACAIUIEeSPhYI_rVU2Ew" memberEnd="_zsACAYUIEeSPhYI_rVU2Ew _zr8XoIUIEeSPhYI_rVU2Ew">
-            <name xsi:nil="true"/>
             <ownedEnd xmi:type="uml:Property" xmi:id="_zsACAYUIEeSPhYI_rVU2Ew" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_zsACAIUIEeSPhYI_rVU2Ew">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zsACAoUIEeSPhYI_rVU2Ew" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zsACA4UIEeSPhYI_rVU2Ew" value="1"/>

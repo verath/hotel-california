@@ -1495,7 +1495,7 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pDx7kYUHEeSPhYI_rVU2Ew"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pDx7koUHEeSPhYI_rVU2Ew" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_4l6MsIUHEeSPhYI_rVU2Ew" name="legalEntityEntity" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4l6MsIUHEeSPhYI_rVU2Ew" name="customer" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_4l6zwIUHEeSPhYI_rVU2Ew">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4l6MsYUHEeSPhYI_rVU2Ew" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4l6MsoUHEeSPhYI_rVU2Ew" value="1"/>
           </ownedAttribute>
