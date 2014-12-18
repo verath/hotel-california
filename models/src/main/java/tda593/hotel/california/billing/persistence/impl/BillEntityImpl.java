@@ -8,12 +8,15 @@ import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.PurchaseEntity;
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
+import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
+import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,10 +46,14 @@ public class BillEntityImpl implements BillEntity {
 	private Date date;
 	private boolean isPublished;
 	private boolean isPaid;
+	@OneToMany(targetEntity = DiscountEntityImpl.class)
 	private List<DiscountEntity> usedDiscounts;
+	@OneToMany(targetEntity = LegalEntityEntityImpl.class)
 	private LegalEntityEntity responsible;
-	protected List<PurchaseEntity> purchaseEntity;
-	protected CreditCardInformationEntity creditCardInformationEntity;
+	@OneToMany(targetEntity = PurchaseEntityImpl.class)
+	private List<PurchaseEntity> purchaseEntity;
+	@OneToMany(targetEntity = CreditCardInformationEntityImpl.class)
+	private CreditCardInformationEntity creditCardInformationEntity;
 
 	/**
 	 * <!-- begin-user-doc -->

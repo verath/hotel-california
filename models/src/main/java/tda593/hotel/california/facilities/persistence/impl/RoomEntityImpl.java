@@ -5,6 +5,7 @@ package tda593.hotel.california.facilities.persistence.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -47,6 +48,7 @@ public class RoomEntityImpl implements RoomEntity {
 	private boolean isOperational;
 	private boolean isCleaned;
 	private String description;
+	@ElementCollection
 	private List<String> photos;
 
 	@OneToOne(targetEntity = RoomTypeEntityImpl.class)

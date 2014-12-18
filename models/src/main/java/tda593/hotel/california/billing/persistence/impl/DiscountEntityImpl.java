@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.DiscountLimitEntity;
@@ -33,6 +34,7 @@ public abstract class DiscountEntityImpl implements DiscountEntity {
 	@Id
 	private int code;
 	private String name;
+	@OneToOne(targetEntity = DiscountLimitEntityImpl.class)
 	private DiscountLimitEntity discountLimitEntity;
 
 	/**

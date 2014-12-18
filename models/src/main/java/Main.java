@@ -1,10 +1,6 @@
-import java.util.Properties;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-import org.hibernate.cfg.Environment;
 
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.impl.RoomDataServiceImpl;
@@ -19,13 +15,6 @@ import tda593.hotel.california.facilities.persistence.impl.RoomTypeEntityImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		Properties hibernateProperties = new Properties();		 
-		hibernateProperties.setProperty(Environment.DRIVER, "org.apache.derby.jdbc.EmbeddedDriver");
-		hibernateProperties.setProperty(Environment.USER, "");
-		hibernateProperties.setProperty(Environment.URL, "jdbc:derby:memory:hotel-californiaDB;create=true");
-		hibernateProperties.setProperty(Environment.PASS, "");
-		hibernateProperties.setProperty(Environment.DIALECT,"org.hibernate.dialect.DerbyTenSevenDialect");
-		
 		
 		RoomEntity roomEntity = new RoomEntityImpl();
 		roomEntity.setRoomNumber("666");
@@ -44,6 +33,7 @@ public class Main {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tda593.hotel.california");
 		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
+		entityManager.persist(keyCard);
 		entityManager.persist(type);
 		entityManager.persist(roomEntity);
 		entityManager.getTransaction().commit();

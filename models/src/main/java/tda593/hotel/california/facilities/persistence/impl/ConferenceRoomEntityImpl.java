@@ -4,6 +4,7 @@ package tda593.hotel.california.facilities.persistence.impl;
 
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
 import tda593.hotel.california.facilities.persistence.ConferenceRoomEntity;
@@ -26,6 +27,7 @@ import tda593.hotel.california.facilities.persistence.ConferenceRoomEntity;
 public class ConferenceRoomEntityImpl extends RoomEntityImpl implements ConferenceRoomEntity {
 	
 	private int numberOfSeats;
+	@ElementCollection
 	private List<String> equipment;
 
 	/**

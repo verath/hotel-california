@@ -31,6 +31,7 @@ public class PurchaseEntityImpl implements PurchaseEntity {
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	private int quantity;
 	private double price;
 

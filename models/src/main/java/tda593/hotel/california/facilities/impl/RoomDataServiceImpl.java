@@ -69,7 +69,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Room get(String id) {
-		RoomEntity roomEntity = entityManager.find(RoomEntity.class, id);
+		RoomEntity roomEntity = entityManager.find(RoomEntityImpl.class, id);
 		return roomEntity == null? null : EntityToRoom(roomEntity);
 	}
 
@@ -101,7 +101,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public EList<Room> getAll() {
-		List<RoomEntity> results = entityManager.createQuery("FROM RoomEntity", RoomEntity.class).getResultList();
+		List<RoomEntityImpl> results = entityManager.createQuery("FROM RoomEntityImpl", RoomEntityImpl.class).getResultList();
 		EList<Room> roomResults = new BasicEList<Room>(results.size());
 		for (RoomEntity entity : results) {
 			roomResults.add(EntityToRoom(entity));

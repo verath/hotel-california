@@ -29,6 +29,7 @@ public class ServiceEntityImpl implements ServiceEntity {
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	private double price;
 	private String name;
 

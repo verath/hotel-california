@@ -2,7 +2,6 @@
  */
 package tda593.hotel.california.billing.persistence;
 
-import javax.persistence.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,6 @@ import javax.persistence.Entity;
  * @model
  * @generated
  */
-@Entity
 public interface ServiceEntity {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
