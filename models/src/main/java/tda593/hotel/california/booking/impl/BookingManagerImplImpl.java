@@ -182,7 +182,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public Booking getBookings(LegalEntity customer) {
+	public EList<Booking> getBookings(LegalEntity customer) {
 		return bookingDataService.getAll(customer);
 	}
 

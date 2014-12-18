@@ -45,7 +45,7 @@ public interface BookingManager extends EObject {
 	 * @model required="true" ordered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	Booking getBookings(LegalEntity customer);
+	EList<Booking> getBookings(LegalEntity customer);
 
 	/**
 	 * <!-- begin-user-doc -->

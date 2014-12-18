@@ -222,7 +222,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		booking.setPrice(bookingEntity.getPrice());
 		booking.setResponsible(LegalEntityDataServiceImpl.entityToLegalEntity(bookingEntity.getLegalEntityEntity()));
 		booking.setRoomStay(entityToRoomStay(bookingEntity.getRoomStayEntity()));
-		booking.setRoomType(RoomTypeDataServiceImpl.EntityToRoomType(bookingEntity.getRoomTypeEntity()));
+		booking.setRoomType(RoomTypeDataServiceImpl.entityToRoomType(bookingEntity.getRoomTypeEntity()));
 		booking.setSpecialRequest(bookingEntity.getSpecialRequest());
 		booking.setTravelInformation(entityToTravelInformation(bookingEntity.getTravelInformationEntity()));
 		return booking;
@@ -236,7 +236,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		entity.setPrice(booking.getPrice());
 		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.legalEntityToEntity(booking.getResponsible()));
 		entity.setRoomStayEntity(roomStayToEntity(booking.getRoomStay()));
-		entity.setRoomTypeEntity(RoomTypeDataServiceImpl.RoomTypeToEntity(booking.getRoomType()));
+		entity.setRoomTypeEntity(RoomTypeDataServiceImpl.roomTypeToEntity(booking.getRoomType()));
 		entity.setSpecialRequest(booking.getSpecialRequest());
 		entity.setTravelInformationEntity(travelInformationToEntity(booking.getTravelInformation()));
 		return entity;
@@ -280,7 +280,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		RoomStayEntityImpl entity = new RoomStayEntityImpl();
 		entity.setActive(roomStay.isActive());
 		entity.setId(roomStay.getId());
-		entity.setRoomEntity(RoomDataServiceImpl.RoomToEntity(roomStay.getRoom()));
+		entity.setRoomEntity(RoomDataServiceImpl.roomToEntity(roomStay.getRoom()));
 		
 		List<PersonEntityImpl> personEntities = new ArrayList<PersonEntityImpl>();
 		for(Person person : roomStay.getRegisteredPersons()) {
@@ -301,7 +301,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		RoomStay roomStay = BookingFactory.eINSTANCE.createRoomStay();
 		roomStay.setActive(entity.isActive());
 		roomStay.setId(entity.getId());
-		roomStay.setRoom(RoomDataServiceImpl.EntityToRoom(entity.getRoomEntity()));
+		roomStay.setRoom(RoomDataServiceImpl.entityToRoom(entity.getRoomEntity()));
 		
 		List<Person> persons = new ArrayList<Person>();
 		for(PersonEntity personEntity : entity.getPersonEntities()) {
