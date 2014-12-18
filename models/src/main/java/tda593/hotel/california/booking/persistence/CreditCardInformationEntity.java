@@ -4,19 +4,22 @@ package tda593.hotel.california.booking.persistence;
 
 import java.util.Date;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Credit Card Information Entity</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Credit Card Information Entity</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardHolder <em>Card Holder</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getExpirationDate <em>Expiration Date</em>}</li>
+ * <li>
+ * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardNumber
+ * <em>Card Number</em>}</li>
+ * <li>
+ * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardHolder
+ * <em>Card Holder</em>}</li>
+ * <li>
+ * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getExpirationDate
+ * <em>Expiration Date</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,15 +27,16 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface CreditCardInformationEntity extends EObject {
+public interface CreditCardInformationEntity {
 	/**
-	 * Returns the value of the '<em><b>Card Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Card Number</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Card Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Card Number</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
 	 * @see tda593.hotel.california.booking.persistence.PersistencePackage#getCreditCardInformationEntity_CardNumber()
@@ -42,23 +46,27 @@ public interface CreditCardInformationEntity extends EObject {
 	String getCardNumber();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardNumber <em>Card Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Card Number</em>' attribute.
+	 * Sets the value of the '
+	 * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardNumber
+	 * <em>Card Number</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Card Number</em>' attribute.
 	 * @see #getCardNumber()
 	 * @generated
 	 */
 	void setCardNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Card Holder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Card Holder</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Card Holder</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Card Holder</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Card Holder</em>' attribute.
 	 * @see #setCardHolder(String)
 	 * @see tda593.hotel.california.booking.persistence.PersistencePackage#getCreditCardInformationEntity_CardHolder()
@@ -68,10 +76,13 @@ public interface CreditCardInformationEntity extends EObject {
 	String getCardHolder();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardHolder <em>Card Holder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Card Holder</em>' attribute.
+	 * Sets the value of the '
+	 * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardHolder
+	 * <em>Card Holder</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Card Holder</em>' attribute.
 	 * @see #getCardHolder()
 	 * @generated
 	 */
@@ -85,6 +96,7 @@ public interface CreditCardInformationEntity extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Expiration Date</em>' attribute.
 	 * @see #setExpirationDate(Date)
 	 * @see tda593.hotel.california.booking.persistence.PersistencePackage#getCreditCardInformationEntity_ExpirationDate()
@@ -94,10 +106,13 @@ public interface CreditCardInformationEntity extends EObject {
 	Date getExpirationDate();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getExpirationDate <em>Expiration Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expiration Date</em>' attribute.
+	 * Sets the value of the '
+	 * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getExpirationDate
+	 * <em>Expiration Date</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Expiration Date</em>' attribute.
 	 * @see #getExpirationDate()
 	 * @generated
 	 */
