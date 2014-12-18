@@ -4,15 +4,19 @@ package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import javax.persistence.EntityManager;
+
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
+import tda593.hotel.california.billing.persistence.BillEntity;
+import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
+import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +36,18 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	protected BillDataServiceImpl() {
 		super();
 	}
+	
+	private EntityManager entityManager;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public BillDataServiceImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -41,6 +57,24 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	protected EClass eStaticClass() {
 		return BillingPackage.Literals.BILL_DATA_SERVICE;
+	}
+	
+	public static Bill EntityToBill(BillEntity billEntity) {
+		Bill bill = BillingFactory.eINSTANCE.createBill();
+		bill.setCustomer(LegalEntityDataServiceImpl.EntityToLegalEntity(billEntity.getLegalEntityEntity()));
+		bill.setDate(billEntity.getDate());
+		bill.setId(billEntity.getId());
+		bill.setIsPublished(billEntity.isPublished());
+		return bill;
+	}
+	
+	public static BillEntityImpl BillToEntity(Bill bill) {
+		BillEntityImpl entity = new BillEntityImpl();
+		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.LegalEntityToEntity(bill.getCustomer()));
+		entity.setDate(bill.getDate());
+		entity.setId(bill.getId());
+		entity.setIsPublished(bill.isPublished());
+		return entity;
 	}
 
 	/**
