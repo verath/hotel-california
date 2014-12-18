@@ -1160,13 +1160,40 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
 
 	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___GET_ALL__LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Data Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.
@@ -2132,6 +2159,36 @@ public interface BookingPackage extends EPackage {
 	EClass getBookingDataService();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#getAll(tda593.hotel.california.booking.LegalEntity) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#getAll(tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBookingDataService__GetAll__LegalEntity();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getBookingDataService__GetAll__Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date, tda593.hotel.california.booking.LegalEntity) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date, tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBookingDataService__GetAll__Date_Date_LegalEntity();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2852,6 +2909,30 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BOOKING_DATA_SERVICE = eINSTANCE.getBookingDataService();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___GET_ALL__LEGALENTITY = eINSTANCE.getBookingDataService__GetAll__LegalEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE = eINSTANCE.getBookingDataService__GetAll__Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = eINSTANCE.getBookingDataService__GetAll__Date_Date_LegalEntity();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.
