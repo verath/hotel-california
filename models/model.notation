@@ -1390,6 +1390,10 @@
                       <element xmi:type="uml:Property" href="tda593.uml#_9h1ngHq8EeS2M9uZ6JBJRQ"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_-u864Xq8EeS2M9uZ6JBJRQ"/>
                     </children>
+                    <children xmi:type="notation:Shape" xmi:id="_cKDyAIbGEeS3E8vFulBSew" type="3012">
+                      <element xmi:type="uml:Property" href="tda593.uml#_VpavgIbGEeS3E8vFulBSew"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_cKDyAYbGEeS3E8vFulBSew"/>
+                    </children>
                     <styles xmi:type="notation:TitleStyle" xmi:id="_0P4mcnZHEeSrX_LICIhx2Q"/>
                     <styles xmi:type="notation:SortingStyle" xmi:id="_0P4mc3ZHEeSrX_LICIhx2Q"/>
                     <styles xmi:type="notation:FilteringStyle" xmi:id="_0P4mdHZHEeSrX_LICIhx2Q"/>
