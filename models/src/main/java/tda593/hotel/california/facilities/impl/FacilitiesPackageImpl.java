@@ -256,7 +256,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminKeyCardManager__AddKeyCard__int() {
+	public EOperation getAdminKeyCardManager__AddKeyCard__String() {
 		return adminKeyCardManagerEClass.getEOperations().get(0);
 	}
 
@@ -265,7 +265,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminKeyCardManager__RemoveKeyCard__int() {
+	public EOperation getAdminKeyCardManager__RemoveKeyCard__String() {
 		return adminKeyCardManagerEClass.getEOperations().get(1);
 	}
 
@@ -811,8 +811,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		// Create classes and their features
 		adminKeyCardManagerEClass = createEClass(ADMIN_KEY_CARD_MANAGER);
-		createEOperation(adminKeyCardManagerEClass, ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT);
-		createEOperation(adminKeyCardManagerEClass, ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT);
+		createEOperation(adminKeyCardManagerEClass, ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__STRING);
+		createEOperation(adminKeyCardManagerEClass, ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__STRING);
 
 		keyCardManagerEClass = createEClass(KEY_CARD_MANAGER);
 		createEOperation(keyCardManagerEClass, KEY_CARD_MANAGER___GET_KEY_CARD__STRING);
@@ -952,10 +952,10 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(adminKeyCardManagerEClass, AdminKeyCardManager.class, "AdminKeyCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getAdminKeyCardManager__AddKeyCard__int(), null, "addKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		EOperation op = initEOperation(getAdminKeyCardManager__AddKeyCard__String(), null, "addKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAdminKeyCardManager__RemoveKeyCard__int(), null, "removeKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAdminKeyCardManager__RemoveKeyCard__String(), null, "removeKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(keyCardManagerEClass, KeyCardManager.class, "KeyCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

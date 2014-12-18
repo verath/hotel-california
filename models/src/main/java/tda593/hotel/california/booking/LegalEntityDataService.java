@@ -11,8 +11,8 @@ import tda593.hotel.california.DataService;
  *
  *
  * @see tda593.hotel.california.booking.BookingPackage#getLegalEntityDataService()
- * @model superTypes="tda593.hotel.california.DataService<tda593.hotel.california.booking.LegalEntity, org.eclipse.emf.ecore.EString>"
+ * @model superTypes="tda593.hotel.california.DataService<tda593.hotel.california.booking.LegalEntity, org.eclipse.emf.ecore.EIntegerObject>"
  * @generated
  */
-public interface LegalEntityDataService extends DataService<LegalEntity, String> {
+public interface LegalEntityDataService extends DataService<LegalEntity, Integer> {
 } // LegalEntityDataService

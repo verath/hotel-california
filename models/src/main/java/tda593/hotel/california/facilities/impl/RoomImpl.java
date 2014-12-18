@@ -49,20 +49,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @see #getFloor()
 	 * @generated
 	 * @ordered
-	 */
-	
-	//Constructor for creating Room directly without using setters.
-		public RoomImpl(String number, int floor, String description,
-		RoomType roomType ) {
-			this.roomNumber = number;
-			this.floor = floor;
-			this.description = description;
-			this.roomType = roomType;
-			
-		}
-	
-			
-			
+	 */	
 	protected static final int FLOOR_EDEFAULT = 0;
 
 	/**
@@ -202,6 +189,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	protected RoomImpl() {
 		super();
+	}
+	
+	//Constructor for creating Room directly without using setters.
+	public RoomImpl(String number, int floor, String description,
+	RoomType roomType ) {
+		this.roomNumber = number;
+		this.floor = floor;
+		this.description = description;
+		this.roomType = roomType;
+		
 	}
 
 	/**

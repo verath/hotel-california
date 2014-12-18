@@ -30,7 +30,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public AdminRoomManagerImplImpl(RoomTypeDataService roomDataservice) {
 		super(roomDataservice);

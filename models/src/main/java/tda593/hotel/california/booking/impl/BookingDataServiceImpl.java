@@ -3,21 +3,17 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingFactory;
@@ -197,7 +193,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> getAll(Date from, Date to, LegalEntity customer) {
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity=:customer " 

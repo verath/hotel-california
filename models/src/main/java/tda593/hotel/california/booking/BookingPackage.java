@@ -662,22 +662,40 @@ public interface BookingPackage extends EPackage {
 	int CREDIT_CARD_INFORMATION__CARD_NUMBER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Card Holder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__CARD_HOLDER = 1;
-
-	/**
 	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 2;
+	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ccv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__CCV = 2;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__FIRST_NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__LAST_NAME = 4;
 
 	/**
 	 * The number of structural features of the '<em>Credit Card Information</em>' class.
@@ -686,7 +704,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 3;
+	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Credit Card Information</em>' class.
@@ -870,13 +888,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___CHECK_OUT__BOOKING = 16;
 
 	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___GET_BOOKING__INT = 17;
+
+	/**
 	 * The number of operations of the '<em>Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 17;
+	int BOOKING_MANAGER_OPERATION_COUNT = 18;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -1067,6 +1094,15 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGER_IMPL___CHECK_OUT__BOOKING = BOOKING_MANAGER___CHECK_OUT__BOOKING;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___GET_BOOKING__INT = BOOKING_MANAGER___GET_BOOKING__INT;
 
 	/**
 	 * The number of operations of the '<em>Manager Impl</em>' class.
@@ -1915,17 +1951,6 @@ public interface BookingPackage extends EPackage {
 	EAttribute getCreditCardInformation_CardNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getCardHolder <em>Card Holder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Card Holder</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getCardHolder()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_CardHolder();
-
-	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1935,6 +1960,39 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCreditCardInformation_ExpirationDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getCcv <em>Ccv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ccv</em>'.
+	 * @see tda593.hotel.california.booking.CreditCardInformation#getCcv()
+	 * @see #getCreditCardInformation()
+	 * @generated
+	 */
+	EAttribute getCreditCardInformation_Ccv();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getFirstName <em>First Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Name</em>'.
+	 * @see tda593.hotel.california.booking.CreditCardInformation#getFirstName()
+	 * @see #getCreditCardInformation()
+	 * @generated
+	 */
+	EAttribute getCreditCardInformation_FirstName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getLastName <em>Last Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Name</em>'.
+	 * @see tda593.hotel.california.booking.CreditCardInformation#getLastName()
+	 * @see #getCreditCardInformation()
+	 * @generated
+	 */
+	EAttribute getCreditCardInformation_LastName();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}'.
@@ -2115,6 +2173,16 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingManager__CheckOut__Booking();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getBooking(int) <em>Get Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#getBooking(int)
+	 * @generated
+	 */
+	EOperation getBookingManager__GetBooking__int();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManagerImpl <em>Manager Impl</em>}'.
@@ -2713,20 +2781,36 @@ public interface BookingPackage extends EPackage {
 		EAttribute CREDIT_CARD_INFORMATION__CARD_NUMBER = eINSTANCE.getCreditCardInformation_CardNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Card Holder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__CARD_HOLDER = eINSTANCE.getCreditCardInformation_CardHolder();
-
-		/**
 		 * The meta object literal for the '<em><b>Expiration Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CREDIT_CARD_INFORMATION__EXPIRATION_DATE = eINSTANCE.getCreditCardInformation_ExpirationDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Ccv</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_CARD_INFORMATION__CCV = eINSTANCE.getCreditCardInformation_Ccv();
+
+		/**
+		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_CARD_INFORMATION__FIRST_NAME = eINSTANCE.getCreditCardInformation_FirstName();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_CARD_INFORMATION__LAST_NAME = eINSTANCE.getCreditCardInformation_LastName();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}' class.
@@ -2873,6 +2957,14 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_MANAGER___CHECK_OUT__BOOKING = eINSTANCE.getBookingManager__CheckOut__Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___GET_BOOKING__INT = eINSTANCE.getBookingManager__GetBooking__int();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
