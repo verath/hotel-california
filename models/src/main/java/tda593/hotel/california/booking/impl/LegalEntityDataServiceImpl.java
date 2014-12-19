@@ -73,6 +73,9 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	public static Person entityToPerson(PersonEntity personEntity) {
+		if(personEntity == null) {
+			return null;
+		}
 		Person person = BookingFactory.eINSTANCE.createPerson();
 		entityToLegalEntityHelper(person, personEntity);
 		person.setFirstname(personEntity.getFirstname());
@@ -82,8 +85,11 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	public static PersonEntityImpl personToEntity(Person person) {
+		if(person == null) {
+			return null;
+		}
 		PersonEntityImpl personEntity = new PersonEntityImpl();
-		entityToLegalEntityHelper(person, personEntity);
+		legalEntityToEntityHelper(personEntity, person);
 		personEntity.setFirstname(person.getFirstname());
 		personEntity.setLastname(person.getLastname());
 		personEntity.setSocialSecurityNumber(person.getSocialSecurityNumber());
@@ -91,6 +97,9 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	public static Organization entityToOrganization(OrganizationEntity organizationEntity) {
+		if(organizationEntity == null) {
+			return null;
+		}
 		Organization organization = BookingFactory.eINSTANCE.createOrganization();
 		entityToLegalEntityHelper(organization, organizationEntity);
 		organization.setName(organizationEntity.getName());
@@ -99,8 +108,11 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	public static OrganizationEntityImpl organizationToEntity(Organization organization) {
+		if(organization == null) {
+			return null;
+		}
 		OrganizationEntityImpl organizationEntity = new OrganizationEntityImpl();
-		entityToLegalEntityHelper(organization, organizationEntity);
+		legalEntityToEntityHelper(organizationEntity, organization);
 		organizationEntity.setName(organization.getName());
 		organizationEntity.setOrganizationNumber(organization.getOrganizationNumber());
 		return organizationEntity;
@@ -114,7 +126,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		return le;
 	}
 	
-	public static LegalEntityEntityImpl legalEntityToEntityHelper(LegalEntityEntityImpl lee, LegalEntity le) {
+	private static LegalEntityEntityImpl legalEntityToEntityHelper(LegalEntityEntityImpl lee, LegalEntity le) {
 		lee.setCreditCardInformationEntity(CreditCardInformationToEntity(le.getCreditCardInformation()));
 		lee.setEmail(le.getEmail());
 		lee.setId(le.getId());
@@ -123,6 +135,9 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	public static CreditCardInformation EntityToCreditCardInformation(CreditCardInformationEntity entity) {
+		if(entity == null) {
+			return null;
+		}
 		CreditCardInformation cc = new CreditCardInformationImpl();
 		cc.setFirstName(entity.getFirstName());
 		cc.setLastName(entity.getLastName());
@@ -132,6 +147,9 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	private static CreditCardInformationEntityImpl CreditCardInformationToEntity(CreditCardInformation cc) {
+		if(cc == null) {
+			return null;
+		}
 		CreditCardInformationEntityImpl cce = new CreditCardInformationEntityImpl();
 		cce.setFirstName(cc.getFirstName());
 		cce.setLastName(cc.getLastName());
@@ -300,7 +318,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Person getPerson(String SSN) {
-		TypedQuery<PersonEntityImpl> query = entityManager.createQuery("FROM PersonEntityImpl WHERE socialSecutiryNumber=:ssn", PersonEntityImpl.class);
+		TypedQuery<PersonEntityImpl> query = entityManager.createQuery("FROM PersonEntityImpl WHERE socialSecurityNumber=:ssn", PersonEntityImpl.class);
 		query.setParameter("ssn", SSN);
 		PersonEntityImpl entity = query.getSingleResult();
 		return entityToPerson(entity);
