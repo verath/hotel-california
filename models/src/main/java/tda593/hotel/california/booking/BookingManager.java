@@ -149,7 +149,7 @@ public interface BookingManager extends EObject {
 	 * @model ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	EList<LegalEntity> getRelatedLegalEntities(Booking booking);
+	EList<Person> getRelatedLegalEntities(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->

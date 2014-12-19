@@ -397,7 +397,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LegalEntity> getRelatedLegalEntities(Booking booking) {
+	public EList<Person> getRelatedLegalEntities(Booking booking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

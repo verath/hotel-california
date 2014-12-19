@@ -1291,7 +1291,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getBookingManager__GetActiveBooking__String(), this.getBooking(), "getActiveBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetRelatedLegalEntities__Booking(), this.getLegalEntity(), "getRelatedLegalEntities", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetRelatedLegalEntities__Booking(), this.getPerson(), "getRelatedLegalEntities", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__CheckOut__Booking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);

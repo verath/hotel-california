@@ -521,7 +521,7 @@
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
           <eOperations name="getRelatedLegalEntities" ordered="false" upperBound="-1"
-              eType="#//hotel/california/booking/LegalEntity">
+              eType="#//hotel/california/booking/Person">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
           </eOperations>
           <eOperations name="checkOut" ordered="false" lowerBound="1">

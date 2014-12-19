@@ -1022,7 +1022,7 @@
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_tC41IHo1EeSZQp8F1uHBGQ" name="getRelatedLegalEntities" visibility="public">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_-bA-kHo1EeSZQp8F1uHBGQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" type="_3oahIHZKEeSrX_LICIhx2Q" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n2XmUH-uEeS2M9uZ6JBJRQ"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n2YNYH-uEeS2M9uZ6JBJRQ" value="*"/>
               </ownedParameter>
