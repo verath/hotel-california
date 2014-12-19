@@ -30,9 +30,8 @@ import tda593.hotel.california.billing.persistence.DiscountLimitEntity;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class DiscountEntityImpl implements DiscountEntity {
 
-	// TODO : string!!!!
 	@Id
-	private int code;
+	private String code;
 	private String name;
 	@OneToOne(targetEntity = DiscountLimitEntityImpl.class)
 	private DiscountLimitEntity discountLimitEntity;
@@ -51,7 +50,7 @@ public abstract class DiscountEntityImpl implements DiscountEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
@@ -60,7 +59,7 @@ public abstract class DiscountEntityImpl implements DiscountEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCode(int newCode) {
+	public void setCode(String newCode) {
 		code = newCode;
 	}
 

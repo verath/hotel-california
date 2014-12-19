@@ -37,6 +37,7 @@ public class DiscountLimitEntityImpl implements DiscountLimitEntity {
 	private int id;
 	private Date startDate;
 	private Date endDate;
+	private int timesLeftToUse;
 	
 	@OneToMany(targetEntity = LegalEntityEntityImpl.class)
 	private List<LegalEntityEntity> allowedUsers;
@@ -133,6 +134,18 @@ public class DiscountLimitEntityImpl implements DiscountLimitEntity {
 		result.append(endDate);
 		result.append(')');
 		return result.toString();
+	}
+
+
+	@Override
+	public int getTimesLeftToUse() {
+		return timesLeftToUse;
+	}
+
+
+	@Override
+	public void setTimesLeftToUse(int newTimesLeftToUse) {
+		this.timesLeftToUse = newTimesLeftToUse;
 	}
 
 } //DiscountLimitEntityImpl

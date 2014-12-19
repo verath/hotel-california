@@ -121,6 +121,15 @@ public interface BillingFactory extends EFactory {
 	BillDataService createBillDataService();
 
 	/**
+	 * Returns a new object of class '<em>Admin Discount Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admin Discount Manager Impl</em>'.
+	 * @generated
+	 */
+	AdminDiscountManagerImpl createAdminDiscountManagerImpl();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

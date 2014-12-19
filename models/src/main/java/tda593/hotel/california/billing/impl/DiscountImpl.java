@@ -3,12 +3,14 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.Discount;
 import tda593.hotel.california.billing.DiscountLimit;
@@ -37,7 +39,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CODE_EDEFAULT = 0;
+	protected static final String CODE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
@@ -47,7 +49,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected int code = CODE_EDEFAULT;
+	protected String code = CODE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -87,6 +89,11 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	protected DiscountImpl() {
 		super();
 	}
+	
+	public DiscountImpl(String code, String name) {
+		this.code = code;
+		this.name = name;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +110,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
@@ -112,8 +119,8 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCode(int newCode) {
-		int oldCode = code;
+	public void setCode(String newCode) {
+		String oldCode = code;
 		code = newCode;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.DISCOUNT__CODE, oldCode, code));
@@ -214,7 +221,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BillingPackage.DISCOUNT__CODE:
-				setCode((Integer)newValue);
+				setCode((String)newValue);
 				return;
 			case BillingPackage.DISCOUNT__NAME:
 				setName((String)newValue);
@@ -256,7 +263,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BillingPackage.DISCOUNT__CODE:
-				return code != CODE_EDEFAULT;
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case BillingPackage.DISCOUNT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BillingPackage.DISCOUNT__DISCOUNT_LIMIT:

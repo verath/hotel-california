@@ -207,13 +207,22 @@ public interface BillingPackage extends EPackage {
 	int DISCOUNT_LIMIT__ALLOWED_USERS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Times Left To Use</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT_LIMIT__TIMES_LEFT_TO_USE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Discount Limit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCOUNT_LIMIT_FEATURE_COUNT = 4;
+	int DISCOUNT_LIMIT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Discount Limit</em>' class.
@@ -259,7 +268,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__DOUBLE = DISCOUNT_MANAGER_OPERATION_COUNT + 0;
+	int ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__STRING_STRING_DOUBLE = DISCOUNT_MANAGER_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Add Percentage Discount</em>' operation.
@@ -268,7 +277,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__FLOAT = DISCOUNT_MANAGER_OPERATION_COUNT + 1;
+	int ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__STRING_STRING_FLOAT = DISCOUNT_MANAGER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Set Amount Limit</em>' operation.
@@ -298,13 +307,22 @@ public interface BillingPackage extends EPackage {
 	int ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE = DISCOUNT_MANAGER_OPERATION_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Create Discount Limit For Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER___CREATE_DISCOUNT_LIMIT_FOR_DISCOUNT__DISCOUNT_DATE_DATE_ELIST_INT = DISCOUNT_MANAGER_OPERATION_COUNT + 5;
+
+	/**
 	 * The number of operations of the '<em>Admin Discount Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_DISCOUNT_MANAGER_OPERATION_COUNT = DISCOUNT_MANAGER_OPERATION_COUNT + 5;
+	int ADMIN_DISCOUNT_MANAGER_OPERATION_COUNT = DISCOUNT_MANAGER_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.SumDiscountImpl <em>Sum Discount</em>}' class.
@@ -1417,6 +1435,107 @@ public interface BillingPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl <em>Admin Discount Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminDiscountManagerImpl()
+	 * @generated
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL = 15;
+
+	/**
+	 * The feature id for the '<em><b>Discount Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL__DISCOUNT_DATA_SERVICE = DISCOUNT_MANAGER_IMPL__DISCOUNT_DATA_SERVICE;
+
+	/**
+	 * The number of structural features of the '<em>Admin Discount Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL_FEATURE_COUNT = DISCOUNT_MANAGER_IMPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__INT = DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__INT;
+
+	/**
+	 * The operation id for the '<em>Add Sum Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___ADD_SUM_DISCOUNT__STRING_STRING_DOUBLE = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Add Percentage Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___ADD_PERCENTAGE_DISCOUNT__STRING_STRING_FLOAT = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Set Amount Limit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___SET_AMOUNT_LIMIT__DISCOUNT_INT = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Add Allowed Users</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___ADD_ALLOWED_USERS__DISCOUNT_ELIST = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Set Date Range Limit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Create Discount Limit For Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL___CREATE_DISCOUNT_LIMIT_FOR_DISCOUNT__DISCOUNT_DATE_DATE_ELIST_INT = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Admin Discount Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_DISCOUNT_MANAGER_IMPL_OPERATION_COUNT = DISCOUNT_MANAGER_IMPL_OPERATION_COUNT + 6;
+
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.DiscountManager <em>Discount Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1544,6 +1663,17 @@ public interface BillingPackage extends EPackage {
 	EReference getDiscountLimit_AllowedUsers();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.billing.DiscountLimit#getTimesLeftToUse <em>Times Left To Use</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Times Left To Use</em>'.
+	 * @see tda593.hotel.california.billing.DiscountLimit#getTimesLeftToUse()
+	 * @see #getDiscountLimit()
+	 * @generated
+	 */
+	EAttribute getDiscountLimit_TimesLeftToUse();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminDiscountManager <em>Admin Discount Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1554,24 +1684,24 @@ public interface BillingPackage extends EPackage {
 	EClass getAdminDiscountManager();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminDiscountManager#addSumDiscount(double) <em>Add Sum Discount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminDiscountManager#addSumDiscount(java.lang.String, java.lang.String, double) <em>Add Sum Discount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Sum Discount</em>' operation.
-	 * @see tda593.hotel.california.billing.AdminDiscountManager#addSumDiscount(double)
+	 * @see tda593.hotel.california.billing.AdminDiscountManager#addSumDiscount(java.lang.String, java.lang.String, double)
 	 * @generated
 	 */
-	EOperation getAdminDiscountManager__AddSumDiscount__double();
+	EOperation getAdminDiscountManager__AddSumDiscount__String_String_double();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminDiscountManager#addPercentageDiscount(float) <em>Add Percentage Discount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminDiscountManager#addPercentageDiscount(java.lang.String, java.lang.String, float) <em>Add Percentage Discount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Percentage Discount</em>' operation.
-	 * @see tda593.hotel.california.billing.AdminDiscountManager#addPercentageDiscount(float)
+	 * @see tda593.hotel.california.billing.AdminDiscountManager#addPercentageDiscount(java.lang.String, java.lang.String, float)
 	 * @generated
 	 */
-	EOperation getAdminDiscountManager__AddPercentageDiscount__float();
+	EOperation getAdminDiscountManager__AddPercentageDiscount__String_String_float();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminDiscountManager#setAmountLimit(tda593.hotel.california.billing.Discount, int) <em>Set Amount Limit</em>}' operation.
@@ -1602,6 +1732,16 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminDiscountManager#createDiscountLimitForDiscount(tda593.hotel.california.billing.Discount, java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, int) <em>Create Discount Limit For Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Discount Limit For Discount</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminDiscountManager#createDiscountLimitForDiscount(tda593.hotel.california.billing.Discount, java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, int)
+	 * @generated
+	 */
+	EOperation getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.SumDiscount <em>Sum Discount</em>}'.
@@ -2145,6 +2285,16 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillDataService__GetService__int();
 
 	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminDiscountManagerImpl <em>Admin Discount Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Discount Manager Impl</em>'.
+	 * @see tda593.hotel.california.billing.AdminDiscountManagerImpl
+	 * @generated
+	 */
+	EClass getAdminDiscountManagerImpl();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2270,6 +2420,14 @@ public interface BillingPackage extends EPackage {
 		EReference DISCOUNT_LIMIT__ALLOWED_USERS = eINSTANCE.getDiscountLimit_AllowedUsers();
 
 		/**
+		 * The meta object literal for the '<em><b>Times Left To Use</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DISCOUNT_LIMIT__TIMES_LEFT_TO_USE = eINSTANCE.getDiscountLimit_TimesLeftToUse();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.AdminDiscountManager <em>Admin Discount Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2285,7 +2443,7 @@ public interface BillingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__DOUBLE = eINSTANCE.getAdminDiscountManager__AddSumDiscount__double();
+		EOperation ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__STRING_STRING_DOUBLE = eINSTANCE.getAdminDiscountManager__AddSumDiscount__String_String_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Percentage Discount</b></em>' operation.
@@ -2293,7 +2451,7 @@ public interface BillingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__FLOAT = eINSTANCE.getAdminDiscountManager__AddPercentageDiscount__float();
+		EOperation ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__STRING_STRING_FLOAT = eINSTANCE.getAdminDiscountManager__AddPercentageDiscount__String_String_float();
 
 		/**
 		 * The meta object literal for the '<em><b>Set Amount Limit</b></em>' operation.
@@ -2318,6 +2476,14 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE = eINSTANCE.getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Discount Limit For Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_DISCOUNT_MANAGER___CREATE_DISCOUNT_LIMIT_FOR_DISCOUNT__DISCOUNT_DATE_DATE_ELIST_INT = eINSTANCE.getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.SumDiscountImpl <em>Sum Discount</em>}' class.
@@ -2756,6 +2922,16 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BILL_DATA_SERVICE___GET_SERVICE__INT = eINSTANCE.getBillDataService__GetService__int();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl <em>Admin Discount Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminDiscountManagerImpl()
+		 * @generated
+		 */
+		EClass ADMIN_DISCOUNT_MANAGER_IMPL = eINSTANCE.getAdminDiscountManagerImpl();
 
 	}
 
