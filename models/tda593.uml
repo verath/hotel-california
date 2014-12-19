@@ -857,11 +857,17 @@
             <ownedAttribute xmi:type="uml:Property" xmi:id="_Vt-VgHcGEeSbBJzXJgLK5Q" name="cardNumber" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_iig_AHcGEeSbBJzXJgLK5Q" name="cardHolder" visibility="private">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-            </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_v9mEEHcGEeSbBJzXJgLK5Q" name="expirationDate" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_4H3L8IcOEeSFg4EKE05x8Q" name="ccv" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_KBuJcIcPEeSFg4EKE05x8Q" name="firstName" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_MH8PEIcPEeSFg4EKE05x8Q" name="lastName" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Interface" xmi:id="_xX22IHZXEeSbBJzXJgLK5Q" name="BookingManager" visibility="package">
@@ -1016,7 +1022,7 @@
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_tC41IHo1EeSZQp8F1uHBGQ" name="getRelatedLegalEntities" visibility="public">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_-bA-kHo1EeSZQp8F1uHBGQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" type="_3oahIHZKEeSrX_LICIhx2Q" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n2XmUH-uEeS2M9uZ6JBJRQ"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n2YNYH-uEeS2M9uZ6JBJRQ" value="*"/>
               </ownedParameter>
@@ -1211,7 +1217,7 @@
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_PUhWUIFdEeSZuOQR5MrPYg" signature="_IPemEH7HEeS2M9uZ6JBJRQ">
             <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_UKWc0IFdEeSZuOQR5MrPYg" actual="_3oahIHZKEeSrX_LICIhx2Q" formal="_b1PEsH7HEeS2M9uZ6JBJRQ"/>
             <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_WovK0IFdEeSZuOQR5MrPYg" formal="_xY3v0H7IEeS2M9uZ6JBJRQ">
-              <actual xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              <actual xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
             </parameterSubstitution>
           </templateBinding>
         </packagedElement>

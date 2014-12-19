@@ -4,18 +4,14 @@ package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
-import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
 import tda593.hotel.california.billing.persistence.BillEntity;
@@ -23,7 +19,6 @@ import tda593.hotel.california.billing.persistence.BookingBillEntity;
 import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.BookingBillEntityImpl;
 import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
-import tda593.hotel.california.facilities.Room;
 
 /**
  * <!-- begin-user-doc -->

@@ -42,7 +42,7 @@ public interface BookingManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" customerRequired="true" customerOrdered="false"
+	 * @model ordered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
 	EList<Booking> getBookings(LegalEntity customer);
@@ -149,7 +149,7 @@ public interface BookingManager extends EObject {
 	 * @model ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	EList<LegalEntity> getRelatedLegalEntities(Booking booking);
+	EList<Person> getRelatedLegalEntities(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,5 +158,13 @@ public interface BookingManager extends EObject {
 	 * @generated
 	 */
 	void checkOut(Booking booking);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
+	 * @generated
+	 */
+	Booking getBooking(int bookingId);
 
 } // BookingManager

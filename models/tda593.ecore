@@ -440,10 +440,14 @@
         <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformation">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardHolder" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDate" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ccv" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BookingManager" abstract="true"
             interface="true">
@@ -456,7 +460,7 @@
             <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
           </eOperations>
-          <eOperations name="getBookings" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
+          <eOperations name="getBookings" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Booking">
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
           </eOperations>
           <eOperations name="getAvailableRooms" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/Room">
@@ -517,11 +521,14 @@
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
           <eOperations name="getRelatedLegalEntities" ordered="false" upperBound="-1"
-              eType="#//hotel/california/booking/LegalEntity">
+              eType="#//hotel/california/booking/Person">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
           </eOperations>
           <eOperations name="checkOut" ordered="false" lowerBound="1">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
+          </eOperations>
+          <eOperations name="getBooking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
+            <eParameters name="bookingId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BookingManagerImpl" eSuperTypes="#//hotel/california/booking/BookingManager">
@@ -531,7 +538,7 @@
               lowerBound="1" eType="#//hotel/california/facilities/RoomManager"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BookingDataService">
-          <eOperations name="getAll" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
+          <eOperations name="getAll" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Booking">
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
           </eOperations>
           <eOperations name="getAll" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Booking">
@@ -597,7 +604,7 @@
         <eClassifiers xsi:type="ecore:EClass" name="LegalEntityDataService">
           <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
             <eTypeArguments eClassifier="#//hotel/california/booking/LegalEntity"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
           </eGenericSuperTypes>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="LegalEntity">

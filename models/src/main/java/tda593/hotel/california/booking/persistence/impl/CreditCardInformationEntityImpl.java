@@ -36,7 +36,8 @@ public class CreditCardInformationEntityImpl implements
 	@Id
 	private String cardNumber;
 
-	private String cardHolder;
+	private String firstName;
+	private String lastName;
 
 	private Date expirationDate;
 
@@ -51,12 +52,12 @@ public class CreditCardInformationEntityImpl implements
 		this.cardNumber = cardNumber;
 	}
 
-	public String getCardHolder() {
-		return cardHolder;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setCardHolder(String cardHolder) {
-		this.cardHolder = cardHolder;
+	public void setFirstName(String cardHolder) {
+		this.firstName = cardHolder;
 	}
 
 	public Date getExpirationDate() {
@@ -73,11 +74,21 @@ public class CreditCardInformationEntityImpl implements
 		result.append(" (cardNumber: ");
 		result.append(cardNumber);
 		result.append(", cardHolder: ");
-		result.append(cardHolder);
+		result.append(firstName);
 		result.append(", expirationDate: ");
 		result.append(expirationDate);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public String getLastName() {
+		return lastName;
+	}
+
+	@Override
+	public void setLastName(String value) {
+		lastName = value;
 	}
 
 } // CreditCardInformationEntityImpl

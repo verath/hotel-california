@@ -22,8 +22,10 @@ import tda593.hotel.california.booking.CreditCardInformation;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCardHolder <em>Card Holder</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getExpirationDate <em>Expiration Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCcv <em>Ccv</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getLastName <em>Last Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,26 +53,6 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	protected String cardNumber = CARD_NUMBER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCardHolder() <em>Card Holder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardHolder()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARD_HOLDER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCardHolder() <em>Card Holder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardHolder()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cardHolder = CARD_HOLDER_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getExpirationDate() <em>Expiration Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +71,66 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected Date expirationDate = EXPIRATION_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCcv() <em>Ccv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCcv()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CCV_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCcv() <em>Ccv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCcv()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ccv = CCV_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String firstName = FIRST_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lastName = LAST_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,27 +177,6 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCardHolder() {
-		return cardHolder;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardHolder(String newCardHolder) {
-		String oldCardHolder = cardHolder;
-		cardHolder = newCardHolder;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER, oldCardHolder, cardHolder));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Date getExpirationDate() {
 		return expirationDate;
 	}
@@ -177,15 +198,82 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getCcv() {
+		return ccv;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCcv(String newCcv) {
+		String oldCcv = ccv;
+		ccv = newCcv;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__CCV, oldCcv, ccv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstName(String newFirstName) {
+		String oldFirstName = firstName;
+		firstName = newFirstName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME, oldFirstName, firstName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLastName(String newLastName) {
+		String oldLastName = lastName;
+		lastName = newLastName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME, oldLastName, lastName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				return getCardNumber();
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
-				return getCardHolder();
 			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				return getExpirationDate();
+			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+				return getCcv();
+			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+				return getFirstName();
+			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+				return getLastName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,11 +289,17 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				setCardNumber((String)newValue);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
-				setCardHolder((String)newValue);
-				return;
 			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				setExpirationDate((Date)newValue);
+				return;
+			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+				setCcv((String)newValue);
+				return;
+			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+				setFirstName((String)newValue);
+				return;
+			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+				setLastName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,11 +316,17 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				setCardNumber(CARD_NUMBER_EDEFAULT);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
-				setCardHolder(CARD_HOLDER_EDEFAULT);
-				return;
 			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				setExpirationDate(EXPIRATION_DATE_EDEFAULT);
+				return;
+			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+				setCcv(CCV_EDEFAULT);
+				return;
+			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+				setFirstName(FIRST_NAME_EDEFAULT);
+				return;
+			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+				setLastName(LAST_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -242,10 +342,14 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				return CARD_NUMBER_EDEFAULT == null ? cardNumber != null : !CARD_NUMBER_EDEFAULT.equals(cardNumber);
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_HOLDER:
-				return CARD_HOLDER_EDEFAULT == null ? cardHolder != null : !CARD_HOLDER_EDEFAULT.equals(cardHolder);
 			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				return EXPIRATION_DATE_EDEFAULT == null ? expirationDate != null : !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
+			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+				return CCV_EDEFAULT == null ? ccv != null : !CCV_EDEFAULT.equals(ccv);
+			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
+			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,10 +366,14 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cardNumber: ");
 		result.append(cardNumber);
-		result.append(", cardHolder: ");
-		result.append(cardHolder);
 		result.append(", expirationDate: ");
 		result.append(expirationDate);
+		result.append(", ccv: ");
+		result.append(ccv);
+		result.append(", firstName: ");
+		result.append(firstName);
+		result.append(", lastName: ");
+		result.append(lastName);
 		result.append(')');
 		return result.toString();
 	}

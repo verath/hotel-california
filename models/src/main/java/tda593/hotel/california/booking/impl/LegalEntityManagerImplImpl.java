@@ -3,20 +3,18 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingPackage;
+import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
 import tda593.hotel.california.booking.LegalEntityManagerImpl;
@@ -183,13 +181,25 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Sets (adds or replaces) the credit card information of the specified legal entity
+	 * 
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCreditCardInformation(LegalEntity legalEntity, String firstname, String lastname, String cardNumber, String ccv, Date expirationDate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(!legalEntityDataService.exist(legalEntity.getId())) {
+			throw new IllegalArgumentException("The supplied LegalEntity does not exist in the system");
+		}
+		
+		CreditCardInformation creditCardInfo = BookingFactory.eINSTANCE.createCreditCardInformation();
+		creditCardInfo.setFirstName(firstname);
+		creditCardInfo.setLastName(lastname);
+		creditCardInfo.setCardNumber(cardNumber);
+		creditCardInfo.setCcv(ccv);
+		creditCardInfo.setExpirationDate(expirationDate);
+		legalEntity.setCreditCardInformation(creditCardInfo);
+		
+		legalEntityDataService.set(legalEntity);
 	}
 
 	/**

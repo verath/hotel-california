@@ -21,7 +21,7 @@ public interface BookingDataService extends DataService<Booking, Integer> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" customerRequired="true" customerOrdered="false"
+	 * @model ordered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
 	EList<Booking> getAll(LegalEntity customer);

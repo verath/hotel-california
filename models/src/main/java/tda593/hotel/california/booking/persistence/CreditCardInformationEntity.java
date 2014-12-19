@@ -68,12 +68,12 @@ public interface CreditCardInformationEntity {
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the value of the '<em>Card Holder</em>' attribute.
-	 * @see #setCardHolder(String)
+	 * @see #setFirstName(String)
 	 * @see tda593.hotel.california.booking.persistence.PersistencePackage#getCreditCardInformationEntity_CardHolder()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	String getCardHolder();
+	String getFirstName();
 
 	/**
 	 * Sets the value of the '
@@ -83,11 +83,15 @@ public interface CreditCardInformationEntity {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Card Holder</em>' attribute.
-	 * @see #getCardHolder()
+	 * @see #getFirstName()
 	 * @generated
 	 */
-	void setCardHolder(String value);
+	void setFirstName(String value);
 
+	String getLastName();
+
+	void setLastName(String value);
+	
 	/**
 	 * Returns the value of the '<em><b>Expiration Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

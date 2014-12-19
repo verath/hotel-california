@@ -15,8 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getCardHolder <em>Card Holder</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getCcv <em>Ccv</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.CreditCardInformation#getLastName <em>Last Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,32 +54,6 @@ public interface CreditCardInformation extends EObject {
 	void setCardNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Card Holder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Card Holder</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Card Holder</em>' attribute.
-	 * @see #setCardHolder(String)
-	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_CardHolder()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String getCardHolder();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getCardHolder <em>Card Holder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Card Holder</em>' attribute.
-	 * @see #getCardHolder()
-	 * @generated
-	 */
-	void setCardHolder(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Expiration Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -102,5 +78,83 @@ public interface CreditCardInformation extends EObject {
 	 * @generated
 	 */
 	void setExpirationDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Ccv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ccv</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ccv</em>' attribute.
+	 * @see #setCcv(String)
+	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_Ccv()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getCcv();
+
+	/**
+	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getCcv <em>Ccv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ccv</em>' attribute.
+	 * @see #getCcv()
+	 * @generated
+	 */
+	void setCcv(String value);
+
+	/**
+	 * Returns the value of the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>First Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Name</em>' attribute.
+	 * @see #setFirstName(String)
+	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_FirstName()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getFirstName();
+
+	/**
+	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getFirstName <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Name</em>' attribute.
+	 * @see #getFirstName()
+	 * @generated
+	 */
+	void setFirstName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Last Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Last Name</em>' attribute.
+	 * @see #setLastName(String)
+	 * @see tda593.hotel.california.booking.BookingPackage#getCreditCardInformation_LastName()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getLastName();
+
+	/**
+	 * Sets the value of the '{@link tda593.hotel.california.booking.CreditCardInformation#getLastName <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last Name</em>' attribute.
+	 * @see #getLastName()
+	 * @generated
+	 */
+	void setLastName(String value);
 
 } // CreditCardInformation

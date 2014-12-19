@@ -155,13 +155,14 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Returns the bill with the specified if, or null if there is none
+	 * @param id Bill's id
+	 * @return Bill (or null if none exist)
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Bill getBill(int id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return billDataService.get(id);
 	}
 
 	/**
@@ -203,9 +204,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void addSubBill(Bill subBill, Bill toBill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		toBill.addSubBill(subBill);
+		billDataService.set(toBill);
 	}
 
 	/**

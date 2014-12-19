@@ -2477,13 +2477,21 @@
                       <element xmi:type="uml:Property" href="tda593.uml#_Vt-VgHcGEeSbBJzXJgLK5Q"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_xOAjEXcGEeSbBJzXJgLK5Q"/>
                     </children>
-                    <children xmi:type="notation:Shape" xmi:id="_xODmYHcGEeSbBJzXJgLK5Q" type="3012">
-                      <element xmi:type="uml:Property" href="tda593.uml#_iig_AHcGEeSbBJzXJgLK5Q"/>
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_xODmYXcGEeSbBJzXJgLK5Q"/>
-                    </children>
                     <children xmi:type="notation:Shape" xmi:id="_xOHQwHcGEeSbBJzXJgLK5Q" type="3012">
                       <element xmi:type="uml:Property" href="tda593.uml#_v9mEEHcGEeSbBJzXJgLK5Q"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_xOHQwXcGEeSbBJzXJgLK5Q"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_VI-KsIcPEeSFg4EKE05x8Q" type="3012">
+                      <element xmi:type="uml:Property" href="tda593.uml#_4H3L8IcOEeSFg4EKE05x8Q"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_VI-KsYcPEeSFg4EKE05x8Q"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_VJB1EIcPEeSFg4EKE05x8Q" type="3012">
+                      <element xmi:type="uml:Property" href="tda593.uml#_KBuJcIcPEeSFg4EKE05x8Q"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_VJB1EYcPEeSFg4EKE05x8Q"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_VJERUIcPEeSFg4EKE05x8Q" type="3012">
+                      <element xmi:type="uml:Property" href="tda593.uml#_MH8PEIcPEeSFg4EKE05x8Q"/>
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_VJERUYcPEeSFg4EKE05x8Q"/>
                     </children>
                     <styles xmi:type="notation:TitleStyle" xmi:id="_28MqZHcFEeSbBJzXJgLK5Q"/>
                     <styles xmi:type="notation:SortingStyle" xmi:id="_28MqZXcFEeSbBJzXJgLK5Q"/>
