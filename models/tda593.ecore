@@ -277,12 +277,19 @@
             <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount"/>
           </eOperations>
           <eOperations name="addSubBill" ordered="false" lowerBound="1">
-            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill"/>
+            <eParameters name="subBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill"/>
           </eOperations>
           <eOperations name="registerPurchase" ordered="false" lowerBound="1">
             <eParameters name="purchase" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Purchase"/>
           </eOperations>
           <eOperations name="publishBill" ordered="false" lowerBound="1"/>
+          <eOperations name="unregisterPurchase" ordered="false" lowerBound="1">
+            <eParameters name="purchase" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Purchase"/>
+          </eOperations>
+          <eOperations name="removeSubBill" ordered="false" lowerBound="1">
+            <eParameters name="subBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill"/>
+          </eOperations>
+          <eOperations name="unPublishBill" ordered="false" lowerBound="1"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" ordered="false"
@@ -297,6 +304,8 @@
               upperBound="-1" eType="#//hotel/california/billing/Discount"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
               lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="subBills" ordered="false"
+              upperBound="-1" eType="#//hotel/california/billing/Bill"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="Purchase">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"

@@ -32,6 +32,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getPurchase <em>Purchase</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getUsedDiscounts <em>Used Discounts</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCustomer <em>Customer</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getSubBills <em>Sub Bills</em>}</li>
  * </ul>
  * </p>
  *
@@ -147,6 +148,16 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected LegalEntity customer;
+
+	/**
+	 * The cached value of the '{@link #getSubBills() <em>Sub Bills</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubBills()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Bill> subBills;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,6 +284,18 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Bill> getSubBills() {
+		if (subBills == null) {
+			subBills = new EObjectResolvingEList<Bill>(Bill.class, this, BillingPackage.BILL__SUB_BILLS);
+		}
+		return subBills;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isPaid() {
 		return isPaid;
 	}
@@ -327,12 +350,12 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void addSubBill(Bill bill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void addSubBill(Bill subBill) {
+		if(subBill != null) {
+			subBills.add(subBill);
+		}
 	}
 
 	/**
@@ -360,6 +383,39 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void unregisterPurchase(Purchase purchase) {
+		if(purchase != null) {
+			this.purchase.remove(purchase);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeSubBill(Bill subBill) {
+		if(subBill != null) {
+			subBills.remove(subBill);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unPublishBill() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -378,6 +434,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__CUSTOMER:
 				if (resolve) return getCustomer();
 				return basicGetCustomer();
+			case BillingPackage.BILL__SUB_BILLS:
+				return getSubBills();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -414,6 +472,10 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__CUSTOMER:
 				setCustomer((LegalEntity)newValue);
 				return;
+			case BillingPackage.BILL__SUB_BILLS:
+				getSubBills().clear();
+				getSubBills().addAll((Collection<? extends Bill>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -447,6 +509,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__CUSTOMER:
 				setCustomer((LegalEntity)null);
 				return;
+			case BillingPackage.BILL__SUB_BILLS:
+				getSubBills().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -473,6 +538,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return usedDiscounts != null && !usedDiscounts.isEmpty();
 			case BillingPackage.BILL__CUSTOMER:
 				return customer != null;
+			case BillingPackage.BILL__SUB_BILLS:
+				return subBills != null && !subBills.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -496,6 +563,15 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return null;
 			case BillingPackage.BILL___PUBLISH_BILL:
 				publishBill();
+				return null;
+			case BillingPackage.BILL___UNREGISTER_PURCHASE__PURCHASE:
+				unregisterPurchase((Purchase)arguments.get(0));
+				return null;
+			case BillingPackage.BILL___REMOVE_SUB_BILL__BILL:
+				removeSubBill((Bill)arguments.get(0));
+				return null;
+			case BillingPackage.BILL___UN_PUBLISH_BILL:
+				unPublishBill();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

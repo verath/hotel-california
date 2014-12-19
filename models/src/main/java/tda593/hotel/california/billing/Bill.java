@@ -22,6 +22,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.Bill#getPurchase <em>Purchase</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getUsedDiscounts <em>Used Discounts</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getCustomer <em>Customer</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.Bill#getSubBills <em>Sub Bills</em>}</li>
  * </ul>
  * </p>
  *
@@ -135,6 +136,22 @@ public interface Bill extends EObject {
 	void setCustomer(LegalEntity value);
 
 	/**
+	 * Returns the value of the '<em><b>Sub Bills</b></em>' reference list.
+	 * The list contents are of type {@link tda593.hotel.california.billing.Bill}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sub Bills</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub Bills</em>' reference list.
+	 * @see tda593.hotel.california.billing.BillingPackage#getBill_SubBills()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Bill> getSubBills();
+
+	/**
 	 * Returns the value of the '<em><b>Is Paid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -203,10 +220,10 @@ public interface Bill extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model billRequired="true" billOrdered="false"
+	 * @model subBillRequired="true" subBillOrdered="false"
 	 * @generated
 	 */
-	void addSubBill(Bill bill);
+	void addSubBill(Bill subBill);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,5 +240,29 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	void publishBill();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model purchaseRequired="true" purchaseOrdered="false"
+	 * @generated
+	 */
+	void unregisterPurchase(Purchase purchase);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model subBillRequired="true" subBillOrdered="false"
+	 * @generated
+	 */
+	void removeSubBill(Bill subBill);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void unPublishBill();
 
 } // Bill

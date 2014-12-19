@@ -45,6 +45,14 @@ public interface BookingDataService extends DataService<Booking, Integer> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" newStartRequired="true" newStartOrdered="false" newEndRequired="true" newEndOrdered="false"
+	 * @generated
+	 */
+	boolean changeBookingDates(Booking booking, Date newStart, Date newEnd);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
