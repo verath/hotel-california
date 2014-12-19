@@ -167,4 +167,12 @@ public interface BookingManager extends EObject {
 	 */
 	Booking getBooking(int bookingId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" newStartRequired="true" newStartOrdered="false" newEndRequired="true" newEndOrdered="false"
+	 * @generated
+	 */
+	boolean changeBookingDates(Booking booking, Date newStart, Date newEnd);
+
 } // BookingManager

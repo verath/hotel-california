@@ -772,6 +772,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBookingManager__ChangeBookingDates__Booking_Date_Date() {
+		return bookingManagerEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBookingManagerImpl() {
 		return bookingManagerImplEClass;
 	}
@@ -828,6 +837,42 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 */
 	public EOperation getBookingDataService__GetAll__Date_Date_LegalEntity() {
 		return bookingDataServiceEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBookingDataService__ChangeBookingDates__Booking_Date_Date() {
+		return bookingDataServiceEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBookingDataService__BeginTransaction() {
+		return bookingDataServiceEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBookingDataService__CommitTransaction() {
+		return bookingDataServiceEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBookingDataService__RollbackTransaction() {
+		return bookingDataServiceEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -1080,6 +1125,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHECK_OUT__BOOKING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_BOOKING__INT);
+		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE);
 
 		bookingManagerImplEClass = createEClass(BOOKING_MANAGER_IMPL);
 		createEReference(bookingManagerImplEClass, BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE);
@@ -1089,6 +1135,10 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___GET_ALL__LEGALENTITY);
 		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE);
 		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY);
+		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE);
+		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___BEGIN_TRANSACTION);
+		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___COMMIT_TRANSACTION);
+		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION);
 
 		legalEntityManagerEClass = createEClass(LEGAL_ENTITY_MANAGER);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___FIND_PERSON__STRING_STRING);
@@ -1300,6 +1350,11 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getBookingManager__GetBooking__int(), this.getBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getBookingManager__ChangeBookingDates__Booking_Date_Date(), ecorePackage.getEBoolean(), "changeBookingDates", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "newStart", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "newEnd", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(bookingManagerImplEClass, BookingManagerImpl.class, "BookingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBookingManagerImpl_RoomManager(), theFacilitiesPackage.getRoomManager(), null, "roomManager", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1317,6 +1372,17 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "legal", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBookingDataService__ChangeBookingDates__Booking_Date_Date(), ecorePackage.getEBoolean(), "changeBookingDates", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "newStart", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "newEnd", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getBookingDataService__BeginTransaction(), null, "beginTransaction", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getBookingDataService__CommitTransaction(), null, "commitTransaction", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getBookingDataService__RollbackTransaction(), null, "rollbackTransaction", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(legalEntityManagerEClass, LegalEntityManager.class, "LegalEntityManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

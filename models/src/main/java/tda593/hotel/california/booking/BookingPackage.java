@@ -897,13 +897,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___GET_BOOKING__INT = 17;
 
 	/**
+	 * The operation id for the '<em>Change Booking Dates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 18;
+
+	/**
 	 * The number of operations of the '<em>Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 18;
+	int BOOKING_MANAGER_OPERATION_COUNT = 19;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -1105,6 +1114,15 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER_IMPL___GET_BOOKING__INT = BOOKING_MANAGER___GET_BOOKING__INT;
 
 	/**
+	 * The operation id for the '<em>Change Booking Dates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE;
+
+	/**
 	 * The number of operations of the '<em>Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1223,13 +1241,49 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Change Booking Dates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Begin Transaction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___BEGIN_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Commit Transaction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___COMMIT_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Rollback Transaction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 6;
+
+	/**
 	 * The number of operations of the '<em>Data Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
+	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.
@@ -2185,6 +2239,16 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__GetBooking__int();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date) <em>Change Booking Dates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Change Booking Dates</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getBookingManager__ChangeBookingDates__Booking_Date_Date();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManagerImpl <em>Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2255,6 +2319,46 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingDataService__GetAll__Date_Date_LegalEntity();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date) <em>Change Booking Dates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Change Booking Dates</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getBookingDataService__ChangeBookingDates__Booking_Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#beginTransaction() <em>Begin Transaction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Begin Transaction</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#beginTransaction()
+	 * @generated
+	 */
+	EOperation getBookingDataService__BeginTransaction();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#commitTransaction() <em>Commit Transaction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Commit Transaction</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#commitTransaction()
+	 * @generated
+	 */
+	EOperation getBookingDataService__CommitTransaction();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#rollbackTransaction() <em>Rollback Transaction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Rollback Transaction</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#rollbackTransaction()
+	 * @generated
+	 */
+	EOperation getBookingDataService__RollbackTransaction();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}'.
@@ -2967,6 +3071,14 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING_MANAGER___GET_BOOKING__INT = eINSTANCE.getBookingManager__GetBooking__int();
 
 		/**
+		 * The meta object literal for the '<em><b>Change Booking Dates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = eINSTANCE.getBookingManager__ChangeBookingDates__Booking_Date_Date();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3025,6 +3137,38 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = eINSTANCE.getBookingDataService__GetAll__Date_Date_LegalEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Change Booking Dates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = eINSTANCE.getBookingDataService__ChangeBookingDates__Booking_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Begin Transaction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___BEGIN_TRANSACTION = eINSTANCE.getBookingDataService__BeginTransaction();
+
+		/**
+		 * The meta object literal for the '<em><b>Commit Transaction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___COMMIT_TRANSACTION = eINSTANCE.getBookingDataService__CommitTransaction();
+
+		/**
+		 * The meta object literal for the '<em><b>Rollback Transaction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION = eINSTANCE.getBookingDataService__RollbackTransaction();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.

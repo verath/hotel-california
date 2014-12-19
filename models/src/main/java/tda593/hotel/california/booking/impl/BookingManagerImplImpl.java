@@ -457,6 +457,46 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean changeBookingDates(Booking booking, Date newStart, Date newEnd) {
+		if(newStart.after(newEnd)) {
+			throw new IllegalArgumentException("start was greater than end");
+		}
+		
+		try {
+			bookingDataService.beginTransaction();
+			
+			if(booking.getStartDate().after(newStart)) {
+				if(!isRoomAvailable(newStart, booking.getStartDate(), booking.getRoomStay().getRoom().getRoomNumber())) {
+					throw new IllegalStateException();
+				}
+			}
+			
+			if(booking.getEndDate().before(newEnd)) {
+				if(!isRoomAvailable(booking.getEndDate(), newEnd, booking.getRoomStay().getRoom().getRoomNumber())) {
+					throw new IllegalStateException();
+				}
+			}
+			
+			booking.setStartDate(newStart);
+			booking.setEndDate(newEnd);
+			bookingDataService.set(booking);
+			
+			bookingDataService.commitTransaction();
+			return true;
+		} catch(IllegalStateException e) {
+			bookingDataService.rollbackTransaction();
+			return false;
+		} catch(RuntimeException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -574,6 +614,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_BOOKING__INT:
 				return getBooking((Integer)arguments.get(0));
+			case BookingPackage.BOOKING_MANAGER_IMPL___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE:
+				return changeBookingDates((Booking)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

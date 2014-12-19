@@ -41,4 +41,28 @@ public interface BookingDataService extends DataService<Booking, Integer> {
 	 * @generated
 	 */
 	EList<Booking> getAll(Date from, Date to, LegalEntity legal);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void beginTransaction();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void commitTransaction();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void rollbackTransaction();
 } // BookingDataService
