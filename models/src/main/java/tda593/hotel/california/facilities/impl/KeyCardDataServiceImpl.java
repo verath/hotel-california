@@ -75,7 +75,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public KeyCard get(String id) {
 		KeyCardEntity keyCardEntity = entityManager.find(KeyCardEntityImpl.class, id);
@@ -85,7 +85,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<KeyCard> getAll() {
 		List<KeyCardEntityImpl> results = entityManager.createQuery("FROM KeyCardEntityImpl", KeyCardEntityImpl.class).getResultList();
@@ -100,7 +100,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
 		Long count = entityManager.createQuery("SELECT COUNT(number) FROM Rooms", Long.class).getSingleResult();
@@ -111,7 +111,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(KeyCard object) {
 		EntityTransaction transaction = entityManager.getTransaction();
@@ -123,7 +123,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<KeyCard> objects) {
 		EntityTransaction transaction = entityManager.getTransaction();
@@ -137,7 +137,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void delete(KeyCard keyCard) {
 		entityManager.remove(keyCardToEntity(keyCard));
@@ -146,7 +146,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean exist(String id) {
 		return get(id) != null;
