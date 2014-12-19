@@ -78,6 +78,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	}
 	
 	public RoomManagerImplImpl(RoomTypeDataService roomTypeDataService, RoomDataService roomDataService, KeyCardManager keyCardManader) {
+		this();
 		this.roomTypeDataService = roomTypeDataService;
 		this.roomDataService = roomDataService;
 		this.keyCardManager = keyCardManader;
