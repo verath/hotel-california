@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -110,45 +111,70 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Person> findPerson(String firstname, String lastname) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Person> matches = new BasicEList<Person>(); 
+		matches.addAll(legalEntityDataService.findPerson(firstname, lastname));
+		return matches;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Organization> findOrganization(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Organization> matches = new BasicEList<Organization>(); 
+		matches.addAll(legalEntityDataService.findOrganization(name));
+		return matches;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Organization getOrganization(String organizationNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return legalEntityDataService.getOrganization(organizationNumber);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Person getPerson(String SSN) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return getPerson(SSN);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email) {
+		Person person = BookingFactory.eINSTANCE.createPerson();
+		person.setFirstname(firstname);
+		person.setLastname(lastname);
+		person.setSocialSecurityNumber(SSN);
+		person.setPhone(phone);
+		person.setEmail(email);
+		return person;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Organization createOrganization(String name, String organizationNumber, String phone, String email) {
+		Organization organization = BookingFactory.eINSTANCE.createOrganization();
+		organization.setName(name);
+		organization.setOrganizationNumber(organizationNumber);
+		organization.setPhone(phone);
+		organization.setEmail(email);
+		return organization;
 	}
 
 	/**
@@ -156,29 +182,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPerson(String firstname, String lastname, String SSN, String phone, String email) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void createOrganization(String name, String organizationNumber, String phone, String email) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<LegalEntity> findLegalEntity(String email) {
+	public EList<LegalEntity> getLegalEntity(int id) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -283,13 +287,11 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___GET_PERSON__STRING:
 				return getPerson((String)arguments.get(0));
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING:
-				createPerson((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
-				return null;
+				return createPerson((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING:
-				createOrganization((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3));
-				return null;
-			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___FIND_LEGAL_ENTITY__STRING:
-				return findLegalEntity((String)arguments.get(0));
+				return createOrganization((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3));
+			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___GET_LEGAL_ENTITY__INT:
+				return getLegalEntity((Integer)arguments.get(0));
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE:
 				setCreditCardInformation((LegalEntity)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (Date)arguments.get(5));
 				return null;

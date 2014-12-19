@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see tda593.hotel.california.booking.BookingPackage#getLegalEntity()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface LegalEntity extends EObject {
@@ -127,5 +127,13 @@ public interface LegalEntity extends EObject {
 	 * @generated
 	 */
 	void setId(int value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getName();
 
 } // LegalEntity

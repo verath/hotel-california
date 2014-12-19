@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -18,12 +19,15 @@ import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
+import tda593.hotel.california.booking.Organization;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
+import tda593.hotel.california.booking.persistence.OrganizationEntity;
 import tda593.hotel.california.booking.persistence.PersonEntity;
 import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
+import tda593.hotel.california.booking.persistence.impl.OrganizationEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.PersonEntityImpl;
 
 /**
@@ -52,12 +56,28 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		this.entityManager = entityManager;
 	}
 	
+	public static LegalEntity entityToLegalEntity(LegalEntityEntity entity) {
+		if(entity instanceof PersonEntityImpl) {
+			return entityToPerson((PersonEntity)entity);
+		} else {
+			return entityToOrganization((OrganizationEntity)entity);
+		}
+	}
+
+	public static LegalEntityEntity legalEntityToEntity(LegalEntity customer) {
+		if(customer instanceof Person) {
+			return personToEntity((Person)customer);
+		} else {
+			return organizationToEntity((Organization)customer);
+		}
+	}
+	
 	public static Person entityToPerson(PersonEntity personEntity) {
 		Person person = BookingFactory.eINSTANCE.createPerson();
 		entityToLegalEntityHelper(person, personEntity);
 		person.setFirstname(personEntity.getFirstname());
 		person.setLastname(personEntity.getLastname());
-		person.setSocialSecurityNumber(person.getSocialSecurityNumber());
+		person.setSocialSecurityNumber(personEntity.getSocialSecurityNumber());
 		return person;
 	}
 	
@@ -70,12 +90,20 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		return personEntity;
 	}
 	
-	public static LegalEntity entityToLegalEntity(LegalEntityEntity entity) {
-		return entityToLegalEntityHelper(BookingFactory.eINSTANCE.createLegalEntity(), entity);
+	public static Organization entityToOrganization(OrganizationEntity organizationEntity) {
+		Organization organization = BookingFactory.eINSTANCE.createOrganization();
+		entityToLegalEntityHelper(organization, organizationEntity);
+		organization.setName(organizationEntity.getName());
+		organization.setOrganizationNumber(organizationEntity.getOrganizationNumber());
+		return organization;
 	}
 	
-	public static LegalEntityEntityImpl legalEntityToEntity(LegalEntity le) {
-		return legalEntityToEntityHelper(new LegalEntityEntityImpl(), le);
+	public static OrganizationEntityImpl organizationToEntity(Organization organization) {
+		OrganizationEntityImpl organizationEntity = new OrganizationEntityImpl();
+		entityToLegalEntityHelper(organization, organizationEntity);
+		organizationEntity.setName(organization.getName());
+		organizationEntity.setOrganizationNumber(organization.getOrganizationNumber());
+		return organizationEntity;
 	}
 	
 	private static LegalEntity entityToLegalEntityHelper(LegalEntity le, LegalEntityEntity entity) {
@@ -129,7 +157,11 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public LegalEntity get(Integer id) {
 		LegalEntityEntity entity = entityManager.find(LegalEntityEntityImpl.class, id);
-		return entity == null ? null : entityToLegalEntity(entity);
+		if(entity == null) {
+			return null;
+		}
+		
+		return entityToLegalEntity(entity);
 	}
 
 	/**
@@ -163,10 +195,10 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void set(LegalEntity object) {
+	public void set(LegalEntity entity) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(legalEntityToEntity(object));
+		entityManager.persist(legalEntityToEntity(entity));
 		transaction.commit();
 	}
 
@@ -178,8 +210,12 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	public void setAll(EList<LegalEntity> objects) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		for(LegalEntity object : objects) {
-			entityManager.persist(legalEntityToEntity(object));
+		for(LegalEntity entity : objects) {
+			if(entity instanceof PersonEntityImpl) {
+				entityManager.persist(entityToPerson((PersonEntity) entity));
+			} else {
+				entityManager.persist(entityToOrganization((OrganizationEntity) entity));
+			}
 		}
 		transaction.commit();
 	}
@@ -189,10 +225,14 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void delete(LegalEntity object) {
+	public void delete(LegalEntity entity) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.remove(legalEntityToEntity(object));
+		if(entity instanceof PersonEntityImpl) {
+			entityManager.remove(entityToPerson((PersonEntity) entity));
+		} else {
+			entityManager.remove(entityToOrganization((OrganizationEntity) entity));
+		}
 		transaction.commit();
 	}
 
@@ -203,6 +243,67 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public boolean exist(Integer id) {
 		return get(id) != null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Person> findPerson(String firstname, String lastname) {
+		TypedQuery<PersonEntityImpl> query = entityManager.createQuery("FROM PersonEntityImpl WHERE firsname LIKE :theFirstName"
+				+ " AND lastname LIKE :theLastName", PersonEntityImpl.class);
+		query.setParameter("theFirstName", firstname);
+		query.setParameter("theLastName", lastname);
+		List<PersonEntityImpl> results = query.getResultList();
+		EList<Person> entityResults = new BasicEList<Person>(results.size());
+		for (PersonEntity entity : results) {
+			entityResults.add(entityToPerson(entity));
+		}
+		
+		return entityResults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Organization> findOrganization(String name) {
+		TypedQuery<OrganizationEntityImpl> query = entityManager.createQuery("FROM OrganizationEntityImpl WHERE name LIKE :orgname"
+				+ " AND lastname LIKE :orgname", OrganizationEntityImpl.class);
+		query.setParameter("orgname", name);
+		List<OrganizationEntityImpl> results = query.getResultList();
+		EList<Organization> entityResults = new BasicEList<Organization>(results.size());
+		for (OrganizationEntity entity : results) {
+			entityResults.add(entityToOrganization(entity));
+		}
+		
+		return entityResults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Organization getOrganization(String organizationNumber) {
+		TypedQuery<OrganizationEntityImpl> query = entityManager.createQuery("FROM OrganizationEntityImpl WHERE organizationNumber=:orgnr", OrganizationEntityImpl.class);
+		query.setParameter("orgnr", organizationNumber);
+		OrganizationEntityImpl entity = query.getSingleResult();
+		return entityToOrganization(entity);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Person getPerson(String SSN) {
+		TypedQuery<PersonEntityImpl> query = entityManager.createQuery("FROM PersonEntityImpl WHERE socialSecutiryNumber=:ssn", PersonEntityImpl.class);
+		query.setParameter("ssn", SSN);
+		PersonEntityImpl entity = query.getSingleResult();
+		return entityToPerson(entity);
 	}
 
 	/**
@@ -230,9 +331,15 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 				return null;
 			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE___EXIST__OBJECT:
 				return exist((Integer)arguments.get(0));
+			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE___FIND_PERSON__STRING_STRING:
+				return findPerson((String)arguments.get(0), (String)arguments.get(1));
+			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE___FIND_ORGANIZATION__STRING:
+				return findOrganization((String)arguments.get(0));
+			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE___GET_ORGANIZATION__STRING:
+				return getOrganization((String)arguments.get(0));
+			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE___GET_PERSON__STRING:
+				return getPerson((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-
-
 } //LegalEntityDataServiceImpl

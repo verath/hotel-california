@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -17,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManagerImpl;
@@ -113,18 +111,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public BookingDataService basicGetBookingDataService() {
 		return bookingDataService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBookingDataService(BookingDataService newBookingDataService) {
-		BookingDataService oldBookingDataService = bookingDataService;
-		bookingDataService = newBookingDataService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE, oldBookingDataService, bookingDataService));
 	}
 
 	/**
@@ -418,12 +404,15 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Person> getRelatedLegalEntities(Booking booking) {
+	public EList<LegalEntity> getRelatedLegalEntities(Booking booking) {
 		if(booking.getRoomStay() == null) {
 			return null;
 		}
 		
-		return booking.getRoomStay().getRegisteredPersons();
+		EList<LegalEntity> entities = new BasicEList<LegalEntity>(booking.getRoomStay().getRegisteredPersons().size() + 1);
+		entities.addAll(booking.getRoomStay().getRegisteredPersons());
+		entities.add(booking.getResponsible());
+		return entities;
 	}
 
 	/**
@@ -518,9 +507,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE:
-				setBookingDataService((BookingDataService)newValue);
-				return;
 			case BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER:
 				setRoomManager((RoomManager)newValue);
 				return;
@@ -536,9 +522,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BookingPackage.BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE:
-				setBookingDataService((BookingDataService)null);
-				return;
 			case BookingPackage.BOOKING_MANAGER_IMPL__ROOM_MANAGER:
 				setRoomManager((RoomManager)null);
 				return;

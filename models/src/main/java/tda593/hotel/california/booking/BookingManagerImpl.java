@@ -31,22 +31,11 @@ public interface BookingManagerImpl extends BookingManager {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Booking Data Service</em>' reference.
-	 * @see #setBookingDataService(BookingDataService)
 	 * @see tda593.hotel.california.booking.BookingPackage#getBookingManagerImpl_BookingDataService()
-	 * @model required="true" ordered="false"
+	 * @model required="true" changeable="false" ordered="false"
 	 * @generated
 	 */
 	BookingDataService getBookingDataService();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.BookingManagerImpl#getBookingDataService <em>Booking Data Service</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booking Data Service</em>' reference.
-	 * @see #getBookingDataService()
-	 * @generated
-	 */
-	void setBookingDataService(BookingDataService value);
 
 	/**
 	 * Returns the value of the '<em><b>Room Manager</b></em>' reference.
