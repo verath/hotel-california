@@ -1,4 +1,4 @@
-package tda593.hotel.california.integration.util;
+package tda593.hotel.california.util;
 
 import javax.persistence.EntityManager;
 
@@ -66,10 +66,8 @@ public class HotelCaliforniaManagersHandler {
 	private DiscountManager discountManager;
 
 	private void initializeEntityManager() {
-		if(entityManager != null) {
-			entityManager.close();
-		}
-		entityManager = PersistenceHelper.createEntityManager();
+		PersistenceHelper.initialize();
+		entityManager = PersistenceHelper.getEntityManager();
 	}
 
 	private void initializeServices() {

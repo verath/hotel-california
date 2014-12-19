@@ -28,6 +28,7 @@ public class Main {
 		LegalEntityDataServiceImpl ds = new LegalEntityDataServiceImpl(entityManager);
 		System.out.println(ds.getPerson("9305"));
 		
+		emf.close();
 	}
 
 }

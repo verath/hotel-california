@@ -2,7 +2,7 @@ package tda593.hotel.california.integration;
 
 import org.junit.BeforeClass;
 
-import tda593.hotel.california.integration.util.HotelCaliforniaManagersHandler;
+import tda593.hotel.california.util.HotelCaliforniaManagersHandler;
 
 /**
  * An abstract helper class for setting up the hotel california system.

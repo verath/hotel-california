@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
-    <persistence-unit name="tda593.hotel.california">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <properties>
-            <!-- Use DerbyDB -->
-            <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
 
-            <!-- DerbyDB in in-memory mode -->
-            <property name="hibernate.connection.url" value="jdbc:derby:memory:hotel-californiaDB;create=true"/>
+	<persistence-unit name="tda593.hotel.california" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<!-- Use DerbyDB -->
+			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect" />
 
-            <!-- username/password not needed for in-memory -->
-            <property name="hibernate.connection.username" value=""/>
-            <property name="hibernate.connection.password" value=""/>
+			<!-- DerbyDB in in-memory mode -->
+			<property name="hibernate.connection.url"
+				value="jdbc:derby:memory:hotel-californiaDB;create=true" />
 
-            <!-- Set to true to print all queries executed -->
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+			<!-- username/password not needed for in-memory -->
+			<property name="hibernate.connection.username" value="" />
+			<property name="hibernate.connection.password" value="" />
 
-            <!-- Create and drop db each time -->
-            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
-        </properties>
-    </persistence-unit>
+			<!-- Set to true to print all queries executed -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<!-- Create and drop db each time -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="tda593.hotel.california.integration" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<!-- Use DerbyDB -->
+			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect" />
+
+			<!-- DerbyDB in in-memory mode -->
+			<property name="hibernate.connection.url"
+				value="jdbc:derby:memory:hotel-californiaDB;create=true" />
+
+			<!-- username/password not needed for in-memory -->
+			<property name="hibernate.connection.username" value="" />
+			<property name="hibernate.connection.password" value="" />
+
+			<!-- Set to true to print all queries executed -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<!-- Create and drop db each time -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+		</properties>
+	</persistence-unit>
 </persistence>
