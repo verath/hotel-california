@@ -18,10 +18,10 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsRequired="true" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void addRoom(int number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
+	void addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ public interface AdminRoomManager extends RoomManager {
 	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	boolean removeRoom(int roomNumber);
+	boolean removeRoom(String roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -42,9 +42,9 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model required="true" ordered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void removeRoomType(RoomType roomType);
+	boolean removeRoomType(RoomType roomType);
 
 } // AdminRoomManager
