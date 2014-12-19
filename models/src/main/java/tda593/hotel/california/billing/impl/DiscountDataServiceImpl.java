@@ -81,7 +81,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		
 		EList<LegalEntity> allowedUsers = dl.getAllowedUsers();
 		for(LegalEntityEntity entity : dle.getAllowedUsers()) {
-			allowedUsers.add(LegalEntityDataServiceImpl.EntityToLegalEntity(entity));
+			allowedUsers.add(LegalEntityDataServiceImpl.entityToLegalEntity(entity));
 		}
 
 		return dl;
@@ -95,7 +95,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		
 		List<LegalEntityEntity> allowedUsers = new ArrayList<LegalEntityEntity>();
 		for(LegalEntity entity : dl.getAllowedUsers()) {
-			allowedUsers.add(LegalEntityDataServiceImpl.LegalEntityToEntity(entity));
+			allowedUsers.add(LegalEntityDataServiceImpl.legalEntityToEntity(entity));
 		}
 		
 		dle.getAllowedUsers().addAll(allowedUsers);
