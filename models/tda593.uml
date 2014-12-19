@@ -412,9 +412,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Enumeration" xmi:id="_1lx-MHZOEeSrX_LICIhx2Q" name="RoomApproval"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_MEBmgHZHEeSrX_LICIhx2Q" name="RoomType">
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_g3P90HZHEeSrX_LICIhx2Q" name="id" visibility="private">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-            </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_l20PIHZHEeSrX_LICIhx2Q" name="name" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>

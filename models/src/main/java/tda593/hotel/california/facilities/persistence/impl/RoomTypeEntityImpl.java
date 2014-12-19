@@ -34,10 +34,8 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
 @Entity
 public class RoomTypeEntityImpl implements RoomTypeEntity {
 	@Id
-	@GeneratedValue
-	private int id;
-	private String description;
-	private String name ;
+	private String name;
+	private String description;	
 
 	@OneToMany(targetEntity = RoomApprovalEntityImpl.class)
 	private List<RoomApprovalEntity> roomApprovals;
@@ -67,24 +65,6 @@ public class RoomTypeEntityImpl implements RoomTypeEntity {
 	 */
 	public void setDescription(String newDescription) {
 		description = newDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(int newId) {
-		id = newId;
 	}
 
 	/**
@@ -127,8 +107,6 @@ public class RoomTypeEntityImpl implements RoomTypeEntity {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
 		result.append(description);
-		result.append(", id: ");
-		result.append(id);
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');

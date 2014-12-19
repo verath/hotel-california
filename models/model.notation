@@ -1374,10 +1374,6 @@
                 <children xmi:type="notation:Shape" xmi:id="_0P3_YHZHEeSrX_LICIhx2Q" type="2008">
                   <children xmi:type="notation:DecorationNode" xmi:id="_0P4mcHZHEeSrX_LICIhx2Q" type="5029"/>
                   <children xmi:type="notation:BasicCompartment" xmi:id="_0P4mcXZHEeSrX_LICIhx2Q" type="7017">
-                    <children xmi:type="notation:Shape" xmi:id="_2HSM8HZHEeSrX_LICIhx2Q" type="3012">
-                      <element xmi:type="uml:Property" href="tda593.uml#_g3P90HZHEeSrX_LICIhx2Q"/>
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_2HSM8XZHEeSrX_LICIhx2Q"/>
-                    </children>
                     <children xmi:type="notation:Shape" xmi:id="_2HVQQHZHEeSrX_LICIhx2Q" type="3012">
                       <element xmi:type="uml:Property" href="tda593.uml#_l20PIHZHEeSrX_LICIhx2Q"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_2HVQQXZHEeSrX_LICIhx2Q"/>
