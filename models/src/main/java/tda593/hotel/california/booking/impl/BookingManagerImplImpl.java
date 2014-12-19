@@ -453,6 +453,17 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean changeBookingDates(Booking booking, Date newStart, Date newEnd) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -568,6 +579,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_BOOKING__INT:
 				return getBooking((Integer)arguments.get(0));
+			case BookingPackage.BOOKING_MANAGER_IMPL___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE:
+				return changeBookingDates((Booking)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

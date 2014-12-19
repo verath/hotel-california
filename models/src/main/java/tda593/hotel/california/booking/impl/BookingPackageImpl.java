@@ -772,6 +772,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBookingManager__ChangeBookingDates__Booking_Date_Date() {
+		return bookingManagerEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBookingManagerImpl() {
 		return bookingManagerImplEClass;
 	}
@@ -1080,6 +1089,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHECK_OUT__BOOKING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_BOOKING__INT);
+		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE);
 
 		bookingManagerImplEClass = createEClass(BOOKING_MANAGER_IMPL);
 		createEReference(bookingManagerImplEClass, BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE);
@@ -1299,6 +1309,11 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 
 		op = initEOperation(getBookingManager__GetBooking__int(), this.getBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBookingManager__ChangeBookingDates__Booking_Date_Date(), ecorePackage.getEBoolean(), "changeBookingDates", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "newStart", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "newEnd", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bookingManagerImplEClass, BookingManagerImpl.class, "BookingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
