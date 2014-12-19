@@ -394,13 +394,16 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Returns the registered person on a booking, or null if there are none
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Person> getRelatedLegalEntities(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(booking.getRoomStay() == null) {
+			return null;
+		}
+		
+		return booking.getRoomStay().getRegisteredPersons();
 	}
 
 	/**
@@ -420,13 +423,13 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Returns the booking with the specified id, of null if there are none
+	 * @param bookingId The id of the requested booking
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return bookingDataService.get(bookingId);
 	}
 
 	/**
