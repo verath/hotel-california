@@ -1181,6 +1181,7 @@
             </parameterSubstitution>
           </templateBinding>
         </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_hZ8vUIdrEeSE9Y6gUqOmTQ" name="PercentageDiscountDataServiceType"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iY15oIFOEeSZuOQR5MrPYg">

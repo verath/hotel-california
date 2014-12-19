@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -54,11 +55,6 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	public DiscountDataServiceImpl(EntityManager entityManager) {
 		super();
 		this.entityManager = entityManager;
-	}
-	
-	
-	private static Discount entityToDiscount(DiscountEntity de) {
-		return entityToDiscount(de, new DiscountImpl());
 	}
 	
 	private static Discount entityToDiscount(DiscountEntity de, Discount d) {
@@ -115,7 +111,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		return pd;
 	}
 	
-	public static PercentageDiscountEntityImpl entityToPercentageDiscount(PercentageDiscount pd) {
+	public static PercentageDiscountEntityImpl percentageDiscountToEntity(PercentageDiscount pd) {
 		PercentageDiscountEntityImpl pde = new PercentageDiscountEntityImpl();
 		discountToEntity(pd, pde);
 		pde.setPercentage(pd.getPercentage());
@@ -131,7 +127,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		return sd;
 	}
 	
-	public static SumDiscountEntityImpl entityToSumDiscount(SumDiscount sd) {
+	public static SumDiscountEntityImpl sumDiscountToEntity(SumDiscount sd) {
 		SumDiscountEntityImpl sde = new SumDiscountEntityImpl();
 		discountToEntity(sd, sde);
 		sde.setDiscountSum(sd.getDiscountSum());
@@ -152,77 +148,113 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Discount get(String id) {
-		DiscountEntity entity = entityManager.find(DiscountEntity.class, id);
-		return entity == null ? null : entityToDiscount(de, d)
+		DiscountEntity entity = entityManager.find(DiscountEntityImpl.class, id);
+		
+		if(entity != null) {
+			if(entity.getClass().equals(PercentageDiscountEntityImpl.class)) {
+				return entityToPercentageDiscount((PercentageDiscountEntity) entity);
+			} else if(entity.getClass().equals(SumDiscountEntityImpl.class)) {
+				return entityToSumDiscount((SumDiscountEntity) entity);
+			}
+		}
+		
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Discount> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<DiscountEntity> results = entityManager.createQuery("FROM DiscountEntityImpl", DiscountEntity.class).getResultList();
+		EList<Discount> discountResults = new BasicEList<Discount>();
+		
+		if(results != null && results.size() > 0) {
+			for(DiscountEntity de : results) {
+				if(de.getClass().equals(PercentageDiscountEntity.class)) {
+					discountResults.add(entityToPercentageDiscount((PercentageDiscountEntity) de));
+				} else if(de.getClass().equals(SumDiscountEntity.class)) {
+					discountResults.add(entityToSumDiscount((SumDiscountEntity) de));
+				}
+			}
+		}
+		
+		return discountResults;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long perCount = entityManager.createQuery("SELECT COUNT(number) FROM PercentageDiscountEntityImpl", Long.class).getSingleResult();
+		Long sumCount = entityManager.createQuery("SELECT COUNT(number) FROM SumDiscountEntityImpl", Long.class).getSingleResult();
+
+		// TODO : change to long
+		return perCount.intValue() + sumCount.intValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(Discount object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.getTransaction().begin();
+		if(object.getClass().equals(PercentageDiscount.class)) {
+			entityManager.persist(percentageDiscountToEntity((PercentageDiscount) object));
+		} else if(object.getClass().equals(SumDiscount.class)) {
+			entityManager.persist(sumDiscountToEntity((SumDiscount) object));
+		}
+		
+		entityManager.getTransaction().commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<Discount> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.getTransaction().begin();
+		if(objects != null && objects.size() > 0) {
+			for(Discount discount : objects) {
+				if(discount.getClass().equals(PercentageDiscount.class)) {
+					entityManager.persist(percentageDiscountToEntity((PercentageDiscount) discount));
+				} else if(discount.getClass().equals(SumDiscount.class)) {
+					entityManager.persist(sumDiscountToEntity((SumDiscount) discount));
+				}
+			}
+		}
+		
+		entityManager.getTransaction().commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void delete(Discount object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(object.getClass().equals(PercentageDiscount.class)) {
+			entityManager.remove(percentageDiscountToEntity((PercentageDiscount) object));
+		} else if(object.getClass().equals(SumDiscount.class)) {
+			entityManager.remove(sumDiscountToEntity((SumDiscount) object));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public boolean exist(String object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean exist(String id) {
+		return get(id) != null;
 	}
 
 	/**
