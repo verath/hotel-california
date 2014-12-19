@@ -1434,7 +1434,7 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_xCVjAIUGEeSPhYI_rVU2Ew" name="discountLimitEntity" visibility="private" type="_WnbxgIUGEeSPhYI_rVU2Ew" association="_xCX_QIUGEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xCVjAYUGEeSPhYI_rVU2Ew" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xCVjAYUGEeSPhYI_rVU2Ew"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xCVjAoUGEeSPhYI_rVU2Ew" value="1"/>
           </ownedAttribute>
         </packagedElement>
@@ -1507,6 +1507,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAo0YYUIEeSPhYI_rVU2Ew" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAo0YoUIEeSPhYI_rVU2Ew" value="1"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_d5VYMId_EeSE9Y6gUqOmTQ" name="subBillEntities" visibility="private" type="_cExugIUHEeSPhYI_rVU2Ew" association="_d5X0cId_EeSE9Y6gUqOmTQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d5VYMYd_EeSE9Y6gUqOmTQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5VYMod_EeSE9Y6gUqOmTQ" value="*"/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_pD0-4IUHEeSPhYI_rVU2Ew" memberEnd="_pD0-4YUHEeSPhYI_rVU2Ew _pDx7kIUHEeSPhYI_rVU2Ew">
           <name xsi:nil="true"/>
@@ -1548,6 +1552,12 @@
           <ownedEnd xmi:type="uml:Property" xmi:id="_rAr3sIUIEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAr3sYUIEeSPhYI_rVU2Ew" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAr3soUIEeSPhYI_rVU2Ew" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_d5X0cId_EeSE9Y6gUqOmTQ" memberEnd="_d5X0cYd_EeSE9Y6gUqOmTQ _d5VYMId_EeSE9Y6gUqOmTQ">
+          <ownedEnd xmi:type="uml:Property" xmi:id="_d5X0cYd_EeSE9Y6gUqOmTQ" name="billEntity" type="_cExugIUHEeSPhYI_rVU2Ew" association="_d5X0cId_EeSE9Y6gUqOmTQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d5X0cod_EeSE9Y6gUqOmTQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5X0c4d_EeSE9Y6gUqOmTQ" value="1"/>
           </ownedEnd>
         </packagedElement>
       </packagedElement>

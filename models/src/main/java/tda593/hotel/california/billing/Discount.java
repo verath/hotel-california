@@ -2,8 +2,6 @@
  */
 package tda593.hotel.california.billing;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -78,27 +76,37 @@ public interface Discount extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Discount Limit</b></em>' reference list.
-	 * The list contents are of type {@link tda593.hotel.california.billing.DiscountLimit}.
+	 * Returns the value of the '<em><b>Discount Limit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Discount Limit</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Discount Limit</em>' reference list.
+	 * @return the value of the '<em>Discount Limit</em>' reference.
+	 * @see #setDiscountLimit(DiscountLimit)
 	 * @see tda593.hotel.california.billing.BillingPackage#getDiscount_DiscountLimit()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<DiscountLimit> getDiscountLimit();
+	DiscountLimit getDiscountLimit();
+
+	/**
+	 * Sets the value of the '{@link tda593.hotel.california.billing.Discount#getDiscountLimit <em>Discount Limit</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Discount Limit</em>' reference.
+	 * @see #getDiscountLimit()
+	 * @generated
+	 */
+	void setDiscountLimit(DiscountLimit value);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model priceRequired="true" priceOrdered="false"
+	 * @model required="true" ordered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	void getPriceWithDiscount(double price);
+	double getPriceWithDiscount(double price);
 
 } // Discount

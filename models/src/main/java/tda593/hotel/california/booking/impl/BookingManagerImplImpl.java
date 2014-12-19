@@ -455,12 +455,41 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean changeBookingDates(Booking booking, Date newStart, Date newEnd) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(newStart.after(newEnd)) {
+			throw new IllegalArgumentException("start was greater than end");
+		}
+		
+		try {
+			bookingDataService.beginTransaction();
+			
+			if(booking.getStartDate().after(newStart)) {
+				if(!isRoomAvailable(newStart, booking.getStartDate(), booking.getRoomStay().getRoom().getRoomNumber())) {
+					throw new IllegalStateException();
+				}
+			}
+			
+			if(booking.getEndDate().before(newEnd)) {
+				if(!isRoomAvailable(booking.getEndDate(), newEnd, booking.getRoomStay().getRoom().getRoomNumber())) {
+					throw new IllegalStateException();
+				}
+			}
+			
+			booking.setStartDate(newStart);
+			booking.setEndDate(newEnd);
+			bookingDataService.set(booking);
+			
+			bookingDataService.commitTransaction();
+			return true;
+		} catch(IllegalStateException e) {
+			bookingDataService.rollbackTransaction();
+			return false;
+		} catch(RuntimeException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		}
 	}
 
 	/**
