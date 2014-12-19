@@ -709,7 +709,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingManager__GetRoomTypes() {
+	public EOperation getBookingManager__GetActiveBooking__String() {
 		return bookingManagerEClass.getEOperations().get(13);
 	}
 
@@ -718,7 +718,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingManager__GetActiveBooking__String() {
+	public EOperation getBookingManager__GetRelatedLegalEntities__Booking() {
 		return bookingManagerEClass.getEOperations().get(14);
 	}
 
@@ -727,7 +727,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingManager__GetRelatedLegalEntities__Booking() {
+	public EOperation getBookingManager__CheckOut__Booking() {
 		return bookingManagerEClass.getEOperations().get(15);
 	}
 
@@ -736,7 +736,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingManager__CheckOut__Booking() {
+	public EOperation getBookingManager__GetBooking__int() {
 		return bookingManagerEClass.getEOperations().get(16);
 	}
 
@@ -745,17 +745,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingManager__GetBooking__int() {
-		return bookingManagerEClass.getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getBookingManager__ChangeBookingDates__Booking_Date_Date() {
-		return bookingManagerEClass.getEOperations().get(18);
+		return bookingManagerEClass.getEOperations().get(17);
 	}
 
 	/**
@@ -1136,7 +1127,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___REGISTER_ROOM__BOOKING_ROOM);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHECK_IN__BOOKING_ELIST);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE);
-		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_ROOM_TYPES);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___CHECK_OUT__BOOKING);
@@ -1351,8 +1341,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getBookingManager__GetRoomTypes(), theFacilitiesPackage.getRoomType(), "getRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__GetActiveBooking__String(), this.getBooking(), "getActiveBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);

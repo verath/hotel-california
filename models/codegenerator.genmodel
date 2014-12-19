@@ -466,7 +466,6 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/isRoomTypeAvailable/to"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/isRoomTypeAvailable/roomType"/>
             </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/getRoomTypes"/>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/getActiveBooking">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/getActiveBooking/roomNumber"/>
             </genOperations>

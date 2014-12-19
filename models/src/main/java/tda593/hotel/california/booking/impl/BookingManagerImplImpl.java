@@ -380,17 +380,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoomType> getRoomTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Booking getActiveBooking(String roomNumber) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -583,8 +572,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE:
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ROOM_TYPES:
-				return getRoomTypes();
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING:
 				return getActiveBooking((String)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_RELATED_LEGAL_ENTITIES__BOOKING:
