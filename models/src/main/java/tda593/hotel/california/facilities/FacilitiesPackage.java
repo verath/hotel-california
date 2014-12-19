@@ -423,7 +423,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE = ROOM_MANAGER_OPERATION_COUNT + 2;
+	int ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = ROOM_MANAGER_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Remove Room Type</em>' operation.
@@ -1567,7 +1567,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 2;
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Remove Room Type</em>' operation.
@@ -1774,14 +1774,14 @@ public interface FacilitiesPackage extends EPackage {
 	EOperation getAdminRoomManager__RemoveRoom__int();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addRoomType(java.lang.String, java.lang.String, tda593.hotel.california.facilities.RoomApproval, double) <em>Add Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addRoomType(java.lang.String, java.lang.String, org.eclipse.emf.common.util.EList, double) <em>Add Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Room Type</em>' operation.
-	 * @see tda593.hotel.california.facilities.AdminRoomManager#addRoomType(java.lang.String, java.lang.String, tda593.hotel.california.facilities.RoomApproval, double)
+	 * @see tda593.hotel.california.facilities.AdminRoomManager#addRoomType(java.lang.String, java.lang.String, org.eclipse.emf.common.util.EList, double)
 	 * @generated
 	 */
-	EOperation getAdminRoomManager__AddRoomType__String_String_RoomApproval_double();
+	EOperation getAdminRoomManager__AddRoomType__String_String_EList_double();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#removeRoomType(tda593.hotel.california.facilities.RoomType) <em>Remove Room Type</em>}' operation.
@@ -2412,7 +2412,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE = eINSTANCE.getAdminRoomManager__AddRoomType__String_String_RoomApproval_double();
+		EOperation ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = eINSTANCE.getAdminRoomManager__AddRoomType__String_String_EList_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Room Type</b></em>' operation.

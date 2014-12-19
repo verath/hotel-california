@@ -34,10 +34,10 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsRequired="true" roomApprovalsOrdered="false" priceRequired="true" priceOrdered="false"
+	 * @model nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsMany="true" roomApprovalsOrdered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	void addRoomType(String name, String description, RoomApproval roomApprovals, double price);
+	void addRoomType(String name, String description, EList<RoomApproval> roomApprovals, double price);
 
 	/**
 	 * <!-- begin-user-doc -->

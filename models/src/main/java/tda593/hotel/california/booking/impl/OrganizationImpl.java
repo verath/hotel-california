@@ -88,8 +88,9 @@ public class OrganizationImpl extends LegalEntityImpl implements Organization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}

@@ -925,7 +925,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLegalEntityManager__FindLegalEntity__String() {
+	public EOperation getLegalEntityManager__GetLegalEntity__int() {
 		return legalEntityManagerEClass.getEOperations().get(6);
 	}
 
@@ -963,6 +963,42 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 */
 	public EClass getLegalEntityDataService() {
 		return legalEntityDataServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLegalEntityDataService__FindPerson__String_String() {
+		return legalEntityDataServiceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLegalEntityDataService__FindOrganization__String() {
+		return legalEntityDataServiceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLegalEntityDataService__GetOrganization__String() {
+		return legalEntityDataServiceEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLegalEntityDataService__GetPerson__String() {
+		return legalEntityDataServiceEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1008,6 +1044,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 */
 	public EAttribute getLegalEntity_Id() {
 		return (EAttribute)legalEntityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLegalEntity__GetName() {
+		return legalEntityEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1127,19 +1172,24 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___GET_PERSON__STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING);
-		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING);
+		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE);
 
 		legalEntityManagerImplEClass = createEClass(LEGAL_ENTITY_MANAGER_IMPL);
 		createEReference(legalEntityManagerImplEClass, LEGAL_ENTITY_MANAGER_IMPL__LEGAL_ENTITY_DATA_SERVICE);
 
 		legalEntityDataServiceEClass = createEClass(LEGAL_ENTITY_DATA_SERVICE);
+		createEOperation(legalEntityDataServiceEClass, LEGAL_ENTITY_DATA_SERVICE___FIND_PERSON__STRING_STRING);
+		createEOperation(legalEntityDataServiceEClass, LEGAL_ENTITY_DATA_SERVICE___FIND_ORGANIZATION__STRING);
+		createEOperation(legalEntityDataServiceEClass, LEGAL_ENTITY_DATA_SERVICE___GET_ORGANIZATION__STRING);
+		createEOperation(legalEntityDataServiceEClass, LEGAL_ENTITY_DATA_SERVICE___GET_PERSON__STRING);
 
 		legalEntityEClass = createEClass(LEGAL_ENTITY);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__PHONE);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__EMAIL);
 		createEReference(legalEntityEClass, LEGAL_ENTITY__CREDIT_CARD_INFORMATION);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__ID);
+		createEOperation(legalEntityEClass, LEGAL_ENTITY___GET_NAME);
 	}
 
 	/**
@@ -1317,7 +1367,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getBookingManager__GetActiveBooking__String(), this.getBooking(), "getActiveBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__GetRelatedLegalEntities__Booking(), this.getPerson(), "getRelatedLegalEntities", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__GetRelatedLegalEntities__Booking(), this.getLegalEntity(), "getRelatedLegalEntities", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingManager__CheckOut__Booking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1332,7 +1382,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "newEnd", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bookingManagerImplEClass, BookingManagerImpl.class, "BookingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBookingManagerImpl_RoomManager(), theFacilitiesPackage.getRoomManager(), null, "roomManager", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bookingDataServiceEClass, BookingDataService.class, "BookingDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1375,21 +1425,21 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getLegalEntityManager__GetPerson__String(), this.getPerson(), "getPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__CreatePerson__String_String_String_String_String(), null, "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getLegalEntityManager__CreatePerson__String_String_String_String_String(), this.getPerson(), "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__CreateOrganization__String_String_String_String(), null, "createOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getLegalEntityManager__CreateOrganization__String_String_String_String(), this.getOrganization(), "createOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "organizationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__FindLegalEntity__String(), this.getLegalEntity(), "findLegalEntity", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getLegalEntityManager__GetLegalEntity__int(), this.getLegalEntity(), "getLegalEntity", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date(), null, "setCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "legalEntity", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1404,11 +1454,26 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 
 		initEClass(legalEntityDataServiceEClass, LegalEntityDataService.class, "LegalEntityDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(legalEntityEClass, LegalEntity.class, "LegalEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		op = initEOperation(getLegalEntityDataService__FindPerson__String_String(), this.getPerson(), "findPerson", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getLegalEntityDataService__FindOrganization__String(), this.getOrganization(), "findOrganization", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getLegalEntityDataService__GetOrganization__String(), this.getOrganization(), "getOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "organizationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getLegalEntityDataService__GetPerson__String(), this.getPerson(), "getPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(legalEntityEClass, LegalEntity.class, "LegalEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLegalEntity_Phone(), ecorePackage.getEString(), "phone", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLegalEntity_Email(), ecorePackage.getEString(), "email", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLegalEntity_CreditCardInformation(), this.getCreditCardInformation(), null, "creditCardInformation", null, 0, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLegalEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getLegalEntity__GetName(), ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 	}
 
 } //BookingPackageImpl
