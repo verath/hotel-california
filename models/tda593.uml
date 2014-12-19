@@ -665,6 +665,7 @@
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Erqn0Ho3EeSZQp8F1uHBGQ" name="getBookingBill">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQPqkHo4EeSZQp8F1uHBGQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ji1uQIeBEeSkgbxbBgd3rw" type="_1FAq0Hb7EeSbBJzXJgLK5Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_k5lEUHo4EeSZQp8F1uHBGQ" name="billItem" visibility="public">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_uSTHMHo4EeSZQp8F1uHBGQ" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
@@ -675,7 +676,12 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
               </ownedParameter>
             </ownedOperation>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_LRCHYHo5EeSZQp8F1uHBGQ" name="getAllServices"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_LRCHYHo5EeSZQp8F1uHBGQ" name="getAllServices">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_b2x_sIeBEeSkgbxbBgd3rw" type="_D2zEIHb8EeSbBJzXJgLK5Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EnNFQIeCEeSkgbxbBgd3rw"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EnNsUIeCEeSkgbxbBgd3rw" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Ak4EsHpPEeSept0-dI1XSQ" name="addSubBill">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQrboHpPEeSept0-dI1XSQ" name="subBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_TNTYYHpPEeSept0-dI1XSQ" name="toBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
@@ -707,6 +713,25 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_vyAfsIE5EeSfSN1EgLeI7A" name="BillDataService">
             <generalization xmi:type="uml:Generalization" xmi:id="_x2Vu8IE5EeSfSN1EgLeI7A" general="_S9F_UIE4EeSfSN1EgLeI7A"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_gg9k8IeDEeSkgbxbBgd3rw" name="getAllServices">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_gg9k8YeDEeSkgbxbBgd3rw" type="_D2zEIHb8EeSbBJzXJgLK5Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gg9k8oeDEeSkgbxbBgd3rw"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gg9k84eDEeSkgbxbBgd3rw" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_U4jakIeHEeSkgbxbBgd3rw" name="getBookingBill">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_U4jakYeHEeSkgbxbBgd3rw" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_U4jakoeHEeSkgbxbBgd3rw" type="_1FAq0Hb7EeSbBJzXJgLK5Q" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_fmPFQIeHEeSkgbxbBgd3rw" name="getService">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fmPFQYeHEeSkgbxbBgd3rw" type="_D2zEIHb8EeSbBJzXJgLK5Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fmPFQoeHEeSkgbxbBgd3rw" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fmPFQ4eHEeSkgbxbBgd3rw" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_m28SwIeHEeSkgbxbBgd3rw" name="serviceId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_9W7SoIH8EeSOTKU47AJ7gA" memberEnd="_9W7SoYH8EeSOTKU47AJ7gA _9W6rkIH8EeSOTKU47AJ7gA">
             <ownedEnd xmi:type="uml:Property" xmi:id="_9W7SoYH8EeSOTKU47AJ7gA" name="billManagerImpl" type="_RcjZoIE4EeSfSN1EgLeI7A" association="_9W7SoIH8EeSOTKU47AJ7gA">

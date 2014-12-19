@@ -307,7 +307,15 @@
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/BillManagerImpl/bookingManager"/>
           </genClasses>
-          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/BillDataService"/>
+          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/BillDataService">
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getAllServices"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getBookingBill">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillDataService/getBookingBill/booking"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getService">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillDataService/getService/serviceId"/>
+            </genOperations>
+          </genClasses>
         </nestedGenPackages>
         <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Booking" basePackage="tda593.hotel.california"
             disposableProviderFactory="true" ecorePackage="tda593.ecore#//hotel/california/booking">
