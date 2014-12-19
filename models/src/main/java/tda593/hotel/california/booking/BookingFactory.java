@@ -121,15 +121,6 @@ public interface BookingFactory extends EFactory {
 	LegalEntityDataService createLegalEntityDataService();
 
 	/**
-	 * Returns a new object of class '<em>Legal Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Legal Entity</em>'.
-	 * @generated
-	 */
-	LegalEntity createLegalEntity();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

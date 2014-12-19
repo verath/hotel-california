@@ -2,7 +2,9 @@
  */
 package tda593.hotel.california.booking.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -27,7 +29,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *
  * @generated
  */
-public class LegalEntityImpl extends MinimalEObjectImpl.Container implements LegalEntity {
+public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container implements LegalEntity {
 	/**
 	 * The default value of the '{@link #getPhone() <em>Phone</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -223,6 +225,17 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -305,6 +318,20 @@ public class LegalEntityImpl extends MinimalEObjectImpl.Container implements Leg
 				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case BookingPackage.LEGAL_ENTITY___GET_NAME:
+				return getName();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

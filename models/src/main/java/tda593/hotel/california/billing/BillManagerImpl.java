@@ -31,22 +31,11 @@ public interface BillManagerImpl extends BillManager {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bill Data Service</em>' reference.
-	 * @see #setBillDataService(BillDataService)
 	 * @see tda593.hotel.california.billing.BillingPackage#getBillManagerImpl_BillDataService()
-	 * @model required="true" ordered="false"
+	 * @model required="true" changeable="false" ordered="false"
 	 * @generated
 	 */
 	BillDataService getBillDataService();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.billing.BillManagerImpl#getBillDataService <em>Bill Data Service</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bill Data Service</em>' reference.
-	 * @see #getBillDataService()
-	 * @generated
-	 */
-	void setBillDataService(BillDataService value);
 
 	/**
 	 * Returns the value of the '<em><b>Booking Manager</b></em>' reference.

@@ -125,18 +125,6 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoomDataService(RoomDataService newRoomDataService) {
-		RoomDataService oldRoomDataService = roomDataService;
-		roomDataService = newRoomDataService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE, oldRoomDataService, roomDataService));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoomTypeDataService getRoomTypeDataService() {
 		if (roomTypeDataService != null && roomTypeDataService.eIsProxy()) {
 			InternalEObject oldRoomTypeDataService = (InternalEObject)roomTypeDataService;
@@ -163,18 +151,6 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoomTypeDataService(RoomTypeDataService newRoomTypeDataService) {
-		RoomTypeDataService oldRoomTypeDataService = roomTypeDataService;
-		roomTypeDataService = newRoomTypeDataService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE, oldRoomTypeDataService, roomTypeDataService));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public KeyCardManager getKeyCardManager() {
 		if (keyCardManager != null && keyCardManager.eIsProxy()) {
 			InternalEObject oldKeyCardManager = (InternalEObject)keyCardManager;
@@ -194,18 +170,6 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public KeyCardManager basicGetKeyCardManager() {
 		return keyCardManager;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKeyCardManager(KeyCardManager newKeyCardManager) {
-		KeyCardManager oldKeyCardManager = keyCardManager;
-		keyCardManager = newKeyCardManager;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM_MANAGER_IMPL__KEY_CARD_MANAGER, oldKeyCardManager, keyCardManager));
 	}
 
 	/**
@@ -325,48 +289,6 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return basicGetKeyCardManager();
 		}
 		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FacilitiesPackage.ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE:
-				setRoomDataService((RoomDataService)newValue);
-				return;
-			case FacilitiesPackage.ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE:
-				setRoomTypeDataService((RoomTypeDataService)newValue);
-				return;
-			case FacilitiesPackage.ROOM_MANAGER_IMPL__KEY_CARD_MANAGER:
-				setKeyCardManager((KeyCardManager)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FacilitiesPackage.ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE:
-				setRoomDataService((RoomDataService)null);
-				return;
-			case FacilitiesPackage.ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE:
-				setRoomTypeDataService((RoomTypeDataService)null);
-				return;
-			case FacilitiesPackage.ROOM_MANAGER_IMPL__KEY_CARD_MANAGER:
-				setKeyCardManager((KeyCardManager)null);
-				return;
-		}
-		super.eUnset(featureID);
 	}
 
 	/**

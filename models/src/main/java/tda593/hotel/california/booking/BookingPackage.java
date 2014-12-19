@@ -115,13 +115,22 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY___GET_NAME = 0;
+
+	/**
 	 * The number of operations of the '<em>Legal Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_OPERATION_COUNT = 0;
+	int LEGAL_ENTITY_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.OrganizationImpl <em>Organization</em>}' class.
@@ -195,6 +204,15 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION_FEATURE_COUNT = LEGAL_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION___GET_NAME = LEGAL_ENTITY___GET_NAME;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -286,6 +304,15 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSON_FEATURE_COUNT = LEGAL_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON___GET_NAME = LEGAL_ENTITY___GET_NAME;
 
 	/**
 	 * The number of operations of the '<em>Person</em>' class.
@@ -1541,13 +1568,49 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
 
 	/**
+	 * The operation id for the '<em>Find Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_DATA_SERVICE___FIND_PERSON__STRING_STRING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Find Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_DATA_SERVICE___FIND_ORGANIZATION__STRING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_DATA_SERVICE___GET_ORGANIZATION__STRING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_DATA_SERVICE___GET_PERSON__STRING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Legal Entity Data Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+	int LEGAL_ENTITY_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 4;
 
 
 	/**
@@ -2406,6 +2469,46 @@ public interface BookingPackage extends EPackage {
 	EClass getLegalEntityDataService();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityDataService#findPerson(java.lang.String, java.lang.String) <em>Find Person</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Person</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityDataService#findPerson(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityDataService__FindPerson__String_String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityDataService#findOrganization(java.lang.String) <em>Find Organization</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Organization</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityDataService#findOrganization(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityDataService__FindOrganization__String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityDataService#getOrganization(java.lang.String) <em>Get Organization</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Organization</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityDataService#getOrganization(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityDataService__GetOrganization__String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityDataService#getPerson(java.lang.String) <em>Get Person</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Person</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityDataService#getPerson(java.lang.String)
+	 * @generated
+	 */
+	EOperation getLegalEntityDataService__GetPerson__String();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.LegalEntity <em>Legal Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2458,6 +2561,16 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLegalEntity_Id();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntity#getName() <em>Get Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Name</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntity#getName()
+	 * @generated
+	 */
+	EOperation getLegalEntity__GetName();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3165,6 +3278,38 @@ public interface BookingPackage extends EPackage {
 		EClass LEGAL_ENTITY_DATA_SERVICE = eINSTANCE.getLegalEntityDataService();
 
 		/**
+		 * The meta object literal for the '<em><b>Find Person</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_DATA_SERVICE___FIND_PERSON__STRING_STRING = eINSTANCE.getLegalEntityDataService__FindPerson__String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Organization</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_DATA_SERVICE___FIND_ORGANIZATION__STRING = eINSTANCE.getLegalEntityDataService__FindOrganization__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Organization</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_DATA_SERVICE___GET_ORGANIZATION__STRING = eINSTANCE.getLegalEntityDataService__GetOrganization__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Person</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_DATA_SERVICE___GET_PERSON__STRING = eINSTANCE.getLegalEntityDataService__GetPerson__String();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.LegalEntityImpl <em>Legal Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3205,6 +3350,14 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LEGAL_ENTITY__ID = eINSTANCE.getLegalEntity_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY___GET_NAME = eINSTANCE.getLegalEntity__GetName();
 
 	}
 
