@@ -447,6 +447,11 @@
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/getBooking">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/getBooking/bookingId"/>
             </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/changeBookingDates">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/changeBookingDates/booking"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/changeBookingDates/newStart"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/changeBookingDates/newEnd"/>
+            </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/booking/BookingManagerImpl">
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

@@ -1037,6 +1037,18 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_PE2HoIdoEeSkgbxbBgd3rw" name="changeBookingDates">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-JVMQIdoEeSkgbxbBgd3rw" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_EVAEUIdpEeSkgbxbBgd3rw" name="newStart">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_GRLdIIdpEeSkgbxbBgd3rw" name="newEnd">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_dhStoIdpEeSkgbxbBgd3rw" name="success" direction="return" effect="create">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wrwOUH7MEeS2M9uZ6JBJRQ" name="BookingManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_882MgH7MEeS2M9uZ6JBJRQ" general="_xX22IHZXEeSbBJzXJgLK5Q"/>
