@@ -53,6 +53,7 @@ public class DiscountManagerImplImpl extends MinimalEObjectImpl.Container implem
 	}
 	
 	public DiscountManagerImplImpl(DiscountDataService discountDataService) {
+		this();
 		this.discountDataService = discountDataService;
 	}
 

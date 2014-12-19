@@ -69,6 +69,7 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 
 
 	public BillManagerImplImpl(BillDataService billDataService, BookingManager bookingManager) {
+		this();
 		this.billDataService = billDataService;
 		this.bookingManager = bookingManager;
 	}
