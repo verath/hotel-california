@@ -361,6 +361,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		RoomStay roomStay = new RoomStayImpl();
 		roomStay.setRoom(room);
 		booking.setRoomStay(roomStay);
+		bookingDataService.set(booking);
 		return roomStay;
 	}
 	
