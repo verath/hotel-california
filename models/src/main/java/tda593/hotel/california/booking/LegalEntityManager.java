@@ -73,7 +73,7 @@ public interface LegalEntityManager extends EObject {
 	 * @model ordered="false" idRequired="true" idOrdered="false"
 	 * @generated
 	 */
-	EList<LegalEntity> getLegalEntity(int id);
+	LegalEntity getLegalEntity(int id);
 
 	/**
 	 * <!-- begin-user-doc -->

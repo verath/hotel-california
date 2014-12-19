@@ -1219,7 +1219,7 @@
             <ownedOperation xmi:type="uml:Operation" xmi:id="_ekdMwHohEeSg65290XNrgw" name="getLegalEntity">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_EWq0wHoiEeSg65290XNrgw" name="legalEntities" type="_3oahIHZKEeSrX_LICIhx2Q" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3R9xoH-uEeS2M9uZ6JBJRQ"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3R-YsH-uEeS2M9uZ6JBJRQ" value="*"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3R-YsH-uEeS2M9uZ6JBJRQ" value="1"/>
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="__NBNIIeEEeSFg4EKE05x8Q" name="id">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>

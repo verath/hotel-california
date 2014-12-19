@@ -145,7 +145,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Person getPerson(String SSN) {
-		return getPerson(SSN);
+		return legalEntityDataService.getPerson(SSN);
 	}
 
 	/**
@@ -180,12 +180,10 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EList<LegalEntity> getLegalEntity(int id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public LegalEntity getLegalEntity(int id) {
+		return legalEntityDataService.get(id);
 	}
 
 	/**
