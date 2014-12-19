@@ -5,7 +5,7 @@ import javax.persistence.Persistence;
 
 public class PersistenceHelper {
 
-	private static final String PERSISTENCE_UNIT_NAME = "tda593.hotel.california.persistence";
+	private static final String PERSISTENCE_UNIT_NAME = "tda593.hotel.california.integration";
 
 	private PersistenceHelper() {
 	}
