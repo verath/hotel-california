@@ -67,6 +67,13 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		super();
 	}
 
+
+	public BillManagerImplImpl(BillDataService billDataService, BookingManager bookingManager) {
+		this();
+		this.billDataService = billDataService;
+		this.bookingManager = bookingManager;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,8 +211,9 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void addSubBill(Bill subBill, Bill toBill) {
-		toBill.addSubBill(subBill);
-		billDataService.set(toBill);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

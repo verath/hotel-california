@@ -53,6 +53,11 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	protected LegalEntityManagerImplImpl() {
 		super();
 	}
+	
+	public LegalEntityManagerImplImpl(LegalEntityDataService legalEntityDataService) {
+		this();
+		this.legalEntityDataService = legalEntityDataService;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

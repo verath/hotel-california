@@ -36,10 +36,10 @@ import tda593.hotel.california.facilities.RoomType;
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getSpecialRequest <em>Special Request</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getPrice <em>Price</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getRoomStay <em>Room Stay</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getTravelInformation <em>Travel Information</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getResponsible <em>Responsible</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#getRoomStay <em>Room Stay</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.BookingImpl#isCanceled <em>Is Canceled</em>}</li>
  * </ul>
  * </p>
@@ -148,16 +148,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected double price = PRICE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoomStay() <em>Room Stay</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoomStay()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoomStay roomStay;
-
-	/**
 	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,6 +176,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected LegalEntity responsible;
+
+	/**
+	 * The cached value of the '{@link #getRoomStay() <em>Room Stay</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomStay()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomStay roomStay;
 
 	/**
 	 * The default value of the '{@link #isCanceled() <em>Is Canceled</em>}' attribute.
@@ -566,9 +566,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getSpecialRequest();
 			case BookingPackage.BOOKING__PRICE:
 				return getPrice();
-			case BookingPackage.BOOKING__ROOM_STAY:
-				if (resolve) return getRoomStay();
-				return basicGetRoomStay();
 			case BookingPackage.BOOKING__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
@@ -578,6 +575,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case BookingPackage.BOOKING__RESPONSIBLE:
 				if (resolve) return getResponsible();
 				return basicGetResponsible();
+			case BookingPackage.BOOKING__ROOM_STAY:
+				if (resolve) return getRoomStay();
+				return basicGetRoomStay();
 			case BookingPackage.BOOKING__IS_CANCELED:
 				return isCanceled();
 		}
@@ -607,9 +607,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case BookingPackage.BOOKING__PRICE:
 				setPrice((Double)newValue);
 				return;
-			case BookingPackage.BOOKING__ROOM_STAY:
-				setRoomStay((RoomStay)newValue);
-				return;
 			case BookingPackage.BOOKING__ROOM_TYPE:
 				setRoomType((RoomType)newValue);
 				return;
@@ -618,6 +615,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case BookingPackage.BOOKING__RESPONSIBLE:
 				setResponsible((LegalEntity)newValue);
+				return;
+			case BookingPackage.BOOKING__ROOM_STAY:
+				setRoomStay((RoomStay)newValue);
 				return;
 			case BookingPackage.BOOKING__IS_CANCELED:
 				setIsCanceled((Boolean)newValue);
@@ -649,9 +649,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case BookingPackage.BOOKING__PRICE:
 				setPrice(PRICE_EDEFAULT);
 				return;
-			case BookingPackage.BOOKING__ROOM_STAY:
-				setRoomStay((RoomStay)null);
-				return;
 			case BookingPackage.BOOKING__ROOM_TYPE:
 				setRoomType((RoomType)null);
 				return;
@@ -660,6 +657,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case BookingPackage.BOOKING__RESPONSIBLE:
 				setResponsible((LegalEntity)null);
+				return;
+			case BookingPackage.BOOKING__ROOM_STAY:
+				setRoomStay((RoomStay)null);
 				return;
 			case BookingPackage.BOOKING__IS_CANCELED:
 				setIsCanceled(IS_CANCELED_EDEFAULT);
@@ -686,14 +686,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return SPECIAL_REQUEST_EDEFAULT == null ? specialRequest != null : !SPECIAL_REQUEST_EDEFAULT.equals(specialRequest);
 			case BookingPackage.BOOKING__PRICE:
 				return price != PRICE_EDEFAULT;
-			case BookingPackage.BOOKING__ROOM_STAY:
-				return roomStay != null;
 			case BookingPackage.BOOKING__ROOM_TYPE:
 				return roomType != null;
 			case BookingPackage.BOOKING__TRAVEL_INFORMATION:
 				return travelInformation != null;
 			case BookingPackage.BOOKING__RESPONSIBLE:
 				return responsible != null;
+			case BookingPackage.BOOKING__ROOM_STAY:
+				return roomStay != null;
 			case BookingPackage.BOOKING__IS_CANCELED:
 				return isCanceled != IS_CANCELED_EDEFAULT;
 		}

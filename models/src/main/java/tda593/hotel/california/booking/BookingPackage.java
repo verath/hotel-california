@@ -352,22 +352,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING__PRICE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Room Stay</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__ROOM_STAY = 5;
-
-	/**
 	 * The feature id for the '<em><b>Room Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__ROOM_TYPE = 6;
+	int BOOKING__ROOM_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Travel Information</b></em>' reference.
@@ -376,7 +367,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__TRAVEL_INFORMATION = 7;
+	int BOOKING__TRAVEL_INFORMATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Responsible</b></em>' reference.
@@ -385,7 +376,16 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__RESPONSIBLE = 8;
+	int BOOKING__RESPONSIBLE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Room Stay</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__ROOM_STAY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Canceled</b></em>' attribute.
@@ -458,7 +458,81 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getRoomStay()
 	 * @generated
 	 */
-	int ROOM_STAY = 3;
+	int ROOM_STAY = 4;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.StayRequestImpl <em>Stay Request</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.booking.impl.StayRequestImpl
+	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getStayRequest()
+	 * @generated
+	 */
+	int STAY_REQUEST = 5;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.TravelInformationImpl <em>Travel Information</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.booking.impl.TravelInformationImpl
+	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getTravelInformation()
+	 * @generated
+	 */
+	int TRAVEL_INFORMATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Tracking Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__TRACKING_ID = 1;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__COMMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Predecessor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__PREDECESSOR = 3;
+
+	/**
+	 * The number of structural features of the '<em>Travel Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Travel Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -524,16 +598,6 @@ public interface BookingPackage extends EPackage {
 	int ROOM_STAY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.StayRequestImpl <em>Stay Request</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.booking.impl.StayRequestImpl
-	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getStayRequest()
-	 * @generated
-	 */
-	int STAY_REQUEST = 4;
-
-	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -577,70 +641,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int STAY_REQUEST_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.TravelInformationImpl <em>Travel Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.booking.impl.TravelInformationImpl
-	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getTravelInformation()
-	 * @generated
-	 */
-	int TRAVEL_INFORMATION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tracking Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__TRACKING_ID = 1;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__COMMENT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Predecessor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__PREDECESSOR = 3;
-
-	/**
-	 * The number of structural features of the '<em>Travel Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Travel Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.

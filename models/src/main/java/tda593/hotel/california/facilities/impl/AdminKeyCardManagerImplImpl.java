@@ -12,6 +12,7 @@ import tda593.hotel.california.facilities.AdminKeyCardManagerImpl;
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
+import tda593.hotel.california.facilities.KeyCardDataService;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,10 @@ public class AdminKeyCardManagerImplImpl extends KeyCardManagerImplImpl implemen
 	 */
 	protected AdminKeyCardManagerImplImpl() {
 		super();
+	}
+	
+	public AdminKeyCardManagerImplImpl(KeyCardDataService keyCardDataService) {
+		super(keyCardDataService);
 	}
 
 	/**

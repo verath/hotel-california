@@ -332,7 +332,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * @generated
 	 */
 	public EReference getBooking_RoomStay() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(5);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -341,7 +341,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * @generated
 	 */
 	public EReference getBooking_RoomType() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(6);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -350,7 +350,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * @generated
 	 */
 	public EReference getBooking_TravelInformation() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(7);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -359,7 +359,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * @generated
 	 */
 	public EReference getBooking_Responsible() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(8);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1026,15 +1026,21 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEAttribute(bookingEClass, BOOKING__END_DATE);
 		createEAttribute(bookingEClass, BOOKING__SPECIAL_REQUEST);
 		createEAttribute(bookingEClass, BOOKING__PRICE);
-		createEReference(bookingEClass, BOOKING__ROOM_STAY);
 		createEReference(bookingEClass, BOOKING__ROOM_TYPE);
 		createEReference(bookingEClass, BOOKING__TRAVEL_INFORMATION);
 		createEReference(bookingEClass, BOOKING__RESPONSIBLE);
+		createEReference(bookingEClass, BOOKING__ROOM_STAY);
 		createEAttribute(bookingEClass, BOOKING__IS_CANCELED);
 		createEOperation(bookingEClass, BOOKING___CHECK_IN);
 		createEOperation(bookingEClass, BOOKING___CHECK_OUT);
 		createEOperation(bookingEClass, BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION);
 		createEOperation(bookingEClass, BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION);
+
+		travelInformationEClass = createEClass(TRAVEL_INFORMATION);
+		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__ID);
+		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__TRACKING_ID);
+		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__COMMENT);
+		createEReference(travelInformationEClass, TRAVEL_INFORMATION__PREDECESSOR);
 
 		roomStayEClass = createEClass(ROOM_STAY);
 		createEAttribute(roomStayEClass, ROOM_STAY__ACTIVE);
@@ -1047,12 +1053,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEAttribute(stayRequestEClass, STAY_REQUEST__TEXT);
 		createEAttribute(stayRequestEClass, STAY_REQUEST__TIME_STAMP);
 		createEAttribute(stayRequestEClass, STAY_REQUEST__ID);
-
-		travelInformationEClass = createEClass(TRAVEL_INFORMATION);
-		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__ID);
-		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__TRACKING_ID);
-		createEAttribute(travelInformationEClass, TRAVEL_INFORMATION__COMMENT);
-		createEReference(travelInformationEClass, TRAVEL_INFORMATION__PREDECESSOR);
 
 		creditCardInformationEClass = createEClass(CREDIT_CARD_INFORMATION);
 		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__CARD_NUMBER);
@@ -1177,10 +1177,10 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEAttribute(getBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_SpecialRequest(), ecorePackage.getEString(), "specialRequest", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_RoomStay(), this.getRoomStay(), null, "roomStay", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_RoomType(), theFacilitiesPackage.getRoomType(), null, "roomType", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_TravelInformation(), this.getTravelInformation(), null, "travelInformation", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Responsible(), this.getLegalEntity(), null, "responsible", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_RoomStay(), this.getRoomStay(), null, "roomStay", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_IsCanceled(), ecorePackage.getEBoolean(), "isCanceled", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getBooking__CheckIn(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1193,6 +1193,12 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getBooking__UnregisterTravelInformation__TravelInformation(), null, "unregisterTravelInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getTravelInformation(), "travelInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEClass(travelInformationEClass, TravelInformation.class, "TravelInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTravelInformation_Id(), ecorePackage.getEInt(), "id", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getTravelInformation_TrackingId(), ecorePackage.getEString(), "trackingId", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getTravelInformation_Comment(), ecorePackage.getEString(), "comment", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTravelInformation_Predecessor(), this.getTravelInformation(), null, "predecessor", null, 0, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(roomStayEClass, RoomStay.class, "RoomStay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomStay_Active(), ecorePackage.getEBoolean(), "active", null, 1, 1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomStay_StayRequest(), this.getStayRequest(), null, "stayRequest", null, 0, -1, RoomStay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1204,12 +1210,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEAttribute(getStayRequest_Text(), ecorePackage.getEString(), "text", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStayRequest_TimeStamp(), ecorePackage.getEDate(), "timeStamp", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStayRequest_Id(), ecorePackage.getEInt(), "id", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(travelInformationEClass, TravelInformation.class, "TravelInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTravelInformation_Id(), ecorePackage.getEInt(), "id", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTravelInformation_TrackingId(), ecorePackage.getEString(), "trackingId", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTravelInformation_Comment(), ecorePackage.getEString(), "comment", null, 1, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTravelInformation_Predecessor(), this.getTravelInformation(), null, "predecessor", null, 0, 1, TravelInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(creditCardInformationEClass, CreditCardInformation.class, "CreditCardInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreditCardInformation_CardNumber(), ecorePackage.getEString(), "cardNumber", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
