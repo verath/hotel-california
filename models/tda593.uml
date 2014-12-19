@@ -1174,13 +1174,13 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_3O25MIeDEeSFg4EKE05x8Q" type="_WOTLsHZTEeSbBJzXJgLK5Q" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_ekdMwHohEeSg65290XNrgw" name="findLegalEntity">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xEINEHohEeSg65290XNrgw" name="email">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-              </ownedParameter>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ekdMwHohEeSg65290XNrgw" name="getLegalEntity">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_EWq0wHoiEeSg65290XNrgw" name="legalEntities" type="_3oahIHZKEeSrX_LICIhx2Q" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3R9xoH-uEeS2M9uZ6JBJRQ"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3R-YsH-uEeS2M9uZ6JBJRQ" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="__NBNIIeEEeSFg4EKE05x8Q" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Ea8QgHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation">

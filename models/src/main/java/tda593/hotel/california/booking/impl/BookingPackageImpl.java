@@ -907,7 +907,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLegalEntityManager__FindLegalEntity__String() {
+	public EOperation getLegalEntityManager__GetLegalEntity__int() {
 		return legalEntityManagerEClass.getEOperations().get(6);
 	}
 
@@ -1152,7 +1152,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___GET_PERSON__STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING);
-		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING);
+		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE);
 
 		legalEntityManagerImplEClass = createEClass(LEGAL_ENTITY_MANAGER_IMPL);
@@ -1411,8 +1411,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__FindLegalEntity__String(), this.getLegalEntity(), "findLegalEntity", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getLegalEntityManager__GetLegalEntity__int(), this.getLegalEntity(), "getLegalEntity", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date(), null, "setCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "legalEntity", 1, 1, IS_UNIQUE, !IS_ORDERED);

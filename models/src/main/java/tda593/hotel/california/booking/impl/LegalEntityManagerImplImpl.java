@@ -166,7 +166,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Organization createOrganization(String name, String organizationNumber, String phone, String email) {
 		Organization organization = BookingFactory.eINSTANCE.createOrganization();
@@ -182,7 +182,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LegalEntity> findLegalEntity(String email) {
+	public EList<LegalEntity> getLegalEntity(int id) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -290,8 +290,8 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 				return createPerson((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING:
 				return createOrganization((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3));
-			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___FIND_LEGAL_ENTITY__STRING:
-				return findLegalEntity((String)arguments.get(0));
+			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___GET_LEGAL_ENTITY__INT:
+				return getLegalEntity((Integer)arguments.get(0));
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE:
 				setCreditCardInformation((LegalEntity)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (Date)arguments.get(5));
 				return null;

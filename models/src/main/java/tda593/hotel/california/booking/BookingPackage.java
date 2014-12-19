@@ -1350,13 +1350,13 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING = 5;
 
 	/**
-	 * The operation id for the '<em>Find Legal Entity</em>' operation.
+	 * The operation id for the '<em>Get Legal Entity</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING = 6;
+	int LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT = 6;
 
 	/**
 	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
@@ -1459,13 +1459,13 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING = LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING;
 
 	/**
-	 * The operation id for the '<em>Find Legal Entity</em>' operation.
+	 * The operation id for the '<em>Get Legal Entity</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_MANAGER_IMPL___FIND_LEGAL_ENTITY__STRING = LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING;
+	int LEGAL_ENTITY_MANAGER_IMPL___GET_LEGAL_ENTITY__INT = LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT;
 
 	/**
 	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
@@ -2418,14 +2418,14 @@ public interface BookingPackage extends EPackage {
 	EOperation getLegalEntityManager__CreateOrganization__String_String_String_String();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#findLegalEntity(java.lang.String) <em>Find Legal Entity</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#getLegalEntity(int) <em>Get Legal Entity</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Find Legal Entity</em>' operation.
-	 * @see tda593.hotel.california.booking.LegalEntityManager#findLegalEntity(java.lang.String)
+	 * @return the meta object for the '<em>Get Legal Entity</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityManager#getLegalEntity(int)
 	 * @generated
 	 */
-	EOperation getLegalEntityManager__FindLegalEntity__String();
+	EOperation getLegalEntityManager__GetLegalEntity__int();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#setCreditCardInformation(tda593.hotel.california.booking.LegalEntity, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Date) <em>Set Credit Card Information</em>}' operation.
@@ -3234,12 +3234,12 @@ public interface BookingPackage extends EPackage {
 		EOperation LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING = eINSTANCE.getLegalEntityManager__CreateOrganization__String_String_String_String();
 
 		/**
-		 * The meta object literal for the '<em><b>Find Legal Entity</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get Legal Entity</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LEGAL_ENTITY_MANAGER___FIND_LEGAL_ENTITY__STRING = eINSTANCE.getLegalEntityManager__FindLegalEntity__String();
+		EOperation LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT = eINSTANCE.getLegalEntityManager__GetLegalEntity__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Set Credit Card Information</b></em>' operation.

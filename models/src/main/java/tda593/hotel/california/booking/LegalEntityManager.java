@@ -70,10 +70,10 @@ public interface LegalEntityManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" emailRequired="true" emailOrdered="false"
+	 * @model ordered="false" idRequired="true" idOrdered="false"
 	 * @generated
 	 */
-	EList<LegalEntity> findLegalEntity(String email);
+	EList<LegalEntity> getLegalEntity(int id);
 
 	/**
 	 * <!-- begin-user-doc -->
