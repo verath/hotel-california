@@ -62,9 +62,11 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * @generated NOT
 	 */
 	public void addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
-		if(number !=null && !number.isEmpty() && floor >= 0 && description !=null && !description.isEmpty() && disabilityApprovals !=null && roomType !=null){
+		if(number !=null && !number.isEmpty() && floor >= 0 && description !=null && roomType !=null){
 			Room newRoom = new RoomImpl(number, floor, description, roomType);
-			newRoom.getDisabilityApprovals().addAll(disabilityApprovals);
+			if(disabilityApprovals != null) {
+				newRoom.getDisabilityApprovals().addAll(disabilityApprovals);
+			}
 			roomDataService.set(newRoom);
 		}
 	}

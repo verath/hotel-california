@@ -160,6 +160,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 		person.setSocialSecurityNumber(SSN);
 		person.setPhone(phone);
 		person.setEmail(email);
+		legalEntityDataService.set(person);
 		return person;
 	}
 
