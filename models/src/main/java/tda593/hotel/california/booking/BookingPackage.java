@@ -861,22 +861,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE = 12;
 
 	/**
-	 * The operation id for the '<em>Get Room Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_MANAGER___GET_ROOM_TYPES = 13;
-
-	/**
 	 * The operation id for the '<em>Get Active Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = 14;
+	int BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = 13;
 
 	/**
 	 * The operation id for the '<em>Get Related Legal Entities</em>' operation.
@@ -885,7 +876,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING = 15;
+	int BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING = 14;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -894,7 +885,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___CHECK_OUT__BOOKING = 16;
+	int BOOKING_MANAGER___CHECK_OUT__BOOKING = 15;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -903,7 +894,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_BOOKING__INT = 17;
+	int BOOKING_MANAGER___GET_BOOKING__INT = 16;
 
 	/**
 	 * The operation id for the '<em>Change Booking Dates</em>' operation.
@@ -912,7 +903,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 18;
+	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 17;
 
 	/**
 	 * The number of operations of the '<em>Manager</em>' class.
@@ -921,7 +912,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 19;
+	int BOOKING_MANAGER_OPERATION_COUNT = 18;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -1076,15 +1067,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGER_IMPL___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE = BOOKING_MANAGER___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE;
-
-	/**
-	 * The operation id for the '<em>Get Room Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_MANAGER_IMPL___GET_ROOM_TYPES = BOOKING_MANAGER___GET_ROOM_TYPES;
 
 	/**
 	 * The operation id for the '<em>Get Active Booking</em>' operation.
@@ -1250,22 +1232,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Change Booking Dates</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
-
-	/**
 	 * The operation id for the '<em>Begin Transaction</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE___BEGIN_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 4;
+	int BOOKING_DATA_SERVICE___BEGIN_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Commit Transaction</em>' operation.
@@ -1274,7 +1247,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE___COMMIT_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 5;
+	int BOOKING_DATA_SERVICE___COMMIT_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Rollback Transaction</em>' operation.
@@ -1283,7 +1256,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 6;
+	int BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Data Service</em>' class.
@@ -1292,7 +1265,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 7;
+	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.
@@ -2214,16 +2187,6 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__IsRoomTypeAvailable__Date_Date_RoomType();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getRoomTypes() <em>Get Room Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Room Types</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingManager#getRoomTypes()
-	 * @generated
-	 */
-	EOperation getBookingManager__GetRoomTypes();
-
-	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getActiveBooking(java.lang.String) <em>Get Active Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2344,16 +2307,6 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingDataService__GetAll__Date_Date_LegalEntity();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date) <em>Change Booking Dates</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Change Booking Dates</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingDataService#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date)
-	 * @generated
-	 */
-	EOperation getBookingDataService__ChangeBookingDates__Booking_Date_Date();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#beginTransaction() <em>Begin Transaction</em>}' operation.
@@ -3090,14 +3043,6 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING_MANAGER___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE = eINSTANCE.getBookingManager__IsRoomTypeAvailable__Date_Date_RoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Room Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING_MANAGER___GET_ROOM_TYPES = eINSTANCE.getBookingManager__GetRoomTypes();
-
-		/**
 		 * The meta object literal for the '<em><b>Get Active Booking</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3196,14 +3141,6 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = eINSTANCE.getBookingDataService__GetAll__Date_Date_LegalEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Change Booking Dates</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = eINSTANCE.getBookingDataService__ChangeBookingDates__Booking_Date_Date();
 
 		/**
 		 * The meta object literal for the '<em><b>Begin Transaction</b></em>' operation.

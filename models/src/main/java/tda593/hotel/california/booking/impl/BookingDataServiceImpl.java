@@ -220,17 +220,6 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean changeBookingDates(Booking booking, Date newStart, Date newEnd) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void beginTransaction() {
@@ -390,8 +379,6 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				return getAll((Date)arguments.get(0), (Date)arguments.get(1));
 			case BookingPackage.BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY:
 				return getAll((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2));
-			case BookingPackage.BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE:
-				return changeBookingDates((Booking)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
 			case BookingPackage.BOOKING_DATA_SERVICE___BEGIN_TRANSACTION:
 				beginTransaction();
 				return null;

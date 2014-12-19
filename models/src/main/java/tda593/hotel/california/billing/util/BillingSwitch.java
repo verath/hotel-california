@@ -166,6 +166,15 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BillingPackage.ADMIN_DISCOUNT_MANAGER_IMPL: {
+				AdminDiscountManagerImpl adminDiscountManagerImpl = (AdminDiscountManagerImpl)theEObject;
+				T result = caseAdminDiscountManagerImpl(adminDiscountManagerImpl);
+				if (result == null) result = caseDiscountManagerImpl(adminDiscountManagerImpl);
+				if (result == null) result = caseAdminDiscountManager(adminDiscountManagerImpl);
+				if (result == null) result = caseDiscountManager(adminDiscountManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -392,6 +401,21 @@ public class BillingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBillDataService(BillDataService object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Discount Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Discount Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminDiscountManagerImpl(AdminDiscountManagerImpl object) {
 		return null;
 	}
 

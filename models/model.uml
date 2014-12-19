@@ -1404,6 +1404,9 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jmDkEYUGEeSPhYI_rVU2Ew"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jmDkEoUGEeSPhYI_rVU2Ew" value="*"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GDQOsIeREeSwrM1MP6aVmQ" name="timesLeftToUse" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_jmELIIUGEeSPhYI_rVU2Ew" memberEnd="_jmELIYUGEeSPhYI_rVU2Ew _jmDkEIUGEeSPhYI_rVU2Ew">
           <name xsi:nil="true"/>
@@ -1428,7 +1431,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_rzgts4UGEeSPhYI_rVU2Ew" name="DiscountEntity" isAbstract="true">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgttIUGEeSPhYI_rVU2Ew" name="code" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_rzgttYUGEeSPhYI_rVU2Ew" name="name" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>

@@ -57,15 +57,13 @@ public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implem
 	public static RoomType entityToRoomType(RoomTypeEntity entity) {
 		RoomType roomType = FacilitiesFactory.eINSTANCE.createRoomType();
 		roomType.setDescription(entity.getDescription());
-		roomType.setId(entity.getId());
 		roomType.setName(entity.getName());
 		return roomType;
 	}
 	
-	public static RoomTypeEntityImpl roomTypeToEntity(RoomType roomType) {
+	public static RoomTypeEntity roomTypeToEntity(RoomType roomType) {
 		RoomTypeEntityImpl roomTypeEntity = new RoomTypeEntityImpl();
 		roomTypeEntity.setDescription(roomType.getDescription());
-		roomTypeEntity.setId(roomType.getId());
 		roomTypeEntity.setName(roomType.getName());
 		return roomTypeEntity;
 	}

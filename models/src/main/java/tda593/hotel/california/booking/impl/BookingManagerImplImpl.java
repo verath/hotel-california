@@ -361,6 +361,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		RoomStay roomStay = new RoomStayImpl();
 		roomStay.setRoom(room);
 		booking.setRoomStay(roomStay);
+		bookingDataService.set(booking);
 		return roomStay;
 	}
 	
@@ -373,17 +374,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		Map<RoomType, Integer> roomTypeAmounts = getAvailableRoomTypeAmounts(from, to);
 		
 		return roomTypeAmounts.get(roomType) > 0 ? true : false;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RoomType> getRoomTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -583,8 +573,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_TYPE_AVAILABLE__DATE_DATE_ROOMTYPE:
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ROOM_TYPES:
-				return getRoomTypes();
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING:
 				return getActiveBooking((String)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_RELATED_LEGAL_ENTITIES__BOOKING:

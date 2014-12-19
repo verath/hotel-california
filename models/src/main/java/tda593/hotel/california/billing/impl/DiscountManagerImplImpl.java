@@ -108,12 +108,10 @@ public class DiscountManagerImplImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public Discount getDiscount(int code) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Discount getDiscount(String code) {
+		return discountDataService.get(code);
 	}
 
 	/**
@@ -183,8 +181,8 @@ public class DiscountManagerImplImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BillingPackage.DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__INT:
-				return getDiscount((Integer)arguments.get(0));
+			case BillingPackage.DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__STRING:
+				return getDiscount((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -2,9 +2,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
 import tda593.hotel.california.booking.persistence.PersonEntity;
 import tda593.hotel.california.booking.persistence.impl.PersonEntityImpl;
+import tda593.hotel.california.facilities.AdminRoomManager;
+import tda593.hotel.california.facilities.RoomTypeDataService;
+import tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl;
+import tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl;
 
 
 public class Main {
@@ -16,17 +19,16 @@ public class Main {
 		personEntity.setLastname("hejsan");
 		personEntity.setSocialSecurityNumber("9305");
 		
+		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tda593.hotel.california");
 		EntityManager entityManager = emf.createEntityManager();
-		entityManager.getTransaction().begin();
-//		entityManager.persist(keyCard);
-//		entityManager.persist(type);
-//		entityManager.persist(roomEntity);
-		entityManager.persist(personEntity);
-		entityManager.getTransaction().commit();
 		
-		LegalEntityDataServiceImpl ds = new LegalEntityDataServiceImpl(entityManager);
-		System.out.println(ds.getPerson("9305"));
+		RoomTypeDataService rtds = new RoomTypeDataServiceImpl(entityManager);
+		
+		AdminRoomManager roomManager = new AdminRoomManagerImplImpl(rtds, null, null);
+		roomManager.addRoomType("Typ1", "somedesc", null, 190.2);
+		
+		System.out.println(rtds.get("Typ1"));
 		
 		emf.close();
 	}

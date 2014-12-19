@@ -78,6 +78,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		dl.setEndDate(dle.getEndDate());
 		dl.setId(dle.getId());
 		dl.setStartDate(dle.getStartDate());
+		dl.setTimesLeftToUse(dle.getTimesLeftToUse());
 		
 		EList<LegalEntity> allowedUsers = dl.getAllowedUsers();
 		for(LegalEntityEntity entity : dle.getAllowedUsers()) {
@@ -92,6 +93,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		dle.setEndDate(dl.getEndDate());
 		dle.setId(dl.getId());
 		dle.setStartDate(dl.getStartDate());
+		dle.setTimesLeftToUse(dl.getTimesLeftToUse());
 		
 		List<LegalEntityEntity> allowedUsers = new ArrayList<LegalEntityEntity>();
 		for(LegalEntity entity : dl.getAllowedUsers()) {

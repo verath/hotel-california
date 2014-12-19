@@ -32,6 +32,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.impl.DiscountLimitImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.DiscountLimitImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.DiscountLimitImpl#getAllowedUsers <em>Allowed Users</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.DiscountLimitImpl#getTimesLeftToUse <em>Times Left To Use</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,12 +110,40 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	protected EList<LegalEntity> allowedUsers;
 
 	/**
+	 * The default value of the '{@link #getTimesLeftToUse() <em>Times Left To Use</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimesLeftToUse()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TIMES_LEFT_TO_USE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getTimesLeftToUse() <em>Times Left To Use</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimesLeftToUse()
+	 * @generated
+	 * @ordered
+	 */
+	protected int timesLeftToUse = TIMES_LEFT_TO_USE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DiscountLimitImpl() {
 		super();
+	}
+	
+	public DiscountLimitImpl(Date startDate, Date endDate, EList<LegalEntity> allowedUsers, int timesLeftToUse) {
+		super();
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.allowedUsers = allowedUsers;
+		this.timesLeftToUse = timesLeftToUse;
 	}
 
 	/**
@@ -207,6 +236,27 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getTimesLeftToUse() {
+		return timesLeftToUse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimesLeftToUse(int newTimesLeftToUse) {
+		int oldTimesLeftToUse = timesLeftToUse;
+		timesLeftToUse = newTimesLeftToUse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.DISCOUNT_LIMIT__TIMES_LEFT_TO_USE, oldTimesLeftToUse, timesLeftToUse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -218,6 +268,8 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 				return getEndDate();
 			case BillingPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				return getAllowedUsers();
+			case BillingPackage.DISCOUNT_LIMIT__TIMES_LEFT_TO_USE:
+				return getTimesLeftToUse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,6 +296,9 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 				getAllowedUsers().clear();
 				getAllowedUsers().addAll((Collection<? extends LegalEntity>)newValue);
 				return;
+			case BillingPackage.DISCOUNT_LIMIT__TIMES_LEFT_TO_USE:
+				setTimesLeftToUse((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -268,6 +323,9 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 			case BillingPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				getAllowedUsers().clear();
 				return;
+			case BillingPackage.DISCOUNT_LIMIT__TIMES_LEFT_TO_USE:
+				setTimesLeftToUse(TIMES_LEFT_TO_USE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -288,6 +346,8 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
 			case BillingPackage.DISCOUNT_LIMIT__ALLOWED_USERS:
 				return allowedUsers != null && !allowedUsers.isEmpty();
+			case BillingPackage.DISCOUNT_LIMIT__TIMES_LEFT_TO_USE:
+				return timesLeftToUse != TIMES_LEFT_TO_USE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -308,6 +368,8 @@ public class DiscountLimitImpl extends MinimalEObjectImpl.Container implements D
 		result.append(startDate);
 		result.append(", endDate: ");
 		result.append(endDate);
+		result.append(", timesLeftToUse: ");
+		result.append(timesLeftToUse);
 		result.append(')');
 		return result.toString();
 	}
