@@ -5,12 +5,9 @@ package tda593.hotel.california.billing.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -18,8 +15,10 @@ import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManagerImpl;
 import tda593.hotel.california.billing.BillingPackage;
+import tda593.hotel.california.billing.BookingBill;
 import tda593.hotel.california.billing.Discount;
-
+import tda593.hotel.california.billing.Purchase;
+import tda593.hotel.california.billing.Service;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
 
@@ -163,78 +162,77 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void getBookingBill(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public BookingBill getBookingBill(Booking booking) {
+		return billDataService.getBookingBill(booking);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void billItem(Bill bill, int serviceId, int quantity) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Service service = billDataService.getService(serviceId);
+		
+		Purchase purchase = new PurchaseImpl();
+		purchase.setService(service);
+		purchase.setQuantity(quantity);
+		purchase.setPrice(service.getPrice()); // Snapshot
+		
+		bill.registerPurchase(purchase);
+		billDataService.set(bill);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void getAllServices() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<Service> getAllServices() {
+		return billDataService.getAllServices();
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addSubBill(Bill subBill, Bill toBill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		toBill.addSubBill(subBill);
+		billDataService.set(toBill);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void applyDiscount(Discount discount, Bill bill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		bill.applyDiscount(discount);
+		billDataService.set(bill);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void publishBill(Bill bill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		bill.publishBill();
+		billDataService.set(bill);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void markBillAsPaid(Bill bill, boolean isPaid) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		bill.setIsPaid(true);
+		billDataService.set(bill);
 	}
 
 	/**
@@ -312,14 +310,12 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case BillingPackage.BILL_MANAGER_IMPL___GET_BILL__INT:
 				return getBill((Integer)arguments.get(0));
 			case BillingPackage.BILL_MANAGER_IMPL___GET_BOOKING_BILL__BOOKING:
-				getBookingBill((Booking)arguments.get(0));
-				return null;
+				return getBookingBill((Booking)arguments.get(0));
 			case BillingPackage.BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_INT:
 				billItem((Bill)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2));
 				return null;
 			case BillingPackage.BILL_MANAGER_IMPL___GET_ALL_SERVICES:
-				getAllServices();
-				return null;
+				return getAllServices();
 			case BillingPackage.BILL_MANAGER_IMPL___ADD_SUB_BILL__BILL_BILL:
 				addSubBill((Bill)arguments.get(0), (Bill)arguments.get(1));
 				return null;

@@ -825,6 +825,33 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBillDataService__GetAllServices() {
+		return billDataServiceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillDataService__GetBookingBill__Booking() {
+		return billDataServiceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillDataService__GetService__int() {
+		return billDataServiceEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BillingFactory getBillingFactory() {
 		return (BillingFactory)getEFactoryInstance();
 	}
@@ -929,6 +956,9 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEReference(billManagerImplEClass, BILL_MANAGER_IMPL__BOOKING_MANAGER);
 
 		billDataServiceEClass = createEClass(BILL_DATA_SERVICE);
+		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_ALL_SERVICES);
+		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING);
+		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_SERVICE__INT);
 	}
 
 	/**
@@ -1087,7 +1117,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		op = initEOperation(getBillManager__GetBill__int(), this.getBill(), "getBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBillManager__GetBookingBill__Booking(), null, "getBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBillManager__GetBookingBill__Booking(), this.getBookingBill(), "getBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBillManager__BillItem__Bill_int_int(), null, "billItem", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1095,7 +1125,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "quantity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getBillManager__GetAllServices(), null, "getAllServices", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getBillManager__GetAllServices(), this.getService(), "getAllServices", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBillManager__AddSubBill__Bill_Bill(), null, "addSubBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBill(), "subBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1117,6 +1147,14 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		initEReference(getBillManagerImpl_BookingManager(), theBookingPackage.getBookingManager(), null, "bookingManager", null, 1, 1, BillManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(billDataServiceEClass, BillDataService.class, "BillDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getBillDataService__GetAllServices(), this.getService(), "getAllServices", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillDataService__GetBookingBill__Booking(), this.getBookingBill(), "getBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillDataService__GetService__int(), this.getService(), "getService", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 	}
 
 } //BillingPackageImpl

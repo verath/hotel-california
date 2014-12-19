@@ -507,45 +507,19 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void checkIn() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void checkOut() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void registerTravelInformation(TravelInformation travelInformation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.travelInformation = travelInformation;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void unregisterTravelInformation(TravelInformation travelInformation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.travelInformation = null;
 	}
 
 	/**
@@ -708,12 +682,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BookingPackage.BOOKING___CHECK_IN:
-				checkIn();
-				return null;
-			case BookingPackage.BOOKING___CHECK_OUT:
-				checkOut();
-				return null;
 			case BookingPackage.BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION:
 				registerTravelInformation((TravelInformation)arguments.get(0));
 				return null;

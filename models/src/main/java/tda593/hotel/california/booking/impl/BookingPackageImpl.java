@@ -376,7 +376,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBooking__CheckIn() {
+	public EOperation getBooking__RegisterTravelInformation__TravelInformation() {
 		return bookingEClass.getEOperations().get(0);
 	}
 
@@ -385,26 +385,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBooking__CheckOut() {
-		return bookingEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBooking__RegisterTravelInformation__TravelInformation() {
-		return bookingEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getBooking__UnregisterTravelInformation__TravelInformation() {
-		return bookingEClass.getEOperations().get(3);
+		return bookingEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1121,8 +1103,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEReference(bookingEClass, BOOKING__RESPONSIBLE);
 		createEReference(bookingEClass, BOOKING__ROOM_STAY);
 		createEAttribute(bookingEClass, BOOKING__IS_CANCELED);
-		createEOperation(bookingEClass, BOOKING___CHECK_IN);
-		createEOperation(bookingEClass, BOOKING___CHECK_OUT);
 		createEOperation(bookingEClass, BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION);
 		createEOperation(bookingEClass, BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION);
 
@@ -1282,10 +1262,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEReference(getBooking_Responsible(), this.getLegalEntity(), null, "responsible", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_RoomStay(), this.getRoomStay(), null, "roomStay", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_IsCanceled(), ecorePackage.getEBoolean(), "isCanceled", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getBooking__CheckIn(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getBooking__CheckOut(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		EOperation op = initEOperation(getBooking__RegisterTravelInformation__TravelInformation(), null, "registerTravelInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getTravelInformation(), "travelInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
