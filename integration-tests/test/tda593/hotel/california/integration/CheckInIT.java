@@ -1,28 +1,25 @@
 package tda593.hotel.california.integration;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import tda593.hotel.california.booking.Booking;
-import tda593.hotel.california.booking.BookingManager;
-import tda593.hotel.california.booking.BookingManagerImpl;
-import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
-import tda593.hotel.california.booking.impl.BookingManagerImplImpl;
-import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
-import tda593.hotel.california.integration.util.PersistenceHelper;
 
 public class CheckInIT extends AbstractHotelCaliforniaIntegrationTest {
 
+	@BeforeClass
+	public void initialize() {
+		super.initializeHotelCaliforniaComponents();
+	}
+	
 	@Test
 	public void TestCustomerCanCheckInAsGuest() {
 		// Get a booking
@@ -35,7 +32,10 @@ public class CheckInIT extends AbstractHotelCaliforniaIntegrationTest {
 		guests.add(customer);
 
 		assertFalse(booking.getRoomStay().isActive());
+		
 		bookingManager.checkIn(booking, guests);
+		
 		assertTrue(booking.getRoomStay().isActive());
+		assertTrue(booking.getRoomStay().getRegisteredPersons().contains(customer));
 	}
 }

@@ -28,6 +28,7 @@ import tda593.hotel.california.facilities.KeyCardManager;
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomTypeDataService;
+import tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl;
 import tda593.hotel.california.facilities.impl.AdminRoomManagerImplImpl;
 import tda593.hotel.california.facilities.impl.KeyCardDataServiceImpl;
 import tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl;
@@ -36,9 +37,20 @@ import tda593.hotel.california.facilities.impl.RoomManagerImplImpl;
 import tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl;
 import tda593.hotel.california.integration.util.PersistenceHelper;
 
+/**
+ * An abstract helper class for setting up the hotel california system.
+ * 
+ * Extends the class and make sure to call
+ * {@link #initializeHotelCaliforniaComponents()} to set up the components. This
+ * should most likely be done in either a method annotated by @Before or
+ * @BeforeClass.
+ * 
+ * @author Peter
+ *
+ */
 public abstract class AbstractHotelCaliforniaIntegrationTest {
 	protected EntityManager entityManager;
-	
+
 	// Facilities Services
 	private KeyCardDataService keyCardDataService;
 	private RoomDataService roomDataService;
@@ -68,6 +80,9 @@ public abstract class AbstractHotelCaliforniaIntegrationTest {
 	protected DiscountManager discountManager;
 
 	protected void initializeEntityManager() {
+		if(entityManager != null) {
+			entityManager.close();
+		}
 		entityManager = PersistenceHelper.createEntityManager();
 	}
 
@@ -85,13 +100,13 @@ public abstract class AbstractHotelCaliforniaIntegrationTest {
 		billDataService = new BillDataServiceImpl(entityManager);
 		discountDataService = new DiscountDataServiceImpl(entityManager);
 	}
-	
+
 	private void initializeManagers() {
 		// Facilities
-		adminKeyCardManager = new AdminKeyCardManagerImpl();
-		adminRoomManager = new AdminRoomManagerImplImpl();
+		adminKeyCardManager = new AdminKeyCardManagerImplImpl();
+		adminRoomManager = new AdminRoomManagerImplImpl(roomTypeDataService);
 		keyCardManager = new KeyCardManagerImplImpl();
-		roomManager = new RoomManagerImplImpl();
+		roomManager = new RoomManagerImplImpl(roomTypeDataService);
 
 		// Booking
 		bookingManager = new BookingManagerImplImpl();
@@ -103,7 +118,10 @@ public abstract class AbstractHotelCaliforniaIntegrationTest {
 		discountManager = new DiscountManagerImplImpl();
 	}
 
-	@BeforeClass
+	/**
+	 * Method for (re)setting the hotel california component. This method also
+	 * recreates the entity manager and the database.
+	 */
 	public void initializeHotelCaliforniaComponents() {
 		initializeEntityManager();
 		initializeServices();
