@@ -21,6 +21,6 @@ public interface DiscountManager extends EObject {
 	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false"
 	 * @generated
 	 */
-	Discount getDiscount(int code);
+	Discount getDiscount(String code);
 
 } // DiscountManager

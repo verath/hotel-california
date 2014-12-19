@@ -85,7 +85,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCOUNT_MANAGER___GET_DISCOUNT__INT = 0;
+	int DISCOUNT_MANAGER___GET_DISCOUNT__STRING = 0;
 
 	/**
 	 * The number of operations of the '<em>Discount Manager</em>' class.
@@ -259,7 +259,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_DISCOUNT_MANAGER___GET_DISCOUNT__INT = DISCOUNT_MANAGER___GET_DISCOUNT__INT;
+	int ADMIN_DISCOUNT_MANAGER___GET_DISCOUNT__STRING = DISCOUNT_MANAGER___GET_DISCOUNT__STRING;
 
 	/**
 	 * The operation id for the '<em>Add Sum Discount</em>' operation.
@@ -596,7 +596,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__INT = DISCOUNT_MANAGER___GET_DISCOUNT__INT;
+	int DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__STRING = DISCOUNT_MANAGER___GET_DISCOUNT__STRING;
 
 	/**
 	 * The number of operations of the '<em>Discount Manager Impl</em>' class.
@@ -1469,7 +1469,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__INT = DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__INT;
+	int ADMIN_DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__STRING = DISCOUNT_MANAGER_IMPL___GET_DISCOUNT__STRING;
 
 	/**
 	 * The operation id for the '<em>Add Sum Discount</em>' operation.
@@ -1546,14 +1546,14 @@ public interface BillingPackage extends EPackage {
 	EClass getDiscountManager();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.DiscountManager#getDiscount(int) <em>Get Discount</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.DiscountManager#getDiscount(java.lang.String) <em>Get Discount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Discount</em>' operation.
-	 * @see tda593.hotel.california.billing.DiscountManager#getDiscount(int)
+	 * @see tda593.hotel.california.billing.DiscountManager#getDiscount(java.lang.String)
 	 * @generated
 	 */
-	EOperation getDiscountManager__GetDiscount__int();
+	EOperation getDiscountManager__GetDiscount__String();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.Discount <em>Discount</em>}'.
@@ -2333,7 +2333,7 @@ public interface BillingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DISCOUNT_MANAGER___GET_DISCOUNT__INT = eINSTANCE.getDiscountManager__GetDiscount__int();
+		EOperation DISCOUNT_MANAGER___GET_DISCOUNT__STRING = eINSTANCE.getDiscountManager__GetDiscount__String();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.DiscountImpl <em>Discount</em>}' class.

@@ -210,7 +210,7 @@
         <eClassifiers xsi:type="ecore:EClass" name="DiscountManager" abstract="true"
             interface="true">
           <eOperations name="getDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount">
-            <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="Discount" abstract="true">

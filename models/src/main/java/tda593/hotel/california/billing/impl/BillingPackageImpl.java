@@ -239,7 +239,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDiscountManager__GetDiscount__int() {
+	public EOperation getDiscountManager__GetDiscount__String() {
 		return discountManagerEClass.getEOperations().get(0);
 	}
 
@@ -911,7 +911,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		// Create classes and their features
 		discountManagerEClass = createEClass(DISCOUNT_MANAGER);
-		createEOperation(discountManagerEClass, DISCOUNT_MANAGER___GET_DISCOUNT__INT);
+		createEOperation(discountManagerEClass, DISCOUNT_MANAGER___GET_DISCOUNT__STRING);
 
 		discountEClass = createEClass(DISCOUNT);
 		createEAttribute(discountEClass, DISCOUNT__CODE);
@@ -1056,8 +1056,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(discountManagerEClass, DiscountManager.class, "DiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getDiscountManager__GetDiscount__int(), this.getDiscount(), "getDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		EOperation op = initEOperation(getDiscountManager__GetDiscount__String(), this.getDiscount(), "getDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(discountEClass, Discount.class, "Discount", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDiscount_Code(), ecorePackage.getEString(), "code", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
