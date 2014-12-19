@@ -55,7 +55,6 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_UK6EcHb_EeSbBJzXJgLK5Q" memberEnd="_UK6EcXb_EeSbBJzXJgLK5Q _UK5dYHb_EeSbBJzXJgLK5Q">
-      <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_UK6EcXb_EeSbBJzXJgLK5Q" name="discount" type="_GaHqkHb-EeSbBJzXJgLK5Q" association="_UK6EcHb_EeSbBJzXJgLK5Q">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UK6Ecnb_EeSbBJzXJgLK5Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UK6Ec3b_EeSbBJzXJgLK5Q" value="*"/>
@@ -545,7 +544,7 @@
             </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_UK5dYHb_EeSbBJzXJgLK5Q" name="discountLimit" visibility="private" type="_SVZw0Hb-EeSbBJzXJgLK5Q" association="_UK6EcHb_EeSbBJzXJgLK5Q">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UK5dYXb_EeSbBJzXJgLK5Q"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UK5dYnb_EeSbBJzXJgLK5Q" value="*"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UK5dYnb_EeSbBJzXJgLK5Q" value="1"/>
             </ownedAttribute>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Sdt7IHcFEeSbBJzXJgLK5Q" name="getPriceWithDiscount">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_Sdt7IXcFEeSbBJzXJgLK5Q" name="price">

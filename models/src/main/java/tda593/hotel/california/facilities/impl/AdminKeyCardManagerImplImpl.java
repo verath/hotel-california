@@ -73,8 +73,8 @@ public class AdminKeyCardManagerImplImpl extends KeyCardManagerImplImpl implemen
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == AdminKeyCardManager.class) {
 			switch (baseOperationID) {
-				case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT: return FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__INT;
-				case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT: return FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__INT;
+				case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__STRING: return FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__STRING;
+				case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__STRING: return FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__STRING;
 				default: return -1;
 			}
 		}
@@ -89,10 +89,10 @@ public class AdminKeyCardManagerImplImpl extends KeyCardManagerImplImpl implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__INT:
+			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__STRING:
 				addKeyCard((String)arguments.get(0));
 				return null;
-			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__INT:
+			case FacilitiesPackage.ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__STRING:
 				removeKeyCard((String)arguments.get(0));
 				return null;
 		}

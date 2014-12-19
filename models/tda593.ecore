@@ -218,7 +218,7 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="discountLimit" ordered="false"
-              upperBound="-1" eType="#//hotel/california/billing/DiscountLimit"/>
+              eType="#//hotel/california/billing/DiscountLimit"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="DiscountLimit">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"

@@ -125,7 +125,7 @@ public interface BillingPackage extends EPackage {
 	int DISCOUNT__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Discount Limit</b></em>' reference list.
+	 * The feature id for the '<em><b>Discount Limit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -335,7 +335,7 @@ public interface BillingPackage extends EPackage {
 	int SUM_DISCOUNT__NAME = DISCOUNT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Discount Limit</b></em>' reference list.
+	 * The feature id for the '<em><b>Discount Limit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -408,7 +408,7 @@ public interface BillingPackage extends EPackage {
 	int PERCENTAGE_DISCOUNT__NAME = DISCOUNT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Discount Limit</b></em>' reference list.
+	 * The feature id for the '<em><b>Discount Limit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1334,10 +1334,10 @@ public interface BillingPackage extends EPackage {
 	EAttribute getDiscount_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tda593.hotel.california.billing.Discount#getDiscountLimit <em>Discount Limit</em>}'.
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.billing.Discount#getDiscountLimit <em>Discount Limit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Discount Limit</em>'.
+	 * @return the meta object for the reference '<em>Discount Limit</em>'.
 	 * @see tda593.hotel.california.billing.Discount#getDiscountLimit()
 	 * @see #getDiscount()
 	 * @generated
@@ -1986,7 +1986,7 @@ public interface BillingPackage extends EPackage {
 		EAttribute DISCOUNT__NAME = eINSTANCE.getDiscount_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Discount Limit</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Discount Limit</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

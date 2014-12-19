@@ -132,7 +132,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT = KEY_CARD_MANAGER_OPERATION_COUNT + 0;
+	int ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__STRING = KEY_CARD_MANAGER_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Remove Key Card</em>' operation.
@@ -141,7 +141,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT = KEY_CARD_MANAGER_OPERATION_COUNT + 1;
+	int ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__STRING = KEY_CARD_MANAGER_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Admin Key Card Manager</em>' class.
@@ -1631,7 +1631,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__INT = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 0;
+	int ADMIN_KEY_CARD_MANAGER_IMPL___ADD_KEY_CARD__STRING = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Remove Key Card</em>' operation.
@@ -1640,7 +1640,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__INT = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 1;
+	int ADMIN_KEY_CARD_MANAGER_IMPL___REMOVE_KEY_CARD__STRING = KEY_CARD_MANAGER_IMPL_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Admin Key Card Manager Impl</em>' class.
@@ -1690,7 +1690,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.AdminKeyCardManager#addKeyCard(java.lang.String)
 	 * @generated
 	 */
-	EOperation getAdminKeyCardManager__AddKeyCard__int();
+	EOperation getAdminKeyCardManager__AddKeyCard__String();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminKeyCardManager#removeKeyCard(java.lang.String) <em>Remove Key Card</em>}' operation.
@@ -1700,7 +1700,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.AdminKeyCardManager#removeKeyCard(java.lang.String)
 	 * @generated
 	 */
-	EOperation getAdminKeyCardManager__RemoveKeyCard__int();
+	EOperation getAdminKeyCardManager__RemoveKeyCard__String();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.KeyCardManager <em>Key Card Manager</em>}'.
@@ -2334,7 +2334,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__INT = eINSTANCE.getAdminKeyCardManager__AddKeyCard__int();
+		EOperation ADMIN_KEY_CARD_MANAGER___ADD_KEY_CARD__STRING = eINSTANCE.getAdminKeyCardManager__AddKeyCard__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Key Card</b></em>' operation.
@@ -2342,7 +2342,7 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__INT = eINSTANCE.getAdminKeyCardManager__RemoveKeyCard__int();
+		EOperation ADMIN_KEY_CARD_MANAGER___REMOVE_KEY_CARD__STRING = eINSTANCE.getAdminKeyCardManager__RemoveKeyCard__String();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.KeyCardManager <em>Key Card Manager</em>}' class.
