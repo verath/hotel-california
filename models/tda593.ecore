@@ -210,7 +210,8 @@
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="Discount" abstract="true">
-          <eOperations name="getPriceWithDiscount" ordered="false" lowerBound="1">
+          <eOperations name="getPriceWithDiscount" ordered="false" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
             <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
           </eOperations>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false"

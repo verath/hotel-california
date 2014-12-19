@@ -104,9 +104,9 @@ public interface Discount extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model priceRequired="true" priceOrdered="false"
+	 * @model required="true" ordered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	void getPriceWithDiscount(double price);
+	double getPriceWithDiscount(double price);
 
 } // Discount

@@ -181,13 +181,9 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void getPriceWithDiscount(double price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract double getPriceWithDiscount(double price);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,8 +274,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case BillingPackage.DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE:
-				getPriceWithDiscount((Double)arguments.get(0));
-				return null;
+				return getPriceWithDiscount((Double)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

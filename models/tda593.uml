@@ -550,6 +550,9 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_Sdt7IXcFEeSbBJzXJgLK5Q" name="price">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_DvNVAId8EeSE9Y6gUqOmTQ" name="modifiedPrice" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+              </ownedParameter>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_SVZw0Hb-EeSbBJzXJgLK5Q" name="DiscountLimit">
@@ -1181,7 +1184,6 @@
             </parameterSubstitution>
           </templateBinding>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_hZ8vUIdrEeSE9Y6gUqOmTQ" name="PercentageDiscountDataServiceType"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iY15oIFOEeSZuOQR5MrPYg">
