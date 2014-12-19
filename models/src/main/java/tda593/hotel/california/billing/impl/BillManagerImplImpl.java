@@ -67,6 +67,12 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		super();
 	}
 
+
+	public BillManagerImplImpl(BillDataService billDataService, BookingManager bookingManager) {
+		this.billDataService = billDataService;
+		this.bookingManager = bookingManager;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
