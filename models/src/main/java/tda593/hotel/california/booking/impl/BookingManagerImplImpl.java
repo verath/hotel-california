@@ -72,6 +72,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	protected BookingManagerImplImpl() {
 		super();
 	}
+	
+	public BookingManagerImplImpl(BookingDataService bookingDataService) {
+		this.bookingDataService = bookingDataService;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
