@@ -265,4 +265,20 @@ public interface Bill extends EObject {
 	 */
 	void unPublishBill();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	double getPrice();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model discountRequired="true" discountOrdered="false"
+	 * @generated
+	 */
+	void removeDiscount(Discount discount);
+
 } // Bill

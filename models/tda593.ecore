@@ -290,6 +290,10 @@
             <eParameters name="subBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill"/>
           </eOperations>
           <eOperations name="unPublishBill" ordered="false" lowerBound="1"/>
+          <eOperations name="getPrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+          <eOperations name="removeDiscount" ordered="false" lowerBound="1">
+            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount"/>
+          </eOperations>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" ordered="false"

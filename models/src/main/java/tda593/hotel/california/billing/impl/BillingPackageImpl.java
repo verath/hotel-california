@@ -591,6 +591,24 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBill__GetPrice() {
+		return billEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBill__RemoveDiscount__Discount() {
+		return billEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPurchase() {
 		return purchaseEClass;
 	}
@@ -879,6 +897,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(billEClass, BILL___UNREGISTER_PURCHASE__PURCHASE);
 		createEOperation(billEClass, BILL___REMOVE_SUB_BILL__BILL);
 		createEOperation(billEClass, BILL___UN_PUBLISH_BILL);
+		createEOperation(billEClass, BILL___GET_PRICE);
+		createEOperation(billEClass, BILL___REMOVE_DISCOUNT__DISCOUNT);
 
 		purchaseEClass = createEClass(PURCHASE);
 		createEAttribute(purchaseEClass, PURCHASE__ID);
@@ -1042,6 +1062,11 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, this.getBill(), "subBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getBill__UnPublishBill(), null, "unPublishBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getBill__GetPrice(), ecorePackage.getEDouble(), "getPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBill__RemoveDiscount__Discount(), null, "removeDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(purchaseEClass, Purchase.class, "Purchase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPurchase_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Purchase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

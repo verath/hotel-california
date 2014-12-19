@@ -339,12 +339,12 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void applyDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(discount != null) {
+			usedDiscounts.add(discount);
+		}
 	}
 
 	/**
@@ -381,7 +381,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void unregisterPurchase(Purchase purchase) {
 		if(purchase != null) {
@@ -392,7 +392,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeSubBill(Bill subBill) {
 		if(subBill != null) {
@@ -403,12 +403,47 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void unPublishBill() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setIsPublished(false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public double getPrice() {
+		double totalSum = 0;
+		
+		// Get prices from all purchases
+		for(Purchase pur : purchase) {
+			totalSum += pur.getPrice() * pur.getQuantity();
+		}
+		
+		// Get prices from all sub-bills
+		for(Bill subBill : subBills) {
+			totalSum += subBill.getPrice();
+		}
+		
+		// Apply discounts
+		for(Discount discount : usedDiscounts) {
+			totalSum = discount.getPriceWithDiscount(totalSum);
+		}
+		
+		return totalSum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void removeDiscount(Discount discount) {
+		if(discount != null) {
+			usedDiscounts.remove(discount);
+		}
 	}
 
 	/**
@@ -572,6 +607,11 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return null;
 			case BillingPackage.BILL___UN_PUBLISH_BILL:
 				unPublishBill();
+				return null;
+			case BillingPackage.BILL___GET_PRICE:
+				return getPrice();
+			case BillingPackage.BILL___REMOVE_DISCOUNT__DISCOUNT:
+				removeDiscount((Discount)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

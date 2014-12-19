@@ -633,6 +633,14 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_QWzAQId_EeSE9Y6gUqOmTQ" name="subBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Q-47AId_EeSE9Y6gUqOmTQ" name="unPublishBill"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_MZDtcIeBEeSE9Y6gUqOmTQ" name="getPrice">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_PhBj8IeBEeSE9Y6gUqOmTQ" name="price" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_VtOyEIeCEeSE9Y6gUqOmTQ" name="removeDiscount">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_aCWYMIeCEeSE9Y6gUqOmTQ" name="discount" type="_GaHqkHb-EeSbBJzXJgLK5Q"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_1FAq0Hb7EeSbBJzXJgLK5Q" name="BookingBill">
             <generalization xmi:type="uml:Generalization" xmi:id="_4xpUoHb7EeSbBJzXJgLK5Q" general="_gemc8Hb6EeSbBJzXJgLK5Q"/>

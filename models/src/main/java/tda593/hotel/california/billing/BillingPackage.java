@@ -744,13 +744,31 @@ public interface BillingPackage extends EPackage {
 	int BILL___UN_PUBLISH_BILL = 6;
 
 	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___GET_PRICE = 7;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___REMOVE_DISCOUNT__DISCOUNT = 8;
+
+	/**
 	 * The number of operations of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_OPERATION_COUNT = 7;
+	int BILL_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.PurchaseImpl <em>Purchase</em>}' class.
@@ -1033,6 +1051,24 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_BILL___UN_PUBLISH_BILL = BILL___UN_PUBLISH_BILL;
+
+	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___GET_PRICE = BILL___GET_PRICE;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___REMOVE_DISCOUNT__DISCOUNT = BILL___REMOVE_DISCOUNT__DISCOUNT;
 
 	/**
 	 * The number of operations of the '<em>Booking Bill</em>' class.
@@ -1782,6 +1818,26 @@ public interface BillingPackage extends EPackage {
 	EOperation getBill__UnPublishBill();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#getPrice() <em>Get Price</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Price</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#getPrice()
+	 * @generated
+	 */
+	EOperation getBill__GetPrice();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#removeDiscount(tda593.hotel.california.billing.Discount) <em>Remove Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Discount</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#removeDiscount(tda593.hotel.california.billing.Discount)
+	 * @generated
+	 */
+	EOperation getBill__RemoveDiscount__Discount();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.Purchase <em>Purchase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2399,6 +2455,22 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BILL___UN_PUBLISH_BILL = eINSTANCE.getBill__UnPublishBill();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Price</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___GET_PRICE = eINSTANCE.getBill__GetPrice();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___REMOVE_DISCOUNT__DISCOUNT = eINSTANCE.getBill__RemoveDiscount__Discount();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.PurchaseImpl <em>Purchase</em>}' class.
