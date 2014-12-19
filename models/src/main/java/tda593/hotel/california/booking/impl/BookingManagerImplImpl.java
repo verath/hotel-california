@@ -284,12 +284,20 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(!isRoomAvailable(from, to, room.getRoomNumber())) {
+			throw new IllegalStateException("The specified room is booked in that period");
+		}
+		
+		Booking booking = new BookingImpl();
+		booking.setStartDate(from);
+		booking.setEndDate(to);
+		booking.setResponsible(customer);
+		booking.setRoomType(room.getRoomType());
+		
+		registerRoomStay(booking, room);
 	}
 
 	/**
@@ -345,20 +353,27 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		
 		List<Room> availableRooms = getAvailableRooms(booking.getStartDate(), booking.getEndDate(), roomType);
 		
+		// TODO : CHECK isCleaned?
 		Random random = new Random();
 		Room selectedRoom = availableRooms.get(random.nextInt(availableRooms.size()));
 		
 		// Register room stay
-		RoomStay roomStay = new RoomStayImpl();
-		roomStay.setActive(true);
-		roomStay.setRoom(selectedRoom);
+		RoomStay roomStay = registerRoomStay(booking, selectedRoom);
 		
 		List<Person> roomStayGuests = roomStay.getRegisteredPersons();
 		roomStayGuests.addAll(guests);
+		roomStay.setActive(true);
 		
 		booking.setRoomStay(roomStay);
 	}
 
+	private RoomStay registerRoomStay(Booking booking, Room room) {
+		RoomStay roomStay = new RoomStayImpl();
+		roomStay.setRoom(room);
+		booking.setRoomStay(roomStay);
+		return roomStay;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
