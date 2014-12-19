@@ -1680,6 +1680,12 @@
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_vL7dAIdhEeSkgbxbBgd3rw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vMNJ0IdhEeSkgbxbBgd3rw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
   </uml:Model>
   <Ecore:EDataType xmi:id="_Q3d1YIDREeSyQrXH1hqv2Q" base_PrimitiveType="_PT_s8IDQEeSyQrXH1hqv2Q"/>
   <Ecore:EGenericType xmi:id="_Q4WmMIDREeSyQrXH1hqv2Q" base_DataType="_PT_s8IDQEeSyQrXH1hqv2Q"/>

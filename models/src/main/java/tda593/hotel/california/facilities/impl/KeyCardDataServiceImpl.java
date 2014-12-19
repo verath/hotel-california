@@ -3,16 +3,25 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardDataService;
+import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
+import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.impl.KeyCardEntityImpl;
+import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,13 +50,13 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		this.entityManager = entityManager;
 	}
 	
-	public static KeyCard EntityToKeyCard(KeyCardEntity entity) {
+	public static KeyCard entityToKeyCard(KeyCardEntity entity) {
 		KeyCard keyCard = FacilitiesFactory.eINSTANCE.createKeyCard();
 		keyCard.setId(entity.getId());
 		return keyCard;
 	}
 	
-	public static KeyCardEntity KeyCardToEntity(KeyCard keyCard) {
+	public static KeyCardEntity keyCardToEntity(KeyCard keyCard) {
 		KeyCardEntity keyCardEntity = new KeyCardEntityImpl();
 		keyCardEntity.setId(keyCard.getId());
 		return keyCardEntity;
@@ -66,78 +75,81 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public KeyCard get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		KeyCardEntity keyCardEntity = entityManager.find(KeyCardEntityImpl.class, id);
+		return keyCardEntity == null? null : entityToKeyCard(keyCardEntity);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<KeyCard> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<KeyCardEntityImpl> results = entityManager.createQuery("FROM KeyCardEntityImpl", KeyCardEntityImpl.class).getResultList();
+		EList<KeyCard> keyCardResults = new BasicEList<KeyCard>(results.size());
+		for (KeyCardEntity entity : results) {
+			keyCardResults.add(entityToKeyCard(entity));
+		}
+		
+		return keyCardResults;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long count = entityManager.createQuery("SELECT COUNT(number) FROM Rooms", Long.class).getSingleResult();
+		// TODO : change to long
+		return count.intValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(KeyCard object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		entityManager.persist(keyCardToEntity(object));
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<KeyCard> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		for(KeyCard keyCard : objects) {
+			entityManager.persist(keyCardToEntity(keyCard));
+		}
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void delete(KeyCard object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void delete(KeyCard keyCard) {
+		entityManager.remove(keyCardToEntity(keyCard));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public boolean exist(String object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean exist(String id) {
+		return get(id) != null;
 	}
 
 	/**

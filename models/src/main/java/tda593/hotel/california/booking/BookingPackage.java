@@ -352,22 +352,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING__PRICE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Room Stay</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__ROOM_STAY = 5;
-
-	/**
 	 * The feature id for the '<em><b>Room Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__ROOM_TYPE = 6;
+	int BOOKING__ROOM_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Travel Information</b></em>' reference.
@@ -376,7 +367,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__TRAVEL_INFORMATION = 7;
+	int BOOKING__TRAVEL_INFORMATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Responsible</b></em>' reference.
@@ -385,7 +376,16 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__RESPONSIBLE = 8;
+	int BOOKING__RESPONSIBLE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Room Stay</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__ROOM_STAY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Canceled</b></em>' attribute.
@@ -458,7 +458,81 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getRoomStay()
 	 * @generated
 	 */
-	int ROOM_STAY = 3;
+	int ROOM_STAY = 4;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.StayRequestImpl <em>Stay Request</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.booking.impl.StayRequestImpl
+	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getStayRequest()
+	 * @generated
+	 */
+	int STAY_REQUEST = 5;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.TravelInformationImpl <em>Travel Information</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.booking.impl.TravelInformationImpl
+	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getTravelInformation()
+	 * @generated
+	 */
+	int TRAVEL_INFORMATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Tracking Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__TRACKING_ID = 1;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__COMMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Predecessor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION__PREDECESSOR = 3;
+
+	/**
+	 * The number of structural features of the '<em>Travel Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Travel Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAVEL_INFORMATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -524,16 +598,6 @@ public interface BookingPackage extends EPackage {
 	int ROOM_STAY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.StayRequestImpl <em>Stay Request</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.booking.impl.StayRequestImpl
-	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getStayRequest()
-	 * @generated
-	 */
-	int STAY_REQUEST = 4;
-
-	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,70 +643,6 @@ public interface BookingPackage extends EPackage {
 	int STAY_REQUEST_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.TravelInformationImpl <em>Travel Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.booking.impl.TravelInformationImpl
-	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getTravelInformation()
-	 * @generated
-	 */
-	int TRAVEL_INFORMATION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tracking Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__TRACKING_ID = 1;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__COMMENT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Predecessor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION__PREDECESSOR = 3;
-
-	/**
-	 * The number of structural features of the '<em>Travel Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Travel Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAVEL_INFORMATION_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -662,22 +662,40 @@ public interface BookingPackage extends EPackage {
 	int CREDIT_CARD_INFORMATION__CARD_NUMBER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Card Holder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__CARD_HOLDER = 1;
-
-	/**
 	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 2;
+	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ccv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__CCV = 2;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__FIRST_NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__LAST_NAME = 4;
 
 	/**
 	 * The number of structural features of the '<em>Credit Card Information</em>' class.
@@ -686,7 +704,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 3;
+	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Credit Card Information</em>' class.
@@ -870,13 +888,31 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___CHECK_OUT__BOOKING = 16;
 
 	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___GET_BOOKING__INT = 17;
+
+	/**
+	 * The operation id for the '<em>Change Booking Dates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 18;
+
+	/**
 	 * The number of operations of the '<em>Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 17;
+	int BOOKING_MANAGER_OPERATION_COUNT = 19;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -1069,6 +1105,24 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER_IMPL___CHECK_OUT__BOOKING = BOOKING_MANAGER___CHECK_OUT__BOOKING;
 
 	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___GET_BOOKING__INT = BOOKING_MANAGER___GET_BOOKING__INT;
+
+	/**
+	 * The operation id for the '<em>Change Booking Dates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE;
+
+	/**
 	 * The number of operations of the '<em>Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1160,13 +1214,76 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
 
 	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___GET_ALL__LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Change Booking Dates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Begin Transaction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___BEGIN_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Commit Transaction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___COMMIT_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Rollback Transaction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 6;
+
+	/**
 	 * The number of operations of the '<em>Data Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+	int BOOKING_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.
@@ -1888,17 +2005,6 @@ public interface BookingPackage extends EPackage {
 	EAttribute getCreditCardInformation_CardNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getCardHolder <em>Card Holder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Card Holder</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getCardHolder()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_CardHolder();
-
-	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1908,6 +2014,39 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCreditCardInformation_ExpirationDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getCcv <em>Ccv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ccv</em>'.
+	 * @see tda593.hotel.california.booking.CreditCardInformation#getCcv()
+	 * @see #getCreditCardInformation()
+	 * @generated
+	 */
+	EAttribute getCreditCardInformation_Ccv();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getFirstName <em>First Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Name</em>'.
+	 * @see tda593.hotel.california.booking.CreditCardInformation#getFirstName()
+	 * @see #getCreditCardInformation()
+	 * @generated
+	 */
+	EAttribute getCreditCardInformation_FirstName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getLastName <em>Last Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Name</em>'.
+	 * @see tda593.hotel.california.booking.CreditCardInformation#getLastName()
+	 * @see #getCreditCardInformation()
+	 * @generated
+	 */
+	EAttribute getCreditCardInformation_LastName();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}'.
@@ -2090,6 +2229,26 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__CheckOut__Booking();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getBooking(int) <em>Get Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#getBooking(int)
+	 * @generated
+	 */
+	EOperation getBookingManager__GetBooking__int();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date) <em>Change Booking Dates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Change Booking Dates</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getBookingManager__ChangeBookingDates__Booking_Date_Date();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManagerImpl <em>Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2130,6 +2289,76 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBookingDataService();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#getAll(tda593.hotel.california.booking.LegalEntity) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#getAll(tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBookingDataService__GetAll__LegalEntity();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getBookingDataService__GetAll__Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date, tda593.hotel.california.booking.LegalEntity) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#getAll(java.util.Date, java.util.Date, tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBookingDataService__GetAll__Date_Date_LegalEntity();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date) <em>Change Booking Dates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Change Booking Dates</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#changeBookingDates(tda593.hotel.california.booking.Booking, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getBookingDataService__ChangeBookingDates__Booking_Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#beginTransaction() <em>Begin Transaction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Begin Transaction</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#beginTransaction()
+	 * @generated
+	 */
+	EOperation getBookingDataService__BeginTransaction();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#commitTransaction() <em>Commit Transaction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Commit Transaction</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#commitTransaction()
+	 * @generated
+	 */
+	EOperation getBookingDataService__CommitTransaction();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingDataService#rollbackTransaction() <em>Rollback Transaction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Rollback Transaction</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingDataService#rollbackTransaction()
+	 * @generated
+	 */
+	EOperation getBookingDataService__RollbackTransaction();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}'.
@@ -2656,20 +2885,36 @@ public interface BookingPackage extends EPackage {
 		EAttribute CREDIT_CARD_INFORMATION__CARD_NUMBER = eINSTANCE.getCreditCardInformation_CardNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Card Holder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__CARD_HOLDER = eINSTANCE.getCreditCardInformation_CardHolder();
-
-		/**
 		 * The meta object literal for the '<em><b>Expiration Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CREDIT_CARD_INFORMATION__EXPIRATION_DATE = eINSTANCE.getCreditCardInformation_ExpirationDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Ccv</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_CARD_INFORMATION__CCV = eINSTANCE.getCreditCardInformation_Ccv();
+
+		/**
+		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_CARD_INFORMATION__FIRST_NAME = eINSTANCE.getCreditCardInformation_FirstName();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_CARD_INFORMATION__LAST_NAME = eINSTANCE.getCreditCardInformation_LastName();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}' class.
@@ -2818,6 +3063,22 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING_MANAGER___CHECK_OUT__BOOKING = eINSTANCE.getBookingManager__CheckOut__Booking();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___GET_BOOKING__INT = eINSTANCE.getBookingManager__GetBooking__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Change Booking Dates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = eINSTANCE.getBookingManager__ChangeBookingDates__Booking_Date_Date();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2852,6 +3113,62 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BOOKING_DATA_SERVICE = eINSTANCE.getBookingDataService();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___GET_ALL__LEGALENTITY = eINSTANCE.getBookingDataService__GetAll__LegalEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE = eINSTANCE.getBookingDataService__GetAll__Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY = eINSTANCE.getBookingDataService__GetAll__Date_Date_LegalEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Change Booking Dates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = eINSTANCE.getBookingDataService__ChangeBookingDates__Booking_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Begin Transaction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___BEGIN_TRANSACTION = eINSTANCE.getBookingDataService__BeginTransaction();
+
+		/**
+		 * The meta object literal for the '<em><b>Commit Transaction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___COMMIT_TRANSACTION = eINSTANCE.getBookingDataService__CommitTransaction();
+
+		/**
+		 * The meta object literal for the '<em><b>Rollback Transaction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION = eINSTANCE.getBookingDataService__RollbackTransaction();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.LegalEntityManager <em>Legal Entity Manager</em>}' class.

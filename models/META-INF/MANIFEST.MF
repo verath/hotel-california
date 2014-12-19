@@ -6,31 +6,22 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: Classes,
- Classes.impl,
- Classes.util,
- tda593.hotel.california,
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: tda593.hotel.california,
  tda593.hotel.california.billing,
  tda593.hotel.california.billing.impl,
  tda593.hotel.california.billing.persistence,
  tda593.hotel.california.billing.persistence.impl,
- tda593.hotel.california.billing.persistence.util,
  tda593.hotel.california.billing.util,
  tda593.hotel.california.booking,
  tda593.hotel.california.booking.impl,
  tda593.hotel.california.booking.persistence,
  tda593.hotel.california.booking.persistence.impl,
- tda593.hotel.california.booking.persistence.util,
  tda593.hotel.california.booking.util,
- tda593.hotel.california.discount,
- tda593.hotel.california.discount.impl,
- tda593.hotel.california.discount.util,
  tda593.hotel.california.facilities,
  tda593.hotel.california.facilities.impl,
  tda593.hotel.california.facilities.persistence,
  tda593.hotel.california.facilities.persistence.impl,
- tda593.hotel.california.facilities.persistence.util,
  tda593.hotel.california.facilities.util,
  tda593.hotel.california.impl,
  tda593.hotel.california.util

@@ -60,13 +60,13 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	protected EClass eStaticClass() {
 		return BillingPackage.Literals.BILL_DATA_SERVICE;
 	}
-	
+
 	public static Bill entityToBill(BillEntity billEntity) {
 		return entityToBill(billEntity, new BillImpl());
 	}
 	
 	private static Bill entityToBill(BillEntity billEntity, Bill bill) {
-		bill.setCustomer(LegalEntityDataServiceImpl.EntityToLegalEntity(billEntity.getLegalEntityEntity()));
+		bill.setCustomer(LegalEntityDataServiceImpl.entityToLegalEntity(billEntity.getLegalEntityEntity()));
 		bill.setDate(billEntity.getDate());
 		bill.setId(billEntity.getId());
 		bill.setIsPublished(billEntity.isPublished());
@@ -78,7 +78,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	}
 	
 	public static BillEntityImpl billToEntity(Bill bill, BillEntityImpl entity) {
-		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.LegalEntityToEntity(bill.getCustomer()));
+		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.legalEntityToEntity(bill.getCustomer()));
 		entity.setDate(bill.getDate());
 		entity.setId(bill.getId());
 		entity.setIsPublished(bill.isPublished());

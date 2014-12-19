@@ -88,6 +88,12 @@ public class BookingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BookingPackage.TRAVEL_INFORMATION: {
+				TravelInformation travelInformation = (TravelInformation)theEObject;
+				T result = caseTravelInformation(travelInformation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BookingPackage.ROOM_STAY: {
 				RoomStay roomStay = (RoomStay)theEObject;
 				T result = caseRoomStay(roomStay);
@@ -97,12 +103,6 @@ public class BookingSwitch<T> extends Switch<T> {
 			case BookingPackage.STAY_REQUEST: {
 				StayRequest stayRequest = (StayRequest)theEObject;
 				T result = caseStayRequest(stayRequest);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BookingPackage.TRAVEL_INFORMATION: {
-				TravelInformation travelInformation = (TravelInformation)theEObject;
-				T result = caseTravelInformation(travelInformation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

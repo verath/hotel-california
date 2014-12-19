@@ -18,10 +18,10 @@ import tda593.hotel.california.facilities.RoomType;
  *   <li>{@link tda593.hotel.california.booking.Booking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.Booking#getSpecialRequest <em>Special Request</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.Booking#getPrice <em>Price</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.Booking#getRoomStay <em>Room Stay</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.Booking#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.Booking#getTravelInformation <em>Travel Information</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.Booking#getResponsible <em>Responsible</em>}</li>
+ *   <li>{@link tda593.hotel.california.booking.Booking#getRoomStay <em>Room Stay</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.Booking#isCanceled <em>Is Canceled</em>}</li>
  * </ul>
  * </p>
@@ -172,7 +172,7 @@ public interface Booking extends EObject {
 	 * @return the value of the '<em>Room Stay</em>' reference.
 	 * @see #setRoomStay(RoomStay)
 	 * @see tda593.hotel.california.booking.BookingPackage#getBooking_RoomStay()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	RoomStay getRoomStay();
