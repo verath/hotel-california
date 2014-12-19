@@ -198,17 +198,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to) {
-		EList<Room> rooms = new BasicEList<Room>(roomManager.getRooms());
-		EList<Booking> bookings = getBookings(from, to);
-		EList<Room> bookedRooms = new BasicEList<Room>();
-		
-		for(Booking booking : bookings) {
-			bookedRooms.add(booking.getRoomStay().getRoom());
-		}
-		
-		rooms.removeAll(bookedRooms);
-		
-		return rooms;
+		return getAvailableRooms(from, to, null);
 	}
 
 	/**
@@ -222,10 +212,17 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		EList<Room> bookedRooms = new BasicEList<Room>();
 		
 		// Remove all rooms that are booked
-		
-		for(Booking booking : bookings) {
-			if(!booking.isCanceled() && booking.getRoomType().equals(roomType)) {
-				bookedRooms.add(booking.getRoomStay().getRoom());
+		if(roomType!=null) {
+			for(Booking booking : bookings) {
+				if(!booking.isCanceled() && booking.getRoomType().equals(roomType)) {
+					bookedRooms.add(booking.getRoomStay().getRoom());
+				}
+			}
+		} else {
+			for(Booking booking : bookings) {
+				if(!booking.isCanceled()) {
+					bookedRooms.add(booking.getRoomStay().getRoom());
+				}
 			}
 		}
 		rooms.removeAll(bookedRooms);
@@ -284,7 +281,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		booking.setEndDate(to);
 		booking.setResponsible(customer);
 		booking.setRoomType(roomType);
-		
 		bookingDataService.set(booking);
 	}
 
@@ -295,7 +291,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
 		if(!isRoomAvailable(from, to, room.getRoomNumber())) {
-			throw new IllegalStateException("The specified room is booked in that period");
+			throw new IllegalArgumentException("The specified room is booked in that period");
 		}
 		
 		Booking booking = new BookingImpl();
@@ -334,8 +330,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		
 		if(roomStay == null) {
 			roomStay = new RoomStayImpl();
+			booking.setRoomStay(roomStay);
 		}
-		
+				
 		roomStay.setRoom(room);
 		
 		bookingDataService.set(booking);
@@ -347,31 +344,32 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public void checkIn(Booking booking, EList<Person> guests) {
-		RoomType roomType = booking.getRoomType();
 		
-		Map<RoomType, Integer> roomTypeMap = getAvailableRoomTypeAmounts(booking.getStartDate(), booking.getEndDate());
-		
-		int nbrAvailableOfRoomType = roomTypeMap.get(roomType);
-		
-		// If none of room type that was booked was available
-		if(nbrAvailableOfRoomType == 0) {
-			throw new IllegalStateException("No room of that room type available.");
+		if(booking.getRoomStay()==null) {
+			
+			RoomType roomType = booking.getRoomType();
+			
+			int nbrAvailableOfRoomType = getAvailableRoomTypeAmount(booking.getStartDate(), booking.getEndDate(), roomType);
+					
+			// If none of room type that was booked was available
+			if(nbrAvailableOfRoomType == 0) {
+				throw new IllegalStateException("No room of that room type available.");
+			}
+			
+			List<Room> availableRooms = getAvailableRooms(booking.getStartDate(), booking.getEndDate(), roomType);
+
+			Room selectedRoom = availableRooms.get(0);
+			
+			RoomStay roomStay = registerRoomStay(booking, selectedRoom);
+
+			booking.setRoomStay(roomStay);
 		}
 		
-		List<Room> availableRooms = getAvailableRooms(booking.getStartDate(), booking.getEndDate(), roomType);
-		
-		// TODO : CHECK isCleaned?
-		Random random = new Random();
-		Room selectedRoom = availableRooms.get(random.nextInt(availableRooms.size()));
-		
 		// Register room stay
-		RoomStay roomStay = registerRoomStay(booking, selectedRoom);
-		
-		List<Person> roomStayGuests = roomStay.getRegisteredPersons();
+		List<Person> roomStayGuests = booking.getRoomStay().getRegisteredPersons();
 		roomStayGuests.addAll(guests);
-		roomStay.setActive(true);
-		
-		booking.setRoomStay(roomStay);
+		booking.getRoomStay().setActive(true);
+		bookingDataService.set(booking);
 	}
 
 	private RoomStay registerRoomStay(Booking booking, Room room) {
