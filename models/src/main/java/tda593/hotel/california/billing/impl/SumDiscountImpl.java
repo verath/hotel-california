@@ -159,4 +159,10 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 		return result.toString();
 	}
 
+	@Override
+	public double getPriceWithDiscount(double price) {
+		double newPrice = price - discountSum;
+		return newPrice < 0 ? 0 : newPrice;
+	}
+
 } //SumDiscountImpl

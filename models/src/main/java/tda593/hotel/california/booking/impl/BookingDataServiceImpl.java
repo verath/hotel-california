@@ -6,14 +6,17 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingFactory;
@@ -115,9 +118,13 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void set(Booking object) {
 		EntityTransaction transaction = entityManager.getTransaction();
-		transaction.begin();
-		entityManager.persist(bookingToEntity(object));
-		transaction.commit();
+		if(transaction.isActive()) {
+			entityManager.persist(bookingToEntity(object));
+		} else {
+			transaction.begin();
+			entityManager.persist(bookingToEntity(object));
+			transaction.commit();
+		}
 	}
 
 	/**
@@ -208,6 +215,44 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		}
 		
 		return bookingResults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean changeBookingDates(Booking booking, Date newStart, Date newEnd) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void beginTransaction() {
+		entityManager.getTransaction().begin();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void commitTransaction() {
+		entityManager.getTransaction().commit();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void rollbackTransaction() {
+		entityManager.getTransaction().rollback();
 	}
 
 	public static Booking entityToBooking(BookingEntity bookingEntity) {
@@ -345,6 +390,17 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				return getAll((Date)arguments.get(0), (Date)arguments.get(1));
 			case BookingPackage.BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_LEGALENTITY:
 				return getAll((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2));
+			case BookingPackage.BOOKING_DATA_SERVICE___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE:
+				return changeBookingDates((Booking)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
+			case BookingPackage.BOOKING_DATA_SERVICE___BEGIN_TRANSACTION:
+				beginTransaction();
+				return null;
+			case BookingPackage.BOOKING_DATA_SERVICE___COMMIT_TRANSACTION:
+				commitTransaction();
+				return null;
+			case BookingPackage.BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION:
+				rollbackTransaction();
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

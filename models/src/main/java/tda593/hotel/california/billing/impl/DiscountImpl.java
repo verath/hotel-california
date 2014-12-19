@@ -3,20 +3,12 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.Discount;
 import tda593.hotel.california.billing.DiscountLimit;
@@ -78,14 +70,14 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDiscountLimit() <em>Discount Limit</em>}' reference list.
+	 * The cached value of the '{@link #getDiscountLimit() <em>Discount Limit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDiscountLimit()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DiscountLimit> discountLimit;
+	protected DiscountLimit discountLimit;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,9 +145,14 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DiscountLimit> getDiscountLimit() {
-		if (discountLimit == null) {
-			discountLimit = new EObjectResolvingEList<DiscountLimit>(DiscountLimit.class, this, BillingPackage.DISCOUNT__DISCOUNT_LIMIT);
+	public DiscountLimit getDiscountLimit() {
+		if (discountLimit != null && discountLimit.eIsProxy()) {
+			InternalEObject oldDiscountLimit = (InternalEObject)discountLimit;
+			discountLimit = (DiscountLimit)eResolveProxy(oldDiscountLimit);
+			if (discountLimit != oldDiscountLimit) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BillingPackage.DISCOUNT__DISCOUNT_LIMIT, oldDiscountLimit, discountLimit));
+			}
 		}
 		return discountLimit;
 	}
@@ -165,11 +162,28 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getPriceWithDiscount(double price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public DiscountLimit basicGetDiscountLimit() {
+		return discountLimit;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDiscountLimit(DiscountLimit newDiscountLimit) {
+		DiscountLimit oldDiscountLimit = discountLimit;
+		discountLimit = newDiscountLimit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.DISCOUNT__DISCOUNT_LIMIT, oldDiscountLimit, discountLimit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public abstract double getPriceWithDiscount(double price);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,7 +198,8 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 			case BillingPackage.DISCOUNT__NAME:
 				return getName();
 			case BillingPackage.DISCOUNT__DISCOUNT_LIMIT:
-				return getDiscountLimit();
+				if (resolve) return getDiscountLimit();
+				return basicGetDiscountLimit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,8 +220,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 				setName((String)newValue);
 				return;
 			case BillingPackage.DISCOUNT__DISCOUNT_LIMIT:
-				getDiscountLimit().clear();
-				getDiscountLimit().addAll((Collection<? extends DiscountLimit>)newValue);
+				setDiscountLimit((DiscountLimit)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,7 +241,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 				setName(NAME_EDEFAULT);
 				return;
 			case BillingPackage.DISCOUNT__DISCOUNT_LIMIT:
-				getDiscountLimit().clear();
+				setDiscountLimit((DiscountLimit)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -246,7 +260,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 			case BillingPackage.DISCOUNT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BillingPackage.DISCOUNT__DISCOUNT_LIMIT:
-				return discountLimit != null && !discountLimit.isEmpty();
+				return discountLimit != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,8 +274,7 @@ public abstract class DiscountImpl extends MinimalEObjectImpl.Container implemen
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case BillingPackage.DISCOUNT___GET_PRICE_WITH_DISCOUNT__DOUBLE:
-				getPriceWithDiscount((Double)arguments.get(0));
-				return null;
+				return getPriceWithDiscount((Double)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

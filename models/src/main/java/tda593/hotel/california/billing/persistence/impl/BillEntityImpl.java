@@ -54,6 +54,8 @@ public class BillEntityImpl implements BillEntity {
 	private List<PurchaseEntity> purchaseEntity;
 	@OneToMany(targetEntity = CreditCardInformationEntityImpl.class)
 	private CreditCardInformationEntity creditCardInformationEntity;
+	@OneToMany(targetEntity = BillEntityImpl.class)
+	private List<BillEntity> subBillEntities;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,6 +198,24 @@ public class BillEntityImpl implements BillEntity {
 		creditCardInformationEntity = newCreditCardInformationEntity;
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public List<BillEntity> getSubBillEntities() {
+		return subBillEntities;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setSubBillEntities(List<BillEntity> subBillEntities) {
+		this.subBillEntities = subBillEntities;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
