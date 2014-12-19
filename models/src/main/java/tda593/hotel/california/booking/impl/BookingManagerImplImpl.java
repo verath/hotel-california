@@ -73,8 +73,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		super();
 	}
 	
-	public BookingManagerImplImpl(BookingDataService bookingDataService) {
+	public BookingManagerImplImpl(BookingDataService bookingDataService, RoomManager roomManager) {
+		this();
 		this.bookingDataService = bookingDataService;
+		this.roomManager = roomManager;
 	}
 
 	/**
