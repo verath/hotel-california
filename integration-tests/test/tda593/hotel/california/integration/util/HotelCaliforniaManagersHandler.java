@@ -9,6 +9,7 @@ import tda593.hotel.california.billing.DiscountDataService;
 import tda593.hotel.california.billing.DiscountManager;
 import tda593.hotel.california.billing.impl.BillDataServiceImpl;
 import tda593.hotel.california.billing.impl.BillManagerImplImpl;
+import tda593.hotel.california.billing.impl.DiscountDataServiceImpl;
 import tda593.hotel.california.billing.impl.DiscountManagerImplImpl;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManager;
@@ -83,7 +84,7 @@ public class HotelCaliforniaManagersHandler {
 
 		// Billing
 		billDataService = new BillDataServiceImpl(entityManager);
-		//discountDataService = new DiscountDataServiceImpl(entityManager);
+		discountDataService = new DiscountDataServiceImpl(entityManager);
 	}
 
 	private void initializeManagers() {
