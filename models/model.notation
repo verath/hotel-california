@@ -2737,10 +2737,6 @@
                       <element xmi:type="uml:Operation" href="tda593.uml#_KoRZcIbKEeS3E8vFulBSew"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_KoVD0YbKEeS3E8vFulBSew"/>
                     </children>
-                    <children xmi:type="notation:Shape" xmi:id="_4KXhMIdtEeSkgbxbBgd3rw" type="3013">
-                      <element xmi:type="uml:Operation" href="tda593.uml#_4KSBoIdtEeSkgbxbBgd3rw"/>
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_4KXhMYdtEeSkgbxbBgd3rw"/>
-                    </children>
                     <children xmi:type="notation:Shape" xmi:id="_FIY6AIdyEeSkgbxbBgd3rw" type="3013">
                       <element xmi:type="uml:Operation" href="tda593.uml#_FIV2sIdyEeSkgbxbBgd3rw"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_FIY6AYdyEeSkgbxbBgd3rw"/>

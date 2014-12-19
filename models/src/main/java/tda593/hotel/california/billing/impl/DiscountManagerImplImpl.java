@@ -108,7 +108,7 @@ public class DiscountManagerImplImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Discount getDiscount(String code) {
 		return discountDataService.get(code);
