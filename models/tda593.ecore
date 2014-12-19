@@ -582,14 +582,14 @@
           <eOperations name="getPerson" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Person">
             <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-          <eOperations name="createPerson" ordered="false" lowerBound="1">
+          <eOperations name="createPerson" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Person">
             <eParameters name="firstname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="lastname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="phone" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-          <eOperations name="createOrganization" ordered="false" lowerBound="1">
+          <eOperations name="createOrganization" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Organization">
             <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="organizationNumber" ordered="false" lowerBound="1"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

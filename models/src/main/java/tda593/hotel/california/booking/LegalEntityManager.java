@@ -54,18 +54,18 @@ public interface LegalEntityManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model firstnameRequired="true" firstnameOrdered="false" lastnameRequired="true" lastnameOrdered="false" SSNRequired="true" SSNOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false"
+	 * @model required="true" ordered="false" firstnameRequired="true" firstnameOrdered="false" lastnameRequired="true" lastnameOrdered="false" SSNRequired="true" SSNOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false"
 	 * @generated
 	 */
-	void createPerson(String firstname, String lastname, String SSN, String phone, String email);
+	Person createPerson(String firstname, String lastname, String SSN, String phone, String email);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" organizationNumberRequired="true" organizationNumberOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false"
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" organizationNumberRequired="true" organizationNumberOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false"
 	 * @generated
 	 */
-	void createOrganization(String name, String organizationNumber, String phone, String email);
+	Organization createOrganization(String name, String organizationNumber, String phone, String email);
 
 	/**
 	 * <!-- begin-user-doc -->

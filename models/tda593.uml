@@ -1157,6 +1157,7 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_sW5oAHb3EeSbBJzXJgLK5Q" name="email">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fJ32MIeDEeSFg4EKE05x8Q" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_tVCrQHb3EeSbBJzXJgLK5Q" name="createOrganization">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_zSbPsHb3EeSbBJzXJgLK5Q" name="name">
@@ -1171,6 +1172,7 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_tVCrRXb3EeSbBJzXJgLK5Q" name="email">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_3O25MIeDEeSFg4EKE05x8Q" type="_WOTLsHZTEeSbBJzXJgLK5Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_ekdMwHohEeSg65290XNrgw" name="findLegalEntity">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_xEINEHohEeSg65290XNrgw" name="email">

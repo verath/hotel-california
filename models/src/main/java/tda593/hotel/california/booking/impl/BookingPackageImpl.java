@@ -1398,14 +1398,14 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getLegalEntityManager__GetPerson__String(), this.getPerson(), "getPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__CreatePerson__String_String_String_String_String(), null, "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getLegalEntityManager__CreatePerson__String_String_String_String_String(), this.getPerson(), "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__CreateOrganization__String_String_String_String(), null, "createOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getLegalEntityManager__CreateOrganization__String_String_String_String(), this.getOrganization(), "createOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "organizationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
