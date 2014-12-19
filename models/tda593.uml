@@ -243,7 +243,10 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_jE_S4Ia9EeSnRoNcSCxqkA" name="description">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_nRoScIa9EeSnRoNcSCxqkA" name="roomApprovals" type="_1lx-MHZOEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_nRoScIa9EeSnRoNcSCxqkA" name="roomApprovals" type="_1lx-MHZOEeSrX_LICIhx2Q">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ah7-MIdwEeSFg4EKE05x8Q"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ah8lQIdwEeSFg4EKE05x8Q" value="*"/>
+              </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_fOM4cIbGEeS3E8vFulBSew" name="price">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
               </ownedParameter>
@@ -312,15 +315,15 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Wg-MYIFREeSZuOQR5MrPYg" name="RoomManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_EcmykIFSEeSZuOQR5MrPYg" general="_SzH3QHoiEeSVKdBxhP6Y7A"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_ak9w0IFSEeSZuOQR5MrPYg" name="roomDataService" visibility="private" type="_XNiiAIFSEeSZuOQR5MrPYg" association="_ak-X4IFSEeSZuOQR5MrPYg">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_ak9w0IFSEeSZuOQR5MrPYg" name="roomDataService" visibility="private" type="_XNiiAIFSEeSZuOQR5MrPYg" isReadOnly="true" association="_ak-X4IFSEeSZuOQR5MrPYg">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ak9w0YFSEeSZuOQR5MrPYg" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ak9w0oFSEeSZuOQR5MrPYg" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_Xim9oIFTEeSZuOQR5MrPYg" name="roomTypeDataService" visibility="private" type="_L-1YcIFTEeSZuOQR5MrPYg" association="_XinksIFTEeSZuOQR5MrPYg">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Xim9oIFTEeSZuOQR5MrPYg" name="roomTypeDataService" visibility="private" type="_L-1YcIFTEeSZuOQR5MrPYg" isReadOnly="true" association="_XinksIFTEeSZuOQR5MrPYg">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xim9oYFTEeSZuOQR5MrPYg" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Xim9ooFTEeSZuOQR5MrPYg" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_1oiRMIX6EeSnRoNcSCxqkA" name="keyCardManager" visibility="private" type="_0YiNMHpaEeSept0-dI1XSQ" association="_1oiRM4X6EeSnRoNcSCxqkA">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_1oiRMIX6EeSnRoNcSCxqkA" name="keyCardManager" visibility="private" type="_0YiNMHpaEeSept0-dI1XSQ" isReadOnly="true" association="_1oiRM4X6EeSnRoNcSCxqkA">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1oiRMYX6EeSnRoNcSCxqkA" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1oiRMoX6EeSnRoNcSCxqkA" value="1"/>
             </ownedAttribute>
@@ -431,7 +434,7 @@
           <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pGBQH-sEeS2M9uZ6JBJRQ" name="DisabilityApproval"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_JFBtsIUMEeSukffvaVOsTw" name="KeyCardManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_ZpatEIUMEeSukffvaVOsTw" general="_0YiNMHpaEeSept0-dI1XSQ"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_7K44oIUMEeSukffvaVOsTw" name="keyCardDataService" visibility="private" type="_3B8GQIUMEeSukffvaVOsTw" association="_7K44o4UMEeSukffvaVOsTw">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_7K44oIUMEeSukffvaVOsTw" name="keyCardDataService" visibility="private" type="_3B8GQIUMEeSukffvaVOsTw" isReadOnly="true" association="_7K44o4UMEeSukffvaVOsTw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7K44oYUMEeSukffvaVOsTw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7K44ooUMEeSukffvaVOsTw" value="1"/>
             </ownedAttribute>
@@ -612,16 +615,35 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zr8XoYUIEeSPhYI_rVU2Ew" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zr8XooUIEeSPhYI_rVU2Ew" value="1"/>
             </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_tDzMsId-EeSE9Y6gUqOmTQ" name="subBills" visibility="private" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_tD1o8Id-EeSE9Y6gUqOmTQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tDzMsYd-EeSE9Y6gUqOmTQ"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tDzMsod-EeSE9Y6gUqOmTQ" value="*"/>
+            </ownedAttribute>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_g98SEHb_EeSbBJzXJgLK5Q" name="applyDiscount">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_g98SEXb_EeSbBJzXJgLK5Q" name="discount" type="_GaHqkHb-EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_fi8hcHcEEeSbBJzXJgLK5Q" name="addSubBill">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fi8hcXcEEeSbBJzXJgLK5Q" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fi8hcXcEEeSbBJzXJgLK5Q" name="subBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_s79xAHcEEeSbBJzXJgLK5Q" name="registerPurchase">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_s79xAXcEEeSbBJzXJgLK5Q" name="purchase" type="_An5fMHb8EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_2g2AkHcEEeSbBJzXJgLK5Q" name="publishBill"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_C-2uwId_EeSE9Y6gUqOmTQ" name="unregisterPurchase">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_JneokId_EeSE9Y6gUqOmTQ" name="purchase" type="_An5fMHb8EeSbBJzXJgLK5Q"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_K6tyEId_EeSE9Y6gUqOmTQ" name="removeSubBill">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_QWzAQId_EeSE9Y6gUqOmTQ" name="subBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Q-47AId_EeSE9Y6gUqOmTQ" name="unPublishBill"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_MZDtcIeBEeSE9Y6gUqOmTQ" name="getPrice">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_PhBj8IeBEeSE9Y6gUqOmTQ" name="price" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_VtOyEIeCEeSE9Y6gUqOmTQ" name="removeDiscount">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_aCWYMIeCEeSE9Y6gUqOmTQ" name="discount" type="_GaHqkHb-EeSbBJzXJgLK5Q"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_1FAq0Hb7EeSbBJzXJgLK5Q" name="BookingBill">
             <generalization xmi:type="uml:Generalization" xmi:id="_4xpUoHb7EeSbBJzXJgLK5Q" general="_gemc8Hb6EeSbBJzXJgLK5Q"/>
@@ -702,7 +724,7 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_RcjZoIE4EeSfSN1EgLeI7A" name="BillManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_hsa6gIE4EeSfSN1EgLeI7A" general="_FIjl8HcHEeSbBJzXJgLK5Q"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_zFGBEIE5EeSfSN1EgLeI7A" name="billDataService" visibility="private" type="_vyAfsIE5EeSfSN1EgLeI7A" association="_zFHPMIE5EeSfSN1EgLeI7A">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_zFGBEIE5EeSfSN1EgLeI7A" name="billDataService" visibility="private" type="_vyAfsIE5EeSfSN1EgLeI7A" isReadOnly="true" association="_zFHPMIE5EeSfSN1EgLeI7A">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zFGBEYE5EeSfSN1EgLeI7A" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zFGBEoE5EeSfSN1EgLeI7A" value="1"/>
             </ownedAttribute>
@@ -745,6 +767,12 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zsACA4UIEeSPhYI_rVU2Ew" value="1"/>
             </ownedEnd>
           </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_tD1o8Id-EeSE9Y6gUqOmTQ" memberEnd="_tD1o8Yd-EeSE9Y6gUqOmTQ _tDzMsId-EeSE9Y6gUqOmTQ">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_tD1o8Yd-EeSE9Y6gUqOmTQ" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_tD1o8Id-EeSE9Y6gUqOmTQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tD1o8od-EeSE9Y6gUqOmTQ" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tD1o84d-EeSE9Y6gUqOmTQ" value="1"/>
+            </ownedEnd>
+          </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hzV0UIFYEeSZuOQR5MrPYg" name="DiscountDataServiceType">
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_n6q-8IFYEeSZuOQR5MrPYg" signature="_IPemEH7HEeS2M9uZ6JBJRQ">
@@ -755,7 +783,7 @@
           </templateBinding>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_BdRkkIFbEeSZuOQR5MrPYg" name="booking">
-          <packagedElement xmi:type="uml:Class" xmi:id="_3oahIHZKEeSrX_LICIhx2Q" name="LegalEntity">
+          <packagedElement xmi:type="uml:Class" xmi:id="_3oahIHZKEeSrX_LICIhx2Q" name="LegalEntity" isAbstract="true">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_N7xKQHZSEeSbBJzXJgLK5Q" name="phone" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedAttribute>
@@ -769,6 +797,11 @@
             <ownedAttribute xmi:type="uml:Property" xmi:id="_1cncgIUzEeSYe4XnLK7_AA" name="id" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedAttribute>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_vJ4fgIdqEeSFg4EKE05x8Q" name="getName" isAbstract="true">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_3R4aAIdtEeSFg4EKE05x8Q" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_WOTLsHZTEeSbBJzXJgLK5Q" name="Organization">
             <generalization xmi:type="uml:Generalization" xmi:id="_m9uWYHZTEeSbBJzXJgLK5Q" general="_3oahIHZKEeSrX_LICIhx2Q"/>
@@ -823,8 +856,6 @@
             <ownedAttribute xmi:type="uml:Property" xmi:id="_MZE40HrOEeS2M9uZ6JBJRQ" name="isCanceled" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedAttribute>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_Tn84sHZMEeSrX_LICIhx2Q" name="checkIn" isStatic="true"/>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_VxFvcHZMEeSrX_LICIhx2Q" name="checkOut"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_r9tioHZMEeSrX_LICIhx2Q" name="registerTravelInformation">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_r9tioXZMEeSrX_LICIhx2Q" name="travelInformation" type="_0QuhsHZMEeSrX_LICIhx2Q"/>
             </ownedOperation>
@@ -1047,7 +1078,7 @@
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_tC41IHo1EeSZQp8F1uHBGQ" name="getRelatedLegalEntities" visibility="public">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_-bA-kHo1EeSZQp8F1uHBGQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LdDRgHo2EeSZQp8F1uHBGQ" type="_3oahIHZKEeSrX_LICIhx2Q" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n2XmUH-uEeS2M9uZ6JBJRQ"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n2YNYH-uEeS2M9uZ6JBJRQ" value="*"/>
               </ownedParameter>
@@ -1079,7 +1110,7 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wrwOUH7MEeS2M9uZ6JBJRQ" name="BookingManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_882MgH7MEeS2M9uZ6JBJRQ" general="_xX22IHZXEeSbBJzXJgLK5Q"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_-f2QUH7MEeS2M9uZ6JBJRQ" name="bookingDataService" visibility="private" type="_iLJEkH7MEeS2M9uZ6JBJRQ" association="_-f4skH7MEeS2M9uZ6JBJRQ">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_-f2QUH7MEeS2M9uZ6JBJRQ" name="bookingDataService" visibility="private" type="_iLJEkH7MEeS2M9uZ6JBJRQ" isReadOnly="true" association="_-f4skH7MEeS2M9uZ6JBJRQ">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-f2QUX7MEeS2M9uZ6JBJRQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-f2QUn7MEeS2M9uZ6JBJRQ" value="1"/>
             </ownedAttribute>
@@ -1191,6 +1222,7 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_sW5oAHb3EeSbBJzXJgLK5Q" name="email">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fJ32MIeDEeSFg4EKE05x8Q" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_tVCrQHb3EeSbBJzXJgLK5Q" name="createOrganization">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_zSbPsHb3EeSbBJzXJgLK5Q" name="name">
@@ -1205,14 +1237,15 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_tVCrRXb3EeSbBJzXJgLK5Q" name="email">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_3O25MIeDEeSFg4EKE05x8Q" type="_WOTLsHZTEeSbBJzXJgLK5Q" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_ekdMwHohEeSg65290XNrgw" name="findLegalEntity">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xEINEHohEeSg65290XNrgw" name="email">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-              </ownedParameter>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ekdMwHohEeSg65290XNrgw" name="getLegalEntity">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_EWq0wHoiEeSg65290XNrgw" name="legalEntities" type="_3oahIHZKEeSrX_LICIhx2Q" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3R9xoH-uEeS2M9uZ6JBJRQ"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3R-YsH-uEeS2M9uZ6JBJRQ" value="*"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3R-YsH-uEeS2M9uZ6JBJRQ" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="__NBNIIeEEeSFg4EKE05x8Q" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Ea8QgHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation">
@@ -1236,13 +1269,46 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_qq-mkIFcEeSZuOQR5MrPYg" name="LegalEntityManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_1skEsIFcEeSZuOQR5MrPYg" general="_tuIWIHb2EeSbBJzXJgLK5Q"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_1B-PkIFcEeSZuOQR5MrPYg" name="legalEntityDataService" type="_uef7gIFcEeSZuOQR5MrPYg" association="_1B-2oIFcEeSZuOQR5MrPYg">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_1B-PkIFcEeSZuOQR5MrPYg" name="legalEntityDataService" visibility="private" type="_uef7gIFcEeSZuOQR5MrPYg" association="_1B-2oIFcEeSZuOQR5MrPYg">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1B-PkYFcEeSZuOQR5MrPYg" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1B-PkoFcEeSZuOQR5MrPYg" value="1"/>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_uef7gIFcEeSZuOQR5MrPYg" name="LegalEntityDataService">
             <generalization xmi:type="uml:Generalization" xmi:id="_YIftYIFdEeSZuOQR5MrPYg" general="_LxJ9QIFdEeSZuOQR5MrPYg"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_j633IIdvEeSFg4EKE05x8Q" name="findPerson">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j633IYdvEeSFg4EKE05x8Q" name="firstname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j633IodvEeSFg4EKE05x8Q" name="lastname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j633I4dvEeSFg4EKE05x8Q" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j633JIdvEeSFg4EKE05x8Q"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j633JYdvEeSFg4EKE05x8Q" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_j65sUIdvEeSFg4EKE05x8Q" name="findOrganization" visibility="public">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j65sUYdvEeSFg4EKE05x8Q" type="_WOTLsHZTEeSbBJzXJgLK5Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j65sUodvEeSFg4EKE05x8Q"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j65sU4dvEeSFg4EKE05x8Q" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j65sVIdvEeSFg4EKE05x8Q" name="name">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_j666cIdvEeSFg4EKE05x8Q" name="getOrganization" visibility="public">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j666cYdvEeSFg4EKE05x8Q" name="organizationNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j666codvEeSFg4EKE05x8Q" name="organization" type="_WOTLsHZTEeSbBJzXJgLK5Q" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_j68voIdvEeSFg4EKE05x8Q" name="getPerson">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j68voYdvEeSFg4EKE05x8Q" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j68voodvEeSFg4EKE05x8Q" name="SSN">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_1B-2oIFcEeSZuOQR5MrPYg" memberEnd="_1B-2oYFcEeSZuOQR5MrPYg _1B-PkIFcEeSZuOQR5MrPYg">
             <name xsi:nil="true"/>

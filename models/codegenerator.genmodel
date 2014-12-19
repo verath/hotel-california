@@ -245,16 +245,29 @@
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/usedDiscounts"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/customer"/>
+            <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+                propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/subBills"/>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/applyDiscount">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/applyDiscount/discount"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/addSubBill">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/addSubBill/bill"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/addSubBill/subBill"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/registerPurchase">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/registerPurchase/purchase"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/publishBill"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/unregisterPurchase">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/unregisterPurchase/purchase"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/removeSubBill">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/removeSubBill/subBill"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/unPublishBill"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/getPrice"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/Bill/removeDiscount">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/Bill/removeDiscount/discount"/>
+            </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/Purchase">
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/Purchase/id"/>
@@ -343,8 +356,6 @@
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/booking/Booking/roomStay"/>
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/Booking/isCanceled"/>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/Booking/checkIn"/>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/Booking/checkOut"/>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/Booking/registerTravelInformation">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/Booking/registerTravelInformation/travelInformation"/>
             </genOperations>
@@ -516,8 +527,8 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityManager/createOrganization/phone"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityManager/createOrganization/email"/>
             </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityManager/findLegalEntity">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityManager/findLegalEntity/email"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityManager/getLegalEntity">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityManager/getLegalEntity/id"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityManager/setCreditCardInformation">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityManager/setCreditCardInformation/legalEntity"/>
@@ -532,13 +543,28 @@
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/booking/LegalEntityManagerImpl/legalEntityDataService"/>
           </genClasses>
-          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/booking/LegalEntityDataService"/>
+          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/booking/LegalEntityDataService">
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityDataService/findPerson">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityDataService/findPerson/firstname"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityDataService/findPerson/lastname"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityDataService/findOrganization">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityDataService/findOrganization/name"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityDataService/getOrganization">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityDataService/getOrganization/organizationNumber"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntityDataService/getPerson">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/LegalEntityDataService/getPerson/SSN"/>
+            </genOperations>
+          </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/booking/LegalEntity">
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/LegalEntity/phone"/>
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/LegalEntity/email"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/booking/LegalEntity/creditCardInformation"/>
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/LegalEntity/id"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/LegalEntity/getName"/>
           </genClasses>
         </nestedGenPackages>
       </nestedGenPackages>

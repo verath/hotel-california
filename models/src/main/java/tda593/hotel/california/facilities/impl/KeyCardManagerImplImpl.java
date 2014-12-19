@@ -91,18 +91,6 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKeyCardDataService(KeyCardDataService newKeyCardDataService) {
-		KeyCardDataService oldKeyCardDataService = keyCardDataService;
-		keyCardDataService = newKeyCardDataService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE, oldKeyCardDataService, keyCardDataService));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public KeyCard getKeyCard(String keyCardNbr) {
@@ -122,37 +110,6 @@ public class KeyCardManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return basicGetKeyCardDataService();
 		}
 		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE:
-				setKeyCardDataService((KeyCardDataService)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE:
-				setKeyCardDataService((KeyCardDataService)null);
-				return;
-		}
-		super.eUnset(featureID);
 	}
 
 	/**

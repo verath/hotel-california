@@ -5,18 +5,14 @@ package tda593.hotel.california.booking.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingManagerImpl;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.CreditCardInformation;
-import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
 import tda593.hotel.california.booking.LegalEntityManagerImpl;
 import tda593.hotel.california.booking.Organization;
@@ -80,7 +76,6 @@ public class BookingFactoryImpl extends EFactoryImpl implements BookingFactory {
 			case BookingPackage.BOOKING_DATA_SERVICE: return createBookingDataService();
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL: return createLegalEntityManagerImpl();
 			case BookingPackage.LEGAL_ENTITY_DATA_SERVICE: return createLegalEntityDataService();
-			case BookingPackage.LEGAL_ENTITY: return createLegalEntity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -194,16 +189,6 @@ public class BookingFactoryImpl extends EFactoryImpl implements BookingFactory {
 	public LegalEntityDataService createLegalEntityDataService() {
 		LegalEntityDataServiceImpl legalEntityDataService = new LegalEntityDataServiceImpl();
 		return legalEntityDataService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LegalEntity createLegalEntity() {
-		LegalEntityImpl legalEntity = new LegalEntityImpl();
-		return legalEntity;
 	}
 
 	/**

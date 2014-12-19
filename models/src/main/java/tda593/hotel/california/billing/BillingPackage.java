@@ -663,13 +663,22 @@ public interface BillingPackage extends EPackage {
 	int BILL__CUSTOMER = 6;
 
 	/**
+	 * The feature id for the '<em><b>Sub Bills</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__SUB_BILLS = 7;
+
+	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 7;
+	int BILL_FEATURE_COUNT = 8;
 
 	/**
 	 * The operation id for the '<em>Apply Discount</em>' operation.
@@ -708,13 +717,58 @@ public interface BillingPackage extends EPackage {
 	int BILL___PUBLISH_BILL = 3;
 
 	/**
+	 * The operation id for the '<em>Unregister Purchase</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___UNREGISTER_PURCHASE__PURCHASE = 4;
+
+	/**
+	 * The operation id for the '<em>Remove Sub Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___REMOVE_SUB_BILL__BILL = 5;
+
+	/**
+	 * The operation id for the '<em>Un Publish Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___UN_PUBLISH_BILL = 6;
+
+	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___GET_PRICE = 7;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___REMOVE_DISCOUNT__DISCOUNT = 8;
+
+	/**
 	 * The number of operations of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_OPERATION_COUNT = 4;
+	int BILL_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.PurchaseImpl <em>Purchase</em>}' class.
@@ -909,6 +963,15 @@ public interface BillingPackage extends EPackage {
 	int BOOKING_BILL__CUSTOMER = BILL__CUSTOMER;
 
 	/**
+	 * The feature id for the '<em><b>Sub Bills</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL__SUB_BILLS = BILL__SUB_BILLS;
+
+	/**
 	 * The feature id for the '<em><b>Booking</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -961,6 +1024,51 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_BILL___PUBLISH_BILL = BILL___PUBLISH_BILL;
+
+	/**
+	 * The operation id for the '<em>Unregister Purchase</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___UNREGISTER_PURCHASE__PURCHASE = BILL___UNREGISTER_PURCHASE__PURCHASE;
+
+	/**
+	 * The operation id for the '<em>Remove Sub Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___REMOVE_SUB_BILL__BILL = BILL___REMOVE_SUB_BILL__BILL;
+
+	/**
+	 * The operation id for the '<em>Un Publish Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___UN_PUBLISH_BILL = BILL___UN_PUBLISH_BILL;
+
+	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___GET_PRICE = BILL___GET_PRICE;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL___REMOVE_DISCOUNT__DISCOUNT = BILL___REMOVE_DISCOUNT__DISCOUNT;
 
 	/**
 	 * The number of operations of the '<em>Booking Bill</em>' class.
@@ -1623,6 +1731,17 @@ public interface BillingPackage extends EPackage {
 	EReference getBill_Customer();
 
 	/**
+	 * Returns the meta object for the reference list '{@link tda593.hotel.california.billing.Bill#getSubBills <em>Sub Bills</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sub Bills</em>'.
+	 * @see tda593.hotel.california.billing.Bill#getSubBills()
+	 * @see #getBill()
+	 * @generated
+	 */
+	EReference getBill_SubBills();
+
+	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.billing.Bill#isPaid <em>Is Paid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1694,6 +1813,56 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBill__PublishBill();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#unregisterPurchase(tda593.hotel.california.billing.Purchase) <em>Unregister Purchase</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Unregister Purchase</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#unregisterPurchase(tda593.hotel.california.billing.Purchase)
+	 * @generated
+	 */
+	EOperation getBill__UnregisterPurchase__Purchase();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#removeSubBill(tda593.hotel.california.billing.Bill) <em>Remove Sub Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Sub Bill</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#removeSubBill(tda593.hotel.california.billing.Bill)
+	 * @generated
+	 */
+	EOperation getBill__RemoveSubBill__Bill();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#unPublishBill() <em>Un Publish Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Un Publish Bill</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#unPublishBill()
+	 * @generated
+	 */
+	EOperation getBill__UnPublishBill();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#getPrice() <em>Get Price</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Price</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#getPrice()
+	 * @generated
+	 */
+	EOperation getBill__GetPrice();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.Bill#removeDiscount(tda593.hotel.california.billing.Discount) <em>Remove Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Discount</em>' operation.
+	 * @see tda593.hotel.california.billing.Bill#removeDiscount(tda593.hotel.california.billing.Discount)
+	 * @generated
+	 */
+	EOperation getBill__RemoveDiscount__Discount();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.Purchase <em>Purchase</em>}'.
@@ -2257,6 +2426,14 @@ public interface BillingPackage extends EPackage {
 		EReference BILL__CUSTOMER = eINSTANCE.getBill_Customer();
 
 		/**
+		 * The meta object literal for the '<em><b>Sub Bills</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BILL__SUB_BILLS = eINSTANCE.getBill_SubBills();
+
+		/**
 		 * The meta object literal for the '<em><b>Is Paid</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2311,6 +2488,46 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BILL___PUBLISH_BILL = eINSTANCE.getBill__PublishBill();
+
+		/**
+		 * The meta object literal for the '<em><b>Unregister Purchase</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___UNREGISTER_PURCHASE__PURCHASE = eINSTANCE.getBill__UnregisterPurchase__Purchase();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Sub Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___REMOVE_SUB_BILL__BILL = eINSTANCE.getBill__RemoveSubBill__Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Un Publish Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___UN_PUBLISH_BILL = eINSTANCE.getBill__UnPublishBill();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Price</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___GET_PRICE = eINSTANCE.getBill__GetPrice();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___REMOVE_DISCOUNT__DISCOUNT = eINSTANCE.getBill__RemoveDiscount__Discount();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.PurchaseImpl <em>Purchase</em>}' class.

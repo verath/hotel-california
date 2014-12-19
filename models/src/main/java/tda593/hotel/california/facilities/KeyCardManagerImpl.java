@@ -29,21 +29,10 @@ public interface KeyCardManagerImpl extends KeyCardManager {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Key Card Data Service</em>' reference.
-	 * @see #setKeyCardDataService(KeyCardDataService)
 	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getKeyCardManagerImpl_KeyCardDataService()
-	 * @model required="true" ordered="false"
+	 * @model required="true" changeable="false" ordered="false"
 	 * @generated
 	 */
 	KeyCardDataService getKeyCardDataService();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.facilities.KeyCardManagerImpl#getKeyCardDataService <em>Key Card Data Service</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Key Card Data Service</em>' reference.
-	 * @see #getKeyCardDataService()
-	 * @generated
-	 */
-	void setKeyCardDataService(KeyCardDataService value);
 
 } // KeyCardManagerImpl

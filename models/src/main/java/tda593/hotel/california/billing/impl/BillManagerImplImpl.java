@@ -114,18 +114,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBillDataService(BillDataService newBillDataService) {
-		BillDataService oldBillDataService = billDataService;
-		billDataService = newBillDataService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE, oldBillDataService, billDataService));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BookingManager getBookingManager() {
 		if (bookingManager != null && bookingManager.eIsProxy()) {
 			InternalEObject oldBookingManager = (InternalEObject)bookingManager;
@@ -273,9 +261,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE:
-				setBillDataService((BillDataService)newValue);
-				return;
 			case BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER:
 				setBookingManager((BookingManager)newValue);
 				return;
@@ -291,9 +276,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BillingPackage.BILL_MANAGER_IMPL__BILL_DATA_SERVICE:
-				setBillDataService((BillDataService)null);
-				return;
 			case BillingPackage.BILL_MANAGER_IMPL__BOOKING_MANAGER:
 				setBookingManager((BookingManager)null);
 				return;

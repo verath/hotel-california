@@ -114,7 +114,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 			switch (baseOperationID) {
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM__INT_INT_STRING_ELIST_ELIST_ROOMTYPE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__INT_INT_STRING_ELIST_ELIST_ROOMTYPE;
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM__INT: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__INT;
-				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE;
+				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE;
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE;
 				default: return -1;
 			}
@@ -136,8 +136,8 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 				return null;
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__INT:
 				return removeRoom((Integer)arguments.get(0));
-			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ROOMAPPROVAL_DOUBLE:
-				addRoomType((String)arguments.get(0), (String)arguments.get(1), (RoomApproval)arguments.get(2), (Double)arguments.get(3));
+			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE:
+				addRoomType((String)arguments.get(0), (String)arguments.get(1), (EList<RoomApproval>)arguments.get(2), (Double)arguments.get(3));
 				return null;
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE:
 				removeRoomType((RoomType)arguments.get(0));
@@ -150,6 +150,17 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	public boolean removeRoom(int roomNumber) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addRoomType(String name, String description, EList<RoomApproval> roomApprovals, double price) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
