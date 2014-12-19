@@ -103,19 +103,19 @@ public abstract class AbstractHotelCaliforniaIntegrationTest {
 
 	private void initializeManagers() {
 		// Facilities
-		adminKeyCardManager = new AdminKeyCardManagerImplImpl();
-		adminRoomManager = new AdminRoomManagerImplImpl(roomTypeDataService);
-		keyCardManager = new KeyCardManagerImplImpl();
-		roomManager = new RoomManagerImplImpl(roomTypeDataService);
+		adminKeyCardManager = new AdminKeyCardManagerImplImpl(keyCardDataService);
+		adminRoomManager = new AdminRoomManagerImplImpl(roomTypeDataService, roomDataService, keyCardManager);
+		keyCardManager = new KeyCardManagerImplImpl(keyCardDataService);
+		roomManager = new RoomManagerImplImpl(roomTypeDataService, roomDataService, keyCardManager);
 
 		// Booking
-		bookingManager = new BookingManagerImplImpl();
-		legalEntityManager = new LegalEntityManagerImplImpl();
+		bookingManager = new BookingManagerImplImpl(bookingDataService, roomManager);
+		legalEntityManager = new LegalEntityManagerImplImpl(legalEntityDataService);
 
 		// Billing
-		adminDiscountManager = new AdminDiscountManagerImpl();
-		billManager = new BillManagerImplImpl();
-		discountManager = new DiscountManagerImplImpl();
+		adminDiscountManager = new AdminDiscountManagerImplImpl();
+		billManager = new BillManagerImplImpl(billDataService, bookingManager);
+		discountManager = new DiscountManagerImplImpl(discountDataService);
 	}
 
 	/**
