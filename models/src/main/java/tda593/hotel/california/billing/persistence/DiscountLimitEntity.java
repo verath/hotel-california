@@ -122,5 +122,9 @@ public interface DiscountLimitEntity {
 	 * @generated
 	 */
 	List<LegalEntityEntity> getAllowedUsers();
+	
+	int getTimesLeftToUse();
+	
+	void setTimesLeftToUse(int newTimesLeftToUse);
 
 } // DiscountLimitEntity

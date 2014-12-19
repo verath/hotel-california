@@ -3,11 +3,8 @@
 package tda593.hotel.california.billing.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.SumDiscount;
 
@@ -52,6 +49,11 @@ public class SumDiscountImpl extends DiscountImpl implements SumDiscount {
 	 */
 	protected SumDiscountImpl() {
 		super();
+	}
+	
+	public SumDiscountImpl(String code, String name, double sum) {
+		super(code, name);
+		this.discountSum = sum;
 	}
 
 	/**

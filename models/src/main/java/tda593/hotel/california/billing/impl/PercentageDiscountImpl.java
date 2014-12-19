@@ -3,9 +3,7 @@
 package tda593.hotel.california.billing.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.billing.BillingPackage;
@@ -52,6 +50,11 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 	 */
 	protected PercentageDiscountImpl() {
 		super();
+	}
+
+	public PercentageDiscountImpl(String code, String name, float percentage) {
+		super(code, name);
+		this.percentage = percentage;
 	}
 
 	/**

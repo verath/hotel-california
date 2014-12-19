@@ -22,6 +22,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.DiscountLimit#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.DiscountLimit#getEndDate <em>End Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.DiscountLimit#getAllowedUsers <em>Allowed Users</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.DiscountLimit#getTimesLeftToUse <em>Times Left To Use</em>}</li>
  * </ul>
  * </p>
  *
@@ -123,5 +124,31 @@ public interface DiscountLimit extends EObject {
 	 * @generated
 	 */
 	EList<LegalEntity> getAllowedUsers();
+
+	/**
+	 * Returns the value of the '<em><b>Times Left To Use</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Times Left To Use</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Times Left To Use</em>' attribute.
+	 * @see #setTimesLeftToUse(int)
+	 * @see tda593.hotel.california.billing.BillingPackage#getDiscountLimit_TimesLeftToUse()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getTimesLeftToUse();
+
+	/**
+	 * Sets the value of the '{@link tda593.hotel.california.billing.DiscountLimit#getTimesLeftToUse <em>Times Left To Use</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Times Left To Use</em>' attribute.
+	 * @see #getTimesLeftToUse()
+	 * @generated
+	 */
+	void setTimesLeftToUse(int value);
 
 } // DiscountLimit

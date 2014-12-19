@@ -22,18 +22,18 @@ public interface AdminDiscountManager extends DiscountManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" sumRequired="true" sumOrdered="false"
+	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" nameRequired="true" nameOrdered="false" sumRequired="true" sumOrdered="false"
 	 * @generated
 	 */
-	Discount addSumDiscount(double sum);
+	Discount addSumDiscount(String code, String name, double sum);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" _Required="true" _Ordered="false"
+	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" nameRequired="true" nameOrdered="false" percentageRequired="true" percentageOrdered="false"
 	 * @generated
 	 */
-	Discount addPercentageDiscount(float _);
+	Discount addPercentageDiscount(String code, String name, float percentage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,5 +58,13 @@ public interface AdminDiscountManager extends DiscountManager {
 	 * @generated
 	 */
 	void setDateRangeLimit(Discount discount, Date validFrom, Date validTo);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model discountRequired="true" discountOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false" allowedUsersMany="true" allowedUsersOrdered="false" timesLeftToUseRequired="true" timesLeftToUseOrdered="false"
+	 * @generated
+	 */
+	void createDiscountLimitForDiscount(Discount discount, Date startDate, Date endDate, EList<LegalEntity> allowedUsers, int timesLeftToUse);
 
 } // AdminDiscountManager

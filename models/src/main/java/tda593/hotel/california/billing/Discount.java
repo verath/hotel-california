@@ -32,12 +32,12 @@ public interface Discount extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(int)
+	 * @see #setCode(String)
 	 * @see tda593.hotel.california.billing.BillingPackage#getDiscount_Code()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getCode();
+	String getCode();
 
 	/**
 	 * Sets the value of the '{@link tda593.hotel.california.billing.Discount#getCode <em>Code</em>}' attribute.
@@ -47,7 +47,7 @@ public interface Discount extends EObject {
 	 * @see #getCode()
 	 * @generated
 	 */
-	void setCode(int value);
+	void setCode(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
