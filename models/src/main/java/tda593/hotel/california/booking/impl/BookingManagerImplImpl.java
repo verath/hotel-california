@@ -216,8 +216,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		EList<Room> bookedRooms = new BasicEList<Room>();
 		
 		// Remove all rooms that are booked
+		
 		for(Booking booking : bookings) {
-			if(booking.getRoomType().equals(roomType)) {
+			if(!booking.isCanceled() && booking.getRoomType().equals(roomType)) {
 				bookedRooms.add(booking.getRoomStay().getRoom());
 			}
 		}
