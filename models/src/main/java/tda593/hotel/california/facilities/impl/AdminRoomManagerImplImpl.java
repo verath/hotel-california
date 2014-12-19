@@ -3,11 +3,8 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.DisabilityApproval;
@@ -27,6 +24,15 @@ import tda593.hotel.california.facilities.RoomTypeDataService;
  * @generated
  */
 public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements AdminRoomManagerImpl {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AdminRoomManagerImplImpl() {
+		super();
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

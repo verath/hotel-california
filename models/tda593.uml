@@ -623,8 +623,7 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_1FAq0Hb7EeSbBJzXJgLK5Q" name="BookingBill">
             <generalization xmi:type="uml:Generalization" xmi:id="_4xpUoHb7EeSbBJzXJgLK5Q" general="_gemc8Hb6EeSbBJzXJgLK5Q"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_9tUkcHb7EeSbBJzXJgLK5Q" name="booking" visibility="private" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_iBYW8Hb9EeSbBJzXJgLK5Q" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q" association="_iBY-AHb9EeSbBJzXJgLK5Q">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_iBYW8Hb9EeSbBJzXJgLK5Q" name="booking" visibility="private" type="_QwNhcHZKEeSrX_LICIhx2Q" association="_iBY-AHb9EeSbBJzXJgLK5Q">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iBYW8Xb9EeSbBJzXJgLK5Q" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iBYW8nb9EeSbBJzXJgLK5Q" value="1"/>
             </ownedAttribute>
@@ -781,7 +780,6 @@
             <ownedAttribute xmi:type="uml:Property" xmi:id="_y2HPwHZKEeSrX_LICIhx2Q" name="price" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_GwmBMHZLEeSrX_LICIhx2Q" name="roomStay" visibility="private" type="_135lwHZKEeSrX_LICIhx2Q"/>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_qXPwkHZLEeSrX_LICIhx2Q" name="roomType" visibility="private" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_JKHuQHZUEeSbBJzXJgLK5Q" name="travelInformation" visibility="private" type="_0QuhsHZMEeSrX_LICIhx2Q" association="_JKI8YHZUEeSbBJzXJgLK5Q">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JKHuQXZUEeSbBJzXJgLK5Q"/>
@@ -791,7 +789,7 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UkfDEXb0EeSbBJzXJgLK5Q" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UkfDEnb0EeSbBJzXJgLK5Q" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_zwE5gHpvEeSzffN-QECwhA" name="roomStay" type="_135lwHZKEeSrX_LICIhx2Q" association="_zwFgkHpvEeSzffN-QECwhA">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_zwE5gHpvEeSzffN-QECwhA" name="roomStay" visibility="private" type="_135lwHZKEeSrX_LICIhx2Q" association="_zwFgkHpvEeSzffN-QECwhA">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zwE5gXpvEeSzffN-QECwhA"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zwE5gnpvEeSzffN-QECwhA" value="1"/>
             </ownedAttribute>

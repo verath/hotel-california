@@ -82,16 +82,16 @@ public class BookingAdapterFactory extends AdapterFactoryImpl {
 				return createBookingAdapter();
 			}
 			@Override
+			public Adapter caseTravelInformation(TravelInformation object) {
+				return createTravelInformationAdapter();
+			}
+			@Override
 			public Adapter caseRoomStay(RoomStay object) {
 				return createRoomStayAdapter();
 			}
 			@Override
 			public Adapter caseStayRequest(StayRequest object) {
 				return createStayRequestAdapter();
-			}
-			@Override
-			public Adapter caseTravelInformation(TravelInformation object) {
-				return createTravelInformationAdapter();
 			}
 			@Override
 			public Adapter caseCreditCardInformation(CreditCardInformation object) {

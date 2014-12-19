@@ -72,9 +72,9 @@ public class BookingFactoryImpl extends EFactoryImpl implements BookingFactory {
 			case BookingPackage.ORGANIZATION: return createOrganization();
 			case BookingPackage.PERSON: return createPerson();
 			case BookingPackage.BOOKING: return createBooking();
+			case BookingPackage.TRAVEL_INFORMATION: return createTravelInformation();
 			case BookingPackage.ROOM_STAY: return createRoomStay();
 			case BookingPackage.STAY_REQUEST: return createStayRequest();
-			case BookingPackage.TRAVEL_INFORMATION: return createTravelInformation();
 			case BookingPackage.CREDIT_CARD_INFORMATION: return createCreditCardInformation();
 			case BookingPackage.BOOKING_MANAGER_IMPL: return createBookingManagerImpl();
 			case BookingPackage.BOOKING_DATA_SERVICE: return createBookingDataService();
