@@ -1098,6 +1098,21 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_R1HaoIbKEeS3E8vFulBSew" name="legal" type="_3oahIHZKEeSrX_LICIhx2Q"/>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_4KSBoIdtEeSkgbxbBgd3rw" name="changeBookingDates">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KSBoYdtEeSkgbxbBgd3rw" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KSBoodtEeSkgbxbBgd3rw" name="newStart">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KSBo4dtEeSkgbxbBgd3rw" name="newEnd">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KSBpIdtEeSkgbxbBgd3rw" name="success" direction="return" effect="create">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_FIV2sIdyEeSkgbxbBgd3rw" name="beginTransaction"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_HI3kAIdyEeSkgbxbBgd3rw" name="commitTransaction"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Jc7RUIdyEeSkgbxbBgd3rw" name="rollbackTransaction"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Interface" xmi:id="_tuIWIHb2EeSbBJzXJgLK5Q" name="LegalEntityManager">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_xwG90Hb2EeSbBJzXJgLK5Q" name="findPerson">
