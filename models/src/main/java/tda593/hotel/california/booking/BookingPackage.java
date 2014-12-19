@@ -406,31 +406,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_FEATURE_COUNT = 10;
 
 	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING___CHECK_IN = 0;
-
-	/**
-	 * The operation id for the '<em>Check Out</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING___CHECK_OUT = 1;
-
-	/**
 	 * The operation id for the '<em>Register Travel Information</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION = 2;
+	int BOOKING___REGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION = 0;
 
 	/**
 	 * The operation id for the '<em>Unregister Travel Information</em>' operation.
@@ -439,7 +421,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION = 3;
+	int BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION = 1;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -448,7 +430,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_OPERATION_COUNT = 4;
+	int BOOKING_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.RoomStayImpl <em>Room Stay</em>}' class.
@@ -1782,26 +1764,6 @@ public interface BookingPackage extends EPackage {
 	EAttribute getBooking_IsCanceled();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.Booking#checkIn() <em>Check In</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see tda593.hotel.california.booking.Booking#checkIn()
-	 * @generated
-	 */
-	EOperation getBooking__CheckIn();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.Booking#checkOut() <em>Check Out</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see tda593.hotel.california.booking.Booking#checkOut()
-	 * @generated
-	 */
-	EOperation getBooking__CheckOut();
-
-	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.Booking#registerTravelInformation(tda593.hotel.california.booking.TravelInformation) <em>Register Travel Information</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2707,22 +2669,6 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOKING__IS_CANCELED = eINSTANCE.getBooking_IsCanceled();
-
-		/**
-		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING___CHECK_IN = eINSTANCE.getBooking__CheckIn();
-
-		/**
-		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING___CHECK_OUT = eINSTANCE.getBooking__CheckOut();
 
 		/**
 		 * The meta object literal for the '<em><b>Register Travel Information</b></em>' operation.

@@ -2347,14 +2347,6 @@
                     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XSAg8HpwEeSzffN-QECwhA" source="PapyrusCSSForceValue">
                       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XSBIAHpwEeSzffN-QECwhA" key="collapsed" value="true"/>
                     </eAnnotations>
-                    <children xmi:type="notation:Shape" xmi:id="_UcBZ8HZMEeSrX_LICIhx2Q" type="3013">
-                      <element xmi:type="uml:Operation" href="tda593.uml#_Tn84sHZMEeSrX_LICIhx2Q"/>
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_UcBZ8XZMEeSrX_LICIhx2Q"/>
-                    </children>
-                    <children xmi:type="notation:Shape" xmi:id="_Xis3AHZMEeSrX_LICIhx2Q" type="3013">
-                      <element xmi:type="uml:Operation" href="tda593.uml#_VxFvcHZMEeSrX_LICIhx2Q"/>
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xis3AXZMEeSrX_LICIhx2Q"/>
-                    </children>
                     <children xmi:type="notation:Shape" xmi:id="_8bAbgHZMEeSrX_LICIhx2Q" type="3013">
                       <element xmi:type="uml:Operation" href="tda593.uml#_r9tioHZMEeSrX_LICIhx2Q"/>
                       <layoutConstraint xmi:type="notation:Location" xmi:id="_8bAbgXZMEeSrX_LICIhx2Q"/>

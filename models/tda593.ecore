@@ -392,8 +392,6 @@
               ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="Booking">
-          <eOperations name="checkIn" ordered="false" lowerBound="1"/>
-          <eOperations name="checkOut" ordered="false" lowerBound="1"/>
           <eOperations name="registerTravelInformation" ordered="false" lowerBound="1">
             <eParameters name="travelInformation" ordered="false" lowerBound="1" eType="#//hotel/california/booking/TravelInformation"/>
           </eOperations>
