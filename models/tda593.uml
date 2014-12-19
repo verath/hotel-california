@@ -612,16 +612,27 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zr8XoYUIEeSPhYI_rVU2Ew" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zr8XooUIEeSPhYI_rVU2Ew" value="1"/>
             </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_tDzMsId-EeSE9Y6gUqOmTQ" name="subBills" visibility="private" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_tD1o8Id-EeSE9Y6gUqOmTQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tDzMsYd-EeSE9Y6gUqOmTQ"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tDzMsod-EeSE9Y6gUqOmTQ" value="*"/>
+            </ownedAttribute>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_g98SEHb_EeSbBJzXJgLK5Q" name="applyDiscount">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_g98SEXb_EeSbBJzXJgLK5Q" name="discount" type="_GaHqkHb-EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_fi8hcHcEEeSbBJzXJgLK5Q" name="addSubBill">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fi8hcXcEEeSbBJzXJgLK5Q" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_fi8hcXcEEeSbBJzXJgLK5Q" name="subBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_s79xAHcEEeSbBJzXJgLK5Q" name="registerPurchase">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_s79xAXcEEeSbBJzXJgLK5Q" name="purchase" type="_An5fMHb8EeSbBJzXJgLK5Q"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_2g2AkHcEEeSbBJzXJgLK5Q" name="publishBill"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_C-2uwId_EeSE9Y6gUqOmTQ" name="unregisterPurchase">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_JneokId_EeSE9Y6gUqOmTQ" name="purchase" type="_An5fMHb8EeSbBJzXJgLK5Q"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_K6tyEId_EeSE9Y6gUqOmTQ" name="removeSubBill">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_QWzAQId_EeSE9Y6gUqOmTQ" name="subBill" type="_gemc8Hb6EeSbBJzXJgLK5Q"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Q-47AId_EeSE9Y6gUqOmTQ" name="unPublishBill"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_1FAq0Hb7EeSbBJzXJgLK5Q" name="BookingBill">
             <generalization xmi:type="uml:Generalization" xmi:id="_4xpUoHb7EeSbBJzXJgLK5Q" general="_gemc8Hb6EeSbBJzXJgLK5Q"/>
@@ -718,6 +729,12 @@
             <ownedEnd xmi:type="uml:Property" xmi:id="_zsACAYUIEeSPhYI_rVU2Ew" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_zsACAIUIEeSPhYI_rVU2Ew">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zsACAoUIEeSPhYI_rVU2Ew" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zsACA4UIEeSPhYI_rVU2Ew" value="1"/>
+            </ownedEnd>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_tD1o8Id-EeSE9Y6gUqOmTQ" memberEnd="_tD1o8Yd-EeSE9Y6gUqOmTQ _tDzMsId-EeSE9Y6gUqOmTQ">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_tD1o8Yd-EeSE9Y6gUqOmTQ" name="bill" type="_gemc8Hb6EeSbBJzXJgLK5Q" association="_tD1o8Id-EeSE9Y6gUqOmTQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tD1o8od-EeSE9Y6gUqOmTQ" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tD1o84d-EeSE9Y6gUqOmTQ" value="1"/>
             </ownedEnd>
           </packagedElement>
         </packagedElement>
