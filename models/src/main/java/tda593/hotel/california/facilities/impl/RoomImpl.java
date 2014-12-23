@@ -90,7 +90,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_OPERATIONAL_EDEFAULT = false;
+	protected static final boolean IS_OPERATIONAL_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isOperational() <em>Is Operational</em>}' attribute.

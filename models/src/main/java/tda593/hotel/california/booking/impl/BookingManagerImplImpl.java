@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManagerImpl;
@@ -276,7 +278,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
 		if(!isRoomAvailable(from, to, room.getRoomNumber())) {
-			throw new IllegalArgumentException("The specified room is booked in that period");
+			throw new IllegalArgumentException("The specified room is either not bookable or is already "
+					+ "booked in that period");
 		}
 		
 		Booking booking = new BookingImpl();

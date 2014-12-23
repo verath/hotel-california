@@ -116,8 +116,6 @@
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="RoomType">
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
@@ -141,7 +139,8 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOperational" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+              defaultValueLiteral="true"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCleaned" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"

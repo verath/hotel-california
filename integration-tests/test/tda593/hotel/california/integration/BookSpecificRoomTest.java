@@ -1,12 +1,18 @@
 package tda593.hotel.california.integration;
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntityManager;
+import tda593.hotel.california.booking.Person;
+import tda593.hotel.california.booking.util.BookingSwitch;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
@@ -34,7 +40,12 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		// Create a room for each room type
 		int floor = 1;
 		for(RoomType roomType : adminRoomManager.getRoomTypes()) {
-			adminRoomManager.addRoom("1", floor++, "N/A", null, null, roomType);
+			adminRoomManager.addRoom("1"+floor, floor++, "N/A", null, null, roomType);
+		}
+		
+		System.out.println("TEST OUTPUT STARTS");
+		for(RoomType roomType : adminRoomManager.getRoomTypes()) {
+			System.out.println(roomType.getName());
 		}
 	}
 	
@@ -47,7 +58,16 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 
 	@Test
 	public void testBookSpecificRoom() {
-		fail("Not yet implemented");
+		Person customer = legalEntityManager.getPerson("1");
+		bookingManager.createBooking(new Date(0), new Date(60*60*24), customer, roomManager.getRooms().get(0));
+		
+		EList<Booking> bookings = bookingManager.getBookings(customer);
+		assertTrue(bookings.size() == 0);
+
+		Booking booking = bookings.get(0);
+		assertTrue(booking.getRoomStay() != null);
+		assertTrue(!booking.getRoomStay().isActive());
+		
 	}
 	
 	@Test

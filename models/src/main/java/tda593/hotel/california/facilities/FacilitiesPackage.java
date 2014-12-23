@@ -454,22 +454,13 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_TYPE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NAME = 1;
+	int ROOM_TYPE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -478,7 +469,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__DESCRIPTION = 2;
+	int ROOM_TYPE__DESCRIPTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Room Approvals</b></em>' attribute list.
@@ -487,7 +478,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__ROOM_APPROVALS = 3;
+	int ROOM_TYPE__ROOM_APPROVALS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -496,7 +487,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__PRICE = 4;
+	int ROOM_TYPE__PRICE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
@@ -505,7 +496,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = 5;
+	int ROOM_TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
@@ -1904,17 +1895,6 @@ public interface FacilitiesPackage extends EPackage {
 	EClass getRoomType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tda593.hotel.california.facilities.RoomType#getId()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Id();
-
-	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.RoomType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2513,14 +2493,6 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOM_TYPE = eINSTANCE.getRoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__ID = eINSTANCE.getRoomType_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tda593.hotel.california.facilities.RoomType#getId <em>Id</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.RoomType#getName <em>Name</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.RoomType#getDescription <em>Description</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.RoomType#getRoomApprovals <em>Room Approvals</em>}</li>

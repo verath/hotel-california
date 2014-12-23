@@ -22,7 +22,6 @@ import tda593.hotel.california.facilities.RoomType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getId <em>Id</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomTypeImpl#getRoomApprovals <em>Room Approvals</em>}</li>
@@ -312,7 +311,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
 		result.append(description);

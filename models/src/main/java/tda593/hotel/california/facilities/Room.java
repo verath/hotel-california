@@ -85,6 +85,7 @@ public interface Room extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Is Operational</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Operational</em>' attribute isn't clear,
@@ -94,7 +95,7 @@ public interface Room extends EObject {
 	 * @return the value of the '<em>Is Operational</em>' attribute.
 	 * @see #setIsOperational(boolean)
 	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_IsOperational()
-	 * @model required="true" ordered="false"
+	 * @model default="true" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isOperational();
