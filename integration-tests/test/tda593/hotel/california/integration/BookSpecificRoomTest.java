@@ -1,6 +1,7 @@
 package tda593.hotel.california.integration;
 import static org.junit.Assert.*;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
@@ -23,6 +24,8 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 	private BookingManager bookingManager;
 	private LegalEntityManager legalEntityManager;
 	private RoomManager roomManager;
+	
+	private Calendar c = Calendar.getInstance();
 	
 	@BeforeClass
 	public static void setUpData() {
@@ -58,13 +61,18 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 
 	@Test
 	public void testBookSpecificRoom() {
-		Person customer = legalEntityManager.getPerson("1");
+		c.set(2015, 5, 19);
+		Date start = c.getTime();
+		c.set(2015, 5, 21);
+		Date end = c.getTime();
+
+		Person customer = legalEntityManager.getPerson("2");
 		System.out.println("NAME IS: " + customer.getFirstname());
-		bookingManager.createBooking(new Date(0), new Date(60*60*24), customer, roomManager.getRooms().get(0));
+		bookingManager.createBooking(start, end, customer, roomManager.getRooms().get(1));
 		
 		EList<Booking> bookings = bookingManager.getBookings(customer);
+		bookings = bookingManager.getBookings(start, end);
 		assertFalse(bookings.size() == 0);
-
 		Booking booking = bookings.get(0);
 		assertTrue(booking.getRoomStay() != null);
 		assertTrue(!booking.getRoomStay().isActive());

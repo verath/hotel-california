@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california.booking.persistence.impl;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -45,7 +46,7 @@ public class LegalEntityEntityImpl implements LegalEntityEntity {
 
 	private String email;
 
-	@OneToOne(targetEntity = CreditCardInformationEntityImpl.class)
+	@OneToOne(targetEntity = CreditCardInformationEntityImpl.class, cascade={CascadeType.ALL})
 	private CreditCardInformationEntity creditCardInformationEntity;
 
 	@Id

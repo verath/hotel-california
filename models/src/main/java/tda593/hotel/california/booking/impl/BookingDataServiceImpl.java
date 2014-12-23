@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.hibernate.Hibernate;
 
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
@@ -106,7 +107,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public int count() {
-		Long count = entityManager.createQuery("SELECT COUNT(number) FROM BookingEntityImpl", Long.class).getSingleResult();
+		Long count = entityManager.createQuery("SELECT COUNT(id) FROM BookingEntityImpl", Long.class).getSingleResult();
 		// TODO : change to long
 		return count.intValue();
 	}
@@ -169,7 +170,6 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Booking> getAll(LegalEntity customer) {
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity_id=:customer", BookingEntityImpl.class);
-		System.out.println(customer.getId());
 		query.setParameter("customer", customer.getId());
 		List<BookingEntityImpl> results = query.getResultList();
 		EList<Booking> bookingResults = new BasicEList<Booking>(results.size());
@@ -186,10 +186,11 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getAll(Date from, Date to) {
-		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE startDate<=:theStartDate AND endDate<=:theEndDate", BookingEntityImpl.class);
+		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE startDate>=:theStartDate AND endDate<=:theEndDate", BookingEntityImpl.class);
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
 		List<BookingEntityImpl> results = query.getResultList();
+		
 		EList<Booking> bookingResults = new BasicEList<Booking>(results.size());
 		for (BookingEntity entity : results) {
 			bookingResults.add(entityToBooking(entity));
@@ -205,7 +206,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Booking> getAll(Date from, Date to, LegalEntity customer) {
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity=:customer " 
-				+ "AND startDate<=:thetsartDate AND endDate<=:theEndDate", BookingEntityImpl.class);
+				+ "AND startDate>=:thetsartDate AND endDate<=:theEndDate", BookingEntityImpl.class);
 		query.setParameter("customer", customer.getId());
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
@@ -258,6 +259,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		booking.setRoomStay(entityToRoomStay(bookingEntity.getRoomStayEntity()));
 		booking.setRoomType(RoomTypeDataServiceImpl.entityToRoomType(bookingEntity.getRoomTypeEntity()));
 		booking.setSpecialRequest(bookingEntity.getSpecialRequest());
+		booking.setStartDate(bookingEntity.getStartDate());
 		booking.setTravelInformation(entityToTravelInformation(bookingEntity.getTravelInformationEntity()));
 		return booking;
 	}
@@ -275,6 +277,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		entity.setRoomStayEntity(roomStayToEntity(booking.getRoomStay()));
 		entity.setRoomTypeEntity(RoomTypeDataServiceImpl.roomTypeToEntity(booking.getRoomType()));
 		entity.setSpecialRequest(booking.getSpecialRequest());
+		entity.setStartDate(booking.getStartDate());
 		entity.setTravelInformationEntity(travelInformationToEntity(booking.getTravelInformation()));
 		return entity;
 	}
