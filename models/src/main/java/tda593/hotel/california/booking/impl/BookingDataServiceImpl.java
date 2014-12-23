@@ -205,8 +205,8 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getAll(Date from, Date to, LegalEntity customer) {
-		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity=:customer " 
-				+ "AND startDate>=:thetsartDate AND endDate<=:theEndDate", BookingEntityImpl.class);
+		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity_id=:customer " 
+				+ "AND startDate>=:theStartDate AND endDate<=:theEndDate", BookingEntityImpl.class);
 		query.setParameter("customer", customer.getId());
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
