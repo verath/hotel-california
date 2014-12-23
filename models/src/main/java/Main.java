@@ -73,6 +73,7 @@ public class Main {
 //		System.out.println(k.getId());
 //		System.out.println(kcds.get("111"));
 		
+<<<<<<< HEAD
 //		rtds.set(new RoomTypeImpl("type1", null, 20));
 //		System.out.println(rtds.get("type1"));
 //		RoomType rt = rtds.get("type1");
@@ -101,6 +102,14 @@ public class Main {
 		System.out.println(BookingDataServiceImpl.entityToBooking(results.get(0)).getResponsible().getName());
 		
 		
+=======
+		rtds.set(new RoomTypeImpl("type1", null, 20));
+		System.out.println(rtds.get("type1"));
+		RoomType rt = rtds.get("type1");
+		rt.setPrice(15);
+		entityManager.merge(RoomTypeDataServiceImpl.roomTypeToEntity(rt));
+		System.out.println(rtds.get("type1"));
+>>>>>>> 81559231e143de1d11f5498b046a77da33c1f40c
 		
 		emf.close();
 	}

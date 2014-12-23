@@ -121,7 +121,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	private static LegalEntity entityToLegalEntityHelper(LegalEntity le, LegalEntityEntity entity) {
 		le.setCreditCardInformation(EntityToCreditCardInformation(entity.getCreditCardInformationEntity()));
 		le.setEmail(entity.getEmail());
-		le.setId(entity.getId());
+//		le.setId(entity.getId());
 		le.setPhone(entity.getPhone());
 		return le;
 	}
@@ -129,7 +129,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	private static LegalEntityEntityImpl legalEntityToEntityHelper(LegalEntityEntityImpl lee, LegalEntity le) {
 		lee.setCreditCardInformationEntity(CreditCardInformationToEntity(le.getCreditCardInformation()));
 		lee.setEmail(le.getEmail());
-		lee.setId(le.getId());
+//		lee.setId(le.getId());
 		lee.setPhone(le.getPhone());
 		return lee;
 	}
