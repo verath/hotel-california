@@ -91,5 +91,9 @@ public interface RoomTypeEntity {
 	 * @generated
 	 */
 	List<RoomApprovalEntity> getRoomApprovals();
+	
+	double getPrice();
+	
+	void setPrice(double price);
 
 } // RoomTypeEntity

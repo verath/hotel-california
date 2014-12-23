@@ -5,6 +5,7 @@ package tda593.hotel.california.facilities.persistence.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -37,8 +38,10 @@ public class RoomTypeEntityImpl implements RoomTypeEntity {
 	private String name;
 	private String description;	
 
-	@OneToMany(targetEntity = RoomApprovalEntityImpl.class)
+	@OneToMany(targetEntity = RoomApprovalEntityImpl.class, cascade = {CascadeType.ALL})
 	private List<RoomApprovalEntity> roomApprovals;
+	
+	private double price;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,6 +114,18 @@ public class RoomTypeEntityImpl implements RoomTypeEntity {
 		result.append(name);
 		result.append(')');
 		return result.toString();
+	}
+
+
+	@Override
+	public double getPrice() {
+		return this.price;
+	}
+
+
+	@Override
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 } //RoomTypeEntityImpl

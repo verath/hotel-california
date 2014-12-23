@@ -3620,6 +3620,10 @@
                   <element xmi:type="uml:Property" href="model.uml#_xP7e4IRdEeSPhYI_rVU2Ew"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_0IV2cYRdEeSPhYI_rVU2Ew"/>
                 </children>
+                <children xmi:type="notation:Shape" xmi:id="_StMWMIq8EeSmfLNHzEjnnA" type="3012">
+                  <element xmi:type="uml:Property" href="model.uml#_StJ58Iq8EeSmfLNHzEjnnA"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_StMWMYq8EeSmfLNHzEjnnA"/>
+                </children>
                 <styles xmi:type="notation:TitleStyle" xmi:id="_IXJ9UoRXEeSPhYI_rVU2Ew"/>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_IXJ9U4RXEeSPhYI_rVU2Ew"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_IXJ9VIRXEeSPhYI_rVU2Ew"/>
