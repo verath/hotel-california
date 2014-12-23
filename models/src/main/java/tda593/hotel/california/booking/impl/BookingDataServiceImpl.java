@@ -81,7 +81,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public Booking get(Integer id) {
-		BookingEntity bookingEntity = entityManager.find(BookingEntity.class, id);
+		BookingEntity bookingEntity = entityManager.find(BookingEntityImpl.class, id);
 		return bookingEntity == null? null : entityToBooking(bookingEntity);
 	}
 
@@ -119,10 +119,10 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	public void set(Booking object) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		if(transaction.isActive()) {
-			entityManager.persist(bookingToEntity(object));
+			entityManager.merge(bookingToEntity(object));
 		} else {
 			transaction.begin();
-			entityManager.persist(bookingToEntity(object));
+			entityManager.merge(bookingToEntity(object));
 			transaction.commit();
 		}
 	}
@@ -136,7 +136,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		for(Booking object : objects) {
-			entityManager.persist(bookingToEntity(object));
+			entityManager.merge(bookingToEntity(object));
 		}
 		transaction.commit();
 	}
@@ -168,7 +168,8 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getAll(LegalEntity customer) {
-		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity=:customer", BookingEntityImpl.class);
+		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity_id=:customer", BookingEntityImpl.class);
+		System.out.println(customer.getId());
 		query.setParameter("customer", customer.getId());
 		List<BookingEntityImpl> results = query.getResultList();
 		EList<Booking> bookingResults = new BasicEList<Booking>(results.size());

@@ -129,7 +129,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	public void set(Room object) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(roomToEntity(object));
+		entityManager.merge(roomToEntity(object));
 		transaction.commit();
 	}
 
@@ -142,7 +142,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		for(Room room : objects) {
-			entityManager.persist(roomToEntity(room));
+			entityManager.merge(roomToEntity(room));
 		}
 		transaction.commit();
 	}

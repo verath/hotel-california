@@ -4,6 +4,7 @@ package tda593.hotel.california.booking.persistence.impl;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -73,16 +74,16 @@ public class BookingEntityImpl implements BookingEntity {
 
 	private boolean isCanceled;
 
-	@OneToOne(targetEntity = RoomStayEntityImpl.class)
+	@OneToOne(targetEntity = RoomStayEntityImpl.class, cascade = {CascadeType.ALL})
 	private RoomStayEntity roomStayEntity;
 
-	@OneToOne(targetEntity = LegalEntityEntityImpl.class)
+	@OneToOne(targetEntity = LegalEntityEntityImpl.class, cascade = {CascadeType.ALL})
 	private LegalEntityEntity legalEntityEntity;
 
-	@OneToOne(targetEntity = RoomTypeEntityImpl.class)
+	@OneToOne(targetEntity = RoomTypeEntityImpl.class, cascade = {CascadeType.ALL})
 	private RoomTypeEntity roomTypeEntity;
 
-	@OneToOne(targetEntity = TravelInformationEntityImpl.class)
+	@OneToOne(targetEntity = TravelInformationEntityImpl.class, cascade = {CascadeType.ALL})
 	private TravelInformationEntity travelInformationEntity;
 
 	public BookingEntityImpl() {

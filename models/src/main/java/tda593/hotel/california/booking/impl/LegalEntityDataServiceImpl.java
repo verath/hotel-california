@@ -216,7 +216,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	public void set(LegalEntity entity) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(legalEntityToEntity(entity));
+		entityManager.merge(legalEntityToEntity(entity));
 		transaction.commit();
 	}
 
@@ -230,9 +230,9 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 		transaction.begin();
 		for(LegalEntity entity : objects) {
 			if(entity instanceof PersonEntityImpl) {
-				entityManager.persist(entityToPerson((PersonEntity) entity));
+				entityManager.merge(entityToPerson((PersonEntity) entity));
 			} else {
-				entityManager.persist(entityToOrganization((OrganizationEntity) entity));
+				entityManager.merge(entityToOrganization((OrganizationEntity) entity));
 			}
 		}
 		transaction.commit();
@@ -269,7 +269,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public EList<Person> findPerson(String firstname, String lastname) {
-		TypedQuery<PersonEntityImpl> query = entityManager.createQuery("FROM PersonEntityImpl WHERE firsname LIKE :theFirstName"
+		TypedQuery<PersonEntityImpl> query = entityManager.createQuery("FROM PersonEntityImpl WHERE firstname LIKE :theFirstName"
 				+ " AND lastname LIKE :theLastName", PersonEntityImpl.class);
 		query.setParameter("theFirstName", firstname);
 		query.setParameter("theLastName", lastname);

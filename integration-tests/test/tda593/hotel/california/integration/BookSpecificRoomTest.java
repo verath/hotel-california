@@ -59,10 +59,11 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 	@Test
 	public void testBookSpecificRoom() {
 		Person customer = legalEntityManager.getPerson("1");
+		System.out.println("NAME IS: " + customer.getFirstname());
 		bookingManager.createBooking(new Date(0), new Date(60*60*24), customer, roomManager.getRooms().get(0));
 		
 		EList<Booking> bookings = bookingManager.getBookings(customer);
-		assertTrue(bookings.size() == 0);
+		assertFalse(bookings.size() == 0);
 
 		Booking booking = bookings.get(0);
 		assertTrue(booking.getRoomStay() != null);

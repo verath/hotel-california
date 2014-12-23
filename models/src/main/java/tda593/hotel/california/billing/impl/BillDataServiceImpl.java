@@ -161,7 +161,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	public void set(Bill object) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(billToEntity(object));
+		entityManager.merge(billToEntity(object));
 		transaction.commit();
 	}
 
@@ -174,7 +174,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		for(Bill bill : objects) {
-			entityManager.persist(billToEntity(bill));
+			entityManager.merge(billToEntity(bill));
 		}
 		transaction.commit();
 	}

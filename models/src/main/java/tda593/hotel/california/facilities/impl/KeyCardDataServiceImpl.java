@@ -110,7 +110,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	public void set(KeyCard object) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(keyCardToEntity(object));
+		entityManager.merge(keyCardToEntity(object));
 		transaction.commit();
 	}
 
@@ -123,7 +123,7 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		for(KeyCard keyCard : objects) {
-			entityManager.persist(keyCardToEntity(keyCard));
+			entityManager.merge(keyCardToEntity(keyCard));
 		}
 		transaction.commit();
 	}

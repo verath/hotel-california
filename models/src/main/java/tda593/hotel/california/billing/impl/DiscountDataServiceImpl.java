@@ -209,9 +209,9 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	public void set(Discount object) {
 		entityManager.getTransaction().begin();
 		if(object.getClass().equals(PercentageDiscount.class)) {
-			entityManager.persist(percentageDiscountToEntity((PercentageDiscount) object));
+			entityManager.merge(percentageDiscountToEntity((PercentageDiscount) object));
 		} else if(object.getClass().equals(SumDiscount.class)) {
-			entityManager.persist(sumDiscountToEntity((SumDiscount) object));
+			entityManager.merge(sumDiscountToEntity((SumDiscount) object));
 		}
 		
 		entityManager.getTransaction().commit();
@@ -227,9 +227,9 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		if(objects != null && objects.size() > 0) {
 			for(Discount discount : objects) {
 				if(discount.getClass().equals(PercentageDiscount.class)) {
-					entityManager.persist(percentageDiscountToEntity((PercentageDiscount) discount));
+					entityManager.merge(percentageDiscountToEntity((PercentageDiscount) discount));
 				} else if(discount.getClass().equals(SumDiscount.class)) {
-					entityManager.persist(sumDiscountToEntity((SumDiscount) discount));
+					entityManager.merge(sumDiscountToEntity((SumDiscount) discount));
 				}
 			}
 		}
