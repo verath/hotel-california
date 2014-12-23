@@ -5,6 +5,7 @@ package tda593.hotel.california.booking.persistence.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -51,10 +52,10 @@ public class RoomStayEntityImpl implements RoomStayEntity {
 	@OneToOne(targetEntity = RoomEntityImpl.class)
 	private RoomEntity roomEntity;
 
-	@OneToMany(targetEntity = PersonEntityImpl.class)
+	@OneToMany(targetEntity = PersonEntityImpl.class, cascade = {CascadeType.ALL})
 	private List<PersonEntity> personEntities;
 
-	@OneToMany(targetEntity = StayRequestEntityImpl.class)
+	@OneToMany(targetEntity = StayRequestEntityImpl.class, cascade = {CascadeType.ALL})
 	private List<StayRequestEntity> stayRequestEntities;
 
 	@Id

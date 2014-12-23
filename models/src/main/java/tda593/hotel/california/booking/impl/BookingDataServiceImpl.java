@@ -245,6 +245,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 
 	public static Booking entityToBooking(BookingEntity bookingEntity) {
+		if(bookingEntity == null) {
+			return null;
+		}
 		Booking booking = BookingFactory.eINSTANCE.createBooking();
 		booking.setEndDate(bookingEntity.getEndDate());
 		booking.setId(bookingEntity.getId());
@@ -259,6 +262,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	public static BookingEntityImpl bookingToEntity(Booking booking) {
+		if(booking == null) {
+			return null;
+		}
 		BookingEntityImpl entity = new BookingEntityImpl();
 		entity.setEndDate(booking.getEndDate());
 		entity.setId(booking.getId());
@@ -273,6 +279,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	private static TravelInformation entityToTravelInformation(TravelInformationEntity entity) {
+		if(entity == null) {
+			return null;
+		}
 		TravelInformation info = BookingFactory.eINSTANCE.createTravelInformation();
 		info.setComment(entity.getComment());
 		info.setId(entity.getId());
@@ -282,6 +291,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	private static TravelInformationEntityImpl travelInformationToEntity(TravelInformation info) {
+		if(info == null) {
+			return null;
+		}
 		TravelInformationEntityImpl entity = new TravelInformationEntityImpl();
 		entity.setComment(info.getComment());
 		entity.setId(info.getId());
@@ -291,6 +303,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	private static StayRequestEntityImpl stayRequestToEntity(StayRequest request) {
+		if(request == null) {
+			return null;
+		}
 		StayRequestEntityImpl entity = new StayRequestEntityImpl();
 		entity.setId(request.getId());
 		entity.setText(request.getText());
@@ -299,6 +314,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	private static StayRequest entityToStayRequest(StayRequestEntity entity) {
+		if(entity == null) {
+			return null;
+		}
 		StayRequest request = BookingFactory.eINSTANCE.createStayRequest();
 		request.setId(entity.getId());
 		request.setText(entity.getText());
@@ -307,6 +325,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	private static RoomStayEntityImpl roomStayToEntity(RoomStay roomStay) {
+		if(roomStay == null) {
+			return null;
+		}
 		RoomStayEntityImpl entity = new RoomStayEntityImpl();
 		entity.setActive(roomStay.isActive());
 		entity.setId(roomStay.getId());
@@ -328,6 +349,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	}
 	
 	private static RoomStay entityToRoomStay(RoomStayEntity entity) {
+		if(entity == null) {
+			return null;
+		}
 		RoomStay roomStay = BookingFactory.eINSTANCE.createRoomStay();
 		roomStay.setActive(entity.isActive());
 		roomStay.setId(entity.getId());

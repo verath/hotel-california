@@ -5,6 +5,7 @@ package tda593.hotel.california.facilities.persistence.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -54,10 +55,10 @@ public class RoomEntityImpl implements RoomEntity {
 	@OneToOne(targetEntity = RoomTypeEntityImpl.class)
 	private RoomTypeEntity roomTypeEntity;
 
-	@OneToMany(targetEntity = KeyCardEntityImpl.class)
+	@OneToMany(targetEntity = KeyCardEntityImpl.class, cascade = {CascadeType.ALL})
 	private List<KeyCardEntity> allowedKeyCards;
 
-	@OneToMany(targetEntity = DisabilityApprovalEntityImpl.class)
+	@OneToMany(targetEntity = DisabilityApprovalEntityImpl.class, cascade = {CascadeType.ALL})
 	private List<DisabilityApprovalEntity> disabilityApprovals;
 
 	/**
