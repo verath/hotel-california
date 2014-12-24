@@ -113,9 +113,43 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		assertEquals(customer.getId(), booking.getResponsible().getId());
 	}
 	
-	@Test
+	/**
+	 * This test represents the actions which causes the "Room is not available" 
+	 * alternative flow.
+	 */
+	@Test(expected = IllegalArgumentException.class)
 	public void testBookSpecificRoomThatIsUnavailable() {
+		// Create a booking to make the room unavailable
+		c.set(2015, 2, 9);
+		Date otherFrom = c.getTime();
+		c.set(2015, 2, 14);
+		Date otherTo = c.getTime();
+		Room room = roomManager.getRooms().get(0);
+		bookingManager.createBooking(otherFrom, otherTo, legalEntityManager.getPerson("1"), room);
+		System.out.println("hejsan" + (bookingManager.isRoomAvailable(otherFrom, otherTo, room.getRoomNumber())? "True" : "false"));
 		
+		// Actor enters the date range and room number.
+		// (The actor enters a time span which overlaps that of the booking above)
+		c.set(2015, 2, 12);
+		Date from = c.getTime();
+		c.set(2015, 2, 15);
+		Date to = c.getTime();
+		
+		// Assume: ...room is available. 
+		assertFalse(bookingManager.isRoomAvailable(from, to, room.getRoomNumber()));
+		
+		// Test overlapping at the other end
+		c.set(2015, 2, 8);
+		from = c.getTime();
+		c.set(2015, 2, 10);
+		to = c.getTime();
+		assertFalse(bookingManager.isRoomAvailable(from, to, room.getRoomNumber()));
+		
+		// Make sure you canno't book an unavailable room
+		int countBefore = bookingManager.getBookings(from, to).size();
+		bookingManager.createBooking(from, to, legalEntityManager.getPerson("1"), room);
+		int countAfter = bookingManager.getBookings(from, to).size();
+		assertEquals(countBefore, countAfter);
 	}
 
 	@Test
