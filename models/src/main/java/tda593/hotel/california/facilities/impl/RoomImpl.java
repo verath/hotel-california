@@ -610,5 +610,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(')');
 		return result.toString();
 	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if(other == null || other.getClass() != getClass()) {
+			return false;
+		}
+		
+		return ((RoomImpl) other).roomNumber == roomNumber;
+	}
 
 } //RoomImpl
