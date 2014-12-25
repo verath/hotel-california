@@ -273,7 +273,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Room getRoom(String roomNumber) {
 		if(roomNumber == null || roomNumber.isEmpty()) {
