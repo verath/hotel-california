@@ -240,6 +240,21 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 	
 	@Test
 	public void testBookSpecificRoomWithNoValidCreditCard() {
-		// I think these are provided by the banking component?
+		// TODO: verify current credit card is not valid (assume for now), provided by banking component
+		
+		LegalEntity legalEntity = legalEntityManager.getLegalEntity(1);
+		c.set(2015, 2, 4);
+		
+		String firstname = "Hans";
+		String lastname = "Johansson";
+		String cardNumber = "5353553";
+		String ccv = "555";
+		Date expirationDate = c.getTime();
+		
+		legalEntityManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate);
+		
+		LegalEntity legalEntityFromDatabase = legalEntityManager.getLegalEntity(1);
+		
+		assertTrue(legalEntityFromDatabase.getCreditCardInformation() != null);
 	}
 }
