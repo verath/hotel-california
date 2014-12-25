@@ -11,14 +11,20 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingManager;
+import tda593.hotel.california.booking.CreditCardInformation;
+import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
+import tda593.hotel.california.booking.impl.CreditCardInformationImpl;
+import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.util.BookingSwitch;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
+import tda593.hotel.california.util.DateUtil;
 
 
 public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest {
@@ -151,30 +157,89 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		to = c.getTime();
 		assertFalse(bookingManager.isRoomAvailable(from, to, room.getRoomNumber()));
 
-		// Make sure you canno't book an unavailable room
+		// Make sure you cannot book an unavailable room
 		int countBefore = bookingManager.getBookings(from, to).size();
 		bookingManager.createBooking(from, to, legalEntityManager.getPerson("1"), room);
 		int countAfter = bookingManager.getBookings(from, to).size();
 		assertEquals(countBefore, countAfter);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testBookSpecificRoomWithInvalidInput() {
+		// Starting date cannot be after end date
+		c.set(2015, 2, 5);
+		Date from = c.getTime();
+		c.set(2015, 2, 4);
+		Date to = c.getTime();
 		
+		assertFalse(DateUtil.isDateRangeValid(from, to));
+		
+		String roomNumber1 = "abc";
+		String roomNumber2 = "-1";
+		String roomNumber3 = "@1231€#1#5";
+		
+		String[] roomNumbers = new String[] {
+			roomNumber1,
+			roomNumber2,
+			roomNumber3
+		};
+		
+		// TODO: this does not work as I want it to right now. Better solution?
+		for(String roomNumber : roomNumbers) {
+//			try {
+				roomManager.getRoom(roomNumber);
+//			} catch (IllegalArgumentException e) {
+//				assertInvalidInput(roomManager, roomNumber);
+//			}
+		}
+	}
+	
+	private void assertInvalidInput(RoomManager roomManager, String roomNumber) {
+		try {
+			roomManager.getRoom(roomNumber);
+		} catch (IllegalArgumentException e) {
+			
+		}
 	}
 	
 	@Test
-	public void testBookSpeciciRoomWithNoRegisteredCustomer() {
+	public void testBookSpecificRoomWithNoRegisteredCustomer() {
+		// Get a customer that does not exist
+		int id = -1;
+		LegalEntity customer = legalEntityManager.getLegalEntity(id);
+		assertTrue(customer == null);
+	
+		// Alternative flow, customer wants to register
+		// Assume that this is a person that wants to book
+		String firstName = "Bob";
+		String lastName = "Hansson";
+		String SSN = "097251285935";
+		String phone = "349389413894";
+		String email = "reirjaei@gejia.com";
+		CreditCardInformation cc = BookingFactory.eINSTANCE.createCreditCardInformation();
+		cc.setCardNumber("5351351");
+		cc.setCcv("stuff");
 		
+		legalEntityManager.createPerson(firstName, lastName, SSN, phone, email, cc);
+		// TODO: how do we check that it was created? Is the only way by getting and then checking for null?
+		// maybe throw some error instead?
+		
+		// Assure that customer was put in database
+		Person person = legalEntityManager.getPerson(SSN);
+		assertTrue(person != null);
+		assertEquals(person.getSocialSecurityNumber(), SSN);
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testBookSpecificRoomThatDoesNotExist() {
+		String nonExistingRoomNumber = "5315351351";
+		Room room = roomManager.getRoom(nonExistingRoomNumber);
 		
+		assertTrue(room == null);
 	}
 	
 	@Test
 	public void testBookSpecificRoomWithNoValidCreditCard() {
-		
+		// I think these are provided by the banking component?
 	}
 }
