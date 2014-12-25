@@ -1284,6 +1284,41 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_xN610Iw2EeSx4_92dxH2CA" name="createPerson">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xN610Yw2EeSx4_92dxH2CA" name="firstname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xN610ow2EeSx4_92dxH2CA" name="lastname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xN6104w2EeSx4_92dxH2CA" name="SSN">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xN611Iw2EeSx4_92dxH2CA" name="phone">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xN611Yw2EeSx4_92dxH2CA" name="email">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_66PKIIw2EeSx4_92dxH2CA" name="creditCardInformation" type="_28JnEHcFEeSbBJzXJgLK5Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xN611ow2EeSx4_92dxH2CA" type="_5Km6YHZPEeSrX_LICIhx2Q" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_-y2acIw2EeSx4_92dxH2CA" name="createOrganization">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y2acYw2EeSx4_92dxH2CA" name="name">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y2acow2EeSx4_92dxH2CA" name="organizationNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y2ac4w2EeSx4_92dxH2CA" name="phone">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y2adIw2EeSx4_92dxH2CA" name="email">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_CEfxYIw3EeSx4_92dxH2CA" name="creditCardInformation" type="_28JnEHcFEeSbBJzXJgLK5Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y2adYw2EeSx4_92dxH2CA" type="_WOTLsHZTEeSbBJzXJgLK5Q" direction="return"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_qq-mkIFcEeSZuOQR5MrPYg" name="LegalEntityManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_1skEsIFcEeSZuOQR5MrPYg" general="_tuIWIHb2EeSbBJzXJgLK5Q"/>

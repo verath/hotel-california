@@ -925,6 +925,24 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation() {
+		return legalEntityManagerEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation() {
+		return legalEntityManagerEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLegalEntityManagerImpl() {
 		return legalEntityManagerImplEClass;
 	}
@@ -1154,6 +1172,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE);
+		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION);
+		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION);
 
 		legalEntityManagerImplEClass = createEClass(LEGAL_ENTITY_MANAGER_IMPL);
 		createEReference(legalEntityManagerImplEClass, LEGAL_ENTITY_MANAGER_IMPL__LEGAL_ENTITY_DATA_SERVICE);
@@ -1421,6 +1441,21 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEString(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "expirationDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation(), this.getPerson(), "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getCreditCardInformation(), "creditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation(), this.getOrganization(), "createOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "organizationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getCreditCardInformation(), "creditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(legalEntityManagerImplEClass, LegalEntityManagerImpl.class, "LegalEntityManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLegalEntityManagerImpl_LegalEntityDataService(), this.getLegalEntityDataService(), null, "legalEntityDataService", null, 1, 1, LegalEntityManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

@@ -154,14 +154,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email) {
-		Person person = BookingFactory.eINSTANCE.createPerson();
-		person.setFirstname(firstname);
-		person.setLastname(lastname);
-		person.setSocialSecurityNumber(SSN);
-		person.setPhone(phone);
-		person.setEmail(email);
-		legalEntityDataService.set(person);
-		return person;
+		return createPerson(firstname, lastname, SSN, phone, email, null);
 	}
 
 	/**
@@ -170,12 +163,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Organization createOrganization(String name, String organizationNumber, String phone, String email) {
-		Organization organization = BookingFactory.eINSTANCE.createOrganization();
-		organization.setName(name);
-		organization.setOrganizationNumber(organizationNumber);
-		organization.setPhone(phone);
-		organization.setEmail(email);
-		return organization;
+		return createOrganization(name, organizationNumber, phone, email, null);
 	}
 
 	/**
@@ -208,6 +196,38 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 		legalEntity.setCreditCardInformation(creditCardInfo);
 		
 		legalEntityDataService.set(legalEntity);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email, CreditCardInformation creditCardInformation) {
+		Person person = BookingFactory.eINSTANCE.createPerson();
+		person.setFirstname(firstname);
+		person.setLastname(lastname);
+		person.setSocialSecurityNumber(SSN);
+		person.setPhone(phone);
+		person.setEmail(email);
+		person.setCreditCardInformation(creditCardInformation);
+		legalEntityDataService.set(person);
+		return person;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Organization createOrganization(String name, String organizationNumber, String phone, String email, CreditCardInformation creditCardInformation) {
+		Organization organization = BookingFactory.eINSTANCE.createOrganization();
+		organization.setName(name);
+		organization.setOrganizationNumber(organizationNumber);
+		organization.setPhone(phone);
+		organization.setEmail(email);
+		organization.setCreditCardInformation(creditCardInformation);
+		return organization;
 	}
 
 	/**
@@ -294,6 +314,10 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE:
 				setCreditCardInformation((LegalEntity)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (Date)arguments.get(5));
 				return null;
+			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION:
+				return createPerson((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (CreditCardInformation)arguments.get(5));
+			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION:
+				return createOrganization((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (CreditCardInformation)arguments.get(4));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

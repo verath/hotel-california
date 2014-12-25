@@ -83,4 +83,20 @@ public interface LegalEntityManager extends EObject {
 	 */
 	void setCreditCardInformation(LegalEntity legalEntity, String firstname, String lastname, String cardNumber, String ccv, Date expirationDate);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" firstnameRequired="true" firstnameOrdered="false" lastnameRequired="true" lastnameOrdered="false" SSNRequired="true" SSNOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false" creditCardInformationRequired="true" creditCardInformationOrdered="false"
+	 * @generated
+	 */
+	Person createPerson(String firstname, String lastname, String SSN, String phone, String email, CreditCardInformation creditCardInformation);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" organizationNumberRequired="true" organizationNumberOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false" creditCardInformationRequired="true" creditCardInformationOrdered="false"
+	 * @generated
+	 */
+	Organization createOrganization(String name, String organizationNumber, String phone, String email, CreditCardInformation creditCardInformation);
+
 } // LegalEntityManager

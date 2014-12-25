@@ -1359,13 +1359,31 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = 7;
 
 	/**
+	 * The operation id for the '<em>Create Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = 8;
+
+	/**
+	 * The operation id for the '<em>Create Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = 9;
+
+	/**
 	 * The number of operations of the '<em>Legal Entity Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_MANAGER_OPERATION_COUNT = 8;
+	int LEGAL_ENTITY_MANAGER_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.LegalEntityManagerImplImpl <em>Legal Entity Manager Impl</em>}' class.
@@ -1466,6 +1484,24 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int LEGAL_ENTITY_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE;
+
+	/**
+	 * The operation id for the '<em>Create Person</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER_IMPL___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION;
+
+	/**
+	 * The operation id for the '<em>Create Organization</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION;
 
 	/**
 	 * The number of operations of the '<em>Legal Entity Manager Impl</em>' class.
@@ -2429,6 +2465,26 @@ public interface BookingPackage extends EPackage {
 	EOperation getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#createPerson(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation) <em>Create Person</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Person</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityManager#createPerson(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#createOrganization(java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation) <em>Create Organization</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Organization</em>' operation.
+	 * @see tda593.hotel.california.booking.LegalEntityManager#createOrganization(java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation)
+	 * @generated
+	 */
+	EOperation getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.LegalEntityManagerImpl <em>Legal Entity Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3239,6 +3295,22 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = eINSTANCE.getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Person</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = eINSTANCE.getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Organization</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = eINSTANCE.getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.LegalEntityManagerImplImpl <em>Legal Entity Manager Impl</em>}' class.
