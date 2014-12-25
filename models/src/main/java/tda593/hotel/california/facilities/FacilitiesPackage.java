@@ -290,13 +290,22 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = 8;
 
 	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_ROOM__INT = 9;
+
+	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_OPERATION_COUNT = 9;
+	int ROOM_MANAGER_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.AdminRoomManager <em>Admin Room Manager</em>}' class.
@@ -397,6 +406,15 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___GET_ROOM__INT = ROOM_MANAGER___GET_ROOM__INT;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -769,6 +787,15 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM__INT = ROOM_MANAGER___GET_ROOM__INT;
 
 	/**
 	 * The number of operations of the '<em>Room Manager Impl</em>' class.
@@ -1534,6 +1561,15 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
 
 	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM__INT = ROOM_MANAGER_IMPL___GET_ROOM__INT;
+
+	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1883,6 +1919,16 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoomManager__GetRoomTypeAmount__RoomType();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoom(java.lang.String) <em>Get Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Room</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#getRoom(java.lang.String)
+	 * @generated
+	 */
+	EOperation getRoomManager__GetRoom__int();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
@@ -2483,6 +2529,14 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = eINSTANCE.getRoomManager__GetRoomTypeAmount__RoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___GET_ROOM__INT = eINSTANCE.getRoomManager__GetRoom__int();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.

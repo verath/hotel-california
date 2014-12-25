@@ -201,9 +201,10 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email, CreditCardInformation creditCardInformation) {
+		// TODO: VALIDATE
 		Person person = BookingFactory.eINSTANCE.createPerson();
 		person.setFirstname(firstname);
 		person.setLastname(lastname);
@@ -218,9 +219,10 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Organization createOrganization(String name, String organizationNumber, String phone, String email, CreditCardInformation creditCardInformation) {
+		// TODO: VALIDATE
 		Organization organization = BookingFactory.eINSTANCE.createOrganization();
 		organization.setName(name);
 		organization.setOrganizationNumber(organizationNumber);

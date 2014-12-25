@@ -275,6 +275,34 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Room getRoom(String roomNumber) {
+		if(roomNumber == null || roomNumber.isEmpty()) {
+			throw new IllegalArgumentException("Room number must not be empty.");
+		}
+		
+		String regex = "[0-9]+"; // Room number contains only digits?
+		if(roomNumber.matches(regex)) {
+			throw new IllegalArgumentException("Room number must only contain digits.");
+		}
+		
+		int number = 0;
+		try {
+			number = Integer.parseInt(roomNumber);
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException("Room number must only contain digits.");
+		}
+		
+		if(number < 0) {
+			throw new IllegalArgumentException("Room number must not be negative.");
+		}
+		return roomDataService.get(roomNumber);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -340,6 +368,8 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return getRoomTypeAmounts();
 			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE:
 				return getRoomTypeAmount((RoomType)arguments.get(0));
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM__INT:
+				return getRoom((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
