@@ -304,7 +304,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 			throw new IllegalArgumentException("Room number must not be empty.");
 		}
 		
-		String regex = "^[0-9]$"; // Room number contains only digits?
+		String regex = "^[0-9]+$"; // Room number contains only digits?
 		if(!roomNumber.matches(regex)) {
 			throw new IllegalArgumentException("Room number must only contain digits.");
 		}
