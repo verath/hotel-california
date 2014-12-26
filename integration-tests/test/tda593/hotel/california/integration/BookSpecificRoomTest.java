@@ -231,9 +231,9 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		assertEquals(person.getSocialSecurityNumber(), SSN);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testBookSpecificRoomThatDoesNotExist() {
-		String nonExistingRoomNumber = "5315351351";
+		String nonExistingRoomNumber = "15351351";
 		Room room = roomManager.getRoom(nonExistingRoomNumber);
 		
 		assertTrue(room == null);
