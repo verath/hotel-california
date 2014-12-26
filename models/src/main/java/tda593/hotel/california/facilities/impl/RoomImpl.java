@@ -612,12 +612,29 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	}
 	
 	@Override
-	public boolean equals(Object other) {
-		if(other == null || other.getClass() != getClass()) {
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((roomNumber == null) ? 0 : roomNumber.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-		}
-		
-		return ((RoomImpl) other).roomNumber == roomNumber;
+		if (getClass() != obj.getClass())
+			return false;
+		RoomImpl other = (RoomImpl) obj;
+		if (roomNumber == null) {
+			if (other.roomNumber != null)
+				return false;
+		} else if (!roomNumber.equals(other.roomNumber))
+			return false;
+		return true;
 	}
 
 } //RoomImpl
