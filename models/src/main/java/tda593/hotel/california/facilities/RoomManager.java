@@ -98,4 +98,12 @@ public interface RoomManager extends EObject {
 	 */
 	Room getRoom(String roomNumber);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false"
+	 * @generated
+	 */
+	RoomType getRoomType(String name);
+
 } // RoomManager

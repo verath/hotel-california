@@ -296,7 +296,16 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___GET_ROOM__INT = 9;
+	int ROOM_MANAGER___GET_ROOM__STRING = 9;
+
+	/**
+	 * The operation id for the '<em>Get Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_ROOM_TYPE__STRING = 10;
 
 	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
@@ -305,7 +314,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_OPERATION_COUNT = 10;
+	int ROOM_MANAGER_OPERATION_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.AdminRoomManager <em>Admin Room Manager</em>}' class.
@@ -414,7 +423,16 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___GET_ROOM__INT = ROOM_MANAGER___GET_ROOM__INT;
+	int ADMIN_ROOM_MANAGER___GET_ROOM__STRING = ROOM_MANAGER___GET_ROOM__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -795,7 +813,16 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM__INT = ROOM_MANAGER___GET_ROOM__INT;
+	int ROOM_MANAGER_IMPL___GET_ROOM__STRING = ROOM_MANAGER___GET_ROOM__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
 
 	/**
 	 * The number of operations of the '<em>Room Manager Impl</em>' class.
@@ -1567,7 +1594,16 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM__INT = ROOM_MANAGER_IMPL___GET_ROOM__INT;
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM__STRING = ROOM_MANAGER_IMPL___GET_ROOM__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -1928,7 +1964,17 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.RoomManager#getRoom(java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomManager__GetRoom__int();
+	EOperation getRoomManager__GetRoom__String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getRoomType(java.lang.String) <em>Get Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Room Type</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#getRoomType(java.lang.String)
+	 * @generated
+	 */
+	EOperation getRoomManager__GetRoomType__String();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
@@ -2536,7 +2582,15 @@ public interface FacilitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_MANAGER___GET_ROOM__INT = eINSTANCE.getRoomManager__GetRoom__int();
+		EOperation ROOM_MANAGER___GET_ROOM__STRING = eINSTANCE.getRoomManager__GetRoom__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___GET_ROOM_TYPE__STRING = eINSTANCE.getRoomManager__GetRoomType__String();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.

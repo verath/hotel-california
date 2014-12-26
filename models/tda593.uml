@@ -321,6 +321,12 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_z_hBcIw7EeSx4_92dxH2CA" name="room" type="_6SLu0HZBEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_sAFNAIz8EeSx4_92dxH2CA" name="getRoomType">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_v8WOQIz8EeSx4_92dxH2CA" name="name">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_yYhVwIz8EeSx4_92dxH2CA" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q" direction="return"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Wg-MYIFREeSZuOQR5MrPYg" name="RoomManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_EcmykIFSEeSZuOQR5MrPYg" general="_SzH3QHoiEeSVKdBxhP6Y7A"/>

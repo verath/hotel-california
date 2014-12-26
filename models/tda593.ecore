@@ -117,6 +117,9 @@
           <eOperations name="getRoom" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/Room">
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
+          <eOperations name="getRoomType" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/RoomType">
+            <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="RoomType">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"

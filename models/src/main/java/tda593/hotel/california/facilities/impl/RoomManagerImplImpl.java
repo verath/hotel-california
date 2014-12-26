@@ -5,15 +5,12 @@ package tda593.hotel.california.facilities.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardManager;
@@ -188,9 +185,13 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void registerKeyCard(KeyCard keyCard, String roomNumber) {
-		Room room = roomDataService.get(roomNumber);
-		room.registerKeyCard(keyCard);
-		roomDataService.set(room);
+		if(keyCard != null && isRoomNumberValid(roomNumber)) {
+			Room room = roomDataService.get(roomNumber);
+			if(room != null) {
+				room.registerKeyCard(keyCard);
+				roomDataService.set(room);
+			}
+		}
 	}
 
 	/**
@@ -199,8 +200,12 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void registerKeyCard(String keyCardNbr, String roomNumber) {
-		KeyCard keyCard = keyCardManager.getKeyCard(keyCardNbr);
-		registerKeyCard(keyCard, roomNumber);
+		if(keyCardNbr != null && !keyCardNbr.isEmpty() && isRoomNumberValid(roomNumber)) {
+			KeyCard keyCard = keyCardManager.getKeyCard(keyCardNbr);
+			if(keyCard != null) {
+				registerKeyCard(keyCard, roomNumber);
+			}
+		}
 	}
 
 	/**
@@ -218,9 +223,13 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void unregisterKeyCard(KeyCard keyCard, String roomNumber) {
-		Room room = roomDataService.get(roomNumber);
-		room.unregisterKeyCard(keyCard);
-		roomDataService.set(room);
+		if(keyCard != null && isRoomNumberValid(roomNumber)) {
+			Room room = roomDataService.get(roomNumber);
+			if(room != null) {
+				room.unregisterKeyCard(keyCard);
+				roomDataService.set(room);
+			}
+		}
 	}
 
 	/**
@@ -229,8 +238,12 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void unregisterKeyCard(String keyCardNbr, String roomNumber) {
-		KeyCard keyCard = keyCardManager.getKeyCard(keyCardNbr);
-		unregisterKeyCard(keyCard, roomNumber);
+		if(keyCardNbr != null && !keyCardNbr.isEmpty() && isRoomNumberValid(roomNumber)) {
+			KeyCard keyCard = keyCardManager.getKeyCard(keyCardNbr);
+			if(keyCard != null) {
+				unregisterKeyCard(keyCard, roomNumber);
+			}
+		}
 	}
 
 	/**
@@ -239,9 +252,11 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void unregisterAllKeyCards(String roomNumber) {
-		Room room = roomDataService.get(roomNumber);
-		room.unregisterKeyCards();
-		roomDataService.set(room);
+		if(isRoomNumberValid(roomNumber)) {
+			Room room = roomDataService.get(roomNumber);
+			room.unregisterKeyCards();
+			roomDataService.set(room);
+		}
 	}
 
 	/**
@@ -272,7 +287,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public int getRoomTypeAmount(RoomType roomType) {
-		return getRoomTypeAmounts().get(roomType);
+		return roomType != null ? getRoomTypeAmounts().get(roomType) : 0;
 	}
 
 	/**
@@ -281,6 +296,10 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Room getRoom(String roomNumber) {
+		return isRoomNumberValid(roomNumber) ? roomDataService.get(roomNumber) : null;
+	}
+	
+	private boolean isRoomNumberValid(String roomNumber) {
 		if(roomNumber == null || roomNumber.isEmpty()) {
 			throw new IllegalArgumentException("Room number must not be empty.");
 		}
@@ -300,7 +319,17 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 		if(number < 0) {
 			throw new IllegalArgumentException("Room number must not be negative.");
 		}
-		return roomDataService.get(roomNumber);
+		
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public RoomType getRoomType(String name) {
+		return name != null ? roomTypeDataService.get(name) : null; 
 	}
 
 	/**
@@ -373,8 +402,10 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return getRoomTypeAmounts();
 			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE:
 				return getRoomTypeAmount((RoomType)arguments.get(0));
-			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM__INT:
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM__STRING:
 				return getRoom((String)arguments.get(0));
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING:
+				return getRoomType((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
