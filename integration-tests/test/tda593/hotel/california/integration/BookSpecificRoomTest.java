@@ -205,9 +205,10 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 	@Test
 	public void testBookSpecificRoomWithNoRegisteredCustomer() {
 		// Get a customer that does not exist
-		int id = -1;
-		LegalEntity customer = legalEntityManager.getLegalEntity(id);
-		assertTrue(customer == null);
+		String firstNameThatDoesNotExist = "Goran";
+		String lastNameThatDoesNotExist = "Goransson";
+		EList<Person> matches = legalEntityManager.findPerson(firstNameThatDoesNotExist, lastNameThatDoesNotExist);
+		assertTrue(matches.size() == 0);
 	
 		// Alternative flow, customer wants to register
 		// Assume that this is a person that wants to book
