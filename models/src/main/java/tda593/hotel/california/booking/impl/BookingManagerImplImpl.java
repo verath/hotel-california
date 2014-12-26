@@ -194,28 +194,31 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to, RoomType roomType) {
-		EList<Room> rooms = new BasicEList<Room>(roomManager.getRooms());
+		EList<Room> availableRooms = new BasicEList<Room>(roomManager.getRooms());
 		EList<Booking> bookings = getBookings(from, to);
 		EList<Room> bookedRooms = new BasicEList<Room>();
+		
+		// Reason for flow below: it seems more efficient to add all booked rooms to a list
+		// and then remove them from the list of all rooms at the same time.
 		
 		// Remove all rooms that are booked
 		if(roomType!=null) {
 			for(Booking booking : bookings) {
-				if(!booking.isCanceled() && booking.getRoomType().equals(roomType)) {
+				if(booking.getRoomStay() != null && !booking.isCanceled() && booking.getRoomType().equals(roomType)) {
 					bookedRooms.add(booking.getRoomStay().getRoom());
 				}
 			}
 		} else {
 			for(Booking booking : bookings) {
-				if(!booking.isCanceled()) {
+				if(booking.getRoomStay() != null && !booking.isCanceled()) {
 					bookedRooms.add(booking.getRoomStay().getRoom());
 				}
 			}
 		}
-		rooms.removeAll(bookedRooms);
+		availableRooms.removeAll(bookedRooms);
 		
 		// Remove rooms that are not operational
-		Iterator<Room> roomIter = rooms.iterator();
+		Iterator<Room> roomIter = availableRooms.iterator();
 		while(roomIter.hasNext()) {
 			Room curRoom = roomIter.next();
 			if(!curRoom.isOperational()) {
@@ -223,7 +226,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			}
 		}
 		
-		return rooms;
+		return availableRooms;
 	}
 
 	/**
@@ -232,18 +235,19 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public Map<RoomType, Integer> getAvailableRoomTypeAmounts(Date from, Date to) {
-		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();
+		Map<RoomType, Integer> roomTypeAmounts = roomManager.getRoomTypeAmounts();
+		EList<Booking> bookings = getBookings(from, to);
 		
-		EList<Room> availableRooms = getAvailableRooms(from, to);
-		for(Room room : availableRooms) {
-			RoomType roomType = room.getRoomType();
+		// We need to look at bookings to see which room types are not available.
+		// One might think that looking at which rooms are available is enough, but it isn't
+		// since a room being available does not imply that its room type is available. This
+		// is because when booking room types, a room is not assigned until check in. A room type
+		// is not available if it has been booked.
+		for(Booking booking : bookings) {
+			RoomType roomType = booking.getRoomType();
 			
 			Integer amountOfRoomTypeAvailable = roomTypeAmounts.get(roomType);
-			if(amountOfRoomTypeAvailable == null) {
-				roomTypeAmounts.put(roomType, 1);
-			} else {
-				roomTypeAmounts.put(roomType, amountOfRoomTypeAvailable + 1);
-			}
+			roomTypeAmounts.put(roomType, amountOfRoomTypeAvailable - 1);
 		}
 		
 		return roomTypeAmounts;
@@ -264,6 +268,11 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public void createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
+		if(!isRoomTypeAvailable(from, to, roomType)) {
+			throw new IllegalArgumentException("The specified room type is either not bookable or is already "
+					+ "booked in that period");
+		}
+		
 		Booking booking = new BookingImpl();
 		booking.setStartDate(from);
 		booking.setEndDate(to);
