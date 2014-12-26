@@ -232,17 +232,18 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public Map<RoomType, Integer> getAvailableRoomTypeAmounts(Date from, Date to) {
-		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();  // TODO: replace this
+		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();
 		
-		// This implementation might be better
 		EList<Room> availableRooms = getAvailableRooms(from, to);
 		for(Room room : availableRooms) {
 			RoomType roomType = room.getRoomType();
 			
-			int amountOfRoomTypeAvailable = roomTypeAmounts.get(roomType);
-			amountOfRoomTypeAvailable++;
-			
-			roomTypeAmounts.put(roomType, amountOfRoomTypeAvailable);
+			Integer amountOfRoomTypeAvailable = roomTypeAmounts.get(roomType);
+			if(amountOfRoomTypeAvailable == null) {
+				roomTypeAmounts.put(roomType, 1);
+			} else {
+				roomTypeAmounts.put(roomType, amountOfRoomTypeAvailable + 1);
+			}
 		}
 		
 		return roomTypeAmounts;
@@ -303,6 +304,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			if(room.getRoomNumber().equals(roomNumber)) {
 				return true;
 			}
+			
 		}
 		
 		return false;
@@ -374,9 +376,13 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public boolean isRoomTypeAvailable(Date from, Date to, RoomType roomType) {
-		Map<RoomType, Integer> roomTypeAmounts = getAvailableRoomTypeAmounts(from, to);
+		Map<RoomType, Integer> availableRoomTypes = getAvailableRoomTypeAmounts(from, to);
 		
-		return roomTypeAmounts.get(roomType) > 0 ? true : false;
+		if(availableRoomTypes.get(roomType) == null) {
+			return false;
+		} else {
+			return availableRoomTypes.get(roomType) > 0 ? true : false;
+		}
 	}
 
 	/**

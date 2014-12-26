@@ -3,6 +3,7 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -249,13 +250,17 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Map<RoomType, Integer> getRoomTypeAmounts() {
-		Map<RoomType, Integer> roomTypeAmounts = new TreeMap<RoomType, Integer>();
+		Map<RoomType, Integer> roomTypeAmounts = new HashMap<RoomType, Integer>();
 
 		for(Room room : getRooms()) {
 			RoomType roomType = room.getRoomType();
-			int roomTypeAmount = roomTypeAmounts.get(roomType);
-			roomTypeAmount++;
-			roomTypeAmounts.put(roomType, roomTypeAmount);
+			
+			Integer roomTypeAmount = roomTypeAmounts.get(roomType);
+			if(roomTypeAmount == null) {
+				roomTypeAmounts.put(roomType, 1);
+			} else {
+				roomTypeAmounts.put(roomType, roomTypeAmount + 1);
+			}
 		}
 		
 		return roomTypeAmounts;
