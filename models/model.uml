@@ -946,9 +946,6 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_a3lD0HpMEeSZQp8F1uHBGQ" name="Usage7" client="_UpkpcHpMEeSZQp8F1uHBGQ">
       <supplier xmi:type="uml:Interface" href="tda593.uml#_xX22IHZXEeSbBJzXJgLK5Q"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_fKcnMHpMEeSZQp8F1uHBGQ" name="Usage8" client="_UpkpcHpMEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="tda593.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_r-78cHpDEeSZQp8F1uHBGQ" name="CustomerProvides">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_r-78cXpDEeSZQp8F1uHBGQ" name="makePayment">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_r-78cnpDEeSZQp8F1uHBGQ" name="ccNumber">
@@ -1003,10 +1000,6 @@
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_vwjx8HpZEeSept0-dI1XSQ" name="Realization6" client="_BzOaEHpCEeSZQp8F1uHBGQ">
       <supplier xmi:type="uml:Interface" href="tda593.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
       <contract xmi:type="uml:Interface" href="tda593.uml#_m1fbwHpWEeSept0-dI1XSQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_2gOu8HpZEeSept0-dI1XSQ" name="Realization7" client="_LXe-kHpCEeSZQp8F1uHBGQ">
-      <supplier xmi:type="uml:Interface" href="tda593.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
-      <contract xmi:type="uml:Interface" href="tda593.uml#_vKG6IHpSEeSept0-dI1XSQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_b7R0IHpaEeSept0-dI1XSQ" name="Realization8" client="_A-_M0HpaEeSept0-dI1XSQ">
       <supplier xmi:type="uml:Interface" href="tda593.uml#_AGESsHpYEeSept0-dI1XSQ"/>

@@ -1,13 +1,16 @@
 /**
  */
-package tda593.hotel.california.booking.persistence.impl;
+package tda593.hotel.california.billing.persistence.impl;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
+import tda593.hotel.california.billing.persistence.CreditCardInformationEntity;
+import tda593.hotel.california.booking.persistence.LegalEntityEntity;
+import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -41,6 +44,9 @@ public class CreditCardInformationEntityImpl implements
 
 	private Date expirationDate;
 
+	@OneToOne(targetEntity = LegalEntityEntityImpl.class)
+	private LegalEntityEntity owner;
+	
 	public CreditCardInformationEntityImpl() {
 	}
 
@@ -89,6 +95,18 @@ public class CreditCardInformationEntityImpl implements
 	@Override
 	public void setLastName(String value) {
 		lastName = value;
+	}
+
+	@Override
+	public LegalEntityEntity getOwner() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setOwner(LegalEntityEntity owner) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } // CreditCardInformationEntityImpl

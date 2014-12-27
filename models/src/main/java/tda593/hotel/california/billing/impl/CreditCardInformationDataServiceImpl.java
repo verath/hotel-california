@@ -3,7 +3,14 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.TemporalType;
+import javax.persistence.TypedQuery;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -11,8 +18,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.CreditCardInformation;
 import tda593.hotel.california.billing.CreditCardInformationDataService;
-import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
-import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
+import tda593.hotel.california.billing.persistence.CreditCardInformationEntity;
+import tda593.hotel.california.billing.persistence.impl.CreditCardInformationEntityImpl;
+import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.persistence.BookingEntity;
+import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
+import tda593.hotel.california.facilities.Room;
+import tda593.hotel.california.facilities.persistence.RoomEntity;
+import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +37,8 @@ import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEnt
  * @generated
  */
 public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Container implements CreditCardInformationDataService {
+	private EntityManager entityManager;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -33,6 +48,10 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		super();
 	}
 
+	public CreditCardInformationDataServiceImpl(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,12 +65,11 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public CreditCardInformation get(String id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		CreditCardInformationEntity entity = entityManager.find(CreditCardInformationEntityImpl.class, id);
+		return entity == null? null :entityToCreditCardInformation(entity);
 	}
 
 	/**
@@ -60,78 +78,86 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 	 * @generated
 	 */
 	public EList<CreditCardInformation> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<CreditCardInformationEntityImpl> results = entityManager.createQuery("FROM CreditCardInformationEntityImpl", 
+				CreditCardInformationEntityImpl.class).getResultList();
+		EList<CreditCardInformation> entityResults = new BasicEList<CreditCardInformation>(results.size());
+		for (CreditCardInformationEntity entity : results) {
+			entityResults.add(entityToCreditCardInformation(entity));
+		}
+		
+		return entityResults;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int count() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Long count = entityManager.createQuery("SELECT COUNT(number) FROM CreditCardInformationEntityImpl", Long.class).getSingleResult();
+		// TODO : change to long
+		return count.intValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void set(CreditCardInformation object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		entityManager.merge(creditCardInformationToEntity(object));
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAll(EList<CreditCardInformation> objects) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		for(CreditCardInformation info : objects) {
+			entityManager.merge(creditCardInformationToEntity(info));
+		}
+		transaction.commit();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void delete(CreditCardInformation object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		entityManager.remove(creditCardInformationToEntity(object));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public boolean exist(String object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean exist(String id) {
+		return get(id) != null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT 
 	 */
 	public CreditCardInformation getByLegalEntity(int legalEntityId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		TypedQuery<CreditCardInformationEntityImpl> query = entityManager.createQuery("FROM CreditCardInformationEntityImpl " 
+				+ "WHERE owner=:legalEntityId ", CreditCardInformationEntityImpl.class);
+		query.setParameter("legalEntityId", legalEntityId);
+		CreditCardInformationEntityImpl result = query.getSingleResult();
+		
+		return result == null? null : entityToCreditCardInformation(result);
 	}
 
-	public static CreditCardInformation EntityToCreditCardInformation(CreditCardInformationEntity entity) {
+	public static CreditCardInformation entityToCreditCardInformation(CreditCardInformationEntity entity) {
 		if(entity == null) {
 			return null;
 		}
@@ -143,7 +169,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		return cc;
 	}
 	
-	private static CreditCardInformationEntityImpl CreditCardInformationToEntity(CreditCardInformation cc) {
+	public static CreditCardInformationEntityImpl creditCardInformationToEntity(CreditCardInformation cc) {
 		if(cc == null) {
 			return null;
 		}

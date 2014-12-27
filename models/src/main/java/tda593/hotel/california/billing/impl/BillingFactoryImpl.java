@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import tda593.hotel.california.billing.AdminDiscountManagerImpl;
+
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
