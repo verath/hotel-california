@@ -34,7 +34,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 	private Calendar c = Calendar.getInstance();
 
 	private static String personBobFirstName = "Bob";
-	private static String personBoblastname = "Smith";
+	private static String personBobLastName = "Smith";
 	
 	@BeforeClass
 	public static void setUpData() {
@@ -43,7 +43,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 
 		// Create some persons
 		legalEntityManager.createPerson("Thomas", "Anderson", "1", "0712345678", "neo@matrix.com");
-		legalEntityManager.createPerson(personBobFirstName, personBoblastname, "2", "0712345678", "bob@smith.com");
+		legalEntityManager.createPerson(personBobFirstName, personBobLastName, "2", "0712345678", "bob@smith.com");
 
 		// Create some room types
 		adminRoomManager.addRoomType("RoomType1", "", null, 10);
@@ -80,7 +80,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		
 		// Actor enters customer name.
 		// Assume: valid input and the customer exists.
-		List<Person> hits = legalEntityManager.findPerson(personBobFirstName, personBoblastname);
+		List<Person> hits = legalEntityManager.findPerson(personBobFirstName, personBobLastName);
 		assertTrue(hits.size() > 0);
 		
 		// Actor chooses the correct customer.

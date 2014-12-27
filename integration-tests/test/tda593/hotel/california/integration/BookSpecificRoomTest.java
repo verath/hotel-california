@@ -1,6 +1,8 @@
 package tda593.hotel.california.integration;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -36,7 +38,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 	private Calendar c = Calendar.getInstance();
 
 	private static String personBobFirstName = "Bob";
-	private static String personBoblastname = "Smith";
+	private static String personBobLastName = "Smith";
 	
 	@BeforeClass
 	public static void setUpData() {
@@ -45,7 +47,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 
 		// Create some persons
 		legalEntityManager.createPerson("Thomas", "Anderson", "1", "0712345678", "neo@matrix.com");
-		legalEntityManager.createPerson(personBobFirstName, personBoblastname, "2", "0712345678", "bob@smith.com");
+		legalEntityManager.createPerson(personBobFirstName, personBobLastName, "2", "0712345678", "bob@smith.com");
 
 		// Create some room types
 		adminRoomManager.addRoomType("RoomType1", "", null, 10);
@@ -82,7 +84,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// Actor enters customer name.
 		// Assume: valid input and the customer exists.
-		List<Person> hits = legalEntityManager.findPerson(personBobFirstName, personBoblastname);
+		List<Person> hits = legalEntityManager.findPerson(personBobFirstName, personBobLastName);
 		assertTrue(hits.size() > 0);
 		
 		// Actor chooses the correct customer.
@@ -164,7 +166,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		assertEquals(countBefore, countAfter);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testBookSpecificRoomWithInvalidInput() {
 		// Starting date cannot be after end date
 		c.set(2015, 2, 5);
@@ -174,31 +176,29 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		assertFalse(DateUtil.isDateRangeValid(from, to));
 		
-		String roomNumber1 = "abc";
-		String roomNumber2 = "-1";
-		String roomNumber3 = "@1231€#1#5";
 		
-		String[] roomNumbers = new String[] {
-			roomNumber1,
-			roomNumber2,
-			roomNumber3
+		String[] invalidRoomNumbers = new String[] { 
+			"abc",
+			"-1", 
+			"@1231€#1#5", 
+			"0x12"
 		};
-		
+		List<String> acceptedRoomNumbers = new ArrayList<>();
+
 		// TODO: this does not work as I want it to right now. Better solution?
-		for(String roomNumber : roomNumbers) {
-//			try {
+		// TODO: Verify this solution does what ^ wanted it to do
+
+		for (String roomNumber : invalidRoomNumbers) {
+			try {
 				roomManager.getRoom(roomNumber);
-//			} catch (IllegalArgumentException e) {
-//				assertInvalidInput(roomManager, roomNumber);
-//			}
+				acceptedRoomNumbers.add(roomNumber);
+			} catch (IllegalArgumentException e) {
+			}
 		}
-	}
-	
-	private void assertInvalidInput(RoomManager roomManager, String roomNumber) {
-		try {
-			roomManager.getRoom(roomNumber);
-		} catch (IllegalArgumentException e) {
-			
+
+		if (!acceptedRoomNumbers.isEmpty()) {
+			fail("Expected no room numbers to be accepted, but these were: "
+					+ acceptedRoomNumbers);
 		}
 	}
 	
