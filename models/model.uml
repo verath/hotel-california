@@ -384,16 +384,10 @@
       <message xmi:type="uml:Message" xmi:id="_T2EAkHmWEeSVKdBxhP6Y7A" name="createBooking_Message" messageSort="asynchCall" receiveEvent="_T2F1wXmWEeSVKdBxhP6Y7A" sendEvent="_T2F1wHmWEeSVKdBxhP6Y7A">
         <signature xmi:type="uml:Operation" href="tda593.uml#_JBf2IHb2EeSbBJzXJgLK5Q"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="_hYSwoHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="_hYZeUXrBEeS2M9uZ6JBJRQ" sendEvent="_hYXCEHrBEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
-      <message xmi:type="uml:Message" xmi:id="_s1a7QHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message0" messageSort="asynchCall" receiveEvent="_s1fMsnrBEeS2M9uZ6JBJRQ" sendEvent="_s1cwcHrBEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_hYSwoHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="_hYZeUXrBEeS2M9uZ6JBJRQ" sendEvent="_hYXCEHrBEeS2M9uZ6JBJRQ"/>
+      <message xmi:type="uml:Message" xmi:id="_s1a7QHrBEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message0" messageSort="asynchCall" receiveEvent="_s1fMsnrBEeS2M9uZ6JBJRQ" sendEvent="_s1cwcHrBEeS2M9uZ6JBJRQ"/>
       <message xmi:type="uml:Message" xmi:id="_MR5MYHrGEeS2M9uZ6JBJRQ" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_MR-r8nrGEeS2M9uZ6JBJRQ" sendEvent="_MR7ooHrGEeS2M9uZ6JBJRQ" signature="_r-78enpDEeSZQp8F1uHBGQ"/>
-      <message xmi:type="uml:Message" xmi:id="_eEymQHrGEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message1" messageSort="asynchCall" receiveEvent="_eE23snrGEeS2M9uZ6JBJRQ" sendEvent="_eE0bcHrGEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_eEymQHrGEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message1" messageSort="asynchCall" receiveEvent="_eE23snrGEeS2M9uZ6JBJRQ" sendEvent="_eE0bcHrGEeS2M9uZ6JBJRQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_zcmSkHocEeSg65290XNrgw" name="Check in">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zcmSkXocEeSg65290XNrgw" name="bm">
@@ -829,16 +823,10 @@
       <message xmi:type="uml:Message" xmi:id="_mWtnIHosEeS0T75a12Dkwg" name="createBooking_Message" messageSort="asynchCall" receiveEvent="_mWvcUXosEeS0T75a12Dkwg" sendEvent="_mWvcUHosEeS0T75a12Dkwg">
         <signature xmi:type="uml:Operation" href="tda593.uml#_ZEZj8Hb0EeSbBJzXJgLK5Q"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="__ssJ8HrGEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="__sv0UnrGEeS2M9uZ6JBJRQ" sendEvent="__stYEHrGEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
-      <message xmi:type="uml:Message" xmi:id="_FTSmEHrHEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message0" messageSort="asynchCall" receiveEvent="_FTW3gXrHEeS2M9uZ6JBJRQ" sendEvent="_FTUbQHrHEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="__ssJ8HrGEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="__sv0UnrGEeS2M9uZ6JBJRQ" sendEvent="__stYEHrGEeS2M9uZ6JBJRQ"/>
+      <message xmi:type="uml:Message" xmi:id="_FTSmEHrHEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message0" messageSort="asynchCall" receiveEvent="_FTW3gXrHEeS2M9uZ6JBJRQ" sendEvent="_FTUbQHrHEeS2M9uZ6JBJRQ"/>
       <message xmi:type="uml:Message" xmi:id="_b0N1UHrHEeS2M9uZ6JBJRQ" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_b0T78HrHEeS2M9uZ6JBJRQ" sendEvent="_b0QRkHrHEeS2M9uZ6JBJRQ" signature="_r-78enpDEeSZQp8F1uHBGQ"/>
-      <message xmi:type="uml:Message" xmi:id="_nPPuMHrHEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message1" messageSort="asynchCall" receiveEvent="_nPT_onrHEeS2M9uZ6JBJRQ" sendEvent="_nPRjYHrHEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_nPPuMHrHEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message1" messageSort="asynchCall" receiveEvent="_nPT_onrHEeS2M9uZ6JBJRQ" sendEvent="_nPRjYHrHEeS2M9uZ6JBJRQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_APrhgHozEeSZQp8F1uHBGQ" name="Register Purchase">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_FCukUHo0EeSZQp8F1uHBGQ" name="billManager">
@@ -1160,9 +1148,7 @@
         <signature xmi:type="uml:Operation" href="tda593.uml#_b1mn8HpwEeSzffN-QECwhA"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_HMBsgHrLEeS2M9uZ6JBJRQ" name="makePayment_Message" messageSort="asynchCall" receiveEvent="_HMGlA3rLEeS2M9uZ6JBJRQ" sendEvent="_HMEIwHrLEeS2M9uZ6JBJRQ" signature="_r-78cXpDEeSZQp8F1uHBGQ"/>
-      <message xmi:type="uml:Message" xmi:id="_Tq0IcHrLEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="_Tq5oAHrLEeS2M9uZ6JBJRQ" sendEvent="_Tq2ksHrLEeS2M9uZ6JBJRQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Ea8QgHrBEeS2M9uZ6JBJRQ"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_Tq0IcHrLEeS2M9uZ6JBJRQ" name="setCreditCardInformation_Message" messageSort="asynchCall" receiveEvent="_Tq5oAHrLEeS2M9uZ6JBJRQ" sendEvent="_Tq2ksHrLEeS2M9uZ6JBJRQ"/>
       <message xmi:type="uml:Message" xmi:id="_qxXNQHrLEeS2M9uZ6JBJRQ" name="payBill_Message" messageSort="asynchCall" receiveEvent="_qxcFwnrLEeS2M9uZ6JBJRQ" sendEvent="_qxZCcHrLEeS2M9uZ6JBJRQ">
         <signature xmi:type="uml:Operation" href="tda593.uml#_E32ksHpuEeSzffN-QECwhA"/>
       </message>
@@ -1221,17 +1207,6 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JWowc4RvEeSPhYI_rVU2Ew" value="1"/>
           </ownedEnd>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_R0HTEIRvEeSPhYI_rVU2Ew" name="CreditCardInformationEntity">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_R0HTEYRvEeSPhYI_rVU2Ew" name="cardNumber" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_R0HTEoRvEeSPhYI_rVU2Ew" name="cardHolder" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_R0HTE4RvEeSPhYI_rVU2Ew" name="expirationDate" visibility="private">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-          </ownedAttribute>
-        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_oBCoQIRvEeSPhYI_rVU2Ew" name="LegalEntityEntity">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_oBCoQYRvEeSPhYI_rVU2Ew" name="phone" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -1239,20 +1214,9 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_oBCoQoRvEeSPhYI_rVU2Ew" name="email" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_YZ43wIRwEeSPhYI_rVU2Ew" name="creditCardInformationEntity" visibility="private" type="_R0HTEIRvEeSPhYI_rVU2Ew" association="_YZ5e0IRwEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YZ43wYRwEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YZ43woRwEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_frMiIIU0EeSYe4XnLK7_AA" name="id" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_YZ5e0IRwEeSPhYI_rVU2Ew" memberEnd="_YZ5e0YRwEeSPhYI_rVU2Ew _YZ43wIRwEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_YZ5e0YRwEeSPhYI_rVU2Ew" name="legalEntityEntity" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_YZ5e0IRwEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YZ5e0oRwEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YZ5e04RwEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_0BVU4IRwEeSPhYI_rVU2Ew" name="OrganizationEntity">
           <generalization xmi:type="uml:Generalization" xmi:id="_-9uJ8IRwEeSPhYI_rVU2Ew" general="_oBCoQIRvEeSPhYI_rVU2Ew"/>
@@ -1503,10 +1467,6 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y0zWEYUIEeSPhYI_rVU2Ew"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y0zWEoUIEeSPhYI_rVU2Ew" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rAo0YIUIEeSPhYI_rVU2Ew" name="creditCardInformationEntity" visibility="private" type="_R0HTEIRvEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAo0YYUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAo0YoUIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_d5VYMId_EeSE9Y6gUqOmTQ" name="subBillEntities" visibility="private" type="_cExugIUHEeSPhYI_rVU2Ew" association="_d5X0cId_EeSE9Y6gUqOmTQ">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d5VYMYd_EeSE9Y6gUqOmTQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5VYMod_EeSE9Y6gUqOmTQ" value="*"/>
@@ -1547,17 +1507,37 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y00kM4UIEeSPhYI_rVU2Ew" value="1"/>
           </ownedEnd>
         </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_rArQoIUIEeSPhYI_rVU2Ew" memberEnd="_rAr3sIUIEeSPhYI_rVU2Ew _rAo0YIUIEeSPhYI_rVU2Ew">
-          <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_rAr3sIUIEeSPhYI_rVU2Ew" name="bill" type="_cExugIUHEeSPhYI_rVU2Ew" association="_rArQoIUIEeSPhYI_rVU2Ew">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAr3sYUIEeSPhYI_rVU2Ew" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAr3soUIEeSPhYI_rVU2Ew" value="1"/>
-          </ownedEnd>
-        </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_d5X0cId_EeSE9Y6gUqOmTQ" memberEnd="_d5X0cYd_EeSE9Y6gUqOmTQ _d5VYMId_EeSE9Y6gUqOmTQ">
           <ownedEnd xmi:type="uml:Property" xmi:id="_d5X0cYd_EeSE9Y6gUqOmTQ" name="billEntity" type="_cExugIUHEeSPhYI_rVU2Ew" association="_d5X0cId_EeSE9Y6gUqOmTQ">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d5X0cod_EeSE9Y6gUqOmTQ" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5X0c4d_EeSE9Y6gUqOmTQ" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_R0HTEIRvEeSPhYI_rVU2Ew" name="CreditCardInformationEntity">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aVw78I3vEeSfBP2QR77p4w" name="ccv" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aVyxII3vEeSfBP2QR77p4w" name="firstName" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aVz_QI3vEeSfBP2QR77p4w" name="lastName" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aV1NYI3vEeSfBP2QR77p4w" name="cardNumber" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aV2bgI3vEeSfBP2QR77p4w" name="expirationDate" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cztlEI3vEeSfBP2QR77p4w" name="legalEntityEntity" visibility="private" type="_oBCoQIRvEeSPhYI_rVU2Ew" association="_czwoYI3vEeSfBP2QR77p4w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cztlEY3vEeSfBP2QR77p4w" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cztlEo3vEeSfBP2QR77p4w" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_czwoYI3vEeSfBP2QR77p4w" memberEnd="_czwoYY3vEeSfBP2QR77p4w _cztlEI3vEeSfBP2QR77p4w">
+          <ownedEnd xmi:type="uml:Property" xmi:id="_czwoYY3vEeSfBP2QR77p4w" name="creditCardInformationEntity" type="_R0HTEIRvEeSPhYI_rVU2Ew" association="_czwoYI3vEeSfBP2QR77p4w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_czwoYo3vEeSfBP2QR77p4w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_czwoY43vEeSfBP2QR77p4w" value="1"/>
           </ownedEnd>
         </packagedElement>
       </packagedElement>
