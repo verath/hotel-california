@@ -134,10 +134,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createAdminDiscountManagerImplAdapter();
 			}
 			@Override
-			public Adapter caseBanking(Banking object) {
-				return createBankingAdapter();
-			}
-			@Override
 			public Adapter caseAdminBankingManager(AdminBankingManager object) {
 				return createAdminBankingManagerAdapter();
 			}
@@ -398,20 +394,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAdminDiscountManagerImplAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.Banking
-	 * @generated
-	 */
-	public Adapter createBankingAdapter() {
 		return null;
 	}
 

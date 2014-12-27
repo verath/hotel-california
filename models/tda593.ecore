@@ -405,7 +405,6 @@
           </eGenericSuperTypes>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="AdminDiscountManagerImpl" eSuperTypes="#//hotel/california/billing/DiscountManagerImpl #//hotel/california/billing/AdminDiscountManager"/>
-        <eClassifiers xsi:type="ecore:EClass" name="Banking" abstract="true" interface="true"/>
         <eClassifiers xsi:type="ecore:EClass" name="AdminBankingManager" abstract="true"
             interface="true">
           <eOperations name="makeDeposit" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">

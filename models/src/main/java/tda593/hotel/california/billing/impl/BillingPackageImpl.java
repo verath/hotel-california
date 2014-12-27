@@ -14,7 +14,6 @@ import tda593.hotel.california.billing.AdminBankingManager;
 import tda593.hotel.california.billing.AdminBankingManagerImpl;
 import tda593.hotel.california.billing.AdminDiscountManager;
 import tda593.hotel.california.billing.AdminDiscountManagerImpl;
-import tda593.hotel.california.billing.Banking;
 import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
@@ -157,13 +156,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	private EClass adminDiscountManagerImplEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass bankingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -927,15 +919,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBanking() {
-		return bankingEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAdminBankingManager() {
 		return adminBankingManagerEClass;
 	}
@@ -1137,8 +1120,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_SERVICE__INT);
 
 		adminDiscountManagerImplEClass = createEClass(ADMIN_DISCOUNT_MANAGER_IMPL);
-
-		bankingEClass = createEClass(BANKING);
 
 		adminBankingManagerEClass = createEClass(ADMIN_BANKING_MANAGER);
 		createEOperation(adminBankingManagerEClass, ADMIN_BANKING_MANAGER___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
@@ -1367,8 +1348,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(adminDiscountManagerImplEClass, AdminDiscountManagerImpl.class, "AdminDiscountManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(bankingEClass, Banking.class, "Banking", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(adminBankingManagerEClass, AdminBankingManager.class, "AdminBankingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

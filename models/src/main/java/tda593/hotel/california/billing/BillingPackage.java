@@ -1536,34 +1536,6 @@ public interface BillingPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.billing.Banking
-	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBanking()
-	 * @generated
-	 */
-	int BANKING = 16;
-
-	/**
-	 * The number of structural features of the '<em>Banking</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BANKING_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Banking</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BANKING_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1571,7 +1543,7 @@ public interface BillingPackage extends EPackage {
 	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminBankingManager()
 	 * @generated
 	 */
-	int ADMIN_BANKING_MANAGER = 17;
+	int ADMIN_BANKING_MANAGER = 16;
 
 	/**
 	 * The number of structural features of the '<em>Admin Banking Manager</em>' class.
@@ -1635,7 +1607,7 @@ public interface BillingPackage extends EPackage {
 	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManager()
 	 * @generated
 	 */
-	int BANKING_MANAGER = 18;
+	int BANKING_MANAGER = 17;
 
 	/**
 	 * The number of structural features of the '<em>Banking Manager</em>' class.
@@ -1681,7 +1653,7 @@ public interface BillingPackage extends EPackage {
 	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminBankingManagerImpl()
 	 * @generated
 	 */
-	int ADMIN_BANKING_MANAGER_IMPL = 19;
+	int ADMIN_BANKING_MANAGER_IMPL = 18;
 
 	/**
 	 * The number of structural features of the '<em>Admin Banking Manager Impl</em>' class.
@@ -1745,7 +1717,7 @@ public interface BillingPackage extends EPackage {
 	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManagerImpl()
 	 * @generated
 	 */
-	int BANKING_MANAGER_IMPL = 20;
+	int BANKING_MANAGER_IMPL = 19;
 
 	/**
 	 * The number of structural features of the '<em>Banking Manager Impl</em>' class.
@@ -2544,16 +2516,6 @@ public interface BillingPackage extends EPackage {
 	EClass getAdminDiscountManagerImpl();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Banking</em>'.
-	 * @see tda593.hotel.california.billing.Banking
-	 * @generated
-	 */
-	EClass getBanking();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3291,16 +3253,6 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADMIN_DISCOUNT_MANAGER_IMPL = eINSTANCE.getAdminDiscountManagerImpl();
-
-		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.billing.Banking
-		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBanking()
-		 * @generated
-		 */
-		EClass BANKING = eINSTANCE.getBanking();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}' class.
