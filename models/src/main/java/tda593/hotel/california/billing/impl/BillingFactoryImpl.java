@@ -10,7 +10,9 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import tda593.hotel.california.billing.AdminBankingManagerImpl;
 import tda593.hotel.california.billing.AdminDiscountManagerImpl;
+import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManagerImpl;
@@ -81,6 +83,8 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 			case BillingPackage.BILL_MANAGER_IMPL: return createBillManagerImpl();
 			case BillingPackage.BILL_DATA_SERVICE: return createBillDataService();
 			case BillingPackage.ADMIN_DISCOUNT_MANAGER_IMPL: return createAdminDiscountManagerImpl();
+			case BillingPackage.ADMIN_BANKING_MANAGER_IMPL: return createAdminBankingManagerImpl();
+			case BillingPackage.BANKING_MANAGER_IMPL: return createBankingManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -204,6 +208,26 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 	public AdminDiscountManagerImpl createAdminDiscountManagerImpl() {
 		AdminDiscountManagerImplImpl adminDiscountManagerImpl = new AdminDiscountManagerImplImpl();
 		return adminDiscountManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdminBankingManagerImpl createAdminBankingManagerImpl() {
+		AdminBankingManagerImplImpl adminBankingManagerImpl = new AdminBankingManagerImplImpl();
+		return adminBankingManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BankingManagerImpl createBankingManagerImpl() {
+		BankingManagerImplImpl bankingManagerImpl = new BankingManagerImplImpl();
+		return bankingManagerImpl;
 	}
 
 	/**
