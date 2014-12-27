@@ -16,9 +16,9 @@
 	<classpathentry exported="true" kind="lib" path="libs/hibernate-core-4.3.7.Final.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.emf.common_2.10.1.v20140901-1043.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.emf.ecore_2.10.1.v20140901-1043.jar"/>
-	<classpathentry kind="lib" path="libs/BankingAdministrator/se.chalmers.cse.mdsd1415.banking.administratorRequires.jar"/>
-	<classpathentry kind="lib" path="libs/BankingCustomer/se.chalmers.cse.mdsd1415.banking.customerRequires.jar"/>
-	<classpathentry kind="lib" path="libs/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="libs/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/BankingAdministrator/se.chalmers.cse.mdsd1415.banking.administratorRequires.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/BankingCustomer/se.chalmers.cse.mdsd1415.banking.customerRequires.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/log4j-1.2.17.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/dom4j-1.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
