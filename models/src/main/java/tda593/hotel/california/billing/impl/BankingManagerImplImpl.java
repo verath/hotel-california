@@ -29,16 +29,17 @@ public class BankingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected BankingManagerImplImpl() {
 		super();
+		try {
+			banking = CustomerRequires.instance();
+		} catch (SOAPException e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public BankingManagerImplImpl(CustomerRequires banking) {
-		this.banking = banking;
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -29,16 +29,17 @@ public class AdminBankingManagerImplImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected AdminBankingManagerImplImpl() {
 		super();
+		try {
+			adminBanking = AdministratorRequires.instance();
+		} catch (SOAPException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public AdminBankingManagerImplImpl(AdministratorRequires adminBanking) {
-		this.adminBanking = adminBanking;
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,7 +84,12 @@ public class AdminBankingManagerImplImpl extends MinimalEObjectImpl.Container im
 	 * @generated NOT
 	 */
 	public boolean removeCreditCard(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		return removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		try {
+			return adminBanking.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		} catch (SOAPException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	/**
@@ -92,7 +98,12 @@ public class AdminBankingManagerImplImpl extends MinimalEObjectImpl.Container im
 	 * @generated NOT
 	 */
 	public double getBalance(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		return getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		try {
+			return adminBanking.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		} catch (SOAPException e) {
+			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	/**
