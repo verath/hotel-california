@@ -134,6 +134,26 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createAdminDiscountManagerImplAdapter();
 			}
 			@Override
+			public Adapter caseBanking(Banking object) {
+				return createBankingAdapter();
+			}
+			@Override
+			public Adapter caseAdminBankingManager(AdminBankingManager object) {
+				return createAdminBankingManagerAdapter();
+			}
+			@Override
+			public Adapter caseBankingManager(BankingManager object) {
+				return createBankingManagerAdapter();
+			}
+			@Override
+			public Adapter caseAdminBankingManagerImpl(AdminBankingManagerImpl object) {
+				return createAdminBankingManagerImplAdapter();
+			}
+			@Override
+			public Adapter caseBankingManagerImpl(BankingManagerImpl object) {
+				return createBankingManagerImplAdapter();
+			}
+			@Override
 			public <E, ID> Adapter caseDataService(DataService<E, ID> object) {
 				return createDataServiceAdapter();
 			}
@@ -378,6 +398,76 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAdminDiscountManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.Banking
+	 * @generated
+	 */
+	public Adapter createBankingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.AdminBankingManager
+	 * @generated
+	 */
+	public Adapter createAdminBankingManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.BankingManager
+	 * @generated
+	 */
+	public Adapter createBankingManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminBankingManagerImpl <em>Admin Banking Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.AdminBankingManagerImpl
+	 * @generated
+	 */
+	public Adapter createAdminBankingManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.BankingManagerImpl <em>Banking Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.BankingManagerImpl
+	 * @generated
+	 */
+	public Adapter createBankingManagerImplAdapter() {
 		return null;
 	}
 

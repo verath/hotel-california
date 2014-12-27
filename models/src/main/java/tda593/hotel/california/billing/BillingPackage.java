@@ -1536,6 +1536,255 @@ public interface BillingPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.Banking
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBanking()
+	 * @generated
+	 */
+	int BANKING = 16;
+
+	/**
+	 * The number of structural features of the '<em>Banking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Banking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.AdminBankingManager
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminBankingManager()
+	 * @generated
+	 */
+	int ADMIN_BANKING_MANAGER = 17;
+
+	/**
+	 * The number of structural features of the '<em>Admin Banking Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Make Deposit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 0;
+
+	/**
+	 * The operation id for the '<em>Add Credit Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER___ADD_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Remove Credit Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER___REMOVE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = 2;
+
+	/**
+	 * The operation id for the '<em>Get Balance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER___GET_BALANCE__STRING_STRING_INT_INT_STRING_STRING = 3;
+
+	/**
+	 * The number of operations of the '<em>Admin Banking Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_OPERATION_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.BankingManager
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManager()
+	 * @generated
+	 */
+	int BANKING_MANAGER = 18;
+
+	/**
+	 * The number of structural features of the '<em>Banking Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Make Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 0;
+
+	/**
+	 * The operation id for the '<em>Is Credit Card Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING = 1;
+
+	/**
+	 * The number of operations of the '<em>Banking Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER_OPERATION_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.AdminBankingManagerImplImpl <em>Admin Banking Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.AdminBankingManagerImplImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminBankingManagerImpl()
+	 * @generated
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL = 19;
+
+	/**
+	 * The number of structural features of the '<em>Admin Banking Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL_FEATURE_COUNT = ADMIN_BANKING_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Make Deposit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = ADMIN_BANKING_MANAGER___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE;
+
+	/**
+	 * The operation id for the '<em>Add Credit Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL___ADD_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = ADMIN_BANKING_MANAGER___ADD_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Remove Credit Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL___REMOVE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = ADMIN_BANKING_MANAGER___REMOVE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Balance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL___GET_BALANCE__STRING_STRING_INT_INT_STRING_STRING = ADMIN_BANKING_MANAGER___GET_BALANCE__STRING_STRING_INT_INT_STRING_STRING;
+
+	/**
+	 * The number of operations of the '<em>Admin Banking Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_BANKING_MANAGER_IMPL_OPERATION_COUNT = ADMIN_BANKING_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BankingManagerImplImpl <em>Banking Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.BankingManagerImplImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManagerImpl()
+	 * @generated
+	 */
+	int BANKING_MANAGER_IMPL = 20;
+
+	/**
+	 * The number of structural features of the '<em>Banking Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER_IMPL_FEATURE_COUNT = BANKING_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Make Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER_IMPL___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE;
+
+	/**
+	 * The operation id for the '<em>Is Credit Card Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER_IMPL___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING = BANKING_MANAGER___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING;
+
+	/**
+	 * The number of operations of the '<em>Banking Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANKING_MANAGER_IMPL_OPERATION_COUNT = BANKING_MANAGER_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.DiscountManager <em>Discount Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2295,6 +2544,116 @@ public interface BillingPackage extends EPackage {
 	EClass getAdminDiscountManagerImpl();
 
 	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Banking</em>'.
+	 * @see tda593.hotel.california.billing.Banking
+	 * @generated
+	 */
+	EClass getBanking();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Banking Manager</em>'.
+	 * @see tda593.hotel.california.billing.AdminBankingManager
+	 * @generated
+	 */
+	EClass getAdminBankingManager();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminBankingManager#makeDeposit(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double) <em>Make Deposit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Make Deposit</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminBankingManager#makeDeposit(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double)
+	 * @generated
+	 */
+	EOperation getAdminBankingManager__MakeDeposit__String_String_int_int_String_String_double();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminBankingManager#addCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Add Credit Card</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Credit Card</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminBankingManager#addCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getAdminBankingManager__AddCreditCard__String_String_int_int_String_String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminBankingManager#removeCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Remove Credit Card</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Credit Card</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminBankingManager#removeCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getAdminBankingManager__RemoveCreditCard__String_String_int_int_String_String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminBankingManager#getBalance(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Get Balance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Balance</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminBankingManager#getBalance(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getAdminBankingManager__GetBalance__String_String_int_int_String_String();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Banking Manager</em>'.
+	 * @see tda593.hotel.california.billing.BankingManager
+	 * @generated
+	 */
+	EClass getBankingManager();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BankingManager#makePayment(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double) <em>Make Payment</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Make Payment</em>' operation.
+	 * @see tda593.hotel.california.billing.BankingManager#makePayment(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double)
+	 * @generated
+	 */
+	EOperation getBankingManager__MakePayment__String_String_int_int_String_String_double();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BankingManager#isCreditCardValid(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Is Credit Card Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Credit Card Valid</em>' operation.
+	 * @see tda593.hotel.california.billing.BankingManager#isCreditCardValid(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getBankingManager__IsCreditCardValid__String_String_int_int_String_String();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminBankingManagerImpl <em>Admin Banking Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Banking Manager Impl</em>'.
+	 * @see tda593.hotel.california.billing.AdminBankingManagerImpl
+	 * @generated
+	 */
+	EClass getAdminBankingManagerImpl();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BankingManagerImpl <em>Banking Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Banking Manager Impl</em>'.
+	 * @see tda593.hotel.california.billing.BankingManagerImpl
+	 * @generated
+	 */
+	EClass getBankingManagerImpl();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2932,6 +3291,104 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADMIN_DISCOUNT_MANAGER_IMPL = eINSTANCE.getAdminDiscountManagerImpl();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.Banking <em>Banking</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.Banking
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBanking()
+		 * @generated
+		 */
+		EClass BANKING = eINSTANCE.getBanking();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.AdminBankingManager
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminBankingManager()
+		 * @generated
+		 */
+		EClass ADMIN_BANKING_MANAGER = eINSTANCE.getAdminBankingManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Make Deposit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_BANKING_MANAGER___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = eINSTANCE.getAdminBankingManager__MakeDeposit__String_String_int_int_String_String_double();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Credit Card</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_BANKING_MANAGER___ADD_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getAdminBankingManager__AddCreditCard__String_String_int_int_String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Credit Card</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_BANKING_MANAGER___REMOVE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getAdminBankingManager__RemoveCreditCard__String_String_int_int_String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Balance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_BANKING_MANAGER___GET_BALANCE__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getAdminBankingManager__GetBalance__String_String_int_int_String_String();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.BankingManager
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManager()
+		 * @generated
+		 */
+		EClass BANKING_MANAGER = eINSTANCE.getBankingManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Make Payment</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = eINSTANCE.getBankingManager__MakePayment__String_String_int_int_String_String_double();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Credit Card Valid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BANKING_MANAGER___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getBankingManager__IsCreditCardValid__String_String_int_int_String_String();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.AdminBankingManagerImplImpl <em>Admin Banking Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.impl.AdminBankingManagerImplImpl
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminBankingManagerImpl()
+		 * @generated
+		 */
+		EClass ADMIN_BANKING_MANAGER_IMPL = eINSTANCE.getAdminBankingManagerImpl();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.BankingManagerImplImpl <em>Banking Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.impl.BankingManagerImplImpl
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManagerImpl()
+		 * @generated
+		 */
+		EClass BANKING_MANAGER_IMPL = eINSTANCE.getBankingManagerImpl();
 
 	}
 

@@ -130,6 +130,24 @@ public interface BillingFactory extends EFactory {
 	AdminDiscountManagerImpl createAdminDiscountManagerImpl();
 
 	/**
+	 * Returns a new object of class '<em>Admin Banking Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admin Banking Manager Impl</em>'.
+	 * @generated
+	 */
+	AdminBankingManagerImpl createAdminBankingManagerImpl();
+
+	/**
+	 * Returns a new object of class '<em>Banking Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Banking Manager Impl</em>'.
+	 * @generated
+	 */
+	BankingManagerImpl createBankingManagerImpl();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

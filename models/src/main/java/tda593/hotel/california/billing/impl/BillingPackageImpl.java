@@ -10,8 +10,13 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import tda593.hotel.california.CaliforniaPackage;
+import tda593.hotel.california.billing.AdminBankingManager;
+import tda593.hotel.california.billing.AdminBankingManagerImpl;
 import tda593.hotel.california.billing.AdminDiscountManager;
 import tda593.hotel.california.billing.AdminDiscountManagerImpl;
+import tda593.hotel.california.billing.Banking;
+import tda593.hotel.california.billing.BankingManager;
+import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManager;
@@ -152,6 +157,41 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	private EClass adminDiscountManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bankingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminBankingManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bankingManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminBankingManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bankingManagerImplEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -887,6 +927,105 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBanking() {
+		return bankingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminBankingManager() {
+		return adminBankingManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminBankingManager__MakeDeposit__String_String_int_int_String_String_double() {
+		return adminBankingManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminBankingManager__AddCreditCard__String_String_int_int_String_String() {
+		return adminBankingManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminBankingManager__RemoveCreditCard__String_String_int_int_String_String() {
+		return adminBankingManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminBankingManager__GetBalance__String_String_int_int_String_String() {
+		return adminBankingManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBankingManager() {
+		return bankingManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBankingManager__MakePayment__String_String_int_int_String_String_double() {
+		return bankingManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBankingManager__IsCreditCardValid__String_String_int_int_String_String() {
+		return bankingManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminBankingManagerImpl() {
+		return adminBankingManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBankingManagerImpl() {
+		return bankingManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BillingFactory getBillingFactory() {
 		return (BillingFactory)getEFactoryInstance();
 	}
@@ -998,6 +1137,22 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_SERVICE__INT);
 
 		adminDiscountManagerImplEClass = createEClass(ADMIN_DISCOUNT_MANAGER_IMPL);
+
+		bankingEClass = createEClass(BANKING);
+
+		adminBankingManagerEClass = createEClass(ADMIN_BANKING_MANAGER);
+		createEOperation(adminBankingManagerEClass, ADMIN_BANKING_MANAGER___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
+		createEOperation(adminBankingManagerEClass, ADMIN_BANKING_MANAGER___ADD_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING);
+		createEOperation(adminBankingManagerEClass, ADMIN_BANKING_MANAGER___REMOVE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING);
+		createEOperation(adminBankingManagerEClass, ADMIN_BANKING_MANAGER___GET_BALANCE__STRING_STRING_INT_INT_STRING_STRING);
+
+		bankingManagerEClass = createEClass(BANKING_MANAGER);
+		createEOperation(bankingManagerEClass, BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
+		createEOperation(bankingManagerEClass, BANKING_MANAGER___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING);
+
+		adminBankingManagerImplEClass = createEClass(ADMIN_BANKING_MANAGER_IMPL);
+
+		bankingManagerImplEClass = createEClass(BANKING_MANAGER_IMPL);
 	}
 
 	/**
@@ -1052,6 +1207,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		billDataServiceEClass.getEGenericSuperTypes().add(g1);
 		adminDiscountManagerImplEClass.getESuperTypes().add(this.getDiscountManagerImpl());
 		adminDiscountManagerImplEClass.getESuperTypes().add(this.getAdminDiscountManager());
+		adminBankingManagerImplEClass.getESuperTypes().add(this.getAdminBankingManager());
+		bankingManagerImplEClass.getESuperTypes().add(this.getBankingManager());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(discountManagerEClass, DiscountManager.class, "DiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1210,6 +1367,66 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(adminDiscountManagerImplEClass, AdminDiscountManagerImpl.class, "AdminDiscountManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(bankingEClass, Banking.class, "Banking", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(adminBankingManagerEClass, AdminBankingManager.class, "AdminBankingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getAdminBankingManager__MakeDeposit__String_String_int_int_String_String_double(), ecorePackage.getEDouble(), "makeDeposit", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminBankingManager__AddCreditCard__String_String_int_int_String_String(), ecorePackage.getEBoolean(), "addCreditCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminBankingManager__RemoveCreditCard__String_String_int_int_String_String(), ecorePackage.getEBoolean(), "removeCreditCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminBankingManager__GetBalance__String_String_int_int_String_String(), ecorePackage.getEDouble(), "getBalance", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(bankingManagerEClass, BankingManager.class, "BankingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getBankingManager__MakePayment__String_String_int_int_String_String_double(), ecorePackage.getEBoolean(), "makePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBankingManager__IsCreditCardValid__String_String_int_int_String_String(), ecorePackage.getEBoolean(), "isCreditCardValid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(adminBankingManagerImplEClass, AdminBankingManagerImpl.class, "AdminBankingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(bankingManagerImplEClass, BankingManagerImpl.class, "BankingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //BillingPackageImpl

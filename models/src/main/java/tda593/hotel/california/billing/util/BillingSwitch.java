@@ -175,6 +175,38 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BillingPackage.BANKING: {
+				Banking banking = (Banking)theEObject;
+				T result = caseBanking(banking);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.ADMIN_BANKING_MANAGER: {
+				AdminBankingManager adminBankingManager = (AdminBankingManager)theEObject;
+				T result = caseAdminBankingManager(adminBankingManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.BANKING_MANAGER: {
+				BankingManager bankingManager = (BankingManager)theEObject;
+				T result = caseBankingManager(bankingManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.ADMIN_BANKING_MANAGER_IMPL: {
+				AdminBankingManagerImpl adminBankingManagerImpl = (AdminBankingManagerImpl)theEObject;
+				T result = caseAdminBankingManagerImpl(adminBankingManagerImpl);
+				if (result == null) result = caseAdminBankingManager(adminBankingManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.BANKING_MANAGER_IMPL: {
+				BankingManagerImpl bankingManagerImpl = (BankingManagerImpl)theEObject;
+				T result = caseBankingManagerImpl(bankingManagerImpl);
+				if (result == null) result = caseBankingManager(bankingManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -416,6 +448,81 @@ public class BillingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAdminDiscountManagerImpl(AdminDiscountManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Banking</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Banking</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBanking(Banking object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Banking Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Banking Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminBankingManager(AdminBankingManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Banking Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Banking Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBankingManager(BankingManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Banking Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Banking Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminBankingManagerImpl(AdminBankingManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Banking Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Banking Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBankingManagerImpl(BankingManagerImpl object) {
 		return null;
 	}
 
