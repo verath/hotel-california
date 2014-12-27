@@ -28,7 +28,7 @@
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 		</properties>
 	</persistence-unit>
-	
+
 	<persistence-unit name="tda593.hotel.california.integration" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
@@ -38,18 +38,18 @@
 
 			<!-- DerbyDB in in-memory mode -->
 			<property name="hibernate.connection.url"
-				value="jdbc:derby:memory:hotel-californiaDB;create=true" />
+				value="jdbc:derby:memory:hotel-california-integrationDB" />
 
 			<!-- username/password not needed for in-memory -->
 			<property name="hibernate.connection.username" value="" />
 			<property name="hibernate.connection.password" value="" />
 
 			<!-- Set to true to print all queries executed -->
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
 
-			<!-- Create and drop db each time -->
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<!-- No need to drop since db is in memory and re-created -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>

@@ -66,7 +66,7 @@ public class HotelCaliforniaManagersHandler {
 	private BillManager billManager;
 	private DiscountManager discountManager;
 
-	private void initializeEntityManager() {
+	private void initializeEntityManager() throws Exception {
 		PersistenceHelper.initialize();
 		entityManager = PersistenceHelper.getEntityManager();
 	}
@@ -107,7 +107,7 @@ public class HotelCaliforniaManagersHandler {
 	 * Method for (re)setting the hotel california component. This method also
 	 * recreates the entity manager and the database.
 	 */
-	public void initialize() {
+	public void initialize() throws Exception {
 		initializeEntityManager();
 		initializeServices();
 		initializeManagers();
