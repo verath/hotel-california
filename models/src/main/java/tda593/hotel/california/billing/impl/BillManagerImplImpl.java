@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManagerImpl;
@@ -228,6 +229,18 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void markBillAsPaid(Bill bill, boolean isPaid, BankingManager bankingManager) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void markBillAsPaid(Bill bill, boolean isPaid) {
@@ -325,8 +338,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case BillingPackage.BILL_MANAGER_IMPL___PUBLISH_BILL__BILL:
 				publishBill((Bill)arguments.get(0));
 				return null;
-			case BillingPackage.BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN:
-				markBillAsPaid((Bill)arguments.get(0), (Boolean)arguments.get(1));
+			case BillingPackage.BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER:
+				markBillAsPaid((Bill)arguments.get(0), (Boolean)arguments.get(1), (BankingManager)arguments.get(2));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

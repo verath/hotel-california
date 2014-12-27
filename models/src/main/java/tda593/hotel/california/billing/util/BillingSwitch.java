@@ -152,6 +152,12 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BillingPackage.BANKING_MANAGER: {
+				BankingManager bankingManager = (BankingManager)theEObject;
+				T result = caseBankingManager(bankingManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BillingPackage.BILL_MANAGER_IMPL: {
 				BillManagerImpl billManagerImpl = (BillManagerImpl)theEObject;
 				T result = caseBillManagerImpl(billManagerImpl);
@@ -175,29 +181,36 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BillingPackage.ADMIN_BANKING_MANAGER: {
-				AdminBankingManager adminBankingManager = (AdminBankingManager)theEObject;
-				T result = caseAdminBankingManager(adminBankingManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BillingPackage.BANKING_MANAGER: {
-				BankingManager bankingManager = (BankingManager)theEObject;
-				T result = caseBankingManager(bankingManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BillingPackage.ADMIN_BANKING_MANAGER_IMPL: {
-				AdminBankingManagerImpl adminBankingManagerImpl = (AdminBankingManagerImpl)theEObject;
-				T result = caseAdminBankingManagerImpl(adminBankingManagerImpl);
-				if (result == null) result = caseAdminBankingManager(adminBankingManagerImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BillingPackage.BANKING_MANAGER_IMPL: {
 				BankingManagerImpl bankingManagerImpl = (BankingManagerImpl)theEObject;
 				T result = caseBankingManagerImpl(bankingManagerImpl);
 				if (result == null) result = caseBankingManager(bankingManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.CREDIT_CARD_INFORMATION: {
+				CreditCardInformation creditCardInformation = (CreditCardInformation)theEObject;
+				T result = caseCreditCardInformation(creditCardInformation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.CREDIT_CARD_INFORMATION_DATA_SERVICE: {
+				CreditCardInformationDataService creditCardInformationDataService = (CreditCardInformationDataService)theEObject;
+				T result = caseCreditCardInformationDataService(creditCardInformationDataService);
+				if (result == null) result = caseDataService(creditCardInformationDataService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.CREDIT_CARD_MANAGER: {
+				CreditCardManager creditCardManager = (CreditCardManager)theEObject;
+				T result = caseCreditCardManager(creditCardManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.CREDIT_CARD_MANAGER_IMPL: {
+				CreditCardManagerImpl creditCardManagerImpl = (CreditCardManagerImpl)theEObject;
+				T result = caseCreditCardManagerImpl(creditCardManagerImpl);
+				if (result == null) result = caseCreditCardManager(creditCardManagerImpl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -446,21 +459,6 @@ public class BillingSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Admin Banking Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Admin Banking Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdminBankingManager(AdminBankingManager object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Banking Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -476,21 +474,6 @@ public class BillingSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Admin Banking Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Admin Banking Manager Impl</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdminBankingManagerImpl(AdminBankingManagerImpl object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Banking Manager Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -502,6 +485,66 @@ public class BillingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBankingManagerImpl(BankingManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Credit Card Information</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Credit Card Information</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreditCardInformation(CreditCardInformation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Credit Card Information Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Credit Card Information Data Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreditCardInformationDataService(CreditCardInformationDataService object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Credit Card Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Credit Card Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreditCardManager(CreditCardManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Credit Card Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Credit Card Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreditCardManagerImpl(CreditCardManagerImpl object) {
 		return null;
 	}
 

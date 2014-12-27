@@ -77,9 +77,9 @@ public interface BillManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model billRequired="true" billOrdered="false" isPaidRequired="true" isPaidOrdered="false"
+	 * @model billRequired="true" billOrdered="false" isPaidRequired="true" isPaidOrdered="false" bankingManagerRequired="true" bankingManagerOrdered="false"
 	 * @generated
 	 */
-	void markBillAsPaid(Bill bill, boolean isPaid);
+	void markBillAsPaid(Bill bill, boolean isPaid, BankingManager bankingManager);
 
 } // BillManager

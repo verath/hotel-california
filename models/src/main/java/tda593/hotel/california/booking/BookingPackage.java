@@ -67,7 +67,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getLegalEntity()
 	 * @generated
 	 */
-	int LEGAL_ENTITY = 13;
+	int LEGAL_ENTITY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -88,22 +88,13 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY__EMAIL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY__CREDIT_CARD_INFORMATION = 2;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY__ID = 3;
+	int LEGAL_ENTITY__ID = 2;
 
 	/**
 	 * The number of structural features of the '<em>Legal Entity</em>' class.
@@ -112,7 +103,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_FEATURE_COUNT = 4;
+	int LEGAL_ENTITY_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -159,15 +150,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION__EMAIL = LEGAL_ENTITY__EMAIL;
-
-	/**
-	 * The feature id for the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORGANIZATION__CREDIT_CARD_INFORMATION = LEGAL_ENTITY__CREDIT_CARD_INFORMATION;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -250,15 +232,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSON__EMAIL = LEGAL_ENTITY__EMAIL;
-
-	/**
-	 * The feature id for the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__CREDIT_CARD_INFORMATION = LEGAL_ENTITY__CREDIT_CARD_INFORMATION;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -652,79 +625,6 @@ public interface BookingPackage extends EPackage {
 	int STAY_REQUEST_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.booking.impl.CreditCardInformationImpl
-	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getCreditCardInformation()
-	 * @generated
-	 */
-	int CREDIT_CARD_INFORMATION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__CARD_NUMBER = 0;
-
-	/**
-	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Ccv</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__CCV = 2;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__FIRST_NAME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__LAST_NAME = 4;
-
-	/**
-	 * The number of structural features of the '<em>Credit Card Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>Credit Card Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -732,7 +632,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getBookingManager()
 	 * @generated
 	 */
-	int BOOKING_MANAGER = 7;
+	int BOOKING_MANAGER = 6;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -922,7 +822,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getBookingManagerImpl()
 	 * @generated
 	 */
-	int BOOKING_MANAGER_IMPL = 8;
+	int BOOKING_MANAGER_IMPL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Booking Data Service</b></em>' reference.
@@ -1130,7 +1030,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getBookingDataService()
 	 * @generated
 	 */
-	int BOOKING_DATA_SERVICE = 9;
+	int BOOKING_DATA_SERVICE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Data Service</em>' class.
@@ -1275,7 +1175,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getLegalEntityManager()
 	 * @generated
 	 */
-	int LEGAL_ENTITY_MANAGER = 10;
+	int LEGAL_ENTITY_MANAGER = 9;
 
 	/**
 	 * The number of structural features of the '<em>Legal Entity Manager</em>' class.
@@ -1350,40 +1250,13 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT = 6;
 
 	/**
-	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = 7;
-
-	/**
-	 * The operation id for the '<em>Create Person</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = 8;
-
-	/**
-	 * The operation id for the '<em>Create Organization</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = 9;
-
-	/**
 	 * The number of operations of the '<em>Legal Entity Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_ENTITY_MANAGER_OPERATION_COUNT = 10;
+	int LEGAL_ENTITY_MANAGER_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.LegalEntityManagerImplImpl <em>Legal Entity Manager Impl</em>}' class.
@@ -1393,7 +1266,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getLegalEntityManagerImpl()
 	 * @generated
 	 */
-	int LEGAL_ENTITY_MANAGER_IMPL = 11;
+	int LEGAL_ENTITY_MANAGER_IMPL = 10;
 
 	/**
 	 * The feature id for the '<em><b>Legal Entity Data Service</b></em>' reference.
@@ -1477,33 +1350,6 @@ public interface BookingPackage extends EPackage {
 	int LEGAL_ENTITY_MANAGER_IMPL___GET_LEGAL_ENTITY__INT = LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT;
 
 	/**
-	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE;
-
-	/**
-	 * The operation id for the '<em>Create Person</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY_MANAGER_IMPL___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION;
-
-	/**
-	 * The operation id for the '<em>Create Organization</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION;
-
-	/**
 	 * The number of operations of the '<em>Legal Entity Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1520,7 +1366,7 @@ public interface BookingPackage extends EPackage {
 	 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getLegalEntityDataService()
 	 * @generated
 	 */
-	int LEGAL_ENTITY_DATA_SERVICE = 12;
+	int LEGAL_ENTITY_DATA_SERVICE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Legal Entity Data Service</em>' class.
@@ -2018,71 +1864,6 @@ public interface BookingPackage extends EPackage {
 	EReference getTravelInformation_Predecessor();
 
 	/**
-	 * Returns the meta object for class '{@link tda593.hotel.california.booking.CreditCardInformation <em>Credit Card Information</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Credit Card Information</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation
-	 * @generated
-	 */
-	EClass getCreditCardInformation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getCardNumber <em>Card Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Card Number</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getCardNumber()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_CardNumber();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getExpirationDate <em>Expiration Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expiration Date</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getExpirationDate()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_ExpirationDate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getCcv <em>Ccv</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ccv</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getCcv()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_Ccv();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getFirstName <em>First Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>First Name</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getFirstName()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_FirstName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.CreditCardInformation#getLastName <em>Last Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Name</em>'.
-	 * @see tda593.hotel.california.booking.CreditCardInformation#getLastName()
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	EAttribute getCreditCardInformation_LastName();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2455,36 +2236,6 @@ public interface BookingPackage extends EPackage {
 	EOperation getLegalEntityManager__GetLegalEntity__int();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#setCreditCardInformation(tda593.hotel.california.booking.LegalEntity, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Date) <em>Set Credit Card Information</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Credit Card Information</em>' operation.
-	 * @see tda593.hotel.california.booking.LegalEntityManager#setCreditCardInformation(tda593.hotel.california.booking.LegalEntity, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Date)
-	 * @generated
-	 */
-	EOperation getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#createPerson(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation) <em>Create Person</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Person</em>' operation.
-	 * @see tda593.hotel.california.booking.LegalEntityManager#createPerson(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation)
-	 * @generated
-	 */
-	EOperation getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.LegalEntityManager#createOrganization(java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation) <em>Create Organization</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Organization</em>' operation.
-	 * @see tda593.hotel.california.booking.LegalEntityManager#createOrganization(java.lang.String, java.lang.String, java.lang.String, java.lang.String, tda593.hotel.california.booking.CreditCardInformation)
-	 * @generated
-	 */
-	EOperation getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation();
-
-	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.LegalEntityManagerImpl <em>Legal Entity Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2586,17 +2337,6 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLegalEntity_Email();
-
-	/**
-	 * Returns the meta object for the reference '{@link tda593.hotel.california.booking.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Credit Card Information</em>'.
-	 * @see tda593.hotel.california.booking.LegalEntity#getCreditCardInformation()
-	 * @see #getLegalEntity()
-	 * @generated
-	 */
-	EReference getLegalEntity_CreditCardInformation();
 
 	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.booking.LegalEntity#getId <em>Id</em>}'.
@@ -2935,56 +2675,6 @@ public interface BookingPackage extends EPackage {
 		EReference TRAVEL_INFORMATION__PREDECESSOR = eINSTANCE.getTravelInformation_Predecessor();
 
 		/**
-		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tda593.hotel.california.booking.impl.CreditCardInformationImpl
-		 * @see tda593.hotel.california.booking.impl.BookingPackageImpl#getCreditCardInformation()
-		 * @generated
-		 */
-		EClass CREDIT_CARD_INFORMATION = eINSTANCE.getCreditCardInformation();
-
-		/**
-		 * The meta object literal for the '<em><b>Card Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__CARD_NUMBER = eINSTANCE.getCreditCardInformation_CardNumber();
-
-		/**
-		 * The meta object literal for the '<em><b>Expiration Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__EXPIRATION_DATE = eINSTANCE.getCreditCardInformation_ExpirationDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Ccv</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__CCV = eINSTANCE.getCreditCardInformation_Ccv();
-
-		/**
-		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__FIRST_NAME = eINSTANCE.getCreditCardInformation_FirstName();
-
-		/**
-		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDIT_CARD_INFORMATION__LAST_NAME = eINSTANCE.getCreditCardInformation_LastName();
-
-		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.BookingManager <em>Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3289,30 +2979,6 @@ public interface BookingPackage extends EPackage {
 		EOperation LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT = eINSTANCE.getLegalEntityManager__GetLegalEntity__int();
 
 		/**
-		 * The meta object literal for the '<em><b>Set Credit Card Information</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE = eINSTANCE.getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Person</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = eINSTANCE.getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Organization</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION = eINSTANCE.getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation();
-
-		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.LegalEntityManagerImplImpl <em>Legal Entity Manager Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3397,14 +3063,6 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LEGAL_ENTITY__EMAIL = eINSTANCE.getLegalEntity_Email();
-
-		/**
-		 * The meta object literal for the '<em><b>Credit Card Information</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LEGAL_ENTITY__CREDIT_CARD_INFORMATION = eINSTANCE.getLegalEntity_CreditCardInformation();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
