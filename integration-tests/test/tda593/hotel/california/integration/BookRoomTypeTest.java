@@ -1,6 +1,7 @@
 package tda593.hotel.california.integration;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -168,33 +169,25 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		
 		assertFalse(DateUtil.isDateRangeValid(from, to));
 		
-		// TODO: What does a malformed room type name look like?
-		
-//		String roomTypeName1 = "abc";
-//		String roomTypeName2 = "-1";
-//		String roomTypeName3 = "@1231€#1#5";
-//		
-//		String[] roomTypeNames = new String[] {
-//			roomTypeName1,
-//			roomTypeName2,
-//			roomTypeName3
-//		};
-//		
-//		// TODO: this does not work as I want it to right now. Better solution?
-//		for(String roomTypeName : roomTypeNames) {
-////			try {
-//				roomManager.getRoomType(roomTypeName);
-////			} catch (IllegalArgumentException e) {
-////				assertInvalidInput(roomManager, roomNumber);
-////			}
-//		}
-	}
-	
-	private void assertInvalidInput(RoomManager roomManager, String roomNumber) {
-		try {
-			roomManager.getRoom(roomNumber);
-		} catch (IllegalArgumentException e) {
-			
+		String[] invalidRoomTypes = new String[] { 
+			"abc",
+			"-1", 
+			"@1231â‚¬#1#5", 
+			"0x12"
+		};
+		List<String> acceptedRoomTypes = new ArrayList<>();
+
+		for (String roomType : invalidRoomTypes) {
+			try {
+				roomManager.getRoom(roomType);
+				acceptedRoomTypes.add(roomType);
+			} catch (IllegalArgumentException e) {
+			}
+		}
+
+		if (!acceptedRoomTypes.isEmpty()) {
+			fail("Expected no room types to be accepted, but these were: "
+					+ acceptedRoomTypes);
 		}
 	}
 	
