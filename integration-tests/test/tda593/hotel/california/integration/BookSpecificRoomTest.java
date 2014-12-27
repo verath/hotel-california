@@ -134,7 +134,8 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		Date otherTo = c.getTime();
 		Room room = roomManager.getRooms().get(0);
 		bookingManager.createBooking(otherFrom, otherTo, legalEntityManager.getPerson("1"), room);
-		System.out.println("hejsan" + (bookingManager.isRoomAvailable(otherFrom, otherTo, room.getRoomNumber())? "True" : "false"));
+
+		//System.out.println("hejsan" + (bookingManager.isRoomAvailable(otherFrom, otherTo, room.getRoomNumber())? "True" : "false"));
 		
 		// Actor enters the date range and room number.
 		c.set(2015, 2, 9);

@@ -12,10 +12,10 @@ import tda593.hotel.california.util.HotelCaliforniaManagersHandler;
  */
 public abstract class AbstractHotelCaliforniaIntegrationTest {
 
-	protected static HotelCaliforniaManagersHandler managersHandler = new HotelCaliforniaManagersHandler();;
+	protected static HotelCaliforniaManagersHandler managersHandler = new HotelCaliforniaManagersHandler();
 
 	@BeforeClass
-	public static void initialize() {
+	public static void initialize() throws Exception {
 		managersHandler.initialize();
 	}
 }
