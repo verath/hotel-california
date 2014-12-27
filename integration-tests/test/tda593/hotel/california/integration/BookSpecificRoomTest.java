@@ -180,13 +180,10 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		String[] invalidRoomNumbers = new String[] { 
 			"abc",
 			"-1", 
-			"@1231€#1#5", 
+			"@1231â‚¬#1#5", 
 			"0x12"
 		};
 		List<String> acceptedRoomNumbers = new ArrayList<>();
-
-		// TODO: this does not work as I want it to right now. Better solution?
-		// TODO: Verify this solution does what ^ wanted it to do
 
 		for (String roomNumber : invalidRoomNumbers) {
 			try {
