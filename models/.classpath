@@ -20,5 +20,7 @@
 	<classpathentry exported="true" kind="lib" path="libs/commons-logging-1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.emf.common_2.10.1.v20140901-1043.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.emf.ecore_2.10.1.v20140901-1043.jar"/>
+	<classpathentry kind="lib" path="libs/BankingAdministrator/se.chalmers.cse.mdsd1415.banking.administratorRequires.jar"/>
+	<classpathentry kind="lib" path="libs/BankingCustomer/se.chalmers.cse.mdsd1415.banking.customerRequires.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
