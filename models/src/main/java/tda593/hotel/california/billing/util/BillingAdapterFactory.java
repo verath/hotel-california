@@ -82,10 +82,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createDiscountLimitAdapter();
 			}
 			@Override
-			public Adapter caseAdminDiscountManager(AdminDiscountManager object) {
-				return createAdminDiscountManagerAdapter();
-			}
-			@Override
 			public Adapter caseSumDiscount(SumDiscount object) {
 				return createSumDiscountAdapter();
 			}
@@ -132,10 +128,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBillDataService(BillDataService object) {
 				return createBillDataServiceAdapter();
-			}
-			@Override
-			public Adapter caseAdminDiscountManagerImpl(AdminDiscountManagerImpl object) {
-				return createAdminDiscountManagerImplAdapter();
 			}
 			@Override
 			public Adapter caseBankingManagerImpl(BankingManagerImpl object) {
@@ -220,20 +212,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscountLimitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminDiscountManager <em>Admin Discount Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.AdminDiscountManager
-	 * @generated
-	 */
-	public Adapter createAdminDiscountManagerAdapter() {
 		return null;
 	}
 
@@ -388,20 +366,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBillDataServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminDiscountManagerImpl <em>Admin Discount Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.AdminDiscountManagerImpl
-	 * @generated
-	 */
-	public Adapter createAdminDiscountManagerImplAdapter() {
 		return null;
 	}
 

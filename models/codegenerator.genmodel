@@ -208,38 +208,6 @@
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/DiscountLimit/allowedUsers"/>
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/DiscountLimit/timesLeftToUse"/>
           </genClasses>
-          <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="tda593.ecore#//hotel/california/billing/AdminDiscountManager">
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addSumDiscount">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addSumDiscount/code"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addSumDiscount/name"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addSumDiscount/sum"/>
-            </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addPercentageDiscount">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addPercentageDiscount/code"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addPercentageDiscount/name"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addPercentageDiscount/percentage"/>
-            </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setAmountLimit">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setAmountLimit/discount"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setAmountLimit/amount"/>
-            </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addAllowedUsers">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addAllowedUsers/discount"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/addAllowedUsers/allowedUsers"/>
-            </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setDateRangeLimit">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setDateRangeLimit/discount"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setDateRangeLimit/validFrom"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/setDateRangeLimit/validTo"/>
-            </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/AdminDiscountManager/createDiscountLimitForDiscount">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/createDiscountLimitForDiscount/discount"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/createDiscountLimitForDiscount/startDate"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/createDiscountLimitForDiscount/endDate"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/createDiscountLimitForDiscount/allowedUsers"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/AdminDiscountManager/createDiscountLimitForDiscount/timesLeftToUse"/>
-            </genOperations>
-          </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/SumDiscount">
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/SumDiscount/discountSum"/>
           </genClasses>
@@ -366,7 +334,6 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillDataService/getService/serviceId"/>
             </genOperations>
           </genClasses>
-          <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/AdminDiscountManagerImpl"/>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/BankingManagerImpl"/>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/CreditCardInformation">
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/CreditCardInformation/cardNumber"/>
@@ -390,6 +357,7 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/setCreditCardInformation/cardNumber"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/setCreditCardInformation/ccv"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/setCreditCardInformation/expirationDate"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/setCreditCardInformation/validator"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/CreditCardManager/getCreditCardInformation">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/getCreditCardInformation/legalEntity"/>

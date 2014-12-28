@@ -10,8 +10,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import tda593.hotel.california.CaliforniaPackage;
-import tda593.hotel.california.billing.AdminDiscountManager;
-import tda593.hotel.california.billing.AdminDiscountManagerImpl;
 import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
@@ -67,13 +65,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	private EClass discountLimitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass adminDiscountManagerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,13 +142,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	private EClass billDataServiceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass adminDiscountManagerImplEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -388,69 +372,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 */
 	public EAttribute getDiscountLimit_TimesLeftToUse() {
 		return (EAttribute)discountLimitEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAdminDiscountManager() {
-		return adminDiscountManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__AddSumDiscount__String_String_double() {
-		return adminDiscountManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__AddPercentageDiscount__String_String_float() {
-		return adminDiscountManagerEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__SetAmountLimit__Discount_int() {
-		return adminDiscountManagerEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__AddAllowedUsers__Discount_EList() {
-		return adminDiscountManagerEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date() {
-		return adminDiscountManagerEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int() {
-		return adminDiscountManagerEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -926,15 +847,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAdminDiscountManagerImpl() {
-		return adminDiscountManagerImplEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBankingManager() {
 		return bankingManagerEClass;
 	}
@@ -1061,7 +973,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCreditCardManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date() {
+	public EOperation getCreditCardManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date_BankingManager() {
 		return creditCardManagerEClass.getEOperations().get(0);
 	}
 
@@ -1145,14 +1057,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEReference(discountLimitEClass, DISCOUNT_LIMIT__ALLOWED_USERS);
 		createEAttribute(discountLimitEClass, DISCOUNT_LIMIT__TIMES_LEFT_TO_USE);
 
-		adminDiscountManagerEClass = createEClass(ADMIN_DISCOUNT_MANAGER);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__STRING_STRING_DOUBLE);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__STRING_STRING_FLOAT);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_AMOUNT_LIMIT__DISCOUNT_INT);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_ALLOWED_USERS__DISCOUNT_ELIST);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE);
-		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___CREATE_DISCOUNT_LIMIT_FOR_DISCOUNT__DISCOUNT_DATE_DATE_ELIST_INT);
-
 		sumDiscountEClass = createEClass(SUM_DISCOUNT);
 		createEAttribute(sumDiscountEClass, SUM_DISCOUNT__DISCOUNT_SUM);
 
@@ -1220,8 +1124,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING);
 		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_SERVICE__INT);
 
-		adminDiscountManagerImplEClass = createEClass(ADMIN_DISCOUNT_MANAGER_IMPL);
-
 		bankingManagerImplEClass = createEClass(BANKING_MANAGER_IMPL);
 
 		creditCardInformationEClass = createEClass(CREDIT_CARD_INFORMATION);
@@ -1236,7 +1138,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(creditCardInformationDataServiceEClass, CREDIT_CARD_INFORMATION_DATA_SERVICE___GET_BY_LEGAL_ENTITY__INT);
 
 		creditCardManagerEClass = createEClass(CREDIT_CARD_MANAGER);
-		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE);
+		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE_BANKINGMANAGER);
 		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__LEGALENTITY);
 		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT);
 
@@ -1276,7 +1178,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		adminDiscountManagerEClass.getESuperTypes().add(this.getDiscountManager());
 		sumDiscountEClass.getESuperTypes().add(this.getDiscount());
 		percentageDiscountEClass.getESuperTypes().add(this.getDiscount());
 		EGenericType g1 = createEGenericType(theCaliforniaPackage.getDataService());
@@ -1294,8 +1195,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		g2 = createEGenericType(ecorePackage.getEIntegerObject());
 		g1.getETypeArguments().add(g2);
 		billDataServiceEClass.getEGenericSuperTypes().add(g1);
-		adminDiscountManagerImplEClass.getESuperTypes().add(this.getDiscountManagerImpl());
-		adminDiscountManagerImplEClass.getESuperTypes().add(this.getAdminDiscountManager());
 		bankingManagerImplEClass.getESuperTypes().add(this.getBankingManager());
 		g1 = createEGenericType(theCaliforniaPackage.getDataService());
 		g2 = createEGenericType(this.getCreditCardInformation());
@@ -1325,38 +1224,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		initEAttribute(getDiscountLimit_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDiscountLimit_AllowedUsers(), theBookingPackage.getLegalEntity(), null, "allowedUsers", null, 0, -1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDiscountLimit_TimesLeftToUse(), ecorePackage.getEInt(), "timesLeftToUse", null, 1, 1, DiscountLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(adminDiscountManagerEClass, AdminDiscountManager.class, "AdminDiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getAdminDiscountManager__AddSumDiscount__String_String_double(), this.getDiscount(), "addSumDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__AddPercentageDiscount__String_String_float(), this.getDiscount(), "addPercentageDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEFloat(), "percentage", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__SetAmountLimit__Discount_int(), null, "setAmountLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "amount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__AddAllowedUsers__Discount_EList(), null, "addAllowedUsers", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theBookingPackage.getLegalEntity(), "allowedUsers", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date(), null, "setDateRangeLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "validFrom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "validTo", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int(), null, "createDiscountLimitForDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theBookingPackage.getLegalEntity(), "allowedUsers", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "timesLeftToUse", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(sumDiscountEClass, SumDiscount.class, "SumDiscount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSumDiscount_DiscountSum(), ecorePackage.getEDouble(), "discountSum", null, 1, 1, SumDiscount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1481,8 +1348,6 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		op = initEOperation(getBillDataService__GetService__int(), this.getService(), "getService", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(adminDiscountManagerImplEClass, AdminDiscountManagerImpl.class, "AdminDiscountManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(bankingManagerImplEClass, BankingManagerImpl.class, "BankingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(creditCardInformationEClass, CreditCardInformation.class, "CreditCardInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1500,13 +1365,14 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		initEClass(creditCardManagerEClass, CreditCardManager.class, "CreditCardManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getCreditCardManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date(), null, "setCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getCreditCardManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date_BankingManager(), ecorePackage.getEBoolean(), "setCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getLegalEntity(), "legalEntity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "expirationDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBankingManager(), "validator", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getCreditCardManager__GetCreditCardInformation__LegalEntity(), this.getCreditCardInformation(), "getCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getLegalEntity(), "legalEntity", 1, 1, IS_UNIQUE, !IS_ORDERED);

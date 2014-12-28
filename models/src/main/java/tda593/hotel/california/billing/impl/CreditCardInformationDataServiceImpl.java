@@ -70,11 +70,11 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<CreditCardInformation> getAll() {
 		List<CreditCardInformationEntityImpl> results = entityManager.createQuery("FROM CreditCardInformationEntityImpl", 
-				CreditCardInformationEntityImpl.class).getResultList();
+		CreditCardInformationEntityImpl.class).getResultList();
 		EList<CreditCardInformation> entityResults = new BasicEList<CreditCardInformation>(results.size());
 		for (CreditCardInformationEntity entity : results) {
 			entityResults.add(entityToCreditCardInformation(entity));

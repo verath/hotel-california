@@ -3,8 +3,10 @@ package tda593.hotel.california.util;
 import javax.persistence.EntityManager;
 
 import tda593.hotel.california.billing.AdminDiscountManager;
+import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManager;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.CreditCardInformationDataService;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.billing.DiscountDataService;
@@ -71,6 +73,7 @@ public class HotelCaliforniaManagersHandler {
 	private BillManager billManager;
 	private DiscountManager discountManager;
 	private CreditCardManager creditCardManager;
+	private BankingManager bankingManager;
 
 	private void initializeEntityManager() throws Exception {
 		PersistenceHelper.initialize();
@@ -108,6 +111,7 @@ public class HotelCaliforniaManagersHandler {
 		billManager = new BillManagerImplImpl(billDataService, bookingManager);
 		discountManager = new DiscountManagerImplImpl(discountDataService);
 		creditCardManager = new CreditCardManagerImplImpl(creditCardDataService);
+		bankingManager = BillingFactory.eINSTANCE.createBankingManagerImpl();
 	}
 
 	/**
@@ -190,5 +194,9 @@ public class HotelCaliforniaManagersHandler {
 	
 	public CreditCardManager getCreditCardManager() {
 		return creditCardManager;
+	}
+	
+	public BankingManager getBankingManager() {
+		return bankingManager;
 	}
 }

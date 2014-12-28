@@ -242,40 +242,6 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="timesLeftToUse" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="AdminDiscountManager" abstract="true"
-            interface="true" eSuperTypes="#//hotel/california/billing/DiscountManager">
-          <eOperations name="addSumDiscount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount">
-            <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eParameters name="sum" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-          </eOperations>
-          <eOperations name="addPercentageDiscount" ordered="false" lowerBound="1"
-              eType="#//hotel/california/billing/Discount">
-            <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eParameters name="percentage" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-          </eOperations>
-          <eOperations name="setAmountLimit" ordered="false" lowerBound="1">
-            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount"/>
-            <eParameters name="amount" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          </eOperations>
-          <eOperations name="addAllowedUsers" ordered="false" lowerBound="1">
-            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount"/>
-            <eParameters name="allowedUsers" ordered="false" upperBound="-1" eType="#//hotel/california/booking/LegalEntity"/>
-          </eOperations>
-          <eOperations name="setDateRangeLimit" ordered="false" lowerBound="1">
-            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount"/>
-            <eParameters name="validFrom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-            <eParameters name="validTo" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-          </eOperations>
-          <eOperations name="createDiscountLimitForDiscount" ordered="false" lowerBound="1">
-            <eParameters name="discount" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Discount"/>
-            <eParameters name="startDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-            <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-            <eParameters name="allowedUsers" ordered="false" upperBound="-1" eType="#//hotel/california/booking/LegalEntity"/>
-            <eParameters name="timesLeftToUse" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          </eOperations>
-        </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="SumDiscount" eSuperTypes="#//hotel/california/billing/Discount">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountSum" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -425,7 +391,6 @@
             <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
           </eGenericSuperTypes>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="AdminDiscountManagerImpl" eSuperTypes="#//hotel/california/billing/DiscountManagerImpl #//hotel/california/billing/AdminDiscountManager"/>
         <eClassifiers xsi:type="ecore:EClass" name="BankingManagerImpl" eSuperTypes="#//hotel/california/billing/BankingManager"/>
         <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformation">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
@@ -452,13 +417,15 @@
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="CreditCardManager" abstract="true"
             interface="true">
-          <eOperations name="setCreditCardInformation" ordered="false" lowerBound="1">
+          <eOperations name="setCreditCardInformation" ordered="false" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="legalEntity" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
             <eParameters name="firstname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="lastname" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="cardNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="expirationDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="validator" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BankingManager"/>
           </eOperations>
           <eOperations name="getCreditCardInformation" ordered="false" lowerBound="1"
               eType="#//hotel/california/billing/CreditCardInformation">

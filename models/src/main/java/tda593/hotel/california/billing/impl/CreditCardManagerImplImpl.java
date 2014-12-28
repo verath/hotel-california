@@ -3,6 +3,7 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.CreditCardInformation;
@@ -106,20 +108,27 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Sets (adds or replaces) the credit card information related to the specified legal entity
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setCreditCardInformation(LegalEntity legalEntity, String firstname, String lastname, String cardNumber, String ccv, Date expirationDate) {
+	public boolean setCreditCardInformation(LegalEntity legalEntity, String firstName, String lastName, String cardNumber, String ccv, Date expirationDate, BankingManager validator) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(expirationDate);
+		if(!validator.isCreditCardValid(cardNumber, ccv, cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), firstName, lastName)) {
+			return false;
+		}
+		
 		CreditCardInformation creditCardInfo = BillingFactory.eINSTANCE.createCreditCardInformation();
-		creditCardInfo.setFirstName(firstname);
-		creditCardInfo.setLastName(lastname);
+		creditCardInfo.setFirstName(firstName);
+		creditCardInfo.setLastName(lastName);
 		creditCardInfo.setCardNumber(cardNumber);
 		creditCardInfo.setCcv(ccv);
 		creditCardInfo.setExpirationDate(expirationDate);
 		creditCardInfo.setLegalEntity(legalEntity);
 		
 		creditCardInformationDataService.set(creditCardInfo);
+		
+		return true;
 	}
 
 	/**
@@ -207,9 +216,8 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BillingPackage.CREDIT_CARD_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE:
-				setCreditCardInformation((LegalEntity)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (Date)arguments.get(5));
-				return null;
+			case BillingPackage.CREDIT_CARD_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE_BANKINGMANAGER:
+				return setCreditCardInformation((LegalEntity)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (Date)arguments.get(5), (BankingManager)arguments.get(6));
 			case BillingPackage.CREDIT_CARD_MANAGER_IMPL___GET_CREDIT_CARD_INFORMATION__LEGALENTITY:
 				return getCreditCardInformation((LegalEntity)arguments.get(0));
 			case BillingPackage.CREDIT_CARD_MANAGER_IMPL___GET_CREDIT_CARD_INFORMATION__INT:

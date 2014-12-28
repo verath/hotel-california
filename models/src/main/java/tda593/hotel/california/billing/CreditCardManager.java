@@ -22,10 +22,10 @@ public interface CreditCardManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model legalEntityRequired="true" legalEntityOrdered="false" firstnameRequired="true" firstnameOrdered="false" lastnameRequired="true" lastnameOrdered="false" cardNumberRequired="true" cardNumberOrdered="false" ccvRequired="true" ccvOrdered="false" expirationDateRequired="true" expirationDateOrdered="false"
+	 * @model required="true" ordered="false" legalEntityRequired="true" legalEntityOrdered="false" firstnameRequired="true" firstnameOrdered="false" lastnameRequired="true" lastnameOrdered="false" cardNumberRequired="true" cardNumberOrdered="false" ccvRequired="true" ccvOrdered="false" expirationDateRequired="true" expirationDateOrdered="false" validatorRequired="true" validatorOrdered="false"
 	 * @generated
 	 */
-	void setCreditCardInformation(LegalEntity legalEntity, String firstname, String lastname, String cardNumber, String ccv, Date expirationDate);
+	boolean setCreditCardInformation(LegalEntity legalEntity, String firstname, String lastname, String cardNumber, String ccv, Date expirationDate, BankingManager validator);
 
 	/**
 	 * <!-- begin-user-doc -->

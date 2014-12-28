@@ -854,6 +854,10 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_tF6Ilo3sEeSfBP2QR77p4w" name="expirationDate">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5MPa4I4xEeSfBP2QR77p4w" name="validator" type="_NdMEoI27EeSwirR7O7P1rg"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_gGsdUI4yEeSfBP2QR77p4w" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_HAJnkI3uEeSfBP2QR77p4w" name="getCreditCardInformation">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_IbaEoI3uEeSfBP2QR77p4w" type="_28JnEHcFEeSbBJzXJgLK5Q" direction="return"/>

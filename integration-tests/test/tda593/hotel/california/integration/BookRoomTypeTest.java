@@ -13,6 +13,8 @@ import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import sun.swing.BakedArrayList;
+import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
@@ -31,6 +33,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 	private LegalEntityManager legalEntityManager;
 	private CreditCardManager creditCardManager;
 	private RoomManager roomManager;
+	private BankingManager bankingManager;
 	
 	private Calendar c = Calendar.getInstance();
 
@@ -63,6 +66,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		legalEntityManager = managersHandler.getLegalEntityManager();
 		roomManager = managersHandler.getRoomManager();
 		creditCardManager = managersHandler.getCreditCardManager();
+		bankingManager = managersHandler.getBankingManager();
 	}
 
 	/**
@@ -216,7 +220,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		Person p = legalEntityManager.createPerson(firstName, lastName, SSN, phone, email);
 		assertTrue(p != null);
 		
-		creditCardManager.setCreditCardInformation(p, firstName, lastName, cardNumber, ccv, expirationDate);
+		creditCardManager.setCreditCardInformation(p, firstName, lastName, cardNumber, ccv, expirationDate, bankingManager);
 		// TODO: how do we check that it was created? Is the only way by getting and then checking for null?
 		// maybe throw some error instead?
 		
@@ -247,7 +251,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		String ccv = "555";
 		Date expirationDate = c.getTime();
 		
-		creditCardManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate);
+		creditCardManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate, bankingManager);
 		
 		LegalEntity legalEntityFromDatabase = legalEntityManager.getLegalEntity(1);
 		
