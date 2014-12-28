@@ -40,7 +40,7 @@ import tda593.hotel.california.facilities.impl.RoomDataServiceImpl;
 import tda593.hotel.california.facilities.impl.RoomManagerImplImpl;
 import tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl;
 import tda593.hotel.california.integration.mock.MockTestAdminBankingManager;
-import tda593.hotel.california.integration.mock.TestAdminBankingManager;
+import tda593.hotel.california.integration.TestAdminBankingManager;
 
 public class HotelCaliforniaManagersHandler {
 	public final boolean mockBankingComponent;
