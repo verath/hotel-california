@@ -8,7 +8,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
-import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -21,12 +20,7 @@ import tda593.hotel.california.billing.CreditCardInformation;
 import tda593.hotel.california.billing.CreditCardInformationDataService;
 import tda593.hotel.california.billing.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.billing.persistence.impl.CreditCardInformationEntityImpl;
-import tda593.hotel.california.booking.Booking;
-import tda593.hotel.california.booking.persistence.BookingEntity;
-import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
-import tda593.hotel.california.facilities.Room;
-import tda593.hotel.california.facilities.persistence.RoomEntity;
-import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
+import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -173,6 +167,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		cc.setLastName(entity.getLastName());
 		cc.setCardNumber(entity.getCardNumber());
 		cc.setExpirationDate(entity.getExpirationDate());
+		cc.setLegalEntity(LegalEntityDataServiceImpl.entityToLegalEntity(entity.getOwner()));
 		return cc;
 	}
 	
@@ -185,6 +180,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		cce.setLastName(cc.getLastName());
 		cce.setCardNumber(cc.getCardNumber());
 		cce.setExpirationDate(cc.getExpirationDate());
+		cce.setOwner(LegalEntityDataServiceImpl.legalEntityToEntity(cc.getLegalEntity()));
 		return cce;
 	}
 	

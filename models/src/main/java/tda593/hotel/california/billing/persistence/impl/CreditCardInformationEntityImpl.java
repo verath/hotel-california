@@ -4,6 +4,7 @@ package tda593.hotel.california.billing.persistence.impl;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
