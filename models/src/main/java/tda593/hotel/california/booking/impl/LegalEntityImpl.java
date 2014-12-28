@@ -6,11 +6,9 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import tda593.hotel.california.booking.BookingPackage;
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 
 /**
@@ -22,7 +20,6 @@ import tda593.hotel.california.booking.LegalEntity;
  * <ul>
  *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getPhone <em>Phone</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getEmail <em>Email</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getCreditCardInformation <em>Credit Card Information</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.impl.LegalEntityImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
@@ -69,16 +66,6 @@ public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected String email = EMAIL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCreditCardInformation() <em>Credit Card Information</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected CreditCardInformation creditCardInformation;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -166,44 +153,6 @@ public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CreditCardInformation getCreditCardInformation() {
-		if (creditCardInformation != null && creditCardInformation.eIsProxy()) {
-			InternalEObject oldCreditCardInformation = (InternalEObject)creditCardInformation;
-			creditCardInformation = (CreditCardInformation)eResolveProxy(oldCreditCardInformation);
-			if (creditCardInformation != oldCreditCardInformation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
-			}
-		}
-		return creditCardInformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CreditCardInformation basicGetCreditCardInformation() {
-		return creditCardInformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCreditCardInformation(CreditCardInformation newCreditCardInformation) {
-		CreditCardInformation oldCreditCardInformation = creditCardInformation;
-		creditCardInformation = newCreditCardInformation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION, oldCreditCardInformation, creditCardInformation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getId() {
 		return id;
 	}
@@ -240,9 +189,6 @@ public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container imple
 				return getPhone();
 			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				return getEmail();
-			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
-				if (resolve) return getCreditCardInformation();
-				return basicGetCreditCardInformation();
 			case BookingPackage.LEGAL_ENTITY__ID:
 				return getId();
 		}
@@ -262,9 +208,6 @@ public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container imple
 				return;
 			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				setEmail((String)newValue);
-				return;
-			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
-				setCreditCardInformation((CreditCardInformation)newValue);
 				return;
 			case BookingPackage.LEGAL_ENTITY__ID:
 				setId((Integer)newValue);
@@ -287,9 +230,6 @@ public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container imple
 			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				setEmail(EMAIL_EDEFAULT);
 				return;
-			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
-				setCreditCardInformation((CreditCardInformation)null);
-				return;
 			case BookingPackage.LEGAL_ENTITY__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -309,8 +249,6 @@ public abstract class LegalEntityImpl extends MinimalEObjectImpl.Container imple
 				return PHONE_EDEFAULT == null ? phone != null : !PHONE_EDEFAULT.equals(phone);
 			case BookingPackage.LEGAL_ENTITY__EMAIL:
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-			case BookingPackage.LEGAL_ENTITY__CREDIT_CARD_INFORMATION:
-				return creditCardInformation != null;
 			case BookingPackage.LEGAL_ENTITY__ID:
 				return id != ID_EDEFAULT;
 		}

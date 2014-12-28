@@ -76,15 +76,6 @@ public interface BookingFactory extends EFactory {
 	TravelInformation createTravelInformation();
 
 	/**
-	 * Returns a new object of class '<em>Credit Card Information</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Credit Card Information</em>'.
-	 * @generated
-	 */
-	CreditCardInformation createCreditCardInformation();
-
-	/**
 	 * Returns a new object of class '<em>Manager Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

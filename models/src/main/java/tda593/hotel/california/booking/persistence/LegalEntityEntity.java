@@ -76,32 +76,6 @@ public interface LegalEntityEntity {
 	void setEmail(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Credit Card Information Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Credit Card Information Entity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credit Card Information Entity</em>' reference.
-	 * @see #setCreditCardInformationEntity(CreditCardInformationEntity)
-	 * @see tda593.hotel.california.booking.persistence.PersistencePackage#getLegalEntityEntity_CreditCardInformationEntity()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	CreditCardInformationEntity getCreditCardInformationEntity();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.persistence.LegalEntityEntity#getCreditCardInformationEntity <em>Credit Card Information Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Credit Card Information Entity</em>' reference.
-	 * @see #getCreditCardInformationEntity()
-	 * @generated
-	 */
-	void setCreditCardInformationEntity(CreditCardInformationEntity value);
-
-	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>

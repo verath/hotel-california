@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tda593.hotel.california.booking.LegalEntity#getPhone <em>Phone</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.LegalEntity#getEmail <em>Email</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}</li>
  *   <li>{@link tda593.hotel.california.booking.LegalEntity#getId <em>Id</em>}</li>
  * </ul>
  * </p>
@@ -75,32 +74,6 @@ public interface LegalEntity extends EObject {
 	 * @generated
 	 */
 	void setEmail(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Credit Card Information</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Credit Card Information</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credit Card Information</em>' reference.
-	 * @see #setCreditCardInformation(CreditCardInformation)
-	 * @see tda593.hotel.california.booking.BookingPackage#getLegalEntity_CreditCardInformation()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	CreditCardInformation getCreditCardInformation();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.booking.LegalEntity#getCreditCardInformation <em>Credit Card Information</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Credit Card Information</em>' reference.
-	 * @see #getCreditCardInformation()
-	 * @generated
-	 */
-	void setCreditCardInformation(CreditCardInformation value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

@@ -18,7 +18,6 @@ import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.BookingManagerImpl;
 import tda593.hotel.california.booking.BookingPackage;
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
 import tda593.hotel.california.booking.LegalEntityManager;
@@ -80,13 +79,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * @generated
 	 */
 	private EClass travelInformationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass creditCardInformationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -529,60 +521,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCreditCardInformation() {
-		return creditCardInformationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCreditCardInformation_CardNumber() {
-		return (EAttribute)creditCardInformationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCreditCardInformation_ExpirationDate() {
-		return (EAttribute)creditCardInformationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCreditCardInformation_Ccv() {
-		return (EAttribute)creditCardInformationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCreditCardInformation_FirstName() {
-		return (EAttribute)creditCardInformationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCreditCardInformation_LastName() {
-		return (EAttribute)creditCardInformationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBookingManager() {
 		return bookingManagerEClass;
 	}
@@ -916,33 +854,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date() {
-		return legalEntityManagerEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation() {
-		return legalEntityManagerEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation() {
-		return legalEntityManagerEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLegalEntityManagerImpl() {
 		return legalEntityManagerImplEClass;
 	}
@@ -1033,17 +944,8 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLegalEntity_CreditCardInformation() {
-		return (EReference)legalEntityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getLegalEntity_Id() {
-		return (EAttribute)legalEntityEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)legalEntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1124,13 +1026,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEAttribute(stayRequestEClass, STAY_REQUEST__TIME_STAMP);
 		createEAttribute(stayRequestEClass, STAY_REQUEST__ID);
 
-		creditCardInformationEClass = createEClass(CREDIT_CARD_INFORMATION);
-		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__CARD_NUMBER);
-		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__EXPIRATION_DATE);
-		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__CCV);
-		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__FIRST_NAME);
-		createEAttribute(creditCardInformationEClass, CREDIT_CARD_INFORMATION__LAST_NAME);
-
 		bookingManagerEClass = createEClass(BOOKING_MANAGER);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_BOOKINGS__DATE_DATE);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_BOOKINGS__DATE_DATE_LEGALENTITY);
@@ -1171,9 +1066,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___GET_LEGAL_ENTITY__INT);
-		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE);
-		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION);
-		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION);
 
 		legalEntityManagerImplEClass = createEClass(LEGAL_ENTITY_MANAGER_IMPL);
 		createEReference(legalEntityManagerImplEClass, LEGAL_ENTITY_MANAGER_IMPL__LEGAL_ENTITY_DATA_SERVICE);
@@ -1187,7 +1079,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		legalEntityEClass = createEClass(LEGAL_ENTITY);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__PHONE);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__EMAIL);
-		createEReference(legalEntityEClass, LEGAL_ENTITY__CREDIT_CARD_INFORMATION);
 		createEAttribute(legalEntityEClass, LEGAL_ENTITY__ID);
 		createEOperation(legalEntityEClass, LEGAL_ENTITY___GET_NAME);
 	}
@@ -1286,13 +1177,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEAttribute(getStayRequest_Text(), ecorePackage.getEString(), "text", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStayRequest_TimeStamp(), ecorePackage.getEDate(), "timeStamp", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStayRequest_Id(), ecorePackage.getEInt(), "id", null, 1, 1, StayRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(creditCardInformationEClass, CreditCardInformation.class, "CreditCardInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCreditCardInformation_CardNumber(), ecorePackage.getEString(), "cardNumber", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCreditCardInformation_ExpirationDate(), ecorePackage.getEDate(), "expirationDate", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCreditCardInformation_Ccv(), ecorePackage.getEString(), "ccv", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCreditCardInformation_FirstName(), ecorePackage.getEString(), "firstName", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCreditCardInformation_LastName(), ecorePackage.getEString(), "lastName", null, 1, 1, CreditCardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bookingManagerEClass, BookingManager.class, "BookingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1434,29 +1318,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		op = initEOperation(getLegalEntityManager__GetLegalEntity__int(), this.getLegalEntity(), "getLegalEntity", 0, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getLegalEntityManager__SetCreditCardInformation__LegalEntity_String_String_String_String_Date(), null, "setCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getLegalEntity(), "legalEntity", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "cardNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "expirationDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getLegalEntityManager__CreatePerson__String_String_String_String_String_CreditCardInformation(), this.getPerson(), "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "firstname", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "lastname", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getCreditCardInformation(), "creditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getLegalEntityManager__CreateOrganization__String_String_String_String_CreditCardInformation(), this.getOrganization(), "createOrganization", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "organizationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "phone", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getCreditCardInformation(), "creditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEClass(legalEntityManagerImplEClass, LegalEntityManagerImpl.class, "LegalEntityManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLegalEntityManagerImpl_LegalEntityDataService(), this.getLegalEntityDataService(), null, "legalEntityDataService", null, 1, 1, LegalEntityManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1478,7 +1339,6 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEClass(legalEntityEClass, LegalEntity.class, "LegalEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLegalEntity_Phone(), ecorePackage.getEString(), "phone", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLegalEntity_Email(), ecorePackage.getEString(), "email", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLegalEntity_CreditCardInformation(), this.getCreditCardInformation(), null, "creditCardInformation", null, 0, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLegalEntity_Id(), ecorePackage.getEInt(), "id", null, 1, 1, LegalEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getLegalEntity__GetName(), ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, !IS_ORDERED);

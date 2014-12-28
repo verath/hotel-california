@@ -1,18 +1,21 @@
 /**
  */
-package tda593.hotel.california.booking.impl;
+package tda593.hotel.california.billing.impl;
 
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tda593.hotel.california.booking.BookingPackage;
-import tda593.hotel.california.booking.CreditCardInformation;
+import tda593.hotel.california.billing.BillingPackage;
+import tda593.hotel.california.billing.CreditCardInformation;
+
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +24,12 @@ import tda593.hotel.california.booking.CreditCardInformation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getExpirationDate <em>Expiration Date</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getCcv <em>Ccv</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getFirstName <em>First Name</em>}</li>
- *   <li>{@link tda593.hotel.california.booking.impl.CreditCardInformationImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl#getExpirationDate <em>Expiration Date</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl#getCcv <em>Ccv</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl#getLegalEntity <em>Legal Entity</em>}</li>
  * </ul>
  * </p>
  *
@@ -133,6 +137,16 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	protected String lastName = LAST_NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getLegalEntity() <em>Legal Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLegalEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected LegalEntity legalEntity;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -148,7 +162,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BookingPackage.Literals.CREDIT_CARD_INFORMATION;
+		return BillingPackage.Literals.CREDIT_CARD_INFORMATION;
 	}
 
 	/**
@@ -169,7 +183,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		String oldCardNumber = cardNumber;
 		cardNumber = newCardNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER, oldCardNumber, cardNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER, oldCardNumber, cardNumber));
 	}
 
 	/**
@@ -190,7 +204,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		Date oldExpirationDate = expirationDate;
 		expirationDate = newExpirationDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE, oldExpirationDate, expirationDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE, oldExpirationDate, expirationDate));
 	}
 
 	/**
@@ -211,7 +225,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		String oldCcv = ccv;
 		ccv = newCcv;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__CCV, oldCcv, ccv));
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.CREDIT_CARD_INFORMATION__CCV, oldCcv, ccv));
 	}
 
 	/**
@@ -232,7 +246,7 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		String oldFirstName = firstName;
 		firstName = newFirstName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME, oldFirstName, firstName));
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME, oldFirstName, firstName));
 	}
 
 	/**
@@ -253,7 +267,45 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 		String oldLastName = lastName;
 		lastName = newLastName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME, oldLastName, lastName));
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.CREDIT_CARD_INFORMATION__LAST_NAME, oldLastName, lastName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LegalEntity getLegalEntity() {
+		if (legalEntity != null && legalEntity.eIsProxy()) {
+			InternalEObject oldLegalEntity = (InternalEObject)legalEntity;
+			legalEntity = (LegalEntity)eResolveProxy(oldLegalEntity);
+			if (legalEntity != oldLegalEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BillingPackage.CREDIT_CARD_INFORMATION__LEGAL_ENTITY, oldLegalEntity, legalEntity));
+			}
+		}
+		return legalEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LegalEntity basicGetLegalEntity() {
+		return legalEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLegalEntity(LegalEntity newLegalEntity) {
+		LegalEntity oldLegalEntity = legalEntity;
+		legalEntity = newLegalEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.CREDIT_CARD_INFORMATION__LEGAL_ENTITY, oldLegalEntity, legalEntity));
 	}
 
 	/**
@@ -264,16 +316,19 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				return getCardNumber();
-			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BillingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				return getExpirationDate();
-			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CCV:
 				return getCcv();
-			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
 				return getFirstName();
-			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
 				return getLastName();
+			case BillingPackage.CREDIT_CARD_INFORMATION__LEGAL_ENTITY:
+				if (resolve) return getLegalEntity();
+				return basicGetLegalEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -286,20 +341,23 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				setCardNumber((String)newValue);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BillingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				setExpirationDate((Date)newValue);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CCV:
 				setCcv((String)newValue);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
 				setFirstName((String)newValue);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
 				setLastName((String)newValue);
+				return;
+			case BillingPackage.CREDIT_CARD_INFORMATION__LEGAL_ENTITY:
+				setLegalEntity((LegalEntity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,20 +371,23 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				setCardNumber(CARD_NUMBER_EDEFAULT);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BillingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				setExpirationDate(EXPIRATION_DATE_EDEFAULT);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CCV:
 				setCcv(CCV_EDEFAULT);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
 				setFirstName(FIRST_NAME_EDEFAULT);
 				return;
-			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
 				setLastName(LAST_NAME_EDEFAULT);
+				return;
+			case BillingPackage.CREDIT_CARD_INFORMATION__LEGAL_ENTITY:
+				setLegalEntity((LegalEntity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -340,16 +401,18 @@ public class CreditCardInformationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BookingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CARD_NUMBER:
 				return CARD_NUMBER_EDEFAULT == null ? cardNumber != null : !CARD_NUMBER_EDEFAULT.equals(cardNumber);
-			case BookingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
+			case BillingPackage.CREDIT_CARD_INFORMATION__EXPIRATION_DATE:
 				return EXPIRATION_DATE_EDEFAULT == null ? expirationDate != null : !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
-			case BookingPackage.CREDIT_CARD_INFORMATION__CCV:
+			case BillingPackage.CREDIT_CARD_INFORMATION__CCV:
 				return CCV_EDEFAULT == null ? ccv != null : !CCV_EDEFAULT.equals(ccv);
-			case BookingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__FIRST_NAME:
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
-			case BookingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
+			case BillingPackage.CREDIT_CARD_INFORMATION__LAST_NAME:
 				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
+			case BillingPackage.CREDIT_CARD_INFORMATION__LEGAL_ENTITY:
+				return legalEntity != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -13,9 +13,7 @@ import javax.persistence.OneToMany;
 import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
 import tda593.hotel.california.billing.persistence.PurchaseEntity;
-import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
-import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
 
 /**
@@ -48,12 +46,13 @@ public class BillEntityImpl implements BillEntity {
 	private boolean isPaid;
 	@OneToMany(targetEntity = DiscountEntityImpl.class)
 	private List<DiscountEntity> usedDiscounts;
+	
 	@OneToMany(targetEntity = LegalEntityEntityImpl.class)
 	private LegalEntityEntity responsible;
+	
 	@OneToMany(targetEntity = PurchaseEntityImpl.class)
 	private List<PurchaseEntity> purchaseEntity;
-	@OneToMany(targetEntity = CreditCardInformationEntityImpl.class)
-	private CreditCardInformationEntity creditCardInformationEntity;
+	
 	@OneToMany(targetEntity = BillEntityImpl.class)
 	private List<BillEntity> subBillEntities;
 
@@ -178,24 +177,6 @@ public class BillEntityImpl implements BillEntity {
 			purchaseEntity = new ArrayList<PurchaseEntity>();
 		}
 		return purchaseEntity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CreditCardInformationEntity getCreditCardInformationEntity() {
-		return creditCardInformationEntity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCreditCardInformationEntity(CreditCardInformationEntity newCreditCardInformationEntity) {
-		creditCardInformationEntity = newCreditCardInformationEntity;
 	}
 	
 	/**

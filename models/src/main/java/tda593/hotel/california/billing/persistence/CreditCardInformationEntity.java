@@ -1,8 +1,10 @@
 /**
  */
-package tda593.hotel.california.booking.persistence;
+package tda593.hotel.california.billing.persistence;
 
 import java.util.Date;
+
+import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -12,13 +14,13 @@ import java.util.Date;
  * The following features are supported:
  * <ul>
  * <li>
- * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardNumber
+ * {@link tda593.hotel.california.billing.persistence.CreditCardInformationEntity#getCardNumber
  * <em>Card Number</em>}</li>
  * <li>
- * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardHolder
+ * {@link tda593.hotel.california.billing.persistence.CreditCardInformationEntity#getCardHolder
  * <em>Card Holder</em>}</li>
  * <li>
- * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getExpirationDate
+ * {@link tda593.hotel.california.billing.persistence.CreditCardInformationEntity#getExpirationDate
  * <em>Expiration Date</em>}</li>
  * </ul>
  * </p>
@@ -47,7 +49,7 @@ public interface CreditCardInformationEntity {
 
 	/**
 	 * Sets the value of the '
-	 * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardNumber
+	 * {@link tda593.hotel.california.billing.persistence.CreditCardInformationEntity#getCardNumber
 	 * <em>Card Number</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -77,7 +79,7 @@ public interface CreditCardInformationEntity {
 
 	/**
 	 * Sets the value of the '
-	 * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getCardHolder
+	 * {@link tda593.hotel.california.billing.persistence.CreditCardInformationEntity#getCardHolder
 	 * <em>Card Holder</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -111,7 +113,7 @@ public interface CreditCardInformationEntity {
 
 	/**
 	 * Sets the value of the '
-	 * {@link tda593.hotel.california.booking.persistence.CreditCardInformationEntity#getExpirationDate
+	 * {@link tda593.hotel.california.billing.persistence.CreditCardInformationEntity#getExpirationDate
 	 * <em>Expiration Date</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -121,5 +123,9 @@ public interface CreditCardInformationEntity {
 	 * @generated
 	 */
 	void setExpirationDate(Date value);
+	
+	LegalEntityEntity getOwner();
+	
+	void setOwner(LegalEntityEntity owner);
 
 } // CreditCardInformationEntity

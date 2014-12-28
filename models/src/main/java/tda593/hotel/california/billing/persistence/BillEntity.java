@@ -5,7 +5,6 @@ package tda593.hotel.california.billing.persistence;
 import java.util.Date;
 import java.util.List;
 
-import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 
 /**
@@ -193,31 +192,5 @@ public interface BillEntity {
 	 * @generated
 	 */
 	List<PurchaseEntity> getPurchaseEntity();
-
-	/**
-	 * Returns the value of the '<em><b>Credit Card Information Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Credit Card Information Entity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credit Card Information Entity</em>' reference.
-	 * @see #setCreditCardInformationEntity(CreditCardInformationEntity)
-	 * @see tda593.hotel.california.billing.persistence.PersistencePackage#getBillEntity_CreditCardInformationEntity()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	CreditCardInformationEntity getCreditCardInformationEntity();
-
-	/**
-	 * Sets the value of the '{@link tda593.hotel.california.billing.persistence.BillEntity#getCreditCardInformationEntity <em>Credit Card Information Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Credit Card Information Entity</em>' reference.
-	 * @see #getCreditCardInformationEntity()
-	 * @generated
-	 */
-	void setCreditCardInformationEntity(CreditCardInformationEntity value);
 
 } // BillEntity

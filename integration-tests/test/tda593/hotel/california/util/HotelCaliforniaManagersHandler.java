@@ -3,15 +3,21 @@ package tda593.hotel.california.util;
 import javax.persistence.EntityManager;
 
 import tda593.hotel.california.billing.AdminDiscountManager;
+import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManager;
+import tda593.hotel.california.billing.BillingFactory;
+import tda593.hotel.california.billing.CreditCardInformationDataService;
+import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.billing.DiscountDataService;
 import tda593.hotel.california.billing.DiscountManager;
-import tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl;
 import tda593.hotel.california.billing.impl.BillDataServiceImpl;
 import tda593.hotel.california.billing.impl.BillManagerImplImpl;
+import tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl;
+import tda593.hotel.california.billing.impl.CreditCardManagerImplImpl;
 import tda593.hotel.california.billing.impl.DiscountDataServiceImpl;
 import tda593.hotel.california.billing.impl.DiscountManagerImplImpl;
+import tda593.hotel.california.billing.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntityDataService;
@@ -50,6 +56,7 @@ public class HotelCaliforniaManagersHandler {
 	// Billing Services
 	private BillDataService billDataService;
 	private DiscountDataService discountDataService;
+	private CreditCardInformationDataService creditCardDataService;
 
 	// Facilities Managers
 	private AdminKeyCardManager adminKeyCardManager;
@@ -65,6 +72,8 @@ public class HotelCaliforniaManagersHandler {
 	private AdminDiscountManager adminDiscountManager;
 	private BillManager billManager;
 	private DiscountManager discountManager;
+	private CreditCardManager creditCardManager;
+	private BankingManager bankingManager;
 
 	private void initializeEntityManager() throws Exception {
 		PersistenceHelper.initialize();
@@ -84,6 +93,7 @@ public class HotelCaliforniaManagersHandler {
 		// Billing
 		billDataService = new BillDataServiceImpl(entityManager);
 		discountDataService = new DiscountDataServiceImpl(entityManager);
+		creditCardDataService = new CreditCardInformationDataServiceImpl(entityManager);
 	}
 
 	private void initializeManagers() {
@@ -98,9 +108,10 @@ public class HotelCaliforniaManagersHandler {
 		legalEntityManager = new LegalEntityManagerImplImpl(legalEntityDataService);
 
 		// Billing
-		adminDiscountManager = new AdminDiscountManagerImplImpl(discountDataService);
 		billManager = new BillManagerImplImpl(billDataService, bookingManager);
 		discountManager = new DiscountManagerImplImpl(discountDataService);
+		creditCardManager = new CreditCardManagerImplImpl(creditCardDataService);
+		bankingManager = BillingFactory.eINSTANCE.createBankingManagerImpl();
 	}
 
 	/**
@@ -179,5 +190,13 @@ public class HotelCaliforniaManagersHandler {
 
 	public DiscountManager getDiscountManager() {
 		return discountManager;
+	}
+	
+	public CreditCardManager getCreditCardManager() {
+		return creditCardManager;
+	}
+	
+	public BankingManager getBankingManager() {
+		return bankingManager;
 	}
 }

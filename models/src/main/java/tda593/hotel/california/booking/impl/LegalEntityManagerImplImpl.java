@@ -3,7 +3,6 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
@@ -15,7 +14,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingPackage;
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
 import tda593.hotel.california.booking.LegalEntityManagerImpl;
@@ -153,65 +151,22 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email) {
-		return createPerson(firstname, lastname, SSN, phone, email, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Organization createOrganization(String name, String organizationNumber, String phone, String email) {
-		return createOrganization(name, organizationNumber, phone, email, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public LegalEntity getLegalEntity(int id) {
 		return legalEntityDataService.get(id);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Sets (adds or replaces) the credit card information of the specified legal entity
-	 * 
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setCreditCardInformation(LegalEntity legalEntity, String firstname, String lastname, String cardNumber, String ccv, Date expirationDate) {
-		if(!legalEntityDataService.exist(legalEntity.getId())) {
-			throw new IllegalArgumentException("The supplied LegalEntity does not exist in the system");
-		}
-		
-		CreditCardInformation creditCardInfo = BookingFactory.eINSTANCE.createCreditCardInformation();
-		creditCardInfo.setFirstName(firstname);
-		creditCardInfo.setLastName(lastname);
-		creditCardInfo.setCardNumber(cardNumber);
-		creditCardInfo.setCcv(ccv);
-		creditCardInfo.setExpirationDate(expirationDate);
-		legalEntity.setCreditCardInformation(creditCardInfo);
-		
-		legalEntityDataService.set(legalEntity);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email, CreditCardInformation creditCardInformation) {
-		// TODO: VALIDATE
+	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email) {
 		Person person = BookingFactory.eINSTANCE.createPerson();
 		person.setFirstname(firstname);
 		person.setLastname(lastname);
 		person.setSocialSecurityNumber(SSN);
 		person.setPhone(phone);
 		person.setEmail(email);
-		person.setCreditCardInformation(creditCardInformation);
 		legalEntityDataService.set(person);
 		return person;
 	}
@@ -221,14 +176,12 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public Organization createOrganization(String name, String organizationNumber, String phone, String email, CreditCardInformation creditCardInformation) {
-		// TODO: VALIDATE
+	public Organization createOrganization(String name, String organizationNumber, String phone, String email) {
 		Organization organization = BookingFactory.eINSTANCE.createOrganization();
 		organization.setName(name);
 		organization.setOrganizationNumber(organizationNumber);
 		organization.setPhone(phone);
 		organization.setEmail(email);
-		organization.setCreditCardInformation(creditCardInformation);
 		return organization;
 	}
 
@@ -313,13 +266,6 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 				return createOrganization((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3));
 			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___GET_LEGAL_ENTITY__INT:
 				return getLegalEntity((Integer)arguments.get(0));
-			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE:
-				setCreditCardInformation((LegalEntity)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (Date)arguments.get(5));
-				return null;
-			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_PERSON__STRING_STRING_STRING_STRING_STRING_CREDITCARDINFORMATION:
-				return createPerson((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (CreditCardInformation)arguments.get(5));
-			case BookingPackage.LEGAL_ENTITY_MANAGER_IMPL___CREATE_ORGANIZATION__STRING_STRING_STRING_STRING_CREDITCARDINFORMATION:
-				return createOrganization((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (CreditCardInformation)arguments.get(4));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

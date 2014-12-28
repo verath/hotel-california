@@ -121,24 +121,6 @@ public interface BillingFactory extends EFactory {
 	BillDataService createBillDataService();
 
 	/**
-	 * Returns a new object of class '<em>Admin Discount Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Admin Discount Manager Impl</em>'.
-	 * @generated
-	 */
-	AdminDiscountManagerImpl createAdminDiscountManagerImpl();
-
-	/**
-	 * Returns a new object of class '<em>Admin Banking Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Admin Banking Manager Impl</em>'.
-	 * @generated
-	 */
-	AdminBankingManagerImpl createAdminBankingManagerImpl();
-
-	/**
 	 * Returns a new object of class '<em>Banking Manager Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +128,33 @@ public interface BillingFactory extends EFactory {
 	 * @generated
 	 */
 	BankingManagerImpl createBankingManagerImpl();
+
+	/**
+	 * Returns a new object of class '<em>Credit Card Information</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Credit Card Information</em>'.
+	 * @generated
+	 */
+	CreditCardInformation createCreditCardInformation();
+
+	/**
+	 * Returns a new object of class '<em>Credit Card Information Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Credit Card Information Data Service</em>'.
+	 * @generated
+	 */
+	CreditCardInformationDataService createCreditCardInformationDataService();
+
+	/**
+	 * Returns a new object of class '<em>Credit Card Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Credit Card Manager Impl</em>'.
+	 * @generated
+	 */
+	CreditCardManagerImpl createCreditCardManagerImpl();
 
 	/**
 	 * Returns the package supported by this factory.

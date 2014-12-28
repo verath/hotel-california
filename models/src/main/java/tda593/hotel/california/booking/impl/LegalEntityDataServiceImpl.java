@@ -16,16 +16,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingPackage;
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityDataService;
 import tda593.hotel.california.booking.Organization;
 import tda593.hotel.california.booking.Person;
-import tda593.hotel.california.booking.persistence.CreditCardInformationEntity;
 import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 import tda593.hotel.california.booking.persistence.OrganizationEntity;
 import tda593.hotel.california.booking.persistence.PersonEntity;
-import tda593.hotel.california.booking.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.OrganizationEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.PersonEntityImpl;
@@ -119,7 +116,6 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	private static LegalEntity entityToLegalEntityHelper(LegalEntity le, LegalEntityEntity entity) {
-		le.setCreditCardInformation(EntityToCreditCardInformation(entity.getCreditCardInformationEntity()));
 		le.setEmail(entity.getEmail());
 		le.setId(entity.getId());
 		le.setPhone(entity.getPhone());
@@ -127,35 +123,10 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	}
 	
 	private static LegalEntityEntityImpl legalEntityToEntityHelper(LegalEntityEntityImpl lee, LegalEntity le) {
-		lee.setCreditCardInformationEntity(CreditCardInformationToEntity(le.getCreditCardInformation()));
 		lee.setEmail(le.getEmail());
 		lee.setId(le.getId());
 		lee.setPhone(le.getPhone());
 		return lee;
-	}
-	
-	public static CreditCardInformation EntityToCreditCardInformation(CreditCardInformationEntity entity) {
-		if(entity == null) {
-			return null;
-		}
-		CreditCardInformation cc = new CreditCardInformationImpl();
-		cc.setFirstName(entity.getFirstName());
-		cc.setLastName(entity.getLastName());
-		cc.setCardNumber(entity.getCardNumber());
-		cc.setExpirationDate(entity.getExpirationDate());
-		return cc;
-	}
-	
-	private static CreditCardInformationEntityImpl CreditCardInformationToEntity(CreditCardInformation cc) {
-		if(cc == null) {
-			return null;
-		}
-		CreditCardInformationEntityImpl cce = new CreditCardInformationEntityImpl();
-		cce.setFirstName(cc.getFirstName());
-		cce.setLastName(cc.getLastName());
-		cce.setCardNumber(cc.getCardNumber());
-		cce.setExpirationDate(cc.getExpirationDate());
-		return cce;
 	}
 
 	/**

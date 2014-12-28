@@ -5,13 +5,9 @@ package tda593.hotel.california.billing.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import tda593.hotel.california.billing.AdminBankingManagerImpl;
-import tda593.hotel.california.billing.AdminDiscountManagerImpl;
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
@@ -19,6 +15,9 @@ import tda593.hotel.california.billing.BillManagerImpl;
 import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
+import tda593.hotel.california.billing.CreditCardInformation;
+import tda593.hotel.california.billing.CreditCardInformationDataService;
+import tda593.hotel.california.billing.CreditCardManagerImpl;
 import tda593.hotel.california.billing.DiscountDataService;
 import tda593.hotel.california.billing.DiscountLimit;
 import tda593.hotel.california.billing.DiscountManagerImpl;
@@ -80,11 +79,12 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 			case BillingPackage.PURCHASE: return createPurchase();
 			case BillingPackage.SERVICE: return createService();
 			case BillingPackage.BOOKING_BILL: return createBookingBill();
+			case BillingPackage.CREDIT_CARD_INFORMATION: return createCreditCardInformation();
 			case BillingPackage.BILL_MANAGER_IMPL: return createBillManagerImpl();
 			case BillingPackage.BILL_DATA_SERVICE: return createBillDataService();
-			case BillingPackage.ADMIN_DISCOUNT_MANAGER_IMPL: return createAdminDiscountManagerImpl();
-			case BillingPackage.ADMIN_BANKING_MANAGER_IMPL: return createAdminBankingManagerImpl();
 			case BillingPackage.BANKING_MANAGER_IMPL: return createBankingManagerImpl();
+			case BillingPackage.CREDIT_CARD_INFORMATION_DATA_SERVICE: return createCreditCardInformationDataService();
+			case BillingPackage.CREDIT_CARD_MANAGER_IMPL: return createCreditCardManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -205,29 +205,39 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdminDiscountManagerImpl createAdminDiscountManagerImpl() {
-		AdminDiscountManagerImplImpl adminDiscountManagerImpl = new AdminDiscountManagerImplImpl();
-		return adminDiscountManagerImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdminBankingManagerImpl createAdminBankingManagerImpl() {
-		AdminBankingManagerImplImpl adminBankingManagerImpl = new AdminBankingManagerImplImpl();
-		return adminBankingManagerImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BankingManagerImpl createBankingManagerImpl() {
 		BankingManagerImplImpl bankingManagerImpl = new BankingManagerImplImpl();
 		return bankingManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CreditCardInformation createCreditCardInformation() {
+		CreditCardInformationImpl creditCardInformation = new CreditCardInformationImpl();
+		return creditCardInformation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CreditCardInformationDataService createCreditCardInformationDataService() {
+		CreditCardInformationDataServiceImpl creditCardInformationDataService = new CreditCardInformationDataServiceImpl();
+		return creditCardInformationDataService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CreditCardManagerImpl createCreditCardManagerImpl() {
+		CreditCardManagerImplImpl creditCardManagerImpl = new CreditCardManagerImplImpl();
+		return creditCardManagerImpl;
 	}
 
 	/**

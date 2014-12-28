@@ -82,10 +82,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createDiscountLimitAdapter();
 			}
 			@Override
-			public Adapter caseAdminDiscountManager(AdminDiscountManager object) {
-				return createAdminDiscountManagerAdapter();
-			}
-			@Override
 			public Adapter caseSumDiscount(SumDiscount object) {
 				return createSumDiscountAdapter();
 			}
@@ -122,6 +118,18 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createBillManagerAdapter();
 			}
 			@Override
+			public Adapter caseBankingManager(BankingManager object) {
+				return createBankingManagerAdapter();
+			}
+			@Override
+			public Adapter caseCreditCardManager(CreditCardManager object) {
+				return createCreditCardManagerAdapter();
+			}
+			@Override
+			public Adapter caseCreditCardInformation(CreditCardInformation object) {
+				return createCreditCardInformationAdapter();
+			}
+			@Override
 			public Adapter caseBillManagerImpl(BillManagerImpl object) {
 				return createBillManagerImplAdapter();
 			}
@@ -130,24 +138,16 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createBillDataServiceAdapter();
 			}
 			@Override
-			public Adapter caseAdminDiscountManagerImpl(AdminDiscountManagerImpl object) {
-				return createAdminDiscountManagerImplAdapter();
-			}
-			@Override
-			public Adapter caseAdminBankingManager(AdminBankingManager object) {
-				return createAdminBankingManagerAdapter();
-			}
-			@Override
-			public Adapter caseBankingManager(BankingManager object) {
-				return createBankingManagerAdapter();
-			}
-			@Override
-			public Adapter caseAdminBankingManagerImpl(AdminBankingManagerImpl object) {
-				return createAdminBankingManagerImplAdapter();
-			}
-			@Override
 			public Adapter caseBankingManagerImpl(BankingManagerImpl object) {
 				return createBankingManagerImplAdapter();
+			}
+			@Override
+			public Adapter caseCreditCardInformationDataService(CreditCardInformationDataService object) {
+				return createCreditCardInformationDataServiceAdapter();
+			}
+			@Override
+			public Adapter caseCreditCardManagerImpl(CreditCardManagerImpl object) {
+				return createCreditCardManagerImplAdapter();
 			}
 			@Override
 			public <E, ID> Adapter caseDataService(DataService<E, ID> object) {
@@ -212,20 +212,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscountLimitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminDiscountManager <em>Admin Discount Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.AdminDiscountManager
-	 * @generated
-	 */
-	public Adapter createAdminDiscountManagerAdapter() {
 		return null;
 	}
 
@@ -384,34 +370,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminDiscountManagerImpl <em>Admin Discount Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.AdminDiscountManagerImpl
-	 * @generated
-	 */
-	public Adapter createAdminDiscountManagerImplAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminBankingManager <em>Admin Banking Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.AdminBankingManager
-	 * @generated
-	 */
-	public Adapter createAdminBankingManagerAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -426,20 +384,6 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminBankingManagerImpl <em>Admin Banking Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tda593.hotel.california.billing.AdminBankingManagerImpl
-	 * @generated
-	 */
-	public Adapter createAdminBankingManagerImplAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.BankingManagerImpl <em>Banking Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -450,6 +394,62 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBankingManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.CreditCardInformation <em>Credit Card Information</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.CreditCardInformation
+	 * @generated
+	 */
+	public Adapter createCreditCardInformationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.CreditCardInformationDataService <em>Credit Card Information Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.CreditCardInformationDataService
+	 * @generated
+	 */
+	public Adapter createCreditCardInformationDataServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.CreditCardManager <em>Credit Card Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.CreditCardManager
+	 * @generated
+	 */
+	public Adapter createCreditCardManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.CreditCardManagerImpl <em>Credit Card Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.CreditCardManagerImpl
+	 * @generated
+	 */
+	public Adapter createCreditCardManagerImplAdapter() {
 		return null;
 	}
 
