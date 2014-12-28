@@ -71,7 +71,13 @@ public class MockTestAdminBankingManager extends TestAdminBankingManager {
             }
             double balance = ccBalance.get(ccNumber);
 
-            return balance >= sum;
+            if(balance >= sum) {
+                balance -= sum;
+                ccBalance.put(ccNumber, balance);
+                return true;
+            } else {
+                return false;
+            }
         }
 
         @Override
