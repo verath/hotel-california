@@ -345,10 +345,11 @@
           <eOperations name="publishBill" ordered="false" lowerBound="1">
             <eParameters name="bill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill"/>
           </eOperations>
-          <eOperations name="markBillAsPaid" ordered="false" lowerBound="1">
+          <eOperations name="markBillAsPaid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="bill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill"/>
             <eParameters name="isPaid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eParameters name="bankingManager" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BankingManager"/>
+            <eParameters name="creditCardManager" ordered="false" lowerBound="1" eType="#//hotel/california/billing/CreditCardManager"/>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BankingManager" abstract="true"
@@ -370,50 +371,6 @@
             <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="BillManagerImpl" eSuperTypes="#//hotel/california/billing/BillManager">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="billDataService"
-              ordered="false" lowerBound="1" eType="#//hotel/california/billing/BillDataService"
-              changeable="false"/>
-          <eStructuralFeatures xsi:type="ecore:EReference" name="bookingManager" ordered="false"
-              lowerBound="1" eType="#//hotel/california/booking/BookingManager"/>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="BillDataService">
-          <eOperations name="getAllServices" ordered="false" upperBound="-1" eType="#//hotel/california/billing/Service"/>
-          <eOperations name="getBookingBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BookingBill">
-            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
-          </eOperations>
-          <eOperations name="getService" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Service">
-            <eParameters name="serviceId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          </eOperations>
-          <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
-            <eTypeArguments eClassifier="#//hotel/california/billing/Bill"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
-          </eGenericSuperTypes>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="BankingManagerImpl" eSuperTypes="#//hotel/california/billing/BankingManager"/>
-        <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformation">
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDate" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ccv" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" ordered="false"
-              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eStructuralFeatures xsi:type="ecore:EReference" name="legalEntity" ordered="false"
-              eType="#//hotel/california/booking/LegalEntity"/>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformationDataService">
-          <eOperations name="getByLegalEntity" ordered="false" lowerBound="1" eType="#//hotel/california/billing/CreditCardInformation">
-            <eParameters name="legalEntityId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          </eOperations>
-          <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
-            <eTypeArguments eClassifier="#//hotel/california/billing/CreditCardInformation"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          </eGenericSuperTypes>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="CreditCardManager" abstract="true"
             interface="true">
@@ -440,6 +397,50 @@
             <eParameters name="legalEntity" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
             <eParameters name="bankingManager" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BankingManager"/>
           </eOperations>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformation">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDate" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ccv" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" ordered="false"
+              lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="legalEntity" ordered="false"
+              eType="#//hotel/california/booking/LegalEntity"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="BillManagerImpl" eSuperTypes="#//hotel/california/billing/BillManager">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="billDataService"
+              ordered="false" lowerBound="1" eType="#//hotel/california/billing/BillDataService"
+              changeable="false"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="bookingManager" ordered="false"
+              lowerBound="1" eType="#//hotel/california/booking/BookingManager"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="BillDataService">
+          <eOperations name="getAllServices" ordered="false" upperBound="-1" eType="#//hotel/california/billing/Service"/>
+          <eOperations name="getBookingBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BookingBill">
+            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
+          </eOperations>
+          <eOperations name="getService" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Service">
+            <eParameters name="serviceId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eOperations>
+          <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
+            <eTypeArguments eClassifier="#//hotel/california/billing/Bill"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          </eGenericSuperTypes>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="BankingManagerImpl" eSuperTypes="#//hotel/california/billing/BankingManager"/>
+        <eClassifiers xsi:type="ecore:EClass" name="CreditCardInformationDataService">
+          <eOperations name="getByLegalEntity" ordered="false" lowerBound="1" eType="#//hotel/california/billing/CreditCardInformation">
+            <eParameters name="legalEntityId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eOperations>
+          <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
+            <eTypeArguments eClassifier="#//hotel/california/billing/CreditCardInformation"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eGenericSuperTypes>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="CreditCardManagerImpl" eSuperTypes="#//hotel/california/billing/CreditCardManager">
           <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformationDataService"

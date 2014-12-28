@@ -1095,7 +1095,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER = 7;
+	int BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = 7;
 
 	/**
 	 * The number of operations of the '<em>Bill Manager</em>' class.
@@ -1114,7 +1114,7 @@ public interface BillingPackage extends EPackage {
 	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBillManagerImpl()
 	 * @generated
 	 */
-	int BILL_MANAGER_IMPL = 13;
+	int BILL_MANAGER_IMPL = 15;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BillDataServiceImpl <em>Bill Data Service</em>}' class.
@@ -1124,7 +1124,7 @@ public interface BillingPackage extends EPackage {
 	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBillDataService()
 	 * @generated
 	 */
-	int BILL_DATA_SERVICE = 14;
+	int BILL_DATA_SERVICE = 16;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}' class.
@@ -1171,6 +1171,172 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BANKING_MANAGER_OPERATION_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BankingManagerImplImpl <em>Banking Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.BankingManagerImplImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManagerImpl()
+	 * @generated
+	 */
+	int BANKING_MANAGER_IMPL = 17;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.CreditCardInformationImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getCreditCardInformation()
+	 * @generated
+	 */
+	int CREDIT_CARD_INFORMATION = 14;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl <em>Credit Card Information Data Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getCreditCardInformationDataService()
+	 * @generated
+	 */
+	int CREDIT_CARD_INFORMATION_DATA_SERVICE = 18;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.CreditCardManager <em>Credit Card Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.CreditCardManager
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getCreditCardManager()
+	 * @generated
+	 */
+	int CREDIT_CARD_MANAGER = 13;
+
+	/**
+	 * The number of structural features of the '<em>Credit Card Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE_BANKINGMANAGER = 0;
+
+	/**
+	 * The operation id for the '<em>Get Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__LEGALENTITY = 1;
+
+	/**
+	 * The operation id for the '<em>Get Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT = 2;
+
+	/**
+	 * The operation id for the '<em>Revalidate Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER = 3;
+
+	/**
+	 * The number of operations of the '<em>Credit Card Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER_OPERATION_COUNT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__CARD_NUMBER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ccv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__CCV = 2;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__FIRST_NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__LAST_NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Legal Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION__LEGAL_ENTITY = 5;
+
+	/**
+	 * The number of structural features of the '<em>Credit Card Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>Credit Card Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_INFORMATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Bill Data Service</b></em>' reference.
@@ -1269,7 +1435,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER = BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER;
+	int BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER;
 
 	/**
 	 * The number of operations of the '<em>Bill Manager Impl</em>' class.
@@ -1389,16 +1555,6 @@ public interface BillingPackage extends EPackage {
 	int BILL_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BankingManagerImplImpl <em>Banking Manager Impl</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.billing.impl.BankingManagerImplImpl
-	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getBankingManagerImpl()
-	 * @generated
-	 */
-	int BANKING_MANAGER_IMPL = 15;
-
-	/**
 	 * The number of structural features of the '<em>Banking Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1433,99 +1589,6 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BANKING_MANAGER_IMPL_OPERATION_COUNT = BANKING_MANAGER_OPERATION_COUNT + 0;
-
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.CreditCardInformationImpl <em>Credit Card Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.billing.impl.CreditCardInformationImpl
-	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getCreditCardInformation()
-	 * @generated
-	 */
-	int CREDIT_CARD_INFORMATION = 16;
-
-	/**
-	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__CARD_NUMBER = 0;
-
-	/**
-	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__EXPIRATION_DATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Ccv</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__CCV = 2;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__FIRST_NAME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__LAST_NAME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Legal Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION__LEGAL_ENTITY = 5;
-
-	/**
-	 * The number of structural features of the '<em>Credit Card Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Credit Card Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_INFORMATION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl <em>Credit Card Information Data Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl
-	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getCreditCardInformationDataService()
-	 * @generated
-	 */
-	int CREDIT_CARD_INFORMATION_DATA_SERVICE = 17;
 
 	/**
 	 * The number of structural features of the '<em>Credit Card Information Data Service</em>' class.
@@ -1616,70 +1679,6 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREDIT_CARD_INFORMATION_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link tda593.hotel.california.billing.CreditCardManager <em>Credit Card Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.billing.CreditCardManager
-	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getCreditCardManager()
-	 * @generated
-	 */
-	int CREDIT_CARD_MANAGER = 18;
-
-	/**
-	 * The number of structural features of the '<em>Credit Card Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Set Credit Card Information</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE_BANKINGMANAGER = 0;
-
-	/**
-	 * The operation id for the '<em>Get Credit Card Information</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__LEGALENTITY = 1;
-
-	/**
-	 * The operation id for the '<em>Get Credit Card Information</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT = 2;
-
-	/**
-	 * The operation id for the '<em>Revalidate Credit Card Information</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_MANAGER___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER = 3;
-
-	/**
-	 * The number of operations of the '<em>Credit Card Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD_MANAGER_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.CreditCardManagerImplImpl <em>Credit Card Manager Impl</em>}' class.
@@ -2353,14 +2352,14 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillManager__PublishBill__Bill();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#markBillAsPaid(tda593.hotel.california.billing.Bill, boolean, tda593.hotel.california.billing.BankingManager) <em>Mark Bill As Paid</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#markBillAsPaid(tda593.hotel.california.billing.Bill, boolean, tda593.hotel.california.billing.BankingManager, tda593.hotel.california.billing.CreditCardManager) <em>Mark Bill As Paid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Mark Bill As Paid</em>' operation.
-	 * @see tda593.hotel.california.billing.BillManager#markBillAsPaid(tda593.hotel.california.billing.Bill, boolean, tda593.hotel.california.billing.BankingManager)
+	 * @see tda593.hotel.california.billing.BillManager#markBillAsPaid(tda593.hotel.california.billing.Bill, boolean, tda593.hotel.california.billing.BankingManager, tda593.hotel.california.billing.CreditCardManager)
 	 * @generated
 	 */
-	EOperation getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager();
+	EOperation getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager_CreditCardManager();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BillManagerImpl <em>Bill Manager Impl</em>}'.
@@ -3150,7 +3149,7 @@ public interface BillingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER = eINSTANCE.getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager();
+		EOperation BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = eINSTANCE.getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager_CreditCardManager();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.

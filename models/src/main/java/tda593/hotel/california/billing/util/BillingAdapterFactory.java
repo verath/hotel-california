@@ -122,6 +122,14 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createBankingManagerAdapter();
 			}
 			@Override
+			public Adapter caseCreditCardManager(CreditCardManager object) {
+				return createCreditCardManagerAdapter();
+			}
+			@Override
+			public Adapter caseCreditCardInformation(CreditCardInformation object) {
+				return createCreditCardInformationAdapter();
+			}
+			@Override
 			public Adapter caseBillManagerImpl(BillManagerImpl object) {
 				return createBillManagerImplAdapter();
 			}
@@ -134,16 +142,8 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createBankingManagerImplAdapter();
 			}
 			@Override
-			public Adapter caseCreditCardInformation(CreditCardInformation object) {
-				return createCreditCardInformationAdapter();
-			}
-			@Override
 			public Adapter caseCreditCardInformationDataService(CreditCardInformationDataService object) {
 				return createCreditCardInformationDataServiceAdapter();
-			}
-			@Override
-			public Adapter caseCreditCardManager(CreditCardManager object) {
-				return createCreditCardManagerAdapter();
 			}
 			@Override
 			public Adapter caseCreditCardManagerImpl(CreditCardManagerImpl object) {

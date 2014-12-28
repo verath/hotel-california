@@ -693,6 +693,10 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_JlvDYI3mEeSfBP2QR77p4w" name="bankingManager" type="_NdMEoI27EeSwirR7O7P1rg"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_aFQX8I41EeSfBP2QR77p4w" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_WdDFsI42EeSfBP2QR77p4w" name="creditCardManager" type="_q4CYQI3rEeSfBP2QR77p4w"/>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_RcjZoIE4EeSfSN1EgLeI7A" name="BillManagerImpl">

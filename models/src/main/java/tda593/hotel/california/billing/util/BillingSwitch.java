@@ -151,6 +151,18 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BillingPackage.CREDIT_CARD_MANAGER: {
+				CreditCardManager creditCardManager = (CreditCardManager)theEObject;
+				T result = caseCreditCardManager(creditCardManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.CREDIT_CARD_INFORMATION: {
+				CreditCardInformation creditCardInformation = (CreditCardInformation)theEObject;
+				T result = caseCreditCardInformation(creditCardInformation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BillingPackage.BILL_MANAGER_IMPL: {
 				BillManagerImpl billManagerImpl = (BillManagerImpl)theEObject;
 				T result = caseBillManagerImpl(billManagerImpl);
@@ -172,22 +184,10 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BillingPackage.CREDIT_CARD_INFORMATION: {
-				CreditCardInformation creditCardInformation = (CreditCardInformation)theEObject;
-				T result = caseCreditCardInformation(creditCardInformation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BillingPackage.CREDIT_CARD_INFORMATION_DATA_SERVICE: {
 				CreditCardInformationDataService creditCardInformationDataService = (CreditCardInformationDataService)theEObject;
 				T result = caseCreditCardInformationDataService(creditCardInformationDataService);
 				if (result == null) result = caseDataService(creditCardInformationDataService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BillingPackage.CREDIT_CARD_MANAGER: {
-				CreditCardManager creditCardManager = (CreditCardManager)theEObject;
-				T result = caseCreditCardManager(creditCardManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

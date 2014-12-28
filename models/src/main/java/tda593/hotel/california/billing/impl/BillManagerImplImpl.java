@@ -3,6 +3,7 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +18,8 @@ import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManagerImpl;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
+import tda593.hotel.california.billing.CreditCardInformation;
+import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.billing.Discount;
 import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
@@ -228,13 +231,34 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Mark the bill as paid/unpaid depending on the desired state (isPaid param).
+	 * Charges the amount of the bill to the registered credit card information
+	 * of the customer. Charges a negative amount if the bill is paid and is being
+	 * marked as unpaid (i.e. a pay back). 
+	 * 
+	 * Return true if the payment or pay back succeeded. Returns false if it does not,
+	 * or there is no credit card info registered on the customer, or if the bill already
+	 * is in the desired state.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void markBillAsPaid(Bill bill, boolean isPaid, BankingManager bankingManager) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean markBillAsPaid(Bill bill, boolean isPaid, BankingManager bankingManager, CreditCardManager creditCardManager) {
+		// If the bill already is in the specified state
+		if(bill.isPaid() == isPaid) {
+			return false;
+		}
+		
+		CreditCardInformation cc = creditCardManager.getCreditCardInformation(bill.getCustomer());
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(cc.getExpirationDate());
+		
+		if(cc == null || bankingManager.makePayment(cc.getCardNumber(), cc.getCcv(), 
+				cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), 
+				cc.getFirstName(), cc.getLastName(), isPaid? bill.getPrice() : -bill.getPrice())) {
+			return false;
+		}
+		bill.setIsPaid(isPaid);
+		return true;
 	}
 
 
@@ -338,9 +362,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case BillingPackage.BILL_MANAGER_IMPL___PUBLISH_BILL__BILL:
 				publishBill((Bill)arguments.get(0));
 				return null;
-			case BillingPackage.BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER:
-				markBillAsPaid((Bill)arguments.get(0), (Boolean)arguments.get(1), (BankingManager)arguments.get(2));
-				return null;
+			case BillingPackage.BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER:
+				return markBillAsPaid((Bill)arguments.get(0), (Boolean)arguments.get(1), (BankingManager)arguments.get(2), (CreditCardManager)arguments.get(3));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

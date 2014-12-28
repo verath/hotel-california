@@ -79,10 +79,10 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 			case BillingPackage.PURCHASE: return createPurchase();
 			case BillingPackage.SERVICE: return createService();
 			case BillingPackage.BOOKING_BILL: return createBookingBill();
+			case BillingPackage.CREDIT_CARD_INFORMATION: return createCreditCardInformation();
 			case BillingPackage.BILL_MANAGER_IMPL: return createBillManagerImpl();
 			case BillingPackage.BILL_DATA_SERVICE: return createBillDataService();
 			case BillingPackage.BANKING_MANAGER_IMPL: return createBankingManagerImpl();
-			case BillingPackage.CREDIT_CARD_INFORMATION: return createCreditCardInformation();
 			case BillingPackage.CREDIT_CARD_INFORMATION_DATA_SERVICE: return createCreditCardInformationDataService();
 			case BillingPackage.CREDIT_CARD_MANAGER_IMPL: return createCreditCardManagerImpl();
 			default:
