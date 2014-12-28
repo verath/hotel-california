@@ -365,6 +365,10 @@
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/CreditCardManager/getCreditCardInformation.1">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/getCreditCardInformation.1/legalEntityId"/>
             </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/CreditCardManager/revalidateCreditCardInformation">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/revalidateCreditCardInformation/legalEntity"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/CreditCardManager/revalidateCreditCardInformation/bankingManager"/>
+            </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/CreditCardManagerImpl">
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

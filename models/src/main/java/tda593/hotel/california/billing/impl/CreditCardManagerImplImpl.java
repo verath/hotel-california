@@ -152,6 +152,25 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean revalidateCreditCardInformation(LegalEntity legalEntity, BankingManager validator) {
+		CreditCardInformation cc = getCreditCardInformation(legalEntity);
+		if(cc == null) {
+			return false;
+		}
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(cc.getExpirationDate());
+		
+		return validator.isCreditCardValid(cc.getCardNumber(), cc.getCcv(), 
+				cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), 
+				cc.getFirstName(), cc.getLastName());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -222,6 +241,8 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 				return getCreditCardInformation((LegalEntity)arguments.get(0));
 			case BillingPackage.CREDIT_CARD_MANAGER_IMPL___GET_CREDIT_CARD_INFORMATION__INT:
 				return getCreditCardInformation((Integer)arguments.get(0));
+			case BillingPackage.CREDIT_CARD_MANAGER_IMPL___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER:
+				return revalidateCreditCardInformation((LegalEntity)arguments.get(0), (BankingManager)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

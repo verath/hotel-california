@@ -1000,6 +1000,15 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getCreditCardManager__RevalidateCreditCardInformation__LegalEntity_BankingManager() {
+		return creditCardManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCreditCardManagerImpl() {
 		return creditCardManagerImplEClass;
 	}
@@ -1141,6 +1150,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___SET_CREDIT_CARD_INFORMATION__LEGALENTITY_STRING_STRING_STRING_STRING_DATE_BANKINGMANAGER);
 		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__LEGALENTITY);
 		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT);
+		createEOperation(creditCardManagerEClass, CREDIT_CARD_MANAGER___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER);
 
 		creditCardManagerImplEClass = createEClass(CREDIT_CARD_MANAGER_IMPL);
 		createEReference(creditCardManagerImplEClass, CREDIT_CARD_MANAGER_IMPL__CREDIT_CARD_INFORMATION_DATA_SERVICE);
@@ -1379,6 +1389,10 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		op = initEOperation(getCreditCardManager__GetCreditCardInformation__int(), this.getCreditCardInformation(), "getCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "legalEntityId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getCreditCardManager__RevalidateCreditCardInformation__LegalEntity_BankingManager(), ecorePackage.getEBoolean(), "revalidateCreditCardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "legalEntity", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBankingManager(), "bankingManager", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(creditCardManagerImplEClass, CreditCardManagerImpl.class, "CreditCardManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCreditCardManagerImpl_CreditCardInformationDataService(), this.getCreditCardInformationDataService(), null, "creditCardInformationDataService", null, 1, 1, CreditCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

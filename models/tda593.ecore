@@ -435,6 +435,11 @@
               eType="#//hotel/california/billing/CreditCardInformation">
             <eParameters name="legalEntityId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           </eOperations>
+          <eOperations name="revalidateCreditCardInformation" ordered="false" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+            <eParameters name="legalEntity" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
+            <eParameters name="bankingManager" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BankingManager"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="CreditCardManagerImpl" eSuperTypes="#//hotel/california/billing/CreditCardManager">
           <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardInformationDataService"

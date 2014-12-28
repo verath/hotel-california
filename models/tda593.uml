@@ -869,6 +869,13 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ZOlEEI40EeSfBP2QR77p4w" name="revalidateCreditCardInformation">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_dUZp8I40EeSfBP2QR77p4w" name="legalEntity" type="_3oahIHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_e9nqgI40EeSfBP2QR77p4w" name="bankingManager" type="_NdMEoI27EeSwirR7O7P1rg"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_hhxpUI40EeSfBP2QR77p4w" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_vfgSoI3rEeSfBP2QR77p4w" name="CreditCardManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_x2y6II3rEeSfBP2QR77p4w" general="_q4CYQI3rEeSfBP2QR77p4w"/>

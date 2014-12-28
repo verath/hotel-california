@@ -43,4 +43,12 @@ public interface CreditCardManager extends EObject {
 	 */
 	CreditCardInformation getCreditCardInformation(int legalEntityId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" legalEntityRequired="true" legalEntityOrdered="false" bankingManagerRequired="true" bankingManagerOrdered="false"
+	 * @generated
+	 */
+	boolean revalidateCreditCardInformation(LegalEntity legalEntity, BankingManager bankingManager);
+
 } // CreditCardManager

@@ -1664,13 +1664,22 @@ public interface BillingPackage extends EPackage {
 	int CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT = 2;
 
 	/**
+	 * The operation id for the '<em>Revalidate Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER = 3;
+
+	/**
 	 * The number of operations of the '<em>Credit Card Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD_MANAGER_OPERATION_COUNT = 3;
+	int CREDIT_CARD_MANAGER_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.CreditCardManagerImplImpl <em>Credit Card Manager Impl</em>}' class.
@@ -1726,6 +1735,15 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREDIT_CARD_MANAGER_IMPL___GET_CREDIT_CARD_INFORMATION__INT = CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT;
+
+	/**
+	 * The operation id for the '<em>Revalidate Credit Card Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_MANAGER_IMPL___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER = CREDIT_CARD_MANAGER___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER;
 
 	/**
 	 * The number of operations of the '<em>Credit Card Manager Impl</em>' class.
@@ -2593,6 +2611,16 @@ public interface BillingPackage extends EPackage {
 	EOperation getCreditCardManager__GetCreditCardInformation__int();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.CreditCardManager#revalidateCreditCardInformation(tda593.hotel.california.booking.LegalEntity, tda593.hotel.california.billing.BankingManager) <em>Revalidate Credit Card Information</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Revalidate Credit Card Information</em>' operation.
+	 * @see tda593.hotel.california.billing.CreditCardManager#revalidateCreditCardInformation(tda593.hotel.california.booking.LegalEntity, tda593.hotel.california.billing.BankingManager)
+	 * @generated
+	 */
+	EOperation getCreditCardManager__RevalidateCreditCardInformation__LegalEntity_BankingManager();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.CreditCardManagerImpl <em>Credit Card Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3329,6 +3357,14 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CREDIT_CARD_MANAGER___GET_CREDIT_CARD_INFORMATION__INT = eINSTANCE.getCreditCardManager__GetCreditCardInformation__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Revalidate Credit Card Information</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CREDIT_CARD_MANAGER___REVALIDATE_CREDIT_CARD_INFORMATION__LEGALENTITY_BANKINGMANAGER = eINSTANCE.getCreditCardManager__RevalidateCreditCardInformation__LegalEntity_BankingManager();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.CreditCardManagerImplImpl <em>Credit Card Manager Impl</em>}' class.
