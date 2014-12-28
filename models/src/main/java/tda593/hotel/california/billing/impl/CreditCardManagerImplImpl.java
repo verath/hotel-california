@@ -52,6 +52,10 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 		super();
 	}
 
+	public CreditCardManagerImplImpl(CreditCardInformationDataService creditCardInformationDataService) {
+		this.creditCardInformationDataService = creditCardInformationDataService;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,7 +65,7 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	protected EClass eStaticClass() {
 		return BillingPackage.Literals.CREDIT_CARD_MANAGER_IMPL;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

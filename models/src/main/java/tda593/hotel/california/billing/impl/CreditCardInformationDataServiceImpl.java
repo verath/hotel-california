@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
 import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 
@@ -150,11 +151,17 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 	 */
 	public CreditCardInformation getByLegalEntity(int legalEntityId) {
 		TypedQuery<CreditCardInformationEntityImpl> query = entityManager.createQuery("FROM CreditCardInformationEntityImpl " 
-				+ "WHERE owner=:legalEntityId ", CreditCardInformationEntityImpl.class);
+				+ "WHERE owner_id=:legalEntityId ", CreditCardInformationEntityImpl.class);
 		query.setParameter("legalEntityId", legalEntityId);
-		CreditCardInformationEntityImpl result = query.getSingleResult();
+		CreditCardInformationEntityImpl result = null;
 		
-		return result == null? null : entityToCreditCardInformation(result);
+		try {
+			result = query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+		
+		return entityToCreditCardInformation(result);
 	}
 
 	public static CreditCardInformation entityToCreditCardInformation(CreditCardInformationEntity entity) {

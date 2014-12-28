@@ -99,14 +99,12 @@ public class CreditCardInformationEntityImpl implements
 
 	@Override
 	public LegalEntityEntity getOwner() {
-		// TODO Auto-generated method stub
-		return null;
+		return owner;
 	}
 
 	@Override
 	public void setOwner(LegalEntityEntity owner) {
-		// TODO Auto-generated method stub
-		
+		this.owner = owner;
 	}
 
 } // CreditCardInformationEntityImpl

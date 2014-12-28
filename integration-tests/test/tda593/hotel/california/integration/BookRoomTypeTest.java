@@ -1,26 +1,25 @@
 package tda593.hotel.california.integration;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.booking.Booking;
-import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingManager;
-import tda593.hotel.california.booking.CreditCardInformation;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.facilities.AdminRoomManager;
-import tda593.hotel.california.facilities.FacilitiesFactory;
-import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.util.DateUtil;
@@ -30,6 +29,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 
 	private BookingManager bookingManager;
 	private LegalEntityManager legalEntityManager;
+	private CreditCardManager creditCardManager;
 	private RoomManager roomManager;
 	
 	private Calendar c = Calendar.getInstance();
@@ -62,6 +62,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		bookingManager = managersHandler.getBookingManager();
 		legalEntityManager = managersHandler.getLegalEntityManager();
 		roomManager = managersHandler.getRoomManager();
+		creditCardManager = managersHandler.getCreditCardManager();
 	}
 
 	/**
@@ -172,7 +173,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		String[] invalidRoomTypes = new String[] { 
 			"abc",
 			"-1", 
-			"@1231€#1#5", 
+			"@1231���#1#5", 
 			"0x12"
 		};
 		List<String> acceptedRoomTypes = new ArrayList<>();
@@ -206,11 +207,16 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		String SSN = "097251285935";
 		String phone = "349389413894";
 		String email = "reirjaei@gejia.com";
-		CreditCardInformation cc = BookingFactory.eINSTANCE.createCreditCardInformation();
-		cc.setCardNumber("5351351");
-		cc.setCcv("stuff");
 		
-		legalEntityManager.createPerson(firstName, lastName, SSN, phone, email, cc);
+		String cardNumber = "5351351";
+		String ccv = "091";
+		c.set(2019, 5, 19);
+		Date expirationDate = c.getTime();
+		
+		Person p = legalEntityManager.createPerson(firstName, lastName, SSN, phone, email);
+		assertTrue(p != null);
+		
+		creditCardManager.setCreditCardInformation(p, firstName, lastName, cardNumber, ccv, expirationDate);
 		// TODO: how do we check that it was created? Is the only way by getting and then checking for null?
 		// maybe throw some error instead?
 		
@@ -241,10 +247,10 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		String ccv = "555";
 		Date expirationDate = c.getTime();
 		
-		legalEntityManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate);
+		creditCardManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate);
 		
 		LegalEntity legalEntityFromDatabase = legalEntityManager.getLegalEntity(1);
 		
-		assertTrue(legalEntityFromDatabase.getCreditCardInformation() != null);
+		assertTrue(creditCardManager.getCreditCardInformation(legalEntityFromDatabase) != null);
 	}
 }
