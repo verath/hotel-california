@@ -1,8 +1,4 @@
 package tda593.hotel.california.integration;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -10,11 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
-import sun.swing.BakedArrayList;
 import tda593.hotel.california.billing.BankingManager;
+import tda593.hotel.california.billing.CreditCardInformation;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
@@ -25,6 +21,8 @@ import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.util.DateUtil;
+
+import static org.junit.Assert.*;
 
 
 public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
@@ -40,8 +38,8 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 	private static String personBobFirstName = "Bob";
 	private static String personBobLastName = "Smith";
 	
-	@BeforeClass
-	public static void setUpData() {
+	@Before
+	public void setUpData() {
 		LegalEntityManager legalEntityManager = managersHandler.getLegalEntityManager();
 		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
 
@@ -60,8 +58,9 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 
 	}
-	
-	public BookRoomTypeTest() {
+
+	@Before
+	public void setUpManagers() {
 		bookingManager = managersHandler.getBookingManager();
 		legalEntityManager = managersHandler.getLegalEntityManager();
 		roomManager = managersHandler.getRoomManager();
@@ -241,7 +240,8 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 	@Test
 	public void testBookRoomTypeWithNoValidCreditCard() {
 		// TODO: verify current credit card is not valid (assume for now), provided by banking component
-		
+
+
 		LegalEntity legalEntity = legalEntityManager.getLegalEntity(1);
 		c.set(2015, 2, 4);
 		
@@ -250,11 +250,12 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		String cardNumber = "5353553";
 		String ccv = "555";
 		Date expirationDate = c.getTime();
-		
-		creditCardManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate, bankingManager);
-		
+
+		boolean ccAccepted = creditCardManager.setCreditCardInformation(legalEntity, firstname, lastname, cardNumber, ccv, expirationDate, bankingManager);
+
+		assertFalse(ccAccepted);
 		LegalEntity legalEntityFromDatabase = legalEntityManager.getLegalEntity(1);
-		
-		assertTrue(creditCardManager.getCreditCardInformation(legalEntityFromDatabase) != null);
+		CreditCardInformation legalEntityCCInfo = creditCardManager.getCreditCardInformation(legalEntityFromDatabase);
+		assertNull(legalEntityCCInfo);
 	}
 }

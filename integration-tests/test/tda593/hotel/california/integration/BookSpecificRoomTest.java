@@ -1,9 +1,4 @@
 package tda593.hotel.california.integration;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -11,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -27,6 +23,8 @@ import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
 import tda593.hotel.california.util.DateUtil;
 
+import static org.junit.Assert.*;
+
 
 public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest {
 
@@ -41,8 +39,8 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 	private static String personBobFirstName = "Bob";
 	private static String personBobLastName = "Smith";
 	
-	@BeforeClass
-	public static void setUpData() {
+	@Before
+	public void setUpData() {
 		LegalEntityManager legalEntityManager = managersHandler.getLegalEntityManager();
 		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
 
@@ -61,8 +59,9 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		}
 
 	}
-	
-	public BookSpecificRoomTest() {
+
+	@Before
+	public void setUpManagers() {
 		bookingManager = managersHandler.getBookingManager();
 		legalEntityManager = managersHandler.getLegalEntityManager();
 		roomManager = managersHandler.getRoomManager();
@@ -111,7 +110,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		Booking booking = bookings.get(customerCountBefore);
 		
 		// Room checks
-		assertNotEquals(booking.getRoomStay(), null);
+		assertNotNull(booking.getRoomStay());
 		assertFalse(booking.getRoomStay().isActive());
 		assertEquals(booking.getRoomStay().getRoom().getRoomNumber(), room.getRoomNumber());
 		assertEquals(booking.getRoomType().getName(), room.getRoomType().getName());
@@ -225,11 +224,11 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		Date expirationDate = c.getTime();
 		
 		Person p = legalEntityManager.createPerson(firstName, lastName, SSN, phone, email);
-		assertTrue(p != null);
+		assertNotNull(p);
 		
 		// Assure that customer was put in database
 		Person person = legalEntityManager.getPerson(SSN);
-		assertTrue(person != null);
+		assertNotNull(person);
 		assertEquals(person.getSocialSecurityNumber(), SSN);
 	}
 	
@@ -238,7 +237,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		String nonExistingRoomNumber = "15351351";
 		Room room = roomManager.getRoom(nonExistingRoomNumber);
 		
-		assertTrue(room == null);
+		assertNull(room);
 	}
 	
 	@Test
@@ -258,6 +257,6 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		LegalEntity legalEntityFromDatabase = legalEntityManager.getLegalEntity(1);
 		
-		assertTrue(creditCardManager.getCreditCardInformation(legalEntityFromDatabase) != null);
+		assertNull(creditCardManager.getCreditCardInformation(legalEntityFromDatabase));
 	}
 }
