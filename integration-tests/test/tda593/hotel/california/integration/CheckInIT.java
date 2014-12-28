@@ -27,8 +27,8 @@ public class CheckInIT extends AbstractHotelCaliforniaIntegrationTest {
 	private LegalEntityManager legalEntityManager;
 	private RoomManager roomManager;
 
-	@BeforeClass
-	public static void setUpData() {
+	@Before
+	public void setUpData() {
 		LegalEntityManager legalEntityManager = managersHandler.getLegalEntityManager();
 		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
 
@@ -49,7 +49,7 @@ public class CheckInIT extends AbstractHotelCaliforniaIntegrationTest {
 	}
 
 	@Before
-	public void setUp() {
+	public void setUpManagers() {
 		bookingManager = managersHandler.getBookingManager();
 		legalEntityManager = managersHandler.getLegalEntityManager();
 		roomManager = managersHandler.getRoomManager();
