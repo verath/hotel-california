@@ -17,7 +17,6 @@ import tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl
 import tda593.hotel.california.billing.impl.CreditCardManagerImplImpl;
 import tda593.hotel.california.billing.impl.DiscountDataServiceImpl;
 import tda593.hotel.california.billing.impl.DiscountManagerImplImpl;
-import tda593.hotel.california.billing.persistence.impl.CreditCardInformationEntityImpl;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntityDataService;
@@ -40,8 +39,12 @@ import tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl;
 import tda593.hotel.california.facilities.impl.RoomDataServiceImpl;
 import tda593.hotel.california.facilities.impl.RoomManagerImplImpl;
 import tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl;
+import tda593.hotel.california.integration.mock.MockTestAdminBankingManager;
+import tda593.hotel.california.integration.mock.TestAdminBankingManager;
 
 public class HotelCaliforniaManagersHandler {
+	public final boolean mockBankingComponent;
+
 	private EntityManager entityManager;
 
 	// Facilities Services
@@ -75,6 +78,18 @@ public class HotelCaliforniaManagersHandler {
 	private CreditCardManager creditCardManager;
 	private BankingManager bankingManager;
 
+	// Test only manager
+	private TestAdminBankingManager testAdminBankingManager;
+
+	public HotelCaliforniaManagersHandler(boolean mockBankingComponent)
+			throws Exception {
+		this.mockBankingComponent = mockBankingComponent;
+
+		initializeEntityManager();
+		initializeServices();
+		initializeManagers();
+	}
+
 	private void initializeEntityManager() throws Exception {
 		PersistenceHelper.initialize();
 		entityManager = PersistenceHelper.getEntityManager();
@@ -93,35 +108,41 @@ public class HotelCaliforniaManagersHandler {
 		// Billing
 		billDataService = new BillDataServiceImpl(entityManager);
 		discountDataService = new DiscountDataServiceImpl(entityManager);
-		creditCardDataService = new CreditCardInformationDataServiceImpl(entityManager);
+		creditCardDataService = new CreditCardInformationDataServiceImpl(
+				entityManager);
 	}
 
-	private void initializeManagers() {
+	private void initializeManagers() throws Exception {
 		// Facilities
-		adminKeyCardManager = new AdminKeyCardManagerImplImpl(keyCardDataService);
-		adminRoomManager = new AdminRoomManagerImplImpl(roomTypeDataService, roomDataService, keyCardManager);
+		adminKeyCardManager = new AdminKeyCardManagerImplImpl(
+				keyCardDataService);
+		adminRoomManager = new AdminRoomManagerImplImpl(roomTypeDataService,
+				roomDataService, keyCardManager);
 		keyCardManager = new KeyCardManagerImplImpl(keyCardDataService);
-		roomManager = new RoomManagerImplImpl(roomTypeDataService, roomDataService, keyCardManager);
+		roomManager = new RoomManagerImplImpl(roomTypeDataService,
+				roomDataService, keyCardManager);
 
 		// Booking
-		bookingManager = new BookingManagerImplImpl(bookingDataService, roomManager);
-		legalEntityManager = new LegalEntityManagerImplImpl(legalEntityDataService);
+		bookingManager = new BookingManagerImplImpl(bookingDataService,
+				roomManager);
+		legalEntityManager = new LegalEntityManagerImplImpl(
+				legalEntityDataService);
 
 		// Billing
 		billManager = new BillManagerImplImpl(billDataService, bookingManager);
 		discountManager = new DiscountManagerImplImpl(discountDataService);
 		creditCardManager = new CreditCardManagerImplImpl(creditCardDataService);
-		bankingManager = BillingFactory.eINSTANCE.createBankingManagerImpl();
-	}
 
-	/**
-	 * Method for (re)setting the hotel california component. This method also
-	 * recreates the entity manager and the database.
-	 */
-	public void initialize() throws Exception {
-		initializeEntityManager();
-		initializeServices();
-		initializeManagers();
+		if (mockBankingComponent) {
+			MockTestAdminBankingManager mockTestAdminBankingManager = new MockTestAdminBankingManager();
+
+			testAdminBankingManager = mockTestAdminBankingManager;
+			bankingManager = mockTestAdminBankingManager.getBankingManager();
+		} else {
+			bankingManager = BillingFactory.eINSTANCE
+					.createBankingManagerImpl();
+			testAdminBankingManager = new TestAdminBankingManager();
+		}
 	}
 
 	public EntityManager getEntityManager() {
@@ -191,12 +212,16 @@ public class HotelCaliforniaManagersHandler {
 	public DiscountManager getDiscountManager() {
 		return discountManager;
 	}
-	
+
 	public CreditCardManager getCreditCardManager() {
 		return creditCardManager;
 	}
-	
+
 	public BankingManager getBankingManager() {
 		return bankingManager;
+	}
+
+	public TestAdminBankingManager getTestAdminBankingManager() {
+		return testAdminBankingManager;
 	}
 }
