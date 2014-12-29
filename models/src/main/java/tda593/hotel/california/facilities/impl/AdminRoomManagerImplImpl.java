@@ -61,14 +61,18 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
+	public Room addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
 		if(number !=null && !number.isEmpty() && floor >= 0 && description !=null && roomType !=null){
 			Room newRoom = new RoomImpl(number, floor, description, roomType);
 			if(disabilityApprovals != null) {
 				newRoom.getDisabilityApprovals().addAll(disabilityApprovals);
 			}
 			roomDataService.set(newRoom);
+			
+			return newRoom;
 		}
+		
+		return null;
 	}
 
 	/**
@@ -92,14 +96,16 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void addRoomType(String name, String description, EList<RoomApproval> roomApprovals, double price) {
+	public RoomType addRoomType(String name, String description, EList<RoomApproval> roomApprovals, double price) {
 		if(name !=null && !name.isEmpty() && description !=null && price >= 0){
 			RoomType newRoomType = new RoomTypeImpl(name, description, price);	
 			if(roomApprovals != null) {
 				newRoomType.getRoomApprovals().addAll(roomApprovals);
 			}
 			roomTypeDataService.set(newRoomType);
+			return newRoomType;
 		}
+		return null;
 	}
 
 	/**
@@ -146,13 +152,11 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE:
-				addRoom((String)arguments.get(0), (Integer)arguments.get(1), (String)arguments.get(2), (EList<DisabilityApproval>)arguments.get(3), (EList<String>)arguments.get(4), (RoomType)arguments.get(5));
-				return null;
+				return addRoom((String)arguments.get(0), (Integer)arguments.get(1), (String)arguments.get(2), (EList<DisabilityApproval>)arguments.get(3), (EList<String>)arguments.get(4), (RoomType)arguments.get(5));
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__STRING:
 				return removeRoom((String)arguments.get(0));
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE:
-				addRoomType((String)arguments.get(0), (String)arguments.get(1), (EList<RoomApproval>)arguments.get(2), (Double)arguments.get(3));
-				return null;
+				return addRoomType((String)arguments.get(0), (String)arguments.get(1), (EList<RoomApproval>)arguments.get(2), (Double)arguments.get(3));
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE:
 				return removeRoomType((RoomType)arguments.get(0));
 		}

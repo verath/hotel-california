@@ -264,7 +264,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
+	public Booking createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
 		if(!isRoomTypeAvailable(from, to, roomType)) {
 			throw new IllegalArgumentException("The specified room type is either not bookable or is already "
 					+ "booked in that period");
@@ -276,6 +276,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		booking.setResponsible(customer);
 		booking.setRoomType(roomType);
 		bookingDataService.set(booking);
+		
+		return booking;
 	}
 
 	/**
@@ -573,8 +575,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE_ROOMTYPE:
 				return getAvailableRoomTypeAmount((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOMTYPE:
-				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (RoomType)arguments.get(3));
-				return null;
+				return createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (RoomType)arguments.get(3));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOM:
 				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
 				return null;

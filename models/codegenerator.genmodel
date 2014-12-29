@@ -300,6 +300,13 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/markBillAsPaid/bankingManager"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/markBillAsPaid/creditCardManager"/>
             </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillManager/createBill">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/createBill/customer"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillManager/createBookingBill">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/createBookingBill/customer"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/createBookingBill/booking"/>
+            </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="tda593.ecore#//hotel/california/billing/BankingManager">
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BankingManager/makePayment">

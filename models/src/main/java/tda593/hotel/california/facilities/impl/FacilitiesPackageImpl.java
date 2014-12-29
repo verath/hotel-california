@@ -978,7 +978,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		initEClass(adminRoomManagerEClass, AdminRoomManager.class, "AdminRoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType(), this.getRoom(), "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -989,7 +989,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		op = initEOperation(getAdminRoomManager__RemoveRoom__String(), ecorePackage.getEBoolean(), "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAdminRoomManager__AddRoomType__String_String_EList_double(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAdminRoomManager__AddRoomType__String_String_EList_double(), this.getRoomType(), "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomApproval(), "roomApprovals", 0, -1, IS_UNIQUE, !IS_ORDERED);

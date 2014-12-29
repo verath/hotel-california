@@ -25,6 +25,7 @@ import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -265,6 +266,30 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill createBill(LegalEntity customer) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill createBookingBill(LegalEntity customer, Booking booking) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void markBillAsPaid(Bill bill, boolean isPaid) {
@@ -364,6 +389,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return null;
 			case BillingPackage.BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER:
 				return markBillAsPaid((Bill)arguments.get(0), (Boolean)arguments.get(1), (BankingManager)arguments.get(2), (CreditCardManager)arguments.get(3));
+			case BillingPackage.BILL_MANAGER_IMPL___CREATE_BILL__LEGALENTITY:
+				return createBill((LegalEntity)arguments.get(0));
+			case BillingPackage.BILL_MANAGER_IMPL___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING:
+				return createBookingBill((LegalEntity)arguments.get(0), (Booking)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,5 +82,21 @@ public interface BillManager extends EObject {
 	 * @generated
 	 */
 	boolean markBillAsPaid(Bill bill, boolean isPaid, BankingManager bankingManager, CreditCardManager creditCardManager);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	Bill createBill(LegalEntity customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" customerRequired="true" customerOrdered="false" bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	Bill createBookingBill(LegalEntity customer, Booking booking);
 
 } // BillManager

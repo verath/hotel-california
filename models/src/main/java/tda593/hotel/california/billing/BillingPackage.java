@@ -1098,13 +1098,31 @@ public interface BillingPackage extends EPackage {
 	int BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = 7;
 
 	/**
+	 * The operation id for the '<em>Create Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___CREATE_BILL__LEGALENTITY = 8;
+
+	/**
+	 * The operation id for the '<em>Create Booking Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = 9;
+
+	/**
 	 * The number of operations of the '<em>Bill Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_OPERATION_COUNT = 8;
+	int BILL_MANAGER_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
@@ -1436,6 +1454,24 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER;
+
+	/**
+	 * The operation id for the '<em>Create Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___CREATE_BILL__LEGALENTITY = BILL_MANAGER___CREATE_BILL__LEGALENTITY;
+
+	/**
+	 * The operation id for the '<em>Create Booking Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING;
 
 	/**
 	 * The number of operations of the '<em>Bill Manager Impl</em>' class.
@@ -2362,6 +2398,26 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager_CreditCardManager();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#createBill(tda593.hotel.california.booking.LegalEntity) <em>Create Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Bill</em>' operation.
+	 * @see tda593.hotel.california.billing.BillManager#createBill(tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBillManager__CreateBill__LegalEntity();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#createBookingBill(tda593.hotel.california.booking.LegalEntity, tda593.hotel.california.booking.Booking) <em>Create Booking Bill</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Booking Bill</em>' operation.
+	 * @see tda593.hotel.california.billing.BillManager#createBookingBill(tda593.hotel.california.booking.LegalEntity, tda593.hotel.california.booking.Booking)
+	 * @generated
+	 */
+	EOperation getBillManager__CreateBookingBill__LegalEntity_Booking();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BillManagerImpl <em>Bill Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3150,6 +3206,22 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = eINSTANCE.getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager_CreditCardManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___CREATE_BILL__LEGALENTITY = eINSTANCE.getBillManager__CreateBill__LegalEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Booking Bill</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = eINSTANCE.getBillManager__CreateBookingBill__LegalEntity_Booking();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.

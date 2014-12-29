@@ -220,6 +220,7 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NYKpMH-uEeS2M9uZ6JBJRQ" value="*"/>
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_LM0NwIbGEeS3E8vFulBSew" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ohxx8I-gEeSfBP2QR77p4w" type="_6SLu0HZBEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_EvIlAHpXEeSept0-dI1XSQ" name="removeRoom">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_IlYd0HpXEeSept0-dI1XSQ" name="roomNumber">
@@ -243,6 +244,7 @@
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_fOM4cIbGEeS3E8vFulBSew" name="price">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
               </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_tS2UQI-gEeSfBP2QR77p4w" type="_MEBmgHZHEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_7Us0oIa8EeSnRoNcSCxqkA" name="removeRoomType">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_FUXzsIbGEeS3E8vFulBSew" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
@@ -698,6 +700,15 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_WdDFsI42EeSfBP2QR77p4w" name="creditCardManager" type="_q4CYQI3rEeSfBP2QR77p4w"/>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_V0A5AI-lEeSfBP2QR77p4w" name="createBill">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_a176wI-lEeSfBP2QR77p4w" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ePTqUI-lEeSfBP2QR77p4w" type="_gemc8Hb6EeSbBJzXJgLK5Q" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_f6eLoI-lEeSfBP2QR77p4w" name="createBookingBill">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_f6eLoY-lEeSfBP2QR77p4w" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_f6eLoo-lEeSfBP2QR77p4w" type="_gemc8Hb6EeSbBJzXJgLK5Q" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_kfen4I-lEeSfBP2QR77p4w" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_RcjZoIE4EeSfSN1EgLeI7A" name="BillManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_hsa6gIE4EeSfSN1EgLeI7A" general="_FIjl8HcHEeSbBJzXJgLK5Q"/>
@@ -1117,6 +1128,7 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_p6NDcHb0EeSbBJzXJgLK5Q" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_5DZQIHb0EeSbBJzXJgLK5Q" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_eruPoI-cEeSfBP2QR77p4w" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_JBf2IHb2EeSbBJzXJgLK5Q" name="createBooking" visibility="public">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_JBf2IXb2EeSbBJzXJgLK5Q" name="from">

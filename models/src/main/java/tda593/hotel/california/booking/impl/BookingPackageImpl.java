@@ -1216,7 +1216,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_RoomType(), null, "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_RoomType(), this.getBooking(), "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);

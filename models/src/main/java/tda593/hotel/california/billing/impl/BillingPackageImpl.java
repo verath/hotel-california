@@ -784,6 +784,24 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBillManager__CreateBill__LegalEntity() {
+		return billManagerEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__CreateBookingBill__LegalEntity_Booking() {
+		return billManagerEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBillManagerImpl() {
 		return billManagerImplEClass;
 	}
@@ -1119,6 +1137,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(billManagerEClass, BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL);
 		createEOperation(billManagerEClass, BILL_MANAGER___PUBLISH_BILL__BILL);
 		createEOperation(billManagerEClass, BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER);
+		createEOperation(billManagerEClass, BILL_MANAGER___CREATE_BILL__LEGALENTITY);
+		createEOperation(billManagerEClass, BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING);
 
 		bankingManagerEClass = createEClass(BANKING_MANAGER);
 		createEOperation(bankingManagerEClass, BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
@@ -1325,6 +1345,13 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, ecorePackage.getEBoolean(), "isPaid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBankingManager(), "bankingManager", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getCreditCardManager(), "creditCardManager", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillManager__CreateBill__LegalEntity(), this.getBill(), "createBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillManager__CreateBookingBill__LegalEntity_Booking(), this.getBill(), "createBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bankingManagerEClass, BankingManager.class, "BankingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
