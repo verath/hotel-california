@@ -1349,7 +1349,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		op = initEOperation(getBillManager__CreateBill__LegalEntity(), this.getBill(), "createBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBillManager__CreateBookingBill__LegalEntity_Booking(), this.getBill(), "createBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBillManager__CreateBookingBill__LegalEntity_Booking(), this.getBookingBill(), "createBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

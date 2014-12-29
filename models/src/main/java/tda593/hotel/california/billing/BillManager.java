@@ -97,6 +97,6 @@ public interface BillManager extends EObject {
 	 * @model required="true" ordered="false" customerRequired="true" customerOrdered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	Bill createBookingBill(LegalEntity customer, Booking booking);
+	BookingBill createBookingBill(LegalEntity customer, Booking booking);
 
 } // BillManager

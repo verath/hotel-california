@@ -354,7 +354,7 @@
           <eOperations name="createBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill">
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
           </eOperations>
-          <eOperations name="createBookingBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill">
+          <eOperations name="createBookingBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BookingBill">
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
           </eOperations>

@@ -4,14 +4,12 @@ package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
@@ -266,24 +264,25 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Bill createBill(LegalEntity customer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		BillImpl bill = new BillImpl();
+		bill.setCustomer(customer);
+		return bill;
 	}
 
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public Bill createBookingBill(LegalEntity customer, Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public BookingBill createBookingBill(LegalEntity customer, Booking booking) {
+		BookingBillImpl bill = new BookingBillImpl();
+		bill.setCustomer(customer);
+		bill.setBooking(booking);
+		return bill;
 	}
 
 

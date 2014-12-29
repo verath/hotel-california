@@ -706,7 +706,7 @@
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_f6eLoI-lEeSfBP2QR77p4w" name="createBookingBill">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_f6eLoY-lEeSfBP2QR77p4w" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_f6eLoo-lEeSfBP2QR77p4w" type="_gemc8Hb6EeSbBJzXJgLK5Q" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_f6eLoo-lEeSfBP2QR77p4w" type="_1FAq0Hb7EeSbBJzXJgLK5Q" direction="return"/>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_kfen4I-lEeSfBP2QR77p4w" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
             </ownedOperation>
           </packagedElement>
