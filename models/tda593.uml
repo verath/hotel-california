@@ -1266,6 +1266,21 @@
             <ownedOperation xmi:type="uml:Operation" xmi:id="_FIV2sIdyEeSkgbxbBgd3rw" name="beginTransaction"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_HI3kAIdyEeSkgbxbBgd3rw" name="commitTransaction"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Jc7RUIdyEeSkgbxbBgd3rw" name="rollbackTransaction"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_L1AOAI-sEeSfBP2QR77p4w" name="getAll">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_L1AOAY-sEeSfBP2QR77p4w" name="from">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_L1AOAo-sEeSfBP2QR77p4w" name="to">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_L1AOA4-sEeSfBP2QR77p4w" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L1AOBI-sEeSfBP2QR77p4w"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L1AOBY-sEeSfBP2QR77p4w" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_XCOUYI-sEeSfBP2QR77p4w" name="roomNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Interface" xmi:id="_tuIWIHb2EeSbBJzXJgLK5Q" name="LegalEntityManager">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_xwG90Hb2EeSbBJzXJgLK5Q" name="findPerson">

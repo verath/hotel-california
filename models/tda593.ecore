@@ -637,6 +637,11 @@
           <eOperations name="beginTransaction" ordered="false" lowerBound="1"/>
           <eOperations name="commitTransaction" ordered="false" lowerBound="1"/>
           <eOperations name="rollbackTransaction" ordered="false" lowerBound="1"/>
+          <eOperations name="getAll" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Booking">
+            <eParameters name="from" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eOperations>
           <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
             <eTypeArguments eClassifier="#//hotel/california/booking/Booking"/>
             <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
