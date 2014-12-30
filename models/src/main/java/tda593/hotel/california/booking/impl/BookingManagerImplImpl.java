@@ -438,10 +438,14 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		RoomStay roomStay = booking.getRoomStay();
 		roomStay.setActive(false);
 		
+		// TODO : Why do we clear this?
 		roomStay.getRegisteredPersons().clear();
 		
-		Room room = roomStay.getRoom();
-		room.unregisterKeyCards();
+		roomManager.unregisterAllKeyCards(roomStay.getRoom().getRoomNumber());
+		
+		// Persist the changes
+		bookingDataService.set(booking);
+		
 	}
 
 	/**
