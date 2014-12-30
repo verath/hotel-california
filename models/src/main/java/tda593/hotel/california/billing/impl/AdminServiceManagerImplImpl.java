@@ -12,6 +12,7 @@ import tda593.hotel.california.billing.AdminServiceManagerImpl;
 import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.Service;
+import tda593.hotel.california.billing.ServiceDataService;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,11 @@ import tda593.hotel.california.billing.Service;
  * @generated
  */
 public class AdminServiceManagerImplImpl extends ServiceManagerImplImpl implements AdminServiceManagerImpl {
+	
+	public AdminServiceManagerImplImpl(ServiceDataService dataService) {
+		super(dataService);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
