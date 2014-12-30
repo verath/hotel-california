@@ -116,11 +116,9 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	public void set(Booking object) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		if(transaction.isActive()) {
-			entityManager.merge(bookingToEntity(object));
 			object.setId(entityManager.merge(bookingToEntity(object)).getId());
 		} else {
 			transaction.begin();
-			entityManager.merge(bookingToEntity(object));
 			object.setId(entityManager.merge(bookingToEntity(object)).getId());
 			transaction.commit();
 		}
