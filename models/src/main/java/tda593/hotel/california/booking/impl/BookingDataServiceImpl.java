@@ -117,9 +117,11 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		EntityTransaction transaction = entityManager.getTransaction();
 		if(transaction.isActive()) {
 			entityManager.merge(bookingToEntity(object));
+			object.setId(entityManager.merge(bookingToEntity(object)).getId());
 		} else {
 			transaction.begin();
 			entityManager.merge(bookingToEntity(object));
+			object.setId(entityManager.merge(bookingToEntity(object)).getId());
 			transaction.commit();
 		}
 	}
@@ -134,6 +136,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		transaction.begin();
 		for(Booking object : objects) {
 			entityManager.merge(bookingToEntity(object));
+			object.setId(entityManager.merge(bookingToEntity(object)).getId());
 		}
 		transaction.commit();
 	}
@@ -186,8 +189,8 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Booking> getAll(Date from, Date to) {
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl " 
-				+ "WHERE (startDate>=:theStartDate AND startDate<=:theEndDate) "
-				+ "OR (endDate>=:theStartDate AND endDate<=:theEndDate)", BookingEntityImpl.class);
+				+ "WHERE (startDate<=:theStartDate AND endDate>=:theStartDate) "
+				+ "OR (startDate<=:theEndDate AND endDate>=:theEndDate)", BookingEntityImpl.class);
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
 		List<BookingEntityImpl> results = query.getResultList();
@@ -207,8 +210,8 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Booking> getAll(Date from, Date to, LegalEntity customer) {
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE legalEntityEntity_id=:customer " 
-				+ "AND ((startDate>=:theStartDate AND startDate<=:theEndDate) "
-					+ "OR (endDate>=:theStartDate AND endDate<=:theEndDate))", BookingEntityImpl.class);
+				+ "AND ((startDate<=:theStartDate AND endDate>=:theStartDate) "
+					+ "OR (startDate<=:theEndDate AND endDate>=:theEndDate))", BookingEntityImpl.class);
 		query.setParameter("customer", customer.getId());
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
@@ -254,9 +257,10 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getAll(Date from, Date to, String roomNumber) {
-		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("FROM BookingEntityImpl WHERE roomEntity_id=:theRoomNumber " 
-				+ "AND ((startDate>=:theStartDate AND startDate<=:theEndDate) "
-					+ "OR (endDate>=:theStartDate AND endDate<=:theEndDate))", BookingEntityImpl.class);
+		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("SELECT b FROM BookingEntityImpl b " + 
+				"JOIN b.roomStayEntity WHERE roomEntity_roomNumber=:theRoomNumber " 
+				+ "AND ((startDate<=:theStartDate AND endDate>=:theStartDate) "
+					+ "OR (startDate<=:theEndDate AND endDate>=:theEndDate))", BookingEntityImpl.class);
 		query.setParameter("theRoomNumber", roomNumber);
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
