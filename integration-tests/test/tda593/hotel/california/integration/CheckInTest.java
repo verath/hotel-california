@@ -21,7 +21,7 @@ import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
 
-public class CheckInIT extends AbstractHotelCaliforniaIntegrationTest {
+public class CheckInTest extends AbstractHotelCaliforniaIntegrationTest {
 
 	private BookingManager bookingManager;
 	private LegalEntityManager legalEntityManager;
