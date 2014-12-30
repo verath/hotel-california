@@ -5,11 +5,11 @@ package tda593.hotel.california.billing.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import tda593.hotel.california.billing.AdminServiceManager;
 import tda593.hotel.california.billing.AdminServiceManagerImpl;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.Service;
 
@@ -45,23 +45,24 @@ public class AdminServiceManagerImplImpl extends ServiceManagerImplImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Service createService(String name, double price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Service service = BillingFactory.eINSTANCE.createService();
+		service.setName(name);
+		service.setPrice(price);
+		
+		serviceDataService.set(service);
+		return service;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeService(Service service) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		serviceDataService.delete(service);
 	}
 
 	/**
