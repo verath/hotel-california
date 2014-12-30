@@ -54,7 +54,7 @@ public class BillEntityImpl implements BillEntity {
 	@OneToMany(targetEntity = DiscountEntityImpl.class, cascade=CascadeType.ALL)
 	private List<DiscountEntity> usedDiscounts;
 	
-	@OneToOne(targetEntity = LegalEntityEntityImpl.class, cascade=CascadeType.ALL)
+	@OneToOne(targetEntity = LegalEntityEntityImpl.class, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
 	private LegalEntityEntity responsible;
 	
 	@OneToMany(targetEntity = PurchaseEntityImpl.class, cascade=CascadeType.ALL)

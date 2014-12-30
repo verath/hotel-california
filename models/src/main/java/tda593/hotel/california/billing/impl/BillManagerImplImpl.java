@@ -252,9 +252,13 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		
 		CreditCardInformation cc = creditCardManager.getCreditCardInformation(bill.getCustomer());
 		Calendar cal = Calendar.getInstance();
-		cal.setTime(cc.getExpirationDate());
 		
-		if(cc == null || bankingManager.makePayment(cc.getCardNumber(), cc.getCcv(), 
+		
+		if(cc == null) {
+			return false;
+		} 
+		cal.setTime(cc.getExpirationDate());
+		if(!bankingManager.makePayment(cc.getCardNumber(), cc.getCcv(), 
 				cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), 
 				cc.getFirstName(), cc.getLastName(), isPaid? bill.getPrice() : -bill.getPrice())) {
 			return false;

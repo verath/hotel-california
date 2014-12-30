@@ -418,17 +418,17 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		double totalSum = 0;
 		
 		// Get prices from all purchases
-		for(Purchase pur : purchase) {
+		for(Purchase pur : getPurchase()) {
 			totalSum += pur.getPrice() * pur.getQuantity();
 		}
 		
 		// Get prices from all sub-bills
-		for(Bill subBill : subBills) {
+		for(Bill subBill : getSubBills()) {
 			totalSum += subBill.getPrice();
 		}
 		
 		// Apply discounts
-		for(Discount discount : usedDiscounts) {
+		for(Discount discount : getUsedDiscounts()) {
 			totalSum = discount.getPriceWithDiscount(totalSum);
 		}
 		

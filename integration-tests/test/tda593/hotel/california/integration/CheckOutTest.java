@@ -1,6 +1,7 @@
 package tda593.hotel.california.integration;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -9,7 +10,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import tda593.hotel.california.billing.BankingManager;
@@ -18,10 +18,8 @@ import tda593.hotel.california.billing.BillManager;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
-import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
-import tda593.hotel.california.booking.persistence.LegalEntityEntity;
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.KeyCard;
@@ -38,6 +36,7 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 	private CreditCardManager creditCardManager;
 	private BankingManager bankingManager;
 	private AdminKeyCardManager keyCardManager;
+	private TestAdminBankingManager adminBankingManager;
 	
 	private List<KeyCard> keyCards = new ArrayList<KeyCard>();
 	private Calendar c = Calendar.getInstance();
@@ -47,14 +46,9 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 	
 	private static String personBobFirstName = "Bob";
 	private static String personBobLastName = "Smith";
-	
-	
-	@BeforeClass
-	public static void setUpData() {
 
-	}
-
-	public CheckOutTest() {
+	@Before
+	public void setUpData() {
 		bookingManager = managersHandler.getBookingManager();
 		legalEntityManager = managersHandler.getLegalEntityManager();
 		roomManager = managersHandler.getRoomManager();
@@ -62,6 +56,7 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		bankingManager = managersHandler.getBankingManager();
 		billManager = managersHandler.getBillManager();
 		keyCardManager = managersHandler.getAdminKeyCardManager();
+		adminBankingManager = managersHandler.getTestAdminBankingManager();
 		
 		LegalEntityManager legalEntityManager = managersHandler.getLegalEntityManager();
 		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
@@ -113,7 +108,10 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		Date from = c.getTime();
 		bookAndCheckIn(from, to, room101);
 		
+		// Add a valid credit card to the bankingManager
 		c.setTimeInMillis(System.currentTimeMillis());
+		adminBankingManager.addCreditCard("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH), 
+				c.get(Calendar.YEAR), "John", "Doe");
 		assertTrue(creditCardManager.setCreditCardInformation(customer, 
 				"John", "Doe", "3819 2910 2910 2910 9201", "669", c.getTime(), bankingManager));
 		
@@ -209,6 +207,8 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 		// actor wants to change credit card information and tries again
+		adminBankingManager.addCreditCard("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH), 
+				c.get(Calendar.YEAR), "John", "Doe");
 		creditCardManager.setCreditCardInformation(bill.getCustomer(), 
 				"John", "Doe", "3819 2910 2910 2910 9201", "669", from, bankingManager);
 		// Correct info was entered

@@ -45,7 +45,7 @@ public class CreditCardInformationEntityImpl implements
 
 	private Date expirationDate;
 
-	@OneToOne(targetEntity = LegalEntityEntityImpl.class)
+	@OneToOne(targetEntity = LegalEntityEntityImpl.class, cascade = CascadeType.ALL)
 	private LegalEntityEntity owner;
 	
 	public CreditCardInformationEntityImpl() {

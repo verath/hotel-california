@@ -187,7 +187,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	public void set(LegalEntity entity) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.merge(legalEntityToEntity(entity));
+		entity.setId(entityManager.merge(legalEntityToEntity(entity)).getId());
 		transaction.commit();
 	}
 

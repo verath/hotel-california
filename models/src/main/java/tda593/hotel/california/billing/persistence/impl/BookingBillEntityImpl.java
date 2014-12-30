@@ -25,7 +25,7 @@ import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
  */
 @Entity
 public class BookingBillEntityImpl extends BillEntityImpl implements BookingBillEntity {
-	@OneToOne(targetEntity = BookingEntityImpl.class, cascade=CascadeType.ALL)
+	@OneToOne(targetEntity = BookingEntityImpl.class, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
 	private BookingEntity bookingEntity;
 
 	/**

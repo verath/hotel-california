@@ -5,6 +5,7 @@ package tda593.hotel.california.billing.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -145,6 +146,7 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public CreditCardInformation getCreditCardInformation(int legalEntityId) {
+System.out.println(legalEntityId);
 		return creditCardInformationDataService.getByLegalEntity(legalEntityId);
 	}
 
