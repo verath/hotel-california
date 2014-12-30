@@ -146,7 +146,6 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public CreditCardInformation getCreditCardInformation(int legalEntityId) {
-System.out.println(legalEntityId);
 		return creditCardInformationDataService.getByLegalEntity(legalEntityId);
 	}
 
