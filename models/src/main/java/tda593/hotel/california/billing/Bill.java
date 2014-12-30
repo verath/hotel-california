@@ -19,7 +19,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.Bill#getDate <em>Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#isPublished <em>Is Published</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#isPaid <em>Is Paid</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.Bill#getPurchase <em>Purchase</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.Bill#getPurchases <em>Purchases</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getUsedDiscounts <em>Used Discounts</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getCustomer <em>Customer</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.Bill#getSubBills <em>Sub Bills</em>}</li>
@@ -178,20 +178,20 @@ public interface Bill extends EObject {
 	void setIsPaid(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Purchase</b></em>' reference list.
+	 * Returns the value of the '<em><b>Purchases</b></em>' reference list.
 	 * The list contents are of type {@link tda593.hotel.california.billing.Purchase}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Purchase</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Purchases</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Purchase</em>' reference list.
-	 * @see tda593.hotel.california.billing.BillingPackage#getBill_Purchase()
+	 * @return the value of the '<em>Purchases</em>' reference list.
+	 * @see tda593.hotel.california.billing.BillingPackage#getBill_Purchases()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<Purchase> getPurchase();
+	EList<Purchase> getPurchases();
 
 	/**
 	 * Returns the value of the '<em><b>Used Discounts</b></em>' reference list.

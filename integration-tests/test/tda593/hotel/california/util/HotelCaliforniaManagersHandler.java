@@ -236,4 +236,12 @@ public class HotelCaliforniaManagersHandler {
 	public TestAdminBankingManager getTestAdminBankingManager() {
 		return testAdminBankingManager;
 	}
+	
+	public AdminServiceManager getAdminServiceManager() {
+		return adminServiceManager;
+	}
+	
+	public ServiceManager getServiceManager() {
+		return serviceManager;
+	}
 }

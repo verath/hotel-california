@@ -182,6 +182,7 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 		organization.setOrganizationNumber(organizationNumber);
 		organization.setPhone(phone);
 		organization.setEmail(email);
+		legalEntityDataService.set(organization);
 		return organization;
 	}
 

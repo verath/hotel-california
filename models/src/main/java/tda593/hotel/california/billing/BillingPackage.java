@@ -563,13 +563,13 @@ public interface BillingPackage extends EPackage {
 	int BILL__IS_PAID = 3;
 
 	/**
-	 * The feature id for the '<em><b>Purchase</b></em>' reference list.
+	 * The feature id for the '<em><b>Purchases</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__PURCHASE = 4;
+	int BILL__PURCHASES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Used Discounts</b></em>' reference list.
@@ -863,13 +863,13 @@ public interface BillingPackage extends EPackage {
 	int BOOKING_BILL__IS_PAID = BILL__IS_PAID;
 
 	/**
-	 * The feature id for the '<em><b>Purchase</b></em>' reference list.
+	 * The feature id for the '<em><b>Purchases</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_BILL__PURCHASE = BILL__PURCHASE;
+	int BOOKING_BILL__PURCHASES = BILL__PURCHASES;
 
 	/**
 	 * The feature id for the '<em><b>Used Discounts</b></em>' reference list.
@@ -1050,7 +1050,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___BILL_ITEM__BILL_INT_INT = 2;
+	int BILL_MANAGER___BILL_ITEM__BILL_INT_SERVICE = 2;
 
 	/**
 	 * The operation id for the '<em>Add Sub Bill</em>' operation.
@@ -1107,13 +1107,22 @@ public interface BillingPackage extends EPackage {
 	int BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = 8;
 
 	/**
+	 * The operation id for the '<em>Get Bills</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___GET_BILLS__LEGALENTITY = 9;
+
+	/**
 	 * The number of operations of the '<em>Bill Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_OPERATION_COUNT = 9;
+	int BILL_MANAGER_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
@@ -1399,7 +1408,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_INT = BILL_MANAGER___BILL_ITEM__BILL_INT_INT;
+	int BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_SERVICE = BILL_MANAGER___BILL_ITEM__BILL_INT_SERVICE;
 
 	/**
 	 * The operation id for the '<em>Add Sub Bill</em>' operation.
@@ -1454,6 +1463,15 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_MANAGER_IMPL___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING;
+
+	/**
+	 * The operation id for the '<em>Get Bills</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___GET_BILLS__LEGALENTITY = BILL_MANAGER___GET_BILLS__LEGALENTITY;
 
 	/**
 	 * The number of operations of the '<em>Bill Manager Impl</em>' class.
@@ -1537,31 +1555,22 @@ public interface BillingPackage extends EPackage {
 	int BILL_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
 
 	/**
-	 * The operation id for the '<em>Get All Services</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_DATA_SERVICE___GET_ALL_SERVICES = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Get Booking Bill</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
+	int BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Get Service</em>' operation.
+	 * The operation id for the '<em>Get All</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_DATA_SERVICE___GET_SERVICE__INT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
+	int BILL_DATA_SERVICE___GET_ALL__LEGALENTITY = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Bill Data Service</em>' class.
@@ -1570,7 +1579,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
+	int BILL_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Banking Manager Impl</em>' class.
@@ -2390,15 +2399,15 @@ public interface BillingPackage extends EPackage {
 	EAttribute getBill_IsPaid();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tda593.hotel.california.billing.Bill#getPurchase <em>Purchase</em>}'.
+	 * Returns the meta object for the reference list '{@link tda593.hotel.california.billing.Bill#getPurchases <em>Purchases</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Purchase</em>'.
-	 * @see tda593.hotel.california.billing.Bill#getPurchase()
+	 * @return the meta object for the reference list '<em>Purchases</em>'.
+	 * @see tda593.hotel.california.billing.Bill#getPurchases()
 	 * @see #getBill()
 	 * @generated
 	 */
-	EReference getBill_Purchase();
+	EReference getBill_Purchases();
 
 	/**
 	 * Returns the meta object for the reference list '{@link tda593.hotel.california.billing.Bill#getUsedDiscounts <em>Used Discounts</em>}'.
@@ -2650,14 +2659,14 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillManager__GetBookingBill__Booking();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#billItem(tda593.hotel.california.billing.Bill, int, int) <em>Bill Item</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#billItem(tda593.hotel.california.billing.Bill, int, tda593.hotel.california.billing.Service) <em>Bill Item</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Bill Item</em>' operation.
-	 * @see tda593.hotel.california.billing.BillManager#billItem(tda593.hotel.california.billing.Bill, int, int)
+	 * @see tda593.hotel.california.billing.BillManager#billItem(tda593.hotel.california.billing.Bill, int, tda593.hotel.california.billing.Service)
 	 * @generated
 	 */
-	EOperation getBillManager__BillItem__Bill_int_int();
+	EOperation getBillManager__BillItem__Bill_int_Service();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#addSubBill(tda593.hotel.california.billing.Bill, tda593.hotel.california.billing.Bill) <em>Add Sub Bill</em>}' operation.
@@ -2720,6 +2729,16 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillManager__CreateBookingBill__LegalEntity_Booking();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#getBills(tda593.hotel.california.booking.LegalEntity) <em>Get Bills</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Bills</em>' operation.
+	 * @see tda593.hotel.california.billing.BillManager#getBills(tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBillManager__GetBills__LegalEntity();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BillManagerImpl <em>Bill Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2762,16 +2781,6 @@ public interface BillingPackage extends EPackage {
 	EClass getBillDataService();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillDataService#getAllServices() <em>Get All Services</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All Services</em>' operation.
-	 * @see tda593.hotel.california.billing.BillDataService#getAllServices()
-	 * @generated
-	 */
-	EOperation getBillDataService__GetAllServices();
-
-	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillDataService#getBookingBill(tda593.hotel.california.booking.Booking) <em>Get Booking Bill</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2782,14 +2791,14 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillDataService__GetBookingBill__Booking();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillDataService#getService(int) <em>Get Service</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillDataService#getAll(tda593.hotel.california.booking.LegalEntity) <em>Get All</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Service</em>' operation.
-	 * @see tda593.hotel.california.billing.BillDataService#getService(int)
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see tda593.hotel.california.billing.BillDataService#getAll(tda593.hotel.california.booking.LegalEntity)
 	 * @generated
 	 */
-	EOperation getBillDataService__GetService__int();
+	EOperation getBillDataService__GetAll__LegalEntity();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}'.
@@ -3355,12 +3364,12 @@ public interface BillingPackage extends EPackage {
 		EAttribute BILL__IS_PAID = eINSTANCE.getBill_IsPaid();
 
 		/**
-		 * The meta object literal for the '<em><b>Purchase</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Purchases</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BILL__PURCHASE = eINSTANCE.getBill_Purchase();
+		EReference BILL__PURCHASES = eINSTANCE.getBill_Purchases();
 
 		/**
 		 * The meta object literal for the '<em><b>Used Discounts</b></em>' reference list feature.
@@ -3568,7 +3577,7 @@ public interface BillingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_MANAGER___BILL_ITEM__BILL_INT_INT = eINSTANCE.getBillManager__BillItem__Bill_int_int();
+		EOperation BILL_MANAGER___BILL_ITEM__BILL_INT_SERVICE = eINSTANCE.getBillManager__BillItem__Bill_int_Service();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Sub Bill</b></em>' operation.
@@ -3619,6 +3628,14 @@ public interface BillingPackage extends EPackage {
 		EOperation BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = eINSTANCE.getBillManager__CreateBookingBill__LegalEntity_Booking();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Bills</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_BILLS__LEGALENTITY = eINSTANCE.getBillManager__GetBills__LegalEntity();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3655,14 +3672,6 @@ public interface BillingPackage extends EPackage {
 		EClass BILL_DATA_SERVICE = eINSTANCE.getBillDataService();
 
 		/**
-		 * The meta object literal for the '<em><b>Get All Services</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL_DATA_SERVICE___GET_ALL_SERVICES = eINSTANCE.getBillDataService__GetAllServices();
-
-		/**
 		 * The meta object literal for the '<em><b>Get Booking Bill</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3671,12 +3680,12 @@ public interface BillingPackage extends EPackage {
 		EOperation BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING = eINSTANCE.getBillDataService__GetBookingBill__Booking();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Service</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL_DATA_SERVICE___GET_SERVICE__INT = eINSTANCE.getBillDataService__GetService__int();
+		EOperation BILL_DATA_SERVICE___GET_ALL__LEGALENTITY = eINSTANCE.getBillDataService__GetAll__LegalEntity();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.BankingManager <em>Banking Manager</em>}' class.

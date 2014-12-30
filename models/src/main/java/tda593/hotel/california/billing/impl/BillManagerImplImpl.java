@@ -179,9 +179,7 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void billItem(Bill bill, int serviceId, int quantity) {
-		Service service = billDataService.getService(serviceId);
-		
+	public void billItem(Bill bill, int quantity, Service service) {
 		Purchase purchase = new PurchaseImpl();
 		purchase.setService(service);
 		purchase.setQuantity(quantity);
@@ -189,15 +187,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		
 		bill.registerPurchase(purchase);
 		billDataService.set(bill);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public EList<Service> getAllServices() {
-		return billDataService.getAllServices();
 	}
 
 
@@ -300,6 +289,16 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	public EList<Bill> getBills(LegalEntity customer) {
+		return billDataService.getAll(customer);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public void markBillAsPaid(Bill bill, boolean isPaid) {
 		bill.setIsPaid(true);
 		billDataService.set(bill);
@@ -381,8 +380,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return getBill((Integer)arguments.get(0));
 			case BillingPackage.BILL_MANAGER_IMPL___GET_BOOKING_BILL__BOOKING:
 				return getBookingBill((Booking)arguments.get(0));
-			case BillingPackage.BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_INT:
-				billItem((Bill)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2));
+			case BillingPackage.BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_SERVICE:
+				billItem((Bill)arguments.get(0), (Integer)arguments.get(1), (Service)arguments.get(2));
 				return null;
 			case BillingPackage.BILL_MANAGER_IMPL___ADD_SUB_BILL__BILL_BILL:
 				addSubBill((Bill)arguments.get(0), (Bill)arguments.get(1));
@@ -399,6 +398,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return createBill((LegalEntity)arguments.get(0));
 			case BillingPackage.BILL_MANAGER_IMPL___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING:
 				return createBookingBill((LegalEntity)arguments.get(0), (Booking)arguments.get(1));
+			case BillingPackage.BILL_MANAGER_IMPL___GET_BILLS__LEGALENTITY:
+				return getBills((LegalEntity)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

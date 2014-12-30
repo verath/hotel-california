@@ -5,6 +5,7 @@ package tda593.hotel.california.billing;
 import org.eclipse.emf.common.util.EList;
 import tda593.hotel.california.DataService;
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,14 +22,6 @@ public interface BillDataService extends DataService<Bill, Integer> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" ordered="false"
-	 * @generated
-	 */
-	EList<Service> getAllServices();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
@@ -37,8 +30,8 @@ public interface BillDataService extends DataService<Bill, Integer> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" serviceIdRequired="true" serviceIdOrdered="false"
+	 * @model ordered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	Service getService(int serviceId);
+	EList<Bill> getAll(LegalEntity customer);
 } // BillDataService

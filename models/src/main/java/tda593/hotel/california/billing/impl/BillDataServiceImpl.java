@@ -4,17 +4,14 @@ package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillingPackage;
@@ -27,6 +24,7 @@ import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.BookingBillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.ServiceEntityImpl;
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.impl.BookingDataServiceImpl;
 import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
 
@@ -202,22 +200,6 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Service> getAllServices() {
-		List<ServiceEntityImpl> result = entityManager.createQuery("FROM ServiceEntityImpl", ServiceEntityImpl.class).getResultList();
-		
-		EList<Service> services = new BasicEList<Service>(result.size());
-		for(ServiceEntity entity : result) {
-			services.add(ServiceDataServiceImpl.entityToService(entity));
-		}
-		
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public BookingBill getBookingBill(Booking booking) {
 		TypedQuery<BookingBillEntityImpl> query = entityManager.createQuery("FROM BookingBillEntityImpl WHERE bookingEntity_id=:linkedBooking", BookingBillEntityImpl.class);
 		query.setParameter("linkedBooking", booking.getId());
@@ -228,6 +210,23 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Bill> getAll(LegalEntity customer) {
+		TypedQuery<BillEntityImpl> query = entityManager.createQuery("FROM BillEntityImpl WHERE responsible_id=:customer", BillEntityImpl.class);
+		query.setParameter("customer", customer.getId());
+		List<BillEntityImpl> results = query.getResultList();
+		EList<Bill> billResults = new BasicEList<Bill>(results.size());
+		for (BillEntity entity : results) {
+			billResults.add(entityToBill(entity));
+		}
+		
+		return billResults;
 	}
 
 	/**
@@ -265,12 +264,10 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 				return null;
 			case BillingPackage.BILL_DATA_SERVICE___EXIST__OBJECT:
 				return exist((Integer)arguments.get(0));
-			case BillingPackage.BILL_DATA_SERVICE___GET_ALL_SERVICES:
-				return getAllServices();
 			case BillingPackage.BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING:
 				return getBookingBill((Booking)arguments.get(0));
-			case BillingPackage.BILL_DATA_SERVICE___GET_SERVICE__INT:
-				return getService((Integer)arguments.get(0));
+			case BillingPackage.BILL_DATA_SERVICE___GET_ALL__LEGALENTITY:
+				return getAll((LegalEntity)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

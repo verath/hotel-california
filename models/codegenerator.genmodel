@@ -225,7 +225,7 @@
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/Bill/isPublished"/>
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/billing/Bill/isPaid"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-                propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/purchase"/>
+                propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/purchases"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/Bill/usedDiscounts"/>
             <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -279,8 +279,8 @@
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillManager/billItem">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/billItem/bill"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/billItem/serviceId"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/billItem/quantity"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/billItem/service"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillManager/addSubBill">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/addSubBill/subBill"/>
@@ -305,6 +305,9 @@
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillManager/createBookingBill">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/createBookingBill/customer"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/createBookingBill/booking"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillManager/getBills">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillManager/getBills/customer"/>
             </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="tda593.ecore#//hotel/california/billing/BankingManager">
@@ -363,12 +366,11 @@
                 propertySortChoices="true" ecoreFeature="ecore:EReference tda593.ecore#//hotel/california/billing/BillManagerImpl/bookingManager"/>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/BillDataService">
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getAllServices"/>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getBookingBill">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillDataService/getBookingBill/booking"/>
             </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getService">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillDataService/getService/serviceId"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/billing/BillDataService/getAll">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/billing/BillDataService/getAll/customer"/>
             </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/billing/BankingManagerImpl"/>
