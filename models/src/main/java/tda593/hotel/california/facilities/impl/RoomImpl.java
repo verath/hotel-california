@@ -396,8 +396,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void registerKeyCard(KeyCard keyCard) {
-		if(!allowedKeyCards.contains(keyCard)) {
-			allowedKeyCards.add(keyCard);
+		if(!getAllowedKeyCards().contains(keyCard)) {
+			getAllowedKeyCards().add(keyCard);
 		}
 	}
 
@@ -407,7 +407,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void unregisterKeyCard(KeyCard keyCard) {
-		allowedKeyCards.remove(keyCard);
+		getAllowedKeyCards().remove(keyCard);
 	}
 
 	/**
@@ -416,7 +416,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void unregisterKeyCards() {
-		allowedKeyCards.clear();
+		getAllowedKeyCards().clear();
 	}
 
 	/**
