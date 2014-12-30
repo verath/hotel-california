@@ -4,16 +4,19 @@ package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManagerImpl;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
 import tda593.hotel.california.billing.CreditCardInformation;
@@ -168,6 +171,9 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public BookingBill getBookingBill(Booking booking) {
+		for (Bill b : billDataService.getAll()) {
+			System.out.println(b);
+		}
 		return billDataService.getBookingBill(booking);
 	}
 
@@ -269,6 +275,7 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	public Bill createBill(LegalEntity customer) {
 		BillImpl bill = new BillImpl();
 		bill.setCustomer(customer);
+		billDataService.set(bill);
 		return bill;
 	}
 
@@ -279,9 +286,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public BookingBill createBookingBill(LegalEntity customer, Booking booking) {
-		BookingBillImpl bill = new BookingBillImpl();
+		BookingBill bill = BillingFactory.eINSTANCE.createBookingBill();
 		bill.setCustomer(customer);
 		bill.setBooking(booking);
+		billDataService.set(bill);
 		return bill;
 	}
 

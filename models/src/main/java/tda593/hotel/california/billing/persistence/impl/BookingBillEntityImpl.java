@@ -2,9 +2,10 @@
  */
 package tda593.hotel.california.billing.persistence.impl;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
-import tda593.hotel.california.billing.impl.BillImpl;
 import tda593.hotel.california.billing.persistence.BookingBillEntity;
 import tda593.hotel.california.booking.persistence.BookingEntity;
 import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
@@ -22,8 +23,9 @@ import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
  *
  * @generated
  */
+@Entity
 public class BookingBillEntityImpl extends BillEntityImpl implements BookingBillEntity {
-	@OneToOne(targetEntity = BookingEntityImpl.class)
+	@OneToOne(targetEntity = BookingEntityImpl.class, cascade=CascadeType.ALL)
 	private BookingEntity bookingEntity;
 
 	/**

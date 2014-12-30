@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -69,11 +70,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return BillingPackage.Literals.BILL_DATA_SERVICE;
 	}
 
-	public static Bill entityToBill(BillEntity billEntity) {
-		return entityToBill(billEntity, new BillImpl());
-	}
-	
-	private static Bill entityToBill(BillEntity billEntity, Bill bill) {
+	private static Bill entityToBillHelper(BillEntity billEntity, Bill bill) {
 		bill.setCustomer(LegalEntityDataServiceImpl.entityToLegalEntity(billEntity.getLegalEntityEntity()));
 		bill.setDate(billEntity.getDate());
 		bill.setId(billEntity.getId());
@@ -81,11 +78,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return bill;
 	}
 	
-	public static BillEntityImpl billToEntity(Bill bill) {
-		return billToEntity(bill, new BillEntityImpl());
-	}
-	
-	public static BillEntityImpl billToEntity(Bill bill, BillEntityImpl entity) {
+	private static BillEntityImpl billToEntityHelper(Bill bill, BillEntityImpl entity) {
 		entity.setLegalEntityEntity(LegalEntityDataServiceImpl.legalEntityToEntity(bill.getCustomer()));
 		entity.setDate(bill.getDate());
 		entity.setId(bill.getId());
@@ -93,9 +86,23 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return entity;
 	}
 	
+	public static Bill entityToBill(BillEntity billEntity) {
+		if(billEntity instanceof BookingBillEntity) {
+			return entityToBookingBill((BookingBillEntity) billEntity);
+		}
+		return entityToBillHelper(billEntity, new BillImpl());
+	}
+	
+	public static BillEntityImpl billToEntity(Bill bill) {
+		if(bill instanceof BookingBill) {
+			return bookingBillToEntity((BookingBill) bill);
+		}
+		return billToEntityHelper(bill, new BillEntityImpl());
+	}
+	
 	public static BookingBill entityToBookingBill(BookingBillEntity bbe) {
 		BookingBill bb = new BookingBillImpl();
-		entityToBill(bbe, bb);
+		entityToBillHelper(bbe, bb);
 		bb.setIsPaid(bbe.isPaid());
 		bb.setIsPublished(bbe.isPublished());
 		return bb;
@@ -103,7 +110,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	
 	public static BookingBillEntityImpl bookingBillToEntity(BookingBill bb) {
 		BookingBillEntityImpl bbe = new BookingBillEntityImpl();
-		billToEntity(bb, bbe);
+		billToEntityHelper(bb, bbe);
 		bbe.setIsPaid(bb.isPaid());
 		bb.setIsPublished(bbe.isPublished());
 		return bbe;
@@ -158,11 +165,12 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void set(Bill object) {
+	public void set(Bill bill) {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.merge(billToEntity(object));
+		bill.setId(entityManager.merge(billToEntity(bill)).getId());
 		transaction.commit();
+		
 	}
 
 	/**
@@ -174,7 +182,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		for(Bill bill : objects) {
-			entityManager.merge(billToEntity(bill));
+			bill.setId(entityManager.merge(billToEntity(bill)).getId());
 		}
 		transaction.commit();
 	}
@@ -219,11 +227,15 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public BookingBill getBookingBill(Booking booking) {
-		TypedQuery<BookingBillEntityImpl> query = entityManager.createQuery("FROM BookingBillEntityImpl WHERE booking = :linkedBooking", BookingBillEntityImpl.class);
+		TypedQuery<BookingBillEntityImpl> query = entityManager.createQuery("FROM BookingBillEntityImpl WHERE bookingEntity_id=:linkedBooking", BookingBillEntityImpl.class);
 		query.setParameter("linkedBooking", booking.getId());
-		BookingBillEntity entity = query.getSingleResult();
+		try {
+			return entityToBookingBill(query.getSingleResult());
+		} catch (NoResultException e) {
+			
+		}
 		
-		return entity == null ? null : entityToBookingBill(entity);
+		return null;
 	}
 
 	/**

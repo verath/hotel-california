@@ -6,9 +6,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.DiscountEntity;
@@ -36,6 +41,8 @@ import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
  *
  * @generated
  */
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class BillEntityImpl implements BillEntity {
 
 	@Id
@@ -44,16 +51,16 @@ public class BillEntityImpl implements BillEntity {
 	private Date date;
 	private boolean isPublished;
 	private boolean isPaid;
-	@OneToMany(targetEntity = DiscountEntityImpl.class)
+	@OneToMany(targetEntity = DiscountEntityImpl.class, cascade=CascadeType.ALL)
 	private List<DiscountEntity> usedDiscounts;
 	
-	@OneToMany(targetEntity = LegalEntityEntityImpl.class)
+	@OneToOne(targetEntity = LegalEntityEntityImpl.class, cascade=CascadeType.ALL)
 	private LegalEntityEntity responsible;
 	
-	@OneToMany(targetEntity = PurchaseEntityImpl.class)
+	@OneToMany(targetEntity = PurchaseEntityImpl.class, cascade=CascadeType.ALL)
 	private List<PurchaseEntity> purchaseEntity;
 	
-	@OneToMany(targetEntity = BillEntityImpl.class)
+	@OneToMany(targetEntity = BillEntityImpl.class, cascade=CascadeType.ALL)
 	private List<BillEntity> subBillEntities;
 
 	/**
