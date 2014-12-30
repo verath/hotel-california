@@ -14,6 +14,7 @@ import tda593.hotel.california.billing.DiscountDataService;
 import tda593.hotel.california.billing.DiscountManager;
 import tda593.hotel.california.billing.ServiceDataService;
 import tda593.hotel.california.billing.ServiceManager;
+import tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl;
 import tda593.hotel.california.billing.impl.AdminServiceManagerImplImpl;
 import tda593.hotel.california.billing.impl.BillDataServiceImpl;
 import tda593.hotel.california.billing.impl.BillManagerImplImpl;
@@ -144,6 +145,7 @@ public class HotelCaliforniaManagersHandler {
 		creditCardManager = new CreditCardManagerImplImpl(creditCardDataService);	
 		adminServiceManager = new AdminServiceManagerImplImpl(serviceDataService);
 		serviceManager = new ServiceManagerImplImpl(serviceDataService);
+		adminDiscountManager = new AdminDiscountManagerImplImpl(discountDataService);
 		
 		if (mockBankingComponent) {
 			MockTestAdminBankingManager mockTestAdminBankingManager = new MockTestAdminBankingManager();

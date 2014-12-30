@@ -179,7 +179,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 		// Actor enters discount codes
 		// Assume: Discount codes are valid. IF not system notifies -> try again OR exit use case
 		Discount percentageDiscount = discountManager.getDiscount(percentageCode);
-		assertTrue(percentageDiscount != null);
+
 		billManager.applyDiscount(percentageDiscount, bill);
 		
 		billManager.publishBill(bill);

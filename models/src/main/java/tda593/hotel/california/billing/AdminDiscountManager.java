@@ -3,9 +3,7 @@
 package tda593.hotel.california.billing;
 
 import java.util.Date;
-
 import org.eclipse.emf.common.util.EList;
-
 import tda593.hotel.california.booking.LegalEntity;
 
 /**
@@ -38,18 +36,10 @@ public interface AdminDiscountManager extends DiscountManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model discountRequired="true" discountOrdered="false" amountRequired="true" amountOrdered="false"
+	 * @model discountRequired="true" discountOrdered="false" usesAmountRequired="true" usesAmountOrdered="false"
 	 * @generated
 	 */
-	void setAmountLimit(Discount discount, int amount);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model discountRequired="true" discountOrdered="false" allowedUsersMany="true" allowedUsersOrdered="false"
-	 * @generated
-	 */
-	void addAllowedUsers(Discount discount, EList<LegalEntity> allowedUsers);
+	void setAmountLimit(Discount discount, int usesAmount);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,9 +52,17 @@ public interface AdminDiscountManager extends DiscountManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model discountRequired="true" discountOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false" allowedUsersMany="true" allowedUsersOrdered="false" timesLeftToUseRequired="true" timesLeftToUseOrdered="false"
+	 * @model discountRequired="true" discountOrdered="false" legalEntitiesMany="true" legalEntitiesOrdered="false"
 	 * @generated
 	 */
-	void createDiscountLimitForDiscount(Discount discount, Date startDate, Date endDate, EList<LegalEntity> allowedUsers, int timesLeftToUse);
+	void addAllowedUsers(Discount discount, EList<LegalEntity> legalEntities);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model discountRequired="true" discountOrdered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" usersMany="true" usersOrdered="false" usesAmountRequired="true" usesAmountOrdered="false"
+	 * @generated
+	 */
+	void createDiscountLimitForDiscount(Discount discount, Date from, Date to, EList<LegalEntity> users, int usesAmount);
 
 } // AdminDiscountManager

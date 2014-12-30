@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import tda593.hotel.california.billing.AdminDiscountManagerImpl;
 import tda593.hotel.california.billing.AdminServiceManagerImpl;
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
@@ -91,6 +92,7 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 			case BillingPackage.SERVICE_MANAGER_IMPL: return createServiceManagerImpl();
 			case BillingPackage.SERVICE_DATA_SERVICE: return createServiceDataService();
 			case BillingPackage.ADMIN_SERVICE_MANAGER_IMPL: return createAdminServiceManagerImpl();
+			case BillingPackage.ADMIN_DISCOUNT_MANAGER_IMPL: return createAdminDiscountManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -274,6 +276,16 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 	public AdminServiceManagerImpl createAdminServiceManagerImpl() {
 		AdminServiceManagerImplImpl adminServiceManagerImpl = new AdminServiceManagerImplImpl();
 		return adminServiceManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdminDiscountManagerImpl createAdminDiscountManagerImpl() {
+		AdminDiscountManagerImplImpl adminDiscountManagerImpl = new AdminDiscountManagerImplImpl();
+		return adminDiscountManagerImpl;
 	}
 
 	/**

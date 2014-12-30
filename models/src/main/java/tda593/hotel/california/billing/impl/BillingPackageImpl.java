@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import tda593.hotel.california.CaliforniaPackage;
+import tda593.hotel.california.billing.AdminDiscountManager;
+import tda593.hotel.california.billing.AdminDiscountManagerImpl;
 import tda593.hotel.california.billing.AdminServiceManager;
 import tda593.hotel.california.billing.AdminServiceManagerImpl;
 import tda593.hotel.california.billing.BankingManager;
@@ -224,6 +226,20 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	private EClass adminServiceManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminDiscountManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminDiscountManagerImplEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1166,6 +1182,78 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAdminDiscountManager() {
+		return adminDiscountManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__AddAllowedUsers__Discount_EList() {
+		return adminDiscountManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__AddPercentageDiscount__String_String_float() {
+		return adminDiscountManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__AddSumDiscount__String_String_double() {
+		return adminDiscountManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int() {
+		return adminDiscountManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__SetAmountLimit__Discount_int() {
+		return adminDiscountManagerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date() {
+		return adminDiscountManagerEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminDiscountManagerImpl() {
+		return adminDiscountManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BillingFactory getBillingFactory() {
 		return (BillingFactory)getEFactoryInstance();
 	}
@@ -1309,6 +1397,16 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(adminServiceManagerEClass, ADMIN_SERVICE_MANAGER___REMOVE_SERVICE__SERVICE);
 
 		adminServiceManagerImplEClass = createEClass(ADMIN_SERVICE_MANAGER_IMPL);
+
+		adminDiscountManagerEClass = createEClass(ADMIN_DISCOUNT_MANAGER);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_ALLOWED_USERS__DISCOUNT_ELIST);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__STRING_STRING_FLOAT);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__STRING_STRING_DOUBLE);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___CREATE_DISCOUNT_LIMIT_FOR_DISCOUNT__DISCOUNT_DATE_DATE_ELIST_INT);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_AMOUNT_LIMIT__DISCOUNT_INT);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE);
+
+		adminDiscountManagerImplEClass = createEClass(ADMIN_DISCOUNT_MANAGER_IMPL);
 	}
 
 	/**
@@ -1378,6 +1476,9 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		adminServiceManagerEClass.getESuperTypes().add(this.getServiceManager());
 		adminServiceManagerImplEClass.getESuperTypes().add(this.getServiceManagerImpl());
 		adminServiceManagerImplEClass.getESuperTypes().add(this.getAdminServiceManager());
+		adminDiscountManagerEClass.getESuperTypes().add(this.getDiscountManager());
+		adminDiscountManagerImplEClass.getESuperTypes().add(this.getDiscountManagerImpl());
+		adminDiscountManagerImplEClass.getESuperTypes().add(this.getAdminDiscountManager());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(discountManagerEClass, DiscountManager.class, "DiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1591,6 +1692,40 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, this.getService(), "service", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(adminServiceManagerImplEClass, AdminServiceManagerImpl.class, "AdminServiceManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(adminDiscountManagerEClass, AdminDiscountManager.class, "AdminDiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getAdminDiscountManager__AddAllowedUsers__Discount_EList(), null, "addAllowedUsers", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "legalEntities", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__AddPercentageDiscount__String_String_float(), this.getDiscount(), "addPercentageDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEFloat(), "percentage", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__AddSumDiscount__String_String_double(), this.getDiscount(), "addSumDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int(), null, "createDiscountLimitForDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "users", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "usesAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__SetAmountLimit__Discount_int(), null, "setAmountLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "usesAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date(), null, "setDateRangeLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "validFrom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "validTo", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(adminDiscountManagerImplEClass, AdminDiscountManagerImpl.class, "AdminDiscountManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //BillingPackageImpl
