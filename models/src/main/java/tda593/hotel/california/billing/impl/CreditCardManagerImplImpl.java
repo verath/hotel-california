@@ -127,7 +127,6 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 		creditCardInfo.setLegalEntity(legalEntity);
 		
 		creditCardInformationDataService.set(creditCardInfo);
-		
 		return true;
 	}
 

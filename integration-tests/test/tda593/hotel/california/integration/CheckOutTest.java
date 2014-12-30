@@ -114,8 +114,8 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		bookAndCheckIn(from, to, room101);
 		
 		c.setTimeInMillis(System.currentTimeMillis());
-		creditCardManager.setCreditCardInformation(customer, 
-				"John", "Doe", "3819 2910 2910 2910 9201", "669", c.getTime(), bankingManager);
+		assertTrue(creditCardManager.setCreditCardInformation(customer, 
+				"John", "Doe", "3819 2910 2910 2910 9201", "669", c.getTime(), bankingManager));
 		
 		// Actor enters the room number.
 		// Assume: room number is valid and exists.
@@ -139,13 +139,13 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 		// The system publishes a bill containing all the purchases contained in the room bill
-		Bill bill = billManager.getBookingBill(deactivatedBooking);
+		Bill bill = billManager.getBookingBill(booking);
 		assertTrue(bill != null);
-		//billManager.publishBill(bill);
+		billManager.publishBill(bill);
 		
 		// Assume: the bill is not paid
 		// Actor chooses to pay the bill
-		//assertTrue(billManager.markBillAsPaid(bill, true, bankingManager, creditCardManager));
+		assertTrue(billManager.markBillAsPaid(bill, true, bankingManager, creditCardManager));
 	}
 	
 	@Test
