@@ -3,10 +3,12 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManagerImpl;
@@ -264,7 +267,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
+	public Booking createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
 		if(!isRoomTypeAvailable(from, to, roomType)) {
 			throw new IllegalArgumentException("The specified room type is either not bookable or is already "
 					+ "booked in that period");
@@ -276,6 +279,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		booking.setResponsible(customer);
 		booking.setRoomType(roomType);
 		bookingDataService.set(booking);
+		
+		return booking;
 	}
 
 	/**
@@ -394,12 +399,17 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Booking getActiveBooking(String roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(System.currentTimeMillis());
+		List<Booking> bookings = bookingDataService.getAll(c.getTime(), c.getTime(), roomNumber);
+		if(bookings.size() == 1 && bookings.get(0).getRoomStay().isActive()) {
+			return bookings.get(0);
+		}
+		
+		return null;
 	}
 
 	/**
@@ -428,10 +438,14 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		RoomStay roomStay = booking.getRoomStay();
 		roomStay.setActive(false);
 		
+		// TODO : Why do we clear this?
 		roomStay.getRegisteredPersons().clear();
 		
-		Room room = roomStay.getRoom();
-		room.unregisterKeyCards();
+		roomManager.unregisterAllKeyCards(roomStay.getRoom().getRoomNumber());
+		
+		// Persist the changes
+		bookingDataService.set(booking);
+		
 	}
 
 	/**
@@ -573,8 +587,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_AVAILABLE_ROOM_TYPE_AMOUNT__DATE_DATE_ROOMTYPE:
 				return getAvailableRoomTypeAmount((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOMTYPE:
-				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (RoomType)arguments.get(3));
-				return null;
+				return createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (RoomType)arguments.get(3));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOM:
 				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
 				return null;

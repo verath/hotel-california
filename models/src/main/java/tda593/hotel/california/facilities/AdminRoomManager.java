@@ -18,10 +18,10 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model required="true" ordered="false" numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
+	Room addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -34,10 +34,10 @@ public interface AdminRoomManager extends RoomManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsMany="true" roomApprovalsOrdered="false" priceRequired="true" priceOrdered="false"
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" roomApprovalsMany="true" roomApprovalsOrdered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	void addRoomType(String name, String description, EList<RoomApproval> roomApprovals, double price);
+	RoomType addRoomType(String name, String description, EList<RoomApproval> roomApprovals, double price);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -82,10 +82,10 @@ public interface BookingManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" customerRequired="true" customerOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model required="true" ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" customerRequired="true" customerOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void createBooking(Date from, Date to, LegalEntity customer, RoomType roomType);
+	Booking createBooking(Date from, Date to, LegalEntity customer, RoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -65,4 +65,12 @@ public interface BookingDataService extends DataService<Booking, Integer> {
 	 * @generated
 	 */
 	void rollbackTransaction();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" roomNumberRequired="true" roomNumberOrdered="false"
+	 * @generated
+	 */
+	EList<Booking> getAll(Date from, Date to, String roomNumber);
 } // BookingDataService

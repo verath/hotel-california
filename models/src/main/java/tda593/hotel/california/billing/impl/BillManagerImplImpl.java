@@ -16,6 +16,7 @@ import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManagerImpl;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
 import tda593.hotel.california.billing.CreditCardInformation;
@@ -25,6 +26,7 @@ import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
+import tda593.hotel.california.booking.LegalEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -267,6 +269,33 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	public Bill createBill(LegalEntity customer) {
+		BillImpl bill = new BillImpl();
+		bill.setCustomer(customer);
+		billDataService.set(bill);
+		return bill;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public BookingBill createBookingBill(LegalEntity customer, Booking booking) {
+		BookingBill bill = BillingFactory.eINSTANCE.createBookingBill();
+		bill.setCustomer(customer);
+		bill.setBooking(booking);
+		billDataService.set(bill);
+		return bill;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public void markBillAsPaid(Bill bill, boolean isPaid) {
 		bill.setIsPaid(true);
 		billDataService.set(bill);
@@ -364,6 +393,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return null;
 			case BillingPackage.BILL_MANAGER_IMPL___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER:
 				return markBillAsPaid((Bill)arguments.get(0), (Boolean)arguments.get(1), (BankingManager)arguments.get(2), (CreditCardManager)arguments.get(3));
+			case BillingPackage.BILL_MANAGER_IMPL___CREATE_BILL__LEGALENTITY:
+				return createBill((LegalEntity)arguments.get(0));
+			case BillingPackage.BILL_MANAGER_IMPL___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING:
+				return createBookingBill((LegalEntity)arguments.get(0), (Booking)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

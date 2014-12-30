@@ -782,6 +782,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBookingDataService__GetAll__Date_Date_String() {
+		return bookingDataServiceEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLegalEntityManager() {
 		return legalEntityManagerEClass;
 	}
@@ -1057,6 +1066,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___BEGIN_TRANSACTION);
 		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___COMMIT_TRANSACTION);
 		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___ROLLBACK_TRANSACTION);
+		createEOperation(bookingDataServiceEClass, BOOKING_DATA_SERVICE___GET_ALL__DATE_DATE_STRING);
 
 		legalEntityManagerEClass = createEClass(LEGAL_ENTITY_MANAGER);
 		createEOperation(legalEntityManagerEClass, LEGAL_ENTITY_MANAGER___FIND_PERSON__STRING_STRING);
@@ -1216,7 +1226,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_RoomType(), null, "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_RoomType(), this.getBooking(), "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1286,6 +1296,11 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		initEOperation(getBookingDataService__CommitTransaction(), null, "commitTransaction", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getBookingDataService__RollbackTransaction(), null, "rollbackTransaction", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBookingDataService__GetAll__Date_Date_String(), this.getBooking(), "getAll", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(legalEntityManagerEClass, LegalEntityManager.class, "LegalEntityManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

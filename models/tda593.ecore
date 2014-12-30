@@ -61,7 +61,7 @@
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="AdminRoomManager" abstract="true"
             interface="true" eSuperTypes="#//hotel/california/facilities/RoomManager">
-          <eOperations name="addRoom" ordered="false" lowerBound="1">
+          <eOperations name="addRoom" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/Room">
             <eParameters name="number" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="floor" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -73,7 +73,7 @@
           <eOperations name="removeRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-          <eOperations name="addRoomType" ordered="false" lowerBound="1">
+          <eOperations name="addRoomType" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/RoomType">
             <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="roomApprovals" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/RoomApproval"/>
@@ -351,6 +351,13 @@
             <eParameters name="bankingManager" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BankingManager"/>
             <eParameters name="creditCardManager" ordered="false" lowerBound="1" eType="#//hotel/california/billing/CreditCardManager"/>
           </eOperations>
+          <eOperations name="createBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/Bill">
+            <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
+          </eOperations>
+          <eOperations name="createBookingBill" ordered="false" lowerBound="1" eType="#//hotel/california/billing/BookingBill">
+            <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
+            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BankingManager" abstract="true"
             interface="true">
@@ -558,7 +565,7 @@
             <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/RoomType"/>
           </eOperations>
-          <eOperations name="createBooking" ordered="false" lowerBound="1">
+          <eOperations name="createBooking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
             <eParameters name="from" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
@@ -630,6 +637,11 @@
           <eOperations name="beginTransaction" ordered="false" lowerBound="1"/>
           <eOperations name="commitTransaction" ordered="false" lowerBound="1"/>
           <eOperations name="rollbackTransaction" ordered="false" lowerBound="1"/>
+          <eOperations name="getAll" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Booking">
+            <eParameters name="from" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eOperations>
           <eGenericSuperTypes eClassifier="#//hotel/california/DataService">
             <eTypeArguments eClassifier="#//hotel/california/booking/Booking"/>
             <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
