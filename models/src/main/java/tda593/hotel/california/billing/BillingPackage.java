@@ -1053,22 +1053,13 @@ public interface BillingPackage extends EPackage {
 	int BILL_MANAGER___BILL_ITEM__BILL_INT_INT = 2;
 
 	/**
-	 * The operation id for the '<em>Get All Services</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_MANAGER___GET_ALL_SERVICES = 3;
-
-	/**
 	 * The operation id for the '<em>Add Sub Bill</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___ADD_SUB_BILL__BILL_BILL = 4;
+	int BILL_MANAGER___ADD_SUB_BILL__BILL_BILL = 3;
 
 	/**
 	 * The operation id for the '<em>Apply Discount</em>' operation.
@@ -1077,7 +1068,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL = 5;
+	int BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL = 4;
 
 	/**
 	 * The operation id for the '<em>Publish Bill</em>' operation.
@@ -1086,7 +1077,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___PUBLISH_BILL__BILL = 6;
+	int BILL_MANAGER___PUBLISH_BILL__BILL = 5;
 
 	/**
 	 * The operation id for the '<em>Mark Bill As Paid</em>' operation.
@@ -1095,7 +1086,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = 7;
+	int BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER = 6;
 
 	/**
 	 * The operation id for the '<em>Create Bill</em>' operation.
@@ -1104,7 +1095,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___CREATE_BILL__LEGALENTITY = 8;
+	int BILL_MANAGER___CREATE_BILL__LEGALENTITY = 7;
 
 	/**
 	 * The operation id for the '<em>Create Booking Bill</em>' operation.
@@ -1113,7 +1104,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = 9;
+	int BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING = 8;
 
 	/**
 	 * The number of operations of the '<em>Bill Manager</em>' class.
@@ -1122,7 +1113,7 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_OPERATION_COUNT = 10;
+	int BILL_MANAGER_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
@@ -1409,15 +1400,6 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_INT = BILL_MANAGER___BILL_ITEM__BILL_INT_INT;
-
-	/**
-	 * The operation id for the '<em>Get All Services</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_MANAGER_IMPL___GET_ALL_SERVICES = BILL_MANAGER___GET_ALL_SERVICES;
 
 	/**
 	 * The operation id for the '<em>Add Sub Bill</em>' operation.
@@ -1788,6 +1770,336 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREDIT_CARD_MANAGER_IMPL_OPERATION_COUNT = CREDIT_CARD_MANAGER_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.ServiceManager <em>Service Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.ServiceManager
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getServiceManager()
+	 * @generated
+	 */
+	int SERVICE_MANAGER = 21;
+
+	/**
+	 * The number of structural features of the '<em>Service Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get All Services</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER___GET_ALL_SERVICES = 0;
+
+	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER___GET_SERVICE__INT = 1;
+
+	/**
+	 * The number of operations of the '<em>Service Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_OPERATION_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.ServiceManagerImplImpl <em>Service Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.ServiceManagerImplImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getServiceManagerImpl()
+	 * @generated
+	 */
+	int SERVICE_MANAGER_IMPL = 20;
+
+	/**
+	 * The feature id for the '<em><b>Service Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_IMPL__SERVICE_DATA_SERVICE = SERVICE_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Service Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_IMPL_FEATURE_COUNT = SERVICE_MANAGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get All Services</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_IMPL___GET_ALL_SERVICES = SERVICE_MANAGER___GET_ALL_SERVICES;
+
+	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_IMPL___GET_SERVICE__INT = SERVICE_MANAGER___GET_SERVICE__INT;
+
+	/**
+	 * The number of operations of the '<em>Service Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MANAGER_IMPL_OPERATION_COUNT = SERVICE_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.ServiceDataServiceImpl <em>Service Data Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.ServiceDataServiceImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getServiceDataService()
+	 * @generated
+	 */
+	int SERVICE_DATA_SERVICE = 22;
+
+	/**
+	 * The number of structural features of the '<em>Service Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE_FEATURE_COUNT = CaliforniaPackage.DATA_SERVICE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___GET__OBJECT = CaliforniaPackage.DATA_SERVICE___GET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___GET_ALL = CaliforniaPackage.DATA_SERVICE___GET_ALL;
+
+	/**
+	 * The operation id for the '<em>Count</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___COUNT = CaliforniaPackage.DATA_SERVICE___COUNT;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___SET__OBJECT = CaliforniaPackage.DATA_SERVICE___SET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Set All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___SET_ALL__ELIST = CaliforniaPackage.DATA_SERVICE___SET_ALL__ELIST;
+
+	/**
+	 * The operation id for the '<em>Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___DELETE__OBJECT = CaliforniaPackage.DATA_SERVICE___DELETE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Exist</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>Service Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.AdminServiceManager <em>Admin Service Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.AdminServiceManager
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminServiceManager()
+	 * @generated
+	 */
+	int ADMIN_SERVICE_MANAGER = 23;
+
+	/**
+	 * The number of structural features of the '<em>Admin Service Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_FEATURE_COUNT = SERVICE_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get All Services</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER___GET_ALL_SERVICES = SERVICE_MANAGER___GET_ALL_SERVICES;
+
+	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER___GET_SERVICE__INT = SERVICE_MANAGER___GET_SERVICE__INT;
+
+	/**
+	 * The operation id for the '<em>Create Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER___CREATE_SERVICE__STRING_DOUBLE = SERVICE_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Remove Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER___REMOVE_SERVICE__SERVICE = SERVICE_MANAGER_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Admin Service Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_OPERATION_COUNT = SERVICE_MANAGER_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.AdminServiceManagerImplImpl <em>Admin Service Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.billing.impl.AdminServiceManagerImplImpl
+	 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminServiceManagerImpl()
+	 * @generated
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL = 24;
+
+	/**
+	 * The feature id for the '<em><b>Service Data Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL__SERVICE_DATA_SERVICE = SERVICE_MANAGER_IMPL__SERVICE_DATA_SERVICE;
+
+	/**
+	 * The number of structural features of the '<em>Admin Service Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL_FEATURE_COUNT = SERVICE_MANAGER_IMPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get All Services</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL___GET_ALL_SERVICES = SERVICE_MANAGER_IMPL___GET_ALL_SERVICES;
+
+	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL___GET_SERVICE__INT = SERVICE_MANAGER_IMPL___GET_SERVICE__INT;
+
+	/**
+	 * The operation id for the '<em>Create Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL___CREATE_SERVICE__STRING_DOUBLE = SERVICE_MANAGER_IMPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Remove Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL___REMOVE_SERVICE__SERVICE = SERVICE_MANAGER_IMPL_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Admin Service Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_SERVICE_MANAGER_IMPL_OPERATION_COUNT = SERVICE_MANAGER_IMPL_OPERATION_COUNT + 2;
 
 
 	/**
@@ -2348,16 +2660,6 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillManager__BillItem__Bill_int_int();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#getAllServices() <em>Get All Services</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All Services</em>' operation.
-	 * @see tda593.hotel.california.billing.BillManager#getAllServices()
-	 * @generated
-	 */
-	EOperation getBillManager__GetAllServices();
-
-	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#addSubBill(tda593.hotel.california.billing.Bill, tda593.hotel.california.billing.Bill) <em>Add Sub Bill</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2695,6 +2997,107 @@ public interface BillingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCreditCardManagerImpl_CreditCardInformationDataService();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.ServiceManagerImpl <em>Service Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Manager Impl</em>'.
+	 * @see tda593.hotel.california.billing.ServiceManagerImpl
+	 * @generated
+	 */
+	EClass getServiceManagerImpl();
+
+	/**
+	 * Returns the meta object for the reference '{@link tda593.hotel.california.billing.ServiceManagerImpl#getServiceDataService <em>Service Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Service Data Service</em>'.
+	 * @see tda593.hotel.california.billing.ServiceManagerImpl#getServiceDataService()
+	 * @see #getServiceManagerImpl()
+	 * @generated
+	 */
+	EReference getServiceManagerImpl_ServiceDataService();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.ServiceManager <em>Service Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Manager</em>'.
+	 * @see tda593.hotel.california.billing.ServiceManager
+	 * @generated
+	 */
+	EClass getServiceManager();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.ServiceManager#getAllServices() <em>Get All Services</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Services</em>' operation.
+	 * @see tda593.hotel.california.billing.ServiceManager#getAllServices()
+	 * @generated
+	 */
+	EOperation getServiceManager__GetAllServices();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.ServiceManager#getService(int) <em>Get Service</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Service</em>' operation.
+	 * @see tda593.hotel.california.billing.ServiceManager#getService(int)
+	 * @generated
+	 */
+	EOperation getServiceManager__GetService__int();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.ServiceDataService <em>Service Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Data Service</em>'.
+	 * @see tda593.hotel.california.billing.ServiceDataService
+	 * @generated
+	 */
+	EClass getServiceDataService();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminServiceManager <em>Admin Service Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Service Manager</em>'.
+	 * @see tda593.hotel.california.billing.AdminServiceManager
+	 * @generated
+	 */
+	EClass getAdminServiceManager();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminServiceManager#createService(java.lang.String, double) <em>Create Service</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Service</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminServiceManager#createService(java.lang.String, double)
+	 * @generated
+	 */
+	EOperation getAdminServiceManager__CreateService__String_double();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.AdminServiceManager#removeService(tda593.hotel.california.billing.Service) <em>Remove Service</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Service</em>' operation.
+	 * @see tda593.hotel.california.billing.AdminServiceManager#removeService(tda593.hotel.california.billing.Service)
+	 * @generated
+	 */
+	EOperation getAdminServiceManager__RemoveService__Service();
+
+	/**
+	 * Returns the meta object for class '{@link tda593.hotel.california.billing.AdminServiceManagerImpl <em>Admin Service Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Admin Service Manager Impl</em>'.
+	 * @see tda593.hotel.california.billing.AdminServiceManagerImpl
+	 * @generated
+	 */
+	EClass getAdminServiceManagerImpl();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3168,14 +3571,6 @@ public interface BillingPackage extends EPackage {
 		EOperation BILL_MANAGER___BILL_ITEM__BILL_INT_INT = eINSTANCE.getBillManager__BillItem__Bill_int_int();
 
 		/**
-		 * The meta object literal for the '<em><b>Get All Services</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL_MANAGER___GET_ALL_SERVICES = eINSTANCE.getBillManager__GetAllServices();
-
-		/**
 		 * The meta object literal for the '<em><b>Add Sub Bill</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3454,6 +3849,96 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CREDIT_CARD_MANAGER_IMPL__CREDIT_CARD_INFORMATION_DATA_SERVICE = eINSTANCE.getCreditCardManagerImpl_CreditCardInformationDataService();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.ServiceManagerImplImpl <em>Service Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.impl.ServiceManagerImplImpl
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getServiceManagerImpl()
+		 * @generated
+		 */
+		EClass SERVICE_MANAGER_IMPL = eINSTANCE.getServiceManagerImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Data Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_MANAGER_IMPL__SERVICE_DATA_SERVICE = eINSTANCE.getServiceManagerImpl_ServiceDataService();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.ServiceManager <em>Service Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.ServiceManager
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getServiceManager()
+		 * @generated
+		 */
+		EClass SERVICE_MANAGER = eINSTANCE.getServiceManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Services</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVICE_MANAGER___GET_ALL_SERVICES = eINSTANCE.getServiceManager__GetAllServices();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Service</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVICE_MANAGER___GET_SERVICE__INT = eINSTANCE.getServiceManager__GetService__int();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.ServiceDataServiceImpl <em>Service Data Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.impl.ServiceDataServiceImpl
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getServiceDataService()
+		 * @generated
+		 */
+		EClass SERVICE_DATA_SERVICE = eINSTANCE.getServiceDataService();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.AdminServiceManager <em>Admin Service Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.AdminServiceManager
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminServiceManager()
+		 * @generated
+		 */
+		EClass ADMIN_SERVICE_MANAGER = eINSTANCE.getAdminServiceManager();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Service</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_SERVICE_MANAGER___CREATE_SERVICE__STRING_DOUBLE = eINSTANCE.getAdminServiceManager__CreateService__String_double();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Service</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_SERVICE_MANAGER___REMOVE_SERVICE__SERVICE = eINSTANCE.getAdminServiceManager__RemoveService__Service();
+
+		/**
+		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.AdminServiceManagerImplImpl <em>Admin Service Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tda593.hotel.california.billing.impl.AdminServiceManagerImplImpl
+		 * @see tda593.hotel.california.billing.impl.BillingPackageImpl#getAdminServiceManagerImpl()
+		 * @generated
+		 */
+		EClass ADMIN_SERVICE_MANAGER_IMPL = eINSTANCE.getAdminServiceManagerImpl();
 
 	}
 

@@ -384,8 +384,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			case BillingPackage.BILL_MANAGER_IMPL___BILL_ITEM__BILL_INT_INT:
 				billItem((Bill)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2));
 				return null;
-			case BillingPackage.BILL_MANAGER_IMPL___GET_ALL_SERVICES:
-				return getAllServices();
 			case BillingPackage.BILL_MANAGER_IMPL___ADD_SUB_BILL__BILL_BILL:
 				addSubBill((Bill)arguments.get(0), (Bill)arguments.get(1));
 				return null;

@@ -116,14 +116,6 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		bbe.setBookingEntity(BookingDataServiceImpl.bookingToEntity(bb.getBooking()));
 		return bbe;
 	}
-	
-	public static Service entityToService(ServiceEntity entity) {
-		Service service = new ServiceImpl();
-		service.setId(entity.getId());
-		service.setName(entity.getName());
-		service.setPrice(entity.getPrice());
-		return service;
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,7 +163,6 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		transaction.begin();
 		bill.setId(entityManager.merge(billToEntity(bill)).getId());
 		transaction.commit();
-		
 	}
 
 	/**
@@ -216,7 +207,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		
 		EList<Service> services = new BasicEList<Service>(result.size());
 		for(ServiceEntity entity : result) {
-			services.add(entityToService(entity));
+			services.add(ServiceDataServiceImpl.entityToService(entity));
 		}
 		
 		return services;
@@ -246,7 +237,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public Service getService(int serviceId) {
 		ServiceEntity entity = entityManager.find(ServiceEntityImpl.class, serviceId);
-		return entity == null ? null : entityToService(entity);
+		return entity == null ? null : ServiceDataServiceImpl.entityToService(entity);
 	}
 
 	/**

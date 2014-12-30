@@ -2,9 +2,7 @@
  */
 package tda593.hotel.california.billing;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.LegalEntity;
 
@@ -42,14 +40,6 @@ public interface BillManager extends EObject {
 	 * @generated
 	 */
 	void billItem(Bill bill, int serviceId, int quantity);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" ordered="false"
-	 * @generated
-	 */
-	EList<Service> getAllServices();
 
 	/**
 	 * <!-- begin-user-doc -->

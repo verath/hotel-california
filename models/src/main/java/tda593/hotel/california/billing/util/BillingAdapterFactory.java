@@ -150,6 +150,26 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 				return createCreditCardManagerImplAdapter();
 			}
 			@Override
+			public Adapter caseServiceManagerImpl(ServiceManagerImpl object) {
+				return createServiceManagerImplAdapter();
+			}
+			@Override
+			public Adapter caseServiceManager(ServiceManager object) {
+				return createServiceManagerAdapter();
+			}
+			@Override
+			public Adapter caseServiceDataService(ServiceDataService object) {
+				return createServiceDataServiceAdapter();
+			}
+			@Override
+			public Adapter caseAdminServiceManager(AdminServiceManager object) {
+				return createAdminServiceManagerAdapter();
+			}
+			@Override
+			public Adapter caseAdminServiceManagerImpl(AdminServiceManagerImpl object) {
+				return createAdminServiceManagerImplAdapter();
+			}
+			@Override
 			public <E, ID> Adapter caseDataService(DataService<E, ID> object) {
 				return createDataServiceAdapter();
 			}
@@ -450,6 +470,76 @@ public class BillingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCreditCardManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.ServiceManagerImpl <em>Service Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.ServiceManagerImpl
+	 * @generated
+	 */
+	public Adapter createServiceManagerImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.ServiceManager <em>Service Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.ServiceManager
+	 * @generated
+	 */
+	public Adapter createServiceManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.ServiceDataService <em>Service Data Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.ServiceDataService
+	 * @generated
+	 */
+	public Adapter createServiceDataServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminServiceManager <em>Admin Service Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.AdminServiceManager
+	 * @generated
+	 */
+	public Adapter createAdminServiceManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tda593.hotel.california.billing.AdminServiceManagerImpl <em>Admin Service Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tda593.hotel.california.billing.AdminServiceManagerImpl
+	 * @generated
+	 */
+	public Adapter createAdminServiceManagerImplAdapter() {
 		return null;
 	}
 
