@@ -3,13 +3,12 @@
 package tda593.hotel.california.facilities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.GuestRoom;
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,6 +72,13 @@ public class GuestRoomImpl extends RoomImpl implements GuestRoom {
 	 */
 	protected GuestRoomImpl() {
 		super();
+	}
+	
+	public GuestRoomImpl(String number, int floor, String description, RoomType roomType, 
+			int numberOfBeds, int numberOfExtraBeds) {
+		super(number, floor, description, roomType);
+		this.numberOfBeds = numberOfBeds;
+		this.numberOfExtrabeds = numberOfExtraBeds;
 	}
 
 	/**

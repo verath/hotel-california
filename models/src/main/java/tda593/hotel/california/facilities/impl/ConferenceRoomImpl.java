@@ -5,17 +5,14 @@ package tda593.hotel.california.facilities.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,6 +66,13 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	 */
 	protected ConferenceRoomImpl() {
 		super();
+	}
+	
+	public ConferenceRoomImpl(String number, int floor, String description,
+			RoomType roomType, int numberOfSeats, EList<String> equipment) {
+		super(number, floor, description, roomType);
+		this.numberOfSeats = numberOfSeats;
+		this.equipment = equipment;
 	}
 
 	/**
