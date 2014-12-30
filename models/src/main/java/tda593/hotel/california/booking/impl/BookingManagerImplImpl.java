@@ -405,7 +405,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		Calendar c = Calendar.getInstance();
 		c.setTimeInMillis(System.currentTimeMillis());
 		List<Booking> bookings = bookingDataService.getAll(c.getTime(), c.getTime(), roomNumber);
-		if(bookings.size() == 1) {
+		if(bookings.size() == 1 && bookings.get(0).getRoomStay().isActive()) {
 			return bookings.get(0);
 		}
 		
