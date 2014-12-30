@@ -319,7 +319,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType() {
+	public EOperation getAdminRoomManager__RemoveRoom__String() {
 		return adminRoomManagerEClass.getEOperations().get(0);
 	}
 
@@ -328,7 +328,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__RemoveRoom__String() {
+	public EOperation getAdminRoomManager__AddRoomType__String_String_EList_double() {
 		return adminRoomManagerEClass.getEOperations().get(1);
 	}
 
@@ -337,7 +337,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__AddRoomType__String_String_EList_double() {
+	public EOperation getAdminRoomManager__RemoveRoomType__RoomType() {
 		return adminRoomManagerEClass.getEOperations().get(2);
 	}
 
@@ -346,7 +346,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__RemoveRoomType__RoomType() {
+	public EOperation getAdminRoomManager__AddGuestRoom__String_int_String_EList_EList_RoomType_int_int() {
 		return adminRoomManagerEClass.getEOperations().get(3);
 	}
 
@@ -355,17 +355,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAdminRoomManager__AddGuestRoom__String_int_String_EList_EList_RoomType_int_int() {
-		return adminRoomManagerEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getAdminRoomManager__AddConferenceRoom__String_int_String_EList_EList_RoomType_int_EList() {
-		return adminRoomManagerEClass.getEOperations().get(5);
+		return adminRoomManagerEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -848,7 +839,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(keyCardEClass, KEY_CARD__ID);
 
 		adminRoomManagerEClass = createEClass(ADMIN_ROOM_MANAGER);
-		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE);
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM__STRING);
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE);
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE);
@@ -997,14 +987,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getKeyCard_Id(), ecorePackage.getEString(), "id", null, 1, 1, KeyCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(adminRoomManagerEClass, AdminRoomManager.class, "AdminRoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType(), this.getRoom(), "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDisabilityApproval(), "disabilityApprovals", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "photos", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getAdminRoomManager__RemoveRoom__String(), ecorePackage.getEBoolean(), "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);

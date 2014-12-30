@@ -435,22 +435,13 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
 
 	/**
-	 * The operation id for the '<em>Add Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE = ROOM_MANAGER_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___REMOVE_ROOM__STRING = ROOM_MANAGER_OPERATION_COUNT + 1;
+	int ADMIN_ROOM_MANAGER___REMOVE_ROOM__STRING = ROOM_MANAGER_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Add Room Type</em>' operation.
@@ -459,7 +450,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = ROOM_MANAGER_OPERATION_COUNT + 2;
+	int ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = ROOM_MANAGER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Remove Room Type</em>' operation.
@@ -468,7 +459,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE = ROOM_MANAGER_OPERATION_COUNT + 3;
+	int ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE = ROOM_MANAGER_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Add Guest Room</em>' operation.
@@ -477,7 +468,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = ROOM_MANAGER_OPERATION_COUNT + 4;
+	int ADMIN_ROOM_MANAGER___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = ROOM_MANAGER_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Add Conference Room</em>' operation.
@@ -486,7 +477,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = ROOM_MANAGER_OPERATION_COUNT + 5;
+	int ADMIN_ROOM_MANAGER___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = ROOM_MANAGER_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Admin Room Manager</em>' class.
@@ -495,7 +486,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 6;
+	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
@@ -1624,22 +1615,13 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING;
 
 	/**
-	 * The operation id for the '<em>Add Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__STRING = ROOM_MANAGER_IMPL_OPERATION_COUNT + 1;
+	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__STRING = ROOM_MANAGER_IMPL_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Add Room Type</em>' operation.
@@ -1648,7 +1630,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 2;
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Remove Room Type</em>' operation.
@@ -1657,7 +1639,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 3;
+	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Add Guest Room</em>' operation.
@@ -1666,7 +1648,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 4;
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Add Conference Room</em>' operation.
@@ -1675,7 +1657,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = ROOM_MANAGER_IMPL_OPERATION_COUNT + 5;
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = ROOM_MANAGER_IMPL_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Admin Room Manager Impl</em>' class.
@@ -1684,7 +1666,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 6;
+	int ADMIN_ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl <em>Admin Key Card Manager Impl</em>}' class.
@@ -1851,16 +1833,6 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAdminRoomManager();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addRoomHelper(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType) <em>Add Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Room</em>' operation.
-	 * @see tda593.hotel.california.facilities.AdminRoomManager#addRoomHelper(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType)
-	 * @generated
-	 */
-	EOperation getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#removeRoom(java.lang.String) <em>Remove Room</em>}' operation.
@@ -2517,14 +2489,6 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADMIN_ROOM_MANAGER = eINSTANCE.getAdminRoomManager();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADMIN_ROOM_MANAGER___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE = eINSTANCE.getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.

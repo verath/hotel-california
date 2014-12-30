@@ -200,28 +200,6 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Interface" xmi:id="_m1fbwHpWEeSept0-dI1XSQ" name="AdminRoomManager">
             <generalization xmi:type="uml:Generalization" xmi:id="_POgRcHpYEeSept0-dI1XSQ" general="_SzH3QHoiEeSVKdBxhP6Y7A"/>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_pfuNYHpWEeSept0-dI1XSQ" name="addRoom">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_sxzCIHpWEeSept0-dI1XSQ" name="number">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-              </ownedParameter>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ubKzsHpWEeSept0-dI1XSQ" name="floor">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-              </ownedParameter>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_41e2cHpWEeSept0-dI1XSQ" name="description">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-              </ownedParameter>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_93cUcHpWEeSept0-dI1XSQ" name="disabilityApprovals" type="_1pGBQH-sEeS2M9uZ6JBJRQ">
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CrjVgH-uEeS2M9uZ6JBJRQ"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Crj8kH-uEeS2M9uZ6JBJRQ" value="*"/>
-              </ownedParameter>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dss3oHpXEeSept0-dI1XSQ" name="photos">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NYKCIH-uEeS2M9uZ6JBJRQ"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NYKpMH-uEeS2M9uZ6JBJRQ" value="*"/>
-              </ownedParameter>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_LM0NwIbGEeS3E8vFulBSew" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ohxx8I-gEeSfBP2QR77p4w" type="_6SLu0HZBEeSrX_LICIhx2Q" direction="return"/>
-            </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_EvIlAHpXEeSept0-dI1XSQ" name="removeRoom">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_IlYd0HpXEeSept0-dI1XSQ" name="roomNumber">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>

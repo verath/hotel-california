@@ -3,15 +3,12 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.DisabilityApproval;
-import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.KeyCardManager;
@@ -114,7 +111,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * @generated NOT
 	 */
 	public GuestRoom addGuestRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfBeds, int numberOfExtraBeds) {
-		if(numberOfBeds > 0) {
+		if(isRoomParametersValid(number, floor, description, disabilityApprovals, photos, roomType) && numberOfBeds > 0) {
 			GuestRoom guestRoom = new GuestRoomImpl(number, floor, description, roomType, numberOfBeds, numberOfExtraBeds);
 			
 			roomDataService.set(guestRoom);
@@ -130,7 +127,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 * @generated NOT
 	 */
 	public ConferenceRoom addConferenceRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfSeats, EList<String> equipment) {
-		if(numberOfSeats > 0) {
+		if(isRoomParametersValid(number, floor, description, disabilityApprovals, photos, roomType) && numberOfSeats > 0) {
 			ConferenceRoom conferenceRoom = new ConferenceRoomImpl(number, floor, description, roomType, numberOfSeats, equipment);
 			
 			roomDataService.set(conferenceRoom);
@@ -138,6 +135,10 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 		}
 		
 		return null;
+	}
+	
+	private boolean isRoomParametersValid(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType) {
+		return (number !=null && !number.isEmpty() && floor >= 0 && description !=null && roomType !=null);
 	}
 
 	/**
@@ -149,7 +150,6 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == AdminRoomManager.class) {
 			switch (baseOperationID) {
-				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE;
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM__STRING: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__STRING;
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE;
 				case FacilitiesPackage.ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE: return FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE;
@@ -170,8 +170,6 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE:
-				return addRoomHelper((String)arguments.get(0), (Integer)arguments.get(1), (String)arguments.get(2), (EList<DisabilityApproval>)arguments.get(3), (EList<String>)arguments.get(4), (RoomType)arguments.get(5));
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM__STRING:
 				return removeRoom((String)arguments.get(0));
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE:
