@@ -27,6 +27,7 @@ import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.BookingBillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.ServiceEntityImpl;
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.impl.BookingDataServiceImpl;
 import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
 
 /**
@@ -75,6 +76,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		bill.setDate(billEntity.getDate());
 		bill.setId(billEntity.getId());
 		bill.setIsPublished(billEntity.isPublished());
+		bill.setIsPaid(billEntity.isPaid());
 		return bill;
 	}
 	
@@ -83,6 +85,7 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		entity.setDate(bill.getDate());
 		entity.setId(bill.getId());
 		entity.setIsPublished(bill.isPublished());
+		entity.setIsPaid(bill.isPaid());
 		return entity;
 	}
 	
@@ -103,16 +106,14 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	public static BookingBill entityToBookingBill(BookingBillEntity bbe) {
 		BookingBill bb = new BookingBillImpl();
 		entityToBillHelper(bbe, bb);
-		bb.setIsPaid(bbe.isPaid());
-		bb.setIsPublished(bbe.isPublished());
+		bb.setBooking(BookingDataServiceImpl.entityToBooking(bbe.getBookingEntity()));
 		return bb;
 	}
 	
 	public static BookingBillEntityImpl bookingBillToEntity(BookingBill bb) {
 		BookingBillEntityImpl bbe = new BookingBillEntityImpl();
 		billToEntityHelper(bb, bbe);
-		bbe.setIsPaid(bb.isPaid());
-		bb.setIsPublished(bbe.isPublished());
+		bbe.setBookingEntity(BookingDataServiceImpl.bookingToEntity(bb.getBooking()));
 		return bbe;
 	}
 	

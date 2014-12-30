@@ -171,9 +171,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public BookingBill getBookingBill(Booking booking) {
-		for (Bill b : billDataService.getAll()) {
-			System.out.println(b);
-		}
 		return billDataService.getBookingBill(booking);
 	}
 
