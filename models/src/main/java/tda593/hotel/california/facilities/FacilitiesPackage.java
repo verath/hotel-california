@@ -471,13 +471,31 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE = ROOM_MANAGER_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Add Guest Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = ROOM_MANAGER_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Add Conference Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = ROOM_MANAGER_OPERATION_COUNT + 5;
+
+	/**
 	 * The number of operations of the '<em>Admin Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 4;
+	int ADMIN_ROOM_MANAGER_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
@@ -687,151 +705,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomManagerImpl()
 	 * @generated
 	 */
-	int ROOM_MANAGER_IMPL = 7;
-
-	/**
-	 * The feature id for the '<em><b>Room Data Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE = ROOM_MANAGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Room Type Data Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE = ROOM_MANAGER_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Key Card Manager</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL__KEY_CARD_MANAGER = ROOM_MANAGER_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Room Manager Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL_FEATURE_COUNT = ROOM_MANAGER_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Get Room Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM_TYPES = ROOM_MANAGER___GET_ROOM_TYPES;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING;
-
-	/**
-	 * The operation id for the '<em>Register Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Get Rooms</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___GET_ROOMS = ROOM_MANAGER___GET_ROOMS;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING;
-
-	/**
-	 * The operation id for the '<em>Unregister Key Card</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__STRING = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNTS = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS;
-
-	/**
-	 * The operation id for the '<em>Get Room Type Amount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
-
-	/**
-	 * The operation id for the '<em>Get Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM__STRING = ROOM_MANAGER___GET_ROOM__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Room Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
-
-	/**
-	 * The number of operations of the '<em>Room Manager Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 0;
+	int ROOM_MANAGER_IMPL = 9;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomDataServiceImpl <em>Room Data Service</em>}' class.
@@ -841,88 +715,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomDataService()
 	 * @generated
 	 */
-	int ROOM_DATA_SERVICE = 8;
-
-	/**
-	 * The number of structural features of the '<em>Room Data Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE_FEATURE_COUNT = CaliforniaPackage.DATA_SERVICE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___GET__OBJECT = CaliforniaPackage.DATA_SERVICE___GET__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Get All</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___GET_ALL = CaliforniaPackage.DATA_SERVICE___GET_ALL;
-
-	/**
-	 * The operation id for the '<em>Count</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___COUNT = CaliforniaPackage.DATA_SERVICE___COUNT;
-
-	/**
-	 * The operation id for the '<em>Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___SET__OBJECT = CaliforniaPackage.DATA_SERVICE___SET__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Set All</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___SET_ALL__ELIST = CaliforniaPackage.DATA_SERVICE___SET_ALL__ELIST;
-
-	/**
-	 * The operation id for the '<em>Delete</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___DELETE__OBJECT = CaliforniaPackage.DATA_SERVICE___DELETE__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Exist</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
-
-	/**
-	 * The number of operations of the '<em>Room Data Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+	int ROOM_DATA_SERVICE = 10;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl <em>Room Type Data Service</em>}' class.
@@ -932,88 +725,7 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getRoomTypeDataService()
 	 * @generated
 	 */
-	int ROOM_TYPE_DATA_SERVICE = 9;
-
-	/**
-	 * The number of structural features of the '<em>Room Type Data Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE_FEATURE_COUNT = CaliforniaPackage.DATA_SERVICE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___GET__OBJECT = CaliforniaPackage.DATA_SERVICE___GET__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Get All</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___GET_ALL = CaliforniaPackage.DATA_SERVICE___GET_ALL;
-
-	/**
-	 * The operation id for the '<em>Count</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___COUNT = CaliforniaPackage.DATA_SERVICE___COUNT;
-
-	/**
-	 * The operation id for the '<em>Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___SET__OBJECT = CaliforniaPackage.DATA_SERVICE___SET__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Set All</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___SET_ALL__ELIST = CaliforniaPackage.DATA_SERVICE___SET_ALL__ELIST;
-
-	/**
-	 * The operation id for the '<em>Delete</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___DELETE__OBJECT = CaliforniaPackage.DATA_SERVICE___DELETE__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Exist</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
-
-	/**
-	 * The number of operations of the '<em>Room Type Data Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+	int ROOM_TYPE_DATA_SERVICE = 11;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.ConferenceRoomImpl <em>Conference Room</em>}' class.
@@ -1023,7 +735,161 @@ public interface FacilitiesPackage extends EPackage {
 	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getConferenceRoom()
 	 * @generated
 	 */
-	int CONFERENCE_ROOM = 10;
+	int CONFERENCE_ROOM = 8;
+
+	/**
+	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.GuestRoomImpl <em>Guest Room</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tda593.hotel.california.facilities.impl.GuestRoomImpl
+	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getGuestRoom()
+	 * @generated
+	 */
+	int GUEST_ROOM = 7;
+
+	/**
+	 * The feature id for the '<em><b>Floor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__FLOOR = ROOM__FLOOR;
+
+	/**
+	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__ROOM_NUMBER = ROOM__ROOM_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__IS_OPERATIONAL = ROOM__IS_OPERATIONAL;
+
+	/**
+	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__IS_CLEANED = ROOM__IS_CLEANED;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__DESCRIPTION = ROOM__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__PHOTOS = ROOM__PHOTOS;
+
+	/**
+	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__ALLOWED_KEY_CARDS = ROOM__ALLOWED_KEY_CARDS;
+
+	/**
+	 * The feature id for the '<em><b>Room Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__DISABILITY_APPROVALS = ROOM__DISABILITY_APPROVALS;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Beds</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__NUMBER_OF_BEDS = ROOM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Extrabeds</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM__NUMBER_OF_EXTRABEDS = ROOM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Guest Room</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM_FEATURE_COUNT = ROOM_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Register Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM___REGISTER_KEY_CARD__KEYCARD = ROOM___REGISTER_KEY_CARD__KEYCARD;
+
+	/**
+	 * The operation id for the '<em>Unregister Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM___UNREGISTER_KEY_CARD__KEYCARD = ROOM___UNREGISTER_KEY_CARD__KEYCARD;
+
+	/**
+	 * The operation id for the '<em>Unregister Key Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM___UNREGISTER_KEY_CARDS = ROOM___UNREGISTER_KEY_CARDS;
+
+	/**
+	 * The number of operations of the '<em>Guest Room</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Floor</b></em>' attribute.
@@ -1170,122 +1036,49 @@ public interface FacilitiesPackage extends EPackage {
 	int CONFERENCE_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.GuestRoomImpl <em>Guest Room</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tda593.hotel.california.facilities.impl.GuestRoomImpl
-	 * @see tda593.hotel.california.facilities.impl.FacilitiesPackageImpl#getGuestRoom()
-	 * @generated
-	 */
-	int GUEST_ROOM = 11;
-
-	/**
-	 * The feature id for the '<em><b>Floor</b></em>' attribute.
+	 * The feature id for the '<em><b>Room Data Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__FLOOR = ROOM__FLOOR;
+	int ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE = ROOM_MANAGER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Room Type Data Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__ROOM_NUMBER = ROOM__ROOM_NUMBER;
+	int ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE = ROOM_MANAGER_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Is Operational</b></em>' attribute.
+	 * The feature id for the '<em><b>Key Card Manager</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__IS_OPERATIONAL = ROOM__IS_OPERATIONAL;
+	int ROOM_MANAGER_IMPL__KEY_CARD_MANAGER = ROOM_MANAGER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
+	 * The number of structural features of the '<em>Room Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__IS_CLEANED = ROOM__IS_CLEANED;
+	int ROOM_MANAGER_IMPL_FEATURE_COUNT = ROOM_MANAGER_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The operation id for the '<em>Get Room Types</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__DESCRIPTION = ROOM__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Photos</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__PHOTOS = ROOM__PHOTOS;
-
-	/**
-	 * The feature id for the '<em><b>Allowed Key Cards</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ALLOWED_KEY_CARDS = ROOM__ALLOWED_KEY_CARDS;
-
-	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__ROOM_TYPE = ROOM__ROOM_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Disability Approvals</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__DISABILITY_APPROVALS = ROOM__DISABILITY_APPROVALS;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Beds</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__NUMBER_OF_BEDS = ROOM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Extrabeds</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM__NUMBER_OF_EXTRABEDS = ROOM_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Guest Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUEST_ROOM_FEATURE_COUNT = ROOM_FEATURE_COUNT + 2;
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPES = ROOM_MANAGER___GET_ROOM_TYPES;
 
 	/**
 	 * The operation id for the '<em>Register Key Card</em>' operation.
@@ -1294,7 +1087,25 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM___REGISTER_KEY_CARD__KEYCARD = ROOM___REGISTER_KEY_CARD__KEYCARD;
+	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__KEYCARD_STRING;
+
+	/**
+	 * The operation id for the '<em>Register Key Card</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___REGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___REGISTER_KEY_CARD__STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOMS = ROOM_MANAGER___GET_ROOMS;
 
 	/**
 	 * The operation id for the '<em>Unregister Key Card</em>' operation.
@@ -1303,25 +1114,232 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM___UNREGISTER_KEY_CARD__KEYCARD = ROOM___UNREGISTER_KEY_CARD__KEYCARD;
+	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__KEYCARD_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__KEYCARD_STRING;
 
 	/**
-	 * The operation id for the '<em>Unregister Key Cards</em>' operation.
+	 * The operation id for the '<em>Unregister Key Card</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM___UNREGISTER_KEY_CARDS = ROOM___UNREGISTER_KEY_CARDS;
+	int ROOM_MANAGER_IMPL___UNREGISTER_KEY_CARD__STRING_STRING = ROOM_MANAGER___UNREGISTER_KEY_CARD__STRING_STRING;
 
 	/**
-	 * The number of operations of the '<em>Guest Room</em>' class.
+	 * The operation id for the '<em>Unregister All Key Cards</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 0;
+	int ROOM_MANAGER_IMPL___UNREGISTER_ALL_KEY_CARDS__STRING = ROOM_MANAGER___UNREGISTER_ALL_KEY_CARDS__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNTS = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNTS;
+
+	/**
+	 * The operation id for the '<em>Get Room Type Amount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE_AMOUNT__ROOMTYPE = ROOM_MANAGER___GET_ROOM_TYPE_AMOUNT__ROOMTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM__STRING = ROOM_MANAGER___GET_ROOM__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
+
+	/**
+	 * The number of operations of the '<em>Room Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Room Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE_FEATURE_COUNT = CaliforniaPackage.DATA_SERVICE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___GET__OBJECT = CaliforniaPackage.DATA_SERVICE___GET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___GET_ALL = CaliforniaPackage.DATA_SERVICE___GET_ALL;
+
+	/**
+	 * The operation id for the '<em>Count</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___COUNT = CaliforniaPackage.DATA_SERVICE___COUNT;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___SET__OBJECT = CaliforniaPackage.DATA_SERVICE___SET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Set All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___SET_ALL__ELIST = CaliforniaPackage.DATA_SERVICE___SET_ALL__ELIST;
+
+	/**
+	 * The operation id for the '<em>Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___DELETE__OBJECT = CaliforniaPackage.DATA_SERVICE___DELETE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Exist</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>Room Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Room Type Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE_FEATURE_COUNT = CaliforniaPackage.DATA_SERVICE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___GET__OBJECT = CaliforniaPackage.DATA_SERVICE___GET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___GET_ALL = CaliforniaPackage.DATA_SERVICE___GET_ALL;
+
+	/**
+	 * The operation id for the '<em>Count</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___COUNT = CaliforniaPackage.DATA_SERVICE___COUNT;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___SET__OBJECT = CaliforniaPackage.DATA_SERVICE___SET__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Set All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___SET_ALL__ELIST = CaliforniaPackage.DATA_SERVICE___SET_ALL__ELIST;
+
+	/**
+	 * The operation id for the '<em>Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___DELETE__OBJECT = CaliforniaPackage.DATA_SERVICE___DELETE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Exist</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>Room Type Data Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl <em>Key Card Manager Impl</em>}' class.
@@ -1642,13 +1660,31 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER_IMPL___REMOVE_ROOM_TYPE__ROOMTYPE = ROOM_MANAGER_IMPL_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Add Guest Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Add Conference Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = ROOM_MANAGER_IMPL_OPERATION_COUNT + 5;
+
+	/**
 	 * The number of operations of the '<em>Admin Room Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADMIN_ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 4;
+	int ADMIN_ROOM_MANAGER_IMPL_OPERATION_COUNT = ROOM_MANAGER_IMPL_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.impl.AdminKeyCardManagerImplImpl <em>Admin Key Card Manager Impl</em>}' class.
@@ -1817,11 +1853,11 @@ public interface FacilitiesPackage extends EPackage {
 	EClass getAdminRoomManager();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addRoom(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType) <em>Add Room</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addRoomHelper(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType) <em>Add Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Room</em>' operation.
-	 * @see tda593.hotel.california.facilities.AdminRoomManager#addRoom(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType)
+	 * @see tda593.hotel.california.facilities.AdminRoomManager#addRoomHelper(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType)
 	 * @generated
 	 */
 	EOperation getAdminRoomManager__AddRoom__String_int_String_EList_EList_RoomType();
@@ -1855,6 +1891,26 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAdminRoomManager__RemoveRoomType__RoomType();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addGuestRoom(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType, int, int) <em>Add Guest Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Guest Room</em>' operation.
+	 * @see tda593.hotel.california.facilities.AdminRoomManager#addGuestRoom(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType, int, int)
+	 * @generated
+	 */
+	EOperation getAdminRoomManager__AddGuestRoom__String_int_String_EList_EList_RoomType_int_int();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.AdminRoomManager#addConferenceRoom(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType, int, org.eclipse.emf.common.util.EList) <em>Add Conference Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Conference Room</em>' operation.
+	 * @see tda593.hotel.california.facilities.AdminRoomManager#addConferenceRoom(java.lang.String, int, java.lang.String, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, tda593.hotel.california.facilities.RoomType, int, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getAdminRoomManager__AddConferenceRoom__String_int_String_EList_EList_RoomType_int_EList();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomManager <em>Room Manager</em>}'.
@@ -2493,6 +2549,22 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE = eINSTANCE.getAdminRoomManager__RemoveRoomType__RoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Guest Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_ROOM_MANAGER___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT = eINSTANCE.getAdminRoomManager__AddGuestRoom__String_int_String_EList_EList_RoomType_int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Conference Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ADMIN_ROOM_MANAGER___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST = eINSTANCE.getAdminRoomManager__AddConferenceRoom__String_int_String_EList_EList_RoomType_int_EList();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.RoomManager <em>Room Manager</em>}' class.

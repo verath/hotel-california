@@ -98,6 +98,14 @@ public class FacilitiesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomAdapter();
 			}
 			@Override
+			public Adapter caseGuestRoom(GuestRoom object) {
+				return createGuestRoomAdapter();
+			}
+			@Override
+			public Adapter caseConferenceRoom(ConferenceRoom object) {
+				return createConferenceRoomAdapter();
+			}
+			@Override
 			public Adapter caseRoomManagerImpl(RoomManagerImpl object) {
 				return createRoomManagerImplAdapter();
 			}
@@ -108,14 +116,6 @@ public class FacilitiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRoomTypeDataService(RoomTypeDataService object) {
 				return createRoomTypeDataServiceAdapter();
-			}
-			@Override
-			public Adapter caseConferenceRoom(ConferenceRoom object) {
-				return createConferenceRoomAdapter();
-			}
-			@Override
-			public Adapter caseGuestRoom(GuestRoom object) {
-				return createGuestRoomAdapter();
 			}
 			@Override
 			public Adapter caseKeyCardManagerImpl(KeyCardManagerImpl object) {

@@ -112,6 +112,20 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FacilitiesPackage.GUEST_ROOM: {
+				GuestRoom guestRoom = (GuestRoom)theEObject;
+				T result = caseGuestRoom(guestRoom);
+				if (result == null) result = caseRoom(guestRoom);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FacilitiesPackage.CONFERENCE_ROOM: {
+				ConferenceRoom conferenceRoom = (ConferenceRoom)theEObject;
+				T result = caseConferenceRoom(conferenceRoom);
+				if (result == null) result = caseRoom(conferenceRoom);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FacilitiesPackage.ROOM_MANAGER_IMPL: {
 				RoomManagerImpl roomManagerImpl = (RoomManagerImpl)theEObject;
 				T result = caseRoomManagerImpl(roomManagerImpl);
@@ -130,20 +144,6 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 				RoomTypeDataService roomTypeDataService = (RoomTypeDataService)theEObject;
 				T result = caseRoomTypeDataService(roomTypeDataService);
 				if (result == null) result = caseDataService(roomTypeDataService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FacilitiesPackage.CONFERENCE_ROOM: {
-				ConferenceRoom conferenceRoom = (ConferenceRoom)theEObject;
-				T result = caseConferenceRoom(conferenceRoom);
-				if (result == null) result = caseRoom(conferenceRoom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FacilitiesPackage.GUEST_ROOM: {
-				GuestRoom guestRoom = (GuestRoom)theEObject;
-				T result = caseGuestRoom(guestRoom);
-				if (result == null) result = caseRoom(guestRoom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

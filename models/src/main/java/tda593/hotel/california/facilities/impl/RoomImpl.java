@@ -41,7 +41,7 @@ import tda593.hotel.california.facilities.RoomType;
  *
  * @generated
  */
-public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
+public abstract class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * The default value of the '{@link #getFloor() <em>Floor</em>}' attribute.
 	 * <!-- begin-user-doc -->

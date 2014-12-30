@@ -252,6 +252,64 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ecw3QJBEEeS3Br6_9TLfAg" name="addGuestRoom">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3QZBEEeS3Br6_9TLfAg" name="number">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3QpBEEeS3Br6_9TLfAg" name="floor">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3Q5BEEeS3Br6_9TLfAg" name="description">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3RJBEEeS3Br6_9TLfAg" name="disabilityApprovals" type="_1pGBQH-sEeS2M9uZ6JBJRQ">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ecw3RZBEEeS3Br6_9TLfAg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ecw3RpBEEeS3Br6_9TLfAg" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3R5BEEeS3Br6_9TLfAg" name="photos">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ecw3SJBEEeS3Br6_9TLfAg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ecw3SZBEEeS3Br6_9TLfAg" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3SpBEEeS3Br6_9TLfAg" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ecw3S5BEEeS3Br6_9TLfAg" type="_zg8nYHZIEeSrX_LICIhx2Q" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_kebewJBEEeS3Br6_9TLfAg" name="numberOfBeds">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_n8HtoJBEEeS3Br6_9TLfAg" name="numberOfExtraBeds">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_5us-cJBEEeS3Br6_9TLfAg" name="addConferenceRoom">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-cZBEEeS3Br6_9TLfAg" name="number">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-cpBEEeS3Br6_9TLfAg" name="floor">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-c5BEEeS3Br6_9TLfAg" name="description">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-dJBEEeS3Br6_9TLfAg" name="disabilityApprovals" type="_1pGBQH-sEeS2M9uZ6JBJRQ">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5us-dZBEEeS3Br6_9TLfAg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5us-dpBEEeS3Br6_9TLfAg" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-d5BEEeS3Br6_9TLfAg" name="photos">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5us-eJBEEeS3Br6_9TLfAg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5us-eZBEEeS3Br6_9TLfAg" value="*"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-epBEEeS3Br6_9TLfAg" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_5us-e5BEEeS3Br6_9TLfAg" type="_27D90HZIEeSrX_LICIhx2Q" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_AyxeIJBFEeS3Br6_9TLfAg" name="numberOfSeats">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_CJTzQJBFEeS3Br6_9TLfAg" name="equipment">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DzDYQJBFEeS3Br6_9TLfAg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DzD_UJBFEeS3Br6_9TLfAg" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Interface" xmi:id="_SzH3QHoiEeSVKdBxhP6Y7A" name="RoomManager">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_WT-H0HoiEeSVKdBxhP6Y7A" name="getRoomTypes" visibility="public">
@@ -356,7 +414,7 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Xinks4FTEeSZuOQR5MrPYg" value="*"/>
             </ownedEnd>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_6SLu0HZBEeSrX_LICIhx2Q" name="Room" visibility="package">
+          <packagedElement xmi:type="uml:Class" xmi:id="_6SLu0HZBEeSrX_LICIhx2Q" name="Room" visibility="package" isAbstract="true">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_0tjzMHZCEeSrX_LICIhx2Q" name="floor" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
             </ownedAttribute>

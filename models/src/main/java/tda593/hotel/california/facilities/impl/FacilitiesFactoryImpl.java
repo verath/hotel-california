@@ -6,11 +6,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import tda593.hotel.california.facilities.AdminKeyCardManagerImpl;
 import tda593.hotel.california.facilities.AdminRoomManagerImpl;
 import tda593.hotel.california.facilities.ConferenceRoom;
@@ -21,7 +18,6 @@ import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardDataService;
 import tda593.hotel.california.facilities.KeyCardManagerImpl;
-import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomApproval;
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.RoomManagerImpl;
@@ -74,12 +70,11 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 		switch (eClass.getClassifierID()) {
 			case FacilitiesPackage.KEY_CARD: return createKeyCard();
 			case FacilitiesPackage.ROOM_TYPE: return createRoomType();
-			case FacilitiesPackage.ROOM: return createRoom();
+			case FacilitiesPackage.GUEST_ROOM: return createGuestRoom();
+			case FacilitiesPackage.CONFERENCE_ROOM: return createConferenceRoom();
 			case FacilitiesPackage.ROOM_MANAGER_IMPL: return createRoomManagerImpl();
 			case FacilitiesPackage.ROOM_DATA_SERVICE: return createRoomDataService();
 			case FacilitiesPackage.ROOM_TYPE_DATA_SERVICE: return createRoomTypeDataService();
-			case FacilitiesPackage.CONFERENCE_ROOM: return createConferenceRoom();
-			case FacilitiesPackage.GUEST_ROOM: return createGuestRoom();
 			case FacilitiesPackage.KEY_CARD_MANAGER_IMPL: return createKeyCardManagerImpl();
 			case FacilitiesPackage.KEY_CARD_DATA_SERVICE: return createKeyCardDataService();
 			case FacilitiesPackage.ADMIN_ROOM_MANAGER_IMPL: return createAdminRoomManagerImpl();
@@ -141,16 +136,6 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	public RoomType createRoomType() {
 		RoomTypeImpl roomType = new RoomTypeImpl();
 		return roomType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room createRoom() {
-		RoomImpl room = new RoomImpl();
-		return room;
 	}
 
 	/**

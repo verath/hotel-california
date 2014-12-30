@@ -21,7 +21,7 @@ public interface AdminRoomManager extends RoomManager {
 	 * @model required="true" ordered="false" numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	Room addRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
+	Room addRoomHelper(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,5 +46,21 @@ public interface AdminRoomManager extends RoomManager {
 	 * @generated
 	 */
 	boolean removeRoomType(RoomType roomType);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false" numberOfExtraBedsRequired="true" numberOfExtraBedsOrdered="false"
+	 * @generated
+	 */
+	GuestRoom addGuestRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfBeds, int numberOfExtraBeds);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" numberRequired="true" numberOrdered="false" floorRequired="true" floorOrdered="false" descriptionRequired="true" descriptionOrdered="false" disabilityApprovalsMany="true" disabilityApprovalsOrdered="false" photosMany="true" photosOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" numberOfSeatsRequired="true" numberOfSeatsOrdered="false" equipmentMany="true" equipmentOrdered="false"
+	 * @generated
+	 */
+	ConferenceRoom addConferenceRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfSeats, EList<String> equipment);
 
 } // AdminRoomManager

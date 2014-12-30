@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Room extends EObject {

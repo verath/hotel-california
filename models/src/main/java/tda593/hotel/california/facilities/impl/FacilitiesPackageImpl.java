@@ -355,6 +355,24 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAdminRoomManager__AddGuestRoom__String_int_String_EList_EList_RoomType_int_int() {
+		return adminRoomManagerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminRoomManager__AddConferenceRoom__String_int_String_EList_EList_RoomType_int_EList() {
+		return adminRoomManagerEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomManager() {
 		return roomManagerEClass;
 	}
@@ -834,6 +852,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM__STRING);
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_STRING_ELIST_DOUBLE);
 		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___REMOVE_ROOM_TYPE__ROOMTYPE);
+		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_GUEST_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_INT);
+		createEOperation(adminRoomManagerEClass, ADMIN_ROOM_MANAGER___ADD_CONFERENCE_ROOM__STRING_INT_STRING_ELIST_ELIST_ROOMTYPE_INT_ELIST);
 
 		roomManagerEClass = createEClass(ROOM_MANAGER);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOM_TYPES);
@@ -868,6 +888,14 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEOperation(roomEClass, ROOM___UNREGISTER_KEY_CARD__KEYCARD);
 		createEOperation(roomEClass, ROOM___UNREGISTER_KEY_CARDS);
 
+		guestRoomEClass = createEClass(GUEST_ROOM);
+		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_BEDS);
+		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
+
+		conferenceRoomEClass = createEClass(CONFERENCE_ROOM);
+		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__NUMBER_OF_SEATS);
+		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__EQUIPMENT);
+
 		roomManagerImplEClass = createEClass(ROOM_MANAGER_IMPL);
 		createEReference(roomManagerImplEClass, ROOM_MANAGER_IMPL__ROOM_DATA_SERVICE);
 		createEReference(roomManagerImplEClass, ROOM_MANAGER_IMPL__ROOM_TYPE_DATA_SERVICE);
@@ -876,14 +904,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		roomDataServiceEClass = createEClass(ROOM_DATA_SERVICE);
 
 		roomTypeDataServiceEClass = createEClass(ROOM_TYPE_DATA_SERVICE);
-
-		conferenceRoomEClass = createEClass(CONFERENCE_ROOM);
-		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__NUMBER_OF_SEATS);
-		createEAttribute(conferenceRoomEClass, CONFERENCE_ROOM__EQUIPMENT);
-
-		guestRoomEClass = createEClass(GUEST_ROOM);
-		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_BEDS);
-		createEAttribute(guestRoomEClass, GUEST_ROOM__NUMBER_OF_EXTRABEDS);
 
 		keyCardManagerImplEClass = createEClass(KEY_CARD_MANAGER_IMPL);
 		createEReference(keyCardManagerImplEClass, KEY_CARD_MANAGER_IMPL__KEY_CARD_DATA_SERVICE);
@@ -932,6 +952,8 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		// Add supertypes to classes
 		adminKeyCardManagerEClass.getESuperTypes().add(this.getKeyCardManager());
 		adminRoomManagerEClass.getESuperTypes().add(this.getRoomManager());
+		guestRoomEClass.getESuperTypes().add(this.getRoom());
+		conferenceRoomEClass.getESuperTypes().add(this.getRoom());
 		roomManagerImplEClass.getESuperTypes().add(this.getRoomManager());
 		EGenericType g1 = createEGenericType(theCaliforniaPackage.getDataService());
 		EGenericType g2 = createEGenericType(this.getRoom());
@@ -945,8 +967,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		roomTypeDataServiceEClass.getEGenericSuperTypes().add(g1);
-		conferenceRoomEClass.getESuperTypes().add(this.getRoom());
-		guestRoomEClass.getESuperTypes().add(this.getRoom());
 		keyCardManagerImplEClass.getESuperTypes().add(this.getKeyCardManager());
 		g1 = createEGenericType(theCaliforniaPackage.getDataService());
 		g2 = createEGenericType(this.getKeyCard());
@@ -998,6 +1018,26 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		op = initEOperation(getAdminRoomManager__RemoveRoomType__RoomType(), ecorePackage.getEBoolean(), "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getAdminRoomManager__AddGuestRoom__String_int_String_EList_EList_RoomType_int_int(), this.getGuestRoom(), "addGuestRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDisabilityApproval(), "disabilityApprovals", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "photos", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "numberOfBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "numberOfExtraBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminRoomManager__AddConferenceRoom__String_int_String_EList_EList_RoomType_int_EList(), this.getConferenceRoom(), "addConferenceRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDisabilityApproval(), "disabilityApprovals", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "photos", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "numberOfSeats", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "equipment", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomManagerEClass, RoomManager.class, "RoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getRoomManager__GetRoomTypes(), this.getRoomType(), "getRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
@@ -1046,7 +1086,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getRoomType_RoomApprovals(), this.getRoomApproval(), "roomApprovals", null, 0, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(roomEClass, Room.class, "Room", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEString(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_IsOperational(), ecorePackage.getEBoolean(), "isOperational", "true", 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1065,6 +1105,14 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		initEOperation(getRoom__UnregisterKeyCards(), null, "unregisterKeyCards", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEClass(guestRoomEClass, GuestRoom.class, "GuestRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGuestRoom_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(conferenceRoomEClass, ConferenceRoom.class, "ConferenceRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConferenceRoom_NumberOfSeats(), ecorePackage.getEInt(), "numberOfSeats", null, 1, 1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConferenceRoom_Equipment(), ecorePackage.getEString(), "equipment", null, 0, -1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(roomManagerImplEClass, RoomManagerImpl.class, "RoomManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomManagerImpl_RoomDataService(), this.getRoomDataService(), null, "roomDataService", null, 1, 1, RoomManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomManagerImpl_RoomTypeDataService(), this.getRoomTypeDataService(), null, "roomTypeDataService", null, 1, 1, RoomManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1073,14 +1121,6 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEClass(roomDataServiceEClass, RoomDataService.class, "RoomDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(roomTypeDataServiceEClass, RoomTypeDataService.class, "RoomTypeDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(conferenceRoomEClass, ConferenceRoom.class, "ConferenceRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConferenceRoom_NumberOfSeats(), ecorePackage.getEInt(), "numberOfSeats", null, 1, 1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConferenceRoom_Equipment(), ecorePackage.getEString(), "equipment", null, 0, -1, ConferenceRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(guestRoomEClass, GuestRoom.class, "GuestRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGuestRoom_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getGuestRoom_NumberOfExtrabeds(), ecorePackage.getEInt(), "numberOfExtrabeds", null, 1, 1, GuestRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(keyCardManagerImplEClass, KeyCardManagerImpl.class, "KeyCardManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKeyCardManagerImpl_KeyCardDataService(), this.getKeyCardDataService(), null, "keyCardDataService", null, 1, 1, KeyCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
