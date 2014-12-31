@@ -3,6 +3,7 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,11 +14,19 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import tda593.hotel.california.booking.persistence.LegalEntityEntity;
+import tda593.hotel.california.booking.persistence.impl.LegalEntityEntityImpl;
+import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomDataService;
+import tda593.hotel.california.facilities.persistence.ConferenceRoomEntity;
+import tda593.hotel.california.facilities.persistence.GuestRoomEntity;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
+import tda593.hotel.california.facilities.persistence.impl.ConferenceRoomEntityImpl;
+import tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl;
 import tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl;
 
 /**
@@ -63,18 +72,23 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return FacilitiesPackage.Literals.ROOM_DATA_SERVICE;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Room get(String id) {
-		RoomEntity roomEntity = entityManager.find(RoomEntityImpl.class, id);
-		return roomEntity == null? null : entityToRoom(roomEntity);
+	public static Room entityToRoom(RoomEntity entity) {
+		if(entity instanceof GuestRoomEntityImpl) {
+			return entityToGuestRoom((GuestRoomEntity) entity);
+		} else {
+			return entityToConferenceRoom((ConferenceRoomEntity) entity);
+		}
+	}
+	
+	public static RoomEntityImpl roomToEntity(Room room) {
+		if(room instanceof GuestRoom) {
+			return guestRoomToEntity((GuestRoom) room);
+		} else {
+			return conferenceRoomToEntity((ConferenceRoom) room);
+		}
 	}
 
-	public static Room entityToRoom(RoomEntity roomEntity) {
-		Room room = FacilitiesFactory.eINSTANCE.createRoom();
+	private static Room entityToRoomHelper(RoomEntity roomEntity, Room room) {
 		room.setRoomNumber(roomEntity.getRoomNumber());
 		room.setDescription(roomEntity.getDescription());
 		room.setFloor(roomEntity.getFloor());
@@ -84,8 +98,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		return room;
 	}
 	
-	public static RoomEntityImpl roomToEntity(Room room) {
-		RoomEntityImpl roomEntity = new RoomEntityImpl();
+	private static RoomEntity roomToEntityHelper(Room room, RoomEntity roomEntity) {
 		roomEntity.setRoomNumber(room.getRoomNumber());
 		roomEntity.setDescription(room.getDescription());
 		roomEntity.setFloor(room.getFloor());
@@ -93,6 +106,72 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		roomEntity.setIsOperational(room.isOperational());
 		roomEntity.setRoomTypeEntity(RoomTypeDataServiceImpl.roomTypeToEntity(room.getRoomType()));
 		return roomEntity;
+	}
+	
+	public static ConferenceRoom entityToConferenceRoom(ConferenceRoomEntity entity) {
+		if(entity == null) {
+			return null;
+		}
+		
+		ConferenceRoom conferenceRoom = FacilitiesFactory.eINSTANCE.createConferenceRoom();
+		entityToRoomHelper(entity, conferenceRoom);
+		conferenceRoom.setNumberOfSeats(entity.getNumberOfSeats());
+		conferenceRoom.getEquipment().addAll(entity.getEquipment());
+		
+		return conferenceRoom;
+	}
+	
+	public static ConferenceRoomEntityImpl conferenceRoomToEntity(ConferenceRoom conferenceRoom) {
+		if(conferenceRoom == null) {
+			return null;
+		}
+		
+		ConferenceRoomEntityImpl entity = new ConferenceRoomEntityImpl();
+		roomToEntityHelper(conferenceRoom, entity);
+		entity.setNumberOfSeats(conferenceRoom.getNumberOfSeats());
+		entity.getEquipment().addAll(conferenceRoom.getEquipment());
+		
+		return entity;
+	}
+	
+	public static GuestRoom entityToGuestRoom(GuestRoomEntity entity) {
+		if(entity == null) {
+			return null;
+		}
+		
+		GuestRoom guestRoom = FacilitiesFactory.eINSTANCE.createGuestRoom();
+		entityToRoomHelper(entity, guestRoom);
+		guestRoom.setNumberOfBeds(entity.getNumberOfBeds());
+		guestRoom.setNumberOfExtrabeds(entity.getNumberOfExtrabeds());
+		
+		return guestRoom;
+	}
+	
+	public static GuestRoomEntityImpl guestRoomToEntity(GuestRoom guestRoom) {
+		if(guestRoom == null) {
+			return null;
+		}
+		
+		GuestRoomEntityImpl entity = new GuestRoomEntityImpl();
+		roomToEntityHelper(guestRoom, entity);
+		entity.setNumberOfBeds(guestRoom.getNumberOfBeds());
+		entity.setNumberOfExtrabeds(guestRoom.getNumberOfExtrabeds());
+		
+		return entity;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Room get(String id) {
+		RoomEntityImpl entity = entityManager.find(RoomEntityImpl.class, id);
+		if(entity == null) {
+			return null;
+		}
+		
+		return entityToRoom(entity);
 	}
 	
 	/**
