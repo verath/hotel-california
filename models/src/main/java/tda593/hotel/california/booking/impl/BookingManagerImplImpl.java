@@ -27,6 +27,7 @@ import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
+import tda593.hotel.california.util.DateUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -185,7 +186,43 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to) {
-		return getAvailableRooms(from, to, null);
+		if(!DateUtil.isDateRangeValid(from, to)) {
+			throw new IllegalArgumentException("The specified time period is not valid");
+		}
+		
+		EList<Room> rooms = new BasicEList<Room>(roomManager.getRooms());
+		EList<Booking> bookings = getBookings(from, to);
+		EList<Room> bookedRooms = new BasicEList<Room>();
+		
+		// Remove all rooms that are specifically booked
+		for(Booking booking : bookings) {
+			if(booking.getRoomStay() != null && !booking.isCanceled()) {
+				bookedRooms.add(booking.getRoomStay().getRoom());
+			}
+		}
+		
+		rooms.removeAll(bookedRooms);
+		
+		// Remove rooms that are not operational
+		Iterator<Room> roomIter = rooms.iterator();
+		while(roomIter.hasNext()) {
+			Room curRoom = roomIter.next();
+			if(!curRoom.isOperational()) {
+				roomIter.remove();
+			}
+		}
+		
+		// Remove all rooms that cannot be booked since that specific room type is booked up
+		Map<RoomType, Integer> availableRoomTypes = getAvailableRoomTypeAmounts(from, to);
+		EList<Room> availableRooms = new BasicEList<Room>();
+		
+		for(Room room: rooms) {
+			if(availableRoomTypes.get(room.getRoomType())!=0) {
+				availableRooms.add(room);
+			}
+		}
+		
+		return availableRooms;
 	}
 
 	/**
@@ -194,39 +231,21 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to, RoomType roomType) {
-		EList<Room> availableRooms = new BasicEList<Room>(roomManager.getRooms());
-		EList<Booking> bookings = getBookings(from, to);
-		EList<Room> bookedRooms = new BasicEList<Room>();
-		
-		// Reason for flow below: it seems more efficient to add all booked rooms to a list
-		// and then remove them from the list of all rooms at the same time.
-		
-		// Remove all rooms that are booked
-		if(roomType!=null) {
-			for(Booking booking : bookings) {
-				if(booking.getRoomStay() != null && !booking.isCanceled() && booking.getRoomType().equals(roomType)) {
-					bookedRooms.add(booking.getRoomStay().getRoom());
-				}
-			}
-		} else {
-			for(Booking booking : bookings) {
-				if(booking.getRoomStay() != null && !booking.isCanceled()) {
-					bookedRooms.add(booking.getRoomStay().getRoom());
-				}
-			}
-		}
-		availableRooms.removeAll(bookedRooms);
-		
-		// Remove rooms that are not operational
-		Iterator<Room> roomIter = availableRooms.iterator();
-		while(roomIter.hasNext()) {
-			Room curRoom = roomIter.next();
-			if(!curRoom.isOperational()) {
-				roomIter.remove();
-			}
+		if(!DateUtil.isDateRangeValid(from, to)) {
+			throw new IllegalArgumentException("The specified time period is not valid");
 		}
 		
-		return availableRooms;
+		 EList<Room> availableRooms = getAvailableRooms(from, to);
+		 EList<Room> filteredRooms = new BasicEList<Room>();
+		 
+		 for(Room room: availableRooms) {
+			 if(room.getRoomType().equals(roomType)) {
+				 filteredRooms.add(room);
+			 }
+		 }
+		
+		 return filteredRooms;
+		
 	}
 
 	/**
