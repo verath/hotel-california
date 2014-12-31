@@ -116,7 +116,9 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		ConferenceRoom conferenceRoom = FacilitiesFactory.eINSTANCE.createConferenceRoom();
 		entityToRoomHelper(entity, conferenceRoom);
 		conferenceRoom.setNumberOfSeats(entity.getNumberOfSeats());
-		conferenceRoom.getEquipment().addAll(entity.getEquipment());
+		if(conferenceRoom.getEquipment() != null) {
+			conferenceRoom.getEquipment().addAll(entity.getEquipment());
+		}
 		
 		return conferenceRoom;
 	}
@@ -129,7 +131,9 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		ConferenceRoomEntityImpl entity = new ConferenceRoomEntityImpl();
 		roomToEntityHelper(conferenceRoom, entity);
 		entity.setNumberOfSeats(conferenceRoom.getNumberOfSeats());
-		entity.getEquipment().addAll(conferenceRoom.getEquipment());
+		if(conferenceRoom.getEquipment() != null) {
+			entity.getEquipment().addAll(conferenceRoom.getEquipment());
+		}
 		
 		return entity;
 	}
