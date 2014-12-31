@@ -74,10 +74,17 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	}
 	
 	public static DiscountLimit entityToDiscountLimit(DiscountLimitEntity dle) {
+		if(dle == null) {
+			return null;
+		}
+		
 		DiscountLimit dl = new DiscountLimitImpl();
-		dl.setEndDate(dle.getEndDate());
+		if(dl.getStartDate() != null) {
+			dl.setEndDate(dle.getEndDate());
+			dl.setStartDate(dle.getStartDate());
+		}
+		
 		dl.setId(dle.getId());
-		dl.setStartDate(dle.getStartDate());
 		dl.setTimesLeftToUse(dle.getTimesLeftToUse());
 		
 		EList<LegalEntity> allowedUsers = dl.getAllowedUsers();
@@ -89,10 +96,16 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	}
 	
 	public static DiscountLimitEntityImpl discountLimitToEntity(DiscountLimit dl) {
+		if(dl == null) {
+			return null;
+		}
 		DiscountLimitEntityImpl dle = new DiscountLimitEntityImpl();
-		dle.setEndDate(dl.getEndDate());
+		if(dle.getEndDate() != null) {
+			dle.setEndDate(dl.getEndDate());
+			dle.setStartDate(dl.getStartDate());
+		}
 		dle.setId(dl.getId());
-		dle.setStartDate(dl.getStartDate());
+		
 		dle.setTimesLeftToUse(dl.getTimesLeftToUse());
 		
 		List<LegalEntityEntity> allowedUsers = new ArrayList<LegalEntityEntity>();
@@ -224,11 +237,8 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public void set(Discount object) {
 		entityManager.getTransaction().begin();
-		if(object.getClass().equals(PercentageDiscount.class)) {
-			entityManager.merge(percentageDiscountToEntity((PercentageDiscount) object));
-		} else if(object.getClass().equals(SumDiscount.class)) {
-			entityManager.merge(sumDiscountToEntity((SumDiscount) object));
-		}
+		
+		entityManager.merge(discountToEntity(object));
 		
 		entityManager.getTransaction().commit();
 	}

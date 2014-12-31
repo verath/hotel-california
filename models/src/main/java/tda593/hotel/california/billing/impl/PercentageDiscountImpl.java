@@ -164,7 +164,7 @@ public class PercentageDiscountImpl extends DiscountImpl implements PercentageDi
 
 	@Override
 	public double getPriceWithDiscount(double price) {
-		return price * percentage;
+		return price * (1-percentage);
 	}
 
 } //PercentageDiscountImpl
