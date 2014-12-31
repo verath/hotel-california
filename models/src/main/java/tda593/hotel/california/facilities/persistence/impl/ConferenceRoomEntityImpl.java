@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california.facilities.persistence.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -60,12 +61,15 @@ public class ConferenceRoomEntityImpl extends RoomEntityImpl implements Conferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public List<String> getEquipment() {
+		if(equipment == null) {
+			return new ArrayList<String>();
+		}
 		return equipment;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
