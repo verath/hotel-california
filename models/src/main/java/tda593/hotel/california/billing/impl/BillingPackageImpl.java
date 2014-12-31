@@ -858,6 +858,15 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBillManager__GetUnpaidBills__LegalEntity() {
+		return billManagerEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBillManagerImpl() {
 		return billManagerImplEClass;
 	}
@@ -1348,6 +1357,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEOperation(billManagerEClass, BILL_MANAGER___CREATE_BILL__LEGALENTITY);
 		createEOperation(billManagerEClass, BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING);
 		createEOperation(billManagerEClass, BILL_MANAGER___GET_BILLS__LEGALENTITY);
+		createEOperation(billManagerEClass, BILL_MANAGER___GET_UNPAID_BILLS__LEGALENTITY);
 
 		bankingManagerEClass = createEClass(BANKING_MANAGER);
 		createEOperation(bankingManagerEClass, BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
@@ -1598,6 +1608,9 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBillManager__GetBills__LegalEntity(), this.getBill(), "getBills", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillManager__GetUnpaidBills__LegalEntity(), this.getBill(), "getUnpaidBills", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bankingManagerEClass, BankingManager.class, "BankingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

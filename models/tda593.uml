@@ -708,6 +708,13 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GZ54MJBlEeSPx8OEUJtTNA" value="*"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_4hkigJB8EeS_edPlcs1H5A" name="getUnpaidBills">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_4hkigZB8EeS_edPlcs1H5A" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_4hkigpB8EeS_edPlcs1H5A" type="_gemc8Hb6EeSbBJzXJgLK5Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4hkig5B8EeS_edPlcs1H5A"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4hkihJB8EeS_edPlcs1H5A" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_RcjZoIE4EeSfSN1EgLeI7A" name="BillManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_hsa6gIE4EeSfSN1EgLeI7A" general="_FIjl8HcHEeSbBJzXJgLK5Q"/>

@@ -4,6 +4,8 @@ package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -253,6 +255,7 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		bill.setIsPaid(isPaid);
+		billDataService.set(bill);
 		return true;
 	}
 
@@ -291,6 +294,25 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Bill> getBills(LegalEntity customer) {
 		return billDataService.getAll(customer);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Bill> getUnpaidBills(LegalEntity customer) {
+		EList<Bill> results = getBills(customer);
+		Iterator<Bill> it = results.iterator();
+		while(it.hasNext()) {
+			Bill b = it.next();
+			if(b.isPaid()) {
+				it.remove();
+			}
+		}
+		
+		return results;
 	}
 
 
@@ -400,6 +422,8 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return createBookingBill((LegalEntity)arguments.get(0), (Booking)arguments.get(1));
 			case BillingPackage.BILL_MANAGER_IMPL___GET_BILLS__LEGALENTITY:
 				return getBills((LegalEntity)arguments.get(0));
+			case BillingPackage.BILL_MANAGER_IMPL___GET_UNPAID_BILLS__LEGALENTITY:
+				return getUnpaidBills((LegalEntity)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

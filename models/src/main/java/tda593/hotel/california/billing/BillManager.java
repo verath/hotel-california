@@ -98,4 +98,12 @@ public interface BillManager extends EObject {
 	 */
 	EList<Bill> getBills(LegalEntity customer);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	EList<Bill> getUnpaidBills(LegalEntity customer);
+
 } // BillManager

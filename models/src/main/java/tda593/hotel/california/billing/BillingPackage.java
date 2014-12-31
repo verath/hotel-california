@@ -1116,13 +1116,22 @@ public interface BillingPackage extends EPackage {
 	int BILL_MANAGER___GET_BILLS__LEGALENTITY = 9;
 
 	/**
+	 * The operation id for the '<em>Get Unpaid Bills</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER___GET_UNPAID_BILLS__LEGALENTITY = 10;
+
+	/**
 	 * The number of operations of the '<em>Bill Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_MANAGER_OPERATION_COUNT = 10;
+	int BILL_MANAGER_OPERATION_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.
@@ -1472,6 +1481,15 @@ public interface BillingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_MANAGER_IMPL___GET_BILLS__LEGALENTITY = BILL_MANAGER___GET_BILLS__LEGALENTITY;
+
+	/**
+	 * The operation id for the '<em>Get Unpaid Bills</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_MANAGER_IMPL___GET_UNPAID_BILLS__LEGALENTITY = BILL_MANAGER___GET_UNPAID_BILLS__LEGALENTITY;
 
 	/**
 	 * The number of operations of the '<em>Bill Manager Impl</em>' class.
@@ -2931,6 +2949,16 @@ public interface BillingPackage extends EPackage {
 	EOperation getBillManager__GetBills__LegalEntity();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.billing.BillManager#getUnpaidBills(tda593.hotel.california.booking.LegalEntity) <em>Get Unpaid Bills</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Unpaid Bills</em>' operation.
+	 * @see tda593.hotel.california.billing.BillManager#getUnpaidBills(tda593.hotel.california.booking.LegalEntity)
+	 * @generated
+	 */
+	EOperation getBillManager__GetUnpaidBills__LegalEntity();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.billing.BillManagerImpl <em>Bill Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3906,6 +3934,14 @@ public interface BillingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BILL_MANAGER___GET_BILLS__LEGALENTITY = eINSTANCE.getBillManager__GetBills__LegalEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Unpaid Bills</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL_MANAGER___GET_UNPAID_BILLS__LEGALENTITY = eINSTANCE.getBillManager__GetUnpaidBills__LegalEntity();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.billing.impl.BillManagerImplImpl <em>Bill Manager Impl</em>}' class.

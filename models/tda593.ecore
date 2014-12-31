@@ -360,6 +360,9 @@
           <eOperations name="getBills" ordered="false" upperBound="-1" eType="#//hotel/california/billing/Bill">
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
           </eOperations>
+          <eOperations name="getUnpaidBills" ordered="false" upperBound="-1" eType="#//hotel/california/billing/Bill">
+            <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/california/booking/LegalEntity"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BankingManager" abstract="true"
             interface="true">
