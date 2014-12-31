@@ -72,11 +72,11 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		// Create a room for each room type
 		int floor = 1;
 		for(RoomType roomType : adminRoomManager.getRoomTypes()) {
-			adminRoomManager.addRoom("1"+floor, floor++, "N/A", null, null, roomType);
+			adminRoomManager.addGuestRoom("1"+floor, floor++, "N/A", null, null, roomType, 2, 0);
 		}
 		
-		room101 = adminRoomManager.addRoom("101", 1, "", null, null, adminRoomManager.getRoomTypes().get(0));
-		room102 = adminRoomManager.addRoom("102", 1, "", null, null, adminRoomManager.getRoomTypes().get(1));
+		room101 = adminRoomManager.addGuestRoom("101", 1, "", null, null, adminRoomManager.getRoomTypes().get(0), 2, 0);
+		room102 = adminRoomManager.addGuestRoom("102", 1, "", null, null, adminRoomManager.getRoomTypes().get(1), 2, 0);
 		
 		keyCardManager.removeKeyCard("KEYCARD_01");
 		keyCardManager.removeKeyCard("KEYCARD_02");

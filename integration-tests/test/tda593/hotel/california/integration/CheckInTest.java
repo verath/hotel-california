@@ -43,7 +43,7 @@ public class CheckInTest extends AbstractHotelCaliforniaIntegrationTest {
 		// Create a room for each room type
 		int floor = 1;
 		for(RoomType roomType : adminRoomManager.getRoomTypes()) {
-			adminRoomManager.addRoom("1" + floor, floor, "N/A", null, null, roomType);
+			adminRoomManager.addGuestRoom("1" + floor, floor, "N/A", null, null, roomType, 2, 0);
 			floor++;
 		}
 	}

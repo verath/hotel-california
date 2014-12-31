@@ -85,6 +85,8 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 			if(roomApprovals != null) {
 				newRoomType.getRoomApprovals().addAll(roomApprovals);
 			}
+			
+			roomTypeDataService.set(newRoomType);
 			return newRoomType;
 		}
 		return null;
