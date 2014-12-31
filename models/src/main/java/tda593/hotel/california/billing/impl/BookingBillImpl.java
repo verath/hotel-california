@@ -3,15 +3,15 @@
 package tda593.hotel.california.billing.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
-
+import tda593.hotel.california.billing.Discount;
+import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.booking.Booking;
 
 /**
@@ -95,6 +95,28 @@ public class BookingBillImpl extends BillImpl implements BookingBill {
 			eNotify(new ENotificationImpl(this, Notification.SET, BillingPackage.BOOKING_BILL__BOOKING, oldBooking, booking));
 	}
 
+	@Override
+	public double getPrice() {
+		double totalSum = booking.getPrice();
+		
+		// Get prices from all purchases
+		for(Purchase pur : getPurchases()) {
+			totalSum += pur.getPrice() * pur.getQuantity();
+		}
+		
+		// Get prices from all sub-bills
+		for(Bill subBill : getSubBills()) {
+			totalSum += subBill.getPrice();
+		}
+		
+		// Apply discounts
+		for(Discount discount : getUsedDiscounts()) {
+			totalSum = discount.getPriceWithDiscount(totalSum);
+		}
+		
+		return totalSum;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

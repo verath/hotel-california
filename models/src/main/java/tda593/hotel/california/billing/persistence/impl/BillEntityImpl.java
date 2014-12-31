@@ -192,16 +192,10 @@ public class BillEntityImpl implements BillEntity {
 	 * @generated NOT
 	 */
 	public List<BillEntity> getSubBillEntities() {
+		if (subBillEntities == null) {
+			subBillEntities = new ArrayList<BillEntity>();
+		}
 		return subBillEntities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setSubBillEntities(List<BillEntity> subBillEntities) {
-		this.subBillEntities = subBillEntities;
 	}
 
 	/**

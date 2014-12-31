@@ -57,7 +57,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		this.entityManager = entityManager;
 	}
 	
-	private static Discount entityToDiscount(DiscountEntity de, Discount d) {
+	private static Discount entityToDiscountHelper(DiscountEntity de, Discount d) {
 		d.setCode(de.getCode());
 		d.setName(de.getName());
 		d.setDiscountLimit(entityToDiscountLimit(de.getDiscountLimitEntity()));
@@ -65,7 +65,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		return d;
 	}
 	
-	private static DiscountEntityImpl discountToEntity(Discount d, DiscountEntityImpl de) {
+	private static DiscountEntityImpl discountToEntityHelper(Discount d, DiscountEntityImpl de) {
 		de.setCode(d.getCode());
 		de.setDiscountLimitEntity(discountLimitToEntity(d.getDiscountLimit()));
 		de.setName(d.getName());
@@ -74,10 +74,17 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	}
 	
 	public static DiscountLimit entityToDiscountLimit(DiscountLimitEntity dle) {
+		if(dle == null) {
+			return null;
+		}
+		
 		DiscountLimit dl = new DiscountLimitImpl();
-		dl.setEndDate(dle.getEndDate());
+		if(dl.getStartDate() != null) {
+			dl.setEndDate(dle.getEndDate());
+			dl.setStartDate(dle.getStartDate());
+		}
+		
 		dl.setId(dle.getId());
-		dl.setStartDate(dle.getStartDate());
 		dl.setTimesLeftToUse(dle.getTimesLeftToUse());
 		
 		EList<LegalEntity> allowedUsers = dl.getAllowedUsers();
@@ -89,10 +96,16 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	}
 	
 	public static DiscountLimitEntityImpl discountLimitToEntity(DiscountLimit dl) {
+		if(dl == null) {
+			return null;
+		}
 		DiscountLimitEntityImpl dle = new DiscountLimitEntityImpl();
-		dle.setEndDate(dl.getEndDate());
+		if(dle.getEndDate() != null) {
+			dle.setEndDate(dl.getEndDate());
+			dle.setStartDate(dl.getStartDate());
+		}
 		dle.setId(dl.getId());
-		dle.setStartDate(dl.getStartDate());
+		
 		dle.setTimesLeftToUse(dl.getTimesLeftToUse());
 		
 		List<LegalEntityEntity> allowedUsers = new ArrayList<LegalEntityEntity>();
@@ -107,7 +120,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static PercentageDiscount entityToPercentageDiscount(PercentageDiscountEntity pde) {
 		PercentageDiscount pd = new PercentageDiscountImpl();
-		entityToDiscount(pde, pd);
+		entityToDiscountHelper(pde, pd);
 		pd.setPercentage(pde.getPercentage());
 		
 		return pd;
@@ -115,7 +128,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static PercentageDiscountEntityImpl percentageDiscountToEntity(PercentageDiscount pd) {
 		PercentageDiscountEntityImpl pde = new PercentageDiscountEntityImpl();
-		discountToEntity(pd, pde);
+		discountToEntityHelper(pd, pde);
 		pde.setPercentage(pd.getPercentage());
 		
 		return pde;
@@ -123,7 +136,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static SumDiscount entityToSumDiscount(SumDiscountEntity sde) {
 		SumDiscount sd = new SumDiscountImpl();
-		entityToDiscount(sde, sd);
+		entityToDiscountHelper(sde, sd);
 		sd.setDiscountSum(sde.getDiscountSum());
 		
 		return sd;
@@ -131,12 +144,28 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static SumDiscountEntityImpl sumDiscountToEntity(SumDiscount sd) {
 		SumDiscountEntityImpl sde = new SumDiscountEntityImpl();
-		discountToEntity(sd, sde);
+		discountToEntityHelper(sd, sde);
 		sde.setDiscountSum(sd.getDiscountSum());
 		
 		return sde;
 	}
 
+	public static Discount entityToDiscount(DiscountEntity entity) {
+		if(entity instanceof SumDiscountEntity) {
+			return entityToSumDiscount((SumDiscountEntity) entity);
+		} else {
+			return entityToPercentageDiscount((PercentageDiscountEntity) entity);
+		}
+	}
+	
+	public static DiscountEntity discountToEntity(Discount entity) {
+		if(entity instanceof SumDiscount) {
+			return sumDiscountToEntity((SumDiscount) entity);
+		} else {
+			return percentageDiscountToEntity((PercentageDiscount) entity);
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,11 +237,8 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public void set(Discount object) {
 		entityManager.getTransaction().begin();
-		if(object.getClass().equals(PercentageDiscount.class)) {
-			entityManager.merge(percentageDiscountToEntity((PercentageDiscount) object));
-		} else if(object.getClass().equals(SumDiscount.class)) {
-			entityManager.merge(sumDiscountToEntity((SumDiscount) object));
-		}
+		
+		entityManager.merge(discountToEntity(object));
 		
 		entityManager.getTransaction().commit();
 	}

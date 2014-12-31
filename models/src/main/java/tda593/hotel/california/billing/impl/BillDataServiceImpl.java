@@ -3,6 +3,7 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -17,16 +18,23 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
+import tda593.hotel.california.billing.Discount;
+import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
 import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.BookingBillEntity;
+import tda593.hotel.california.billing.persistence.DiscountEntity;
+import tda593.hotel.california.billing.persistence.PurchaseEntity;
 import tda593.hotel.california.billing.persistence.ServiceEntity;
 import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.BookingBillEntityImpl;
+import tda593.hotel.california.billing.persistence.impl.PurchaseEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.ServiceEntityImpl;
 import tda593.hotel.california.booking.Booking;
+import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.impl.BookingDataServiceImpl;
 import tda593.hotel.california.booking.impl.LegalEntityDataServiceImpl;
 
@@ -77,6 +85,28 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		bill.setId(billEntity.getId());
 		bill.setIsPublished(billEntity.isPublished());
 		bill.setIsPaid(billEntity.isPaid());
+		
+		// Convert all purchases
+		List<Purchase> purchases = new ArrayList<Purchase>();
+		for(PurchaseEntity p : billEntity.getPurchaseEntity()) {
+			purchases.add(entityToPurchase(p));
+		}
+		bill.getPurchases().addAll(purchases);
+		
+		// Convert sub-bills
+		List<Bill> bills = new ArrayList<Bill>();
+		for(BillEntity b : billEntity.getSubBillEntities()) {
+			bills.add(entityToBill(b));
+		}
+		bill.getSubBills().addAll(bills);
+		
+		// Convert discounts
+		List<Discount> discounts = new ArrayList<Discount>();
+		for(DiscountEntity d : billEntity.getUsedDiscounts()) {
+			discounts.add(DiscountDataServiceImpl.entityToDiscount(d));
+		}
+		bill.getUsedDiscounts().addAll(discounts);
+		
 		return bill;
 	}
 	
@@ -86,7 +116,47 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		entity.setId(bill.getId());
 		entity.setIsPublished(bill.isPublished());
 		entity.setIsPaid(bill.isPaid());
+		
+		// Convert all purchases
+		List<PurchaseEntity> purchaseEntities = new ArrayList<PurchaseEntity>();
+		for(Purchase p : bill.getPurchases()) {
+			purchaseEntities.add(purchaseToEntity(p));
+		}
+		entity.getPurchaseEntity().addAll(purchaseEntities);
+		
+		// Convert sub-bills
+		List<BillEntity> billEntities = new ArrayList<BillEntity>();
+		for(Bill b : bill.getSubBills()) {
+			billEntities.add(billToEntity(b));
+		}
+		entity.getSubBillEntities().addAll(billEntities);
+		
+		// Convert discounts
+		List<DiscountEntity> discountEntities = new ArrayList<DiscountEntity>();
+		for(Discount d : bill.getUsedDiscounts()) {
+			discountEntities.add(DiscountDataServiceImpl.discountToEntity(d));
+		}
+		entity.getUsedDiscounts().addAll(discountEntities);
+		
 		return entity;
+	}
+	
+	private static PurchaseEntity purchaseToEntity(Purchase purchase) {
+		PurchaseEntity entity = new PurchaseEntityImpl();
+		entity.setId(purchase.getId());
+		entity.setPrice(purchase.getPrice());
+		entity.setQuantity(purchase.getQuantity());
+		entity.setService(ServiceDataServiceImpl.serviceToEntity(purchase.getService()));
+		return entity;
+	}
+	
+	private static Purchase entityToPurchase(PurchaseEntity entity) {
+		Purchase purchase = BillingFactory.eINSTANCE.createPurchase();
+		purchase.setId(entity.getId());
+		purchase.setPrice(entity.getPrice());
+		purchase.setQuantity(entity.getQuantity());
+		purchase.setService(ServiceDataServiceImpl.entityToService(entity.getService()));
+		return purchase;
 	}
 	
 	public static Bill entityToBill(BillEntity billEntity) {
@@ -115,14 +185,6 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		billToEntityHelper(bb, bbe);
 		bbe.setBookingEntity(BookingDataServiceImpl.bookingToEntity(bb.getBooking()));
 		return bbe;
-	}
-	
-	public static Service entityToService(ServiceEntity entity) {
-		Service service = new ServiceImpl();
-		service.setId(entity.getId());
-		service.setName(entity.getName());
-		service.setPrice(entity.getPrice());
-		return service;
 	}
 
 	/**
@@ -171,7 +233,6 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		transaction.begin();
 		bill.setId(entityManager.merge(billToEntity(bill)).getId());
 		transaction.commit();
-		
 	}
 
 	/**
@@ -211,22 +272,6 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Service> getAllServices() {
-		List<ServiceEntityImpl> result = entityManager.createQuery("FROM ServiceEntityImpl", ServiceEntityImpl.class).getResultList();
-		
-		EList<Service> services = new BasicEList<Service>(result.size());
-		for(ServiceEntity entity : result) {
-			services.add(entityToService(entity));
-		}
-		
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public BookingBill getBookingBill(Booking booking) {
 		TypedQuery<BookingBillEntityImpl> query = entityManager.createQuery("FROM BookingBillEntityImpl WHERE bookingEntity_id=:linkedBooking", BookingBillEntityImpl.class);
 		query.setParameter("linkedBooking", booking.getId());
@@ -244,9 +289,26 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	public EList<Bill> getAll(LegalEntity customer) {
+		TypedQuery<BillEntityImpl> query = entityManager.createQuery("FROM BillEntityImpl WHERE responsible_id=:customer", BillEntityImpl.class);
+		query.setParameter("customer", customer.getId());
+		List<BillEntityImpl> results = query.getResultList();
+		EList<Bill> billResults = new BasicEList<Bill>(results.size());
+		for (BillEntity entity : results) {
+			billResults.add(entityToBill(entity));
+		}
+		
+		return billResults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public Service getService(int serviceId) {
 		ServiceEntity entity = entityManager.find(ServiceEntityImpl.class, serviceId);
-		return entity == null ? null : entityToService(entity);
+		return entity == null ? null : ServiceDataServiceImpl.entityToService(entity);
 	}
 
 	/**
@@ -274,12 +336,10 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 				return null;
 			case BillingPackage.BILL_DATA_SERVICE___EXIST__OBJECT:
 				return exist((Integer)arguments.get(0));
-			case BillingPackage.BILL_DATA_SERVICE___GET_ALL_SERVICES:
-				return getAllServices();
 			case BillingPackage.BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING:
 				return getBookingBill((Booking)arguments.get(0));
-			case BillingPackage.BILL_DATA_SERVICE___GET_SERVICE__INT:
-				return getService((Integer)arguments.get(0));
+			case BillingPackage.BILL_DATA_SERVICE___GET_ALL__LEGALENTITY:
+				return getAll((LegalEntity)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

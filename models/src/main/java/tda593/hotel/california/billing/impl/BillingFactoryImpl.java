@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import tda593.hotel.california.billing.AdminDiscountManagerImpl;
+import tda593.hotel.california.billing.AdminServiceManagerImpl;
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
@@ -24,6 +26,8 @@ import tda593.hotel.california.billing.DiscountManagerImpl;
 import tda593.hotel.california.billing.PercentageDiscount;
 import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
+import tda593.hotel.california.billing.ServiceDataService;
+import tda593.hotel.california.billing.ServiceManagerImpl;
 import tda593.hotel.california.billing.SumDiscount;
 
 /**
@@ -85,6 +89,10 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 			case BillingPackage.BANKING_MANAGER_IMPL: return createBankingManagerImpl();
 			case BillingPackage.CREDIT_CARD_INFORMATION_DATA_SERVICE: return createCreditCardInformationDataService();
 			case BillingPackage.CREDIT_CARD_MANAGER_IMPL: return createCreditCardManagerImpl();
+			case BillingPackage.SERVICE_MANAGER_IMPL: return createServiceManagerImpl();
+			case BillingPackage.SERVICE_DATA_SERVICE: return createServiceDataService();
+			case BillingPackage.ADMIN_SERVICE_MANAGER_IMPL: return createAdminServiceManagerImpl();
+			case BillingPackage.ADMIN_DISCOUNT_MANAGER_IMPL: return createAdminDiscountManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -238,6 +246,46 @@ public class BillingFactoryImpl extends EFactoryImpl implements BillingFactory {
 	public CreditCardManagerImpl createCreditCardManagerImpl() {
 		CreditCardManagerImplImpl creditCardManagerImpl = new CreditCardManagerImplImpl();
 		return creditCardManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceManagerImpl createServiceManagerImpl() {
+		ServiceManagerImplImpl serviceManagerImpl = new ServiceManagerImplImpl();
+		return serviceManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceDataService createServiceDataService() {
+		ServiceDataServiceImpl serviceDataService = new ServiceDataServiceImpl();
+		return serviceDataService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdminServiceManagerImpl createAdminServiceManagerImpl() {
+		AdminServiceManagerImplImpl adminServiceManagerImpl = new AdminServiceManagerImplImpl();
+		return adminServiceManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdminDiscountManagerImpl createAdminDiscountManagerImpl() {
+		AdminDiscountManagerImplImpl adminDiscountManagerImpl = new AdminDiscountManagerImplImpl();
+		return adminDiscountManagerImpl;
 	}
 
 	/**

@@ -10,6 +10,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import tda593.hotel.california.CaliforniaPackage;
+import tda593.hotel.california.billing.AdminDiscountManager;
+import tda593.hotel.california.billing.AdminDiscountManagerImpl;
+import tda593.hotel.california.billing.AdminServiceManager;
+import tda593.hotel.california.billing.AdminServiceManagerImpl;
 import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BankingManagerImpl;
 import tda593.hotel.california.billing.Bill;
@@ -31,6 +35,9 @@ import tda593.hotel.california.billing.DiscountManagerImpl;
 import tda593.hotel.california.billing.PercentageDiscount;
 import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
+import tda593.hotel.california.billing.ServiceDataService;
+import tda593.hotel.california.billing.ServiceManager;
+import tda593.hotel.california.billing.ServiceManagerImpl;
 import tda593.hotel.california.billing.SumDiscount;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.impl.BookingPackageImpl;
@@ -184,6 +191,55 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * @generated
 	 */
 	private EClass creditCardManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceDataServiceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminServiceManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminServiceManagerImplEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminDiscountManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adminDiscountManagerImplEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -505,7 +561,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBill_Purchase() {
+	public EReference getBill_Purchases() {
 		return (EReference)billEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -730,7 +786,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__BillItem__Bill_int_int() {
+	public EOperation getBillManager__BillItem__Bill_int_Service() {
 		return billManagerEClass.getEOperations().get(2);
 	}
 
@@ -739,7 +795,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__GetAllServices() {
+	public EOperation getBillManager__AddSubBill__Bill_Bill() {
 		return billManagerEClass.getEOperations().get(3);
 	}
 
@@ -748,7 +804,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__AddSubBill__Bill_Bill() {
+	public EOperation getBillManager__ApplyDiscount__Discount_Bill() {
 		return billManagerEClass.getEOperations().get(4);
 	}
 
@@ -757,7 +813,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__ApplyDiscount__Discount_Bill() {
+	public EOperation getBillManager__PublishBill__Bill() {
 		return billManagerEClass.getEOperations().get(5);
 	}
 
@@ -766,7 +822,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__PublishBill__Bill() {
+	public EOperation getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager_CreditCardManager() {
 		return billManagerEClass.getEOperations().get(6);
 	}
 
@@ -775,7 +831,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__MarkBillAsPaid__Bill_boolean_BankingManager_CreditCardManager() {
+	public EOperation getBillManager__CreateBill__LegalEntity() {
 		return billManagerEClass.getEOperations().get(7);
 	}
 
@@ -784,7 +840,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__CreateBill__LegalEntity() {
+	public EOperation getBillManager__CreateBookingBill__LegalEntity_Booking() {
 		return billManagerEClass.getEOperations().get(8);
 	}
 
@@ -793,8 +849,17 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillManager__CreateBookingBill__LegalEntity_Booking() {
+	public EOperation getBillManager__GetBills__LegalEntity() {
 		return billManagerEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBillManager__GetUnpaidBills__LegalEntity() {
+		return billManagerEClass.getEOperations().get(10);
 	}
 
 	/**
@@ -838,7 +903,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillDataService__GetAllServices() {
+	public EOperation getBillDataService__GetBookingBill__Booking() {
 		return billDataServiceEClass.getEOperations().get(0);
 	}
 
@@ -847,17 +912,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBillDataService__GetBookingBill__Booking() {
+	public EOperation getBillDataService__GetAll__LegalEntity() {
 		return billDataServiceEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBillDataService__GetService__int() {
-		return billDataServiceEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1045,6 +1101,168 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getServiceManagerImpl() {
+		return serviceManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceManagerImpl_ServiceDataService() {
+		return (EReference)serviceManagerImplEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceManager() {
+		return serviceManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getServiceManager__GetAllServices() {
+		return serviceManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getServiceManager__GetService__int() {
+		return serviceManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceDataService() {
+		return serviceDataServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminServiceManager() {
+		return adminServiceManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminServiceManager__CreateService__String_double() {
+		return adminServiceManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminServiceManager__RemoveService__Service() {
+		return adminServiceManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminServiceManagerImpl() {
+		return adminServiceManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminDiscountManager() {
+		return adminDiscountManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__AddAllowedUsers__Discount_EList() {
+		return adminDiscountManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__AddPercentageDiscount__String_String_float() {
+		return adminDiscountManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__AddSumDiscount__String_String_double() {
+		return adminDiscountManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int() {
+		return adminDiscountManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__SetAmountLimit__Discount_int() {
+		return adminDiscountManagerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date() {
+		return adminDiscountManagerEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAdminDiscountManagerImpl() {
+		return adminDiscountManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BillingFactory getBillingFactory() {
 		return (BillingFactory)getEFactoryInstance();
 	}
@@ -1100,7 +1318,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEAttribute(billEClass, BILL__DATE);
 		createEAttribute(billEClass, BILL__IS_PUBLISHED);
 		createEAttribute(billEClass, BILL__IS_PAID);
-		createEReference(billEClass, BILL__PURCHASE);
+		createEReference(billEClass, BILL__PURCHASES);
 		createEReference(billEClass, BILL__USED_DISCOUNTS);
 		createEReference(billEClass, BILL__CUSTOMER);
 		createEReference(billEClass, BILL__SUB_BILLS);
@@ -1131,14 +1349,15 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		billManagerEClass = createEClass(BILL_MANAGER);
 		createEOperation(billManagerEClass, BILL_MANAGER___GET_BILL__INT);
 		createEOperation(billManagerEClass, BILL_MANAGER___GET_BOOKING_BILL__BOOKING);
-		createEOperation(billManagerEClass, BILL_MANAGER___BILL_ITEM__BILL_INT_INT);
-		createEOperation(billManagerEClass, BILL_MANAGER___GET_ALL_SERVICES);
+		createEOperation(billManagerEClass, BILL_MANAGER___BILL_ITEM__BILL_INT_SERVICE);
 		createEOperation(billManagerEClass, BILL_MANAGER___ADD_SUB_BILL__BILL_BILL);
 		createEOperation(billManagerEClass, BILL_MANAGER___APPLY_DISCOUNT__DISCOUNT_BILL);
 		createEOperation(billManagerEClass, BILL_MANAGER___PUBLISH_BILL__BILL);
 		createEOperation(billManagerEClass, BILL_MANAGER___MARK_BILL_AS_PAID__BILL_BOOLEAN_BANKINGMANAGER_CREDITCARDMANAGER);
 		createEOperation(billManagerEClass, BILL_MANAGER___CREATE_BILL__LEGALENTITY);
 		createEOperation(billManagerEClass, BILL_MANAGER___CREATE_BOOKING_BILL__LEGALENTITY_BOOKING);
+		createEOperation(billManagerEClass, BILL_MANAGER___GET_BILLS__LEGALENTITY);
+		createEOperation(billManagerEClass, BILL_MANAGER___GET_UNPAID_BILLS__LEGALENTITY);
 
 		bankingManagerEClass = createEClass(BANKING_MANAGER);
 		createEOperation(bankingManagerEClass, BANKING_MANAGER___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
@@ -1163,9 +1382,8 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		createEReference(billManagerImplEClass, BILL_MANAGER_IMPL__BOOKING_MANAGER);
 
 		billDataServiceEClass = createEClass(BILL_DATA_SERVICE);
-		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_ALL_SERVICES);
 		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_BOOKING_BILL__BOOKING);
-		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_SERVICE__INT);
+		createEOperation(billDataServiceEClass, BILL_DATA_SERVICE___GET_ALL__LEGALENTITY);
 
 		bankingManagerImplEClass = createEClass(BANKING_MANAGER_IMPL);
 
@@ -1174,6 +1392,31 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		creditCardManagerImplEClass = createEClass(CREDIT_CARD_MANAGER_IMPL);
 		createEReference(creditCardManagerImplEClass, CREDIT_CARD_MANAGER_IMPL__CREDIT_CARD_INFORMATION_DATA_SERVICE);
+
+		serviceManagerImplEClass = createEClass(SERVICE_MANAGER_IMPL);
+		createEReference(serviceManagerImplEClass, SERVICE_MANAGER_IMPL__SERVICE_DATA_SERVICE);
+
+		serviceManagerEClass = createEClass(SERVICE_MANAGER);
+		createEOperation(serviceManagerEClass, SERVICE_MANAGER___GET_ALL_SERVICES);
+		createEOperation(serviceManagerEClass, SERVICE_MANAGER___GET_SERVICE__INT);
+
+		serviceDataServiceEClass = createEClass(SERVICE_DATA_SERVICE);
+
+		adminServiceManagerEClass = createEClass(ADMIN_SERVICE_MANAGER);
+		createEOperation(adminServiceManagerEClass, ADMIN_SERVICE_MANAGER___CREATE_SERVICE__STRING_DOUBLE);
+		createEOperation(adminServiceManagerEClass, ADMIN_SERVICE_MANAGER___REMOVE_SERVICE__SERVICE);
+
+		adminServiceManagerImplEClass = createEClass(ADMIN_SERVICE_MANAGER_IMPL);
+
+		adminDiscountManagerEClass = createEClass(ADMIN_DISCOUNT_MANAGER);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_ALLOWED_USERS__DISCOUNT_ELIST);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_PERCENTAGE_DISCOUNT__STRING_STRING_FLOAT);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___ADD_SUM_DISCOUNT__STRING_STRING_DOUBLE);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___CREATE_DISCOUNT_LIMIT_FOR_DISCOUNT__DISCOUNT_DATE_DATE_ELIST_INT);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_AMOUNT_LIMIT__DISCOUNT_INT);
+		createEOperation(adminDiscountManagerEClass, ADMIN_DISCOUNT_MANAGER___SET_DATE_RANGE_LIMIT__DISCOUNT_DATE_DATE);
+
+		adminDiscountManagerImplEClass = createEClass(ADMIN_DISCOUNT_MANAGER_IMPL);
 	}
 
 	/**
@@ -1233,6 +1476,19 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		g1.getETypeArguments().add(g2);
 		creditCardInformationDataServiceEClass.getEGenericSuperTypes().add(g1);
 		creditCardManagerImplEClass.getESuperTypes().add(this.getCreditCardManager());
+		serviceManagerImplEClass.getESuperTypes().add(this.getServiceManager());
+		g1 = createEGenericType(theCaliforniaPackage.getDataService());
+		g2 = createEGenericType(this.getService());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEIntegerObject());
+		g1.getETypeArguments().add(g2);
+		serviceDataServiceEClass.getEGenericSuperTypes().add(g1);
+		adminServiceManagerEClass.getESuperTypes().add(this.getServiceManager());
+		adminServiceManagerImplEClass.getESuperTypes().add(this.getServiceManagerImpl());
+		adminServiceManagerImplEClass.getESuperTypes().add(this.getAdminServiceManager());
+		adminDiscountManagerEClass.getESuperTypes().add(this.getDiscountManager());
+		adminDiscountManagerImplEClass.getESuperTypes().add(this.getDiscountManagerImpl());
+		adminDiscountManagerImplEClass.getESuperTypes().add(this.getAdminDiscountManager());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(discountManagerEClass, DiscountManager.class, "DiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1271,7 +1527,7 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		initEAttribute(getBill_Date(), ecorePackage.getEDate(), "date", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_IsPublished(), ecorePackage.getEBoolean(), "isPublished", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_Purchase(), this.getPurchase(), null, "purchase", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBill_Purchases(), this.getPurchase(), null, "purchases", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_UsedDiscounts(), this.getDiscount(), null, "usedDiscounts", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_Customer(), theBookingPackage.getLegalEntity(), null, "customer", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_SubBills(), this.getBill(), null, "subBills", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1322,12 +1578,10 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		op = initEOperation(getBillManager__GetBookingBill__Booking(), this.getBookingBill(), "getBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBillManager__BillItem__Bill_int_int(), null, "billItem", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBillManager__BillItem__Bill_int_Service(), null, "billItem", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBill(), "bill", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "quantity", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getBillManager__GetAllServices(), this.getService(), "getAllServices", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getService(), "service", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBillManager__AddSubBill__Bill_Bill(), null, "addSubBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBill(), "subBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1352,6 +1606,12 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 		op = initEOperation(getBillManager__CreateBookingBill__LegalEntity_Booking(), this.getBookingBill(), "createBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillManager__GetBills__LegalEntity(), this.getBill(), "getBills", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBillManager__GetUnpaidBills__LegalEntity(), this.getBill(), "getUnpaidBills", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bankingManagerEClass, BankingManager.class, "BankingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1407,13 +1667,11 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		initEClass(billDataServiceEClass, BillDataService.class, "BillDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getBillDataService__GetAllServices(), this.getService(), "getAllServices", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
 		op = initEOperation(getBillDataService__GetBookingBill__Booking(), this.getBookingBill(), "getBookingBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theBookingPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBillDataService__GetService__int(), this.getService(), "getService", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBillDataService__GetAll__LegalEntity(), this.getBill(), "getAll", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bankingManagerImplEClass, BankingManagerImpl.class, "BankingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1424,6 +1682,63 @@ public class BillingPackageImpl extends EPackageImpl implements BillingPackage {
 
 		initEClass(creditCardManagerImplEClass, CreditCardManagerImpl.class, "CreditCardManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCreditCardManagerImpl_CreditCardInformationDataService(), this.getCreditCardInformationDataService(), null, "creditCardInformationDataService", null, 1, 1, CreditCardManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(serviceManagerImplEClass, ServiceManagerImpl.class, "ServiceManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceManagerImpl_ServiceDataService(), this.getServiceDataService(), null, "serviceDataService", null, 1, 1, ServiceManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getServiceManager__GetAllServices(), this.getService(), "getAllServices", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getServiceManager__GetService__int(), this.getService(), "getService", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(serviceDataServiceEClass, ServiceDataService.class, "ServiceDataService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(adminServiceManagerEClass, AdminServiceManager.class, "AdminServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getAdminServiceManager__CreateService__String_double(), this.getService(), "createService", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminServiceManager__RemoveService__Service(), null, "removeService", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getService(), "service", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(adminServiceManagerImplEClass, AdminServiceManagerImpl.class, "AdminServiceManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(adminDiscountManagerEClass, AdminDiscountManager.class, "AdminDiscountManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getAdminDiscountManager__AddAllowedUsers__Discount_EList(), null, "addAllowedUsers", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "legalEntities", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__AddPercentageDiscount__String_String_float(), this.getDiscount(), "addPercentageDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEFloat(), "percentage", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__AddSumDiscount__String_String_double(), this.getDiscount(), "addSumDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "code", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__CreateDiscountLimitForDiscount__Discount_Date_Date_EList_int(), null, "createDiscountLimitForDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theBookingPackage.getLegalEntity(), "users", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "usesAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__SetAmountLimit__Discount_int(), null, "setAmountLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "usesAmount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAdminDiscountManager__SetDateRangeLimit__Discount_Date_Date(), null, "setDateRangeLimit", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "validFrom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "validTo", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(adminDiscountManagerImplEClass, AdminDiscountManagerImpl.class, "AdminDiscountManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //BillingPackageImpl

@@ -198,6 +198,58 @@ public class BillingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BillingPackage.SERVICE_MANAGER_IMPL: {
+				ServiceManagerImpl serviceManagerImpl = (ServiceManagerImpl)theEObject;
+				T result = caseServiceManagerImpl(serviceManagerImpl);
+				if (result == null) result = caseServiceManager(serviceManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.SERVICE_MANAGER: {
+				ServiceManager serviceManager = (ServiceManager)theEObject;
+				T result = caseServiceManager(serviceManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.SERVICE_DATA_SERVICE: {
+				ServiceDataService serviceDataService = (ServiceDataService)theEObject;
+				T result = caseServiceDataService(serviceDataService);
+				if (result == null) result = caseDataService(serviceDataService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.ADMIN_SERVICE_MANAGER: {
+				AdminServiceManager adminServiceManager = (AdminServiceManager)theEObject;
+				T result = caseAdminServiceManager(adminServiceManager);
+				if (result == null) result = caseServiceManager(adminServiceManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.ADMIN_SERVICE_MANAGER_IMPL: {
+				AdminServiceManagerImpl adminServiceManagerImpl = (AdminServiceManagerImpl)theEObject;
+				T result = caseAdminServiceManagerImpl(adminServiceManagerImpl);
+				if (result == null) result = caseServiceManagerImpl(adminServiceManagerImpl);
+				if (result == null) result = caseAdminServiceManager(adminServiceManagerImpl);
+				if (result == null) result = caseServiceManager(adminServiceManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.ADMIN_DISCOUNT_MANAGER: {
+				AdminDiscountManager adminDiscountManager = (AdminDiscountManager)theEObject;
+				T result = caseAdminDiscountManager(adminDiscountManager);
+				if (result == null) result = caseDiscountManager(adminDiscountManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BillingPackage.ADMIN_DISCOUNT_MANAGER_IMPL: {
+				AdminDiscountManagerImpl adminDiscountManagerImpl = (AdminDiscountManagerImpl)theEObject;
+				T result = caseAdminDiscountManagerImpl(adminDiscountManagerImpl);
+				if (result == null) result = caseDiscountManagerImpl(adminDiscountManagerImpl);
+				if (result == null) result = caseAdminDiscountManager(adminDiscountManagerImpl);
+				if (result == null) result = caseDiscountManager(adminDiscountManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -499,6 +551,111 @@ public class BillingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCreditCardManagerImpl(CreditCardManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceManagerImpl(ServiceManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceManager(ServiceManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Data Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceDataService(ServiceDataService object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Service Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Service Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminServiceManager(AdminServiceManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Service Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Service Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminServiceManagerImpl(AdminServiceManagerImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Discount Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Discount Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminDiscountManager(AdminDiscountManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Admin Discount Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Admin Discount Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdminDiscountManagerImpl(AdminDiscountManagerImpl object) {
 		return null;
 	}
 

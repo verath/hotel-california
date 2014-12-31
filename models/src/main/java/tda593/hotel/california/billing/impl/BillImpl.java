@@ -29,7 +29,7 @@ import tda593.hotel.california.booking.LegalEntity;
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getDate <em>Date</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#isPublished <em>Is Published</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#isPaid <em>Is Paid</em>}</li>
- *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getPurchase <em>Purchase</em>}</li>
+ *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getPurchases <em>Purchases</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getUsedDiscounts <em>Used Discounts</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link tda593.hotel.california.billing.impl.BillImpl#getSubBills <em>Sub Bills</em>}</li>
@@ -120,14 +120,14 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	protected boolean isPaid = IS_PAID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPurchase() <em>Purchase</em>}' reference list.
+	 * The cached value of the '{@link #getPurchases() <em>Purchases</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPurchase()
+	 * @see #getPurchases()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Purchase> purchase;
+	protected EList<Purchase> purchases;
 
 	/**
 	 * The cached value of the '{@link #getUsedDiscounts() <em>Used Discounts</em>}' reference list.
@@ -317,11 +317,11 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Purchase> getPurchase() {
-		if (purchase == null) {
-			purchase = new EObjectResolvingEList<Purchase>(Purchase.class, this, BillingPackage.BILL__PURCHASE);
+	public EList<Purchase> getPurchases() {
+		if (purchases == null) {
+			purchases = new EObjectResolvingEList<Purchase>(Purchase.class, this, BillingPackage.BILL__PURCHASES);
 		}
-		return purchase;
+		return purchases;
 	}
 
 	/**
@@ -343,7 +343,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public void applyDiscount(Discount discount) {
 		if(discount != null) {
-			usedDiscounts.add(discount);
+			getUsedDiscounts().add(discount);
 		}
 	}
 
@@ -354,7 +354,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public void addSubBill(Bill subBill) {
 		if(subBill != null) {
-			subBills.add(subBill);
+			getSubBills().add(subBill);
 		}
 	}
 
@@ -365,7 +365,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public void registerPurchase(Purchase purchase) {
 		if(purchase != null) {
-			this.purchase.add(purchase);
+			this.getPurchases().add(purchase);
 		}
 	}
 
@@ -385,7 +385,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public void unregisterPurchase(Purchase purchase) {
 		if(purchase != null) {
-			this.purchase.remove(purchase);
+			this.getPurchases().remove(purchase);
 		}
 	}
 
@@ -396,7 +396,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public void removeSubBill(Bill subBill) {
 		if(subBill != null) {
-			subBills.remove(subBill);
+			getSubBills().remove(subBill);
 		}
 	}
 
@@ -418,7 +418,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		double totalSum = 0;
 		
 		// Get prices from all purchases
-		for(Purchase pur : getPurchase()) {
+		for(Purchase pur : getPurchases()) {
 			totalSum += pur.getPrice() * pur.getQuantity();
 		}
 		
@@ -442,7 +442,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public void removeDiscount(Discount discount) {
 		if(discount != null) {
-			usedDiscounts.remove(discount);
+			getUsedDiscounts().remove(discount);
 		}
 	}
 
@@ -462,8 +462,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return isPublished();
 			case BillingPackage.BILL__IS_PAID:
 				return isPaid();
-			case BillingPackage.BILL__PURCHASE:
-				return getPurchase();
+			case BillingPackage.BILL__PURCHASES:
+				return getPurchases();
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				return getUsedDiscounts();
 			case BillingPackage.BILL__CUSTOMER:
@@ -496,9 +496,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__IS_PAID:
 				setIsPaid((Boolean)newValue);
 				return;
-			case BillingPackage.BILL__PURCHASE:
-				getPurchase().clear();
-				getPurchase().addAll((Collection<? extends Purchase>)newValue);
+			case BillingPackage.BILL__PURCHASES:
+				getPurchases().clear();
+				getPurchases().addAll((Collection<? extends Purchase>)newValue);
 				return;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
@@ -535,8 +535,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case BillingPackage.BILL__IS_PAID:
 				setIsPaid(IS_PAID_EDEFAULT);
 				return;
-			case BillingPackage.BILL__PURCHASE:
-				getPurchase().clear();
+			case BillingPackage.BILL__PURCHASES:
+				getPurchases().clear();
 				return;
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				getUsedDiscounts().clear();
@@ -567,8 +567,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return isPublished != IS_PUBLISHED_EDEFAULT;
 			case BillingPackage.BILL__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
-			case BillingPackage.BILL__PURCHASE:
-				return purchase != null && !purchase.isEmpty();
+			case BillingPackage.BILL__PURCHASES:
+				return purchases != null && !purchases.isEmpty();
 			case BillingPackage.BILL__USED_DISCOUNTS:
 				return usedDiscounts != null && !usedDiscounts.isEmpty();
 			case BillingPackage.BILL__CUSTOMER:

@@ -3,6 +3,7 @@ package tda593.hotel.california.util;
 import javax.persistence.EntityManager;
 
 import tda593.hotel.california.billing.AdminDiscountManager;
+import tda593.hotel.california.billing.AdminServiceManager;
 import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.BillDataService;
 import tda593.hotel.california.billing.BillManager;
@@ -11,12 +12,18 @@ import tda593.hotel.california.billing.CreditCardInformationDataService;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.billing.DiscountDataService;
 import tda593.hotel.california.billing.DiscountManager;
+import tda593.hotel.california.billing.ServiceDataService;
+import tda593.hotel.california.billing.ServiceManager;
+import tda593.hotel.california.billing.impl.AdminDiscountManagerImplImpl;
+import tda593.hotel.california.billing.impl.AdminServiceManagerImplImpl;
 import tda593.hotel.california.billing.impl.BillDataServiceImpl;
 import tda593.hotel.california.billing.impl.BillManagerImplImpl;
 import tda593.hotel.california.billing.impl.CreditCardInformationDataServiceImpl;
 import tda593.hotel.california.billing.impl.CreditCardManagerImplImpl;
 import tda593.hotel.california.billing.impl.DiscountDataServiceImpl;
 import tda593.hotel.california.billing.impl.DiscountManagerImplImpl;
+import tda593.hotel.california.billing.impl.ServiceDataServiceImpl;
+import tda593.hotel.california.billing.impl.ServiceManagerImplImpl;
 import tda593.hotel.california.booking.BookingDataService;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntityDataService;
@@ -60,6 +67,7 @@ public class HotelCaliforniaManagersHandler {
 	private BillDataService billDataService;
 	private DiscountDataService discountDataService;
 	private CreditCardInformationDataService creditCardDataService;
+	private ServiceDataService serviceDataService;
 
 	// Facilities Managers
 	private AdminKeyCardManager adminKeyCardManager;
@@ -77,6 +85,8 @@ public class HotelCaliforniaManagersHandler {
 	private DiscountManager discountManager;
 	private CreditCardManager creditCardManager;
 	private BankingManager bankingManager;
+	private ServiceManager serviceManager;
+	private AdminServiceManager adminServiceManager;
 
 	// Test only manager
 	private TestAdminBankingManager testAdminBankingManager;
@@ -110,6 +120,7 @@ public class HotelCaliforniaManagersHandler {
 		discountDataService = new DiscountDataServiceImpl(entityManager);
 		creditCardDataService = new CreditCardInformationDataServiceImpl(
 				entityManager);
+		serviceDataService = new ServiceDataServiceImpl(entityManager);
 	}
 
 	private void initializeManagers() throws Exception {
@@ -131,8 +142,11 @@ public class HotelCaliforniaManagersHandler {
 		// Billing
 		billManager = new BillManagerImplImpl(billDataService, bookingManager);
 		discountManager = new DiscountManagerImplImpl(discountDataService);
-		creditCardManager = new CreditCardManagerImplImpl(creditCardDataService);
-
+		creditCardManager = new CreditCardManagerImplImpl(creditCardDataService);	
+		adminServiceManager = new AdminServiceManagerImplImpl(serviceDataService);
+		serviceManager = new ServiceManagerImplImpl(serviceDataService);
+		adminDiscountManager = new AdminDiscountManagerImplImpl(discountDataService);
+		
 		if (mockBankingComponent) {
 			MockTestAdminBankingManager mockTestAdminBankingManager = new MockTestAdminBankingManager();
 
@@ -223,5 +237,13 @@ public class HotelCaliforniaManagersHandler {
 
 	public TestAdminBankingManager getTestAdminBankingManager() {
 		return testAdminBankingManager;
+	}
+	
+	public AdminServiceManager getAdminServiceManager() {
+		return adminServiceManager;
+	}
+	
+	public ServiceManager getServiceManager() {
+		return serviceManager;
 	}
 }

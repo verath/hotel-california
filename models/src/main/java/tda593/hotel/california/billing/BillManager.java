@@ -4,7 +4,6 @@ package tda593.hotel.california.billing;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.LegalEntity;
 
@@ -38,18 +37,10 @@ public interface BillManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model billRequired="true" billOrdered="false" serviceIdRequired="true" serviceIdOrdered="false" quantityRequired="true" quantityOrdered="false"
+	 * @model billRequired="true" billOrdered="false" quantityRequired="true" quantityOrdered="false" serviceRequired="true" serviceOrdered="false"
 	 * @generated
 	 */
-	void billItem(Bill bill, int serviceId, int quantity);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" ordered="false"
-	 * @generated
-	 */
-	EList<Service> getAllServices();
+	void billItem(Bill bill, int quantity, Service service);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,5 +89,21 @@ public interface BillManager extends EObject {
 	 * @generated
 	 */
 	BookingBill createBookingBill(LegalEntity customer, Booking booking);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	EList<Bill> getBills(LegalEntity customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	EList<Bill> getUnpaidBills(LegalEntity customer);
 
 } // BillManager

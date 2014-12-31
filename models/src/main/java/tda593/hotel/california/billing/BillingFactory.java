@@ -157,6 +157,42 @@ public interface BillingFactory extends EFactory {
 	CreditCardManagerImpl createCreditCardManagerImpl();
 
 	/**
+	 * Returns a new object of class '<em>Service Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Manager Impl</em>'.
+	 * @generated
+	 */
+	ServiceManagerImpl createServiceManagerImpl();
+
+	/**
+	 * Returns a new object of class '<em>Service Data Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Data Service</em>'.
+	 * @generated
+	 */
+	ServiceDataService createServiceDataService();
+
+	/**
+	 * Returns a new object of class '<em>Admin Service Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admin Service Manager Impl</em>'.
+	 * @generated
+	 */
+	AdminServiceManagerImpl createAdminServiceManagerImpl();
+
+	/**
+	 * Returns a new object of class '<em>Admin Discount Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admin Discount Manager Impl</em>'.
+	 * @generated
+	 */
+	AdminDiscountManagerImpl createAdminDiscountManagerImpl();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
