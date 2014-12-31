@@ -3,25 +3,35 @@
 package tda593.hotel.california.billing.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillDataService;
+import tda593.hotel.california.billing.BillingFactory;
 import tda593.hotel.california.billing.BillingPackage;
 import tda593.hotel.california.billing.BookingBill;
+import tda593.hotel.california.billing.Discount;
+import tda593.hotel.california.billing.Purchase;
 import tda593.hotel.california.billing.Service;
 import tda593.hotel.california.billing.persistence.BillEntity;
 import tda593.hotel.california.billing.persistence.BookingBillEntity;
+import tda593.hotel.california.billing.persistence.DiscountEntity;
+import tda593.hotel.california.billing.persistence.PurchaseEntity;
 import tda593.hotel.california.billing.persistence.ServiceEntity;
 import tda593.hotel.california.billing.persistence.impl.BillEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.BookingBillEntityImpl;
+import tda593.hotel.california.billing.persistence.impl.PurchaseEntityImpl;
 import tda593.hotel.california.billing.persistence.impl.ServiceEntityImpl;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.LegalEntity;
@@ -75,6 +85,28 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		bill.setId(billEntity.getId());
 		bill.setIsPublished(billEntity.isPublished());
 		bill.setIsPaid(billEntity.isPaid());
+		
+		// Convert all purchases
+		List<Purchase> purchases = new ArrayList<Purchase>();
+		for(PurchaseEntity p : billEntity.getPurchaseEntity()) {
+			purchases.add(entityToPurchase(p));
+		}
+		bill.getPurchases().addAll(purchases);
+		
+		// Convert sub-bills
+		List<Bill> bills = new ArrayList<Bill>();
+		for(BillEntity b : billEntity.getSubBillEntities()) {
+			bills.add(entityToBill(b));
+		}
+		bill.getSubBills().addAll(bills);
+		
+		// Convert discounts
+		List<Discount> discounts = new ArrayList<Discount>();
+		for(DiscountEntity d : billEntity.getUsedDiscounts()) {
+			discounts.add(DiscountDataServiceImpl.entityToDiscount(d));
+		}
+		bill.getUsedDiscounts().addAll(discounts);
+		
 		return bill;
 	}
 	
@@ -84,7 +116,47 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		entity.setId(bill.getId());
 		entity.setIsPublished(bill.isPublished());
 		entity.setIsPaid(bill.isPaid());
+		
+		// Convert all purchases
+		List<PurchaseEntity> purchaseEntities = new ArrayList<PurchaseEntity>();
+		for(Purchase p : bill.getPurchases()) {
+			purchaseEntities.add(purchaseToEntity(p));
+		}
+		entity.getPurchaseEntity().addAll(purchaseEntities);
+		
+		// Convert sub-bills
+		List<BillEntity> billEntities = new ArrayList<BillEntity>();
+		for(Bill b : bill.getSubBills()) {
+			billEntities.add(billToEntity(b));
+		}
+		entity.getSubBillEntities().addAll(billEntities);
+		
+		// Convert discounts
+		List<DiscountEntity> discountEntities = new ArrayList<DiscountEntity>();
+		for(Discount d : bill.getUsedDiscounts()) {
+			discountEntities.add(DiscountDataServiceImpl.discountToEntity(d));
+		}
+		entity.getUsedDiscounts().addAll(discountEntities);
+		
 		return entity;
+	}
+	
+	private static PurchaseEntity purchaseToEntity(Purchase purchase) {
+		PurchaseEntity entity = new PurchaseEntityImpl();
+		entity.setId(purchase.getId());
+		entity.setPrice(purchase.getPrice());
+		entity.setQuantity(purchase.getQuantity());
+		entity.setService(ServiceDataServiceImpl.serviceToEntity(purchase.getService()));
+		return entity;
+	}
+	
+	private static Purchase entityToPurchase(PurchaseEntity entity) {
+		Purchase purchase = BillingFactory.eINSTANCE.createPurchase();
+		purchase.setId(entity.getId());
+		purchase.setPrice(entity.getPrice());
+		purchase.setQuantity(entity.getQuantity());
+		purchase.setService(ServiceDataServiceImpl.entityToService(entity.getService()));
+		return purchase;
 	}
 	
 	public static Bill entityToBill(BillEntity billEntity) {

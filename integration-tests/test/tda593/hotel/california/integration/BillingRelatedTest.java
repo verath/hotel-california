@@ -108,7 +108,6 @@ public class BillingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 			totalDue += b.getPrice();
 		}
 		
-		System.out.println(totalDue + " " + bill1Sum + bill2Sum);
 		assertTrue(totalDue == bill1Sum + bill2Sum);
 	}
 

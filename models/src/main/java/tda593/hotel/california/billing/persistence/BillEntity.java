@@ -192,5 +192,7 @@ public interface BillEntity {
 	 * @generated
 	 */
 	List<PurchaseEntity> getPurchaseEntity();
+	
+	List<BillEntity> getSubBillEntities();
 
 } // BillEntity

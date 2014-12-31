@@ -57,7 +57,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		this.entityManager = entityManager;
 	}
 	
-	private static Discount entityToDiscount(DiscountEntity de, Discount d) {
+	private static Discount entityToDiscountHelper(DiscountEntity de, Discount d) {
 		d.setCode(de.getCode());
 		d.setName(de.getName());
 		d.setDiscountLimit(entityToDiscountLimit(de.getDiscountLimitEntity()));
@@ -65,7 +65,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 		return d;
 	}
 	
-	private static DiscountEntityImpl discountToEntity(Discount d, DiscountEntityImpl de) {
+	private static DiscountEntityImpl discountToEntityHelper(Discount d, DiscountEntityImpl de) {
 		de.setCode(d.getCode());
 		de.setDiscountLimitEntity(discountLimitToEntity(d.getDiscountLimit()));
 		de.setName(d.getName());
@@ -107,7 +107,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static PercentageDiscount entityToPercentageDiscount(PercentageDiscountEntity pde) {
 		PercentageDiscount pd = new PercentageDiscountImpl();
-		entityToDiscount(pde, pd);
+		entityToDiscountHelper(pde, pd);
 		pd.setPercentage(pde.getPercentage());
 		
 		return pd;
@@ -115,7 +115,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static PercentageDiscountEntityImpl percentageDiscountToEntity(PercentageDiscount pd) {
 		PercentageDiscountEntityImpl pde = new PercentageDiscountEntityImpl();
-		discountToEntity(pd, pde);
+		discountToEntityHelper(pd, pde);
 		pde.setPercentage(pd.getPercentage());
 		
 		return pde;
@@ -123,7 +123,7 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static SumDiscount entityToSumDiscount(SumDiscountEntity sde) {
 		SumDiscount sd = new SumDiscountImpl();
-		entityToDiscount(sde, sd);
+		entityToDiscountHelper(sde, sd);
 		sd.setDiscountSum(sde.getDiscountSum());
 		
 		return sd;
@@ -131,12 +131,28 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	
 	public static SumDiscountEntityImpl sumDiscountToEntity(SumDiscount sd) {
 		SumDiscountEntityImpl sde = new SumDiscountEntityImpl();
-		discountToEntity(sd, sde);
+		discountToEntityHelper(sd, sde);
 		sde.setDiscountSum(sd.getDiscountSum());
 		
 		return sde;
 	}
 
+	public static Discount entityToDiscount(DiscountEntity entity) {
+		if(entity instanceof SumDiscountEntity) {
+			return entityToSumDiscount((SumDiscountEntity) entity);
+		} else {
+			return entityToPercentageDiscount((PercentageDiscountEntity) entity);
+		}
+	}
+	
+	public static DiscountEntity discountToEntity(Discount entity) {
+		if(entity instanceof SumDiscount) {
+			return sumDiscountToEntity((SumDiscount) entity);
+		} else {
+			return percentageDiscountToEntity((PercentageDiscount) entity);
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
