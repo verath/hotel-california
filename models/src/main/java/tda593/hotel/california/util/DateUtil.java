@@ -5,6 +5,8 @@ import java.util.Date;
 public class DateUtil {
 	
 	public static boolean isDateRangeValid(Date from, Date to) {
-		return from.compareTo(to) <= 0 ? true : false;
+		
+		return from!=null && to!=null && from.compareTo(to) <= 0;
+		
 	}
 }
