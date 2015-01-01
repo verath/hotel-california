@@ -14,6 +14,7 @@ import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntityManager;
+import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
@@ -23,6 +24,7 @@ public class SearchForAvailableRoomsTest extends AbstractHotelCaliforniaIntegrat
 
 	private BookingManager bookingManager;
 	private RoomManager roomManager;
+	private LegalEntityManager legalEntityManager;
 	
 	private Calendar c = Calendar.getInstance();
 	
@@ -32,6 +34,7 @@ public class SearchForAvailableRoomsTest extends AbstractHotelCaliforniaIntegrat
 		roomManager = managersHandler.getRoomManager();
 		
 		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
+		legalEntityManager = managersHandler.getLegalEntityManager();
 
 		// Create some room types
 		adminRoomManager.addRoomType("RoomType1", "", null, 1);
@@ -45,6 +48,9 @@ public class SearchForAvailableRoomsTest extends AbstractHotelCaliforniaIntegrat
 			adminRoomManager.addGuestRoom(floor+"2", floor++, "N/A", null, null, roomType, 2, 0);
 		}
 
+		// Create some customer
+		legalEntityManager.createPerson("Thomas", "Anderson", "1", "0712345678", "neo@matrix.com");
+		
 	}
 
 	/**
@@ -82,10 +88,12 @@ public class SearchForAvailableRoomsTest extends AbstractHotelCaliforniaIntegrat
 		expectedRooms.clear();
 		
 		// Lets create some bookings in the same time period and try searching for rooms again
-		bookingManager.createBooking(from, to, null, roomManager.getRoomTypes().get(0));
-		bookingManager.createBooking(from, to, null, roomManager.getRoomTypes().get(1));
-		bookingManager.createBooking(from, to, null, roomManager.getRoomTypes().get(1));
-		bookingManager.createBooking(from, to, null, roomManager.getRooms().get(roomManager.getRooms().size()-1));
+		// Get customer
+		Person customer = legalEntityManager.getPerson("1");
+		bookingManager.createBooking(from, to, customer, roomManager.getRoomTypes().get(0));
+		bookingManager.createBooking(from, to, customer, roomManager.getRoomTypes().get(1));
+		bookingManager.createBooking(from, to, customer, roomManager.getRoomTypes().get(1));
+		bookingManager.createBooking(from, to, customer, roomManager.getRooms().get(roomManager.getRooms().size()-1));
 		
 		// Searching for all available rooms again
 		listOfRooms = bookingManager.getAvailableRooms(from, to);
