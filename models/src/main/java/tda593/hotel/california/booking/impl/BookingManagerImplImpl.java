@@ -305,7 +305,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		}
 		
 		if (customer==null) {
-			throw new IllegalArgumentException("The specified customer is not valid");
+			throw new IllegalArgumentException("No customer specified");
 		}
 		
 		Booking booking = new BookingImpl();
@@ -330,7 +330,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		}
 		
 		if (customer==null) {
-			throw new IllegalArgumentException("The specified customer is not valid");
+			throw new IllegalArgumentException("No customer specified");
 		}
 		
 		Booking booking = new BookingImpl();

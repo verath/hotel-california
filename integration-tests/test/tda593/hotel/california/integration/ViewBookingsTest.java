@@ -38,7 +38,7 @@ public class ViewBookingsTest extends AbstractHotelCaliforniaIntegrationTest{
 		adminRoomManager.addRoomType("RoomType2", "", null, 2);
 		adminRoomManager.addRoomType("RoomType3", "", null, 3);
 
-		// Create two room for each room type, eight room in total
+		// Create two room for each room type, six room in total
 		int floor = 1;
 		for(RoomType roomType : adminRoomManager.getRoomTypes()) {
 			adminRoomManager.addGuestRoom(floor+"1", floor++, "N/A", null, null, roomType, 2, 0);
