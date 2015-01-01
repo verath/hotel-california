@@ -34,11 +34,7 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 
 	private BillManager billManager;
 	private LegalEntityManager legalEntityManager;
-	private CreditCardManager creditCardManager;
-	private BankingManager bankingManager;
-	private TestAdminBankingManager adminBankingManager;
 	private AdminServiceManager adminServiceManager;
-	private AdminDiscountManager discountManager;
 	private BookingManager bookingManager;
 	private RoomManager roomManager;
 	
@@ -46,21 +42,12 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 	
 	private Service bananas, champagne;
 	private Person customer;
-	private Organization customer2;
-	private String validCreditCardNumber = "2190 8910 1029 8908 6752";
-	private String validCCV = "902";
-	private String validFirstName = "Bob", validLastName = "Smith";
-	private Date validDate;
 	
 	@Before
 	public void setUpData() {
 		legalEntityManager = managersHandler.getLegalEntityManager();
-		creditCardManager = managersHandler.getCreditCardManager();
-		bankingManager = managersHandler.getBankingManager();
 		billManager = managersHandler.getBillManager();
-		adminBankingManager = managersHandler.getTestAdminBankingManager();
 		adminServiceManager = managersHandler.getAdminServiceManager();
-		discountManager = managersHandler.getAdminDiscountManager();
 		bookingManager = managersHandler.getBookingManager();
 		roomManager = managersHandler.getRoomManager();
 		
@@ -108,7 +95,12 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
 		// TODO: How do we know this legal entity has valid credit card information?
-		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		
+		// Can't find customer this way:
+		//LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		
+		// Temporary solution:
+		LegalEntity customer = legalEntityManager.getPerson("1");
 		
 		Bill bill = billManager.getBills(customer).get(0);
 		
