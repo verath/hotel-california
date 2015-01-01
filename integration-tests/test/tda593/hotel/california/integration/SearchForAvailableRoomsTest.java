@@ -31,12 +31,7 @@ public class SearchForAvailableRoomsTest extends AbstractHotelCaliforniaIntegrat
 		bookingManager = managersHandler.getBookingManager();
 		roomManager = managersHandler.getRoomManager();
 		
-		LegalEntityManager legalEntityManager = managersHandler.getLegalEntityManager();
 		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
-
-		// Create some persons
-		legalEntityManager.createPerson("Thomas", "Anderson", "1", "0712345678", "neo@matrix.com");
-		legalEntityManager.createPerson("Axel", "Nilsson", "2", "0712345678", "bob@smith.com");
 
 		// Create some room types
 		adminRoomManager.addRoomType("RoomType1", "", null, 1);
