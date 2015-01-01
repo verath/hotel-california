@@ -159,6 +159,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getBookings(Date from, Date to) {
+		if(!DateUtil.isDateRangeValid(from, to)) {
+			throw new IllegalArgumentException("The specified time period is not valid");
+		}
 		return bookingDataService.getAll(from, to);
 	}
 
@@ -168,6 +171,12 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getBookings(Date from, Date to, LegalEntity customer) {
+		if(!DateUtil.isDateRangeValid(from, to)) {
+			throw new IllegalArgumentException("The specified time period is not valid");
+		} else if (customer==null) {
+			throw new IllegalArgumentException("The specified customer is not valid");
+		}
+		
 		return bookingDataService.getAll(from, to, customer);
 	}
 
@@ -177,6 +186,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Booking> getBookings(LegalEntity customer) {
+		if (customer==null) {
+			throw new IllegalArgumentException("The specified customer is not valid");
+		}
 		return bookingDataService.getAll(customer);
 	}
 
@@ -292,6 +304,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 					+ "booked in that period");
 		}
 		
+		if (customer==null) {
+			throw new IllegalArgumentException("The specified customer is not valid");
+		}
+		
 		Booking booking = new BookingImpl();
 		booking.setStartDate(from);
 		booking.setEndDate(to);
@@ -311,6 +327,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		if(!isRoomAvailable(from, to, room.getRoomNumber())) {
 			throw new IllegalArgumentException("The specified room is either not bookable or is already "
 					+ "booked in that period");
+		}
+		
+		if (customer==null) {
+			throw new IllegalArgumentException("The specified customer is not valid");
 		}
 		
 		Booking booking = new BookingImpl();
