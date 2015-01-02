@@ -290,6 +290,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		if(bookingEntity == null) {
 			return null;
 		}
+	
 		Booking booking = BookingFactory.eINSTANCE.createBooking();
 		booking.setEndDate(bookingEntity.getEndDate());
 		booking.setId(bookingEntity.getId());
@@ -377,7 +378,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		entity.setId(roomStay.getId());
 		entity.setRoomEntity(RoomDataServiceImpl.roomToEntity(roomStay.getRoom()));
 		
-		List<PersonEntityImpl> personEntities = new ArrayList<PersonEntityImpl>();
+		List<PersonEntity> personEntities = new ArrayList<PersonEntity>();
 		for(Person person : roomStay.getRegisteredPersons()) {
 			personEntities.add(LegalEntityDataServiceImpl.personToEntity(person));
 		}
