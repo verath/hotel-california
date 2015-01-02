@@ -5,9 +5,7 @@ package tda593.hotel.california.booking.impl;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -269,5 +267,29 @@ public class StayRequestImpl extends MinimalEObjectImpl.Container implements Sta
 		result.append(')');
 		return result.toString();
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StayRequestImpl other = (StayRequestImpl) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
+	
 
 } //StayRequestImpl

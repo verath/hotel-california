@@ -463,11 +463,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void checkOut(Booking booking) {
 		RoomStay roomStay = booking.getRoomStay();
-		roomStay.setActive(false);
-		
-		// TODO : Why do we clear this?
-		roomStay.getRegisteredPersons().clear();
-		
+		roomStay.setActive(false);		
 		roomManager.unregisterAllKeyCards(roomStay.getRoom().getRoomNumber());
 		
 		// Persist the changes
@@ -541,9 +537,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			stayRequestObj.setTimeStamp(cal.getTime());
 			booking.getRoomStay().getStayRequest().add(stayRequestObj);
 			
+			bookingDataService.set(booking);
+			
 			return stayRequestObj;
 		}
-		
 		return null;
 	}
 
@@ -555,6 +552,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	public void removeStayRequest(Booking booking, StayRequest stayRequest) {
 		if(booking != null && booking.getRoomStay() != null && stayRequest != null) {
 			booking.getRoomStay().getStayRequest().remove(stayRequest);
+			bookingDataService.set(booking);
 		}
 	}
 
@@ -568,16 +566,12 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		Map<Booking, EList<StayRequest>> bookingToStayRequests = new HashMap<Booking, EList<StayRequest>>();
 		
 		for(Booking booking : bookings) {
-			EList<StayRequest> stayRequests = bookingToStayRequests.get(booking);
-			if(stayRequests == null) {
-				stayRequests = new BasicEList<StayRequest>();
-			}
+			EList<StayRequest> stayRequests = new BasicEList<StayRequest>();
 			
-			if(booking.getRoomStay() != null) {
+			if(booking.getRoomStay() != null && !booking.getRoomStay().getStayRequest().isEmpty()) {
 				stayRequests.addAll(booking.getRoomStay().getStayRequest());
+				bookingToStayRequests.put(booking, stayRequests);
 			}
-			
-			bookingToStayRequests.put(booking, stayRequests);
 		}
 		
 		return bookingToStayRequests;
