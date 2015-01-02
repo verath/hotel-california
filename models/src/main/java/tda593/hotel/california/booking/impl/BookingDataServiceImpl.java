@@ -125,7 +125,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				object.getRoomStay().setId(entity.getRoomStayEntity().getId());
 				int i = 0;
 				for(StayRequestEntity requestEntity : entity.getRoomStayEntity().getStayRequestEntities()) {
-					object.getRoomStay().getStayRequest().get(i).setId(requestEntity.getId());
+					object.getRoomStay().getStayRequest().get(i++).setId(requestEntity.getId());
 				}
 			}
 			transaction.commit();
