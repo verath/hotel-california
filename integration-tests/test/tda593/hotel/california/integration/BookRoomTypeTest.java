@@ -265,7 +265,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 	@Test
 	public void testParallelBookRoomType() {
 		// We are using two different booking managers here to simulate the situation where two instances
-		// of the system is running while using the same database.
+		// of the system are running while using the same database.
 		
 		KeyCardManager keyCardManager2 = new KeyCardManagerImplImpl(managersHandler.getKeyCardDataService());
 		RoomManager roomManager2 = new RoomManagerImplImpl(managersHandler.getRoomTypeDataService(), managersHandler.getRoomDataService(), keyCardManager2);
@@ -297,7 +297,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		
 		Person customer2 = hits2.get(0);
 		
-		// Another person makes the booking
+		// Another person makes the booking using the second booking manager
 		bookingManager2.createBooking(from, to, customer2, roomType);
 		
 		// The first person thinks the room type is available, when it in fact is not
