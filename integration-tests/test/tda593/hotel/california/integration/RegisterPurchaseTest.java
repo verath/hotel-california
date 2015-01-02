@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -75,6 +76,7 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		Date to = c.getTime();
 		
 		Room room = roomManager.getRooms().get(0);
+		
 		Booking booking = bookingManager.createBooking(from, to, customer, room.getRoomType());
 		bookingManager.registerRoom(booking, room);
 		BasicEList<Person> guests = new BasicEList<Person>();
@@ -91,38 +93,135 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		// System asks for a room number.
 		// Actor enters the room number.
 		// Assume: room number is valid and there is an active room stay.
+		
 		Booking activeBooking = bookingManager.getActiveBooking("1");
+		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: How do we know this legal entity has valid credit card information?
+		// TODO: Change method
+		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
 		
-		// Can't find customer this way:
-		//LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		// Find suitable bill
+		EList<Bill> bills = billManager.getBills(customer);
+		Bill activeBill = null;
 		
-		// Temporary solution:
-		LegalEntity customer = legalEntityManager.getPerson("1");
+		for(Bill bill: bills) {
+			if(!bill.isPublished()) {
+				activeBill = bill;
+			}
+		}
 		
-		Bill bill = billManager.getBills(customer).get(0);
+		if(activeBill==null) {
+			activeBill = billManager.createBill(customer);
+		}
 		
-		billManager.billItem(bill, 1, bananas);
-		billManager.billItem(bill, 7, champagne);
+		// System asks for the items and their respective quantity.
+		// Actor enters the items and their respective quantity.
+		// Assume: all entered items exist and their respective quantity is valid.
+		// System asks for for confirmation.
+		// Assume: actor confirms purchase.
+		// System registers the items, as purchased, on the room bill connected to the room stay.
+		
+		billManager.billItem(activeBill, 1, bananas);
+		billManager.billItem(activeBill, 7, champagne);
+		
+		//Testing
+		EList<Bill> billsToTest = billManager.getBills(customer);
+		Bill activeBillToTest = billsToTest.get(0);
 		
 		int quantity;
 		Service service;
 		
-		quantity = bill.getPurchases().get(0).getQuantity();
-		service = bill.getPurchases().get(0).getService();
+		quantity = activeBillToTest.getPurchases().get(0).getQuantity();
+		service = activeBillToTest.getPurchases().get(0).getService();
 		
 		assertEquals(1, quantity);
-		assertEquals(bananas, service);
+		assertEquals(bananas.getId(), service.getId());
 		
-		quantity = bill.getPurchases().get(1).getQuantity();
-		service = bill.getPurchases().get(1).getService();
+		quantity = activeBillToTest.getPurchases().get(1).getQuantity();
+		service = activeBillToTest.getPurchases().get(1).getService();
 		
 		assertEquals(7, quantity);
-		assertEquals(champagne, service);
+		assertEquals(champagne.getId(), service.getId());
 		
 	}
 	
+	@Test
+	public void testRegisterPurchaseWithNoActiveRoomStay() {
+		// System asks for a room number.
+		// Actor enters the room number.
+		
+		Booking activeBooking = bookingManager.getActiveBooking("2");
+		
+		assertTrue(activeBooking==null);
+		// System tells the actor the room number is invalid
+		// Back to the start of main flow..
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testRegisterPurchaseWithInvalidQuantity() {
+		// System asks for a room number.
+		// Actor enters the room number.
+		// Assume: room number is valid and there is an active room stay.
+		
+		Booking activeBooking = bookingManager.getActiveBooking("1");
+		
+		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
+		// Assume: the actor confirms the legal entity making the purchase.
+		// TODO: Change method
+		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		
+		// Find suitable bill
+		EList<Bill> bills = billManager.getBills(customer);
+		Bill activeBill = null;
+		
+		for(Bill bill: bills) {
+			if(!bill.isPublished()) {
+				activeBill = bill;
+			}
+		}
+		
+		if(activeBill==null) {
+			activeBill = billManager.createBill(customer);
+		}
+		
+		// System asks for the items and their respective quantity.
+		// Actor enters the items and their respective quantity.
+		
+		billManager.billItem(activeBill, -5, bananas);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testRegisterPurchaseWithInvalidService() {
+		// System asks for a room number.
+		// Actor enters the room number.
+		// Assume: room number is valid and there is an active room stay.
+		
+		Booking activeBooking = bookingManager.getActiveBooking("1");
+		
+		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
+		// Assume: the actor confirms the legal entity making the purchase.
+		// TODO: Change method
+		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		
+		// Find suitable bill
+		EList<Bill> bills = billManager.getBills(customer);
+		Bill activeBill = null;
+		
+		for(Bill bill: bills) {
+			if(!bill.isPublished()) {
+				activeBill = bill;
+			}
+		}
+		
+		if(activeBill==null) {
+			activeBill = billManager.createBill(customer);
+		}
+		
+		// System asks for the items and their respective quantity.
+		// Actor enters the items and their respective quantity.
+		
+		billManager.billItem(activeBill, 5, null);
+	}
 	
 }

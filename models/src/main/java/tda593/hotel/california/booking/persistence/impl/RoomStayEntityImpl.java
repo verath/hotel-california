@@ -52,7 +52,7 @@ public class RoomStayEntityImpl implements RoomStayEntity {
 	@OneToOne(targetEntity = RoomEntityImpl.class)
 	private RoomEntity roomEntity;
 
-	@OneToMany(targetEntity = PersonEntityImpl.class, cascade = {CascadeType.ALL})
+	@OneToMany(targetEntity = PersonEntityImpl.class, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<PersonEntity> personEntities;
 
 	@OneToMany(targetEntity = StayRequestEntityImpl.class, cascade = {CascadeType.ALL})
@@ -103,7 +103,7 @@ public class RoomStayEntityImpl implements RoomStayEntity {
 	@Override
 	public List<PersonEntity> getPersonEntities() {
 		if (personEntities == null) {
-			return new ArrayList<>();
+			personEntities = new ArrayList<PersonEntity>();
 		}
 		return personEntities;
 	}
@@ -111,7 +111,7 @@ public class RoomStayEntityImpl implements RoomStayEntity {
 	@Override
 	public List<StayRequestEntity> getStayRequestEntities() {
 		if (stayRequestEntities == null) {
-			return new ArrayList<>();
+			stayRequestEntities = new ArrayList<StayRequestEntity>();
 		}
 		return stayRequestEntities;
 	}
