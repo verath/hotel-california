@@ -313,6 +313,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		booking.setEndDate(to);
 		booking.setResponsible(customer);
 		booking.setRoomType(roomType);
+		booking.setPrice(roomType.getPrice());
 		bookingDataService.set(booking);
 		
 		return booking;
@@ -338,6 +339,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		booking.setEndDate(to);
 		booking.setResponsible(customer);
 		booking.setRoomType(room.getRoomType());
+		booking.setPrice(room.getRoomType().getPrice());
 		
 		registerRoomStay(booking, room);
 	}
