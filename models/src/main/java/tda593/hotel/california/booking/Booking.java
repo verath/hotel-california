@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california.booking;
 import java.util.Date;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import tda593.hotel.california.facilities.RoomType;
 
@@ -306,5 +307,13 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void unregisterTravelInformation(TravelInformation travelInformation);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	EList<StayRequest> getStayRequests();
 
 } // Booking

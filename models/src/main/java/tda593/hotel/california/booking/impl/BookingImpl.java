@@ -3,16 +3,13 @@
 package tda593.hotel.california.booking.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -20,8 +17,8 @@ import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.RoomStay;
+import tda593.hotel.california.booking.StayRequest;
 import tda593.hotel.california.booking.TravelInformation;
-
 import tda593.hotel.california.facilities.RoomType;
 
 /**
@@ -525,6 +522,19 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<StayRequest> getStayRequests() {
+		if(roomStay != null) {
+			return roomStay.getStayRequest();
+		}
+		
+		return new BasicEList<StayRequest>();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -688,6 +698,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case BookingPackage.BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION:
 				unregisterTravelInformation((TravelInformation)arguments.get(0));
 				return null;
+			case BookingPackage.BOOKING___GET_STAY_REQUESTS:
+				return getStayRequests();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
