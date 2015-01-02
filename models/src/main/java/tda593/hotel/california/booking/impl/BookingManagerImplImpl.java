@@ -564,8 +564,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void removeStayRequest(Booking booking, StayRequest stayRequest) {
 		if(booking != null && booking.getRoomStay() != null && stayRequest != null) {
-			
 			booking.getRoomStay().getStayRequest().remove(stayRequest);
+			bookingDataService.set(booking);
 		}
 	}
 
@@ -581,11 +581,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		for(Booking booking : bookings) {
 			EList<StayRequest> stayRequests = new BasicEList<StayRequest>();
 			
-			if(booking.getRoomStay() != null) {
+			if(booking.getRoomStay() != null && !booking.getRoomStay().getStayRequest().isEmpty()) {
 				stayRequests.addAll(booking.getRoomStay().getStayRequest());
+				bookingToStayRequests.put(booking, stayRequests);
 			}
-			
-			bookingToStayRequests.put(booking, stayRequests);
 		}
 		
 		return bookingToStayRequests;
