@@ -568,6 +568,7 @@
           <eOperations name="unregisterTravelInformation" ordered="false" lowerBound="1">
             <eParameters name="travelInformation" ordered="false" lowerBound="1" eType="#//hotel/california/booking/TravelInformation"/>
           </eOperations>
+          <eOperations name="getStayRequests" ordered="false" upperBound="-1" eType="#//hotel/california/booking/StayRequest"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
@@ -689,8 +690,7 @@
           <eOperations name="getActiveBooking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-          <eOperations name="getRelatedLegalEntities" ordered="false" upperBound="-1"
-              eType="#//hotel/california/booking/LegalEntity">
+          <eOperations name="getGuests" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Person">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
           </eOperations>
           <eOperations name="checkOut" ordered="false" lowerBound="1">
@@ -703,6 +703,22 @@
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
             <eParameters name="newStart" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="newEnd" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          </eOperations>
+          <eOperations name="addStayRequest" ordered="false" lowerBound="1" eType="#//hotel/california/booking/StayRequest">
+            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
+            <eParameters name="stayRequest" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eOperations>
+          <eOperations name="removeStayRequest" ordered="false" lowerBound="1">
+            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
+            <eParameters name="stayRequest" ordered="false" lowerBound="1" eType="#//hotel/california/booking/StayRequest"/>
+          </eOperations>
+          <eOperations name="getStayRequests" ordered="false" lowerBound="1">
+            <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+              <eTypeArguments eClassifier="#//hotel/california/booking/Booking"/>
+              <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+                <eTypeArguments eClassifier="#//hotel/california/booking/StayRequest"/>
+              </eTypeArguments>
+            </eGenericType>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BookingManagerImpl" eSuperTypes="#//hotel/california/booking/BookingManager">

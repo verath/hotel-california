@@ -1759,6 +1759,27 @@
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_nyYFII26EeSwirR7O7P1rg" name="CopyOf_Realization0_1" client="_nyZTQI26EeSwirR7O7P1rg" supplier="_r-78cHpDEeSZQp8F1uHBGQ"/>
     <packagedElement xmi:type="uml:Component" xmi:id="_nyZTQI26EeSwirR7O7P1rg" name="BankComponent"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_xruLAI3JEeSwirR7O7P1rg" name="Usage10111111" client="_LXe-kHpCEeSZQp8F1uHBGQ" supplier="_nyW3AI26EeSwirR7O7P1rg"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_dUMO0JJ3EeS5HbafHn7kWQ" name="BookingToStayRequestsMap">
+      <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_gvClEJJ3EeS5HbafHn7kWQ">
+        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_kgHC8JJ3EeS5HbafHn7kWQ">
+          <actual xmi:type="uml:Class" href="tda593.uml#_QwNhcHZKEeSrX_LICIhx2Q"/>
+          <formal xmi:type="uml:ClassifierTemplateParameter" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0-_ownedParameter.0"/>
+        </parameterSubstitution>
+        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_zIir8JJ3EeS5HbafHn7kWQ" actual="_qIQ-QJJ3EeS5HbafHn7kWQ">
+          <formal xmi:type="uml:ClassifierTemplateParameter" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0-_ownedParameter.1"/>
+        </parameterSubstitution>
+        <signature xmi:type="uml:RedefinableTemplateSignature" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap-_ownedElement.0"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_qIQ-QJJ3EeS5HbafHn7kWQ" name="StayRequestList">
+      <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_sasT4JJ3EeS5HbafHn7kWQ">
+        <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_vnCUEJJ3EeS5HbafHn7kWQ">
+          <actual xmi:type="uml:Class" href="tda593.uml#_qgItMHZTEeSbBJzXJgLK5Q"/>
+          <formal xmi:type="uml:ClassifierTemplateParameter" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList-_ownedElement.0-_ownedParameter.0"/>
+        </parameterSubstitution>
+        <signature xmi:type="uml:RedefinableTemplateSignature" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList-_ownedElement.0"/>
+      </templateBinding>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_HB6skIDREeSyQrXH1hqv2Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HCbC4IDREeSyQrXH1hqv2Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -1775,4 +1796,7 @@
   <Ecore:EDataType xmi:id="_Q3d1YIDREeSyQrXH1hqv2Q" base_PrimitiveType="_PT_s8IDQEeSyQrXH1hqv2Q"/>
   <Ecore:EGenericType xmi:id="_Q4WmMIDREeSyQrXH1hqv2Q" base_DataType="_PT_s8IDQEeSyQrXH1hqv2Q"/>
   <ActionLanguage:TextualRepresentation xmi:id="_MtMioIq8EeSmfLNHzEjnnA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <Ecore:EDataType xmi:id="_97OycJJ3EeS5HbafHn7kWQ" base_PrimitiveType="_dUMO0JJ3EeS5HbafHn7kWQ"/>
+  <Ecore:EGenericType xmi:id="_97nM8JJ3EeS5HbafHn7kWQ" base_DataType="_dUMO0JJ3EeS5HbafHn7kWQ"/>
+  <Ecore:EGenericType xmi:id="_aZHIUJJ4EeS5HbafHn7kWQ" base_DataType="_qIQ-QJJ3EeS5HbafHn7kWQ"/>
 </xmi:XMI>

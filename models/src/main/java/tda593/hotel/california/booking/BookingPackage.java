@@ -424,13 +424,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION = 1;
 
 	/**
+	 * The operation id for the '<em>Get Stay Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___GET_STAY_REQUESTS = 2;
+
+	/**
 	 * The number of operations of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_OPERATION_COUNT = 2;
+	int BOOKING_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.RoomStayImpl <em>Room Stay</em>}' class.
@@ -770,13 +779,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = 13;
 
 	/**
-	 * The operation id for the '<em>Get Related Legal Entities</em>' operation.
+	 * The operation id for the '<em>Get Guests</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING = 14;
+	int BOOKING_MANAGER___GET_GUESTS__BOOKING = 14;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -806,13 +815,40 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 17;
 
 	/**
+	 * The operation id for the '<em>Add Stay Request</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___ADD_STAY_REQUEST__BOOKING_STRING = 18;
+
+	/**
+	 * The operation id for the '<em>Remove Stay Request</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST = 19;
+
+	/**
+	 * The operation id for the '<em>Get Stay Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___GET_STAY_REQUESTS = 20;
+
+	/**
 	 * The number of operations of the '<em>Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 18;
+	int BOOKING_MANAGER_OPERATION_COUNT = 21;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -978,13 +1014,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING = BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING;
 
 	/**
-	 * The operation id for the '<em>Get Related Legal Entities</em>' operation.
+	 * The operation id for the '<em>Get Guests</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_IMPL___GET_RELATED_LEGAL_ENTITIES__BOOKING = BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING;
+	int BOOKING_MANAGER_IMPL___GET_GUESTS__BOOKING = BOOKING_MANAGER___GET_GUESTS__BOOKING;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -1012,6 +1048,33 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGER_IMPL___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE;
+
+	/**
+	 * The operation id for the '<em>Add Stay Request</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___ADD_STAY_REQUEST__BOOKING_STRING = BOOKING_MANAGER___ADD_STAY_REQUEST__BOOKING_STRING;
+
+	/**
+	 * The operation id for the '<em>Remove Stay Request</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST = BOOKING_MANAGER___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST;
+
+	/**
+	 * The operation id for the '<em>Get Stay Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___GET_STAY_REQUESTS = BOOKING_MANAGER___GET_STAY_REQUESTS;
 
 	/**
 	 * The number of operations of the '<em>Manager Impl</em>' class.
@@ -1711,6 +1774,16 @@ public interface BookingPackage extends EPackage {
 	EOperation getBooking__UnregisterTravelInformation__TravelInformation();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.Booking#getStayRequests() <em>Get Stay Requests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Stay Requests</em>' operation.
+	 * @see tda593.hotel.california.booking.Booking#getStayRequests()
+	 * @generated
+	 */
+	EOperation getBooking__GetStayRequests();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.RoomStay <em>Room Stay</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2023,14 +2096,14 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__GetActiveBooking__String();
 
 	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getRelatedLegalEntities(tda593.hotel.california.booking.Booking) <em>Get Related Legal Entities</em>}' operation.
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getGuests(tda593.hotel.california.booking.Booking) <em>Get Guests</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Related Legal Entities</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingManager#getRelatedLegalEntities(tda593.hotel.california.booking.Booking)
+	 * @return the meta object for the '<em>Get Guests</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#getGuests(tda593.hotel.california.booking.Booking)
 	 * @generated
 	 */
-	EOperation getBookingManager__GetRelatedLegalEntities__Booking();
+	EOperation getBookingManager__GetGuests__Booking();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#checkOut(tda593.hotel.california.booking.Booking) <em>Check Out</em>}' operation.
@@ -2061,6 +2134,36 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingManager__ChangeBookingDates__Booking_Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#addStayRequest(tda593.hotel.california.booking.Booking, java.lang.String) <em>Add Stay Request</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Stay Request</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#addStayRequest(tda593.hotel.california.booking.Booking, java.lang.String)
+	 * @generated
+	 */
+	EOperation getBookingManager__AddStayRequest__Booking_String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#removeStayRequest(tda593.hotel.california.booking.Booking, tda593.hotel.california.booking.StayRequest) <em>Remove Stay Request</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Stay Request</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#removeStayRequest(tda593.hotel.california.booking.Booking, tda593.hotel.california.booking.StayRequest)
+	 * @generated
+	 */
+	EOperation getBookingManager__RemoveStayRequest__Booking_StayRequest();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getStayRequests() <em>Get Stay Requests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Stay Requests</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#getStayRequests()
+	 * @generated
+	 */
+	EOperation getBookingManager__GetStayRequests();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManagerImpl <em>Manager Impl</em>}'.
@@ -2568,6 +2671,14 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING___UNREGISTER_TRAVEL_INFORMATION__TRAVELINFORMATION = eINSTANCE.getBooking__UnregisterTravelInformation__TravelInformation();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Stay Requests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING___GET_STAY_REQUESTS = eINSTANCE.getBooking__GetStayRequests();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.RoomStayImpl <em>Room Stay</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2816,12 +2927,12 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = eINSTANCE.getBookingManager__GetActiveBooking__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Related Legal Entities</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get Guests</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_MANAGER___GET_RELATED_LEGAL_ENTITIES__BOOKING = eINSTANCE.getBookingManager__GetRelatedLegalEntities__Booking();
+		EOperation BOOKING_MANAGER___GET_GUESTS__BOOKING = eINSTANCE.getBookingManager__GetGuests__Booking();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
@@ -2846,6 +2957,30 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = eINSTANCE.getBookingManager__ChangeBookingDates__Booking_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Stay Request</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___ADD_STAY_REQUEST__BOOKING_STRING = eINSTANCE.getBookingManager__AddStayRequest__Booking_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Stay Request</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST = eINSTANCE.getBookingManager__RemoveStayRequest__Booking_StayRequest();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Stay Requests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___GET_STAY_REQUESTS = eINSTANCE.getBookingManager__GetStayRequests();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.

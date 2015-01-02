@@ -5,6 +5,7 @@ package tda593.hotel.california.booking.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -19,11 +20,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingDataService;
+import tda593.hotel.california.booking.BookingFactory;
 import tda593.hotel.california.booking.BookingManagerImpl;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
+import tda593.hotel.california.booking.StayRequest;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
@@ -455,19 +458,15 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Returns the registered person on a booking, or null if there are none
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<LegalEntity> getRelatedLegalEntities(Booking booking) {
-		if(booking.getRoomStay() == null) {
-			return null;
+	public EList<Person> getGuests(Booking booking) {
+		if(booking != null && booking.getRoomStay() != null) {
+			return booking.getRoomStay().getRegisteredPersons();
 		}
 		
-		EList<LegalEntity> entities = new BasicEList<LegalEntity>(booking.getRoomStay().getRegisteredPersons().size() + 1);
-		entities.addAll(booking.getRoomStay().getRegisteredPersons());
-		entities.add(booking.getResponsible());
-		return entities;
+		return new BasicEList<Person>();
 	}
 
 	/**
@@ -538,6 +537,63 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			bookingDataService.rollbackTransaction();
 			throw e;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public StayRequest addStayRequest(Booking booking, String stayRequest) {
+		if(booking != null && booking.getRoomStay() != null && stayRequest != null && !stayRequest.isEmpty()) {
+			Calendar cal = Calendar.getInstance();
+			cal.setTimeInMillis(System.currentTimeMillis());
+
+			StayRequest stayRequestObj = BookingFactory.eINSTANCE.createStayRequest();
+			stayRequestObj.setText(stayRequest);
+			stayRequestObj.setTimeStamp(cal.getTime());
+			booking.getRoomStay().getStayRequest().add(stayRequestObj);
+			
+			return stayRequestObj;
+		}
+		
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void removeStayRequest(Booking booking, StayRequest stayRequest) {
+		if(booking != null && booking.getRoomStay() != null && stayRequest != null) {
+			booking.getRoomStay().getStayRequest().remove(stayRequest);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Map<Booking, EList<StayRequest>> getStayRequests() {
+		EList<Booking> bookings = bookingDataService.getAll();
+		Map<Booking, EList<StayRequest>> bookingToStayRequests = new HashMap<Booking, EList<StayRequest>>();
+		
+		for(Booking booking : bookings) {
+			EList<StayRequest> stayRequests = bookingToStayRequests.get(booking);
+			if(stayRequests == null) {
+				stayRequests = new BasicEList<StayRequest>();
+			}
+			
+			if(booking.getRoomStay() != null) {
+				stayRequests.addAll(booking.getRoomStay().getStayRequest());
+			}
+			
+			bookingToStayRequests.put(booking, stayRequests);
+		}
+		
+		return bookingToStayRequests;
 	}
 
 	/**
@@ -644,8 +700,8 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING:
 				return getActiveBooking((String)arguments.get(0));
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_RELATED_LEGAL_ENTITIES__BOOKING:
-				return getRelatedLegalEntities((Booking)arguments.get(0));
+			case BookingPackage.BOOKING_MANAGER_IMPL___GET_GUESTS__BOOKING:
+				return getGuests((Booking)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));
 				return null;
@@ -653,6 +709,13 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return getBooking((Integer)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE:
 				return changeBookingDates((Booking)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
+			case BookingPackage.BOOKING_MANAGER_IMPL___ADD_STAY_REQUEST__BOOKING_STRING:
+				return addStayRequest((Booking)arguments.get(0), (String)arguments.get(1));
+			case BookingPackage.BOOKING_MANAGER_IMPL___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST:
+				removeStayRequest((Booking)arguments.get(0), (StayRequest)arguments.get(1));
+				return null;
+			case BookingPackage.BOOKING_MANAGER_IMPL___GET_STAY_REQUESTS:
+				return getStayRequests();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

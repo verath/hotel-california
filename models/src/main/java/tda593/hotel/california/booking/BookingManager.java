@@ -141,7 +141,7 @@ public interface BookingManager extends EObject {
 	 * @model ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	EList<LegalEntity> getRelatedLegalEntities(Booking booking);
+	EList<Person> getGuests(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,5 +166,29 @@ public interface BookingManager extends EObject {
 	 * @generated
 	 */
 	boolean changeBookingDates(Booking booking, Date newStart, Date newEnd);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" stayRequestRequired="true" stayRequestOrdered="false"
+	 * @generated
+	 */
+	StayRequest addStayRequest(Booking booking, String stayRequest);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false" stayRequestRequired="true" stayRequestOrdered="false"
+	 * @generated
+	 */
+	void removeStayRequest(Booking booking, StayRequest stayRequest);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Map<Booking, EList<StayRequest>> getStayRequests();
 
 } // BookingManager
