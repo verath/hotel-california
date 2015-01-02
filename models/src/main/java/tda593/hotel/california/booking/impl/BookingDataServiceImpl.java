@@ -29,7 +29,6 @@ import tda593.hotel.california.booking.persistence.RoomStayEntity;
 import tda593.hotel.california.booking.persistence.StayRequestEntity;
 import tda593.hotel.california.booking.persistence.TravelInformationEntity;
 import tda593.hotel.california.booking.persistence.impl.BookingEntityImpl;
-import tda593.hotel.california.booking.persistence.impl.PersonEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.RoomStayEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.StayRequestEntityImpl;
 import tda593.hotel.california.booking.persistence.impl.TravelInformationEntityImpl;

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingPackage;
 import tda593.hotel.california.booking.LegalEntity;
+import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.booking.StayRequest;
 import tda593.hotel.california.booking.TravelInformation;
@@ -535,6 +536,20 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Person> getGuests() {
+		if(roomStay != null) {
+			return roomStay.getRegisteredPersons();
+		}
+		
+		return new BasicEList<Person>();
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -700,6 +715,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return null;
 			case BookingPackage.BOOKING___GET_STAY_REQUESTS:
 				return getStayRequests();
+			case BookingPackage.BOOKING___GET_GUESTS:
+				return getGuests();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

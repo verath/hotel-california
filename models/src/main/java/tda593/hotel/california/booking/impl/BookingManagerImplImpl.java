@@ -461,19 +461,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Person> getGuests(Booking booking) {
-		if(booking != null && booking.getRoomStay() != null) {
-			return booking.getRoomStay().getRegisteredPersons();
-		}
-		
-		return new BasicEList<Person>();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public void checkOut(Booking booking) {
 		RoomStay roomStay = booking.getRoomStay();
 		roomStay.setActive(false);
@@ -700,8 +687,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING:
 				return getActiveBooking((String)arguments.get(0));
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_GUESTS__BOOKING:
-				return getGuests((Booking)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));
 				return null;
