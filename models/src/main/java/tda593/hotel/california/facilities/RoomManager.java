@@ -106,4 +106,20 @@ public interface RoomManager extends EObject {
 	 */
 	RoomType getRoomType(String name);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	EList<GuestRoom> getGuestRooms();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	EList<ConferenceRoom> getConferenceRooms();
+
 } // RoomManager

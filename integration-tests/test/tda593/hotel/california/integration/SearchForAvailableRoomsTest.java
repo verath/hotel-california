@@ -57,7 +57,7 @@ public class SearchForAvailableRoomsTest extends AbstractHotelCaliforniaIntegrat
 	 * This is more or less main flow of the use case: Search for available rooms
 	 */
 	@Test
-	public void testSearchForAvaiableRooms() {	
+	public void testSearchForAvailableRooms() {	
 		// Actor enters time period.
 		c.set(2015, 5, 15);
 		Date from = c.getTime();

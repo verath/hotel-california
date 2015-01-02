@@ -11,7 +11,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.FacilitiesPackage;
+import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.KeyCardManager;
 import tda593.hotel.california.facilities.Room;
@@ -335,6 +337,24 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<GuestRoom> getGuestRooms() {
+		return roomDataService.getAllGuestRooms();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<ConferenceRoom> getConferenceRooms() {
+		return roomDataService.getAllConferenceRooms();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -406,6 +426,10 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return getRoom((String)arguments.get(0));
 			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING:
 				return getRoomType((String)arguments.get(0));
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_GUEST_ROOMS:
+				return getGuestRooms();
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS:
+				return getConferenceRooms();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

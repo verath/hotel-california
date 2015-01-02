@@ -106,7 +106,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 		
 		return true;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

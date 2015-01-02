@@ -358,6 +358,18 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_yYhVwIz8EeSx4_92dxH2CA" name="roomType" type="_MEBmgHZHEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Yt2MQJJrEeS5HbafHn7kWQ" name="getGuestRooms">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_e4fwoJJrEeS5HbafHn7kWQ" type="_zg8nYHZIEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f3lPEJJrEeS5HbafHn7kWQ"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f3nEQJJrEeS5HbafHn7kWQ" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_gjItgJJrEeS5HbafHn7kWQ" name="getConferenceRooms">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_kt3BgJJrEeS5HbafHn7kWQ" type="_27D90HZIEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lUwpcJJrEeS5HbafHn7kWQ"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lUxQgJJrEeS5HbafHn7kWQ" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Wg-MYIFREeSZuOQR5MrPYg" name="RoomManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_EcmykIFSEeSZuOQR5MrPYg" general="_SzH3QHoiEeSVKdBxhP6Y7A"/>
@@ -376,6 +388,30 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_XNiiAIFSEeSZuOQR5MrPYg" name="RoomDataService">
             <generalization xmi:type="uml:Generalization" xmi:id="_ZiRkwIFSEeSZuOQR5MrPYg" general="_GTgCwIFSEeSZuOQR5MrPYg"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_BtUacJJsEeS5HbafHn7kWQ" name="getAllGuestRooms">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_rcxUEJJsEeS5HbafHn7kWQ" type="_zg8nYHZIEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sG2y4JJsEeS5HbafHn7kWQ"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sG3Z8JJsEeS5HbafHn7kWQ" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_l_lSoJJsEeS5HbafHn7kWQ" name="getAllConferenceRooms">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_uMOj8JJsEeS5HbafHn7kWQ" type="_27D90HZIEeSrX_LICIhx2Q" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uowu8JJsEeS5HbafHn7kWQ"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uoxWAJJsEeS5HbafHn7kWQ" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_2fW3wJJsEeS5HbafHn7kWQ" name="getGuestRoom">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_6qMggJJsEeS5HbafHn7kWQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_75ZekJJsEeS5HbafHn7kWQ" type="_zg8nYHZIEeSrX_LICIhx2Q" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_4H1RcJJsEeS5HbafHn7kWQ" name="getConferenceRoom">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_9u8D4JJsEeS5HbafHn7kWQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="__mVDUJJsEeS5HbafHn7kWQ" type="_27D90HZIEeSrX_LICIhx2Q" direction="return"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_ak-X4IFSEeSZuOQR5MrPYg" memberEnd="_ak-X4YFSEeSZuOQR5MrPYg _ak9w0IFSEeSZuOQR5MrPYg">
             <ownedEnd xmi:type="uml:Property" xmi:id="_ak-X4YFSEeSZuOQR5MrPYg" name="roomManagerImpl" type="_Wg-MYIFREeSZuOQR5MrPYg" association="_ak-X4IFSEeSZuOQR5MrPYg">

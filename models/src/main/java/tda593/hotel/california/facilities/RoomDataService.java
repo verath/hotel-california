@@ -2,6 +2,7 @@
  */
 package tda593.hotel.california.facilities;
 
+import org.eclipse.emf.common.util.EList;
 import tda593.hotel.california.DataService;
 
 /**
@@ -15,4 +16,36 @@ import tda593.hotel.california.DataService;
  * @generated
  */
 public interface RoomDataService extends DataService<Room, String> {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	EList<GuestRoom> getAllGuestRooms();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	EList<ConferenceRoom> getAllConferenceRooms();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false"
+	 * @generated
+	 */
+	GuestRoom getGuestRoom(String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false"
+	 * @generated
+	 */
+	ConferenceRoom getConferenceRoom(String id);
 } // RoomDataService

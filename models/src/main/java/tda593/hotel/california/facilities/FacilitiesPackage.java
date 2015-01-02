@@ -308,13 +308,31 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_MANAGER___GET_ROOM_TYPE__STRING = 10;
 
 	/**
+	 * The operation id for the '<em>Get Guest Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_GUEST_ROOMS = 11;
+
+	/**
+	 * The operation id for the '<em>Get Conference Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_CONFERENCE_ROOMS = 12;
+
+	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_OPERATION_COUNT = 11;
+	int ROOM_MANAGER_OPERATION_COUNT = 13;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.AdminRoomManager <em>Admin Room Manager</em>}' class.
@@ -433,6 +451,24 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADMIN_ROOM_MANAGER___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Guest Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___GET_GUEST_ROOMS = ROOM_MANAGER___GET_GUEST_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Conference Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___GET_CONFERENCE_ROOMS = ROOM_MANAGER___GET_CONFERENCE_ROOMS;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -1162,6 +1198,24 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER___GET_ROOM_TYPE__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Guest Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_GUEST_ROOMS = ROOM_MANAGER___GET_GUEST_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Conference Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS = ROOM_MANAGER___GET_CONFERENCE_ROOMS;
+
+	/**
 	 * The number of operations of the '<em>Room Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1243,13 +1297,49 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_DATA_SERVICE___EXIST__OBJECT = CaliforniaPackage.DATA_SERVICE___EXIST__OBJECT;
 
 	/**
+	 * The operation id for the '<em>Get All Guest Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___GET_ALL_GUEST_ROOMS = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get All Conference Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___GET_ALL_CONFERENCE_ROOMS = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Guest Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___GET_GUEST_ROOM__STRING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Conference Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_DATA_SERVICE___GET_CONFERENCE_ROOM__STRING = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Room Data Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 0;
+	int ROOM_DATA_SERVICE_OPERATION_COUNT = CaliforniaPackage.DATA_SERVICE_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Room Type Data Service</em>' class.
@@ -1613,6 +1703,24 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADMIN_ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING = ROOM_MANAGER_IMPL___GET_ROOM_TYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Guest Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_GUEST_ROOMS = ROOM_MANAGER_IMPL___GET_GUEST_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Conference Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS = ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -2005,6 +2113,26 @@ public interface FacilitiesPackage extends EPackage {
 	EOperation getRoomManager__GetRoomType__String();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getGuestRooms() <em>Get Guest Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Guest Rooms</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#getGuestRooms()
+	 * @generated
+	 */
+	EOperation getRoomManager__GetGuestRooms();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#getConferenceRooms() <em>Get Conference Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Conference Rooms</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#getConferenceRooms()
+	 * @generated
+	 */
+	EOperation getRoomManager__GetConferenceRooms();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2249,6 +2377,46 @@ public interface FacilitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRoomDataService();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomDataService#getAllGuestRooms() <em>Get All Guest Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Guest Rooms</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomDataService#getAllGuestRooms()
+	 * @generated
+	 */
+	EOperation getRoomDataService__GetAllGuestRooms();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomDataService#getAllConferenceRooms() <em>Get All Conference Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Conference Rooms</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomDataService#getAllConferenceRooms()
+	 * @generated
+	 */
+	EOperation getRoomDataService__GetAllConferenceRooms();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomDataService#getGuestRoom(java.lang.String) <em>Get Guest Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Guest Room</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomDataService#getGuestRoom(java.lang.String)
+	 * @generated
+	 */
+	EOperation getRoomDataService__GetGuestRoom__String();
+
+	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomDataService#getConferenceRoom(java.lang.String) <em>Get Conference Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Conference Room</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomDataService#getConferenceRoom(java.lang.String)
+	 * @generated
+	 */
+	EOperation getRoomDataService__GetConferenceRoom__String();
 
 	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomTypeDataService <em>Room Type Data Service</em>}'.
@@ -2629,6 +2797,22 @@ public interface FacilitiesPackage extends EPackage {
 		EOperation ROOM_MANAGER___GET_ROOM_TYPE__STRING = eINSTANCE.getRoomManager__GetRoomType__String();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Guest Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___GET_GUEST_ROOMS = eINSTANCE.getRoomManager__GetGuestRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Conference Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___GET_CONFERENCE_ROOMS = eINSTANCE.getRoomManager__GetConferenceRooms();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2819,6 +3003,38 @@ public interface FacilitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOM_DATA_SERVICE = eINSTANCE.getRoomDataService();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Guest Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_DATA_SERVICE___GET_ALL_GUEST_ROOMS = eINSTANCE.getRoomDataService__GetAllGuestRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Conference Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_DATA_SERVICE___GET_ALL_CONFERENCE_ROOMS = eINSTANCE.getRoomDataService__GetAllConferenceRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Guest Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_DATA_SERVICE___GET_GUEST_ROOM__STRING = eINSTANCE.getRoomDataService__GetGuestRoom__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Conference Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_DATA_SERVICE___GET_CONFERENCE_ROOM__STRING = eINSTANCE.getRoomDataService__GetConferenceRoom__String();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeDataServiceImpl <em>Room Type Data Service</em>}' class.
