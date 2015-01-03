@@ -66,5 +66,17 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 	}
+	/**
+	 * Tests the FR #029b:
+	 */
+	@Test
+	public void createAddRoom() {
+		//RoomType is needed first
+		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
+		Room newRoom = adminRoomManager.addGuestRoom("3", 4, "A nice Room", null, photos, type1, 1, 0);
+		assertTrue(newRoom != null);
+	}
+	
+	
 
 }
