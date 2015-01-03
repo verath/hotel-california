@@ -331,7 +331,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public RoomType getRoomType(String name) {
-		return name != null ? roomTypeDataService.get(name) : null; 
+		return name != null && !name.isEmpty() ? roomTypeDataService.get(name) : null; 
 	}
 
 	/**
