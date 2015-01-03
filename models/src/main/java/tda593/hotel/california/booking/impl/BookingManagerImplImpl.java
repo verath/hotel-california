@@ -302,24 +302,38 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public Booking createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
-		if(!isRoomTypeAvailable(from, to, roomType)) {
-			throw new IllegalArgumentException("The specified room type is either not bookable or is already "
-					+ "booked in that period");
-		}
-		
 		if (customer==null) {
 			throw new IllegalArgumentException("No customer specified");
+		} else if(roomType == null) {
+			throw new IllegalArgumentException("No room type specified");
 		}
 		
-		Booking booking = new BookingImpl();
-		booking.setStartDate(from);
-		booking.setEndDate(to);
-		booking.setResponsible(customer);
-		booking.setRoomType(roomType);
-		booking.setPrice(roomType.getPrice());
-		bookingDataService.set(booking);
+		try {
+			// Begin transaction to lock out any other that tries to book simontaineously 
+			bookingDataService.beginTransaction(); 
+			
+			if(!isRoomTypeAvailable(from, to, roomType)) {
+				throw new IllegalArgumentException("The specified room type is either not bookable or is already "
+						+ "booked in that period");
+			}
 		
-		return booking;
+			Booking booking = new BookingImpl();
+			booking.setStartDate(from);
+			booking.setEndDate(to);
+			booking.setResponsible(customer);
+			booking.setRoomType(roomType);
+			booking.setPrice(roomType.getPrice());
+			bookingDataService.set(booking);
+			
+			bookingDataService.commitTransaction();
+			return booking;
+		} catch(IllegalStateException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		} catch(RuntimeException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		}
 	}
 
 	/**
@@ -327,9 +341,11 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
+	public Booking createBooking(Date from, Date to, LegalEntity customer, Room room) {
 		if (customer==null) {
 			throw new IllegalArgumentException("No customer specified");
+		} else if(room == null) {
+			throw new IllegalArgumentException("No room specified");
 		}
 		
 		try {
@@ -350,10 +366,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			
 			registerRoomStay(booking, room);
 			bookingDataService.commitTransaction();
-			return;
+			return booking;
 		} catch(IllegalStateException e) {
 			bookingDataService.rollbackTransaction();
-			return;
+			throw e;
 		} catch(RuntimeException e) {
 			bookingDataService.rollbackTransaction();
 			throw e;
@@ -693,8 +709,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOMTYPE:
 				return createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (RoomType)arguments.get(3));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOM:
-				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
-				return null;
+				return createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
 			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_STRING:
 				return isRoomAvailable((Date)arguments.get(0), (Date)arguments.get(1), (String)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___REGISTER_ROOM__BOOKING_ROOM:
