@@ -17,11 +17,14 @@ import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
+import tda593.hotel.california.booking.impl.BookingManagerImplImpl;
 import tda593.hotel.california.facilities.AdminRoomManager;
+import tda593.hotel.california.facilities.KeyCardManager;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
+import tda593.hotel.california.facilities.impl.KeyCardManagerImplImpl;
+import tda593.hotel.california.facilities.impl.RoomManagerImplImpl;
 import tda593.hotel.california.util.DateUtil;
-
 import static org.junit.Assert.*;
 
 
@@ -257,5 +260,52 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		LegalEntity legalEntityFromDatabase = legalEntityManager.getLegalEntity(1);
 		CreditCardInformation legalEntityCCInfo = creditCardManager.getCreditCardInformation(legalEntityFromDatabase);
 		assertNull(legalEntityCCInfo);
+	}
+	
+	@Test
+	public void testParallelBookRoomType() {
+		// We are using two different booking managers here to simulate the situation where two instances
+		// of the system are running while using the same database.
+		
+		KeyCardManager keyCardManager2 = new KeyCardManagerImplImpl(managersHandler.getKeyCardDataService());
+		RoomManager roomManager2 = new RoomManagerImplImpl(managersHandler.getRoomTypeDataService(), managersHandler.getRoomDataService(), keyCardManager2);
+		BookingManager bookingManager2 = new BookingManagerImplImpl(managersHandler.getBookingDataService(), roomManager2);
+		
+		// Actor enters the date range and room number.
+		c.set(2015, 5, 19);
+		Date from = c.getTime();
+		c.set(2015, 5, 21);
+		Date to = c.getTime();
+		RoomType roomType = roomManager.getRoomTypes().get(1);
+		
+		// Assume: date range and room type are valid and room type is available.
+		assertTrue(bookingManager.isRoomTypeAvailable(from, to, roomType));
+		
+		// Actor enters customer name.
+		// Assume: valid input and the customer exists.
+		List<Person> hits = legalEntityManager.findPerson(personBobFirstName, personBobLastName);
+		assertTrue(hits.size() > 0);
+		
+		// Actor chooses the correct customer.
+		Person customer = hits.get(0);
+		
+		// Another person wants to book simultaneously
+		assertTrue(bookingManager2.isRoomTypeAvailable(from, to, roomType));
+		
+		List<Person> hits2 = legalEntityManager.findPerson("Thomas", "Anderson");
+		assertTrue(hits2.size() > 0);
+		
+		Person customer2 = hits2.get(0);
+		
+		// Another person makes the booking using the second booking manager
+		bookingManager2.createBooking(from, to, customer2, roomType);
+		
+		// The first person thinks the room type is available, when it in fact is not
+		try {
+			bookingManager.createBooking(from, to, customer, roomType);
+			fail("Booking went through when it shouldn't, since the room type is actually not available.");
+		} catch (IllegalArgumentException e) {
+			
+		}
 	}
 }

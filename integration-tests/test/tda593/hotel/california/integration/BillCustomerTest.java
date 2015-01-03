@@ -186,8 +186,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertTrue(bill.isPublished());
 		
 		double priceAfterDiscount = bill.getPrice();
-		System.out.println(priceBeforeDiscount + " " + priceAfterDiscount);
-		assertTrue(priceAfterDiscount < priceBeforeDiscount*(1-0.1f) + 0.0000001f && 
+		assertTrue(priceAfterDiscount < priceBeforeDiscount*(1-0.1f) + 0.0000001f &&
 				priceAfterDiscount > priceBeforeDiscount*(1-0.1f) - 0.0000001f);
 		
 		// And back to the main flow...

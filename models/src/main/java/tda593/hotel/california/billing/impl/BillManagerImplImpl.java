@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -172,7 +173,11 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public BookingBill getBookingBill(Booking booking) {
-		return billDataService.getBookingBill(booking);
+		if(booking != null) {
+			return billDataService.getBookingBill(booking);
+		}
+		
+		return null;
 	}
 
 	/**
@@ -181,6 +186,9 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void billItem(Bill bill, int quantity, Service service) {
+		if(bill == null) {
+			throw new IllegalArgumentException("No bill selected.");
+		}
 		
 		if(quantity<=0) {
 			throw new IllegalArgumentException("Invalid quantity");
@@ -206,8 +214,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void addSubBill(Bill subBill, Bill toBill) {
-		toBill.addSubBill(subBill);
-		billDataService.set(toBill);
+		if(subBill != null && toBill != null) {
+			toBill.addSubBill(subBill);
+			billDataService.set(toBill);
+		}
 	}
 
 	/**
@@ -216,8 +226,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void applyDiscount(Discount discount, Bill bill) {
-		bill.applyDiscount(discount);
-		billDataService.set(bill);
+		if(discount != null && bill != null) {
+			bill.applyDiscount(discount);
+			billDataService.set(bill);
+		}
 	}
 
 	/**
@@ -226,8 +238,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void publishBill(Bill bill) {
-		bill.publishBill();
-		billDataService.set(bill);
+		if(bill != null) {
+			bill.publishBill();
+			billDataService.set(bill);
+		}
 	}
 
 	/**
@@ -274,10 +288,14 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public Bill createBill(LegalEntity customer) {
-		BillImpl bill = new BillImpl();
-		bill.setCustomer(customer);
-		billDataService.set(bill);
-		return bill;
+		if(customer != null) {
+			BillImpl bill = new BillImpl();
+			bill.setCustomer(customer);
+			billDataService.set(bill);
+			return bill;
+		}
+		
+		return null;
 	}
 
 
@@ -287,11 +305,15 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public BookingBill createBookingBill(LegalEntity customer, Booking booking) {
-		BookingBill bill = BillingFactory.eINSTANCE.createBookingBill();
-		bill.setCustomer(customer);
-		bill.setBooking(booking);
-		billDataService.set(bill);
-		return bill;
+		if(customer != null && booking != null) {
+			BookingBill bill = BillingFactory.eINSTANCE.createBookingBill();
+			bill.setCustomer(customer);
+			bill.setBooking(booking);
+			billDataService.set(bill);
+			return bill;
+		}
+		
+		return null;
 	}
 
 
@@ -301,7 +323,11 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public EList<Bill> getBills(LegalEntity customer) {
-		return billDataService.getAll(customer);
+		if(customer != null) {
+			return billDataService.getAll(customer);
+		}
+		
+		return new BasicEList<Bill>();
 	}
 
 
@@ -311,16 +337,20 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public EList<Bill> getUnpaidBills(LegalEntity customer) {
-		EList<Bill> results = getBills(customer);
-		Iterator<Bill> it = results.iterator();
-		while(it.hasNext()) {
-			Bill b = it.next();
-			if(b.isPaid()) {
-				it.remove();
+		if(customer != null) {
+			EList<Bill> results = getBills(customer);
+			Iterator<Bill> it = results.iterator();
+			while(it.hasNext()) {
+				Bill b = it.next();
+				if(b.isPaid()) {
+					it.remove();
+				}
 			}
+			
+			return results;
 		}
 		
-		return results;
+		return new BasicEList<Bill>();
 	}
 
 
@@ -330,8 +360,10 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void markBillAsPaid(Bill bill, boolean isPaid) {
-		bill.setIsPaid(true);
-		billDataService.set(bill);
+		if(bill != null) {
+			bill.setIsPaid(true);
+			billDataService.set(bill);
+		}
 	}
 
 	/**
