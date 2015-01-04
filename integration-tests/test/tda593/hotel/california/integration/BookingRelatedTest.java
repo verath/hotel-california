@@ -203,5 +203,26 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertEquals(bookings.get(0).getRoomStay().getRegisteredPersons().get(0), customer2);
 	}
 
-	
+	/**
+	 * Tetsts FR #023: "A receptionist should be able to view a guest’s hotel
+	 * history, such as bookings, personal information etc."
+	 */
+	@Test
+	public void viewGuestBookingHistory() {
+		c.setTimeInMillis (System.currentTimeMillis() + 100000);
+		Date to1 = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date from1 = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date to2 = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date from2 = c.getTime();
+		
+		bookAndCheckIn(from1, to1, room101, customer1);
+		bookingManager.checkOut(bookingManager.getActiveBooking(room101.getRoomNumber()));
+		bookAndCheckIn(from2, to2, room101, customer1);
+		bookAndCheckIn(from1, to1, room102, customer1);
+		
+		assertEquals(3, bookingManager.getBookings(customer1).size());
+	}
 }
