@@ -148,6 +148,36 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	}
 	
 	/**
+	 * Tests FR #022: "A receptionist should be able to register special
+	 * requests, as comments, made by customer, regarding the booking."
+	 */
+	@Test
+	public void registerSpecialRequest() {
+		// Time span of bookings: yesterday to now
+		c.setTimeInMillis (System.currentTimeMillis() + 100000);
+		Date to = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date from = c.getTime();
+		
+		bookAndCheckIn(from, to, room101, customer1);
+		Booking booking1 = bookingManager.getActiveBooking(room101.getRoomNumber());
+		
+		bookAndCheckIn(from, to, room102, customer2);
+		Booking booking2 = bookingManager.getActiveBooking(room102.getRoomNumber());
+		
+		bookingManager.setSpecialRequest(booking1, "TEST1-1");
+		bookingManager.setSpecialRequest(booking1, "TEST1-2");
+		bookingManager.setSpecialRequest(booking2, "TEST2");
+		
+		// Reload
+		booking1 = bookingManager.getActiveBooking(room101.getRoomNumber());
+		booking2 = bookingManager.getActiveBooking(room102.getRoomNumber());
+		
+		assertEquals(booking1.getSpecialRequest(), "TEST1-2");
+		assertEquals(booking2.getSpecialRequest(), "TEST2");
+	}
+	
+	/**
 	 * Tests FR #008: "A receptionist should be able to get an overview of all
 	 * the registered guests in the hotel at the moment."
 	 */
@@ -173,4 +203,5 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertEquals(bookings.get(0).getRoomStay().getRegisteredPersons().get(0), customer2);
 	}
 
+	
 }
