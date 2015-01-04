@@ -99,7 +99,8 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 */
 	public boolean removeRoomType(RoomType roomType) {
 		try {	
-			roomTypeDataService.delete(roomType);
+			RoomType typ = roomTypeDataService.get(roomType.getName());
+			roomTypeDataService.delete(typ);
 		} catch(Exception e) {
 			return false;
 		}
@@ -131,7 +132,6 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	public ConferenceRoom addConferenceRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfSeats, EList<String> equipment) {
 		if(isRoomParametersValid(number, floor, description, disabilityApprovals, photos, roomType) && numberOfSeats > 0) {
 			ConferenceRoom conferenceRoom = new ConferenceRoomImpl(number, floor, description, roomType, photos,numberOfSeats, equipment);
-			
 			roomDataService.set(conferenceRoom);
 			return conferenceRoom;
 		}
