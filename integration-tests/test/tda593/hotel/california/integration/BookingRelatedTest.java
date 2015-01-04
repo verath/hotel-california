@@ -23,6 +23,7 @@ import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.StayRequest;
+import tda593.hotel.california.booking.util.BookingSwitch;
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.KeyCard;
@@ -144,6 +145,32 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertEquals(0, booking2.getStayRequests().size());
 		
 		assertEquals(0, bookingManager.getStayRequests().size());
+	}
+	
+	/**
+	 * Tests FR #008: "A receptionist should be able to get an overview of all
+	 * the registered guests in the hotel at the moment."
+	 */
+	@Test
+	public void viewRegisteredGuests() {
+		c.setTimeInMillis (System.currentTimeMillis() + 100000);
+		
+		Date to1 = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date from1 = c.getTime();
+		bookAndCheckIn(from1, to1, room101, customer1);
+		
+		Date to2 = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date from2 = c.getTime();
+		bookAndCheckIn(from2, to2, room102, customer2);
+		
+		c.add(Calendar.HOUR_OF_DAY, 12);
+		Date pseudoCurrent = c.getTime();
+		
+		List<Booking> bookings = bookingManager.getBookings(pseudoCurrent, pseudoCurrent);
+		assertEquals(bookings.size(), 1);
+		assertEquals(bookings.get(0).getRoomStay().getRegisteredPersons().get(0), customer2);
 	}
 
 }
