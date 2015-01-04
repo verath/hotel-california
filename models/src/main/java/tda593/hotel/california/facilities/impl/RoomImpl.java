@@ -193,12 +193,12 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	
 	//Constructor for creating Room directly without using setters.
 	public RoomImpl(String number, int floor, String description,
-	RoomType roomType ) {
+	RoomType roomType, EList<String> photos ) {
 		this.roomNumber = number;
 		this.floor = floor;
 		this.description = description;
 		this.roomType = roomType;
-		
+		this.photos = photos;
 	}
 
 	/**
