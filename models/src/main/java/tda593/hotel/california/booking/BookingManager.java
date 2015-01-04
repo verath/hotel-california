@@ -191,4 +191,12 @@ public interface BookingManager extends EObject {
 	 */
 	Map<Booking, EList<StayRequest>> getStayRequests();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false" specialRequestRequired="true" specialRequestOrdered="false"
+	 * @generated
+	 */
+	void setSpecialRequest(Booking booking, String specialRequest);
+
 } // BookingManager

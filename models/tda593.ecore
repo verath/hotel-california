@@ -720,6 +720,10 @@
               </eTypeArguments>
             </eGenericType>
           </eOperations>
+          <eOperations name="setSpecialRequest" ordered="false" lowerBound="1">
+            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
+            <eParameters name="specialRequest" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BookingManagerImpl" eSuperTypes="#//hotel/california/booking/BookingManager">
           <eStructuralFeatures xsi:type="ecore:EReference" name="bookingDataService"

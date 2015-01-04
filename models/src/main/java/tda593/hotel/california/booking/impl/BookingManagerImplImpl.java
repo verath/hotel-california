@@ -665,6 +665,20 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setSpecialRequest(Booking booking, String specialRequest) {
+		if(specialRequest == null) {
+			throw new NullPointerException();
+		}
+		
+		booking.setSpecialRequest(specialRequest);
+		bookingDataService.set(booking);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -781,6 +795,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_STAY_REQUESTS:
 				return getStayRequests();
+			case BookingPackage.BOOKING_MANAGER_IMPL___SET_SPECIAL_REQUEST__BOOKING_STRING:
+				setSpecialRequest((Booking)arguments.get(0), (String)arguments.get(1));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

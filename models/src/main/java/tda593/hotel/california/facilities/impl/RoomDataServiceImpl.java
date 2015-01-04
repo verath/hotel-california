@@ -3,17 +3,13 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;

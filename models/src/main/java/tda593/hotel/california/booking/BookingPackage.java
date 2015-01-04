@@ -842,13 +842,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___GET_STAY_REQUESTS = 20;
 
 	/**
+	 * The operation id for the '<em>Set Special Request</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING = 21;
+
+	/**
 	 * The number of operations of the '<em>Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 21;
+	int BOOKING_MANAGER_OPERATION_COUNT = 22;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -1075,6 +1084,15 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGER_IMPL___GET_STAY_REQUESTS = BOOKING_MANAGER___GET_STAY_REQUESTS;
+
+	/**
+	 * The operation id for the '<em>Set Special Request</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___SET_SPECIAL_REQUEST__BOOKING_STRING = BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING;
 
 	/**
 	 * The number of operations of the '<em>Manager Impl</em>' class.
@@ -2166,6 +2184,16 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__GetStayRequests();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#setSpecialRequest(tda593.hotel.california.booking.Booking, java.lang.String) <em>Set Special Request</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Special Request</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#setSpecialRequest(tda593.hotel.california.booking.Booking, java.lang.String)
+	 * @generated
+	 */
+	EOperation getBookingManager__SetSpecialRequest__Booking_String();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManagerImpl <em>Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2981,6 +3009,14 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_MANAGER___GET_STAY_REQUESTS = eINSTANCE.getBookingManager__GetStayRequests();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Special Request</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING = eINSTANCE.getBookingManager__SetSpecialRequest__Booking_String();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.

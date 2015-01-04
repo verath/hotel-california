@@ -31,7 +31,6 @@ import tda593.hotel.california.booking.LegalEntity;
  * </p>
  *
  * @generated
- * 
  */
 public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container implements CreditCardManagerImpl {
 	/**

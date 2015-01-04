@@ -1431,6 +1431,12 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P34soJJ1EeS5HbafHn7kWQ" value="1"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_c11H0JQ4EeSkgbxbBgd3rw" name="setSpecialRequest">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyBmwJQ4EeSkgbxbBgd3rw" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_r3kosJQ4EeSkgbxbBgd3rw" name="specialRequest">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wrwOUH7MEeS2M9uZ6JBJRQ" name="BookingManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_882MgH7MEeS2M9uZ6JBJRQ" general="_xX22IHZXEeSbBJzXJgLK5Q"/>
