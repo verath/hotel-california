@@ -59,8 +59,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		RoomType type = adminRoomManager.addRoomType("RoomType1", "", null, 10);
 		adminRoomManager.addRoomType("RoomType2", "", null, 5);
 		type2 = adminRoomManager.addRoomType("Type855", "Cool", null, 10);
-		System.out.println(type2);
-		
+				
 
 		// Create a room for each room type
 		int floor = 1;
