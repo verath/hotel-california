@@ -125,8 +125,8 @@ public class KeyCardRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	}
 	
 	/**
-	 * Tests use case from FR #021a: "A receptionist should be able to register
-	 * one or more key cards for a room."
+	 * Tests use case from FR #021b: "A receptionist should be able to
+	 * unregister one or more key cards for a room."
 	 */
 	@Test
 	public void testUnregisterKeyCard() {
