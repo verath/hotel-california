@@ -69,8 +69,8 @@ public class ConferenceRoomImpl extends RoomImpl implements ConferenceRoom {
 	}
 	
 	public ConferenceRoomImpl(String number, int floor, String description,
-			RoomType roomType, int numberOfSeats, EList<String> equipment) {
-		super(number, floor, description, roomType);
+			RoomType roomType, EList<String> photos, int numberOfSeats, EList<String> equipment) {
+		super(number, floor, description, roomType, photos);
 		this.numberOfSeats = numberOfSeats;
 		this.equipment = equipment;
 	}
