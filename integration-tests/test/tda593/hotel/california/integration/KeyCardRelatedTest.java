@@ -167,4 +167,33 @@ public class KeyCardRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		guestRoomReloaded = roomManager.getRoom(guestRoom.getRoomNumber());
 		assertEquals(0, guestRoomReloaded.getAllowedKeyCards().size());
 	}
+	
+	/**
+	 * Tests use case from FR #021c: "An administrator should be able to add
+	 * new key cards to the system."
+	 */
+	@Test
+	public void testAddKeyCard() {
+		assertNull(adminKeyCardManager.getKeyCard("TESTCARD"));
+		adminKeyCardManager.addKeyCard("TESTCARD");
+		
+		// Check if it exists, and has the right ID
+		assertEquals("TESTCARD", adminKeyCardManager.getKeyCard("TESTCARD").getId());
+	}
+	
+	/**
+	 * Tests use case from FR #021d: "An administrator should be able to remove
+	 * key cards from the system."
+	 */
+	@Test
+	public void testRemoveKeyCard() {
+		// Add
+		assertNull(adminKeyCardManager.getKeyCard("TESTCARD"));
+		adminKeyCardManager.addKeyCard("TESTCARD");
+		assertNotNull(adminKeyCardManager.getKeyCard("TESTCARD"));
+		
+		// Then remove
+		adminKeyCardManager.removeKeyCard("TESTCARD");
+		assertNull(adminKeyCardManager.getKeyCard("TESTCARD"));
+	}
 }
