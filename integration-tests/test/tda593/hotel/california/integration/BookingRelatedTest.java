@@ -99,7 +99,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * (such as extra towels or tooth paste), made by a guest during his/her stay.
 	 */
 	@Test
-	public void registerStayRequest() {
+	public void testRegisterStayRequest() {
 		// Time span of bookings: yesterday to now
 		c.setTimeInMillis (System.currentTimeMillis() + 100000);
 		Date to = c.getTime();
@@ -152,7 +152,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * requests, as comments, made by customer, regarding the booking."
 	 */
 	@Test
-	public void registerSpecialRequest() {
+	public void testRegisterSpecialRequest() {
 		// Time span of bookings: yesterday to now
 		c.setTimeInMillis (System.currentTimeMillis() + 100000);
 		Date to = c.getTime();
@@ -182,7 +182,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * the registered guests in the hotel at the moment."
 	 */
 	@Test
-	public void viewRegisteredGuests() {
+	public void testViewRegisteredGuests() {
 		c.setTimeInMillis (System.currentTimeMillis() + 100000);
 		
 		Date to1 = c.getTime();
@@ -208,7 +208,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * history, such as bookings, personal information etc."
 	 */
 	@Test
-	public void viewGuestBookingHistory() {
+	public void testViewGuestBookingHistory() {
 		c.setTimeInMillis (System.currentTimeMillis() + 100000);
 		Date to1 = c.getTime();
 		c.add(Calendar.DATE, -1);
