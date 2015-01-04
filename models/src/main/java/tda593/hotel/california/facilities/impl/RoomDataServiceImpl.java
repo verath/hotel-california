@@ -3,21 +3,27 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.FacilitiesFactory;
 import tda593.hotel.california.facilities.FacilitiesPackage;
 import tda593.hotel.california.facilities.GuestRoom;
+import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomDataService;
 import tda593.hotel.california.facilities.persistence.ConferenceRoomEntity;
 import tda593.hotel.california.facilities.persistence.GuestRoomEntity;
+import tda593.hotel.california.facilities.persistence.KeyCardEntity;
 import tda593.hotel.california.facilities.persistence.RoomEntity;
 import tda593.hotel.california.facilities.persistence.impl.ConferenceRoomEntityImpl;
 import tda593.hotel.california.facilities.persistence.impl.GuestRoomEntityImpl;
@@ -89,6 +95,12 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		room.setIsCleaned(roomEntity.isCleaned());
 		room.setIsOperational(roomEntity.isOperational());
 		room.setRoomType(RoomTypeDataServiceImpl.entityToRoomType(roomEntity.getRoomTypeEntity()));
+		
+		List<KeyCard> keyCards = room.getAllowedKeyCards();
+		for(KeyCardEntity keyCardEntity : roomEntity.getAllowedKeyCards()) {
+			keyCards.add(KeyCardDataServiceImpl.entityToKeyCard(keyCardEntity));
+		}
+		
 		return room;
 	}
 	
@@ -99,6 +111,12 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		roomEntity.setIsCleaned(room.isCleaned());
 		roomEntity.setIsOperational(room.isOperational());
 		roomEntity.setRoomTypeEntity(RoomTypeDataServiceImpl.roomTypeToEntity(room.getRoomType()));
+		
+		List<KeyCardEntity> keyCardEntities = roomEntity.getAllowedKeyCards();
+		for(KeyCard keyCard : room.getAllowedKeyCards()) {
+			keyCardEntities.add(KeyCardDataServiceImpl.keyCardToEntity(keyCard));
+		}
+		
 		return roomEntity;
 	}
 	
