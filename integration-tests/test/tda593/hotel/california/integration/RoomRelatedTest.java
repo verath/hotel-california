@@ -98,9 +98,13 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * Tests the FR #043: A customer should be able to preview different room types by viewing photos.
 	 */
 	@Test
-	public void viewRoomPhotos() {
+	public void testViewRoomPhotos() {
 		Room room = roomManager.getRoom(guestRoom.getRoomNumber());
 		int i = 0;
+		
+		// Make sure there are actually any photos in the room, else loop below will not be entered
+		assertNotNull(room.getPhotos());
+		assertEquals(room.getPhotos().size(), photos.size());
 		for(String s : room.getPhotos()) {
 			assertEquals(photos.get(i++), s);
 		}
