@@ -3,6 +3,7 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -396,7 +397,7 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public void registerKeyCard(KeyCard keyCard) {
-		if(!getAllowedKeyCards().contains(keyCard)) {
+		if(!new ArrayList<KeyCard>(getAllowedKeyCards()).contains(keyCard)) {
 			getAllowedKeyCards().add(keyCard);
 		}
 	}

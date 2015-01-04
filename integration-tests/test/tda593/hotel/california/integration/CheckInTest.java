@@ -172,8 +172,8 @@ public class CheckInTest extends AbstractHotelCaliforniaIntegrationTest {
 		// For each valid key card number that the actor supplies, 
 		// the card is registered on the assigned room of the booking
 		List<KeyCard> allowedKeyCard = roomManager.getRoom(roomNumber).getAllowedKeyCards();
-		//assertTrue(allowedKeyCard.contains(samKeyCard));
-		//assertTrue(allowedKeyCard.contains(bobKeyCard));
+		assertTrue(new ArrayList<KeyCard>(allowedKeyCard).contains(samKeyCard));
+		assertTrue(new ArrayList<KeyCard>(allowedKeyCard).contains(bobKeyCard));
 		
 		// If the booking isn’t already paid, a booking bill will be created.
 		assertTrue(billManager.getBookingBill(controllBooking) != null);
