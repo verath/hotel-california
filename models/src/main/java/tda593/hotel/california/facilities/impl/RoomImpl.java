@@ -408,7 +408,13 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public void unregisterKeyCard(KeyCard keyCard) {
-		getAllowedKeyCards().remove(keyCard);
+		// Walk-around for the ecore lists, which apparently doen't use equals().
+		for(KeyCard current : getAllowedKeyCards()) {
+			if(current.equals(keyCard)) {
+				getAllowedKeyCards().remove(current);
+				break;
+			}
+		}
 	}
 
 	/**
