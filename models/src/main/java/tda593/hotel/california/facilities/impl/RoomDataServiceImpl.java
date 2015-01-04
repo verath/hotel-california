@@ -101,6 +101,8 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 			keyCards.add(KeyCardDataServiceImpl.entityToKeyCard(keyCardEntity));
 		}
 		
+		room.getPhotos().addAll(roomEntity.getPhotos());
+		
 		return room;
 	}
 	
@@ -116,6 +118,8 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		for(KeyCard keyCard : room.getAllowedKeyCards()) {
 			keyCardEntities.add(KeyCardDataServiceImpl.keyCardToEntity(keyCard));
 		}
+		
+		roomEntity.getPhotos().addAll(room.getPhotos());
 		
 		return roomEntity;
 	}
