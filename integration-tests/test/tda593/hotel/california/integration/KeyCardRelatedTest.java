@@ -111,17 +111,17 @@ public class KeyCardRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertTrue(conferenceRoomKeyCards.contains(keyCardManager.getKeyCard("KEYCARD5")));
 		
 		// A key card should be able to open two rooms
-		//roomManager.registerKeyCard("KEYCARD3", guestRoom.getRoomNumber());
+		roomManager.registerKeyCard("KEYCARD3", guestRoom.getRoomNumber());
 		
-		//guestRoomReloaded = roomManager.getRoom(guestRoom.getRoomNumber());
-		//conferenceRoomReloaded = roomManager.getRoom(conferenceRoom.getRoomNumber());
-		//guestRoomKeyCards = new HashSet<KeyCard>(guestRoomReloaded.getAllowedKeyCards());
-		//conferenceRoomKeyCards = new HashSet<KeyCard>(conferenceRoomReloaded.getAllowedKeyCards());
+		guestRoomReloaded = roomManager.getRoom(guestRoom.getRoomNumber());
+		conferenceRoomReloaded = roomManager.getRoom(conferenceRoom.getRoomNumber());
+		guestRoomKeyCards = new HashSet<KeyCard>(guestRoomReloaded.getAllowedKeyCards());
+		conferenceRoomKeyCards = new HashSet<KeyCard>(conferenceRoomReloaded.getAllowedKeyCards());
 		
-		//assertEquals(3, guestRoomKeyCards.size());
-		//assertEquals(3, conferenceRoomKeyCards.size());
-		//assertTrue(guestRoomKeyCards.contains(keyCardManager.getKeyCard("KEYCARD3")));
-		//assertTrue(conferenceRoomKeyCards.contains(keyCardManager.getKeyCard("KEYCARD3")));
+		assertEquals(3, guestRoomKeyCards.size());
+		assertEquals(3, conferenceRoomKeyCards.size());
+		assertTrue(guestRoomKeyCards.contains(keyCardManager.getKeyCard("KEYCARD3")));
+		assertTrue(conferenceRoomKeyCards.contains(keyCardManager.getKeyCard("KEYCARD3")));
 	}
 	
 	/**
@@ -152,15 +152,14 @@ public class KeyCardRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertEquals(0, conferenceRoomReloaded.getAllowedKeyCards().size());
 		
 		// Make sure the key card can be shared and unregistered for only the specified room
-		//roomManager.registerKeyCard("KEYCARD1", conferenceRoom.getRoomNumber());
-		//roomManager.unregisterKeyCard("KEYCARD1", conferenceRoom.getRoomNumber());
+		roomManager.registerKeyCard("KEYCARD1", conferenceRoom.getRoomNumber());
+		roomManager.unregisterKeyCard("KEYCARD1", conferenceRoom.getRoomNumber());
 		
-		//guestRoomReloaded = roomManager.getRoom(guestRoom.getRoomNumber());
-		//conferenceRoomReloaded = roomManager.getRoom(conferenceRoom.getRoomNumber());
+		guestRoomReloaded = roomManager.getRoom(guestRoom.getRoomNumber());
+		conferenceRoomReloaded = roomManager.getRoom(conferenceRoom.getRoomNumber());
 		
-		//assertEquals(2, guestRoomReloaded.getAllowedKeyCards().size());
-		//assertEquals(0, conferenceRoomReloaded.getAllowedKeyCards().size());
-		
+		assertEquals(2, guestRoomReloaded.getAllowedKeyCards().size());
+		assertEquals(0, conferenceRoomReloaded.getAllowedKeyCards().size());
 		
 		// Unregistering all key cards should work too
 		roomManager.unregisterAllKeyCards(guestRoom.getRoomNumber());

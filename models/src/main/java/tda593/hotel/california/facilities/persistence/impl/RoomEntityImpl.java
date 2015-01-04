@@ -13,6 +13,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
 
 import tda593.hotel.california.facilities.persistence.DisabilityApprovalEntity;
 import tda593.hotel.california.facilities.persistence.KeyCardEntity;
@@ -55,7 +56,7 @@ public class RoomEntityImpl implements RoomEntity {
 	@OneToOne(targetEntity = RoomTypeEntityImpl.class)
 	private RoomTypeEntity roomTypeEntity;
 
-	@OneToMany(targetEntity = KeyCardEntityImpl.class, cascade = {CascadeType.ALL})
+	@ManyToMany(targetEntity = KeyCardEntityImpl.class, cascade = {CascadeType.ALL})
 	private List<KeyCardEntity> allowedKeyCards;
 
 	@OneToMany(targetEntity = DisabilityApprovalEntityImpl.class, cascade = {CascadeType.ALL})
