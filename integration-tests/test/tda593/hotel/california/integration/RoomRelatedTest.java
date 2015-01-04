@@ -31,6 +31,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	private LegalEntityManager legalEntityManager;
 	private Booking booking;
 	private Room room;
+	private RoomType roomType;
 
 	private EList<String> photos;
 
@@ -67,7 +68,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		
 		//Create Rooms without loop
 		guestRoom = adminRoomManager.addGuestRoom("101", 1, "", null, photos, adminRoomManager.getRoomTypes().get(0), 2, 0);
-		conferenceRoom = adminRoomManager.addConferenceRoom("201", 2, "HEJSAN", null, photos, type, 12, null);
+		conferenceRoom = adminRoomManager.addConferenceRoom("201", 2, "Big Room", null, photos, type, 12, null);
 
 		
 		Person customer = legalEntityManager.getPerson("1");
@@ -107,7 +108,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * Tests the FR #029b:
 	 */
 	@Test
-	public void createAddRoom() {
+	public void createRoom() {
 		//RoomType is needed first
 		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
 		Room newRoom = adminRoomManager.addGuestRoom("3", 4, "A nice Room", null, photos, type1, 1, 0);
@@ -125,11 +126,21 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	public void deleteRoom() {
 		if(booking.getRoomStay().isActive() == false){
 		boolean Result = adminRoomManager.removeRoom(room.getRoomNumber());
-			assertTrue(Result == true);
+		assertTrue(Result == true);
+		//Another way of doing this, would be to deactivate a room 
+		//instead of actually removing the room and all it's information.
+		//The way I would that is to set it to false and then test it. Just like the commented code under
+		// room.setIsOperational(false); 
+		//assertEquals(room.isOperational(), false);
 		}
-		
-	
 	}
+	
+	@Test
+	public void deleteRoomType(){
+		adminRoomManager.removeRoomType(roomType);
+		
+
+}
 	@Test
 	public void setTravelInformation() {
 		TravelInformation travel;
