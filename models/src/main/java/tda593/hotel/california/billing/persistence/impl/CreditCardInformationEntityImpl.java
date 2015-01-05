@@ -40,6 +40,8 @@ public class CreditCardInformationEntityImpl implements
 	@Id
 	private String cardNumber;
 
+	private String ccv;
+
 	private String firstName;
 	private String lastName;
 
@@ -61,6 +63,14 @@ public class CreditCardInformationEntityImpl implements
 
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public String getCcv() {
+		return ccv;
+	}
+
+	public void setCcv(String ccv) {
+		this.ccv = ccv;
 	}
 
 	public void setFirstName(String cardHolder) {

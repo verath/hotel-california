@@ -60,6 +60,10 @@ public interface CreditCardInformationEntity {
 	 */
 	void setCardNumber(String value);
 
+	String getCcv();
+
+	void setCcv(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Card Holder</b></em>' attribute. <!--
 	 * begin-user-doc -->

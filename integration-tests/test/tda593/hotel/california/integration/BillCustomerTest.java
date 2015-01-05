@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,7 +41,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 	private Service bananas, champagne;
 	private Person customer1;
 	private Organization customer2;
-	private String validCreditCardNumber = "2190 8910 1029 8908 6752";
+	private String validCreditCardNumber = "21908910102989086752";
 	private String validCCV = "902";
 	private String validFirstName = "Bob", validLastName = "Smith";
 	private Date validDate;
@@ -63,24 +64,36 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 		customer2 = legalEntityManager.createOrganization("The uber company", "819201-9190", "031938201", "theone@uber.com");
 		
 		// Add valid create credit cards for the entities
-		c.set(2019, 8, 1);
-		adminBankingManager.addCreditCard("3019 0189 0120 8190 9281", "980", c.get(Calendar.MONDAY), c.get(Calendar.YEAR), customer1.getFirstname(), 
-				customer1.getLastname());
-		
-		c.set(2018, 9, 1);
+		c.set(18, 9, 1);
 		validDate = c.getTime();
-		adminBankingManager.addCreditCard(validCreditCardNumber, validCCV, c.get(Calendar.MONDAY), c.get(Calendar.YEAR), 
+		adminBankingManager.addCreditCard(validCreditCardNumber, validCCV, c.get(Calendar.MONTH), c.get(Calendar.YEAR),
 				validFirstName, validLastName);
+
+		c.set(19, 8, 1);
+		adminBankingManager.addCreditCard("3019018901208190", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
+				customer1.getLastname());
 		
 		// set valid info for customer1
 		creditCardManager.setCreditCardInformation(customer1, customer1.getFirstname(), customer1.getLastname(), 
-				"3019 0189 0120 8190 9281", "980", c.getTime(), bankingManager);
+				"3019018901208190", "980", c.getTime(), bankingManager);
 
 		
 		// Set up some services
 		bananas = adminServiceManager.createService("Bananas", 12.250);
 		champagne = adminServiceManager.createService("Champagne", 99.99);
 		
+	}
+
+	@After
+	public void tearDown() {
+		c.set(18, 9, 1);
+		validDate = c.getTime();
+		adminBankingManager.removeCreditCard(validCreditCardNumber, validCCV, c.get(Calendar.MONTH), c.get(Calendar.YEAR),
+				validFirstName, validLastName);
+
+		c.set(19, 8, 1);
+		adminBankingManager.removeCreditCard("3019018901208190", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
+				customer1.getLastname());
 	}
 	
 	/**

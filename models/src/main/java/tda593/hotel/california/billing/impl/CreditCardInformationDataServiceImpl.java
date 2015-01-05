@@ -89,7 +89,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 	 * @generated NOT
 	 */
 	public int count() {
-		Long count = entityManager.createQuery("SELECT COUNT(number) FROM CreditCardInformationEntityImpl", Long.class).getSingleResult();
+		Long count = entityManager.createQuery("SELECT COUNT(cardNumber) FROM CreditCardInformationEntityImpl", Long.class).getSingleResult();
 		// TODO : change to long
 		return count.intValue();
 	}
@@ -166,6 +166,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		cc.setFirstName(entity.getFirstName());
 		cc.setLastName(entity.getLastName());
 		cc.setCardNumber(entity.getCardNumber());
+		cc.setCcv(entity.getCcv());
 		cc.setExpirationDate(entity.getExpirationDate());
 		cc.setLegalEntity(LegalEntityDataServiceImpl.entityToLegalEntity(entity.getOwner()));
 		return cc;
@@ -179,6 +180,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		cce.setFirstName(cc.getFirstName());
 		cce.setLastName(cc.getLastName());
 		cce.setCardNumber(cc.getCardNumber());
+		cce.setCcv(cc.getCcv());
 		cce.setExpirationDate(cc.getExpirationDate());
 		cce.setOwner(LegalEntityDataServiceImpl.legalEntityToEntity(cc.getLegalEntity()));
 		return cce;

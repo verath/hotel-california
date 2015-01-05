@@ -29,7 +29,12 @@ public class TestAdminBankingManager {
     }
 
     public boolean addCreditCard(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
+        if(expiryYear > 20) {
+            throw new IllegalArgumentException("Credit card year should not include the century (should be 14 instead of 2014)");
+        }
+
         try {
+            administratorRequires.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
             return administratorRequires.addCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
         } catch (SOAPException e) {
             e.printStackTrace();
