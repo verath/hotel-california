@@ -109,7 +109,7 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		bookAndCheckIn(from, to, room101);
 		
 		// Add a valid credit card to the bankingManager
-		c.setTimeInMillis(System.currentTimeMillis());
+		c.set(18, 5, 5);
 		adminBankingManager.addCreditCard("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe");
 		adminBankingManager.makeDeposit("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
@@ -209,13 +209,14 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 		// actor wants to change credit card information and tries again
+		c.set(18, 5, 5);
 		adminBankingManager.addCreditCard("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe");
 		adminBankingManager.makeDeposit("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe", 20000000);
 
 		creditCardManager.setCreditCardInformation(bill.getCustomer(), 
-				"John", "Doe", "3819 2910 2910 2910 9201", "669", from, bankingManager);
+				"John", "Doe", "3819 2910 2910 2910 9201", "669", c.getTime(), bankingManager);
 		// Correct info was entered
 		assertTrue(billManager.markBillAsPaid(bill, true, bankingManager, creditCardManager));
 		
