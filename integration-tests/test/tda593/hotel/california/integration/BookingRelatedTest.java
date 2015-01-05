@@ -26,6 +26,7 @@ import tda593.hotel.california.booking.StayRequest;
 import tda593.hotel.california.booking.util.BookingSwitch;
 import tda593.hotel.california.facilities.AdminKeyCardManager;
 import tda593.hotel.california.facilities.AdminRoomManager;
+import tda593.hotel.california.facilities.GuestRoom;
 import tda593.hotel.california.facilities.KeyCard;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
@@ -37,6 +38,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	private BillManager billManager;
 	private LegalEntityManager legalEntityManager;
 	private RoomManager roomManager;
+	private AdminRoomManager adminRoomManager;
 	private CreditCardManager creditCardManager;
 	private BankingManager bankingManager;
 	private AdminKeyCardManager keyCardManager;
@@ -63,7 +65,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		adminBankingManager = managersHandler.getTestAdminBankingManager();
 		
 		LegalEntityManager legalEntityManager = managersHandler.getLegalEntityManager();
-		AdminRoomManager adminRoomManager = managersHandler.getAdminRoomManager();
+		adminRoomManager = managersHandler.getAdminRoomManager();
 
 		// Create some persons
 		customer1 = legalEntityManager.createPerson(personBobFirstName, personBobLastName, "2", "0712345678", "bob@smith.com");
@@ -84,13 +86,15 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 
 	}
 
-	private void bookAndCheckIn(Date from, Date to, Room room, Person customer) {
+	private Booking bookAndCheckIn(Date from, Date to, Room room, Person customer) {
 		Booking booking = bookingManager.createBooking(from, to, customer, room.getRoomType());
 		bookingManager.registerRoom(booking, room);
 		BasicEList<Person> guests = new BasicEList<Person>();
 		guests.add(customer);
 		bookingManager.checkIn(booking, guests);
 		billManager.createBookingBill(customer, booking);
+		
+		return booking;
 	}
 	
 	/**
@@ -224,5 +228,91 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		bookAndCheckIn(from1, to1, room102, customer1);
 		
 		assertEquals(3, bookingManager.getBookings(customer1).size());
+	}
+	
+	/**
+	 * Tests FR #010: "A receptionist should be able to modify a booking."
+	 */
+	@Test
+	public void testModifyBookingDates() {
+		RoomType limitedRoomType = adminRoomManager.addRoomType("LimtiedRoomType", "", null, 10);
+		GuestRoom room = adminRoomManager.addGuestRoom("999", 1, "", null, null, limitedRoomType, 2, 0);
+		
+		Date from, to;
+		
+		// Customer 2 booking, later than customer 1's booking until the collision check below
+		c.set(2015, 1, 21);
+		from = c.getTime();
+		c.set(2015, 1, 22);
+		to = c.getTime();
+		bookAndCheckIn(from, to, room, customer2);
+		
+		// Customer 1 booking and changes follow...
+		c.set(2015, 1, 10);
+		from = c.getTime();
+		c.set(2015, 1, 20);
+		to = c.getTime();
+		Booking booking = bookAndCheckIn(from, to, room, customer1);
+		
+		// Shrink start
+		c.set(2015, 1, 11);
+		from = c.getTime();
+		c.set(2015, 1, 20);
+		to = c.getTime();
+		assertTrue(bookingManager.changeBookingDates(booking, from, to));
+		booking = bookingManager.getBooking(booking.getId());// Reload
+		assertEquals(from, booking.getStartDate());
+		assertEquals(to, booking.getEndDate());
+		
+		// Shrink end
+		c.set(2015, 1, 11);
+		from = c.getTime();
+		c.set(2015, 1, 19);
+		to = c.getTime();
+		assertTrue(bookingManager.changeBookingDates(booking, from, to));
+		booking = bookingManager.getBooking(booking.getId());// Reload
+		assertEquals(from, booking.getStartDate());
+		assertEquals(to, booking.getEndDate());
+		
+		// Extend both sides of interval
+		c.set(2015, 1, 10);
+		from = c.getTime();
+		c.set(2015, 1, 20);
+		to = c.getTime();
+		assertTrue(bookingManager.changeBookingDates(booking, from, to));
+		booking = bookingManager.getBooking(booking.getId());// Reload
+		assertEquals(from, booking.getStartDate());
+		assertEquals(to, booking.getEndDate());
+		
+		// Extend end, end just touches but doesn't overlap the next booking
+		c.set(2015, 1, 10);
+		from = c.getTime();
+		c.set(2015, 1, 21);
+		to = c.getTime();
+		assertTrue(bookingManager.changeBookingDates(booking, from, to));
+		booking = bookingManager.getBooking(booking.getId());// Reload
+		assertEquals(from, booking.getStartDate());
+		assertEquals(to, booking.getEndDate());
+		
+		// Extend beginning
+		c.set(2015, 1, 9);
+		from = c.getTime();
+		c.set(2015, 1, 21);
+		to = c.getTime();
+		assertTrue(bookingManager.changeBookingDates(booking, from, to));
+		booking = bookingManager.getBooking(booking.getId());// Reload
+		assertEquals(from, booking.getStartDate());
+		assertEquals(to, booking.getEndDate());
+		
+		// Overlap at end and fail, don't modify booking
+		Date lastTo = to;
+		c.set(2015, 1, 9);
+		from = c.getTime();
+		c.set(2015, 1, 22);
+		to = c.getTime();
+		assertFalse(bookingManager.changeBookingDates(booking, from, to));
+		booking = bookingManager.getBooking(booking.getId());// Reload
+		assertEquals(from, booking.getStartDate());
+		assertEquals(lastTo, booking.getEndDate());
 	}
 }
