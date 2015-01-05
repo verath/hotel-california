@@ -12,11 +12,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import tda593.hotel.california.booking.Booking;
-import tda593.hotel.california.booking.BookingManager;
-import tda593.hotel.california.booking.LegalEntityManager;
-import tda593.hotel.california.booking.Person;
-import tda593.hotel.california.booking.TravelInformation;
+import tda593.hotel.california.booking.*;
+import tda593.hotel.california.booking.impl.TravelInformationImpl;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.GuestRoom;
@@ -34,10 +31,6 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	private LegalEntityManager legalEntityManager;
 	private Booking booking;
 	private Room room;
-	private TravelInformation travel;
-
-
-
 
 	private EList<String> photos;
 
@@ -91,7 +84,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	}
 		
 		
-		
+
 
 
 	/**
@@ -138,15 +131,15 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	
 	}
 	@Test
-	public void setTravelInformation(){ //TODO NEEDS FIX
-		//Maybe create a constructor for TravelInformation
+	public void setTravelInformation() {
+		TravelInformation travel;
+		travel = BookingFactory.eINSTANCE.createTravelInformation();
 		travel.setId(1);
 		travel.setComment("Some comment");
 		travel.setTrackingId("501");
 		travel.setPredecessor(null);
 		booking.setTravelInformation(travel);
-		assertTrue(booking.getTravelInformation() !=null);
-		
+		assertNotNull(booking.getTravelInformation());
 	}
 }
 		
