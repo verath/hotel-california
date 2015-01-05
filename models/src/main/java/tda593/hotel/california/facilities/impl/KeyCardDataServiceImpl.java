@@ -50,8 +50,8 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		return keyCard;
 	}
 	
-	public static KeyCardEntity keyCardToEntity(KeyCard keyCard) {
-		KeyCardEntity keyCardEntity = new KeyCardEntityImpl();
+	public static KeyCardEntityImpl keyCardToEntity(KeyCard keyCard) {
+		KeyCardEntityImpl keyCardEntity = new KeyCardEntityImpl();
 		keyCardEntity.setId(keyCard.getId());
 		return keyCardEntity;
 	}
@@ -134,7 +134,8 @@ public class KeyCardDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public void delete(KeyCard keyCard) {
-		entityManager.remove(keyCardToEntity(keyCard));
+		// If it doesn't exist in the database, merge it first, then remove.
+		entityManager.remove(entityManager.contains(keyCardToEntity(keyCard)) ? keyCardToEntity(keyCard) : entityManager.merge(keyCardToEntity(keyCard)));
 	}
 
 	/**
