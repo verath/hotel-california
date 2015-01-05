@@ -1,7 +1,6 @@
 package tda593.hotel.california.integration;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -20,6 +19,7 @@ import tda593.hotel.california.billing.CreditCardInformation;
 import tda593.hotel.california.billing.CreditCardManager;
 import tda593.hotel.california.billing.Discount;
 import tda593.hotel.california.billing.Service;
+import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Organization;
@@ -35,7 +35,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 	private TestAdminBankingManager adminBankingManager;
 	private AdminServiceManager adminServiceManager;
 	private AdminDiscountManager discountManager;
-	
+	private BookingManager bookingManager;
 	private Calendar c = Calendar.getInstance();
 	
 	private Service bananas, champagne;
@@ -45,6 +45,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 	private String validCCV = "902";
 	private String validFirstName = "Bob", validLastName = "Smith";
 	private Date validDate;
+	private Bill bill;
 	
 	@Before
 	public void setUpData() {
@@ -248,4 +249,19 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 				c.get(Calendar.MONTH), c.get(Calendar.YEAR), cc.getFirstName(), cc.getLastName()));
 		
 	}
+	@Test
+	public void testMergeBills(){
+		Bill bill1 = billManager.createBill(customer1);
+		Bill bill2 = billManager.createBill(customer1);
+		billManager.billItem(bill1, 3, bananas);
+		billManager.billItem(bill2, 1, champagne);
+		
+		 billManager.addSubBill(bill1, bill2);
+		 billManager.publishBill(bill2);
+		 billManager.getBills(customer1);
+		 assertEquals(bill2.isPublished(), true);
+		
+		}
+		
 }
+
