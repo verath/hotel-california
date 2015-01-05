@@ -259,8 +259,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public EList<Organization> findOrganization(String name) {
-		TypedQuery<OrganizationEntityImpl> query = entityManager.createQuery("FROM OrganizationEntityImpl WHERE name LIKE :orgname"
-				+ " AND lastname LIKE :orgname", OrganizationEntityImpl.class);
+		TypedQuery<OrganizationEntityImpl> query = entityManager.createQuery("FROM OrganizationEntityImpl WHERE name LIKE :orgname", OrganizationEntityImpl.class);
 		query.setParameter("orgname", name);
 		List<OrganizationEntityImpl> results = query.getResultList();
 		EList<Organization> entityResults = new BasicEList<Organization>(results.size());

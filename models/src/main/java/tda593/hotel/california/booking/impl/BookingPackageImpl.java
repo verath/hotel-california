@@ -728,6 +728,15 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBookingManager__SetSpecialRequest__Booking_String() {
+		return bookingManagerEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBookingManagerImpl() {
 		return bookingManagerImplEClass;
 	}
@@ -1094,6 +1103,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___ADD_STAY_REQUEST__BOOKING_STRING);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST);
 		createEOperation(bookingManagerEClass, BOOKING_MANAGER___GET_STAY_REQUESTS);
+		createEOperation(bookingManagerEClass, BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING);
 
 		bookingManagerImplEClass = createEClass(BOOKING_MANAGER_IMPL);
 		createEReference(bookingManagerImplEClass, BOOKING_MANAGER_IMPL__BOOKING_DATA_SERVICE);
@@ -1276,7 +1286,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theFacilitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_Room(), null, "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingManager__CreateBooking__Date_Date_LegalEntity_Room(), this.getBooking(), "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLegalEntity(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1331,6 +1341,10 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 		EGenericType g3 = createEGenericType(this.getStayRequest());
 		g2.getETypeArguments().add(g3);
 		initEOperation(op, g1);
+
+		op = initEOperation(getBookingManager__SetSpecialRequest__Booking_String(), null, "setSpecialRequest", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "specialRequest", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bookingManagerImplEClass, BookingManagerImpl.class, "BookingManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingManagerImpl_BookingDataService(), this.getBookingDataService(), null, "bookingDataService", null, 1, 1, BookingManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

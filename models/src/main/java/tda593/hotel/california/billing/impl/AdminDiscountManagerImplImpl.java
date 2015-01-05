@@ -91,7 +91,7 @@ public class AdminDiscountManagerImplImpl extends DiscountManagerImplImpl implem
 	 * @generated NOT
 	 */
 	public Discount addSumDiscount(String code, String name, double sum) {
-		if(code != null && !code.isEmpty() && name != null && !code.isEmpty() && sum > 0) {
+		if(code != null && !code.isEmpty() && name != null && !name.isEmpty() && sum > 0) {
 			Discount discount = new SumDiscountImpl(code, name, sum);
 			discountDataService.set(discount);
 			return discount;
@@ -106,7 +106,7 @@ public class AdminDiscountManagerImplImpl extends DiscountManagerImplImpl implem
 	 * @generated NOT
 	 */
 	public void createDiscountLimitForDiscount(Discount discount, Date from, Date to, EList<LegalEntity> users, int usesAmount) {
-		if(discount != null) {
+		if(discount != null && DateUtil.isDateRangeValid(from, to) && users != null && users.size() > 0 && usesAmount >= 0) {
 			DiscountLimit limit = new DiscountLimitImpl(from, to, users, usesAmount);
 			discount.setDiscountLimit(limit);
 			discountDataService.set(discount);
@@ -119,9 +119,9 @@ public class AdminDiscountManagerImplImpl extends DiscountManagerImplImpl implem
 	 * @generated NOT
 	 */
 	public void setAmountLimit(Discount discount, int usesAmount) {
-		if(discount != null) {
+		if(discount != null && usesAmount >= 0) {
 			DiscountLimit limit = discount.getDiscountLimit();
-			if(limit != null && usesAmount > 0) {
+			if(limit != null) {
 				limit.setTimesLeftToUse(usesAmount);
 				discountDataService.set(discount);
 			}
@@ -134,7 +134,7 @@ public class AdminDiscountManagerImplImpl extends DiscountManagerImplImpl implem
 	 * @generated NOT
 	 */
 	public void setDateRangeLimit(Discount discount, Date validFrom, Date validTo) {
-		if(discount != null && validFrom != null && validTo != null && DateUtil.isDateRangeValid(validFrom, validTo)) {
+		if(discount != null && DateUtil.isDateRangeValid(validFrom, validTo)) {
 			DiscountLimit limit = discount.getDiscountLimit();
 			if(limit != null) {
 				limit.setStartDate(validFrom);

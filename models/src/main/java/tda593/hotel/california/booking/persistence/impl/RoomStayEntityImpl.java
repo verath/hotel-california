@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -52,7 +53,7 @@ public class RoomStayEntityImpl implements RoomStayEntity {
 	@OneToOne(targetEntity = RoomEntityImpl.class)
 	private RoomEntity roomEntity;
 
-	@OneToMany(targetEntity = PersonEntityImpl.class, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+	@ManyToMany(targetEntity = PersonEntityImpl.class, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<PersonEntity> personEntities;
 
 	@OneToMany(targetEntity = StayRequestEntityImpl.class, cascade = {CascadeType.ALL})

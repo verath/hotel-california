@@ -113,7 +113,11 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public EList<Person> findPerson(String firstname, String lastname) {
 		EList<Person> matches = new BasicEList<Person>(); 
-		matches.addAll(legalEntityDataService.findPerson(firstname, lastname));
+
+		if(firstname != null && !firstname.isEmpty() && lastname != null && !lastname.isEmpty()) {
+			matches.addAll(legalEntityDataService.findPerson(firstname, lastname));
+		}
+		
 		return matches;
 	}
 
@@ -124,7 +128,11 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public EList<Organization> findOrganization(String name) {
 		EList<Organization> matches = new BasicEList<Organization>(); 
-		matches.addAll(legalEntityDataService.findOrganization(name));
+		
+		if(name != null && !name.isEmpty()) {
+			matches.addAll(legalEntityDataService.findOrganization(name));
+		}
+		
 		return matches;
 	}
 
@@ -134,7 +142,11 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Organization getOrganization(String organizationNumber) {
-		return legalEntityDataService.getOrganization(organizationNumber);
+		if(organizationNumber != null && !organizationNumber.isEmpty()) {
+			return legalEntityDataService.getOrganization(organizationNumber);
+		}
+		
+		return null;
 	}
 
 	/**
@@ -143,7 +155,11 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Person getPerson(String SSN) {
-		return legalEntityDataService.getPerson(SSN);
+		if(SSN != null && !SSN.isEmpty()) {
+			return legalEntityDataService.getPerson(SSN);
+		}
+		
+		return null;
 	}
 
 	/**
@@ -161,14 +177,19 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Person createPerson(String firstname, String lastname, String SSN, String phone, String email) {
-		Person person = BookingFactory.eINSTANCE.createPerson();
-		person.setFirstname(firstname);
-		person.setLastname(lastname);
-		person.setSocialSecurityNumber(SSN);
-		person.setPhone(phone);
-		person.setEmail(email);
-		legalEntityDataService.set(person);
-		return person;
+		if(firstname != null && !firstname.isEmpty() && lastname != null && !lastname.isEmpty() 
+				&& SSN != null && !SSN.isEmpty() && phone != null && !phone.isEmpty() && isEmailAddressValid(email)) {
+			Person person = BookingFactory.eINSTANCE.createPerson();
+			person.setFirstname(firstname);
+			person.setLastname(lastname);
+			person.setSocialSecurityNumber(SSN);
+			person.setPhone(phone);
+			person.setEmail(email);
+			legalEntityDataService.set(person);
+			return person;
+		}
+		
+		return null;
 	}
 
 	/**
@@ -177,13 +198,29 @@ public class LegalEntityManagerImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Organization createOrganization(String name, String organizationNumber, String phone, String email) {
-		Organization organization = BookingFactory.eINSTANCE.createOrganization();
-		organization.setName(name);
-		organization.setOrganizationNumber(organizationNumber);
-		organization.setPhone(phone);
-		organization.setEmail(email);
-		legalEntityDataService.set(organization);
-		return organization;
+		if(name != null && !name.isEmpty() && organizationNumber != null && !organizationNumber.isEmpty() && phone != null && !phone.isEmpty() && isEmailAddressValid(email)) {
+			Organization organization = BookingFactory.eINSTANCE.createOrganization();
+			organization.setName(name);
+			organization.setOrganizationNumber(organizationNumber);
+			organization.setPhone(phone);
+			organization.setEmail(email);
+			legalEntityDataService.set(organization);
+			return organization;
+		}
+		
+		return null;
+	}
+	
+	private boolean isEmailAddressValid(String email) {
+		if(email != null && !email.isEmpty()) {
+			// This is supposedly a good regex for validating e-mails. Worked on all the cases I (Jakob) tried
+			// Source: 
+			// http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address
+			String regex = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$";
+			return email.matches(regex);
+		}
+		
+		return false;
 	}
 
 	/**

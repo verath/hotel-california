@@ -3,6 +3,7 @@
 package tda593.hotel.california.facilities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -193,12 +194,12 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	
 	//Constructor for creating Room directly without using setters.
 	public RoomImpl(String number, int floor, String description,
-	RoomType roomType ) {
+	RoomType roomType, EList<String> photos ) {
 		this.roomNumber = number;
 		this.floor = floor;
 		this.description = description;
 		this.roomType = roomType;
-		
+		this.photos = photos;
 	}
 
 	/**
@@ -396,7 +397,7 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public void registerKeyCard(KeyCard keyCard) {
-		if(!getAllowedKeyCards().contains(keyCard)) {
+		if(!new ArrayList<KeyCard>(getAllowedKeyCards()).contains(keyCard)) {
 			getAllowedKeyCards().add(keyCard);
 		}
 	}
@@ -407,7 +408,13 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public void unregisterKeyCard(KeyCard keyCard) {
-		getAllowedKeyCards().remove(keyCard);
+		// Walk-around for the ecore lists, which apparently doen't use equals().
+		for(KeyCard current : getAllowedKeyCards()) {
+			if(current.equals(keyCard)) {
+				getAllowedKeyCards().remove(current);
+				break;
+			}
+		}
 	}
 
 	/**

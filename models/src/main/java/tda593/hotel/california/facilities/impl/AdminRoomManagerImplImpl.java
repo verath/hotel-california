@@ -114,7 +114,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 */
 	public GuestRoom addGuestRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfBeds, int numberOfExtraBeds) {
 		if(isRoomParametersValid(number, floor, description, disabilityApprovals, photos, roomType) && numberOfBeds > 0) {
-			GuestRoom guestRoom = new GuestRoomImpl(number, floor, description, roomType, numberOfBeds, numberOfExtraBeds);
+			GuestRoom guestRoom = new GuestRoomImpl(number, floor, description, roomType, photos, numberOfBeds, numberOfExtraBeds);
 			
 			roomDataService.set(guestRoom);
 			return guestRoom;
@@ -130,7 +130,7 @@ public class AdminRoomManagerImplImpl extends RoomManagerImplImpl implements Adm
 	 */
 	public ConferenceRoom addConferenceRoom(String number, int floor, String description, EList<DisabilityApproval> disabilityApprovals, EList<String> photos, RoomType roomType, int numberOfSeats, EList<String> equipment) {
 		if(isRoomParametersValid(number, floor, description, disabilityApprovals, photos, roomType) && numberOfSeats > 0) {
-			ConferenceRoom conferenceRoom = new ConferenceRoomImpl(number, floor, description, roomType, numberOfSeats, equipment);
+			ConferenceRoom conferenceRoom = new ConferenceRoomImpl(number, floor, description, roomType, photos,numberOfSeats, equipment);
 			
 			roomDataService.set(conferenceRoom);
 			return conferenceRoom;

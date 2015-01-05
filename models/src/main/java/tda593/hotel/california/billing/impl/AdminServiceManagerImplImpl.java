@@ -54,12 +54,16 @@ public class AdminServiceManagerImplImpl extends ServiceManagerImplImpl implemen
 	 * @generated NOT
 	 */
 	public Service createService(String name, double price) {
-		Service service = BillingFactory.eINSTANCE.createService();
-		service.setName(name);
-		service.setPrice(price);
+		if(name != null && !name.isEmpty() && price >= 0) {
+			Service service = BillingFactory.eINSTANCE.createService();
+			service.setName(name);
+			service.setPrice(price);
+			
+			serviceDataService.set(service);
+			return service;
+		}
 		
-		serviceDataService.set(service);
-		return service;
+		return null;
 	}
 
 	/**
@@ -68,7 +72,9 @@ public class AdminServiceManagerImplImpl extends ServiceManagerImplImpl implemen
 	 * @generated NOT
 	 */
 	public void removeService(Service service) {
-		serviceDataService.delete(service);
+		if(service != null) {
+			serviceDataService.delete(service);
+		}
 	}
 
 	/**

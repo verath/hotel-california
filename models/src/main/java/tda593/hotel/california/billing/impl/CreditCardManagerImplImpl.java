@@ -106,13 +106,15 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Does not need input validation since the external banking component handles this.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean setCreditCardInformation(LegalEntity legalEntity, String firstName, String lastName, String cardNumber, String ccv, Date expirationDate, BankingManager validator) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(expirationDate);
-		if(!validator.isCreditCardValid(cardNumber, ccv, cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), firstName, lastName)) {
+		
+		if(legalEntity == null || !validator.isCreditCardValid(cardNumber, ccv, cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), firstName, lastName)) {
 			return false;
 		}
 		
@@ -134,7 +136,11 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public CreditCardInformation getCreditCardInformation(LegalEntity legalEntity) {
-		return getCreditCardInformation(legalEntity.getId());
+		if(legalEntity != null) {
+			return getCreditCardInformation(legalEntity.getId());
+		}
+		
+		return null;
 	}
 
 	/**
@@ -152,6 +158,10 @@ public class CreditCardManagerImplImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public boolean revalidateCreditCardInformation(LegalEntity legalEntity, BankingManager validator) {
+		if(legalEntity == null) {
+			return false;
+		}
+		
 		CreditCardInformation cc = getCreditCardInformation(legalEntity);
 		if(cc == null) {
 			return false;

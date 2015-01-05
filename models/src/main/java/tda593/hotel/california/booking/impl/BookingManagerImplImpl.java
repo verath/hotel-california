@@ -201,6 +201,13 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to) {
+		return getAvaiableRoomsHepler(from, to, null);
+	}
+
+	/**
+	 * Excludes the specified booking from the results.
+	 */
+	private EList<Room> getAvaiableRoomsHepler(Date from, Date to, Booking b) {
 		if(!DateUtil.isDateRangeValid(from, to)) {
 			throw new IllegalArgumentException("The specified time period is not valid");
 		}
@@ -208,6 +215,10 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		EList<Room> rooms = new BasicEList<Room>(roomManager.getRooms());
 		EList<Booking> bookings = getBookings(from, to);
 		EList<Room> bookedRooms = new BasicEList<Room>();
+		
+		if(b != null) {
+			bookings.remove(b);
+		}
 		
 		// Remove all rooms that are specifically booked
 		for(Booking booking : bookings) {
@@ -231,26 +242,41 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		Map<RoomType, Integer> availableRoomTypes = getAvailableRoomTypeAmounts(from, to);
 		EList<Room> availableRooms = new BasicEList<Room>();
 		
+		
+		RoomType bookingRoomType = null;
+		if(b != null) {
+			bookingRoomType = b.getRoomType();
+		}
+		
 		for(Room room: rooms) {
-			if(availableRoomTypes.get(room.getRoomType())!=0) {
+			if(availableRoomTypes.get(room.getRoomType()) != 0) {
 				availableRooms.add(room);
+			} else if(bookingRoomType != null && bookingRoomType.getName().equals(room.getRoomType().getName())) {
+				// Exclude the booking from the search
+				availableRooms.add(room);
+				// Do it only once for the booking
+				bookingRoomType = null;
 			}
 		}
 		
 		return availableRooms;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(Date from, Date to, RoomType roomType) {
+		return getAvailableRoomsHelper(from, to, roomType, null);
+	}
+	
+	private EList<Room> getAvailableRoomsHelper(Date from, Date to, RoomType roomType, Booking booking) {
 		if(!DateUtil.isDateRangeValid(from, to)) {
 			throw new IllegalArgumentException("The specified time period is not valid");
 		}
 		
-		 EList<Room> availableRooms = getAvailableRooms(from, to);
+		 EList<Room> availableRooms = getAvaiableRoomsHepler(from, to, booking);
 		 EList<Room> filteredRooms = new BasicEList<Room>();
 		 
 		 for(Room room: availableRooms) {
@@ -260,7 +286,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		 }
 		
 		 return filteredRooms;
-		
 	}
 
 	/**
@@ -302,24 +327,38 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public Booking createBooking(Date from, Date to, LegalEntity customer, RoomType roomType) {
-		if(!isRoomTypeAvailable(from, to, roomType)) {
-			throw new IllegalArgumentException("The specified room type is either not bookable or is already "
-					+ "booked in that period");
-		}
-		
 		if (customer==null) {
 			throw new IllegalArgumentException("No customer specified");
+		} else if(roomType == null) {
+			throw new IllegalArgumentException("No room type specified");
 		}
 		
-		Booking booking = new BookingImpl();
-		booking.setStartDate(from);
-		booking.setEndDate(to);
-		booking.setResponsible(customer);
-		booking.setRoomType(roomType);
-		booking.setPrice(roomType.getPrice());
-		bookingDataService.set(booking);
+		try {
+			// Begin transaction to lock out any other that tries to book simontaineously 
+			bookingDataService.beginTransaction(); 
+			
+			if(!isRoomTypeAvailable(from, to, roomType)) {
+				throw new IllegalArgumentException("The specified room type is either not bookable or is already "
+						+ "booked in that period");
+			}
 		
-		return booking;
+			Booking booking = new BookingImpl();
+			booking.setStartDate(from);
+			booking.setEndDate(to);
+			booking.setResponsible(customer);
+			booking.setRoomType(roomType);
+			booking.setPrice(roomType.getPrice());
+			bookingDataService.set(booking);
+			
+			bookingDataService.commitTransaction();
+			return booking;
+		} catch(IllegalStateException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		} catch(RuntimeException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		}
 	}
 
 	/**
@@ -327,24 +366,39 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void createBooking(Date from, Date to, LegalEntity customer, Room room) {
-		if(!isRoomAvailable(from, to, room.getRoomNumber())) {
-			throw new IllegalArgumentException("The specified room is either not bookable or is already "
-					+ "booked in that period");
-		}
-		
+	public Booking createBooking(Date from, Date to, LegalEntity customer, Room room) {
 		if (customer==null) {
 			throw new IllegalArgumentException("No customer specified");
+		} else if(room == null) {
+			throw new IllegalArgumentException("No room specified");
 		}
 		
-		Booking booking = new BookingImpl();
-		booking.setStartDate(from);
-		booking.setEndDate(to);
-		booking.setResponsible(customer);
-		booking.setRoomType(room.getRoomType());
-		booking.setPrice(room.getRoomType().getPrice());
+		try {
+			// Begin transaction to lock out any other that tries to book simontaineously 
+			bookingDataService.beginTransaction(); 
+			
+			if(!isRoomAvailable(from, to, room.getRoomNumber())) {
+				throw new IllegalArgumentException("The specified room is either not bookable or is already "
+						+ "booked in that period");
+			}
 		
-		registerRoomStay(booking, room);
+			Booking booking = new BookingImpl();
+			booking.setStartDate(from);
+			booking.setEndDate(to);
+			booking.setResponsible(customer);
+			booking.setRoomType(room.getRoomType());
+			booking.setPrice(room.getRoomType().getPrice());
+			
+			registerRoomStay(booking, room);
+			bookingDataService.commitTransaction();
+			return booking;
+		} catch(IllegalStateException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		} catch(RuntimeException e) {
+			bookingDataService.rollbackTransaction();
+			throw e;
+		}
 	}
 
 	/**
@@ -394,16 +448,29 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			
 			RoomType roomType = booking.getRoomType();
 			
-			int nbrAvailableOfRoomType = getAvailableRoomTypeAmount(booking.getStartDate(), booking.getEndDate(), roomType);
+			// +1 since the current booking accounts for one
+			int nbrAvailableOfRoomType = getAvailableRoomTypeAmount(booking.getStartDate(), booking.getEndDate(), roomType) + 1;
 					
 			// If none of room type that was booked was available
 			if(nbrAvailableOfRoomType == 0) {
 				throw new IllegalStateException("No room of that room type available.");
 			}
 			
-			List<Room> availableRooms = getAvailableRooms(booking.getStartDate(), booking.getEndDate(), roomType);
+			List<Room> availableRooms = getAvailableRoomsHelper(booking.getStartDate(), booking.getEndDate(), roomType, booking);
 
-			Room selectedRoom = availableRooms.get(0);
+			// Loop through the available rooms and make sure no un-checked-out booking is still active and 
+			// grab the first one which hasn't got any avtive booking attached to it
+			Room selectedRoom = null;
+			for(Room room : availableRooms) {
+				if(getActiveBooking(room.getRoomNumber()) == null) {
+					selectedRoom = room;
+					break;
+				}
+			}
+			
+			if(selectedRoom == null) {
+				throw new IllegalStateException("A room should be available, but the previous guest haven't checked out yet");
+			}
 			
 			RoomStay roomStay = registerRoomStay(booking, selectedRoom);
 
@@ -448,9 +515,14 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	public Booking getActiveBooking(String roomNumber) {
 		Calendar c = Calendar.getInstance();
 		c.setTimeInMillis(System.currentTimeMillis());
-		List<Booking> bookings = bookingDataService.getAll(c.getTime(), c.getTime(), roomNumber);
-		if(bookings.size() == 1 && bookings.get(0).getRoomStay().isActive()) {
-			return bookings.get(0);
+		Date to = c.getTime();
+		c.setTimeInMillis(0);
+		Date from = c.getTime();
+		List<Booking> bookings = bookingDataService.getAll(from, to, roomNumber);
+		for(Booking booking : bookings) {
+			if(booking.getRoomStay().isActive()) {
+				return booking;
+			}
 		}
 		
 		return null;
@@ -580,6 +652,20 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setSpecialRequest(Booking booking, String specialRequest) {
+		if(specialRequest == null) {
+			throw new NullPointerException();
+		}
+		
+		booking.setSpecialRequest(specialRequest);
+		bookingDataService.set(booking);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -667,8 +753,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOMTYPE:
 				return createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (RoomType)arguments.get(3));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CREATE_BOOKING__DATE_DATE_LEGALENTITY_ROOM:
-				createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
-				return null;
+				return createBooking((Date)arguments.get(0), (Date)arguments.get(1), (LegalEntity)arguments.get(2), (Room)arguments.get(3));
 			case BookingPackage.BOOKING_MANAGER_IMPL___IS_ROOM_AVAILABLE__DATE_DATE_STRING:
 				return isRoomAvailable((Date)arguments.get(0), (Date)arguments.get(1), (String)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___REGISTER_ROOM__BOOKING_ROOM:
@@ -695,6 +780,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return null;
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_STAY_REQUESTS:
 				return getStayRequests();
+			case BookingPackage.BOOKING_MANAGER_IMPL___SET_SPECIAL_REQUEST__BOOKING_STRING:
+				setSpecialRequest((Booking)arguments.get(0), (String)arguments.get(1));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

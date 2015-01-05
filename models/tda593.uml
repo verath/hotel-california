@@ -1343,6 +1343,7 @@
               </ownedParameter>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_JBf2I3b2EeSbBJzXJgLK5Q" name="customer" type="_3oahIHZKEeSrX_LICIhx2Q"/>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_JBf2JHb2EeSbBJzXJgLK5Q" name="room" type="_6SLu0HZBEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_2noHQJNOEeS9FZbi-B0SaA" type="_QwNhcHZKEeSrX_LICIhx2Q" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Zk7KMHcMEeSxBZTxw5XQdg" name="isRoomAvailable">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_0hQYUHcNEeSxBZTxw5XQdg" name="from">
@@ -1427,6 +1428,12 @@
                 <type xmi:type="uml:PrimitiveType" href="model.uml#_dUMO0JJ3EeS5HbafHn7kWQ"/>
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P34FkJJ1EeS5HbafHn7kWQ" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P34soJJ1EeS5HbafHn7kWQ" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_c11H0JQ4EeSkgbxbBgd3rw" name="setSpecialRequest">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyBmwJQ4EeSkgbxbBgd3rw" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_r3kosJQ4EeSkgbxbBgd3rw" name="specialRequest">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
