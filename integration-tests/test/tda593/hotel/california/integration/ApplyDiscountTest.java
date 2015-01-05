@@ -2,6 +2,7 @@ package tda593.hotel.california.integration;
 
 import static org.junit.Assert.*;
 
+import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +11,12 @@ import tda593.hotel.california.billing.AdminServiceManager;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillManager;
 import tda593.hotel.california.billing.Discount;
+import tda593.hotel.california.billing.DiscountDataService;
+import tda593.hotel.california.billing.DiscountLimit;
+import tda593.hotel.california.billing.DiscountManager;
+import tda593.hotel.california.billing.DiscountManagerImpl;
 import tda593.hotel.california.billing.Service;
+import tda593.hotel.california.billing.impl.DiscountLimitImpl;
 import tda593.hotel.california.booking.LegalEntityManager;
 import tda593.hotel.california.booking.Person;
 
@@ -19,9 +25,10 @@ public class ApplyDiscountTest extends AbstractHotelCaliforniaIntegrationTest {
 	private BillManager billManager;
 	private AdminServiceManager adminServiceManager;
 	private AdminDiscountManager discountManager;
-		
+	private Discount Coupon;
 	private Service bananas, champagne;
 	private Person customer;
+	private Bill bill;
 	
 	@Before
 	public void setUpData() {
@@ -50,7 +57,7 @@ public class ApplyDiscountTest extends AbstractHotelCaliforniaIntegrationTest {
 		billManager.billItem(bill, 1, bananas);
 		billManager.billItem(bill, 7, champagne);
 		double priceBeforeDiscount = bill.getPrice();
-		
+
 		// Create some discounts
 		String percentage10Code = "DISCOUNT10PERCENT";
 		discountManager.addPercentageDiscount(percentage10Code, "10% off only until 31rd January", 0.1f);
@@ -118,9 +125,37 @@ public class ApplyDiscountTest extends AbstractHotelCaliforniaIntegrationTest {
 		billManager.publishBill(bill);
 		assertTrue(bill.isPublished());
 		
+		
 		double priceAfterDiscount = bill.getPrice();
 				
 		assertTrue(0 == priceAfterDiscount);
 	}
+	
+	@Test
+	public void testAddDiscount(){
+		//Adds a discount
+		String spaCode = "SPA1010";
+		discountManager.addSumDiscount(spaCode, "Free spa until 2016", 300);
+		String code = discountManager.getDiscount(spaCode).getCode();
+		assertEquals(code, "SPA1010" );
+		
+	}
+	
+	@Test
+	public void testRemoveDiscount(){
+		
+		//Creates a bill on a customer and applies a discount then removes it
+		String spaRelax = "SpaFantastic";
+		discountManager.addSumDiscount(spaRelax, "Free entrence", 0);
+		Bill bill = billManager.createBill(customer);		
+		// Assume: Discount codes are valid. IF not system notifies -> try again OR exit use case
+		Discount spaSumRelax = discountManager.getDiscount(spaRelax);
+
+
+		billManager.applyDiscount(spaSumRelax, bill);	
+		bill.removeDiscount(spaSumRelax);
+		assertTrue(bill.getUsedDiscounts().isEmpty());
+	}
+	
 	
 }
