@@ -316,4 +316,12 @@ public interface Booking extends EObject {
 	 */
 	EList<StayRequest> getStayRequests();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	EList<Person> getGuests();
+
 } // Booking

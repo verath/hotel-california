@@ -138,14 +138,6 @@ public interface BookingManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	EList<Person> getGuests(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */

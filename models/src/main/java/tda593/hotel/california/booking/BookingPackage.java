@@ -433,13 +433,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING___GET_STAY_REQUESTS = 2;
 
 	/**
+	 * The operation id for the '<em>Get Guests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___GET_GUESTS = 3;
+
+	/**
 	 * The number of operations of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_OPERATION_COUNT = 3;
+	int BOOKING_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.RoomStayImpl <em>Room Stay</em>}' class.
@@ -779,22 +788,13 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = 13;
 
 	/**
-	 * The operation id for the '<em>Get Guests</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_MANAGER___GET_GUESTS__BOOKING = 14;
-
-	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___CHECK_OUT__BOOKING = 15;
+	int BOOKING_MANAGER___CHECK_OUT__BOOKING = 14;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -803,7 +803,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_BOOKING__INT = 16;
+	int BOOKING_MANAGER___GET_BOOKING__INT = 15;
 
 	/**
 	 * The operation id for the '<em>Change Booking Dates</em>' operation.
@@ -812,7 +812,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 17;
+	int BOOKING_MANAGER___CHANGE_BOOKING_DATES__BOOKING_DATE_DATE = 16;
 
 	/**
 	 * The operation id for the '<em>Add Stay Request</em>' operation.
@@ -821,7 +821,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___ADD_STAY_REQUEST__BOOKING_STRING = 18;
+	int BOOKING_MANAGER___ADD_STAY_REQUEST__BOOKING_STRING = 17;
 
 	/**
 	 * The operation id for the '<em>Remove Stay Request</em>' operation.
@@ -830,7 +830,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST = 19;
+	int BOOKING_MANAGER___REMOVE_STAY_REQUEST__BOOKING_STAYREQUEST = 18;
 
 	/**
 	 * The operation id for the '<em>Get Stay Requests</em>' operation.
@@ -839,7 +839,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___GET_STAY_REQUESTS = 20;
+	int BOOKING_MANAGER___GET_STAY_REQUESTS = 19;
 
 	/**
 	 * The operation id for the '<em>Set Special Request</em>' operation.
@@ -857,7 +857,8 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 22;
+	int BOOKING_MANAGER_OPERATION_COUNT = 20;
+
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.
@@ -1021,15 +1022,6 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING = BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Guests</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_MANAGER_IMPL___GET_GUESTS__BOOKING = BOOKING_MANAGER___GET_GUESTS__BOOKING;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -1802,6 +1794,16 @@ public interface BookingPackage extends EPackage {
 	EOperation getBooking__GetStayRequests();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.Booking#getGuests() <em>Get Guests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Guests</em>' operation.
+	 * @see tda593.hotel.california.booking.Booking#getGuests()
+	 * @generated
+	 */
+	EOperation getBooking__GetGuests();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.RoomStay <em>Room Stay</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2112,16 +2114,6 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingManager__GetActiveBooking__String();
-
-	/**
-	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#getGuests(tda593.hotel.california.booking.Booking) <em>Get Guests</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Guests</em>' operation.
-	 * @see tda593.hotel.california.booking.BookingManager#getGuests(tda593.hotel.california.booking.Booking)
-	 * @generated
-	 */
-	EOperation getBookingManager__GetGuests__Booking();
 
 	/**
 	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#checkOut(tda593.hotel.california.booking.Booking) <em>Check Out</em>}' operation.
@@ -2707,6 +2699,14 @@ public interface BookingPackage extends EPackage {
 		EOperation BOOKING___GET_STAY_REQUESTS = eINSTANCE.getBooking__GetStayRequests();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Guests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING___GET_GUESTS = eINSTANCE.getBooking__GetGuests();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.RoomStayImpl <em>Room Stay</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2953,14 +2953,6 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_MANAGER___GET_ACTIVE_BOOKING__STRING = eINSTANCE.getBookingManager__GetActiveBooking__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Guests</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING_MANAGER___GET_GUESTS__BOOKING = eINSTANCE.getBookingManager__GetGuests__Booking();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.

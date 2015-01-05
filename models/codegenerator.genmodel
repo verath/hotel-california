@@ -497,6 +497,7 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/Booking/unregisterTravelInformation/travelInformation"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/Booking/getStayRequests"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/Booking/getGuests"/>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" ecoreClass="tda593.ecore#//hotel/california/booking/TravelInformation">
             <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute tda593.ecore#//hotel/california/booking/TravelInformation/id"/>
@@ -583,9 +584,6 @@
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/getActiveBooking">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/getActiveBooking/roomNumber"/>
-            </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/getGuests">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/getGuests/booking"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="tda593.ecore#//hotel/california/booking/BookingManager/checkOut">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="tda593.ecore#//hotel/california/booking/BookingManager/checkOut/booking"/>
