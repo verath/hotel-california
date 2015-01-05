@@ -196,9 +196,11 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 	public EList<Booking> getAll(Date from, Date to) {
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("" +
 				" FROM BookingEntityImpl" +
-				" WHERE startDate BETWEEN :theStartDate AND :theEndDate" +
-				" OR endDate BETWEEN :theStartDate AND :theEndDate" +
-				" OR startDate <= :theStartDate AND endDate >= :theEndDate"
+				" WHERE (" +
+				"	startDate BETWEEN :theStartDate AND :theEndDate" +
+				" 	OR endDate BETWEEN :theStartDate AND :theEndDate" +
+				" 	OR startDate <= :theStartDate AND endDate >= :theEndDate" +
+				" ) AND startDate <> :theEndDate AND endDate <> :theStartDate"
 				, BookingEntityImpl.class);
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
 		query.setParameter("theEndDate", to, TemporalType.TIMESTAMP);
@@ -222,10 +224,10 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				" FROM BookingEntityImpl " +
 				" WHERE legalEntityEntity_id = :customer " +
 				" AND (" +
-				" 	startDate BETWEEN :theStartDate AND :theEndDate" +
+				"	startDate BETWEEN :theStartDate AND :theEndDate" +
 				" 	OR endDate BETWEEN :theStartDate AND :theEndDate" +
 				" 	OR startDate <= :theStartDate AND endDate >= :theEndDate" +
-				" )"
+				" ) AND startDate <> :theEndDate AND endDate <> :theStartDate"
 				, BookingEntityImpl.class);
 		query.setParameter("customer", customer.getId());
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
@@ -277,10 +279,11 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 				" JOIN b.roomStayEntity " +
 				" WHERE roomEntity_roomNumber = :theRoomNumber " +
 				" AND (" +
-				" 	b.startDate BETWEEN :theStartDate AND :theEndDate" +
+				"	b.startDate BETWEEN :theStartDate AND :theEndDate" +
 				" 	OR b.endDate BETWEEN :theStartDate AND :theEndDate" +
 				" 	OR b.startDate <= :theStartDate AND b.endDate >= :theEndDate" +
-				" )"
+				" ) AND b.startDate <> :theEndDate AND b.endDate <> :theStartDate"
+
 				, BookingEntityImpl.class);
 		query.setParameter("theRoomNumber", roomNumber);
 		query.setParameter("theStartDate", from, TemporalType.TIMESTAMP);
