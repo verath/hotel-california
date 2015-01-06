@@ -848,7 +848,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING = 21;
+	int BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING = 20;
 
 	/**
 	 * The number of operations of the '<em>Manager</em>' class.
@@ -857,7 +857,7 @@ public interface BookingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 20;
+	int BOOKING_MANAGER_OPERATION_COUNT = 21;
 
 
 	/**

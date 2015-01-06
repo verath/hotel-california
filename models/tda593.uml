@@ -370,6 +370,12 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lUxQgJJrEeS5HbafHn7kWQ" value="*"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_s_ZUEJVDEeSZZtxB67B5mQ" name="setIsBeingCleaned">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_wLzlsJVDEeSZZtxB67B5mQ" name="room" type="_6SLu0HZBEeSrX_LICIhx2Q"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_yLPG0JVDEeSZZtxB67B5mQ" name="value">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_Wg-MYIFREeSZuOQR5MrPYg" name="RoomManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_EcmykIFSEeSZuOQR5MrPYg" general="_SzH3QHoiEeSVKdBxhP6Y7A"/>
@@ -439,7 +445,7 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
               <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_7luJgIqpEeSmfLNHzEjnnA" value="true"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_w81zQHZFEeSrX_LICIhx2Q" name="isCleaned" visibility="private">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_w81zQHZFEeSrX_LICIhx2Q" name="isBeingCleaned" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
             </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_5XRB4HZFEeSrX_LICIhx2Q" name="description" visibility="private">

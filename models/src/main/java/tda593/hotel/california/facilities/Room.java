@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tda593.hotel.california.facilities.Room#getFloor <em>Floor</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#isOperational <em>Is Operational</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.Room#isCleaned <em>Is Cleaned</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.Room#isBeingCleaned <em>Is Being Cleaned</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getDescription <em>Description</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getPhotos <em>Photos</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.Room#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
@@ -111,30 +111,30 @@ public interface Room extends EObject {
 	void setIsOperational(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Cleaned</b></em>' attribute.
+	 * Returns the value of the '<em><b>Is Being Cleaned</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Cleaned</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Is Being Cleaned</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Cleaned</em>' attribute.
-	 * @see #setIsCleaned(boolean)
-	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_IsCleaned()
+	 * @return the value of the '<em>Is Being Cleaned</em>' attribute.
+	 * @see #setIsBeingCleaned(boolean)
+	 * @see tda593.hotel.california.facilities.FacilitiesPackage#getRoom_IsBeingCleaned()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	boolean isCleaned();
+	boolean isBeingCleaned();
 
 	/**
-	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#isCleaned <em>Is Cleaned</em>}' attribute.
+	 * Sets the value of the '{@link tda593.hotel.california.facilities.Room#isBeingCleaned <em>Is Being Cleaned</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Cleaned</em>' attribute.
-	 * @see #isCleaned()
+	 * @param value the new value of the '<em>Is Being Cleaned</em>' attribute.
+	 * @see #isBeingCleaned()
 	 * @generated
 	 */
-	void setIsCleaned(boolean value);
+	void setIsBeingCleaned(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

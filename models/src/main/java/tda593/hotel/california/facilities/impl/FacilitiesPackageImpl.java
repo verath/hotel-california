@@ -490,6 +490,15 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRoomManager__SetIsBeingCleaned__Room_boolean() {
+		return roomManagerEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomType() {
 		return roomTypeEClass;
 	}
@@ -571,7 +580,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_IsCleaned() {
+	public EAttribute getRoom_IsBeingCleaned() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -913,6 +922,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_ROOM_TYPE__STRING);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_GUEST_ROOMS);
 		createEOperation(roomManagerEClass, ROOM_MANAGER___GET_CONFERENCE_ROOMS);
+		createEOperation(roomManagerEClass, ROOM_MANAGER___SET_IS_BEING_CLEANED__ROOM_BOOLEAN);
 
 		roomTypeEClass = createEClass(ROOM_TYPE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
@@ -924,7 +934,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		createEAttribute(roomEClass, ROOM__FLOOR);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
 		createEAttribute(roomEClass, ROOM__IS_OPERATIONAL);
-		createEAttribute(roomEClass, ROOM__IS_CLEANED);
+		createEAttribute(roomEClass, ROOM__IS_BEING_CLEANED);
 		createEAttribute(roomEClass, ROOM__DESCRIPTION);
 		createEAttribute(roomEClass, ROOM__PHOTOS);
 		createEReference(roomEClass, ROOM__ALLOWED_KEY_CARDS);
@@ -1126,6 +1136,10 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 
 		initEOperation(getRoomManager__GetConferenceRooms(), this.getConferenceRoom(), "getConferenceRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getRoomManager__SetIsBeingCleaned__Room_boolean(), null, "setIsBeingCleaned", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1136,7 +1150,7 @@ public class FacilitiesPackageImpl extends EPackageImpl implements FacilitiesPac
 		initEAttribute(getRoom_Floor(), ecorePackage.getEInt(), "floor", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEString(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_IsOperational(), ecorePackage.getEBoolean(), "isOperational", "true", 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_IsCleaned(), ecorePackage.getEBoolean(), "isCleaned", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_IsBeingCleaned(), ecorePackage.getEBoolean(), "isBeingCleaned", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Description(), ecorePackage.getEString(), "description", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Photos(), ecorePackage.getEString(), "photos", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_AllowedKeyCards(), this.getKeyCard(), null, "allowedKeyCards", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

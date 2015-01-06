@@ -31,7 +31,7 @@ import tda593.hotel.california.facilities.RoomType;
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getFloor <em>Floor</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#isOperational <em>Is Operational</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#isCleaned <em>Is Cleaned</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#isBeingCleaned <em>Is Being Cleaned</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getPhotos <em>Photos</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.impl.RoomImpl#getAllowedKeyCards <em>Allowed Key Cards</em>}</li>
@@ -104,24 +104,24 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	protected boolean isOperational = IS_OPERATIONAL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isCleaned() <em>Is Cleaned</em>}' attribute.
+	 * The default value of the '{@link #isBeingCleaned() <em>Is Being Cleaned</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCleaned()
+	 * @see #isBeingCleaned()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_CLEANED_EDEFAULT = false;
+	protected static final boolean IS_BEING_CLEANED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isCleaned() <em>Is Cleaned</em>}' attribute.
+	 * The cached value of the '{@link #isBeingCleaned() <em>Is Being Cleaned</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCleaned()
+	 * @see #isBeingCleaned()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isCleaned = IS_CLEANED_EDEFAULT;
+	protected boolean isBeingCleaned = IS_BEING_CLEANED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -280,8 +280,8 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCleaned() {
-		return isCleaned;
+	public boolean isBeingCleaned() {
+		return isBeingCleaned;
 	}
 
 	/**
@@ -289,11 +289,11 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsCleaned(boolean newIsCleaned) {
-		boolean oldIsCleaned = isCleaned;
-		isCleaned = newIsCleaned;
+	public void setIsBeingCleaned(boolean newIsBeingCleaned) {
+		boolean oldIsBeingCleaned = isBeingCleaned;
+		isBeingCleaned = newIsBeingCleaned;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__IS_CLEANED, oldIsCleaned, isCleaned));
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilitiesPackage.ROOM__IS_BEING_CLEANED, oldIsBeingCleaned, isBeingCleaned));
 	}
 
 	/**
@@ -440,8 +440,8 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 				return getRoomNumber();
 			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				return isOperational();
-			case FacilitiesPackage.ROOM__IS_CLEANED:
-				return isCleaned();
+			case FacilitiesPackage.ROOM__IS_BEING_CLEANED:
+				return isBeingCleaned();
 			case FacilitiesPackage.ROOM__DESCRIPTION:
 				return getDescription();
 			case FacilitiesPackage.ROOM__PHOTOS:
@@ -475,8 +475,8 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				setIsOperational((Boolean)newValue);
 				return;
-			case FacilitiesPackage.ROOM__IS_CLEANED:
-				setIsCleaned((Boolean)newValue);
+			case FacilitiesPackage.ROOM__IS_BEING_CLEANED:
+				setIsBeingCleaned((Boolean)newValue);
 				return;
 			case FacilitiesPackage.ROOM__DESCRIPTION:
 				setDescription((String)newValue);
@@ -517,8 +517,8 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				setIsOperational(IS_OPERATIONAL_EDEFAULT);
 				return;
-			case FacilitiesPackage.ROOM__IS_CLEANED:
-				setIsCleaned(IS_CLEANED_EDEFAULT);
+			case FacilitiesPackage.ROOM__IS_BEING_CLEANED:
+				setIsBeingCleaned(IS_BEING_CLEANED_EDEFAULT);
 				return;
 			case FacilitiesPackage.ROOM__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -553,8 +553,8 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 				return ROOM_NUMBER_EDEFAULT == null ? roomNumber != null : !ROOM_NUMBER_EDEFAULT.equals(roomNumber);
 			case FacilitiesPackage.ROOM__IS_OPERATIONAL:
 				return isOperational != IS_OPERATIONAL_EDEFAULT;
-			case FacilitiesPackage.ROOM__IS_CLEANED:
-				return isCleaned != IS_CLEANED_EDEFAULT;
+			case FacilitiesPackage.ROOM__IS_BEING_CLEANED:
+				return isBeingCleaned != IS_BEING_CLEANED_EDEFAULT;
 			case FacilitiesPackage.ROOM__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case FacilitiesPackage.ROOM__PHOTOS:
@@ -606,8 +606,8 @@ public abstract class RoomImpl extends MinimalEObjectImpl.Container implements R
 		result.append(roomNumber);
 		result.append(", isOperational: ");
 		result.append(isOperational);
-		result.append(", isCleaned: ");
-		result.append(isCleaned);
+		result.append(", isBeingCleaned: ");
+		result.append(isBeingCleaned);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", photos: ");

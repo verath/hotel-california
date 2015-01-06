@@ -122,4 +122,12 @@ public interface RoomManager extends EObject {
 	 */
 	EList<ConferenceRoom> getConferenceRooms();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false" valueRequired="true" valueOrdered="false"
+	 * @generated
+	 */
+	void setIsBeingCleaned(Room room, boolean value);
+
 } // RoomManager

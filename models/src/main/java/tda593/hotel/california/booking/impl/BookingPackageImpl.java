@@ -729,7 +729,7 @@ public class BookingPackageImpl extends EPackageImpl implements BookingPackage {
 	 * @generated
 	 */
 	public EOperation getBookingManager__SetSpecialRequest__Booking_String() {
-		return bookingManagerEClass.getEOperations().get(21);
+		return bookingManagerEClass.getEOperations().get(20);
 	}
 
 	/**

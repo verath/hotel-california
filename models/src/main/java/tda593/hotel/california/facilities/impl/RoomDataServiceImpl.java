@@ -88,7 +88,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		room.setRoomNumber(roomEntity.getRoomNumber());
 		room.setDescription(roomEntity.getDescription());
 		room.setFloor(roomEntity.getFloor());
-		room.setIsCleaned(roomEntity.isCleaned());
+		room.setIsBeingCleaned(roomEntity.isBeingCleaned());
 		room.setIsOperational(roomEntity.isOperational());
 		room.setRoomType(RoomTypeDataServiceImpl.entityToRoomType(roomEntity.getRoomTypeEntity()));
 		
@@ -106,7 +106,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 		roomEntity.setRoomNumber(room.getRoomNumber());
 		roomEntity.setDescription(room.getDescription());
 		roomEntity.setFloor(room.getFloor());
-		roomEntity.setIsCleaned(room.isCleaned());
+		roomEntity.setIsCleaned(room.isBeingCleaned());
 		roomEntity.setIsOperational(room.isOperational());
 		roomEntity.setRoomTypeEntity(RoomTypeDataServiceImpl.roomTypeToEntity(room.getRoomType()));
 		
