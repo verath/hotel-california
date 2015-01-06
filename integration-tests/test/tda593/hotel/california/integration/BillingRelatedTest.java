@@ -49,13 +49,13 @@ public class BillingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		customer1 = legalEntityManager.createPerson("Thomas", "Anderson", "1", "0712345678", "neo@matrix.com");
 		customer2 = legalEntityManager.createOrganization("The uber company", "819201-9190", "031938201", "theone@uber.com");
 	
-		c.set(2019, 8, 1);
-		adminBankingManager.addCreditCard("3019 0189 0120 8190 9281", "980", c.get(Calendar.MONDAY), c.get(Calendar.YEAR), customer1.getFirstname(), 
+		c.set(19, 8, 1);
+		adminBankingManager.addCreditCard("153019 0189 0120 8190 9281", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
 				customer1.getLastname());
 		
 		// set valid info for customer1
 		creditCardManager.setCreditCardInformation(customer1, customer1.getFirstname(), customer1.getLastname(), 
-				"3019 0189 0120 8190 9281", "980", c.getTime(), bankingManager);
+				"153019 0189 0120 8190 9281", "980", c.getTime(), bankingManager);
 		
 		// Set up some services
 		bananas = adminServiceManager.createService("Bananas", 12.250);
@@ -86,6 +86,8 @@ public class BillingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		billManager.billItem(bill3, 2, champagne);
 		billManager.publishBill(bill3);
 		CreditCardInformation cc = creditCardManager.getCreditCardInformation(bill3.getCustomer());
+		Date exp = cc.getExpirationDate();
+		c.setTime(exp);
 		adminBankingManager.makeDeposit(cc.getCardNumber(), cc.getCcv(), 
 				c.get(Calendar.MONTH), c.get(Calendar.YEAR), cc.getFirstName(), cc.getLastName(), bill3.getPrice());
 		assertTrue(billManager.markBillAsPaid(bill3, true, bankingManager, creditCardManager));

@@ -65,7 +65,7 @@ public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implem
 		return roomType;
 	}
 	
-	public static RoomTypeEntity roomTypeToEntity(RoomType roomType) {
+	public static RoomTypeEntityImpl roomTypeToEntity(RoomType roomType) {
 		if(roomType == null) {
 			return null;
 		}
@@ -144,7 +144,11 @@ public class RoomTypeDataServiceImpl extends MinimalEObjectImpl.Container implem
 	 * @generated NOT
 	 */
 	public void delete(RoomType roomType) {
-		entityManager.remove(roomTypeToEntity(roomType));
+		RoomTypeEntityImpl entity = roomTypeToEntity(roomType);
+		if(!entityManager.contains(entity)) {
+			entity = entityManager.merge(entity);
+		}
+		entityManager.remove(entity);
 	}
 
 	/**

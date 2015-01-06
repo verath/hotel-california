@@ -135,6 +135,10 @@
           </eOperations>
           <eOperations name="getGuestRooms" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/GuestRoom"/>
           <eOperations name="getConferenceRooms" ordered="false" upperBound="-1" eType="#//hotel/california/facilities/ConferenceRoom"/>
+          <eOperations name="setIsBeingCleaned" ordered="false" lowerBound="1">
+            <eParameters name="room" ordered="false" lowerBound="1" eType="#//hotel/california/facilities/Room"/>
+            <eParameters name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="RoomType">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
@@ -162,7 +166,7 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOperational" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
               defaultValueLiteral="true"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCleaned" ordered="false"
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBeingCleaned" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -569,6 +573,7 @@
             <eParameters name="travelInformation" ordered="false" lowerBound="1" eType="#//hotel/california/booking/TravelInformation"/>
           </eOperations>
           <eOperations name="getStayRequests" ordered="false" upperBound="-1" eType="#//hotel/california/booking/StayRequest"/>
+          <eOperations name="getGuests" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Person"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
               lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
@@ -690,9 +695,6 @@
           <eOperations name="getActiveBooking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking">
             <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-          <eOperations name="getGuests" ordered="false" upperBound="-1" eType="#//hotel/california/booking/Person">
-            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
-          </eOperations>
           <eOperations name="checkOut" ordered="false" lowerBound="1">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
           </eOperations>
@@ -723,6 +725,9 @@
           <eOperations name="setSpecialRequest" ordered="false" lowerBound="1">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
             <eParameters name="specialRequest" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eOperations>
+          <eOperations name="cancelBooking" ordered="false" lowerBound="1">
+            <eParameters name="booking" ordered="false" lowerBound="1" eType="#//hotel/california/booking/Booking"/>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="BookingManagerImpl" eSuperTypes="#//hotel/california/booking/BookingManager">

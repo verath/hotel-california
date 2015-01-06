@@ -138,14 +138,6 @@ public interface BookingManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	EList<Person> getGuests(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
@@ -198,5 +190,13 @@ public interface BookingManager extends EObject {
 	 * @generated
 	 */
 	void setSpecialRequest(Booking booking, String specialRequest);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	void cancelBooking(Booking booking);
 
 } // BookingManager

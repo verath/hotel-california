@@ -326,13 +326,22 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM_MANAGER___GET_CONFERENCE_ROOMS = 12;
 
 	/**
+	 * The operation id for the '<em>Set Is Being Cleaned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___SET_IS_BEING_CLEANED__ROOM_BOOLEAN = 13;
+
+	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_OPERATION_COUNT = 13;
+	int ROOM_MANAGER_OPERATION_COUNT = 14;
 
 	/**
 	 * The meta object id for the '{@link tda593.hotel.california.facilities.AdminRoomManager <em>Admin Room Manager</em>}' class.
@@ -469,6 +478,15 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADMIN_ROOM_MANAGER___GET_CONFERENCE_ROOMS = ROOM_MANAGER___GET_CONFERENCE_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Set Is Being Cleaned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER___SET_IS_BEING_CLEANED__ROOM_BOOLEAN = ROOM_MANAGER___SET_IS_BEING_CLEANED__ROOM_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -626,13 +644,13 @@ public interface FacilitiesPackage extends EPackage {
 	int ROOM__IS_OPERATIONAL = 2;
 
 	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
+	 * The feature id for the '<em><b>Is Being Cleaned</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__IS_CLEANED = 3;
+	int ROOM__IS_BEING_CLEANED = 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -802,13 +820,13 @@ public interface FacilitiesPackage extends EPackage {
 	int GUEST_ROOM__IS_OPERATIONAL = ROOM__IS_OPERATIONAL;
 
 	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
+	 * The feature id for the '<em><b>Is Being Cleaned</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_ROOM__IS_CLEANED = ROOM__IS_CLEANED;
+	int GUEST_ROOM__IS_BEING_CLEANED = ROOM__IS_BEING_CLEANED;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -946,13 +964,13 @@ public interface FacilitiesPackage extends EPackage {
 	int CONFERENCE_ROOM__IS_OPERATIONAL = ROOM__IS_OPERATIONAL;
 
 	/**
-	 * The feature id for the '<em><b>Is Cleaned</b></em>' attribute.
+	 * The feature id for the '<em><b>Is Being Cleaned</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFERENCE_ROOM__IS_CLEANED = ROOM__IS_CLEANED;
+	int CONFERENCE_ROOM__IS_BEING_CLEANED = ROOM__IS_BEING_CLEANED;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1214,6 +1232,15 @@ public interface FacilitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS = ROOM_MANAGER___GET_CONFERENCE_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Set Is Being Cleaned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER_IMPL___SET_IS_BEING_CLEANED__ROOM_BOOLEAN = ROOM_MANAGER___SET_IS_BEING_CLEANED__ROOM_BOOLEAN;
 
 	/**
 	 * The number of operations of the '<em>Room Manager Impl</em>' class.
@@ -1723,6 +1750,15 @@ public interface FacilitiesPackage extends EPackage {
 	int ADMIN_ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS = ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS;
 
 	/**
+	 * The operation id for the '<em>Set Is Being Cleaned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADMIN_ROOM_MANAGER_IMPL___SET_IS_BEING_CLEANED__ROOM_BOOLEAN = ROOM_MANAGER_IMPL___SET_IS_BEING_CLEANED__ROOM_BOOLEAN;
+
+	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2133,6 +2169,16 @@ public interface FacilitiesPackage extends EPackage {
 	EOperation getRoomManager__GetConferenceRooms();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.facilities.RoomManager#setIsBeingCleaned(tda593.hotel.california.facilities.Room, boolean) <em>Set Is Being Cleaned</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Is Being Cleaned</em>' operation.
+	 * @see tda593.hotel.california.facilities.RoomManager#setIsBeingCleaned(tda593.hotel.california.facilities.Room, boolean)
+	 * @generated
+	 */
+	EOperation getRoomManager__SetIsBeingCleaned__Room_boolean();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.facilities.RoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2230,15 +2276,15 @@ public interface FacilitiesPackage extends EPackage {
 	EAttribute getRoom_IsOperational();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.Room#isCleaned <em>Is Cleaned</em>}'.
+	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.Room#isBeingCleaned <em>Is Being Cleaned</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Cleaned</em>'.
-	 * @see tda593.hotel.california.facilities.Room#isCleaned()
+	 * @return the meta object for the attribute '<em>Is Being Cleaned</em>'.
+	 * @see tda593.hotel.california.facilities.Room#isBeingCleaned()
 	 * @see #getRoom()
 	 * @generated
 	 */
-	EAttribute getRoom_IsCleaned();
+	EAttribute getRoom_IsBeingCleaned();
 
 	/**
 	 * Returns the meta object for the attribute '{@link tda593.hotel.california.facilities.Room#getDescription <em>Description</em>}'.
@@ -2813,6 +2859,14 @@ public interface FacilitiesPackage extends EPackage {
 		EOperation ROOM_MANAGER___GET_CONFERENCE_ROOMS = eINSTANCE.getRoomManager__GetConferenceRooms();
 
 		/**
+		 * The meta object literal for the '<em><b>Set Is Being Cleaned</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_MANAGER___SET_IS_BEING_CLEANED__ROOM_BOOLEAN = eINSTANCE.getRoomManager__SetIsBeingCleaned__Room_boolean();
+
+		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.facilities.impl.RoomTypeImpl <em>Room Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2889,12 +2943,12 @@ public interface FacilitiesPackage extends EPackage {
 		EAttribute ROOM__IS_OPERATIONAL = eINSTANCE.getRoom_IsOperational();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Cleaned</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Is Being Cleaned</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROOM__IS_CLEANED = eINSTANCE.getRoom_IsCleaned();
+		EAttribute ROOM__IS_BEING_CLEANED = eINSTANCE.getRoom_IsBeingCleaned();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

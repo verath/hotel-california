@@ -109,13 +109,13 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		bookAndCheckIn(from, to, room101);
 		
 		// Add a valid credit card to the bankingManager
-		c.setTimeInMillis(System.currentTimeMillis());
-		adminBankingManager.addCreditCard("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
+		c.set(18, 5, 5);
+		adminBankingManager.addCreditCard("153819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe");
-		adminBankingManager.makeDeposit("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
+		adminBankingManager.makeDeposit("153819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe", 20000000);
 		assertTrue(creditCardManager.setCreditCardInformation(customer,
-				"John", "Doe", "3819 2910 2910 2910 9201", "669", c.getTime(), bankingManager));
+				"John", "Doe", "153819 2910 2910 2910 9201", "669", c.getTime(), bankingManager));
 		
 		// Actor enters the room number.
 		// Assume: room number is valid and exists.
@@ -195,7 +195,7 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		Bill bill = billManager.getBookingBill(bookingManager.getActiveBooking(room101.getRoomNumber()));
 		// Set the credit card info to be invalid
 		creditCardManager.setCreditCardInformation(bill.getCustomer(), 
-				"John", "Doe", "0000 0000 0000 000", "000", from, bankingManager);
+				"John", "Doe", "150000 0000 0000 000", "000", from, bankingManager);
 		
 		assertTrue(bill != null);
 		billManager.publishBill(bill);
@@ -209,13 +209,14 @@ public class CheckOutTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 		// actor wants to change credit card information and tries again
-		adminBankingManager.addCreditCard("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
+		c.set(18, 5, 5);
+		adminBankingManager.addCreditCard("153819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe");
-		adminBankingManager.makeDeposit("3819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
+		adminBankingManager.makeDeposit("153819 2910 2910 2910 9201", "669", c.get(Calendar.MONTH),
 				c.get(Calendar.YEAR), "John", "Doe", 20000000);
 
 		creditCardManager.setCreditCardInformation(bill.getCustomer(), 
-				"John", "Doe", "3819 2910 2910 2910 9201", "669", from, bankingManager);
+				"John", "Doe", "153819 2910 2910 2910 9201", "669", c.getTime(), bankingManager);
 		// Correct info was entered
 		assertTrue(billManager.markBillAsPaid(bill, true, bankingManager, creditCardManager));
 		

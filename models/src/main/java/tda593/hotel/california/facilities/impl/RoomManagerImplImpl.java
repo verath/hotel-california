@@ -355,6 +355,16 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setIsBeingCleaned(Room room, boolean value) {
+		room.setIsBeingCleaned(value);
+		roomDataService.set(room);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -430,6 +440,9 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 				return getGuestRooms();
 			case FacilitiesPackage.ROOM_MANAGER_IMPL___GET_CONFERENCE_ROOMS:
 				return getConferenceRooms();
+			case FacilitiesPackage.ROOM_MANAGER_IMPL___SET_IS_BEING_CLEANED__ROOM_BOOLEAN:
+				setIsBeingCleaned((Room)arguments.get(0), (Boolean)arguments.get(1));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

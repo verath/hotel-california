@@ -196,8 +196,7 @@ public class BookSpecificRoomTest extends AbstractHotelCaliforniaIntegrationTest
 		}
 
 		if (!acceptedRoomNumbers.isEmpty()) {
-			fail("Expected no room numbers to be accepted, but these were: "
-					+ acceptedRoomNumbers);
+			fail("Expected no room numbers to be accepted, but these were: " + acceptedRoomNumbers);
 		}
 	}
 	

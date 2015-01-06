@@ -121,14 +121,14 @@ public interface RoomEntity {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	boolean isCleaned();
+	boolean isBeingCleaned();
 
 	/**
 	 * Sets the value of the '{@link tda593.hotel.california.facilities.persistence.RoomEntity#isCleaned <em>Is Cleaned</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Cleaned</em>' attribute.
-	 * @see #isCleaned()
+	 * @see #isBeingCleaned()
 	 * @generated
 	 */
 	void setIsCleaned(boolean value);

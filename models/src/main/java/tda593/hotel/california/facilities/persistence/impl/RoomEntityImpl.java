@@ -30,7 +30,7 @@ import tda593.hotel.california.facilities.persistence.RoomTypeEntity;
  *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#getFloor <em>Floor</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#isOperational <em>Is Operational</em>}</li>
- *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#isCleaned <em>Is Cleaned</em>}</li>
+ *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#isBeingCleaned <em>Is Cleaned</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#getPhotos <em>Photos</em>}</li>
  *   <li>{@link tda593.hotel.california.facilities.persistence.impl.RoomEntityImpl#getRoomTypeEntity <em>Room Type Entity</em>}</li>
@@ -48,7 +48,7 @@ public class RoomEntityImpl implements RoomEntity {
 	private String roomNumber;
 	private int floor;
 	private boolean isOperational;
-	private boolean isCleaned;
+	private boolean isBeingCleaned;
 	private String description;
 	@ElementCollection
 	private List<String> photos;
@@ -130,8 +130,8 @@ public class RoomEntityImpl implements RoomEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCleaned() {
-		return isCleaned;
+	public boolean isBeingCleaned() {
+		return isBeingCleaned;
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class RoomEntityImpl implements RoomEntity {
 	 * @generated
 	 */
 	public void setIsCleaned(boolean newIsCleaned) {
-		isCleaned = newIsCleaned;
+		isBeingCleaned = newIsCleaned;
 	}
 
 	/**
@@ -230,7 +230,7 @@ public class RoomEntityImpl implements RoomEntity {
 		result.append(", isOperational: ");
 		result.append(isOperational);
 		result.append(", isCleaned: ");
-		result.append(isCleaned);
+		result.append(isBeingCleaned);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", photos: ");

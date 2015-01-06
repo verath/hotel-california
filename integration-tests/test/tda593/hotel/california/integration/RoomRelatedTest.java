@@ -12,11 +12,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import tda593.hotel.california.booking.Booking;
-import tda593.hotel.california.booking.BookingManager;
-import tda593.hotel.california.booking.LegalEntityManager;
-import tda593.hotel.california.booking.Person;
-import tda593.hotel.california.booking.TravelInformation;
+import tda593.hotel.california.booking.*;
+import tda593.hotel.california.booking.impl.TravelInformationImpl;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.ConferenceRoom;
 import tda593.hotel.california.facilities.GuestRoom;
@@ -29,15 +26,12 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	private RoomManager roomManager;
 	private AdminRoomManager adminRoomManager;
 	private GuestRoom guestRoom;
-	private ConferenceRoom conferenceRoom;
 	private BookingManager bookingManager;
+	private ConferenceRoom conferenceRoom;
 	private LegalEntityManager legalEntityManager;
 	private Booking booking;
 	private Room room;
-	private TravelInformation travel;
-
-
-
+	private RoomType type2;
 
 	private EList<String> photos;
 
@@ -64,6 +58,8 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		adminRoomManager.addRoomType("RoomType1", "", null, 10);
 		RoomType type = adminRoomManager.addRoomType("RoomType1", "", null, 10);
 		adminRoomManager.addRoomType("RoomType2", "", null, 5);
+		type2 = adminRoomManager.addRoomType("Type855", "Cool", null, 10);
+				
 
 		// Create a room for each room type
 		int floor = 1;
@@ -74,8 +70,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		
 		//Create Rooms without loop
 		guestRoom = adminRoomManager.addGuestRoom("101", 1, "", null, photos, adminRoomManager.getRoomTypes().get(0), 2, 0);
-		conferenceRoom = adminRoomManager.addConferenceRoom("201", 2, "HEJSAN", null, photos, type, 12, null);
-
+		conferenceRoom = adminRoomManager.addConferenceRoom("201", 2, "Big Room", null, photos, type, 12, null);
 		
 		Person customer = legalEntityManager.getPerson("1");
 		room = roomManager.getRooms().get(0);
@@ -89,9 +84,7 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		bookingManager.checkIn(booking, guests);
 
 	}
-		
-		
-		
+	
 
 
 	/**
@@ -110,43 +103,79 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 	}
+	
+	/**
+	 * Tests the FR #026c: A staff member should be able to mark a room as “being cleaned”.
+	 */
+	@Test
+	public void testSetIsBeingCleaned() {
+		Room room = roomManager.getRoom(guestRoom.getRoomNumber());
+		
+		// Check default case
+		assertEquals(false, room.isBeingCleaned());
+		
+		// Set the value to true
+		roomManager.setIsBeingCleaned(room, true);
+		// Check in dependency
+		assertEquals(true, room.isBeingCleaned());
+		// Check in database 
+		room = roomManager.getRoom(guestRoom.getRoomNumber());
+		assertEquals(true, room.isBeingCleaned());
+		
+		// Set to false
+		roomManager.setIsBeingCleaned(room, false);
+		assertEquals(false, room.isBeingCleaned());
+	}
+	
 	/**
 	 * Tests the FR #029b:
 	 */
 	@Test
-	public void createAddRoom() {
+	public void createRoom() {
 		//RoomType is needed first
 		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
 		Room newRoom = adminRoomManager.addGuestRoom("3", 4, "A nice Room", null, photos, type1, 1, 0);
-		assertTrue(newRoom != null);
+		assertNotNull(newRoom);
 	}
 	
 	@Test
 	public void createRoomType() {
 		//RoomType is needed first
 		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
-		assertTrue(type1 != null);
+		assertNotNull(type1);
 	}
 	
 	@Test
 	public void deleteRoom() {
 		if(booking.getRoomStay().isActive() == false){
 		boolean Result = adminRoomManager.removeRoom(room.getRoomNumber());
-			assertTrue(Result == true);
+		assertTrue(Result == true);
+		//Another way of doing this, would be to deactivate a room 
+		//instead of actually removing the room and all it's information.
+		//The way I would that is to set it to false and then test it. Just like the commented code under
+		// room.setIsOperational(false); 
+		//assertEquals(room.isOperational(), false);
 		}
-		
-	
 	}
+	
 	@Test
-	public void setTravelInformation(){ //TODO NEEDS FIX
-		//Maybe create a constructor for TravelInformation
+	public void deleteRoomType(){
+		boolean Result = adminRoomManager.removeRoomType(type2);
+		assertEquals(Result, true);
+
+	}
+	
+	
+	@Test
+	public void setTravelInformation() {
+		TravelInformation travel;
+		travel = BookingFactory.eINSTANCE.createTravelInformation();
 		travel.setId(1);
 		travel.setComment("Some comment");
 		travel.setTrackingId("501");
 		travel.setPredecessor(null);
 		booking.setTravelInformation(travel);
-		assertTrue(booking.getTravelInformation() !=null);
-		
+		assertNotNull(booking.getTravelInformation());
 	}
 }
 		

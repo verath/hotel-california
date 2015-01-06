@@ -27,6 +27,7 @@ import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.booking.StayRequest;
+import tda593.hotel.california.booking.util.BookingSwitch;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
@@ -229,11 +230,11 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		
 		rooms.removeAll(bookedRooms);
 		
-		// Remove rooms that are not operational
+		// Remove rooms that are not operational or is being cleaned
 		Iterator<Room> roomIter = rooms.iterator();
 		while(roomIter.hasNext()) {
 			Room curRoom = roomIter.next();
-			if(!curRoom.isOperational()) {
+			if(!curRoom.isOperational() || curRoom.isBeingCleaned()) {
 				roomIter.remove();
 			}
 		}
@@ -533,23 +534,14 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Person> getGuests(Booking booking) {
-		if(booking != null && booking.getRoomStay() != null) {
-			return booking.getRoomStay().getRegisteredPersons();
-		}
-		
-		return new BasicEList<Person>();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public void checkOut(Booking booking) {
 		RoomStay roomStay = booking.getRoomStay();
 		roomStay.setActive(false);		
-		roomManager.unregisterAllKeyCards(roomStay.getRoom().getRoomNumber());
+		Room room = roomStay.getRoom();
+		roomManager.unregisterAllKeyCards(room.getRoomNumber());
+		
+		// Set the isBeingCleaned-flag so that no one checks in to the room before it's cleaned
+		roomManager.setIsBeingCleaned(room, true);
 		
 		// Persist the changes
 		bookingDataService.set(booking);
@@ -679,6 +671,19 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void cancelBooking(Booking booking) {
+		// If booking hasn't been checked in it's allowed to be canceled
+		if(booking.getRoomStay() == null || booking.getRoomStay().getRegisteredPersons().size() == 0) {
+			booking.setIsCanceled(true);
+			bookingDataService.set(booking);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -779,8 +784,6 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return isRoomTypeAvailable((Date)arguments.get(0), (Date)arguments.get(1), (RoomType)arguments.get(2));
 			case BookingPackage.BOOKING_MANAGER_IMPL___GET_ACTIVE_BOOKING__STRING:
 				return getActiveBooking((String)arguments.get(0));
-			case BookingPackage.BOOKING_MANAGER_IMPL___GET_GUESTS__BOOKING:
-				return getGuests((Booking)arguments.get(0));
 			case BookingPackage.BOOKING_MANAGER_IMPL___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));
 				return null;
@@ -797,6 +800,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return getStayRequests();
 			case BookingPackage.BOOKING_MANAGER_IMPL___SET_SPECIAL_REQUEST__BOOKING_STRING:
 				setSpecialRequest((Booking)arguments.get(0), (String)arguments.get(1));
+				return null;
+			case BookingPackage.BOOKING_MANAGER_IMPL___CANCEL_BOOKING__BOOKING:
+				cancelBooking((Booking)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

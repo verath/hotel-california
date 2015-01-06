@@ -4,27 +4,20 @@ import static org.junit.Assert.*;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
-import tda593.hotel.california.billing.AdminDiscountManager;
 import tda593.hotel.california.billing.AdminServiceManager;
-import tda593.hotel.california.billing.BankingManager;
 import tda593.hotel.california.billing.Bill;
 import tda593.hotel.california.billing.BillManager;
-import tda593.hotel.california.billing.CreditCardInformation;
-import tda593.hotel.california.billing.CreditCardManager;
-import tda593.hotel.california.billing.Discount;
 import tda593.hotel.california.billing.Service;
 import tda593.hotel.california.booking.Booking;
 import tda593.hotel.california.booking.BookingManager;
 import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.LegalEntityManager;
-import tda593.hotel.california.booking.Organization;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.facilities.AdminRoomManager;
 import tda593.hotel.california.facilities.Room;
@@ -34,7 +27,6 @@ import tda593.hotel.california.facilities.RoomType;
 public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest {
 
 	private BillManager billManager;
-	private LegalEntityManager legalEntityManager;
 	private AdminServiceManager adminServiceManager;
 	private BookingManager bookingManager;
 	private RoomManager roomManager;
@@ -46,7 +38,6 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 	
 	@Before
 	public void setUpData() {
-		legalEntityManager = managersHandler.getLegalEntityManager();
 		billManager = managersHandler.getBillManager();
 		adminServiceManager = managersHandler.getAdminServiceManager();
 		bookingManager = managersHandler.getBookingManager();
@@ -98,8 +89,7 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: Change method
-		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		LegalEntity customer = activeBooking.getGuests().get(0);
 		
 		// Find suitable bill
 		EList<Bill> bills = billManager.getBills(customer);
@@ -168,8 +158,7 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: Change method
-		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		LegalEntity customer = activeBooking.getGuests().get(0);
 		
 		// Find suitable bill
 		EList<Bill> bills = billManager.getBills(customer);
@@ -201,8 +190,7 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: Change method
-		LegalEntity customer = activeBooking.getRoomStay().getRegisteredPersons().get(0);
+		LegalEntity customer = activeBooking.getGuests().get(0);
 		
 		// Find suitable bill
 		EList<Bill> bills = billManager.getBills(customer);

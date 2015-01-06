@@ -208,7 +208,7 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 	}
 
 	/**
-	 * Tetsts FR #023: "A receptionist should be able to view a guest’s hotel
+	 * Tetsts FR #023: "A receptionist should be able to view a guest���s hotel
 	 * history, such as bookings, personal information etc."
 	 */
 	@Test
@@ -314,5 +314,34 @@ public class BookingRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		booking = bookingManager.getBooking(booking.getId());// Reload
 		assertEquals(from, booking.getStartDate());
 		assertEquals(lastTo, booking.getEndDate());
+	}
+	
+	/**
+	 * Tests FR #009b: A receptionist should be able to cancel a booking for a customer 
+	 * 					without restrictions (other than when the booking is checked in), 
+	 * 					including being able to bill the customer even though he/she didn’t 
+	 * 					stay at the hotel.
+	 */
+	@Test
+	public void testSetBookingAsCanceled() {
+		// Time span of bookings: yesterday to about now
+		c.setTimeInMillis (System.currentTimeMillis() - 100000);
+		Date to = c.getTime();
+		c.add(Calendar.DATE, -1);
+		Date from = c.getTime();
+		
+		
+		Booking booking = bookingManager.createBooking(from, to, customer1, room101);
+		assertEquals(1, bookingManager.getBookings(customer1).size());
+		bookingManager.cancelBooking(booking);
+		
+		// If canceled, the booking manager shouldn't return a booking
+		assertEquals(0, bookingManager.getBookings(customer1).size());
+		
+		// Make a new booking, check it in and make sure it can't be canceled
+		bookAndCheckIn(from, to, room102, customer1);
+		assertEquals(1, bookingManager.getBookings(customer1).size());
+		
+		// Billing the customer is already tested in BillCustomerTest
 	}
 }
