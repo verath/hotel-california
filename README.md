@@ -1,4 +1,4 @@
-Hotel California [![Build Status](https://magnum.travis-ci.com/verath/hotel-california.svg?token=fugb8BtcAEkk8AyzaSJB&branch=master)](https://magnum.travis-ci.com/verath/hotel-california)
+Hotel California 
 ================
 
 A hotel management system created for the course
