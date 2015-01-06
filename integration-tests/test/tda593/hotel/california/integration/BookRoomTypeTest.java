@@ -193,8 +193,7 @@ public class BookRoomTypeTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 
 		if (!acceptedRoomTypes.isEmpty()) {
-			fail("Expected no room types to be accepted, but these were: "
-					+ acceptedRoomTypes);
+			fail("Expected no room types to be accepted, but these were: "+ acceptedRoomTypes);
 		}
 	}
 	

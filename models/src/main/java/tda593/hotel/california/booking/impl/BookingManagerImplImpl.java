@@ -229,11 +229,11 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		
 		rooms.removeAll(bookedRooms);
 		
-		// Remove rooms that are not operational
+		// Remove rooms that are not operational or is being cleaned
 		Iterator<Room> roomIter = rooms.iterator();
 		while(roomIter.hasNext()) {
 			Room curRoom = roomIter.next();
-			if(!curRoom.isOperational()) {
+			if(!curRoom.isOperational() || curRoom.isBeingCleaned()) {
 				roomIter.remove();
 			}
 		}
@@ -536,7 +536,11 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	public void checkOut(Booking booking) {
 		RoomStay roomStay = booking.getRoomStay();
 		roomStay.setActive(false);		
-		roomManager.unregisterAllKeyCards(roomStay.getRoom().getRoomNumber());
+		Room room = roomStay.getRoom();
+		roomManager.unregisterAllKeyCards(room.getRoomNumber());
+		
+		// Set the isBeingCleaned-flag so that no one checks in to the room before it's cleaned
+		roomManager.setIsBeingCleaned(room, true);
 		
 		// Persist the changes
 		bookingDataService.set(booking);

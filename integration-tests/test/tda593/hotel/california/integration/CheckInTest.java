@@ -104,6 +104,9 @@ public class CheckInTest extends AbstractHotelCaliforniaIntegrationTest {
 		Booking pastBooking = bookingManager.createBooking(from, to, customer, room101);
 		bookingManager.checkIn(pastBooking, new BasicEList<Person> () {});
 		bookingManager.checkOut(pastBooking);
+		// Set the isBeingCleaned flag to false to indicate that the room is cleaned
+		roomManager.setIsBeingCleaned(room101, false);
+		
 		
 		c.setTimeInMillis(System.currentTimeMillis() - 3600000);
 		from = c.getTime();
@@ -213,7 +216,7 @@ public class CheckInTest extends AbstractHotelCaliforniaIntegrationTest {
 	 * Tests the alternative flow: No “not checked in yet”-bookings with the entered name.
 	 */
 	@Test
-	public void testCheckInNoCheckInBooking() {
+	public void testCheckInNoBooking() {
 		// Set up three bookings, one which has already expired and one in the future
 		// and one currently active (already checked in but not checked out)
 		c.set(2012, 9, 10);
@@ -223,6 +226,8 @@ public class CheckInTest extends AbstractHotelCaliforniaIntegrationTest {
 		Booking pastBooking = bookingManager.createBooking(from, to, customer, room101);
 		bookingManager.checkIn(pastBooking, new BasicEList<Person> () {});
 		bookingManager.checkOut(pastBooking);
+		// Set the isBeingCleaned flag to false to indicate that the room is cleaned
+		roomManager.setIsBeingCleaned(room101, false);
 		
 		c.setTimeInMillis(System.currentTimeMillis());
 		c.add(Calendar.MONTH, 1);

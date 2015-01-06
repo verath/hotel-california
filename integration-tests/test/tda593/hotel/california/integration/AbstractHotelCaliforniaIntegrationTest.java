@@ -23,7 +23,7 @@ public abstract class AbstractHotelCaliforniaIntegrationTest {
 	Logger logger = Logger
 			.getLogger(AbstractHotelCaliforniaIntegrationTest.class.getName());
 
-	protected static Boolean canConnectToBankingComponent;
+	protected static Boolean canConnectToBankingComponent = false;
 	protected HotelCaliforniaManagersHandler managersHandler;
 
 	@Before
