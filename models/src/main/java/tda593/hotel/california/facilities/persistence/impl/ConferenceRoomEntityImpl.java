@@ -65,7 +65,7 @@ public class ConferenceRoomEntityImpl extends RoomEntityImpl implements Conferen
 	 */
 	public List<String> getEquipment() {
 		if(equipment == null) {
-			return new ArrayList<String>();
+			equipment = new ArrayList<>();
 		}
 		return equipment;
 	}

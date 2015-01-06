@@ -223,8 +223,8 @@ public class DiscountDataServiceImpl extends MinimalEObjectImpl.Container implem
 	 * @generated NOT
 	 */
 	public int count() {
-		Long perCount = entityManager.createQuery("SELECT COUNT(number) FROM PercentageDiscountEntityImpl", Long.class).getSingleResult();
-		Long sumCount = entityManager.createQuery("SELECT COUNT(number) FROM SumDiscountEntityImpl", Long.class).getSingleResult();
+		Long perCount = entityManager.createQuery("SELECT COUNT(*) FROM PercentageDiscountEntityImpl", Long.class).getSingleResult();
+		Long sumCount = entityManager.createQuery("SELECT COUNT(*) FROM SumDiscountEntityImpl", Long.class).getSingleResult();
 
 		// TODO : change to long
 		return perCount.intValue() + sumCount.intValue();

@@ -278,10 +278,8 @@ public class BillDataServiceImpl extends MinimalEObjectImpl.Container implements
 		try {
 			return entityToBookingBill(query.getSingleResult());
 		} catch (NoResultException e) {
-			
+			return null;
 		}
-		
-		return null;
 	}
 
 	/**

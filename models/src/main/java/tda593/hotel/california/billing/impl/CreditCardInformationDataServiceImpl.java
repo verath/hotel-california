@@ -147,7 +147,7 @@ public class CreditCardInformationDataServiceImpl extends MinimalEObjectImpl.Con
 		TypedQuery<CreditCardInformationEntityImpl> query = entityManager.createQuery("FROM CreditCardInformationEntityImpl " 
 				+ "WHERE owner_id=:legalEntityId ", CreditCardInformationEntityImpl.class);
 		query.setParameter("legalEntityId", legalEntityId);
-		CreditCardInformationEntityImpl result = null;
+		CreditCardInformationEntityImpl result;
 		
 		try {
 			result = query.getSingleResult();
