@@ -89,7 +89,6 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: Change method
 		LegalEntity customer = activeBooking.getGuests().get(0);
 		
 		// Find suitable bill
@@ -159,7 +158,6 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: Change method
 		LegalEntity customer = activeBooking.getGuests().get(0);
 		
 		// Find suitable bill
@@ -192,7 +190,6 @@ public class RegisterPurchaseTest extends AbstractHotelCaliforniaIntegrationTest
 		
 		// System returns the registered legal entities on the room stay (customer and all registered guests that are also customers to the hotel).
 		// Assume: the actor confirms the legal entity making the purchase.
-		// TODO: Change method
 		LegalEntity customer = activeBooking.getGuests().get(0);
 		
 		// Find suitable bill
