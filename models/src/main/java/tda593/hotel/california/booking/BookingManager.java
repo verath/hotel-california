@@ -191,4 +191,12 @@ public interface BookingManager extends EObject {
 	 */
 	void setSpecialRequest(Booking booking, String specialRequest);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	void cancelBooking(Booking booking);
+
 } // BookingManager

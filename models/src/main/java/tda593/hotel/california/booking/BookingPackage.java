@@ -851,13 +851,22 @@ public interface BookingPackage extends EPackage {
 	int BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING = 20;
 
 	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER___CANCEL_BOOKING__BOOKING = 21;
+
+	/**
 	 * The number of operations of the '<em>Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGER_OPERATION_COUNT = 21;
+	int BOOKING_MANAGER_OPERATION_COUNT = 22;
 
 
 	/**
@@ -1085,6 +1094,15 @@ public interface BookingPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGER_IMPL___SET_SPECIAL_REQUEST__BOOKING_STRING = BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING;
+
+	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGER_IMPL___CANCEL_BOOKING__BOOKING = BOOKING_MANAGER___CANCEL_BOOKING__BOOKING;
 
 	/**
 	 * The number of operations of the '<em>Manager Impl</em>' class.
@@ -2186,6 +2204,16 @@ public interface BookingPackage extends EPackage {
 	EOperation getBookingManager__SetSpecialRequest__Booking_String();
 
 	/**
+	 * Returns the meta object for the '{@link tda593.hotel.california.booking.BookingManager#cancelBooking(tda593.hotel.california.booking.Booking) <em>Cancel Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cancel Booking</em>' operation.
+	 * @see tda593.hotel.california.booking.BookingManager#cancelBooking(tda593.hotel.california.booking.Booking)
+	 * @generated
+	 */
+	EOperation getBookingManager__CancelBooking__Booking();
+
+	/**
 	 * Returns the meta object for class '{@link tda593.hotel.california.booking.BookingManagerImpl <em>Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3009,6 +3037,14 @@ public interface BookingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_MANAGER___SET_SPECIAL_REQUEST__BOOKING_STRING = eINSTANCE.getBookingManager__SetSpecialRequest__Booking_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_MANAGER___CANCEL_BOOKING__BOOKING = eINSTANCE.getBookingManager__CancelBooking__Booking();
 
 		/**
 		 * The meta object literal for the '{@link tda593.hotel.california.booking.impl.BookingManagerImplImpl <em>Manager Impl</em>}' class.

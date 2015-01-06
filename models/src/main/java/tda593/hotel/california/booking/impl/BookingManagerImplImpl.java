@@ -27,6 +27,7 @@ import tda593.hotel.california.booking.LegalEntity;
 import tda593.hotel.california.booking.Person;
 import tda593.hotel.california.booking.RoomStay;
 import tda593.hotel.california.booking.StayRequest;
+import tda593.hotel.california.booking.util.BookingSwitch;
 import tda593.hotel.california.facilities.Room;
 import tda593.hotel.california.facilities.RoomManager;
 import tda593.hotel.california.facilities.RoomType;
@@ -670,6 +671,19 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void cancelBooking(Booking booking) {
+		// If booking hasn't been checked in it's allowed to be canceled
+		if(booking.getRoomStay() == null || booking.getRoomStay().getRegisteredPersons().size() == 0) {
+			booking.setIsCanceled(true);
+			bookingDataService.set(booking);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -786,6 +800,9 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 				return getStayRequests();
 			case BookingPackage.BOOKING_MANAGER_IMPL___SET_SPECIAL_REQUEST__BOOKING_STRING:
 				setSpecialRequest((Booking)arguments.get(0), (String)arguments.get(1));
+				return null;
+			case BookingPackage.BOOKING_MANAGER_IMPL___CANCEL_BOOKING__BOOKING:
+				cancelBooking((Booking)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

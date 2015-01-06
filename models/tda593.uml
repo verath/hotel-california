@@ -1442,6 +1442,9 @@
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_wJHEwJVIEeSZZtxB67B5mQ" name="cancelBooking">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_1POC8JVIEeSZZtxB67B5mQ" name="booking" type="_QwNhcHZKEeSrX_LICIhx2Q"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_wrwOUH7MEeS2M9uZ6JBJRQ" name="BookingManagerImpl">
             <generalization xmi:type="uml:Generalization" xmi:id="_882MgH7MEeS2M9uZ6JBJRQ" general="_xX22IHZXEeSbBJzXJgLK5Q"/>
