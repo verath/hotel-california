@@ -41,7 +41,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 	private Service bananas, champagne;
 	private Person customer1;
 	private Organization customer2;
-	private String validCreditCardNumber = "21908910102989086752";
+	private String validCreditCardNumber = "15908910102989086752";
 	private String validCCV = "902";
 	private String validFirstName = "Bob", validLastName = "Smith";
 	private Date validDate;
@@ -71,12 +71,12 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 				validFirstName, validLastName);
 
 		c.set(19, 8, 1);
-		adminBankingManager.addCreditCard("3019018901208190", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
+		adminBankingManager.addCreditCard("153019018901208190", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
 				customer1.getLastname());
 		
 		// set valid info for customer1
 		creditCardManager.setCreditCardInformation(customer1, customer1.getFirstname(), customer1.getLastname(), 
-				"3019018901208190", "980", c.getTime(), bankingManager);
+				"153019018901208190", "980", c.getTime(), bankingManager);
 
 		
 		// Set up some services
@@ -93,7 +93,7 @@ public class BillCustomerTest extends AbstractHotelCaliforniaIntegrationTest {
 				validFirstName, validLastName);
 
 		c.set(19, 8, 1);
-		adminBankingManager.removeCreditCard("3019018901208190", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
+		adminBankingManager.removeCreditCard("153019018901208190", "980", c.get(Calendar.MONTH), c.get(Calendar.YEAR), customer1.getFirstname(),
 				customer1.getLastname());
 	}
 	
