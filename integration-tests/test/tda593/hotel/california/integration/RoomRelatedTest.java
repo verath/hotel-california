@@ -103,6 +103,30 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		}
 		
 	}
+	
+	/**
+	 * Tests the FR #026c: A staff member should be able to mark a room as “being cleaned”.
+	 */
+	@Test
+	public void testSetIsBeingCleaned() {
+		Room room = roomManager.getRoom(guestRoom.getRoomNumber());
+		
+		// Check default case
+		assertEquals(false, room.isBeingCleaned());
+		
+		// Set the value to true
+		roomManager.setIsBeingCleaned(room, true);
+		// Check in dependency
+		assertEquals(true, room.isBeingCleaned());
+		// Check in database 
+		room = roomManager.getRoom(guestRoom.getRoomNumber());
+		assertEquals(true, room.isBeingCleaned());
+		
+		// Set to false
+		roomManager.setIsBeingCleaned(room, false);
+		assertEquals(false, room.isBeingCleaned());
+	}
+	
 	/**
 	 * Tests the FR #029b:
 	 */
@@ -139,7 +163,9 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		boolean Result = adminRoomManager.removeRoomType(type2);
 		assertEquals(Result, true);
 
-}
+	}
+	
+	
 	@Test
 	public void setTravelInformation() {
 		TravelInformation travel;
