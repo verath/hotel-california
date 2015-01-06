@@ -127,46 +127,10 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		assertEquals(false, room.isBeingCleaned());
 	}
 	
-	/**
-	 * Tests the FR #029b:
-	 */
-	@Test
-	public void createRoom() {
-		//RoomType is needed first
-		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
-		Room newRoom = adminRoomManager.addGuestRoom("3", 4, "A nice Room", null, photos, type1, 1, 0);
-		assertNotNull(newRoom);
-	}
-	
-	@Test
-	public void createRoomType() {
-		//RoomType is needed first
-		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
-		assertNotNull(type1);
-	}
-	
-	@Test
-	public void deleteRoom() {
-		if(booking.getRoomStay().isActive() == false){
-		boolean Result = adminRoomManager.removeRoom(room.getRoomNumber());
-		assertTrue(Result == true);
-		//Another way of doing this, would be to deactivate a room 
-		//instead of actually removing the room and all it's information.
-		//The way I would that is to set it to false and then test it. Just like the commented code under
-		// room.setIsOperational(false); 
-		//assertEquals(room.isOperational(), false);
-		}
-	}
-	
-	@Test
-	public void deleteRoomType(){
-		boolean Result = adminRoomManager.removeRoomType(type2);
-		assertEquals(Result, true);
 
-	}
-	
-	
+
 	@Test
+	//Sets travelinformation a booking instance
 	public void setTravelInformation() {
 		TravelInformation travel;
 		travel = BookingFactory.eINSTANCE.createTravelInformation();
@@ -177,6 +141,75 @@ public class RoomRelatedTest extends AbstractHotelCaliforniaIntegrationTest {
 		booking.setTravelInformation(travel);
 		assertNotNull(booking.getTravelInformation());
 	}
+	@Test
+	public void createRoom() {
+		//RoomType is needed first
+		RoomType newType1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
+		//If type exist then create a room and add it to the type
+		if(roomManager.getRoomTypes().contains(newType1)){
+		Room newRoom = adminRoomManager.addGuestRoom("3", 4, "A nice Room", null, photos, newType1, 1, 0);
+		assertNotNull(newRoom);
+		//Check if its in DB
+		Boolean exist = adminRoomManager.getRooms().contains(newRoom);
+		assertTrue(exist);
+
+		}else{
+			//Then lets assume that we create another roomtype and add it to that one
+		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
+		Room newRoom = adminRoomManager.addGuestRoom("3", 4, "A nice Room", null, photos, type1, 1, 0);
+		assertNotNull(newRoom);
+		//Check if its in DB
+		Boolean exist = adminRoomManager.getRooms().contains(newRoom);
+		assertTrue(exist);
+
+		}
+		
+	}
+	
+	@Test
+	public void createRoomType() {
+		//Create a room type and check if it has been added
+		RoomType type1 = adminRoomManager.addRoomType("Deluxe", "Room with nice view", null, 10);
+		assertNotNull(type1);
+		//Check if its in DB
+		Boolean exist = adminRoomManager.getRoomTypes().contains(type2);
+		assertTrue(exist);
+		
+		
+	}
+	
+	@Test
+	public void deleteRoom() {
+		//To remove a room we have to deactivate roomstay, then it will be possible
+		//to remove a room
+		booking.getRoomStay().setActive(false);
+		if(booking.getRoomStay().isActive() == false){
+		String DeletedRoom = booking.getRoomStay().getRoom().getRoomNumber();
+		boolean Result = adminRoomManager.removeRoom(DeletedRoom);
+		assertTrue(Result);
+		//Another way of doing this, would be to deactivate a room 
+		//instead of actually removing the room and all it's information.
+		//The way I would that is to set it to false and then test it. Just like the commented code under
+		// room.setIsOperational(false); 
+		//assertEquals(room.isOperational(), false);
+		
+		//Now we have to check if the room has been deleted from the database
+		boolean checkDeleted = adminRoomManager.getRooms().contains(DeletedRoom);
+		assertFalse(checkDeleted);
+		}
+	}
+	
+	@Test
+	public void deleteRoomType(){
+		//Check if its in database
+		if(adminRoomManager.getRoomTypes().contains(type2)){
+			boolean Result = adminRoomManager.removeRoomType(type2);
+			assertTrue(Result);
+		}
+
+	}
+	
+	
 }
 		
 		

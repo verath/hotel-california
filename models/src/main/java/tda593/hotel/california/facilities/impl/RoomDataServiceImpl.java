@@ -248,7 +248,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void delete(Room room) {
-		entityManager.remove(roomToEntity(room));
+		entityManager.remove(entityManager.contains(roomToEntity(room)) ? roomToEntity(room) : entityManager.merge(roomToEntity(room)));
 	}
 
 	/**
