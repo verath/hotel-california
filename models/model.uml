@@ -783,35 +783,60 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_FCukUHo0EeSZQp8F1uHBGQ" name="billManager">
         <type xmi:type="uml:Interface" href="tda593.uml#_FIjl8HcHEeSbBJzXJgLK5Q"/>
       </ownedAttribute>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_OC7O8HozEeSZQp8F1uHBGQ" name="Booking Manager" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_c9fCYHo2EeSZQp8F1uHBGQ _jY7b0Ho2EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_REaqAHozEeSZQp8F1uHBGQ" name="Billing Manager" represents="_FCukUHo0EeSZQp8F1uHBGQ" coveredBy="_b79zoXo5EeSZQp8F1uHBGQ _q5814Ho5EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_OC7O8HozEeSZQp8F1uHBGQ" name="Booking Manager" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_c9fCYHo2EeSZQp8F1uHBGQ _EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ _Zb_0MJW3EeSXH5rTioeAXQ _Zb_0MZW3EeSXH5rTioeAXQ _qPY44JW3EeSXH5rTioeAXQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_REaqAHozEeSZQp8F1uHBGQ" name="Billing Manager" represents="_FCukUHo0EeSZQp8F1uHBGQ" coveredBy="_EXFXkHo6EeSZQp8F1uHBGQ _EXHz0Ho6EeSZQp8F1uHBGQ _UgWZkJW3EeSXH5rTioeAXQ _Zb_0MJW3EeSXH5rTioeAXQ _Zb_0MZW3EeSXH5rTioeAXQ _cAg_Y5W3EeSXH5rTioeAXQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c9fCYHo2EeSZQp8F1uHBGQ" name="getActiveBooking_MessageRecv" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_c9dNMHo2EeSZQp8F1uHBGQ"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jY7b0Ho2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_MessageRecv" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_jY5moHo2EeSZQp8F1uHBGQ"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b79zoXo5EeSZQp8F1uHBGQ" name="getAllServices_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_b78lgHo5EeSZQp8F1uHBGQ"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_q5814Ho5EeSZQp8F1uHBGQ" name="getBookingBill_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UgWZkJW3EeSXH5rTioeAXQ" name="getBills_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_UgVLcJW3EeSXH5rTioeAXQ"/>
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_Zb_0MJW3EeSXH5rTioeAXQ" name="CombinedFragment0" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ" interactionOperator="alt">
+        <cfragmentGate xmi:type="uml:Gate" xmi:id="_cAfKMJW3EeSXH5rTioeAXQ" name="in_createBill_Message" message="_cAejIJW3EeSXH5rTioeAXQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cAgYUpW3EeSXH5rTioeAXQ" source="CombinedFragment.InnerGate">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cAgYU5W3EeSXH5rTioeAXQ" key="insideCF" value="_cAfxQJW3EeSXH5rTioeAXQ"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cAgYVJW3EeSXH5rTioeAXQ" source="Gate.name.volatile">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cAg_YJW3EeSXH5rTioeAXQ" key="Gate.name.volatile" value="true"/>
+          </eAnnotations>
+        </cfragmentGate>
+        <cfragmentGate xmi:type="uml:Gate" xmi:id="_cAfxQJW3EeSXH5rTioeAXQ" name="in_createBill_Message">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cAgYUJW3EeSXH5rTioeAXQ" source="CombinedFragment.InnerGate">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cAgYUZW3EeSXH5rTioeAXQ" key="outsideCF" value="_cAfKMJW3EeSXH5rTioeAXQ"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cAg_YZW3EeSXH5rTioeAXQ" source="Gate.name.volatile">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cAg_YpW3EeSXH5rTioeAXQ" key="Gate.name.volatile" value="true"/>
+          </eAnnotations>
+        </cfragmentGate>
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_Zb_0MZW3EeSXH5rTioeAXQ" name="InteractionOperand" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ">
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cAg_Y5W3EeSXH5rTioeAXQ" name="createBill_MessageRecv" covered="_REaqAHozEeSZQp8F1uHBGQ" message="_cAejIJW3EeSXH5rTioeAXQ"/>
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_ZcAbQJW3EeSXH5rTioeAXQ">
+            <specification xmi:type="uml:LiteralString" xmi:id="_vZsakJW3EeSXH5rTioeAXQ" value="if all bills are published"/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_ZcAbQ5W3EeSXH5rTioeAXQ" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_ZcAbQpW3EeSXH5rTioeAXQ"/>
+          </guard>
+        </operand>
+      </fragment>
       <fragment xmi:type="uml:CombinedFragment" xmi:id="_EXFXkHo6EeSZQp8F1uHBGQ" name="CombinedFragment" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ" interactionOperator="loop">
+        <cfragmentGate xmi:type="uml:Gate" xmi:id="_1TomgHo5EeSZQp8F1uHBGQ" name="gate4"/>
+        <cfragmentGate xmi:type="uml:Gate" xmi:id="_rXJLIJW3EeSXH5rTioeAXQ" name="gate5"/>
         <operand xmi:type="uml:InteractionOperand" xmi:id="_EXHz0Ho6EeSZQp8F1uHBGQ" name="InteractionOperand" covered="_OC7O8HozEeSZQp8F1uHBGQ _REaqAHozEeSZQp8F1uHBGQ">
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1TomgXo5EeSZQp8F1uHBGQ" name="billItem_MessageRecv" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qPY44JW3EeSXH5rTioeAXQ" name="billItem_MessageSend" covered="_OC7O8HozEeSZQp8F1uHBGQ" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
           <guard xmi:type="uml:InteractionConstraint" xmi:id="_EXIa4Ho6EeSZQp8F1uHBGQ" name="Until not done">
             <specification xmi:type="uml:LiteralString" xmi:id="_EXIa4Xo6EeSZQp8F1uHBGQ" value="through all supplied items"/>
           </guard>
         </operand>
       </fragment>
       <formalGate xmi:type="uml:Gate" xmi:id="_c9ebUHo2EeSZQp8F1uHBGQ" name="gate0" message="_c9dNMHo2EeSZQp8F1uHBGQ"/>
-      <formalGate xmi:type="uml:Gate" xmi:id="_jY60wHo2EeSZQp8F1uHBGQ" name="gate1" message="_jY5moHo2EeSZQp8F1uHBGQ"/>
-      <formalGate xmi:type="uml:Gate" xmi:id="_b79zoHo5EeSZQp8F1uHBGQ" name="gate2" message="_b78lgHo5EeSZQp8F1uHBGQ"/>
-      <formalGate xmi:type="uml:Gate" xmi:id="_q58O0Ho5EeSZQp8F1uHBGQ" name="gate3" message="_q57nwHo5EeSZQp8F1uHBGQ"/>
-      <formalGate xmi:type="uml:Gate" xmi:id="_1TomgHo5EeSZQp8F1uHBGQ" name="gate4" message="_1TnYYHo5EeSZQp8F1uHBGQ"/>
+      <formalGate xmi:type="uml:Gate" xmi:id="_UgVygJW3EeSXH5rTioeAXQ" name="gate5" message="_UgVLcJW3EeSXH5rTioeAXQ"/>
       <message xmi:type="uml:Message" xmi:id="_c9dNMHo2EeSZQp8F1uHBGQ" name="getActiveBooking_Message" messageSort="asynchCall" receiveEvent="_c9fCYHo2EeSZQp8F1uHBGQ" sendEvent="_c9ebUHo2EeSZQp8F1uHBGQ">
         <signature xmi:type="uml:Operation" href="tda593.uml#_QSnHsHo1EeSZQp8F1uHBGQ"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="_jY5moHo2EeSZQp8F1uHBGQ" name="getRelatedLegalEntities_Message" messageSort="asynchCall" receiveEvent="_jY7b0Ho2EeSZQp8F1uHBGQ" sendEvent="_jY60wHo2EeSZQp8F1uHBGQ"/>
-      <message xmi:type="uml:Message" xmi:id="_b78lgHo5EeSZQp8F1uHBGQ" name="getAllServices_Message" messageSort="asynchCall" receiveEvent="_b79zoXo5EeSZQp8F1uHBGQ" sendEvent="_b79zoHo5EeSZQp8F1uHBGQ"/>
-      <message xmi:type="uml:Message" xmi:id="_q57nwHo5EeSZQp8F1uHBGQ" name="getBookingBill_Message" messageSort="asynchCall" receiveEvent="_q5814Ho5EeSZQp8F1uHBGQ" sendEvent="_q58O0Ho5EeSZQp8F1uHBGQ">
-        <signature xmi:type="uml:Operation" href="tda593.uml#_Erqn0Ho3EeSZQp8F1uHBGQ"/>
-      </message>
-      <message xmi:type="uml:Message" xmi:id="_1TnYYHo5EeSZQp8F1uHBGQ" name="billItem_Message" messageSort="asynchCall" receiveEvent="_1TomgXo5EeSZQp8F1uHBGQ" sendEvent="_1TomgHo5EeSZQp8F1uHBGQ">
+      <message xmi:type="uml:Message" xmi:id="_1TnYYHo5EeSZQp8F1uHBGQ" name="billItem_Message" messageSort="asynchCall" receiveEvent="_1TomgXo5EeSZQp8F1uHBGQ" sendEvent="_qPY44JW3EeSXH5rTioeAXQ">
         <signature xmi:type="uml:Operation" href="tda593.uml#_k5lEUHo4EeSZQp8F1uHBGQ"/>
+      </message>
+      <message xmi:type="uml:Message" xmi:id="_UgVLcJW3EeSXH5rTioeAXQ" name="getBills_Message" messageSort="asynchCall" receiveEvent="_UgWZkJW3EeSXH5rTioeAXQ" sendEvent="_UgVygJW3EeSXH5rTioeAXQ">
+        <signature xmi:type="uml:Operation" href="tda593.uml#_7hb50JBkEeSPx8OEUJtTNA"/>
+      </message>
+      <message xmi:type="uml:Message" xmi:id="_cAejIJW3EeSXH5rTioeAXQ" name="createBill_Message" messageSort="asynchCall" receiveEvent="_cAg_Y5W3EeSXH5rTioeAXQ" sendEvent="_cAfKMJW3EeSXH5rTioeAXQ">
+        <signature xmi:type="uml:Operation" href="tda593.uml#_V0A5AI-lEeSfBP2QR77p4w"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_WCDBoHozEeSnSa4PiV3Jkw" name="SearchForAvailableRoomsInteraction">
