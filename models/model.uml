@@ -840,9 +840,15 @@
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_WCDBoHozEeSnSa4PiV3Jkw" name="SearchForAvailableRoomsInteraction">
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_ZKjqsHozEeSnSa4PiV3Jkw" name="Lifeline" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_Lcj0MHo0EeSnSa4PiV3Jkw _b6-HYHo0EeSnSa4PiV3Jkw _b7AjoHo0EeSnSa4PiV3Jkw _6HRt8no0EeSnSa4PiV3Jkw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BL1mgJW4EeSXH5rTioeAXQ" name="roomManager">
+        <type xmi:type="uml:Interface" href="tda593.uml#_SzH3QHoiEeSVKdBxhP6Y7A"/>
+      </ownedAttribute>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_ZKjqsHozEeSnSa4PiV3Jkw" name="Lifeline" represents="_pUWiMHlWEeSGW6TbfhvuNQ" coveredBy="_Lcj0MHo0EeSnSa4PiV3Jkw _b6-HYHo0EeSnSa4PiV3Jkw _b7AjoHo0EeSnSa4PiV3Jkw _6HRt8no0EeSnSa4PiV3Jkw _PsUNYJW4EeSXH5rTioeAXQ _UquBEJW4EeSXH5rTioeAXQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_89EgAJW3EeSXH5rTioeAXQ" name="roomManager" represents="_BL1mgJW4EeSXH5rTioeAXQ" coveredBy="_PsU0cJW4EeSXH5rTioeAXQ _b6-HYHo0EeSnSa4PiV3Jkw _b7AjoHo0EeSnSa4PiV3Jkw _UquoIJW4EeSXH5rTioeAXQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Lcj0MHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_MessageRecv" covered="_ZKjqsHozEeSnSa4PiV3Jkw" message="_LcUjoHo0EeSnSa4PiV3Jkw"/>
-      <fragment xmi:type="uml:CombinedFragment" xmi:id="_b6-HYHo0EeSnSa4PiV3Jkw" name="CombinedFragment" covered="_ZKjqsHozEeSnSa4PiV3Jkw" interactionOperator="opt">
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PsUNYJW4EeSXH5rTioeAXQ" name="getRooms_MessageSend" covered="_ZKjqsHozEeSnSa4PiV3Jkw" message="_PsTmUJW4EeSXH5rTioeAXQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PsU0cJW4EeSXH5rTioeAXQ" name="getRooms_MessageRecv" covered="_89EgAJW3EeSXH5rTioeAXQ" message="_PsTmUJW4EeSXH5rTioeAXQ"/>
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_b6-HYHo0EeSnSa4PiV3Jkw" name="CombinedFragment" covered="_ZKjqsHozEeSnSa4PiV3Jkw _89EgAJW3EeSXH5rTioeAXQ" interactionOperator="alt">
         <cfragmentGate xmi:type="uml:Gate" xmi:id="_6HODkHo0EeSnSa4PiV3Jkw" name="in_getAvailableRooms_Message0" message="_6HMOYHo0EeSnSa4PiV3Jkw">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6HQf0Xo0EeSnSa4PiV3Jkw" source="CombinedFragment.InnerGate">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6HQf0no0EeSnSa4PiV3Jkw" key="insideCF" value="_6HOqoHo0EeSnSa4PiV3Jkw"/>
@@ -859,8 +865,10 @@
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6HRt8Xo0EeSnSa4PiV3Jkw" key="Gate.name.volatile" value="true"/>
           </eAnnotations>
         </cfragmentGate>
-        <operand xmi:type="uml:InteractionOperand" xmi:id="_b7AjoHo0EeSnSa4PiV3Jkw" name="InteractionOperand" covered="_ZKjqsHozEeSnSa4PiV3Jkw">
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_b7AjoHo0EeSnSa4PiV3Jkw" name="InteractionOperand" covered="_ZKjqsHozEeSnSa4PiV3Jkw _89EgAJW3EeSXH5rTioeAXQ">
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UquoIJW4EeSXH5rTioeAXQ" name="getRooms_Message0Recv" covered="_89EgAJW3EeSXH5rTioeAXQ" message="_UqtaAJW4EeSXH5rTioeAXQ"/>
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6HRt8no0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message0Recv" covered="_ZKjqsHozEeSnSa4PiV3Jkw" message="_6HMOYHo0EeSnSa4PiV3Jkw"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UquBEJW4EeSXH5rTioeAXQ" name="getRooms_Message0Send" covered="_ZKjqsHozEeSnSa4PiV3Jkw" message="_UqtaAJW4EeSXH5rTioeAXQ"/>
           <guard xmi:type="uml:InteractionConstraint" xmi:id="_b7BKsHo0EeSnSa4PiV3Jkw">
             <specification xmi:type="uml:LiteralString" xmi:id="_b7BKsXo0EeSnSa4PiV3Jkw" value="if filter by room type&#xA;"/>
             <maxint xmi:type="uml:LiteralInteger" xmi:id="_b7BxwXo0EeSnSa4PiV3Jkw" value="1"/>
@@ -874,6 +882,12 @@
       </message>
       <message xmi:type="uml:Message" xmi:id="_6HMOYHo0EeSnSa4PiV3Jkw" name="getAvailableRooms_Message0" messageSort="asynchCall" receiveEvent="_6HRt8no0EeSnSa4PiV3Jkw" sendEvent="_6HODkHo0EeSnSa4PiV3Jkw">
         <signature xmi:type="uml:Operation" href="tda593.uml#_aJ-W0HbyEeSbBJzXJgLK5Q"/>
+      </message>
+      <message xmi:type="uml:Message" xmi:id="_PsTmUJW4EeSXH5rTioeAXQ" name="getRooms_Message" messageSort="asynchCall" receiveEvent="_PsU0cJW4EeSXH5rTioeAXQ" sendEvent="_PsUNYJW4EeSXH5rTioeAXQ">
+        <signature xmi:type="uml:Operation" href="tda593.uml#_6B204HpUEeSept0-dI1XSQ"/>
+      </message>
+      <message xmi:type="uml:Message" xmi:id="_UqtaAJW4EeSXH5rTioeAXQ" name="getRooms_Message0" messageSort="asynchCall" receiveEvent="_UquoIJW4EeSXH5rTioeAXQ" sendEvent="_UquBEJW4EeSXH5rTioeAXQ">
+        <signature xmi:type="uml:Operation" href="tda593.uml#_6B204HpUEeSept0-dI1XSQ"/>
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_V65S8HpCEeSZQp8F1uHBGQ" name="CustomerProvides"/>
