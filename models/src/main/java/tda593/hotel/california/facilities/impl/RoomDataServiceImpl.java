@@ -211,7 +211,7 @@ public class RoomDataServiceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public int count() {
-		Long count = entityManager.createQuery("SELECT COUNT(number) FROM Rooms", Long.class).getSingleResult();
+		Long count = entityManager.createQuery("SELECT COUNT(*) FROM RoomEntityImpl", Long.class).getSingleResult();
 		// TODO : change to long
 		return count.intValue();
 	}

@@ -76,7 +76,7 @@ public class AdminDiscountManagerImplImpl extends DiscountManagerImplImpl implem
 	 * @generated NOT
 	 */
 	public Discount addPercentageDiscount(String code, String name, float percentage) {
-		if(code != null && !code.isEmpty() && name != null && !code.isEmpty() && percentage > 0 && percentage < 1) {
+		if(code != null && !code.isEmpty() && name != null && !name.isEmpty() && percentage > 0 && percentage < 1) {
 			Discount discount = new PercentageDiscountImpl(code, name, percentage);
 			discountDataService.set(discount);
 			return discount;

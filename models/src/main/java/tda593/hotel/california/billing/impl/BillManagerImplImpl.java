@@ -353,19 +353,6 @@ public class BillManagerImplImpl extends MinimalEObjectImpl.Container implements
 		return new BasicEList<Bill>();
 	}
 
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void markBillAsPaid(Bill bill, boolean isPaid) {
-		if(bill != null) {
-			bill.setIsPaid(true);
-			billDataService.set(bill);
-		}
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -460,7 +460,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 			List<Room> availableRooms = getAvailableRoomsHelper(booking.getStartDate(), booking.getEndDate(), roomType, booking);
 
 			// Loop through the available rooms and make sure no un-checked-out booking is still active and 
-			// grab the first one which hasn't got any avtive booking attached to it
+			// grab the first one which hasn't got any active booking attached to it
 			Room selectedRoom = null;
 			for(Room room : availableRooms) {
 				if(getActiveBooking(room.getRoomNumber()) == null) {
@@ -504,7 +504,7 @@ public class BookingManagerImplImpl extends MinimalEObjectImpl.Container impleme
 		if(availableRoomTypes.get(roomType) == null) {
 			return false;
 		} else {
-			return availableRoomTypes.get(roomType) > 0 ? true : false;
+			return availableRoomTypes.get(roomType) > 0;
 		}
 	}
 

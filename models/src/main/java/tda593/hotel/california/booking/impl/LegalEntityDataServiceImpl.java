@@ -174,7 +174,7 @@ public class LegalEntityDataServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public int count() {
-		Long count = entityManager.createQuery("SELECT COUNT(number) FROM BookingEntityImpl", Long.class).getSingleResult();
+		Long count = entityManager.createQuery("SELECT COUNT(*) FROM BookingEntityImpl", Long.class).getSingleResult();
 		// TODO : change to long
 		return count.intValue();
 	}
