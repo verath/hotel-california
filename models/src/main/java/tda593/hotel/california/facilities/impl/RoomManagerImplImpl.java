@@ -311,7 +311,7 @@ public class RoomManagerImplImpl extends MinimalEObjectImpl.Container implements
 			throw new IllegalArgumentException("Room number must only contain digits.");
 		}
 		
-		int number = 0;
+		int number;
 		try {
 			number = Integer.parseInt(roomNumber);
 		} catch (NumberFormatException e) {

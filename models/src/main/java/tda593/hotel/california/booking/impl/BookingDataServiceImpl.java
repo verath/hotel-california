@@ -278,7 +278,7 @@ public class BookingDataServiceImpl extends MinimalEObjectImpl.Container impleme
 		TypedQuery<BookingEntityImpl> query = entityManager.createQuery("" +
 				" SELECT b FROM BookingEntityImpl b " +
 				" JOIN b.roomStayEntity " +
-				" WHERE roomEntity_roomNumber = :theRoomNumber AND isCanceled=FALSE " +
+				" WHERE roomEntity_roomNumber = :theRoomNumber AND b.isCanceled = FALSE " +
 				" AND (" +
 				"	b.startDate BETWEEN :theStartDate AND :theEndDate" +
 				" 	OR b.endDate BETWEEN :theStartDate AND :theEndDate" +
